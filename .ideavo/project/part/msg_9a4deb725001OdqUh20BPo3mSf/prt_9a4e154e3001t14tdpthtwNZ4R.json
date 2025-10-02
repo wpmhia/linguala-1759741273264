@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4e154e3001t14tdpthtwNZ4R",
+  "messageID": "msg_9a4deb725001OdqUh20BPo3mSf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01JP7RoQhHJ2B5nkX5FEMpJb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "    } catch (error) {\n      console.error(\"Translation error:\", error)\n      toast.error(\"Translation failed. Please try again.\")\n    } finally {",
+      "newString": "    } catch (error) {\n      console.error(\"Translation error:\", error)\n      \n      // Better error messages (Nielsen's Error Recovery heuristic)\n      if (error instanceof TypeError && error.message.includes('fetch')) {\n        toast.error(\"Connection failed. Please check your internet and try again.\", {\n          action: {\n            label: \"Retry\",\n            onClick: () => translateText(text, from, to)\n          }\n        })\n      } else if (text.length > 5000) {\n        toast.error(\"Text too long. Please shorten to under 5,000 characters.\", {\n          action: {\n            label: \"Trim Text\",\n            onClick: () => {\n              const trimmed = text.substring(0, 5000)\n              setSourceText(trimmed)\n              translateText(trimmed, from, to)\n            }\n          }\n        })\n      } else {\n        toast.error(\"Translation failed. Our servers may be busy - please try again in a moment.\", {\n          action: {\n            label: \"Retry\",\n            onClick: () => setTimeout(() => translateText(text, from, to), 2000)\n          }\n        })\n      }\n    } finally {"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -314,9 +314,36 @@\n   }\n \n } catch (error) {\n   console.error(\"Translation error:\", error)\n-  toast.error(\"Translation failed. Please try again.\")\n+  \n+  // Better error messages (Nielsen's Error Recovery heuristic)\n+  if (error instanceof TypeError && error.message.includes('fetch')) {\n+    toast.error(\"Connection failed. Please check your internet and try again.\", {\n+      action: {\n+        label: \"Retry\",\n+        onClick: () => translateText(text, from, to)\n+      }\n+    })\n+  } else if (text.length > 5000) {\n+    toast.error(\"Text too long. Please shorten to under 5,000 characters.\", {\n+      action: {\n+        label: \"Trim Text\",\n+        onClick: () => {\n+          const trimmed = text.substring(0, 5000)\n+          setSourceText(trimmed)\n+          translateText(trimmed, from, to)\n+        }\n+      }\n+    })\n+  } else {\n+    toast.error(\"Translation failed. Our servers may be busy - please try again in a moment.\", {\n+      action: {\n+        label: \"Retry\",\n+        onClick: () => setTimeout(() => translateText(text, from, to), 2000)\n+      }\n+    })\n+  }\n } finally {\n   clearInterval(progressInterval)\n   setIsTranslating(false)\n   setTranslationProgress(0)\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407860029,
+      "end": 1759407860037
+    }
+  }
+}

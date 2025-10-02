@@ -18,7 +18,8 @@ import {
   ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,
   Check, BookOpen, History, Upload, FileText,
   Search, Trash2, Plus, Volume2, ChevronRight, Globe,
-  TrendingUp, Award, Users, Palette, Brain, Target
+  TrendingUp, Award, Users, Palette, Brain, Target,
+  HelpCircle, RotateCcw, Keyboard, AlertCircle, Info
 } from "lucide-react"
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
@@ -160,9 +161,12 @@ export default function LingualaTranslator() {
   const [selectedDomain, setSelectedDomain] = useState("general")
   const [isTranslating, setIsTranslating] = useState(false)
   const [translationProgress, setTranslationProgress] = useState(0)
+  const [lastTranslation, setLastTranslation] = useState<{source: string, target: string} | null>(null)
 
   // UI state
   const [copySuccess, setCopySuccess] = useState(false)
+  const [showHelp, setShowHelp] = useState(false)
+  const [recentLanguagePairs, setRecentLanguagePairs] = useState<{from: string, to: string}[]>([])
   const [showGlossary, setShowGlossary] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
@@ -311,7 +315,34 @@ export default function LingualaTranslator() {
 
     } catch (error) {
       console.error("Translation error:", error)
-      toast.error("Translation failed. Please try again.")
+      
+      // Better error messages (Nielsen's Error Recovery heuristic)
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        toast.error("Connection failed. Please check your internet and try again.", {
+          action: {
+            label: "Retry",
+            onClick: () => translateText(text, from, to)
+          }
+        })
+      } else if (text.length > 5000) {
+        toast.error("Text too long. Please shorten to under 5,000 characters.", {
+          action: {
+            label: "Trim Text",
+            onClick: () => {
+              const trimmed = text.substring(0, 5000)
+              setSourceText(trimmed)
+              translateText(trimmed, from, to)
+            }
+          }
+        })
+      } else {
+        toast.error("Translation failed. Our servers may be busy - please try again in a moment.", {
+          action: {
+            label: "Retry",
+            onClick: () => setTimeout(() => translateText(text, from, to), 2000)
+          }
+        })
+      }
     } finally {
       clearInterval(progressInterval)
       setIsTranslating(false)
@@ -320,14 +351,65 @@ export default function LingualaTranslator() {
   }
 
   const handleSourceTextChange = (text: string) => {
+    // Store previous state for undo
+    if (sourceText !== text) {
+      setLastTranslation({ source: sourceText, target: targetText })
+    }
+    
     setSourceText(text)
     
-    if (text.trim()) {
-      if (debounceRef.current) clearTimeout(debounceRef.current)
-      debounceRef.current = setTimeout(() => {
-        translateText(text, sourceLang, targetLang)
-      }, 800)
+    // Auto-translate after 1 second of no typing
+    if (autoTranslate) {
+      clearTimeout(debounceTimer.current!)
+      debounceTimer.current = setTimeout(() => {
+        if (text.trim()) {
+          translateText(text)
+        } else {
+          setTargetText('')
+        }
+      }, 1000)
     }
+  }
+
+  // Undo functionality (Nielsen's User Control heuristic)
+  const handleUndo = () => {
+    if (lastTranslation) {
+      setSourceText(lastTranslation.source)
+      setTargetText(lastTranslation.target)
+      setLastTranslation(null)
+    }
+  }
+
+  // Keyboard shortcuts (Nielsen's Efficiency heuristic)
+  useEffect(() => {
+    const handleKeyboard = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey) {
+        switch (e.key) {
+          case 'Enter':
+            e.preventDefault()
+            if (sourceText.trim()) translateText(sourceText)
+            break
+          case 'k':
+            e.preventDefault()
+            setShowHelp(!showHelp)
+            break
+          case 'z':
+            if (!e.shiftKey) {
+              e.preventDefault()
+              handleUndo()
+            }
+            break
+          case 'ArrowDown':
+            e.preventDefault()
+            swapLanguages()
+            break
+        }
+      }
+    }
+    
+    document.addEventListener('keydown', handleKeyboard)
+    return () => document.removeEventListener('keydown', handleKeyboard)
+  }, [sourceText, showHelp, lastTranslation])
   }
 
   const swapLanguages = () => {
@@ -780,8 +862,17 @@ export default function LingualaTranslator() {
                     placeholder="Enter text to translate..."
                     className="min-h-[200px] text-base border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
                   />
-                  <div className="absolute bottom-2 right-2 text-xs text-gray-400">
-                    {sourceText.length} / 5000
+                  <div className="absolute bottom-2 right-2 flex items-center space-x-2">
+                    <div className={`text-xs ${
+                      sourceText.length > 4500 ? 'text-red-500 font-semibold' : 
+                      sourceText.length > 4000 ? 'text-orange-500' :
+                      'text-gray-400'
+                    }`}>
+                      {sourceText.length} / 5000
+                    </div>
+                    {sourceText.length > 4500 && (
+                      <AlertCircle className="h-4 w-4 text-red-500" />
+                    )}
                   </div>
                 </div>
               </div>

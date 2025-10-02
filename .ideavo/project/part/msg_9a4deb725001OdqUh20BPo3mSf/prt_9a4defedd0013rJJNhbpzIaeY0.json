@@ -1,0 +1,50 @@
+{
+  "id": "prt_9a4defedd0013rJJNhbpzIaeY0",
+  "messageID": "msg_9a4deb725001OdqUh20BPo3mSf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_012Ya3Pg4k55cucGeJxDNix8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "  const [copySuccess, setCopySuccess] = useState(false)",
+          "newString": "  const [copySuccess, setCopySuccess] = useState(false)\n  const [showHelp, setShowHelp] = useState(false)\n  const [recentLanguagePairs, setRecentLanguagePairs] = useState<{from: string, to: string}[]>([])"
+        },
+        {
+          "oldString": "  const [translationProgress, setTranslationProgress] = useState(0)",
+          "newString": "  const [translationProgress, setTranslationProgress] = useState(0)\n  const [lastTranslation, setLastTranslation] = useState<{source: string, target: string} | null>(null)"
+        },
+        {
+          "oldString": "import { \n  ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n  Check, BookOpen, History, Upload, FileText,\n  Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n  TrendingUp, Award, Users, Palette, Brain, Target\n} from \"lucide-react\"",
+          "newString": "import { \n  ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n  Check, BookOpen, History, Upload, FileText,\n  Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n  TrendingUp, Award, Users, Palette, Brain, Target,\n  HelpCircle, RotateCcw, Keyboard, AlertCircle, Info\n} from \"lucide-react\""
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -162,8 +162,10 @@\n const [translationProgress, setTranslationProgress] = useState(0)\n \n // UI state\n const [copySuccess, setCopySuccess] = useState(false)\n+const [showHelp, setShowHelp] = useState(false)\n+const [recentLanguagePairs, setRecentLanguagePairs] = useState<{from: string, to: string}[]>([])\n const [showGlossary, setShowGlossary] = useState(false)\n const [showHistory, setShowHistory] = useState(false)\n const [showSettings, setShowSettings] = useState(false)\n const [translationMode, setTranslationMode] = useState<'text' | 'document'>('text')\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -159,8 +159,9 @@\n const [targetLang, setTargetLang] = useState(\"en\")\n const [selectedDomain, setSelectedDomain] = useState(\"general\")\n const [isTranslating, setIsTranslating] = useState(false)\n const [translationProgress, setTranslationProgress] = useState(0)\n+const [lastTranslation, setLastTranslation] = useState<{source: string, target: string} | null>(null)\n \n // UI state\n const [copySuccess, setCopySuccess] = useState(false)\n const [showHelp, setShowHelp] = useState(false)\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -17,9 +17,10 @@\n import { \n   ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n   Check, BookOpen, History, Upload, FileText,\n   Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n-  TrendingUp, Award, Users, Palette, Brain, Target\n+  TrendingUp, Award, Users, Palette, Brain, Target,\n+  HelpCircle, RotateCcw, Keyboard, AlertCircle, Info\n } from \"lucide-react\"\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { UserProfile } from \"@/components/user-profile\"\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407707726,
+      "end": 1759407707758
+    }
+  }
+}

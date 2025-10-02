@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4dfefdb0013FR2f2kUX4NeoF",
+  "messageID": "msg_9a4deb725001OdqUh20BPo3mSf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01GnuNG3CdS7yDq9vDjgVN4A",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n \"const handleSourceTextChange\" /home/user/project/components/linguala-translator.tsx",
+      "description": "Find text change handler"
+    },
+    "output": "326:  const handleSourceTextChange = (text: string) => {\n",
+    "metadata": {
+      "output": "326:  const handleSourceTextChange = (text: string) => {\n",
+      "exit": 0,
+      "description": "Find text change handler"
+    },
+    "title": "grep -n \"const handleSourceTextChange\" /home/user/project/components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407764132,
+      "end": 1759407764136
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4e04c61001E4fqOOicXHAuvn",
+  "messageID": "msg_9a4deb725001OdqUh20BPo3mSf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_012zwpWqy519ZPpZEEgqnneA",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    \n    // Auto-translate after 1 second of no typing\n    if (autoTranslate) {\n      clearTimeout(debounceTimer.current!)\n      debounceTimer.current = setTimeout(() => {\n        if (text.trim()) {\n          translateText(text)\n        } else {\n          setTargetText('')\n        }\n      }, 1000)\n    }\n  }",
+      "newString": "  const handleSourceTextChange = (text: string) => {\n    // Store previous state for undo\n    if (sourceText !== text) {\n      setLastTranslation({ source: sourceText, target: targetText })\n    }\n    \n    setSourceText(text)\n    \n    // Auto-translate after 1 second of no typing\n    if (autoTranslate) {\n      clearTimeout(debounceTimer.current!)\n      debounceTimer.current = setTimeout(() => {\n        if (text.trim()) {\n          translateText(text)\n        } else {\n          setTargetText('')\n        }\n      }, 1000)\n    }\n  }\n\n  // Undo functionality (Nielsen's User Control heuristic)\n  const handleUndo = () => {\n    if (lastTranslation) {\n      setSourceText(lastTranslation.source)\n      setTargetText(lastTranslation.target)\n      setLastTranslation(null)\n    }\n  }\n\n  // Keyboard shortcuts (Nielsen's Efficiency heuristic)\n  useEffect(() => {\n    const handleKeyboard = (e: KeyboardEvent) => {\n      if (e.ctrlKey || e.metaKey) {\n        switch (e.key) {\n          case 'Enter':\n            e.preventDefault()\n            if (sourceText.trim()) translateText(sourceText)\n            break\n          case 'k':\n            e.preventDefault()\n            setShowHelp(!showHelp)\n            break\n          case 'z':\n            if (!e.shiftKey) {\n              e.preventDefault()\n              handleUndo()\n            }\n            break\n          case 'ArrowDown':\n            e.preventDefault()\n            swapLanguages()\n            break\n        }\n      }\n    }\n    \n    document.addEventListener('keydown', handleKeyboard)\n    return () => document.removeEventListener('keydown', handleKeyboard)\n  }, [sourceText, showHelp, lastTranslation])"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -323,18 +323,69 @@\n   }\n }\n \n const handleSourceTextChange = (text: string) => {\n+  // Store previous state for undo\n+  if (sourceText !== text) {\n+    setLastTranslation({ source: sourceText, target: targetText })\n+  }\n+  \n   setSourceText(text)\n   \n-  if (text.trim()) {\n-    if (debounceRef.current) clearTimeout(debounceRef.current)\n-    debounceRef.current = setTimeout(() => {\n-      translateText(text, sourceLang, targetLang)\n-    }, 800)\n+  // Auto-translate after 1 second of no typing\n+  if (autoTranslate) {\n+    clearTimeout(debounceTimer.current!)\n+    debounceTimer.current = setTimeout(() => {\n+      if (text.trim()) {\n+        translateText(text)\n+      } else {\n+        setTargetText('')\n+      }\n+    }, 1000)\n   }\n }\n \n+// Undo functionality (Nielsen's User Control heuristic)\n+const handleUndo = () => {\n+  if (lastTranslation) {\n+    setSourceText(lastTranslation.source)\n+    setTargetText(lastTranslation.target)\n+    setLastTranslation(null)\n+  }\n+}\n+\n+// Keyboard shortcuts (Nielsen's Efficiency heuristic)\n+useEffect(() => {\n+  const handleKeyboard = (e: KeyboardEvent) => {\n+    if (e.ctrlKey || e.metaKey) {\n+      switch (e.key) {\n+        case 'Enter':\n+          e.preventDefault()\n+          if (sourceText.trim()) translateText(sourceText)\n+          break\n+        case 'k':\n+          e.preventDefault()\n+          setShowHelp(!showHelp)\n+          break\n+        case 'z':\n+          if (!e.shiftKey) {\n+            e.preventDefault()\n+            handleUndo()\n+          }\n+          break\n+        case 'ArrowDown':\n+          e.preventDefault()\n+          swapLanguages()\n+          break\n+      }\n+    }\n+  }\n+  \n+  document.addEventListener('keydown', handleKeyboard)\n+  return () => document.removeEventListener('keydown', handleKeyboard)\n+}, [sourceText, showHelp, lastTranslation])\n+}\n+\n const swapLanguages = () => {\n   if (sourceLang === \"auto\") return\n   \n   setSourceLang(targetLang)\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407794469,
+      "end": 1759407794486
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a50d20f9001LiSUQv77NcCPpG",
+  "messageID": "msg_9a50c0d77001er11hjucljMi6l",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Q4FF4W4ZcA9hGbE6ZFKt5j",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "import GoogleProvider from \"next-auth/providers/google\"\n\nimport EmailProvider from \"next-auth/providers/email\"",
+      "newString": "import GoogleProvider from \"next-auth/providers/google\"\nimport EmailProvider from \"next-auth/providers/email\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -1,9 +1,8 @@\n import { NextAuthOptions } from \"next-auth\"\n import { PrismaAdapter } from \"@auth/prisma-adapter\"\n import { prisma } from \"@/lib/prisma\"\n import GoogleProvider from \"next-auth/providers/google\"\n-\n import EmailProvider from \"next-auth/providers/email\"\n import CredentialsProvider from \"next-auth/providers/credentials\"\n \n export const authOptions: NextAuthOptions = {\n"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759410726080,
+      "end": 1759410726084
+    }
+  }
+}

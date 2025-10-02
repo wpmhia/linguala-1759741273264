@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a50dd092001EmJzpXYwv0bS1X",
+  "messageID": "msg_9a50c0d77001er11hjucljMi6l",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! GitHub authentication has been successfully removed from your project. Here's what was cleaned up:\n\n**Changes Made:**\n- **Removed GitHub import** from `/lib/auth.ts:5`\n- **Removed GitHub provider configuration** from authentication options\n- **Removed GitHub button** from sign-in page `/app/auth/signin/page.tsx`\n- **Removed GitHub icon import** from Lucide React\n\n**What Remains Active:**\n- ✅ **Google OAuth** - Fully functional when `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` are configured\n- ✅ **Email authentication** - Available when SMTP settings are configured  \n- ✅ **Demo credentials** - For development/testing purposes\n\nThe build completed successfully with no errors, confirming the authentication system is clean and functional without GitHub.",
+  "time": {
+    "start": 1759410774123,
+    "end": 1759410774123
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a50d2eda001dP73gW3SsDEm6m",
+  "messageID": "msg_9a50c0d77001er11hjucljMi6l",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01GMxHZFkBQwHDyDUG8vhkis",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "    ] : []),\n    \n\n  ],",
+      "newString": "    ] : []),\n  ],"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -49,10 +49,8 @@\n       clientId: process.env.GOOGLE_CLIENT_ID,\n       clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n     })\n   ] : []),\n-  \n-\n ],\n \n session: {\n   strategy: \"jwt\",\n"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759410729605,
+      "end": 1759410729607
+    }
+  }
+}

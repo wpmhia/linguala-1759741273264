@@ -1,0 +1,42 @@
+{
+  "id": "prt_9a50c53ce001AabZVvwty5yR75",
+  "messageID": "msg_9a50c0d77001er11hjucljMi6l",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01KUSnjySmokMKxCv2554RW9",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "edits": [
+        {
+          "oldString": "import GitHubProvider from \"next-auth/providers/github\"",
+          "newString": ""
+        },
+        {
+          "oldString": "    // GitHub OAuth provider - only enable if credentials are configured\n    ...(process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET ? [\n      GitHubProvider({\n        clientId: process.env.GITHUB_CLIENT_ID,\n        clientSecret: process.env.GITHUB_CLIENT_SECRET,\n      })\n    ] : []),",
+          "newString": ""
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -1,9 +1,9 @@\n import { NextAuthOptions } from \"next-auth\"\n import { PrismaAdapter } from \"@auth/prisma-adapter\"\n import { prisma } from \"@/lib/prisma\"\n import GoogleProvider from \"next-auth/providers/google\"\n-import GitHubProvider from \"next-auth/providers/github\"\n+\n import EmailProvider from \"next-auth/providers/email\"\n import CredentialsProvider from \"next-auth/providers/credentials\"\n \n export const authOptions: NextAuthOptions = {\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -51,15 +51,9 @@\n       clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n     })\n   ] : []),\n   \n-  // GitHub OAuth provider - only enable if credentials are configured\n-  ...(process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET ? [\n-    GitHubProvider({\n-      clientId: process.env.GITHUB_CLIENT_ID,\n-      clientSecret: process.env.GITHUB_CLIENT_SECRET,\n-    })\n-  ] : []),\n+\n ],\n \n session: {\n   strategy: \"jwt\",\n"
+        }
+      ]
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759410675620,
+      "end": 1759410675641
+    }
+  }
+}

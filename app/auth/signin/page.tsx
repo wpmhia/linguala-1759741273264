@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Separator } from "@/components/ui/separator"
-import { Mail, Github, Chrome, AlertTriangle } from "lucide-react"
+import { Mail, Chrome, AlertTriangle } from "lucide-react"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 
 function SignInForm() {
@@ -164,18 +164,6 @@ function SignInForm() {
                   >
                     <Chrome className="h-4 w-4 mr-2" />
                     Google
-                  </Button>
-                )}
-                
-                {providers.github && (
-                  <Button
-                    variant="outline"
-                    onClick={() => handleOAuthSignIn("github")}
-                    disabled={isLoading}
-                    className="w-full"
-                  >
-                    <Github className="h-4 w-4 mr-2" />
-                    GitHub
                   </Button>
                 )}
               </div>

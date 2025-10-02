@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a50c23bc001w6ddFu4OZ6ddLM",
+  "messageID": "msg_9a50c0d77001er11hjucljMi6l",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "list",
+  "callID": "toolu_015pTMmky8Q1tXPZwUBYk3Pq",
+  "state": {
+    "status": "completed",
+    "input": {
+      "path": "/home/user/project"
+    },
+    "output": "/home/user/project/\n  app/\n    api/\n      auth/\n        [...nextauth]/\n          route.ts\n      extract-document/\n        route.ts\n      glossary/\n        route.ts\n      translate/\n        route.ts\n      translations/\n        route.ts\n    auth/\n      signin/\n        page.tsx\n      verify-request/\n        page.tsx\n    env-check/\n      page.tsx\n    globals.css\n    layout.tsx\n    page.tsx\n  components/\n    providers/\n      session-provider.tsx\n    ui/\n      accordion.tsx\n      alert-dialog.tsx\n      alert.tsx\n      aspect-ratio.tsx\n      avatar.tsx\n      badge.tsx\n      breadcrumb.tsx\n      button.tsx\n      calendar.tsx\n      card.tsx\n      carousel.tsx\n      chart.tsx\n      checkbox.tsx\n      collapsible.tsx\n      command.tsx\n      context-menu.tsx\n      dialog.tsx\n      drawer.tsx\n      dropdown-menu.tsx\n      form.tsx\n      hover-card.tsx\n      input-otp.tsx\n      input.tsx\n      label.tsx\n      linguala-logo.tsx\n      menubar.tsx\n      navigation-menu.tsx\n      pagination.tsx\n      popover.tsx\n      progress.tsx\n      radio-group.tsx\n      resizable.tsx\n      scroll-area.tsx\n      select.tsx\n      separator.tsx\n      sheet.tsx\n      skeleton.tsx\n      slider.tsx\n      sonner.tsx\n      switch.tsx\n      table.tsx\n      tabs.tsx\n      textarea.tsx\n      toast.tsx\n      toaster.tsx\n      toggle-group.tsx\n      toggle.tsx\n      tooltip.tsx\n    linguala-translator.tsx\n    translator-nielsen.tsx\n    translator.tsx\n    user-profile.tsx\n  hooks/\n    use-toast.ts\n  lib/\n    auth.ts\n    env-config.ts\n    prisma.ts\n    utils.ts\n  prisma/\n    schema.prisma\n  public/\n    scripts/\n      iframe-navigation.js\n  types/\n    next-auth.d.ts\n  .gitignore\n  bun.lock\n  components.json\n  dev.log\n  ideavo-server.info\n  middleware.ts\n  next.config.js\n  package-lock.json\n  package.json\n  postcss.config.js\n  tailwind.config.ts\n  tsconfig.json\n",
+    "metadata": {
+      "count": 84,
+      "truncated": false
+    },
+    "title": "",
+    "time": {
+      "start": 1759410660733,
+      "end": 1759410660747
+    }
+  }
+}

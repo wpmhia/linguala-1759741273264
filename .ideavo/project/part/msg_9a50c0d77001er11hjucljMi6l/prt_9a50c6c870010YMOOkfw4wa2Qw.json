@@ -1,0 +1,42 @@
+{
+  "id": "prt_9a50c6c870010YMOOkfw4wa2Qw",
+  "messageID": "msg_9a50c0d77001er11hjucljMi6l",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01CRbvTjbbtdTXHmqXnCefS8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/auth/signin/page.tsx",
+      "edits": [
+        {
+          "oldString": "import { Mail, Github, Chrome, AlertTriangle } from \"lucide-react\"",
+          "newString": "import { Mail, Chrome, AlertTriangle } from \"lucide-react\""
+        },
+        {
+          "oldString": "                {providers.github && (\n                  <Button\n                    variant=\"outline\"\n                    onClick={() => handleOAuthSignIn(\"github\")}\n                    disabled={isLoading}\n                    className=\"w-full\"\n                  >\n                    <Github className=\"h-4 w-4 mr-2\" />\n                    GitHub\n                  </Button>\n                )}",
+          "newString": ""
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/auth/signin/page.tsx\n===================================================================\n--- /home/user/project/app/auth/signin/page.tsx\n+++ /home/user/project/app/auth/signin/page.tsx\n@@ -7,9 +7,9 @@\n import { Input } from \"@/components/ui/input\"\n import { Card, CardContent, CardDescription, CardHeader, CardTitle } from \"@/components/ui/card\"\n import { Alert, AlertDescription } from \"@/components/ui/alert\"\n import { Separator } from \"@/components/ui/separator\"\n-import { Mail, Github, Chrome, AlertTriangle } from \"lucide-react\"\n+import { Mail, Chrome, AlertTriangle } from \"lucide-react\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n \n function SignInForm() {\n   const [email, setEmail] = useState(\"\")\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/auth/signin/page.tsx\n===================================================================\n--- /home/user/project/app/auth/signin/page.tsx\n+++ /home/user/project/app/auth/signin/page.tsx\n@@ -166,19 +166,9 @@\n           Google\n         </Button>\n       )}\n       \n-      {providers.github && (\n-        <Button\n-          variant=\"outline\"\n-          onClick={() => handleOAuthSignIn(\"github\")}\n-          disabled={isLoading}\n-          className=\"w-full\"\n-        >\n-          <Github className=\"h-4 w-4 mr-2\" />\n-          GitHub\n-        </Button>\n-      )}\n+\n     </div>\n   </>\n )}\n \n"
+        }
+      ]
+    },
+    "title": "app/auth/signin/page.tsx",
+    "time": {
+      "start": 1759410681775,
+      "end": 1759410681781
+    }
+  }
+}

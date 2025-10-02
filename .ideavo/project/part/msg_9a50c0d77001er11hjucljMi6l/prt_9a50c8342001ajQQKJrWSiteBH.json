@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a50c8342001ajQQKJrWSiteBH",
+  "messageID": "msg_9a50c0d77001er11hjucljMi6l",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01DZhPUKj7hL86XdPA6Atdrc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "GITHUB",
+      "include": "*.ts"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "GITHUB",
+    "time": {
+      "start": 1759410685205,
+      "end": 1759410685219
+    }
+  }
+}

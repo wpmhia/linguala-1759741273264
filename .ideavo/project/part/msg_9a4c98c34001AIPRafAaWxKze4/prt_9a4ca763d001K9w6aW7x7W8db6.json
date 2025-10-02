@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4ca763d001K9w6aW7x7W8db6",
+  "messageID": "msg_9a4c98c34001AIPRafAaWxKze4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01DTGx7JFLUSZzNEUbT8xJvE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" || true; npm start",
+      "timeout": 6000,
+      "description": "Restart Linguala with real-time always enabled"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart Linguala with real-time always enabled"
+    },
+    "title": "pkill -f \"next\" || true; npm start",
+    "time": {
+      "start": 1759406357052,
+      "end": 1759406357063
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "prt_9a4c9bf19001nVcnTiXzyuH5YU",
+  "messageID": "msg_9a4c98c34001AIPRafAaWxKze4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01D4xUfsyfhAJy4d7ZC7dWvK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "  // UI state\n  const [realTimeEnabled, setRealTimeEnabled] = useState(true)",
+          "newString": "  // UI state"
+        },
+        {
+          "oldString": "                {/* Real-time toggle */}\n                <div className=\"flex items-center space-x-2\">\n                  {realTimeEnabled ? \n                    <Zap className=\"h-4 w-4 text-emerald-500\" /> : \n                    <ZapOff className=\"h-4 w-4 text-gray-400\" />\n                  }\n                  <span className=\"text-sm font-medium\">Real-time</span>\n                  <Switch \n                    checked={realTimeEnabled} \n                    onCheckedChange={setRealTimeEnabled}\n                  />\n                </div>\n\n                {/* Current domain */}",
+          "newString": "                {/* Current domain */}"
+        },
+        {
+          "oldString": "  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    \n    if (realTimeEnabled && text.trim()) {\n      if (debounceRef.current) clearTimeout(debounceRef.current)\n      debounceRef.current = setTimeout(() => {\n        translateText(text, sourceLang, targetLang)\n      }, 800)\n    }\n  }",
+          "newString": "  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    \n    if (text.trim()) {\n      if (debounceRef.current) clearTimeout(debounceRef.current)\n      debounceRef.current = setTimeout(() => {\n        translateText(text, sourceLang, targetLang)\n      }, 800)\n    }\n  }"
+        },
+        {
+          "oldString": "            {/* Manual Translate Button for non-realtime mode */}\n            {!realTimeEnabled && sourceText.trim() && (\n              <div className=\"text-center\">\n                <Button \n                  onClick={() => translateText(sourceText, sourceLang, targetLang)}\n                  disabled={isTranslating}\n                  size=\"lg\"\n                  className=\"bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200\"\n                >\n                  {isTranslating ? (\n                    <>\n                      <Sparkles className=\"h-5 w-5 mr-2 animate-spin\" />\n                      Translating...\n                    </>\n                  ) : (\n                    <>\n                      <Sparkles className=\"h-5 w-5 mr-2\" />\n                      Translate\n                    </>\n                  )}\n                </Button>\n              </div>\n            )}",
+          "newString": ""
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -151,9 +151,8 @@\n const [isTranslating, setIsTranslating] = useState(false)\n const [translationProgress, setTranslationProgress] = useState(0)\n \n // UI state\n-const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n const [copySuccess, setCopySuccess] = useState(false)\n const [showGlossary, setShowGlossary] = useState(false)\n const [showHistory, setShowHistory] = useState(false)\n const [showSettings, setShowSettings] = useState(false)\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -474,21 +474,8 @@\n <Card className=\"shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8\">\n   <CardHeader className=\"pb-4\">\n     <div className=\"flex items-center justify-between\">\n       <div className=\"flex items-center space-x-4\">\n-        {/* Real-time toggle */}\n-        <div className=\"flex items-center space-x-2\">\n-          {realTimeEnabled ? \n-            <Zap className=\"h-4 w-4 text-emerald-500\" /> : \n-            <ZapOff className=\"h-4 w-4 text-gray-400\" />\n-          }\n-          <span className=\"text-sm font-medium\">Real-time</span>\n-          <Switch \n-            checked={realTimeEnabled} \n-            onCheckedChange={setRealTimeEnabled}\n-          />\n-        </div>\n-\n         {/* Current domain */}\n         <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n           <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n           <span>{getDomainInfo(selectedDomain).name}</span>\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -321,9 +321,9 @@\n \n const handleSourceTextChange = (text: string) => {\n   setSourceText(text)\n   \n-  if (realTimeEnabled && text.trim()) {\n+  if (text.trim()) {\n     if (debounceRef.current) clearTimeout(debounceRef.current)\n     debounceRef.current = setTimeout(() => {\n       translateText(text, sourceLang, targetLang)\n     }, 800)\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -834,31 +834,9 @@\n         </div>\n       </div>\n     </div>\n \n-    {/* Manual Translate Button for non-realtime mode */}\n-    {!realTimeEnabled && sourceText.trim() && (\n-      <div className=\"text-center\">\n-        <Button \n-          onClick={() => translateText(sourceText, sourceLang, targetLang)}\n-          disabled={isTranslating}\n-          size=\"lg\"\n-          className=\"bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200\"\n-        >\n-          {isTranslating ? (\n-            <>\n-              <Sparkles className=\"h-5 w-5 mr-2 animate-spin\" />\n-              Translating...\n-            </>\n-          ) : (\n-            <>\n-              <Sparkles className=\"h-5 w-5 mr-2\" />\n-              Translate\n-            </>\n-          )}\n-        </Button>\n-      </div>\n-    )}\n+\n   </CardContent>\n </Card>\n \n {/* Quick Actions */}\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406317667,
+      "end": 1759406317698
+    }
+  }
+}

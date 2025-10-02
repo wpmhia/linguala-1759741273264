@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4c9f6e7001DXa5nJqB4DdU8J",
+  "messageID": "msg_9a4c98c34001AIPRafAaWxKze4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_018Pf4jDE4JJiViHEJKXMhpF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { \n  ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n  Zap, ZapOff, Check, BookOpen, History, Upload, FileText,\n  Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n  TrendingUp, Award, Users, Palette, Brain, Target\n} from \"lucide-react\"",
+      "newString": "import { \n  ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n  Check, BookOpen, History, Upload, FileText,\n  Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n  TrendingUp, Award, Users, Palette, Brain, Target\n} from \"lucide-react\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -15,9 +15,9 @@\n import { Separator } from \"@/components/ui/separator\"\n import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\n import { \n   ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n-  Zap, ZapOff, Check, BookOpen, History, Upload, FileText,\n+  Check, BookOpen, History, Upload, FileText,\n   Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n   TrendingUp, Award, Users, Palette, Brain, Target\n } from \"lucide-react\"\n import { toast } from \"sonner\"\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406325442,
+      "end": 1759406325447
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4cabb34001l5YREiSSa94GLs",
+  "messageID": "msg_9a4c98c34001AIPRafAaWxKze4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(translator): remove real-time toggle and simplify UI",
+  "cost": 0.21125955000000002,
+  "tokens": {
+    "input": 2,
+    "output": 147,
+    "reasoning": 0,
+    "cache": {
+      "write": 173,
+      "read": 57865
+    }
+  }
+}

@@ -16,7 +16,7 @@ import { Separator } from "@/components/ui/separator"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { 
   ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,
-  Zap, ZapOff, Check, BookOpen, History, Upload, FileText,
+  Check, BookOpen, History, Upload, FileText,
   Search, Trash2, Plus, Volume2, ChevronRight, Globe,
   TrendingUp, Award, Users, Palette, Brain, Target
 } from "lucide-react"
@@ -152,7 +152,6 @@ export default function LingualaTranslator() {
   const [translationProgress, setTranslationProgress] = useState(0)
 
   // UI state
-  const [realTimeEnabled, setRealTimeEnabled] = useState(true)
   const [copySuccess, setCopySuccess] = useState(false)
   const [showGlossary, setShowGlossary] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
@@ -323,7 +322,7 @@ export default function LingualaTranslator() {
   const handleSourceTextChange = (text: string) => {
     setSourceText(text)
     
-    if (realTimeEnabled && text.trim()) {
+    if (text.trim()) {
       if (debounceRef.current) clearTimeout(debounceRef.current)
       debounceRef.current = setTimeout(() => {
         translateText(text, sourceLang, targetLang)
@@ -476,19 +475,6 @@ export default function LingualaTranslator() {
           <CardHeader className="pb-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                {/* Real-time toggle */}
-                <div className="flex items-center space-x-2">
-                  {realTimeEnabled ? 
-                    <Zap className="h-4 w-4 text-emerald-500" /> : 
-                    <ZapOff className="h-4 w-4 text-gray-400" />
-                  }
-                  <span className="text-sm font-medium">Real-time</span>
-                  <Switch 
-                    checked={realTimeEnabled} 
-                    onCheckedChange={setRealTimeEnabled}
-                  />
-                </div>
-
                 {/* Current domain */}
                 <Badge variant="secondary" className="flex items-center space-x-1">
                   <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />
@@ -849,29 +835,7 @@ export default function LingualaTranslator() {
               </div>
             </div>
 
-            {/* Manual Translate Button for non-realtime mode */}
-            {!realTimeEnabled && sourceText.trim() && (
-              <div className="text-center">
-                <Button 
-                  onClick={() => translateText(sourceText, sourceLang, targetLang)}
-                  disabled={isTranslating}
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-                >
-                  {isTranslating ? (
-                    <>
-                      <Sparkles className="h-5 w-5 mr-2 animate-spin" />
-                      Translating...
-                    </>
-                  ) : (
-                    <>
-                      <Sparkles className="h-5 w-5 mr-2" />
-                      Translate
-                    </>
-                  )}
-                </Button>
-              </div>
-            )}
+
           </CardContent>
         </Card>
 

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4c9a531001gm04ocDKIb00FD",
+  "messageID": "msg_9a4c98c34001AIPRafAaWxKze4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01VYMLt5XzMD1cyFhiFkd7Uh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n \"Real-time toggle\" /home/user/project/components/linguala-translator.tsx",
+      "description": "Find the real-time toggle section"
+    },
+    "output": "479:                {/* Real-time toggle */}\n",
+    "metadata": {
+      "output": "479:                {/* Real-time toggle */}\n",
+      "exit": 0,
+      "description": "Find the real-time toggle section"
+    },
+    "title": "grep -n \"Real-time toggle\" /home/user/project/components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406303229,
+      "end": 1759406303244
+    }
+  }
+}

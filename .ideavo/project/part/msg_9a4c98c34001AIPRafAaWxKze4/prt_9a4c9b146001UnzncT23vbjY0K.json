@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4c9b146001UnzncT23vbjY0K",
+  "messageID": "msg_9a4c98c34001AIPRafAaWxKze4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_013SoEyWuGQc4qAN51Krremv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 475,
+      "limit": 20
+    },
+    "output": "<file>\n00476|           <CardHeader className=\"pb-4\">\n00477|             <div className=\"flex items-center justify-between\">\n00478|               <div className=\"flex items-center space-x-4\">\n00479|                 {/* Real-time toggle */}\n00480|                 <div className=\"flex items-center space-x-2\">\n00481|                   {realTimeEnabled ? \n00482|                     <Zap className=\"h-4 w-4 text-emerald-500\" /> : \n00483|                     <ZapOff className=\"h-4 w-4 text-gray-400\" />\n00484|                   }\n00485|                   <span className=\"text-sm font-medium\">Real-time</span>\n00486|                   <Switch \n00487|                     checked={realTimeEnabled} \n00488|                     onCheckedChange={setRealTimeEnabled}\n00489|                   />\n00490|                 </div>\n00491| \n00492|                 {/* Current domain */}\n00493|                 <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n00494|                   <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n00495|                   <span>{getDomainInfo(selectedDomain).name}</span>\n\n(File has more lines. Use 'offset' parameter to read beyond line 495)\n</file>",
+    "metadata": {
+      "preview": "          <CardHeader className=\"pb-4\">\n            <div className=\"flex items-center justify-between\">\n              <div className=\"flex items-center space-x-4\">\n                {/* Real-time toggle */}\n                <div className=\"flex items-center space-x-2\">\n                  {realTimeEnabled ? \n                    <Zap className=\"h-4 w-4 text-emerald-500\" /> : \n                    <ZapOff className=\"h-4 w-4 text-gray-400\" />\n                  }\n                  <span className=\"text-sm font-medium\">Real-time</span>\n                  <Switch \n                    checked={realTimeEnabled} \n                    onCheckedChange={setRealTimeEnabled}\n                  />\n                </div>\n\n                {/* Current domain */}\n                <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n                  <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n                  <span>{getDomainInfo(selectedDomain).name}</span>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406306197,
+      "end": 1759406306199
+    }
+  }
+}

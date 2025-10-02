@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4ca09930012QRog7wSM90OLa",
+  "messageID": "msg_9a4c98c34001AIPRafAaWxKze4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01DqzvqtYSGv9ywoqdTc4g3B",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run build",
+      "timeout": 25000,
+      "description": "Build Linguala with real-time toggle removed"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/11) ...\n   Generating static pages (2/11) \r\n   Generating static pages (5/11) \r\n   Generating static pages (8/11) \r\n ✓ Generating static pages (11/11)\n   Finalizing page optimization ...\n   Collecting build traces ...\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/11) ...\n   Generating static pages (2/11) \r\n   Generating static pages (5/11) \r\n   Generating static pages (8/11) \r\n ✓ Generating static pages (11/11)\n   Finalizing page optimization ...\n   Collecting build traces ...\n",
+      "exit": null,
+      "description": "Build Linguala with real-time toggle removed"
+    },
+    "title": "npm run build",
+    "time": {
+      "start": 1759406328933,
+      "end": 1759406353940
+    }
+  }
+}

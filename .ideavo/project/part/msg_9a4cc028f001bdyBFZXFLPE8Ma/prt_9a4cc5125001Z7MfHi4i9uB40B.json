@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4cc5125001Z7MfHi4i9uB40B",
+  "messageID": "msg_9a4cc028f001bdyBFZXFLPE8Ma",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01WmNcZ7FihzqkxeUENQExxV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 780,
+      "limit": 40
+    },
+    "output": "<file>\n00781|               {/* Translated Text */}\n00782|               <div className=\"space-y-3\">\n00783|                 <div className=\"flex items-center justify-between\">\n00784|                   <Label className=\"text-base font-semibold text-gray-700 flex items-center space-x-2\">\n00785|                     <Sparkles className=\"h-4 w-4\" />\n00786|                     <span>{getLanguageName(targetLang)}</span>\n00787|                   </Label>\n00788|                   <div className=\"flex items-center space-x-2\">\n00789|                     {translatedText && (\n00790|                       <>\n00791|                         <Button\n00792|                           variant=\"ghost\"\n00793|                           size=\"sm\"\n00794|                           onClick={() => playAudio(translatedText, targetLang)}\n00795|                           className=\"text-gray-500 hover:text-blue-600\"\n00796|                         >\n00797|                           <Volume2 className=\"h-4 w-4\" />\n00798|                         </Button>\n00799|                         <Button\n00800|                           variant=\"ghost\"\n00801|                           size=\"sm\"\n00802|                           onClick={() => copyToClipboard(translatedText)}\n00803|                           className=\"text-gray-500 hover:text-blue-600\"\n00804|                         >\n00805|                           {copySuccess ? <Check className=\"h-4 w-4 text-green-600\" /> : <Copy className=\"h-4 w-4\" />}\n00806|                         </Button>\n00807|                       </>\n00808|                     )}\n00809|                   </div>\n00810|                 </div>\n00811|                 <div className=\"relative\">\n00812|                   <Textarea\n00813|                     value={translatedText}\n00814|                     readOnly\n00815|                     placeholder={isTranslating ? \"Translating...\" : \"Translation will appear here\"}\n00816|                     className=\"min-h-[200px] text-base bg-gradient-to-br from-blue-50/50 to-indigo-50/50 border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none\"\n00817|                   />\n00818|                   {isTranslating && translationProgress > 0 && (\n00819|                     <div className=\"absolute bottom-2 left-2 right-2\">\n00820|                       <div className=\"bg-white/80 rounded-full p-2\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 820)\n</file>",
+    "metadata": {
+      "preview": "              {/* Translated Text */}\n              <div className=\"space-y-3\">\n                <div className=\"flex items-center justify-between\">\n                  <Label className=\"text-base font-semibold text-gray-700 flex items-center space-x-2\">\n                    <Sparkles className=\"h-4 w-4\" />\n                    <span>{getLanguageName(targetLang)}</span>\n                  </Label>\n                  <div className=\"flex items-center space-x-2\">\n                    {translatedText && (\n                      <>\n                        <Button\n                          variant=\"ghost\"\n                          size=\"sm\"\n                          onClick={() => playAudio(translatedText, targetLang)}\n                          className=\"text-gray-500 hover:text-blue-600\"\n                        >\n                          <Volume2 className=\"h-4 w-4\" />\n                        </Button>\n                        <Button\n                          variant=\"ghost\""
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406478240,
+      "end": 1759406478243
+    }
+  }
+}

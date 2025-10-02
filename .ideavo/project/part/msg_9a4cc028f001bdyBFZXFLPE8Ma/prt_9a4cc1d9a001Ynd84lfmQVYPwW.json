@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4cc1d9a001Ynd84lfmQVYPwW",
+  "messageID": "msg_9a4cc028f001bdyBFZXFLPE8Ma",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01HTuXvoyd3iCF9zgR4TWDwn",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 350,
+      "limit": 20
+    },
+    "output": "<file>\n00351|   }\n00352| \n00353|   const playAudio = (text: string, lang: string) => {\n00354|     if ('speechSynthesis' in window) {\n00355|       const utterance = new SpeechSynthesisUtterance(text)\n00356|       utterance.lang = lang\n00357|       speechSynthesis.speak(utterance)\n00358|     }\n00359|   }\n00360| \n00361|   const addGlossaryEntry = async () => {\n00362|     if (!newGlossaryEntry.source.trim() || !newGlossaryEntry.target.trim()) {\n00363|       toast.error(\"Source and target terms are required\")\n00364|       return\n00365|     }\n00366| \n00367|     const entry: GlossaryEntry = {\n00368|       id: Date.now().toString(),\n00369|       source: newGlossaryEntry.source.trim(),\n00370|       target: newGlossaryEntry.target.trim(),\n\n(File has more lines. Use 'offset' parameter to read beyond line 370)\n</file>",
+    "metadata": {
+      "preview": "  }\n\n  const playAudio = (text: string, lang: string) => {\n    if ('speechSynthesis' in window) {\n      const utterance = new SpeechSynthesisUtterance(text)\n      utterance.lang = lang\n      speechSynthesis.speak(utterance)\n    }\n  }\n\n  const addGlossaryEntry = async () => {\n    if (!newGlossaryEntry.source.trim() || !newGlossaryEntry.target.trim()) {\n      toast.error(\"Source and target terms are required\")\n      return\n    }\n\n    const entry: GlossaryEntry = {\n      id: Date.now().toString(),\n      source: newGlossaryEntry.source.trim(),\n      target: newGlossaryEntry.target.trim(),"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406465029,
+      "end": 1759406465030
+    }
+  }
+}

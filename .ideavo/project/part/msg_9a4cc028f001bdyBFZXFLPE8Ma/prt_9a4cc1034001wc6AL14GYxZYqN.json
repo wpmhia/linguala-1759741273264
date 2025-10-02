@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4cc1034001wc6AL14GYxZYqN",
+  "messageID": "msg_9a4cc028f001bdyBFZXFLPE8Ma",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_016P2ktfboXQagao5pgru8Nc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 300,
+      "limit": 50
+    },
+    "output": "<file>\n00301|           headers: { 'Content-Type': 'application/json' },\n00302|           body: JSON.stringify({\n00303|             sourceText: text.trim(),\n00304|             translatedText: data.translatedText,\n00305|             sourceLang: from,\n00306|             targetLang: to,\n00307|             domain: selectedDomain\n00308|           })\n00309|         }).catch(console.error)\n00310|       }\n00311| \n00312|     } catch (error) {\n00313|       console.error(\"Translation error:\", error)\n00314|       toast.error(\"Translation failed. Please try again.\")\n00315|     } finally {\n00316|       clearInterval(progressInterval)\n00317|       setIsTranslating(false)\n00318|       setTranslationProgress(0)\n00319|     }\n00320|   }\n00321| \n00322|   const handleSourceTextChange = (text: string) => {\n00323|     setSourceText(text)\n00324|     \n00325|     if (text.trim()) {\n00326|       if (debounceRef.current) clearTimeout(debounceRef.current)\n00327|       debounceRef.current = setTimeout(() => {\n00328|         translateText(text, sourceLang, targetLang)\n00329|       }, 800)\n00330|     }\n00331|   }\n00332| \n00333|   const swapLanguages = () => {\n00334|     if (sourceLang === \"auto\") return\n00335|     \n00336|     setSourceLang(targetLang)\n00337|     setTargetLang(sourceLang)\n00338|     setSourceText(translatedText)\n00339|     setTranslatedText(sourceText)\n00340|   }\n00341| \n00342|   const copyToClipboard = async (text: string) => {\n00343|     try {\n00344|       await navigator.clipboard.writeText(text)\n00345|       setCopySuccess(true)\n00346|       toast.success(\"Copied to clipboard!\")\n00347|       setTimeout(() => setCopySuccess(false), 2000)\n00348|     } catch (error) {\n00349|       toast.error(\"Failed to copy text\")\n00350|     }\n\n(File has more lines. Use 'offset' parameter to read beyond line 350)\n</file>",
+    "metadata": {
+      "preview": "          headers: { 'Content-Type': 'application/json' },\n          body: JSON.stringify({\n            sourceText: text.trim(),\n            translatedText: data.translatedText,\n            sourceLang: from,\n            targetLang: to,\n            domain: selectedDomain\n          })\n        }).catch(console.error)\n      }\n\n    } catch (error) {\n      console.error(\"Translation error:\", error)\n      toast.error(\"Translation failed. Please try again.\")\n    } finally {\n      clearInterval(progressInterval)\n      setIsTranslating(false)\n      setTranslationProgress(0)\n    }\n  }"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406462007,
+      "end": 1759406462017
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a483e788001BnVDWh0JkzpFsI",
+  "messageID": "msg_9a482094d001LJ9qB3mvc5tNXs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Y7Z2gy3y1fDpUWcMDkMqX7",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"DASHSCOPE_API_KEY is set: $(echo $DASHSCOPE_API_KEY | cut -c1-10)...\"",
+      "description": "Check API key format"
+    },
+    "output": "DASHSCOPE_API_KEY is set: sk-ad9404d...\n",
+    "metadata": {
+      "output": "DASHSCOPE_API_KEY is set: sk-ad9404d...\n",
+      "exit": 0,
+      "description": "Check API key format"
+    },
+    "title": "echo \"DASHSCOPE_API_KEY is set: $(echo $DASHSCOPE_API_KEY | cut -c1-10)...\"",
+    "time": {
+      "start": 1759401732876,
+      "end": 1759401732880
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4821523001exwmkbqnXuvF2l",
+  "messageID": "msg_9a482094d001LJ9qB3mvc5tNXs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01PNf2ZBRCXJZ9HYMwtwdB2Y",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Hello world\", \"sourceLang\": \"en\", \"targetLang\": \"zh\"}'",
+      "description": "Test the translation API directly to see the error"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to localhost port 3000 after 1 ms: Couldn't connect to server\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to localhost port 3000 after 1 ms: Couldn't connect to server\n",
+      "exit": 7,
+      "description": "Test the translation API directly to see the error"
+    },
+    "title": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Hello world\", \"sourceLang\": \"en\", \"targetLang\": \"zh\"}'",
+    "time": {
+      "start": 1759401613800,
+      "end": 1759401613839
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4821191001rlVKW4d130K6Xb",
+  "messageID": "msg_9a482094d001LJ9qB3mvc5tNXs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see the translation API is returning a 500 error. Let me check the server logs to debug the issue.",
+  "time": {
+    "start": 1759401612510,
+    "end": 1759401612510
+  }
+}

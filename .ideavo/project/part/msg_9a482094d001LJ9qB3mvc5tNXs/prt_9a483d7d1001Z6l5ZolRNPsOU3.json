@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a483d7d1001Z6l5ZolRNPsOU3",
+  "messageID": "msg_9a482094d001LJ9qB3mvc5tNXs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_018DciGPFBgCbsG2zQGk2XZi",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"API key prefix: ${DASHSCOPE_API_KEY:0:10}...\"",
+      "description": "Check if API key is set correctly"
+    },
+    "output": "/bin/sh: 1: Bad substitution\n",
+    "metadata": {
+      "output": "/bin/sh: 1: Bad substitution\n",
+      "exit": 2,
+      "description": "Check if API key is set correctly"
+    },
+    "title": "echo \"API key prefix: ${DASHSCOPE_API_KEY:0:10}...\"",
+    "time": {
+      "start": 1759401729070,
+      "end": 1759401729072
+    }
+  }
+}

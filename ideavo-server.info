@@ -4,7 +4,19 @@ $ next dev
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 1890ms
- ✓ Compiled /middleware in 153ms
+ ✓ Ready in 1892ms
+ ✓ Compiled /middleware in 150ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
+ ✓ Compiled / in 4.6s (652 modules)
+ GET / 200 in 5177ms
+ ✓ Compiled in 607ms (337 modules)
+ GET / 200 in 34ms
+ ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ○ Compiling /api/translate ...
+ ✓ Compiled /api/translate in 526ms (345 modules)
+Qwen API error: {"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"1e69307f-5ec7-4472-a664-63cc51d3bc9a"}
+ POST /api/translate 500 in 943ms
+Qwen API error: {"error":{"message":"Incorrect API key provided. ","type":"invalid_request_error","param":null,"code":"invalid_api_key"},"request_id":"695445e6-ec54-47fa-afa7-efd4e1137653"}
+ POST /api/translate 500 in 1598ms

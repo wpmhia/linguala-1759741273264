@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a482cc020017XRfa0R56AJXzY",
+  "messageID": "msg_9a482094d001LJ9qB3mvc5tNXs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see the main issue is with the model name. Let me check for qwen-mt-turbo specifically:",
+  "time": {
+    "start": 1759401660268,
+    "end": 1759401660268
+  }
+}

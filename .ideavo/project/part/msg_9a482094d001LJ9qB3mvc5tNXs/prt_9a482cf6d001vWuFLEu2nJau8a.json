@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a482cf6d001vWuFLEu2nJau8a",
+  "messageID": "msg_9a482094d001LJ9qB3mvc5tNXs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LHqYKFNSefsrc1RaPC646Z",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Hello world\", \"sourceLang\": \"en\", \"targetLang\": \"zh\"}' -v",
+      "description": "Test API with verbose output to see the exact error"
+    },
+    "output": "Note: Unnecessary use of -X or --request, POST is already inferred.\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...\n* connect to 127.0.0.1 port 3000 failed: Connection refused\n*   Trying [::1]:3000...\n* connect to ::1 port 3000 failed: Connection refused\n* Failed to connect to localhost port 3000 after 1 ms: Couldn't connect to server\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n* Closing connection 0\ncurl: (7) Failed to connect to localhost port 3000 after 1 ms: Couldn't connect to server\n",
+    "metadata": {
+      "output": "Note: Unnecessary use of -X or --request, POST is already inferred.\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...\n* connect to 127.0.0.1 port 3000 failed: Connection refused\n*   Trying [::1]:3000...\n* connect to ::1 port 3000 failed: Connection refused\n* Failed to connect to localhost port 3000 after 1 ms: Couldn't connect to server\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n* Closing connection 0\ncurl: (7) Failed to connect to localhost port 3000 after 1 ms: Couldn't connect to server\n",
+      "exit": 7,
+      "description": "Test API with verbose output to see the exact error"
+    },
+    "title": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Hello world\", \"sourceLang\": \"en\", \"targetLang\": \"zh\"}' -v",
+    "time": {
+      "start": 1759401661658,
+      "end": 1759401661673
+    }
+  }
+}

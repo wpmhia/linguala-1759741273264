@@ -1,0 +1,19 @@
+{
+  "id": "prt_9a4839467001iWbcaOc5GJGoWF",
+  "messageID": "msg_9a482094d001LJ9qB3mvc5tNXs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01N1Ps2u9eYYnHyA3T4TMeNZ",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/tmp/app/api/translate/route.ts"
+    },
+    "error": "Error: File /tmp/app/api/translate/route.ts is not in the current working directory",
+    "time": {
+      "start": 1759401711322,
+      "end": 1759401711322
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4fd8ea5001vb4DwujIa27KRX",
+  "messageID": "msg_9a4fb5c29001KTT0zDCqK9LhOh",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translate): restore proper translation API implementation",
+  "cost": 0.34717875,
+  "tokens": {
+    "input": 0,
+    "output": 397,
+    "reasoning": 0,
+    "cache": {
+      "write": 628,
+      "read": 84622
+    }
+  }
+}

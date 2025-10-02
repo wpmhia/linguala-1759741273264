@@ -4,32 +4,98 @@ $ next dev
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2s
- ✓ Compiled /middleware in 155ms
+ ✓ Ready in 1909ms
+ ✓ Compiled /middleware in 153ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
- ✓ Compiled / in 4.1s (793 modules)
- GET / 200 in 4749ms
- ✓ Compiled in 696ms (408 modules)
- GET / 200 in 39ms
+ ✓ Compiled / in 4.7s (793 modules)
+ GET / 200 in 5634ms
+ ✓ Compiled in 1027ms (408 modules)
+ GET / 200 in 45ms
  ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
  ○ Compiling /api/auth/[...nextauth] ...
- ✓ Compiled /api/auth/[...nextauth] in 778ms (627 modules)
- GET /api/auth/session 200 in 1549ms
- GET /api/auth/session 200 in 28ms
- ✓ Compiled /api/translate in 445ms (653 modules)
- POST /api/translate 400 in 370ms
- POST /api/translate 400 in 578ms
- POST /api/translate 400 in 10ms
- POST /api/translate 400 in 12ms
- POST /api/translate 400 in 10ms
- POST /api/translate 400 in 9ms
- POST /api/translate 400 in 10ms
- POST /api/translate 400 in 10ms
- POST /api/translate 400 in 11ms
- POST /api/translate 400 in 10ms
- POST /api/translate 400 in 10ms
- POST /api/translate 400 in 10ms
- POST /api/translate 400 in 11ms
- POST /api/translate 400 in 11ms
+ ✓ Compiled /api/auth/[...nextauth] in 692ms (627 modules)
+ GET /api/auth/session 200 in 1429ms
+ GET /api/auth/session 200 in 26ms
+ ✓ Compiled /api/translate in 454ms (653 modules)
+Translation request body: { text: 'Wa', sourceLang: 'auto', targetLang: 'da' }
+Translation request body: { text: 'W', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 257ms
+ POST /api/translate 200 in 569ms
+Translation request body: { text: 'Wat', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 38ms
+Translation request body: { text: 'Wat ', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat g', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat ga', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat gaa', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 10ms
+Translation request body: { text: 'Wat gaan', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat gaan ', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat gaan w', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat gaan we', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 9ms
+Translation request body: { text: 'Wat gaan we ', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 9ms
+Translation request body: { text: 'Wat gaan we v', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat gaan we vn', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 10ms
+Translation request body: { text: 'Wat gaan we vna', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 9ms
+Translation request body: { text: 'Wat gaan we vn', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 10ms
+Translation request body: { text: 'Wat gaan we v', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat gaan we va', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 10ms
+Translation request body: { text: 'Wat gaan we van', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 12ms
+Translation request body: { text: 'Wat gaan we vana', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 12ms
+Translation request body: { text: 'Wat gaan we vanav', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 12ms
+Translation request body: { text: 'Wat gaan we vanavo', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 11ms
+Translation request body: { text: 'Wat gaan we vanavon', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 10ms
+Translation request body: { text: 'Wat gaan we vanavond', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 14ms
+Translation request body: { text: 'Wat gaan we vanavond ', sourceLang: 'auto', targetLang: 'da' }
+ POST /api/translate 200 in 17ms
+Translation request body: {
+  text: 'Wat gaan we vanavond e',
+  sourceLang: 'auto',
+  targetLang: 'da'
+}
+ POST /api/translate 200 in 10ms
+Translation request body: {
+  text: 'Wat gaan we vanavond et',
+  sourceLang: 'auto',
+  targetLang: 'da'
+}
+ POST /api/translate 200 in 11ms
+Translation request body: {
+  text: 'Wat gaan we vanavond ete',
+  sourceLang: 'auto',
+  targetLang: 'da'
+}
+ POST /api/translate 200 in 11ms
+Translation request body: {
+  text: 'Wat gaan we vanavond eten',
+  sourceLang: 'auto',
+  targetLang: 'da'
+}
+ POST /api/translate 200 in 9ms
+Translation request body: {
+  text: 'Wat gaan we vanavond eten ',
+  sourceLang: 'auto',
+  targetLang: 'da'
+}
+ POST /api/translate 200 in 10ms

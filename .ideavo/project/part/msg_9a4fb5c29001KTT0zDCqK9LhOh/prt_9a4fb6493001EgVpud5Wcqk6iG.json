@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4fb6493001EgVpud5Wcqk6iG",
+  "messageID": "msg_9a4fb5c29001KTT0zDCqK9LhOh",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "You're right! The translation API is currently using a mock implementation that just shows placeholder text. Let me fix this by implementing proper translation functionality. The issue is that I temporarily replaced the actual translation service with a mock.\n\nLet me restore the real translation API:",
+  "time": {
+    "start": 1759409564261,
+    "end": 1759409564261
+  }
+}

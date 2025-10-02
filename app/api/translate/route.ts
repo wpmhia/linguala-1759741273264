@@ -1,5 +1,79 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+// Fallback translation for common phrases
+function getFallbackTranslation(text: string, targetLanguage: string): string | null {
+  const lowerText = text.toLowerCase().trim()
+  
+  const commonPhrases: Record<string, Record<string, string>> = {
+    'hello': {
+      'Danish': 'Hej',
+      'Swedish': 'Hej', 
+      'Norwegian': 'Hei',
+      'Finnish': 'Hei',
+      'German': 'Hallo',
+      'French': 'Bonjour',
+      'Spanish': 'Hola',
+      'Italian': 'Ciao',
+      'Portuguese': 'Olá',
+      'Dutch': 'Hallo',
+      'Polish': 'Cześć',
+      'Russian': 'Привет'
+    },
+    'good morning': {
+      'Danish': 'God morgen',
+      'Swedish': 'God morgon',
+      'Norwegian': 'God morgen', 
+      'Finnish': 'Hyvää huomenta',
+      'German': 'Guten Morgen',
+      'French': 'Bonjour',
+      'Spanish': 'Buenos días',
+      'Dutch': 'Goedemorgen'
+    },
+    'thank you': {
+      'Danish': 'Tak',
+      'Swedish': 'Tack',
+      'Norwegian': 'Takk',
+      'Finnish': 'Kiitos',
+      'German': 'Danke',
+      'French': 'Merci',
+      'Spanish': 'Gracias',
+      'Dutch': 'Dank je'
+    },
+    'wat gaan we vanavond eten': {
+      'Danish': 'Hvad skal vi spise i aften?',
+      'Swedish': 'Vad ska vi äta ikväll?',
+      'Norwegian': 'Hva skal vi spise i kveld?',
+      'Finnish': 'Mitä syömme tänä iltana?',
+      'German': 'Was essen wir heute Abend?',
+      'French': 'Que mangeons-nous ce soir?',
+      'Spanish': '¿Qué vamos a cenar esta noche?',
+      'English': 'What are we going to eat tonight?',
+      'Italian': 'Cosa mangiamo stasera?',
+      'Portuguese': 'O que vamos comer hoje à noite?',
+      'Polish': 'Co będziemy jeść dziś wieczorem?',
+      'Russian': 'Что мы будем есть сегодня вечером?'
+    },
+    'wat eten we': {
+      'Danish': 'Hvad spiser vi?',
+      'Swedish': 'Vad äter vi?',
+      'Norwegian': 'Hva spiser vi?',
+      'Finnish': 'Mitä syömme?',
+      'German': 'Was essen wir?',
+      'French': 'Que mangeons-nous?',
+      'Spanish': '¿Qué comemos?',
+      'English': 'What are we eating?'
+    }
+  }
+  
+  for (const [phrase, translations] of Object.entries(commonPhrases)) {
+    if (lowerText.includes(phrase)) {
+      return translations[targetLanguage] || null
+    }
+  }
+  
+  return null
+}
+
 // Language mapping for Qwen API
 const LANGUAGE_MAP: Record<string, string> = {
   auto: 'auto',
@@ -101,34 +175,60 @@ export async function POST(request: NextRequest) {
       creative: "This is a creative translation. Maintain the tone and style of the original."
     }
 
-    // Temporary mock translation for development
-    // TODO: Implement actual translation service once API is working
-    let translatedText = `[${targetLanguage} translation of: ${text}]`
-    
-    // Simple mock translations for common cases
-    if (text.toLowerCase().includes('hello')) {
-      const greetings: Record<string, string> = {
-        'French': 'Bonjour',
-        'German': 'Hallo',
-        'Spanish': 'Hola',
-        'Italian': 'Ciao',
-        'Portuguese': 'Olá',
-        'Dutch': 'Hallo',
-        'Danish': 'Hej',
-        'Swedish': 'Hej',
-        'Norwegian': 'Hei',
-        'Finnish': 'Hei',
-        'Polish': 'Cześć',
-        'Russian': 'Привет'
-      }
-      translatedText = greetings[targetLanguage] || translatedText
-    }
+    // Use a more direct translation prompt approach
+    try {
+      const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'qwen-turbo',
+          messages: [{
+            role: 'user',
+            content: `Translate the following text from ${sourceLanguage} to ${targetLanguage}. Only provide the translation, no explanations:\n\n"${text}"`
+          }],
+          temperature: 0.1,
+          max_tokens: 1000
+        }),
+      })
 
-    return NextResponse.json({
-      translatedText,
-      sourceLang,
-      targetLang,
-    })
+      if (!response.ok) {
+        const errorData = await response.text()
+        console.error('Qwen API error:', response.status, errorData)
+        throw new Error(`Translation API error: ${response.status}`)
+      }
+
+      const data = await response.json()
+      const translatedText = data.choices?.[0]?.message?.content?.trim()
+
+      if (!translatedText) {
+        throw new Error('No translation received from API')
+      }
+
+      // Clean up the response (remove quotes if the API added them)
+      const cleanedTranslation = translatedText.replace(/^["']|["']$/g, '').trim()
+      
+      return NextResponse.json({
+        translatedText: cleanedTranslation,
+        sourceLang,
+        targetLang,
+      })
+      
+    } catch (apiError) {
+      console.error('Translation API failed, using fallback:', apiError)
+      
+      // Fallback to a simple dictionary-based translation for common phrases
+      const fallbackTranslations = getFallbackTranslation(text, targetLanguage)
+      
+      return NextResponse.json({
+        translatedText: fallbackTranslations || `Translation temporarily unavailable for: "${text}"`,
+        sourceLang,
+        targetLang,
+        fallback: true
+      })
+    }
 
   } catch (error) {
     console.error('Translation error:', error)

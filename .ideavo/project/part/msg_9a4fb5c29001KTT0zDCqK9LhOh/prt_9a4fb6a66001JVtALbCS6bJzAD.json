@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4fb6a66001JVtALbCS6bJzAD",
+  "messageID": "msg_9a4fb5c29001KTT0zDCqK9LhOh",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Np62BZYwtgwPBZCK69G7RP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 90,
+      "limit": 30
+    },
+    "output": "<file>\n00091|       })\n00092|     }\n00093| \n00094|     // Add domain context to improve translation quality\n00095|     const domainContexts: Record<string, string> = {\n00096|       technical: \"This is a technical/IT translation. Focus on accurate technical terminology.\",\n00097|       medical: \"This is a medical translation. Use precise medical terminology.\",\n00098|       legal: \"This is a legal translation. Maintain formal legal language and terminology.\",\n00099|       business: \"This is a business translation. Use professional business terminology.\",\n00100|       academic: \"This is an academic translation. Use scholarly and precise language.\",\n00101|       creative: \"This is a creative translation. Maintain the tone and style of the original.\"\n00102|     }\n00103| \n00104|     // Temporary mock translation for development\n00105|     // TODO: Implement actual translation service once API is working\n00106|     let translatedText = `[${targetLanguage} translation of: ${text}]`\n00107|     \n00108|     // Simple mock translations for common cases\n00109|     if (text.toLowerCase().includes('hello')) {\n00110|       const greetings: Record<string, string> = {\n00111|         'French': 'Bonjour',\n00112|         'German': 'Hallo',\n00113|         'Spanish': 'Hola',\n00114|         'Italian': 'Ciao',\n00115|         'Portuguese': 'Olá',\n00116|         'Dutch': 'Hallo',\n00117|         'Danish': 'Hej',\n00118|         'Swedish': 'Hej',\n00119|         'Norwegian': 'Hei',\n00120|         'Finnish': 'Hei',\n\n(File has more lines. Use 'offset' parameter to read beyond line 120)\n</file>",
+    "metadata": {
+      "preview": "      })\n    }\n\n    // Add domain context to improve translation quality\n    const domainContexts: Record<string, string> = {\n      technical: \"This is a technical/IT translation. Focus on accurate technical terminology.\",\n      medical: \"This is a medical translation. Use precise medical terminology.\",\n      legal: \"This is a legal translation. Maintain formal legal language and terminology.\",\n      business: \"This is a business translation. Use professional business terminology.\",\n      academic: \"This is an academic translation. Use scholarly and precise language.\",\n      creative: \"This is a creative translation. Maintain the tone and style of the original.\"\n    }\n\n    // Temporary mock translation for development\n    // TODO: Implement actual translation service once API is working\n    let translatedText = `[${targetLanguage} translation of: ${text}]`\n    \n    // Simple mock translations for common cases\n    if (text.toLowerCase().includes('hello')) {\n      const greetings: Record<string, string> = {"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759409565049,
+      "end": 1759409565052
+    }
+  }
+}

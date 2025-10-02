@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a679ef09001fM4KEMR2UeDzAB",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01QsSQk62WCeFKbPfWbRkvAG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && rm -rf app/auth app/api/auth app/debug app/debug-session app/auth-debug types/next-auth.d.ts lib/auth.ts lib/premium.ts",
+      "description": "Remove auth pages, API routes, and auth-related files"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Remove auth pages, API routes, and auth-related files"
+    },
+    "title": "cd /home/user/project && rm -rf app/auth app/api/auth app/debug app/debug-session app/auth-debug types/next-auth.d.ts lib/auth.ts lib/premium.ts",
+    "time": {
+      "start": 1759434634404,
+      "end": 1759434634430
+    }
+  }
+}

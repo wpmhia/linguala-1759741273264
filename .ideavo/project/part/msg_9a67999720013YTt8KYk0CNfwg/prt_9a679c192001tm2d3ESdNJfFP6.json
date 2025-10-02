@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a679c192001tm2d3ESdNJfFP6",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01EiZNM5mkbDXyiQuzeF6bCR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm uninstall next-auth @auth/prisma-adapter bcryptjs @types/bcryptjs",
+      "description": "Remove auth-related npm packages"
+    },
+    "output": "npm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 1 package, removed 31 packages, changed 2 packages, and audited 414 packages in 2s\n\n65 packages are looking for funding\n  run `npm fund` for details\n\n5 vulnerabilities (3 moderate, 2 critical)\n\nTo address all issues, run:\n  npm audit fix\n\nRun `npm audit` for details.\n",
+    "metadata": {
+      "output": "npm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 1 package, removed 31 packages, changed 2 packages, and audited 414 packages in 2s\n\n65 packages are looking for funding\n  run `npm fund` for details\n\n5 vulnerabilities (3 moderate, 2 critical)\n\nTo address all issues, run:\n  npm audit fix\n\nRun `npm audit` for details.\n",
+      "exit": 0,
+      "description": "Remove auth-related npm packages"
+    },
+    "title": "cd /home/user/project && npm uninstall next-auth @auth/prisma-adapter bcryptjs @types/bcryptjs",
+    "time": {
+      "start": 1759434622428,
+      "end": 1759434624774
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a67a4ed6001ASKKPkSR9seg4B",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Hq3GscnxHQ6N2dZvNKW7sM",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && rm -rf components/providers",
+      "description": "Remove session provider component"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Remove session provider component"
+    },
+    "title": "cd /home/user/project && rm -rf components/providers",
+    "time": {
+      "start": 1759434658116,
+      "end": 1759434658126
+    }
+  }
+}

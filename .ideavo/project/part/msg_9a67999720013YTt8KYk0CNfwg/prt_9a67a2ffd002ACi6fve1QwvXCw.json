@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a67a2ffd002ACi6fve1QwvXCw",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_017Z89PiSbve12mWkz2RXP1z",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';\nimport { SessionProvider } from '@/components/providers/session-provider';",
+      "newString": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/layout.tsx\n===================================================================\n--- /home/user/project/app/layout.tsx\n+++ /home/user/project/app/layout.tsx\n@@ -1,9 +1,8 @@\n import './globals.css';\n import type { Metadata } from 'next';\n import { Inter } from 'next/font/google';\n import { Toaster } from '@/components/ui/sonner';\n-import { SessionProvider } from '@/components/providers/session-provider';\n \n const inter = Inter({ subsets: ['latin'] });\n \n export const metadata: Metadata = {\n"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759434651105,
+      "end": 1759434651110
+    }
+  }
+}

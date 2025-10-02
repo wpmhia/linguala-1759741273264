@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a67b551b001Sa23cdwOAGrtgf",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let's remove the auth-dependent components and simplify the middleware:",
+  "time": {
+    "start": 1759434725305,
+    "end": 1759434725305
+  }
+}

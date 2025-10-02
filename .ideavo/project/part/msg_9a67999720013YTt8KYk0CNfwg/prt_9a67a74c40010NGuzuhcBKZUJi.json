@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a67a74c40010NGuzuhcBKZUJi",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01CEYvNJhzmhQLP7Cn8NPG3x",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "\"use client\"\n\nimport { useState, useRef, useEffect } from \"react\"\nimport { useSession } from \"next-auth/react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, FileText\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { UserProfile } from \"@/components/user-profile\"\nimport { PremiumFeatures } from \"@/components/premium-features\"",
+      "newString": "\"use client\"\n\nimport { useState, useRef, useEffect } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, FileText\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\""
+    },
+    "error": "Error: You must read the file /home/user/project/components/linguala-translator.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759434671911,
+      "end": 1759434671912
+    }
+  }
+}

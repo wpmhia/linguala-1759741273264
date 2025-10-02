@@ -1,7 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { useSession } from "next-auth/react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -11,8 +10,6 @@ import {
 } from "lucide-react"
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
-import { UserProfile } from "@/components/user-profile"
-import { PremiumFeatures } from "@/components/premium-features"
 
 // Common languages like Google Translate
 const LANGUAGES = [
@@ -43,8 +40,6 @@ const LANGUAGES = [
 ]
 
 export default function LingualaTranslator() {
-  const { data: session, status } = useSession()
-  
   // Core translation state
   const [sourceText, setSourceText] = useState("")
   const [translatedText, setTranslatedText] = useState("")
@@ -143,12 +138,12 @@ export default function LingualaTranslator() {
               </nav>
             </div>
             <div className="flex items-center space-x-4">
-              {session?.user && (
-                <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
-                  <History className="h-5 w-5" />
-                </button>
-              )}
-              <UserProfile />
+              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                <History className="h-5 w-5" />
+              </button>
+              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                <Settings className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </div>
@@ -246,15 +241,13 @@ export default function LingualaTranslator() {
                         <X className="h-4 w-4" />
                       </Button>
                     )}
-                    {session?.user && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="p-2 hover:bg-gray-100 rounded-full"
-                      >
-                        <Mic className="h-4 w-4" />
-                      </Button>
-                    )}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 hover:bg-gray-100 rounded-full"
+                    >
+                      <Mic className="h-4 w-4" />
+                    </Button>
                   </div>
                   
                   <div className="text-xs text-gray-600">
@@ -286,24 +279,20 @@ export default function LingualaTranslator() {
                     >
                       {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
                     </Button>
-                    {session?.user && (
-                      <>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="p-2 hover:bg-gray-200 rounded-full"
-                        >
-                          <Volume2 className="h-4 w-4" />
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="p-2 hover:bg-gray-200 rounded-full"
-                        >
-                          <Star className="h-4 w-4" />
-                        </Button>
-                      </>
-                    )}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 hover:bg-gray-200 rounded-full"
+                    >
+                      <Volume2 className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="p-2 hover:bg-gray-200 rounded-full"
+                    >
+                      <Star className="h-4 w-4" />
+                    </Button>
                   </div>
                   
                   <Button
@@ -319,54 +308,50 @@ export default function LingualaTranslator() {
           </div>
 
           {/* Bottom Actions */}
-          {session?.user && (
-            <div className="mt-6 flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <Button variant="outline" size="sm">
-                  <FileText className="h-4 w-4 mr-2" />
-                  Translate a document
-                </Button>
-              </div>
-              
-              <div className="flex items-center space-x-2 text-sm text-gray-500">
-                <span>Powered by Linguala Translate</span>
-              </div>
+          <div className="mt-6 flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <Button variant="outline" size="sm">
+                <FileText className="h-4 w-4 mr-2" />
+                Translate a document
+              </Button>
             </div>
-          )}
+            
+            <div className="flex items-center space-x-2 text-sm text-gray-500">
+              <span>Powered by Linguala Translate</span>
+            </div>
+          </div>
         </div>
 
-        {/* Premium features and CTA */}
+        {/* Simple feature showcase */}
         <div className="mt-12">
-          {!session?.user ? (
-            <div className="text-center">
-              <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto mb-8">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                  Get more with Linguala Translate
-                </h2>
-                <p className="text-gray-600 mb-6">
-                  Save translations, access more languages, and get personalized suggestions.
-                </p>
-                <div className="space-x-4">
-                  <Button 
-                    onClick={() => window.location.href = '/auth/signin'}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2"
-                  >
-                    Sign In
-                  </Button>
-                  <Button 
-                    onClick={() => window.location.href = '/auth/signup'}
-                    variant="outline"
-                    className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-2"
-                  >
-                    Create Account
-                  </Button>
+          <div className="text-center">
+            <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                Professional Translation Platform
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Fast, accurate translations powered by advanced AI. Support for 25+ languages including all major European languages.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
+                <div className="text-center">
+                  <div className="font-semibold">25+</div>
+                  <div>Languages</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-semibold">Fast</div>
+                  <div>Translation</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-semibold">Free</div>
+                  <div>To Use</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-semibold">Accurate</div>
+                  <div>Results</div>
                 </div>
               </div>
-              <PremiumFeatures compact />
             </div>
-          ) : (
-            <PremiumFeatures compact />
-          )}
+          </div>
         </div>
       </main>
     </div>

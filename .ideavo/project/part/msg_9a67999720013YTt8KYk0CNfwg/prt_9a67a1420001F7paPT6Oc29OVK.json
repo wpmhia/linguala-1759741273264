@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a67a1420001F7paPT6Oc29OVK",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01GapPhi9vsWdqvKozFjyc8s",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';\nimport { SessionProvider } from '@/components/providers/session-provider';",
+      "newString": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';"
+    },
+    "error": "Error: You must read the file /home/user/project/app/layout.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759434644437,
+      "end": 1759434644439
+    }
+  }
+}

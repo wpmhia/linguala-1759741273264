@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a67c230d001l8gGsbySjOADz6",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01WUCq6oNiE8qZxsknprhC7Y",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build the simplified app to check for errors"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\nFailed to compile.\n\n./app/api/glossary/route.ts\nModule not found: Can't resolve 'next-auth'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n./app/api/glossary/route.ts\nModule not found: Can't resolve '@/lib/auth'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n./app/api/glossary/route.ts\nModule not found: Can't resolve '@/lib/prisma'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n./app/api/translations/route.ts\nModule not found: Can't resolve 'next-auth'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n./app/api/translations/route.ts\nModule not found: Can't resolve '@/lib/auth'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n\n> Build failed because of webpack errors\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\nFailed to compile.\n\n./app/api/glossary/route.ts\nModule not found: Can't resolve 'next-auth'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n./app/api/glossary/route.ts\nModule not found: Can't resolve '@/lib/auth'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n./app/api/glossary/route.ts\nModule not found: Can't resolve '@/lib/prisma'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n./app/api/translations/route.ts\nModule not found: Can't resolve 'next-auth'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n./app/api/translations/route.ts\nModule not found: Can't resolve '@/lib/auth'\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n\n> Build failed because of webpack errors\n",
+      "exit": 1,
+      "description": "Build the simplified app to check for errors"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759434778082,
+      "end": 1759434786396
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a67a8ff7001cNLolgAAFa5cCK",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_018wKDNxkY8GGs1L9NNRZf4d",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "limit": 50
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { useState, useRef, useEffect } from \"react\"\n00004| import { useSession } from \"next-auth/react\"\n00005| import { Button } from \"@/components/ui/button\"\n00006| import { Textarea } from \"@/components/ui/textarea\"\n00007| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00008| import { \n00009|   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n00010|   Check, X, Mic, Settings, History, FileText\n00011| } from \"lucide-react\"\n00012| import { toast } from \"sonner\"\n00013| import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n00014| import { UserProfile } from \"@/components/user-profile\"\n00015| import { PremiumFeatures } from \"@/components/premium-features\"\n00016| \n00017| // Common languages like Google Translate\n00018| const LANGUAGES = [\n00019|   { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n00020|   { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n00021|   { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n00022|   { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },\n00023|   { code: \"de\", name: \"German\", flag: \"🇩🇪\" },\n00024|   { code: \"it\", name: \"Italian\", flag: \"🇮🇹\" },\n00025|   { code: \"pt\", name: \"Portuguese\", flag: \"🇵🇹\" },\n00026|   { code: \"ru\", name: \"Russian\", flag: \"🇷🇺\" },\n00027|   { code: \"ja\", name: \"Japanese\", flag: \"🇯🇵\" },\n00028|   { code: \"ko\", name: \"Korean\", flag: \"🇰🇷\" },\n00029|   { code: \"zh\", name: \"Chinese\", flag: \"🇨🇳\" },\n00030|   { code: \"ar\", name: \"Arabic\", flag: \"🇸🇦\" },\n00031|   { code: \"hi\", name: \"Hindi\", flag: \"🇮🇳\" },\n00032|   { code: \"nl\", name: \"Dutch\", flag: \"🇳🇱\" },\n00033|   { code: \"sv\", name: \"Swedish\", flag: \"🇸🇪\" },\n00034|   { code: \"da\", name: \"Danish\", flag: \"🇩🇰\" },\n00035|   { code: \"no\", name: \"Norwegian\", flag: \"🇳🇴\" },\n00036|   { code: \"fi\", name: \"Finnish\", flag: \"🇫🇮\" },\n00037|   { code: \"pl\", name: \"Polish\", flag: \"🇵🇱\" },\n00038|   { code: \"cs\", name: \"Czech\", flag: \"🇨🇿\" },\n00039|   { code: \"hu\", name: \"Hungarian\", flag: \"🇭🇺\" },\n00040|   { code: \"tr\", name: \"Turkish\", flag: \"🇹🇷\" },\n00041|   { code: \"th\", name: \"Thai\", flag: \"🇹🇭\" },\n00042|   { code: \"vi\", name: \"Vietnamese\", flag: \"🇻🇳\" }\n00043| ]\n00044| \n00045| export default function LingualaTranslator() {\n00046|   const { data: session, status } = useSession()\n00047|   \n00048|   // Core translation state\n00049|   const [sourceText, setSourceText] = useState(\"\")\n00050|   const [translatedText, setTranslatedText] = useState(\"\")\n\n(File has more lines. Use 'offset' parameter to read beyond line 50)\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { useState, useRef, useEffect } from \"react\"\nimport { useSession } from \"next-auth/react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, FileText\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { UserProfile } from \"@/components/user-profile\"\nimport { PremiumFeatures } from \"@/components/premium-features\"\n\n// Common languages like Google Translate\nconst LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n  { code: \"en\", name: \"English\", flag: \"🇬🇧\" },"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759434674647,
+      "end": 1759434674649
+    }
+  }
+}

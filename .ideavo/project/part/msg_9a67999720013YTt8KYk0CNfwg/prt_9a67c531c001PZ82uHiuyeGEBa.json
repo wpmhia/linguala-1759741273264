@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a67c531c001PZ82uHiuyeGEBa",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01A1hCPz4T4UVgviGkx3hyzP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && rm -rf app/api/glossary app/api/translations app/api/extract-document",
+      "description": "Remove auth-dependent API routes"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Remove auth-dependent API routes"
+    },
+    "title": "cd /home/user/project && rm -rf app/api/glossary app/api/translations app/api/extract-document",
+    "time": {
+      "start": 1759434790594,
+      "end": 1759434790610
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a67bb4bc0018kSKtAt4VzO2PX",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01CnZfiJMjRHjsmV7teYxjzG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && rm -rf lib/prisma.ts prisma/ app/env-check app/api/user",
+      "description": "Remove database and prisma files"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Remove database and prisma files"
+    },
+    "title": "cd /home/user/project && rm -rf lib/prisma.ts prisma/ app/env-check app/api/user",
+    "time": {
+      "start": 1759434750528,
+      "end": 1759434750546
+    }
+  }
+}

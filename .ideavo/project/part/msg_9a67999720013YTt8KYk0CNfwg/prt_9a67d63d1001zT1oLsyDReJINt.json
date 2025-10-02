@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a67d63d1001zT1oLsyDReJINt",
+  "messageID": "msg_9a67999720013YTt8KYk0CNfwg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01M5vPuQSk8ctE18btkVehki",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev",
+      "timeout": 8000,
+      "description": "Start the simplified translation app"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 3.2s\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 3.2s\n",
+      "exit": null,
+      "description": "Start the simplified translation app"
+    },
+    "title": "cd /home/user/project && npm run dev",
+    "time": {
+      "start": 1759434860357,
+      "end": 1759434868365
+    }
+  }
+}

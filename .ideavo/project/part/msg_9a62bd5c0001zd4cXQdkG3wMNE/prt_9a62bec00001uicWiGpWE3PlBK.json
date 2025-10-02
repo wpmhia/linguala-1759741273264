@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a62bec00001uicWiGpWE3PlBK",
+  "messageID": "msg_9a62bd5c0001zd4cXQdkG3wMNE",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see you're experiencing connection issues after Google OAuth login. The errors indicate:\n\n1. **localhost connection refused** - Local dev server not running\n2. **404 on reconnect endpoint** - Server connectivity issue\n3. **AudioContext warnings** - Browser security restrictions\n\nLet me help you get the development server running:",
+  "time": {
+    "start": 1759429522264,
+    "end": 1759429522264
+  }
+}

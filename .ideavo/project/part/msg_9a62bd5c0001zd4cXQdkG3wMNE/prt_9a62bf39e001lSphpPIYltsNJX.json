@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a62bf39e001lSphpPIYltsNJX",
+  "messageID": "msg_9a62bd5c0001zd4cXQdkG3wMNE",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LxtTGXdGkqzJQQKVGXs7LM",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "ps aux | grep -E \"(next|node|npm)\" | grep -v grep",
+      "description": "Check if dev server is already running"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 1,
+      "description": "Check if dev server is already running"
+    },
+    "title": "ps aux | grep -E \"(next|node|npm)\" | grep -v grep",
+    "time": {
+      "start": 1759429523089,
+      "end": 1759429523123
+    }
+  }
+}

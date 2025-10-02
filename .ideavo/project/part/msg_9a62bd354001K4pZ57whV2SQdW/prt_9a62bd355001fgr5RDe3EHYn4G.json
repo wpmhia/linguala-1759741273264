@@ -1,0 +1,7 @@
+{
+  "id": "prt_9a62bd355001fgr5RDe3EHYn4G",
+  "type": "text",
+  "text": "localhost nægtede at oprette forbindelse.\nserver.ideavo.ai/api/automation/reconnect/cmg99ssn50qkdpn0f05d6dyq4:1  Failed to load resource: the server responded with a status of 404 (Not Found)\nChat-D745q4N7.js:3 No active process to reconnect to\nChat-D745q4N7.js:15 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio\nG @ Chat-D745q4N7.js:15\nChat-D745q4N7.js:15 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio\nG @ Chat-D745q4N7.js:15\nChat-D745q4N7.js:15 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio\nG @ Chat-D745q4N7.js:15\n\n\nAfter loggin in / making an account with Google OAuth",
+  "messageID": "msg_9a62bd354001K4pZ57whV2SQdW",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

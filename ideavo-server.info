@@ -4,17 +4,233 @@ $ next dev
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2.9s
- ✓ Compiled /middleware in 236ms
+ ✓ Ready in 2.2s
+ ✓ Compiled /middleware in 172ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
- ✓ Compiled / in 7.6s (787 modules)
- GET / 200 in 8527ms
- ✓ Compiled in 953ms (405 modules)
- GET / 200 in 54ms
+ ✓ Compiled / in 4.5s (787 modules)
+ GET / 200 in 5275ms
+ ✓ Compiled in 815ms (405 modules)
+ GET / 200 in 44ms
  ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
  ○ Compiling /api/auth/[...nextauth] ...
- ✓ Compiled /api/auth/[...nextauth] in 867ms (621 modules)
- GET /api/auth/session 200 in 1712ms
- GET /api/auth/session 200 in 28ms
+ ✓ Compiled /api/auth/[...nextauth] in 921ms (621 modules)
+ GET /api/auth/session 200 in 1620ms
+ GET /api/auth/session 200 in 29ms
+ ✓ Compiled /api/translate in 208ms (647 modules)
+Translation request body: { text: 'W', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Wa', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waa', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waaro', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waarom', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waarom ', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waarom z', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 1058ms
+ POST /api/translate 200 in 1484ms
+ POST /api/translate 200 in 1223ms
+Translation request body: { text: 'Waarom zi', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 970ms
+Translation request body: { text: 'Waarom zij', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waarom zijn', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 981ms
+ POST /api/translate 200 in 559ms
+Translation request body: { text: 'Waarom zijn ', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 1336ms
+Translation request body: { text: 'Waarom zijn d', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 534ms
+ POST /api/translate 200 in 970ms
+ POST /api/translate 200 in 1183ms
+Translation request body: { text: 'Waarom zijn de', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 535ms
+Translation request body: { text: 'Waarom zijn de ', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 498ms
+Translation request body: { text: 'Waarom zijn de m', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waarom zijn de me', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 535ms
+Translation request body: { text: 'Waarom zijn de mee', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 514ms
+Translation request body: { text: 'Waarom zijn de mees', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 567ms
+ POST /api/translate 200 in 522ms
+ POST /api/translate 200 in 519ms
+Translation request body: { text: 'Waarom zijn de meest', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 514ms
+Translation request body: { text: 'Waarom zijn de meeste', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 549ms
+Translation request body: {
+  text: 'Waarom zijn de meeste ',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste m',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 537ms
+Translation request body: {
+  text: 'Waarom zijn de meeste me',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 584ms
+Translation request body: {
+  text: 'Waarom zijn de meeste men',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 516ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mend',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 565ms
+ POST /api/translate 200 in 628ms
+ POST /api/translate 200 in 533ms
+Translation request body: {
+  text: 'Waarom zijn de meeste men',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 526ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mens',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mense',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 490ms
+ POST /api/translate 200 in 518ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen ',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 543ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen z',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo ',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 586ms
+ POST /api/translate 200 in 555ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo r',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 556ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo ro',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 574ms
+ POST /api/translate 200 in 574ms
+ POST /api/translate 200 in 520ms
+ POST /api/translate 200 in 578ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo r',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo ',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo i',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo ir',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 581ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo iri',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 564ms
+ POST /api/translate 200 in 569ms
+ POST /api/translate 200 in 584ms
+ POST /api/translate 200 in 597ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo ir',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 559ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo iri',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo irit',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 557ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo irita',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo iritan',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 551ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo iritant',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 579ms
+ POST /api/translate 200 in 547ms
+Translation request body: {
+  text: 'Waarom zijn de meeste mensen zo iritant?',
+  sourceLang: 'auto',
+  targetLang: 'en'
+}
+ POST /api/translate 200 in 562ms
+ POST /api/translate 200 in 547ms
+ ○ Compiling /auth/signin ...
+ ✓ Compiled /auth/signin in 1084ms (1066 modules)
+ GET /auth/signin 200 in 1382ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /api/auth/session 200 in 132ms
+ GET /api/auth/providers 200 in 133ms
+ GET /api/auth/session 200 in 19ms
+ GET /api/auth/providers 200 in 24ms
+ GET /api/auth/providers 200 in 36ms
+ GET /api/auth/csrf 200 in 15ms
+ POST /api/auth/signin/google 200 in 12ms

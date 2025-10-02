@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a62e2142001KZWvI1TVtM20TO",
+  "messageID": "msg_9a62e02b6001JWkV70U1C9i87P",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01CiJFJxTEDsFsMd3LFtioXv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s \"http://localhost:3000/api/auth/providers\" | python3 -m json.tool 2>/dev/null || curl -s \"http://localhost:3000/api/auth/providers\"",
+      "description": "Check available auth providers via API"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Check available auth providers via API"
+    },
+    "title": "curl -s \"http://localhost:3000/api/auth/providers\" | python3 -m json.tool 2>/dev/null || curl -s \"http://localhost:3000/api/auth/providers\"",
+    "time": {
+      "start": 1759429666146,
+      "end": 1759429666225
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6319404001KLLxRhyGzrhuL0",
+  "messageID": "msg_9a62e02b6001JWkV70U1C9i87P",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The configuration looks correct. The issue is likely in the Google Cloud Console setup. Here's what needs to be fixed:\n\n## 🔧 **Google Cloud Console Setup Required**\n\nThe problem is that your Google OAuth Client ID needs the correct **Authorized Redirect URI** configured. \n\n### **You need to add this exact redirect URI in Google Cloud Console:**\n\n```\nhttp://localhost:3000/api/auth/callback/google\n```\n\n### **Steps to fix in Google Cloud Console:**\n\n1. **Go to**: https://console.cloud.google.com/apis/credentials\n2. **Find your OAuth 2.0 Client ID**: `839821888524-0af2hi0plai6tdlocj3656r1432mpuqe`\n3. **Click Edit** (pencil icon)\n4. **In \"Authorized redirect URIs\" section, add:**\n   ```\n   http://localhost:3000/api/auth/callback/google\n   ```\n5. **Click Save**\n\n### **Also verify \"Authorized JavaScript origins\":**\n```\nhttp://localhost:3000\n```\n\n### 🚨 **Critical**: \nThe redirect URI must be **exactly** `http://localhost:3000/api/auth/callback/google` - no trailing slash, no https, must include `/api/auth/callback/google`\n\nAfter making these changes in Google Cloud Console:\n1. The server is running at: **http://localhost:3000**\n2. Visit: **http://localhost:3000/auth/signin**\n3. Click \"Continue with Google\" \n4. You should see the Google account selection screen\n\n**The issue is in Google Cloud Console configuration, not your code.** Your environment variables and auth setup are correct.",
+  "time": {
+    "start": 1759429899785,
+    "end": 1759429899785
+  }
+}

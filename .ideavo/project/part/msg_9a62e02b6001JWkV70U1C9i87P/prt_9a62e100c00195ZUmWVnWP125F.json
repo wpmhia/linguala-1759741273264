@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a62e100c00195ZUmWVnWP125F",
+  "messageID": "msg_9a62e02b6001JWkV70U1C9i87P",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01RSrStDFvBrrcavz3c1Vh9H",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s \"http://localhost:3000/auth-debug\" | grep -A 5 -B 5 \"Google provider\"",
+      "description": "Check Google provider status from auth debug page"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 1,
+      "description": "Check Google provider status from auth debug page"
+    },
+    "title": "curl -s \"http://localhost:3000/auth-debug\" | grep -A 5 -B 5 \"Google provider\"",
+    "time": {
+      "start": 1759429661861,
+      "end": 1759429661881
+    }
+  }
+}

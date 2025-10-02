@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a6305f9e001z0AeVNPRN2ymM7",
+  "messageID": "msg_9a62e02b6001JWkV70U1C9i87P",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01VDGENZ7QCpo51uGF6Z7gBJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "node -e \"console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID ? 'SET' : 'NOT SET'); console.log('GOOGLE_CLIENT_SECRET:', process.env.GOOGLE_CLIENT_SECRET ? 'SET' : 'NOT SET');\"",
+      "description": "Check if Google OAuth environment variables are loaded"
+    },
+    "output": "GOOGLE_CLIENT_ID: SET\nGOOGLE_CLIENT_SECRET: SET\n",
+    "metadata": {
+      "output": "GOOGLE_CLIENT_ID: SET\nGOOGLE_CLIENT_SECRET: SET\n",
+      "exit": 0,
+      "description": "Check if Google OAuth environment variables are loaded"
+    },
+    "title": "node -e \"console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID ? 'SET' : 'NOT SET'); console.log('GOOGLE_CLIENT_SECRET:', process.env.GOOGLE_CLIENT_SECRET ? 'SET' : 'NOT SET');\"",
+    "time": {
+      "start": 1759429813228,
+      "end": 1759429813377
+    }
+  }
+}

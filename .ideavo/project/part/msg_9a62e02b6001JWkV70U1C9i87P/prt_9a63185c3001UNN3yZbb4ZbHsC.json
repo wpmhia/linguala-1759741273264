@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a63185c3001UNN3yZbb4ZbHsC",
+  "messageID": "msg_9a62e02b6001JWkV70U1C9i87P",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_011WH5DPuey2CTQDRhccCfec",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "offset": 50,
+      "limit": 10
+    },
+    "output": "<file>\n00051|     // Google OAuth provider - only enable if credentials are configured\n00052|     ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n00053|       GoogleProvider({\n00054|         clientId: process.env.GOOGLE_CLIENT_ID,\n00055|         clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n00056|       })\n00057|     ] : []),\n00058|   ],\n00059|   \n00060|   session: {\n\n(File has more lines. Use 'offset' parameter to read beyond line 60)\n</file>",
+    "metadata": {
+      "preview": "    // Google OAuth provider - only enable if credentials are configured\n    ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n      GoogleProvider({\n        clientId: process.env.GOOGLE_CLIENT_ID,\n        clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      })\n    ] : []),\n  ],\n  \n  session: {"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759429888382,
+      "end": 1759429888391
+    }
+  }
+}

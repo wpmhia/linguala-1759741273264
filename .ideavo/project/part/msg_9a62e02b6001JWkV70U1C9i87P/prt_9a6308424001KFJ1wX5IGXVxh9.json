@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6308424001KFJ1wX5IGXVxh9",
+  "messageID": "msg_9a62e02b6001JWkV70U1C9i87P",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Good! The environment variables are set. Now let me check if there's an issue with the redirect URI configuration. The issue might be that the Google Console isn't configured with the correct redirect URI. Let me test the OAuth flow:",
+  "time": {
+    "start": 1759429822587,
+    "end": 1759429822587
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4d1faa7001JoElyPGHDDho8n",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(auth): restrict Linguala features for anonymous users",
+  "cost": 0.89708565,
+  "tokens": {
+    "input": 0,
+    "output": 555,
+    "reasoning": 0,
+    "cache": {
+      "write": 171,
+      "read": 73568
+    }
+  }
+}

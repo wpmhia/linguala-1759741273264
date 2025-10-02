@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4d0015f001snHtEC4q4ub1K2",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_0155nUjYvg2SM8QaZ7MN85kY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  // Load data from localStorage or database\n  useEffect(() => {\n    if (session?.user) {\n      // Load from database for authenticated users\n      loadUserData()\n    } else {\n      // Load from localStorage for anonymous users\n      const savedHistory = localStorage.getItem(\"linguala-history\")\n      if (savedHistory) setHistory(JSON.parse(savedHistory))\n      \n      const savedGlossary = localStorage.getItem(\"linguala-glossary\")\n      if (savedGlossary) setGlossary(JSON.parse(savedGlossary))\n    }",
+      "newString": "  // Load data from database for authenticated users only\n  useEffect(() => {\n    if (session?.user) {\n      // Load from database for authenticated users\n      loadUserData()\n    }\n    // Anonymous users start fresh each session - no data persistence"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -167,21 +167,15 @@\n const [newGlossaryEntry, setNewGlossaryEntry] = useState({ source: \"\", target: \"\", notes: \"\" })\n \n const debounceRef = useRef<NodeJS.Timeout>()\n \n-// Load data from localStorage or database\n+// Load data from database for authenticated users only\n useEffect(() => {\n   if (session?.user) {\n     // Load from database for authenticated users\n     loadUserData()\n-  } else {\n-    // Load from localStorage for anonymous users\n-    const savedHistory = localStorage.getItem(\"linguala-history\")\n-    if (savedHistory) setHistory(JSON.parse(savedHistory))\n-    \n-    const savedGlossary = localStorage.getItem(\"linguala-glossary\")\n-    if (savedGlossary) setGlossary(JSON.parse(savedGlossary))\n   }\n+  // Anonymous users start fresh each session - no data persistence\n \n   // Handle shared URLs\n   const urlParams = new URLSearchParams(window.location.search)\n   const sharedText = urlParams.get('text')\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406722033,
+      "end": 1759406722055
+    }
+  }
+}

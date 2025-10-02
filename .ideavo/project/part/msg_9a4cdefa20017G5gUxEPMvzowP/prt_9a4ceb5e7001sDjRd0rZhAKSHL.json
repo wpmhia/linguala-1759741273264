@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4ceb5e7001sDjRd0rZhAKSHL",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01F9sHgr7FwhnW2oTa5UPFWg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 475,
+      "limit": 15
+    },
+    "output": "<file>\n00476|         <Card className=\"shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8\">\n00477|           <CardHeader className=\"pb-4\">\n00478|             <div className=\"flex items-center justify-between\">\n00479|               <div className=\"flex items-center space-x-4\">\n00480|                 {/* Current domain */}\n00481|                 <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n00482|                   <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n00483|                   <span>{getDomainInfo(selectedDomain).name}</span>\n00484|                 </Badge>\n00485|               </div>\n00486| \n00487|               {/* Action Buttons */}\n00488|               <div className=\"flex items-center space-x-2\">\n00489|                 <Dialog open={showGlossary} onOpenChange={setShowGlossary}>\n00490|                   <DialogTrigger asChild>\n\n(File has more lines. Use 'offset' parameter to read beyond line 490)\n</file>",
+    "metadata": {
+      "preview": "        <Card className=\"shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8\">\n          <CardHeader className=\"pb-4\">\n            <div className=\"flex items-center justify-between\">\n              <div className=\"flex items-center space-x-4\">\n                {/* Current domain */}\n                <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n                  <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n                  <span>{getDomainInfo(selectedDomain).name}</span>\n                </Badge>\n              </div>\n\n              {/* Action Buttons */}\n              <div className=\"flex items-center space-x-2\">\n                <Dialog open={showGlossary} onOpenChange={setShowGlossary}>\n                  <DialogTrigger asChild>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406635098,
+      "end": 1759406635102
+    }
+  }
+}

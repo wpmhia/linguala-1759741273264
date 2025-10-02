@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4d0d326001eeMP4WbeolXBHg",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01UcXErBTkeiiG48AceYvEGH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" || true; npm start",
+      "timeout": 8000,
+      "description": "Start Linguala with gated premium features"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Start Linguala with gated premium features"
+    },
+    "title": "pkill -f \"next\" || true; npm start",
+    "time": {
+      "start": 1759406774113,
+      "end": 1759406774136
+    }
+  }
+}

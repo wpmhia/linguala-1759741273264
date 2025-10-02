@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4cff3a5001Bmo3Zg5ziSySQa",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_012dohLzmYcp9zWUvn2qgQb6",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 170,
+      "limit": 15
+    },
+    "output": "<file>\n00171|   // Load data from localStorage or database\n00172|   useEffect(() => {\n00173|     if (session?.user) {\n00174|       // Load from database for authenticated users\n00175|       loadUserData()\n00176|     } else {\n00177|       // Load from localStorage for anonymous users\n00178|       const savedHistory = localStorage.getItem(\"linguala-history\")\n00179|       if (savedHistory) setHistory(JSON.parse(savedHistory))\n00180|       \n00181|       const savedGlossary = localStorage.getItem(\"linguala-glossary\")\n00182|       if (savedGlossary) setGlossary(JSON.parse(savedGlossary))\n00183|     }\n00184| \n00185|     // Handle shared URLs\n\n(File has more lines. Use 'offset' parameter to read beyond line 185)\n</file>",
+    "metadata": {
+      "preview": "  // Load data from localStorage or database\n  useEffect(() => {\n    if (session?.user) {\n      // Load from database for authenticated users\n      loadUserData()\n    } else {\n      // Load from localStorage for anonymous users\n      const savedHistory = localStorage.getItem(\"linguala-history\")\n      if (savedHistory) setHistory(JSON.parse(savedHistory))\n      \n      const savedGlossary = localStorage.getItem(\"linguala-glossary\")\n      if (savedGlossary) setGlossary(JSON.parse(savedGlossary))\n    }\n\n    // Handle shared URLs"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406716455,
+      "end": 1759406716469
+    }
+  }
+}

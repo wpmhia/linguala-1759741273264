@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4cec2e9001ilori5q1bM1vXQ",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_013nbiD51KZxGWPvhwwLmhd1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                {/* Current domain */}\n                <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n                  <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n                  <span>{getDomainInfo(selectedDomain).name}</span>\n                </Badge>",
+      "newString": "                {/* Current domain - Only for authenticated users */}\n                {session?.user && (\n                  <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n                    <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n                    <span>{getDomainInfo(selectedDomain).name}</span>\n                  </Badge>\n                )}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -476,13 +476,15 @@\n <Card className=\"shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8\">\n   <CardHeader className=\"pb-4\">\n     <div className=\"flex items-center justify-between\">\n       <div className=\"flex items-center space-x-4\">\n-        {/* Current domain */}\n-        <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n-          <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n-          <span>{getDomainInfo(selectedDomain).name}</span>\n-        </Badge>\n+        {/* Current domain - Only for authenticated users */}\n+        {session?.user && (\n+          <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n+            <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n+            <span>{getDomainInfo(selectedDomain).name}</span>\n+          </Badge>\n+        )}\n       </div>\n \n       {/* Action Buttons */}\n       <div className=\"flex items-center space-x-2\">\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406640212,
+      "end": 1759406640235
+    }
+  }
+}

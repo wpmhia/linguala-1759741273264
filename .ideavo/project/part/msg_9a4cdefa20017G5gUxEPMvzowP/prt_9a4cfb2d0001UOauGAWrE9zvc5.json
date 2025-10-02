@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4cfb2d0001UOauGAWrE9zvc5",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01L4poEGQA3hoFJSgAq4aieq",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 305,
+      "limit": 10
+    },
+    "output": "<file>\n00306|             targetLang: to,\n00307|             domain: selectedDomain\n00308|           })\n00309|         }).catch(console.error)\n00310|       }\n00311| \n00312|     } catch (error) {\n00313|       console.error(\"Translation error:\", error)\n00314|       toast.error(\"Translation failed. Please try again.\")\n00315|     } finally {\n\n(File has more lines. Use 'offset' parameter to read beyond line 315)\n</file>",
+    "metadata": {
+      "preview": "            targetLang: to,\n            domain: selectedDomain\n          })\n        }).catch(console.error)\n      }\n\n    } catch (error) {\n      console.error(\"Translation error:\", error)\n      toast.error(\"Translation failed. Please try again.\")\n    } finally {"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406699843,
+      "end": 1759406699846
+    }
+  }
+}

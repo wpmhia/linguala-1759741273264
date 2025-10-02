@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4cf1354001q1TLdHSl8wI3vz",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01VkX7KAZUsZ9U5kyVb4jcdp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                  </DialogContent>\n                </Dialog>\n              </div>",
+      "newString": "                  </DialogContent>\n                </Dialog>\n                </div>\n              )}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -665,9 +665,10 @@\n             </div>\n           </div>\n         </DialogContent>\n       </Dialog>\n-    </div>\n+      </div>\n+    )}\n   </div>\n </CardHeader>\n \n <CardContent className=\"space-y-6\">\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406659380,
+      "end": 1759406659392
+    }
+  }
+}

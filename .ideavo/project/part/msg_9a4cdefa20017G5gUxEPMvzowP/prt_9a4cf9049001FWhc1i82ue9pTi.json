@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4cf9049001FWhc1i82ue9pTi",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01BBpQKcEBnePhB3H46UaKov",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 284,
+      "limit": 25
+    },
+    "output": "<file>\n00285|       const historyItem: TranslationHistory = {\n00286|         id: Date.now().toString(),\n00287|         sourceText: text.trim(),\n00288|         translatedText: data.translatedText,\n00289|         sourceLang: from,\n00290|         targetLang: to,\n00291|         domain: selectedDomain,\n00292|         timestamp: Date.now(),\n00293|       }\n00294|       \n00295|       setHistory(prev => [historyItem, ...prev.slice(0, 99)])\n00296| \n00297|       // Save to database if authenticated\n00298|       if (session?.user) {\n00299|         fetch('/api/translations', {\n00300|           method: 'POST',\n00301|           headers: { 'Content-Type': 'application/json' },\n00302|           body: JSON.stringify({\n00303|             sourceText: text.trim(),\n00304|             translatedText: data.translatedText,\n00305|             sourceLang: from,\n00306|             targetLang: to,\n00307|             domain: selectedDomain\n00308|           })\n00309|         }).catch(console.error)\n\n(File has more lines. Use 'offset' parameter to read beyond line 309)\n</file>",
+    "metadata": {
+      "preview": "      const historyItem: TranslationHistory = {\n        id: Date.now().toString(),\n        sourceText: text.trim(),\n        translatedText: data.translatedText,\n        sourceLang: from,\n        targetLang: to,\n        domain: selectedDomain,\n        timestamp: Date.now(),\n      }\n      \n      setHistory(prev => [historyItem, ...prev.slice(0, 99)])\n\n      // Save to database if authenticated\n      if (session?.user) {\n        fetch('/api/translations', {\n          method: 'POST',\n          headers: { 'Content-Type': 'application/json' },\n          body: JSON.stringify({\n            sourceText: text.trim(),\n            translatedText: data.translatedText,"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406690962,
+      "end": 1759406690966
+    }
+  }
+}

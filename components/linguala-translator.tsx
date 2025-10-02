@@ -168,19 +168,13 @@ export default function LingualaTranslator() {
 
   const debounceRef = useRef<NodeJS.Timeout>()
 
-  // Load data from localStorage or database
+  // Load data from database for authenticated users only
   useEffect(() => {
     if (session?.user) {
       // Load from database for authenticated users
       loadUserData()
-    } else {
-      // Load from localStorage for anonymous users
-      const savedHistory = localStorage.getItem("linguala-history")
-      if (savedHistory) setHistory(JSON.parse(savedHistory))
-      
-      const savedGlossary = localStorage.getItem("linguala-glossary")
-      if (savedGlossary) setGlossary(JSON.parse(savedGlossary))
     }
+    // Anonymous users start fresh each session - no data persistence
 
     // Handle shared URLs
     const urlParams = new URLSearchParams(window.location.search)
@@ -197,18 +191,14 @@ export default function LingualaTranslator() {
     }
   }, [session])
 
-  // Save data
+  // Save data - disabled for anonymous users
   useEffect(() => {
-    if (!session?.user) {
-      // Save to localStorage for anonymous users
-      localStorage.setItem("linguala-history", JSON.stringify(history))
-    }
+    // History and glossary are only saved for authenticated users
+    // Anonymous users get core translation functionality only
   }, [history, session])
 
   useEffect(() => {
-    if (!session?.user) {
-      localStorage.setItem("linguala-glossary", JSON.stringify(glossary))
-    }
+    // Glossary management is only available for authenticated users
   }, [glossary, session])
 
   const loadUserData = async () => {
@@ -268,10 +258,10 @@ export default function LingualaTranslator() {
           text: text.trim(),
           sourceLang: from,
           targetLang: to,
-          domain: selectedDomain,
-          glossary: glossary.filter(entry => 
+          domain: session?.user ? selectedDomain : 'general',
+          glossary: session?.user ? glossary.filter(entry => 
             entry.domain === selectedDomain || entry.domain === 'general'
-          )
+          ) : []
         }),
       })
 
@@ -281,21 +271,21 @@ export default function LingualaTranslator() {
       setTranslatedText(data.translatedText)
       setTranslationProgress(100)
 
-      // Save to history
-      const historyItem: TranslationHistory = {
-        id: Date.now().toString(),
-        sourceText: text.trim(),
-        translatedText: data.translatedText,
-        sourceLang: from,
-        targetLang: to,
-        domain: selectedDomain,
-        timestamp: Date.now(),
-      }
-      
-      setHistory(prev => [historyItem, ...prev.slice(0, 99)])
-
-      // Save to database if authenticated
+      // Save to history only if authenticated
       if (session?.user) {
+        const historyItem: TranslationHistory = {
+          id: Date.now().toString(),
+          sourceText: text.trim(),
+          translatedText: data.translatedText,
+          sourceLang: from,
+          targetLang: to,
+          domain: selectedDomain,
+          timestamp: Date.now(),
+        }
+        
+        setHistory(prev => [historyItem, ...prev.slice(0, 99)])
+
+        // Save to database
         fetch('/api/translations', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -445,45 +435,77 @@ export default function LingualaTranslator() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Domain Selection */}
-        <div className="text-center mb-8">
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {DOMAINS.map(domain => {
-              const IconComponent = domain.icon
-              return (
-                <Button
-                  key={domain.code}
-                  variant={selectedDomain === domain.code ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedDomain(domain.code)}
-                  className={`flex items-center space-x-2 transition-all duration-200 ${
-                    selectedDomain === domain.code 
-                      ? `${domain.color} text-white hover:opacity-90` 
-                      : "hover:scale-105"
-                  }`}
-                >
-                  <IconComponent className="h-4 w-4" />
-                  <span>{domain.name}</span>
-                </Button>
-              )
-            })}
+        {/* Domain Selection - Only for authenticated users */}
+        {session?.user && (
+          <div className="text-center mb-8">
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              {DOMAINS.map(domain => {
+                const IconComponent = domain.icon
+                return (
+                  <Button
+                    key={domain.code}
+                    variant={selectedDomain === domain.code ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedDomain(domain.code)}
+                    className={`flex items-center space-x-2 transition-all duration-200 ${
+                      selectedDomain === domain.code 
+                        ? `${domain.color} text-white hover:opacity-90` 
+                        : "hover:scale-105"
+                    }`}
+                  >
+                    <IconComponent className="h-4 w-4" />
+                    <span>{domain.name}</span>
+                  </Button>
+                )
+              })}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* Sign-in CTA for anonymous users */}
+        {!session?.user && (
+          <div className="text-center mb-8">
+            <Card className="max-w-md mx-auto bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+              <CardContent className="p-6">
+                <div className="text-center space-y-3">
+                  <div className="flex justify-center">
+                    <div className="p-3 bg-blue-100 rounded-full">
+                      <BookOpen className="h-6 w-6 text-blue-600" />
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">Unlock Premium Features</h3>
+                  <p className="text-sm text-gray-600">
+                    Sign in to access domain expertise, custom glossaries, translation history, and more.
+                  </p>
+                  <Button 
+                    onClick={() => window.location.href = '/auth/signin'}
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
+                  >
+                    Sign In
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
 
         {/* Main Translation Interface */}
         <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
           <CardHeader className="pb-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                {/* Current domain */}
-                <Badge variant="secondary" className="flex items-center space-x-1">
-                  <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />
-                  <span>{getDomainInfo(selectedDomain).name}</span>
-                </Badge>
+                {/* Current domain - Only for authenticated users */}
+                {session?.user && (
+                  <Badge variant="secondary" className="flex items-center space-x-1">
+                    <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />
+                    <span>{getDomainInfo(selectedDomain).name}</span>
+                  </Badge>
+                )}
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex items-center space-x-2">
+              {/* Action Buttons - Only for authenticated users */}
+              {session?.user && (
+                <div className="flex items-center space-x-2">
                 <Dialog open={showGlossary} onOpenChange={setShowGlossary}>
                   <DialogTrigger asChild>
                     <Button variant="outline" size="sm">
@@ -661,7 +683,8 @@ export default function LingualaTranslator() {
                     </div>
                   </DialogContent>
                 </Dialog>
-              </div>
+                </div>
+              )}
             </div>
           </CardHeader>
 
@@ -839,8 +862,9 @@ export default function LingualaTranslator() {
           </CardContent>
         </Card>
 
-        {/* Quick Actions */}
-        <div className="flex justify-center space-x-4">
+        {/* Quick Actions - Only for authenticated users */}
+        {session?.user && (
+          <div className="flex justify-center space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="shadow-lg">
@@ -919,7 +943,8 @@ export default function LingualaTranslator() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
+          </div>
+        )}
       </main>
     </div>
   )

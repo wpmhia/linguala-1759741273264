@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4cf7408001wQl8Pf5Br4AMa3",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01TaU8FYvvTE7eHfkz5PgzXY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 260,
+      "limit": 25
+    },
+    "output": "<file>\n00261|     }, 200)\n00262| \n00263|     try {\n00264|       const response = await fetch(\"/api/translate\", {\n00265|         method: \"POST\",\n00266|         headers: { \"Content-Type\": \"application/json\" },\n00267|         body: JSON.stringify({\n00268|           text: text.trim(),\n00269|           sourceLang: from,\n00270|           targetLang: to,\n00271|           domain: selectedDomain,\n00272|           glossary: glossary.filter(entry => \n00273|             entry.domain === selectedDomain || entry.domain === 'general'\n00274|           )\n00275|         }),\n00276|       })\n00277| \n00278|       if (!response.ok) throw new Error(\"Translation failed\")\n00279| \n00280|       const data = await response.json()\n00281|       setTranslatedText(data.translatedText)\n00282|       setTranslationProgress(100)\n00283| \n00284|       // Save to history\n00285|       const historyItem: TranslationHistory = {\n\n(File has more lines. Use 'offset' parameter to read beyond line 285)\n</file>",
+    "metadata": {
+      "preview": "    }, 200)\n\n    try {\n      const response = await fetch(\"/api/translate\", {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({\n          text: text.trim(),\n          sourceLang: from,\n          targetLang: to,\n          domain: selectedDomain,\n          glossary: glossary.filter(entry => \n            entry.domain === selectedDomain || entry.domain === 'general'\n          )\n        }),\n      })\n\n      if (!response.ok) throw new Error(\"Translation failed\")\n\n      const data = await response.json()"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406683795,
+      "end": 1759406683800
+    }
+  }
+}

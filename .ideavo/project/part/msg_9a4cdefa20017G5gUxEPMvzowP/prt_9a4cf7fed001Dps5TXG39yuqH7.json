@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4cf7fed001Dps5TXG39yuqH7",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01MfYCHYxEqjQZFtPevvXqsT",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "          domain: selectedDomain,\n          glossary: glossary.filter(entry => \n            entry.domain === selectedDomain || entry.domain === 'general'\n          )",
+      "newString": "          domain: session?.user ? selectedDomain : 'general',\n          glossary: session?.user ? glossary.filter(entry => \n            entry.domain === selectedDomain || entry.domain === 'general'\n          ) : []"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -267,12 +267,12 @@\n   body: JSON.stringify({\n     text: text.trim(),\n     sourceLang: from,\n     targetLang: to,\n-    domain: selectedDomain,\n-    glossary: glossary.filter(entry => \n+    domain: session?.user ? selectedDomain : 'general',\n+    glossary: session?.user ? glossary.filter(entry => \n       entry.domain === selectedDomain || entry.domain === 'general'\n-    )\n+    ) : []\n   }),\n })\n \n if (!response.ok) throw new Error(\"Translation failed\")\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406687703,
+      "end": 1759406687735
+    }
+  }
+}

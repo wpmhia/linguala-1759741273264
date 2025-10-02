@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4ce6e67001k5hm4Wju7I2yPG",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01L8C5qWZ8BqYyvB6AxSonqH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 445,
+      "limit": 30
+    },
+    "output": "<file>\n00446| \n00447|       <main className=\"max-w-7xl mx-auto px-4 py-8\">\n00448|         {/* Domain Selection */}\n00449|         <div className=\"text-center mb-8\">\n00450|           <div className=\"flex flex-wrap justify-center gap-3 mb-8\">\n00451|             {DOMAINS.map(domain => {\n00452|               const IconComponent = domain.icon\n00453|               return (\n00454|                 <Button\n00455|                   key={domain.code}\n00456|                   variant={selectedDomain === domain.code ? \"default\" : \"outline\"}\n00457|                   size=\"sm\"\n00458|                   onClick={() => setSelectedDomain(domain.code)}\n00459|                   className={`flex items-center space-x-2 transition-all duration-200 ${\n00460|                     selectedDomain === domain.code \n00461|                       ? `${domain.color} text-white hover:opacity-90` \n00462|                       : \"hover:scale-105\"\n00463|                   }`}\n00464|                 >\n00465|                   <IconComponent className=\"h-4 w-4\" />\n00466|                   <span>{domain.name}</span>\n00467|                 </Button>\n00468|               )\n00469|             })}\n00470|           </div>\n00471|         </div>\n00472| \n00473|         {/* Main Translation Interface */}\n00474|         <Card className=\"shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8\">\n00475|           <CardHeader className=\"pb-4\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 475)\n</file>",
+    "metadata": {
+      "preview": "\n      <main className=\"max-w-7xl mx-auto px-4 py-8\">\n        {/* Domain Selection */}\n        <div className=\"text-center mb-8\">\n          <div className=\"flex flex-wrap justify-center gap-3 mb-8\">\n            {DOMAINS.map(domain => {\n              const IconComponent = domain.icon\n              return (\n                <Button\n                  key={domain.code}\n                  variant={selectedDomain === domain.code ? \"default\" : \"outline\"}\n                  size=\"sm\"\n                  onClick={() => setSelectedDomain(domain.code)}\n                  className={`flex items-center space-x-2 transition-all duration-200 ${\n                    selectedDomain === domain.code \n                      ? `${domain.color} text-white hover:opacity-90` \n                      : \"hover:scale-105\"\n                  }`}\n                >\n                  <IconComponent className=\"h-4 w-4\" />"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406616848,
+      "end": 1759406616859
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4cf4068001ce92lESvz0UooA",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01HFCWC3WwZe6ZhFrcUwtVRM",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "        {/* Quick Actions */}\n        <div className=\"flex justify-center space-x-4\">",
+      "newString": "        {/* Quick Actions - Only for authenticated users */}\n        {session?.user && (\n          <div className=\"flex justify-center space-x-4\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -844,10 +844,11 @@\n \n   </CardContent>\n </Card>\n \n-{/* Quick Actions */}\n-<div className=\"flex justify-center space-x-4\">\n+{/* Quick Actions - Only for authenticated users */}\n+{session?.user && (\n+  <div className=\"flex justify-center space-x-4\">\n   <DropdownMenu>\n     <DropdownMenuTrigger asChild>\n       <Button variant=\"outline\" className=\"shadow-lg\">\n         <Download className=\"h-4 w-4 mr-2\" />\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406670922,
+      "end": 1759406670943
+    }
+  }
+}

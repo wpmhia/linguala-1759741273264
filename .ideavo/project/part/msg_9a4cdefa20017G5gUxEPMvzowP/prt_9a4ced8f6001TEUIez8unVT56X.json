@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4ced8f6001TEUIez8unVT56X",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_013NK4GnQJjSQ2zRXff2q4fb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "              {/* Action Buttons */}\n              <div className=\"flex items-center space-x-2\">",
+      "newString": "              {/* Action Buttons - Only for authenticated users */}\n              {session?.user && (\n                <div className=\"flex items-center space-x-2\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -485,10 +485,11 @@\n     </Badge>\n   )}\n </div>\n \n-{/* Action Buttons */}\n-<div className=\"flex items-center space-x-2\">\n+{/* Action Buttons - Only for authenticated users */}\n+{session?.user && (\n+  <div className=\"flex items-center space-x-2\">\n   <Dialog open={showGlossary} onOpenChange={setShowGlossary}>\n     <DialogTrigger asChild>\n       <Button variant=\"outline\" size=\"sm\">\n         <BookOpen className=\"h-4 w-4 mr-2\" />\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406644580,
+      "end": 1759406644603
+    }
+  }
+}

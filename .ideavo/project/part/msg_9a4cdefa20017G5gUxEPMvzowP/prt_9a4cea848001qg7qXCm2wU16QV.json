@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4cea848001qg7qXCm2wU16QV",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KddKUo9MLwki4pZAKfbeqw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n \"Current domain\" /home/user/project/components/linguala-translator.tsx",
+      "description": "Find current domain badge location"
+    },
+    "output": "480:                {/* Current domain */}\n",
+    "metadata": {
+      "output": "480:                {/* Current domain */}\n",
+      "exit": 0,
+      "description": "Find current domain badge location"
+    },
+    "title": "grep -n \"Current domain\" /home/user/project/components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406631825,
+      "end": 1759406631857
+    }
+  }
+}

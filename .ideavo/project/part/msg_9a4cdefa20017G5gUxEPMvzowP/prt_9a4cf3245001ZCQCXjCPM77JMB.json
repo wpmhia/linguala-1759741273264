@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4cf3245001ZCQCXjCPM77JMB",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_019zBZpLdgjEBQPuZ7ugTV1s",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 845,
+      "limit": 15
+    },
+    "output": "<file>\n00846|         </Card>\n00847| \n00848|         {/* Quick Actions */}\n00849|         <div className=\"flex justify-center space-x-4\">\n00850|           <DropdownMenu>\n00851|             <DropdownMenuTrigger asChild>\n00852|               <Button variant=\"outline\" className=\"shadow-lg\">\n00853|                 <Download className=\"h-4 w-4 mr-2\" />\n00854|                 Export\n00855|               </Button>\n00856|             </DropdownMenuTrigger>\n00857|             <DropdownMenuContent>\n00858|               <DropdownMenuItem onClick={() => {\n00859|                 if (!translatedText) return toast.error(\"No translation to export\")\n00860|                 const content = `${sourceText}\\n\\n→ ${translatedText}`\n\n(File has more lines. Use 'offset' parameter to read beyond line 860)\n</file>",
+    "metadata": {
+      "preview": "        </Card>\n\n        {/* Quick Actions */}\n        <div className=\"flex justify-center space-x-4\">\n          <DropdownMenu>\n            <DropdownMenuTrigger asChild>\n              <Button variant=\"outline\" className=\"shadow-lg\">\n                <Download className=\"h-4 w-4 mr-2\" />\n                Export\n              </Button>\n            </DropdownMenuTrigger>\n            <DropdownMenuContent>\n              <DropdownMenuItem onClick={() => {\n                if (!translatedText) return toast.error(\"No translation to export\")\n                const content = `${sourceText}\\n\\n→ ${translatedText}`"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406666897,
+      "end": 1759406666901
+    }
+  }
+}

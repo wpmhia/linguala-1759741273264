@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4cf9dac001gOwpg96fr2kk4P",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01WCnRCvGNKpAdBJuWkH3urB",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "      // Save to history\n      const historyItem: TranslationHistory = {\n        id: Date.now().toString(),\n        sourceText: text.trim(),\n        translatedText: data.translatedText,\n        sourceLang: from,\n        targetLang: to,\n        domain: selectedDomain,\n        timestamp: Date.now(),\n      }\n      \n      setHistory(prev => [historyItem, ...prev.slice(0, 99)])\n\n      // Save to database if authenticated\n      if (session?.user) {",
+      "newString": "      // Save to history only if authenticated\n      if (session?.user) {\n        const historyItem: TranslationHistory = {\n          id: Date.now().toString(),\n          sourceText: text.trim(),\n          translatedText: data.translatedText,\n          sourceLang: from,\n          targetLang: to,\n          domain: selectedDomain,\n          timestamp: Date.now(),\n        }\n        \n        setHistory(prev => [historyItem, ...prev.slice(0, 99)])\n\n        // Save to database"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -280,23 +280,23 @@\n const data = await response.json()\n setTranslatedText(data.translatedText)\n setTranslationProgress(100)\n \n-// Save to history\n-const historyItem: TranslationHistory = {\n-  id: Date.now().toString(),\n-  sourceText: text.trim(),\n-  translatedText: data.translatedText,\n-  sourceLang: from,\n-  targetLang: to,\n-  domain: selectedDomain,\n-  timestamp: Date.now(),\n-}\n-\n-setHistory(prev => [historyItem, ...prev.slice(0, 99)])\n-\n-// Save to database if authenticated\n+// Save to history only if authenticated\n if (session?.user) {\n+  const historyItem: TranslationHistory = {\n+    id: Date.now().toString(),\n+    sourceText: text.trim(),\n+    translatedText: data.translatedText,\n+    sourceLang: from,\n+    targetLang: to,\n+    domain: selectedDomain,\n+    timestamp: Date.now(),\n+  }\n+  \n+  setHistory(prev => [historyItem, ...prev.slice(0, 99)])\n+\n+  // Save to database\n   fetch('/api/translations', {\n     method: 'POST',\n     headers: { 'Content-Type': 'application/json' },\n     body: JSON.stringify({\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406696521,
+      "end": 1759406696545
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4cf7000001FWgvu3j2dBvydX",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me also make sure the translation function doesn't use glossary or save to database for anonymous users. Let me update the translation function:",
+  "time": {
+    "start": 1759406683142,
+    "end": 1759406683142
+  }
+}

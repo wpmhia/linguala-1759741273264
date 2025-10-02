@@ -1,0 +1,29 @@
+{
+  "id": "prt_9a4ce49c1001sT4Qa7G8MgKvaT",
+  "messageID": "msg_9a4cdefa20017G5gUxEPMvzowP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01SGrZZfhYVgy4bKX9dWQEHe",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "        {/* Domain Selection */}\n        <div className=\"text-center mb-8\">\n          <div className=\"flex flex-wrap justify-center gap-3 mb-8\">\n            {DOMAINS.map(domain => {\n              const IconComponent = domain.icon\n              return (\n                <Button\n                  key={domain.code}\n                  variant={selectedDomain === domain.code ? \"default\" : \"outline\"}\n                  size=\"sm\"\n                  onClick={() => setSelectedDomain(domain.code)}\n                  className={`flex items-center space-x-2 transition-all duration-200 ${\n                    selectedDomain === domain.code \n                      ? `${domain.color} text-white hover:opacity-90` \n                      : \"hover:scale-105\"\n                  }`}\n                >\n                  <IconComponent className=\"h-4 w-4\" />\n                  <span>{domain.name}</span>\n                </Button>\n              )\n            })}\n          </div>\n        </div>",
+          "newString": "        {/* Domain Selection - Only for authenticated users */}\n        {session?.user && (\n          <div className=\"text-center mb-8\">\n            <div className=\"flex flex-wrap justify-center gap-3 mb-8\">\n              {DOMAINS.map(domain => {\n                const IconComponent = domain.icon\n                return (\n                  <Button\n                    key={domain.code}\n                    variant={selectedDomain === domain.code ? \"default\" : \"outline\"}\n                    size=\"sm\"\n                    onClick={() => setSelectedDomain(domain.code)}\n                    className={`flex items-center space-x-2 transition-all duration-200 ${\n                      selectedDomain === domain.code \n                        ? `${domain.color} text-white hover:opacity-90` \n                        : \"hover:scale-105\"\n                    }`}\n                  >\n                    <IconComponent className=\"h-4 w-4\" />\n                    <span>{domain.name}</span>\n                  </Button>\n                )\n              })}\n            </div>\n          </div>\n        )}"
+        },
+        {
+          "oldString": "                {/* Current domain */}\n                <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n                  <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n                  <span>{getDomainInfo(selectedDomain).name}</span>\n                </Badge>",
+          "newString": "                {/* Current domain - Only for authenticated users */}\n                {session?.user && (\n                  <Badge variant=\"secondary\" className=\"flex items-center space-x-1\">\n                    <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />\n                    <span>{getDomainInfo(selectedDomain).name}</span>\n                  </Badge>\n                )}"
+        }
+      ]
+    },
+    "error": "Error: You must read the file /home/user/project/components/linguala-translator.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759406613640,
+      "end": 1759406613646
+    }
+  }
+}

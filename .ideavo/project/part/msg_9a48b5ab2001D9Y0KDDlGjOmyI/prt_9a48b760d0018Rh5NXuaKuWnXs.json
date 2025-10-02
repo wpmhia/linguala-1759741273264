@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a48b760d0018Rh5NXuaKuWnXs",
+  "messageID": "msg_9a48b5ab2001D9Y0KDDlGjOmyI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check the server logs to see what's causing the 500 error:",
+  "time": {
+    "start": 1759402227718,
+    "end": 1759402227718
+  }
+}

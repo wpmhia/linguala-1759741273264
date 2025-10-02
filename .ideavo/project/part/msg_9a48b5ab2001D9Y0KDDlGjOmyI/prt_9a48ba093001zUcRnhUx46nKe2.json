@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a48ba093001zUcRnhUx46nKe2",
+  "messageID": "msg_9a48b5ab2001D9Y0KDDlGjOmyI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Great! The API key works with the international endpoint. But there might be an issue with environment variable loading. Let me check if the environment variable is properly set in the running process:",
+  "time": {
+    "start": 1759402239015,
+    "end": 1759402239015
+  }
+}

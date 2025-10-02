@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a48d2441001eEwXT5MxrUX5OC",
+  "messageID": "msg_9a48b5ab2001D9Y0KDDlGjOmyI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01E3JmrbgHe9GTcYBtueeaNw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 30,
+      "limit": 10
+    },
+    "output": "<file>\n00031|     if (!apiKey) {\n00032|       return NextResponse.json(\n00033|         { error: 'API key not configured. Please set DASHSCOPE_API_KEY environment variable.' },\n00034|         { status: 500 }\n00035|       )\n00036|     }\n00037| \n00038|     // Prepare the translation prompt\n00039|     const sourceLanguage = LANGUAGE_MAP[sourceLang] || sourceLang\n00040|     const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n\n(File has more lines. Use 'offset' parameter to read beyond line 40)\n</file>",
+    "metadata": {
+      "preview": "    if (!apiKey) {\n      return NextResponse.json(\n        { error: 'API key not configured. Please set DASHSCOPE_API_KEY environment variable.' },\n        { status: 500 }\n      )\n    }\n\n    // Prepare the translation prompt\n    const sourceLanguage = LANGUAGE_MAP[sourceLang] || sourceLang\n    const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759402338239,
+      "end": 1759402338248
+    }
+  }
+}

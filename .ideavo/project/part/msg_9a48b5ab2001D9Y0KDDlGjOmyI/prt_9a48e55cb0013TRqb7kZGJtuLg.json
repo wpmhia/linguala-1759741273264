@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a48e55cb0013TRqb7kZGJtuLg",
+  "messageID": "msg_9a48b5ab2001D9Y0KDDlGjOmyI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_018RKP7Dd6Epjes8L3ctsSxZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/test/route.ts",
+      "content": "import { NextRequest, NextResponse } from 'next/server'\n\nexport async function GET() {\n  const apiKey = process.env.DASHSCOPE_API_KEY\n  \n  return NextResponse.json({\n    hasApiKey: !!apiKey,\n    keyLength: apiKey ? apiKey.length : 0,\n    keyPrefix: apiKey ? apiKey.substring(0, 10) : 'none'\n  })\n}\n\nexport async function POST() {\n  try {\n    const apiKey = process.env.DASHSCOPE_API_KEY\n    console.log('Testing API Key:', apiKey ? apiKey.substring(0, 15) + '...' : 'undefined')\n    \n    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${apiKey}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: [\n          { role: 'user', content: 'Hello' }\n        ],\n        max_tokens: 50\n      }),\n      signal: AbortSignal.timeout(10000) // 10 second timeout\n    })\n\n    if (!response.ok) {\n      const errorText = await response.text()\n      return NextResponse.json({ error: errorText, status: response.status })\n    }\n\n    const data = await response.json()\n    return NextResponse.json({ success: true, data })\n  } catch (error: any) {\n    console.error('Test error:', error)\n    return NextResponse.json({ error: error.message })\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/api/test/route.ts",
+      "exists": false
+    },
+    "title": "app/api/test/route.ts",
+    "time": {
+      "start": 1759402421748,
+      "end": 1759402421754
+    }
+  }
+}

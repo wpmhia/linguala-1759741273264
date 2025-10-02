@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a48d474d001njXqOVkpesFM31",
+  "messageID": "msg_9a48b5ab2001D9Y0KDDlGjOmyI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01WomojgXaWVDEqe9rtz66hV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "    if (!response.ok) {\n      const errorData = await response.text()\n      console.error('Qwen API error:', errorData)\n      return NextResponse.json(\n        { error: 'Translation service unavailable' },\n        { status: 500 }\n      )\n    }",
+      "newString": "    if (!response.ok) {\n      const errorData = await response.text()\n      console.error('Qwen API error:', errorData)\n      console.error('Response status:', response.status)\n      console.error('Response headers:', Object.fromEntries(response.headers.entries()))\n      return NextResponse.json(\n        { error: 'Translation service unavailable' },\n        { status: 500 }\n      )\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -74,8 +74,10 @@\n \n if (!response.ok) {\n   const errorData = await response.text()\n   console.error('Qwen API error:', errorData)\n+  console.error('Response status:', response.status)\n+  console.error('Response headers:', Object.fromEntries(response.headers.entries()))\n   return NextResponse.json(\n     { error: 'Translation service unavailable' },\n     { status: 500 }\n   )\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759402348666,
+      "end": 1759402348686
+    }
+  }
+}

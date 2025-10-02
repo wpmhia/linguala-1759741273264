@@ -5,6 +5,20 @@ $ next dev
 
  ✓ Starting...
  ✓ Ready in 2.1s
- ✓ Compiled /middleware in 178ms
+ ✓ Compiled /middleware in 160ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
+ ✓ Compiled / in 3.3s (652 modules)
+ GET / 200 in 3960ms
+ ✓ Compiled in 703ms (337 modules)
+ GET / 200 in 43ms
+ ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ○ Compiling /api/translate ...
+ ✓ Compiled /api/translate in 631ms (345 modules)
+Qwen API error: {"error":{"code":"invalid_parameter_error","param":null,"message":"Role must be in [user, assistant].","type":"invalid_request_error"},"id":"chatcmpl-42dbe247-8b22-9bd3-a002-3141d376ca95","request_id":"42dbe247-8b22-9bd3-a002-3141d376ca95"}
+ POST /api/translate 500 in 1963ms
+Qwen API error: {"error":{"code":"invalid_parameter_error","param":null,"message":"Role must be in [user, assistant].","type":"invalid_request_error"},"id":"chatcmpl-04003788-3b22-902f-9cb4-d7eaa101ad68","request_id":"04003788-3b22-902f-9cb4-d7eaa101ad68"}
+ POST /api/translate 500 in 1004ms
+Qwen API error: {"error":{"code":"invalid_parameter_error","param":null,"message":"Role must be in [user, assistant].","type":"invalid_request_error"},"id":"chatcmpl-3e68065d-6da1-9905-878f-3549c782db3d","request_id":"3e68065d-6da1-9905-878f-3549c782db3d"}
+ POST /api/translate 500 in 1120ms

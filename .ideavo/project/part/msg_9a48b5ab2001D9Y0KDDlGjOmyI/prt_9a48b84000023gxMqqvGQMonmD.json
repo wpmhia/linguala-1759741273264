@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a48b84000023gxMqqvGQMonmD",
+  "messageID": "msg_9a48b5ab2001D9Y0KDDlGjOmyI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see the issue! The API key might be region-specific. Let me test if the key works with the international endpoint:",
+  "time": {
+    "start": 1759402231434,
+    "end": 1759402231434
+  }
+}

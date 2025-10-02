@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a48d1e96001W01gNqJv5CBPOk",
+  "messageID": "msg_9a48b5ab2001D9Y0KDDlGjOmyI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The error is still showing \"Incorrect API key\" even though we tested the key successfully. Let me check if there's a caching issue or if the environment variable isn't being read properly. Let me add some debugging to the API route:",
+  "time": {
+    "start": 1759402337344,
+    "end": 1759402337344
+  }
+}

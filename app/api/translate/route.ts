@@ -28,6 +28,8 @@ export async function POST(request: NextRequest) {
     }
 
     const apiKey = process.env.DASHSCOPE_API_KEY
+    console.log('API Key length:', apiKey ? apiKey.length : 'undefined')
+    console.log('API Key prefix:', apiKey ? apiKey.substring(0, 10) : 'undefined')
     if (!apiKey) {
       return NextResponse.json(
         { error: 'API key not configured. Please set DASHSCOPE_API_KEY environment variable.' },
@@ -73,6 +75,8 @@ export async function POST(request: NextRequest) {
     if (!response.ok) {
       const errorData = await response.text()
       console.error('Qwen API error:', errorData)
+      console.error('Response status:', response.status)
+      console.error('Response headers:', Object.fromEntries(response.headers.entries()))
       return NextResponse.json(
         { error: 'Translation service unavailable' },
         { status: 500 }

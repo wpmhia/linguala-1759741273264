@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5ab038e001Fs9mHjYjg2yytU",
+  "messageID": "msg_9a5aa08bd001tV6nXs07NnNjcD",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KULdZpfiDWqnDHHYYddoTP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"next dev\" || true && sleep 2 && PORT=3000 npm run dev &",
+      "description": "Restart dev server with monochrome logo"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart dev server with monochrome logo"
+    },
+    "title": "cd /home/user/project && pkill -f \"next dev\" || true && sleep 2 && PORT=3000 npm run dev &",
+    "time": {
+      "start": 1759421073137,
+      "end": 1759421073165
+    }
+  }
+}

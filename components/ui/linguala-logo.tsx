@@ -5,7 +5,7 @@
  * 
  * Design Elements:
  * - Clean, rounded typography for modern professional appearance
- * - Blue gradient for trust and technology
+ * - Monochrome dark text for clean, professional look
  * - Simple, readable text-only approach
  * - Responsive sizing for different contexts
  */
@@ -28,8 +28,8 @@ export function LingualaLogo({ size = "md", className }: LingualaLogoProps) {
   return (
     <div className={cn("flex items-center", className)}>
       <span className={cn(
-        "font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent tracking-tight",
-        "font-['Inter',_'system-ui',_sans-serif] rounded-lg",
+        "font-bold text-gray-900 tracking-tight",
+        "font-['Inter',_'system-ui',_sans-serif]",
         textSizeClasses[size]
       )}>
         Linguala Translate
@@ -42,7 +42,7 @@ export function LingualaLogo({ size = "md", className }: LingualaLogoProps) {
 export function LingualaIcon({ className }: { className?: string }) {
   return (
     <div className={cn("flex items-center", className)}>
-      <span className="text-lg font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-['Inter',_'system-ui',_sans-serif]">
+      <span className="text-lg font-bold text-gray-900 font-['Inter',_'system-ui',_sans-serif]">
         LT
       </span>
     </div>

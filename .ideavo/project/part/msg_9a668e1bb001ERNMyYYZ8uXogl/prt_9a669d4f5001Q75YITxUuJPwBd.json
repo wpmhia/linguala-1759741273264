@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a669d4f5001Q75YITxUuJPwBd",
+  "messageID": "msg_9a668e1bb001ERNMyYYZ8uXogl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translation): update language mapping and add fallback translations",
+  "cost": 0.18943965,
+  "tokens": {
+    "input": 6,
+    "output": 175,
+    "reasoning": 0,
+    "cache": {
+      "write": 624,
+      "read": 30154
+    }
+  }
+}

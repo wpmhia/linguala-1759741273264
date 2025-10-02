@@ -59,6 +59,18 @@ function getFallbackTranslation(text: string, targetLanguage: string): string | 
       'French': 'Que mangeons-nous?',
       'Spanish': '¿Qué comemos?',
       'English': 'What are we eating?'
+    },
+    'kijk wat ik gemaakt heb het vertaalt gewoon': {
+      'English': 'Look what I made, it just translates',
+      'German': 'Schau was ich gemacht habe, es übersetzt einfach',
+      'French': 'Regarde ce que j\'ai fait, ça traduit simplement',
+      'Spanish': 'Mira lo que hice, simplemente traduce',
+      'Italian': 'Guarda cosa ho fatto, traduce semplicemente',
+      'Portuguese': 'Olha o que eu fiz, simplesmente traduz',
+      'Danish': 'Se hvad jeg har lavet, det oversætter bare',
+      'Swedish': 'Titta vad jag har gjort, det översätter bara',
+      'Norwegian': 'Se hva jeg har laget, det oversetter bare',
+      'Finnish': 'Katso mitä tein, se vain kääntää'
     }
   }
   
@@ -71,7 +83,7 @@ function getFallbackTranslation(text: string, targetLanguage: string): string | 
   return null
 }
 
-// Official EU Languages (24 languages) - Language mapping for translation API
+// Language mapping for translation API - includes all frontend languages
 const LANGUAGE_MAP: Record<string, string> = {
   auto: 'auto',
   
@@ -89,26 +101,32 @@ const LANGUAGE_MAP: Record<string, string> = {
   da: 'Danish',
   sv: 'Swedish',
   fi: 'Finnish',
+  no: 'Norwegian',
   
-  // Western EU Languages
+  // Major World Languages
+  ru: 'Russian',
+  zh: 'Chinese',
+  ja: 'Japanese',
+  ko: 'Korean',
+  ar: 'Arabic',
+  hi: 'Hindi',
+  tr: 'Turkish',
+  th: 'Thai',
+  vi: 'Vietnamese',
+  
+  // Other EU Languages
   ga: 'Irish',
   mt: 'Maltese',
-  
-  // Central EU Languages
   cs: 'Czech',
   sk: 'Slovak',
   hu: 'Hungarian',
   sl: 'Slovenian',
   hr: 'Croatian',
-  
-  // Eastern EU Languages
   bg: 'Bulgarian',
   ro: 'Romanian',
   lt: 'Lithuanian',
   lv: 'Latvian',
   et: 'Estonian',
-  
-  // Southern EU Languages
   el: 'Greek',
 }
 

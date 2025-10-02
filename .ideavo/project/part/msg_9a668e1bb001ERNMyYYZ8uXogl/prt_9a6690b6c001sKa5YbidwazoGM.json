@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6690b6c001sKa5YbidwazoGM",
+  "messageID": "msg_9a668e1bb001ERNMyYYZ8uXogl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The issue is that translations to languages other than English are falling back to the error message. Let me check how the translator component is calling the API and what target languages are being passed.",
+  "time": {
+    "start": 1759433527399,
+    "end": 1759433527399
+  }
+}

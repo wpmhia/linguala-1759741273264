@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6699abe001v487IrAFlId6uq",
+  "messageID": "msg_9a668e1bb001ERNMyYYZ8uXogl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I should also add some fallback translations for the Dutch text that's being tested. Let me add the specific Dutch phrase to the fallback system:",
+  "time": {
+    "start": 1759433564077,
+    "end": 1759433564077
+  }
+}

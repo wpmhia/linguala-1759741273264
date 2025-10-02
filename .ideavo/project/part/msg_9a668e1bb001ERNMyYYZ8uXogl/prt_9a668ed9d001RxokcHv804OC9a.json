@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a668ed9d001RxokcHv804OC9a",
+  "messageID": "msg_9a668e1bb001ERNMyYYZ8uXogl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check what's happening with the translation to other languages. The issue might be in the language mapping or API call structure.",
+  "time": {
+    "start": 1759433519277,
+    "end": 1759433519277
+  }
+}

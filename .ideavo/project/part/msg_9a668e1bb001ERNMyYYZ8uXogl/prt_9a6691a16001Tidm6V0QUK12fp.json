@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6691a16001Tidm6V0QUK12fp",
+  "messageID": "msg_9a668e1bb001ERNMyYYZ8uXogl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see the issue now. The frontend is sending language codes like \"nl\" (Dutch), \"sv\" (Swedish), etc., but there's a mismatch between the language codes in the frontend and what the API expects. Let me check the LANGUAGE_MAP in the API and see what's happening.\n\nLooking at the API code, I can see that some languages in the frontend (like \"no\" for Norwegian, \"zh\" for Chinese, \"ja\" for Japanese, etc.) are not mapped in the `LANGUAGE_MAP` in the API route. When the API receives an unmapped language code, it likely fails.\n\nLet me update the language mapping to include all the languages from the frontend:",
+  "time": {
+    "start": 1759433533676,
+    "end": 1759433533676
+  }
+}

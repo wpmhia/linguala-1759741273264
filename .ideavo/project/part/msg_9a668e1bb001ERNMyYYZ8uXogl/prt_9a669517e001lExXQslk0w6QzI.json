@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a669517e001lExXQslk0w6QzI",
+  "messageID": "msg_9a668e1bb001ERNMyYYZ8uXogl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_012Ce9aRuv4NUspcu7FANS5q",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "// Official EU Languages (24 languages) - Language mapping for translation API\nconst LANGUAGE_MAP: Record<string, string> = {\n  auto: 'auto',\n  \n  // Popular EU Languages\n  en: 'English',\n  de: 'German', \n  fr: 'French',\n  es: 'Spanish',\n  it: 'Italian',\n  pt: 'Portuguese',\n  pl: 'Polish',\n  nl: 'Dutch',\n  \n  // Nordic EU Languages\n  da: 'Danish',\n  sv: 'Swedish',\n  fi: 'Finnish',\n  \n  // Western EU Languages\n  ga: 'Irish',\n  mt: 'Maltese',\n  \n  // Central EU Languages\n  cs: 'Czech',\n  sk: 'Slovak',\n  hu: 'Hungarian',\n  sl: 'Slovenian',\n  hr: 'Croatian',\n  \n  // Eastern EU Languages\n  bg: 'Bulgarian',\n  ro: 'Romanian',\n  lt: 'Lithuanian',\n  lv: 'Latvian',\n  et: 'Estonian',\n  \n  // Southern EU Languages\n  el: 'Greek',\n}",
+      "newString": "// Language mapping for translation API - includes all frontend languages\nconst LANGUAGE_MAP: Record<string, string> = {\n  auto: 'auto',\n  \n  // Popular EU Languages\n  en: 'English',\n  de: 'German', \n  fr: 'French',\n  es: 'Spanish',\n  it: 'Italian',\n  pt: 'Portuguese',\n  pl: 'Polish',\n  nl: 'Dutch',\n  \n  // Nordic EU Languages\n  da: 'Danish',\n  sv: 'Swedish',\n  fi: 'Finnish',\n  no: 'Norwegian',\n  \n  // Major World Languages\n  ru: 'Russian',\n  zh: 'Chinese',\n  ja: 'Japanese',\n  ko: 'Korean',\n  ar: 'Arabic',\n  hi: 'Hindi',\n  tr: 'Turkish',\n  th: 'Thai',\n  vi: 'Vietnamese',\n  \n  // Other EU Languages\n  ga: 'Irish',\n  mt: 'Maltese',\n  cs: 'Czech',\n  sk: 'Slovak',\n  hu: 'Hungarian',\n  sl: 'Slovenian',\n  hr: 'Croatian',\n  bg: 'Bulgarian',\n  ro: 'Romanian',\n  lt: 'Lithuanian',\n  lv: 'Latvian',\n  et: 'Estonian',\n  el: 'Greek',\n}"
+    },
+    "error": "Error: You must read the file /home/user/project/app/api/translate/route.ts before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759433549369,
+      "end": 1759433549372
+    }
+  }
+}

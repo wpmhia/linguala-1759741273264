@@ -1,0 +1,61 @@
+{
+  "id": "prt_9a60bed690010amS7iIRO3qKrx",
+  "messageID": "msg_9a60be12d001dMpWSiHrSiq6r0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01Vi2UVM3MjAunudQTE5zSSV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Update sign-in page to use UK English spelling and terminology",
+          "status": "pending",
+          "priority": "high",
+          "id": "uk-english-signin"
+        },
+        {
+          "content": "Update sign-out page to use UK English spelling and terminology",
+          "status": "pending",
+          "priority": "high",
+          "id": "uk-english-signout"
+        },
+        {
+          "content": "Update auth configuration to use UK English terms",
+          "status": "pending",
+          "priority": "medium",
+          "id": "uk-english-auth-config"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Update sign-in page to use UK English spelling and terminology\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"uk-english-signin\"\n  },\n  {\n    \"content\": \"Update sign-out page to use UK English spelling and terminology\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"uk-english-signout\"\n  },\n  {\n    \"content\": \"Update auth configuration to use UK English terms\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"uk-english-auth-config\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Update sign-in page to use UK English spelling and terminology",
+          "status": "pending",
+          "priority": "high",
+          "id": "uk-english-signin"
+        },
+        {
+          "content": "Update sign-out page to use UK English spelling and terminology",
+          "status": "pending",
+          "priority": "high",
+          "id": "uk-english-signout"
+        },
+        {
+          "content": "Update auth configuration to use UK English terms",
+          "status": "pending",
+          "priority": "medium",
+          "id": "uk-english-auth-config"
+        }
+      ]
+    },
+    "title": "3 todos",
+    "time": {
+      "start": 1759427425542,
+      "end": 1759427425542
+    }
+  }
+}

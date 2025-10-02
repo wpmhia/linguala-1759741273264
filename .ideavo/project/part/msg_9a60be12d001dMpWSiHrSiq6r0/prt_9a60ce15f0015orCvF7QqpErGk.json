@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a60ce15f0015orCvF7QqpErGk",
+  "messageID": "msg_9a60be12d001dMpWSiHrSiq6r0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_016UdaM9GqYKvSVh1QfUnQEc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "offset": 15,
+      "limit": 10
+    },
+    "output": "<file>\n00016|   robots: 'index, follow',\n00017|   openGraph: {\n00018|     type: 'website',\n00019|     locale: 'en_EU',\n00020|     url: 'https://linguala.eu',\n00021|     title: 'Linguala - European AI Translation Platform',\n00022|     description: 'The European translation platform built for European languages and culture',\n00023|     siteName: 'Linguala',\n00024|   },\n00025|   twitter: {\n\n(File has more lines. Use 'offset' parameter to read beyond line 25)\n</file>",
+    "metadata": {
+      "preview": "  robots: 'index, follow',\n  openGraph: {\n    type: 'website',\n    locale: 'en_EU',\n    url: 'https://linguala.eu',\n    title: 'Linguala - European AI Translation Platform',\n    description: 'The European translation platform built for European languages and culture',\n    siteName: 'Linguala',\n  },\n  twitter: {"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759427486774,
+      "end": 1759427486778
+    }
+  }
+}

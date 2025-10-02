@@ -1,0 +1,23 @@
+{
+  "id": "msg_9a60be12d001dMpWSiHrSiq6r0",
+  "role": "assistant",
+  "mode": "build",
+  "path": {
+    "cwd": "/home/user/project",
+    "root": "/home/user/project"
+  },
+  "tokens": {
+    "input": 4,
+    "output": 283,
+    "reasoning": 0,
+    "cache": {
+      "write": 419,
+      "read": 34930
+    }
+  },
+  "time": {
+    "created": 1759427420461,
+    "completed": 1759427541995
+  },
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

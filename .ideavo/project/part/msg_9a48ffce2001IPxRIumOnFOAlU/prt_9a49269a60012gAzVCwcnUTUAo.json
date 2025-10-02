@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a49269a60012gAzVCwcnUTUAo",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KxxfNEgDBdfUJbeBJ9KXfU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"text\":\"Hello\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' \\\n  --max-time 10",
+      "description": "Test API in production mode"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    52    0     0  100    52      0    258 --:--:-- --:--:-- --:--:--   257\r100    52    0     0  100    52      0     43  0:00:01  0:00:01 --:--:--    43\r100   113    0    61  100    52     39     33  0:00:01  0:00:01 --:--:--    72\n{\"translatedText\":\"Hola\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    52    0     0  100    52      0    258 --:--:-- --:--:-- --:--:--   257\r100    52    0     0  100    52      0     43  0:00:01  0:00:01 --:--:--    43\r100   113    0    61  100    52     39     33  0:00:01  0:00:01 --:--:--    72\n{\"translatedText\":\"Hola\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}",
+      "exit": 0,
+      "description": "Test API in production mode"
+    },
+    "title": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"text\":\"Hello\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' \\\n  --max-time 10",
+    "time": {
+      "start": 1759402683889,
+      "end": 1759402685459
+    }
+  }
+}

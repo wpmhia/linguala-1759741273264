@@ -28,8 +28,6 @@ export async function POST(request: NextRequest) {
     }
 
     const apiKey = process.env.DASHSCOPE_API_KEY
-    console.log('API Key length:', apiKey ? apiKey.length : 'undefined')
-    console.log('API Key prefix:', apiKey ? apiKey.substring(0, 10) : 'undefined')
     if (!apiKey) {
       return NextResponse.json(
         { error: 'API key not configured. Please set DASHSCOPE_API_KEY environment variable.' },
@@ -37,18 +35,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Prepare the translation prompt
-    const sourceLanguage = LANGUAGE_MAP[sourceLang] || sourceLang
+    // Prepare the translation options
+    const sourceLanguage = LANGUAGE_MAP[sourceLang] || (sourceLang === 'auto' ? 'auto' : sourceLang)
     const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang
-    
-    let prompt: string
-    if (sourceLang === 'auto') {
-      prompt = `Translate the following text to ${targetLanguage}. Only return the translation without any additional explanation or formatting:\n\n${text}`
-    } else {
-      prompt = `Translate the following text from ${sourceLanguage} to ${targetLanguage}. Only return the translation without any additional explanation or formatting:\n\n${text}`
-    }
 
-    // Call Qwen API using OpenAI-compatible interface
+    // Call Qwen MT API using the correct format for qwen-mt-turbo
     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -56,27 +47,21 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-         model: 'qwen-mt-turbo',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a professional translator. Provide accurate translations without any additional commentary, explanations, or formatting. Return only the translated text.'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
-        temperature: 0.3,
-        max_tokens: 2000,
+        model: 'qwen-mt-turbo',
+        messages: [{
+          role: 'user',
+          content: text
+        }],
+        translation_options: {
+          source_lang: sourceLanguage,
+          target_lang: targetLanguage
+        }
       }),
     })
 
     if (!response.ok) {
       const errorData = await response.text()
       console.error('Qwen API error:', errorData)
-      console.error('Response status:', response.status)
-      console.error('Response headers:', Object.fromEntries(response.headers.entries()))
       return NextResponse.json(
         { error: 'Translation service unavailable' },
         { status: 500 }

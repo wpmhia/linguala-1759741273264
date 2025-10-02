@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4906801001YRAb3waSDBKZrh",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01C3tZTtW8BAfJKQ63BZheBX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello world\"}],\n    \"translation_options\": {\"source_lang\": \"English\", \"target_lang\": \"Spanish\"}\n  }' \\\n  --max-time 10",
+      "description": "Test qwen-mt-turbo with translation options"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   515  100   338  100   177    277    145  0:00:01  0:00:01 --:--:--   422\n{\"choices\":[{\"message\":{\"content\":\"Hola mundo\",\"role\":\"assistant\"},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":49,\"completion_tokens\":2,\"total_tokens\":51},\"created\":1759402555,\"system_fingerprint\":null,\"model\":\"qwen-mt-turbo\",\"id\":\"chatcmpl-4ad20b4c-df2c-9d97-980e-98567290b869\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   515  100   338  100   177    277    145  0:00:01  0:00:01 --:--:--   422\n{\"choices\":[{\"message\":{\"content\":\"Hola mundo\",\"role\":\"assistant\"},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":49,\"completion_tokens\":2,\"total_tokens\":51},\"created\":1759402555,\"system_fingerprint\":null,\"model\":\"qwen-mt-turbo\",\"id\":\"chatcmpl-4ad20b4c-df2c-9d97-980e-98567290b869\"}",
+      "exit": 0,
+      "description": "Test qwen-mt-turbo with translation options"
+    },
+    "title": "curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello world\"}],\n    \"translation_options\": {\"source_lang\": \"English\", \"target_lang\": \"Spanish\"}\n  }' \\\n  --max-time 10",
+    "time": {
+      "start": 1759402554341,
+      "end": 1759402555582
+    }
+  }
+}

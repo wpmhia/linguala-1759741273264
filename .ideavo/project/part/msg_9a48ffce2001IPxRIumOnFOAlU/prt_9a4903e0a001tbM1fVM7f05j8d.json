@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4903e0a001tbM1fVM7f05j8d",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Wait, I need to use `extra_body` as shown in your example. Let me fix that:",
+  "time": {
+    "start": 1759402541231,
+    "end": 1759402541231
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a49299a6001JKtwZqOLLKBZWb",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translate): resolve qwen-mt-turbo API route configuration",
+  "cost": 0.5172861000000001,
+  "tokens": {
+    "input": 6,
+    "output": 241,
+    "reasoning": 0,
+    "cache": {
+      "write": 360,
+      "read": 55281
+    }
+  }
+}

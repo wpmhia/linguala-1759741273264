@@ -1,0 +1,7 @@
+{
+  "id": "prt_9a48ffbf3001Rb8hoTql00mqBc",
+  "type": "text",
+  "text": "# Import dependencies and create a client...\ncompletion = client.chat.completions.create(\n    model=\"qwen-mt-turbo\",    # Select the model\n    # The messages array must contain a single message with its role set to user. Its content is the text to be translated.\n    messages=[{\"role\": \"user\", \"content\": \"I did not laugh after watching this video\"}],    \n    # Because translation_options is not a standard OpenAI parameter, pass it through extra_body.\n    extra_body={\"translation_options\": {\"source_lang\": \"English\", \"target_lang\": \"Spanish\"}},\n)",
+  "messageID": "msg_9a48ffbf2001Iw5jwwc1k6oMIC",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

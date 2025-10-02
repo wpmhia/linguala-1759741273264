@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4913333001ZxYuF0VXtyPU25",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Cfar3CV14iK12498XVNrsX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "rm -rf /home/user/project/app/api/test",
+      "description": "Remove test API route"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Remove test API route"
+    },
+    "title": "rm -rf /home/user/project/app/api/test",
+    "time": {
+      "start": 1759402603879,
+      "end": 1759402603887
+    }
+  }
+}

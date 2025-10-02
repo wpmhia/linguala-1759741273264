@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a490bf76001XElcsbuKf6csFn",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01FHxoHEYFPem5qvgi71SXJs",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"text\": \"Hello world\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\"\n  }' \\\n  --max-time 15",
+      "description": "Test our updated translation API"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    79    0     0  100    79      0     65  0:00:01  0:00:01 --:--:--    65\r100    79    0     0  100    79      0     35  0:00:02  0:00:02 --:--:--    35\r100    79    0     0  100    79      0     24  0:00:03  0:00:03 --:--:--    24\r100    79    0     0  100    79      0     18  0:00:04  0:00:04 --:--:--    18\r100    79    0     0  100    79      0     15  0:00:05  0:00:05 --:--:--    15\r100    79    0     0  100    79      0     12  0:00:06  0:00:06 --:--:--     0\r100    79    0     0  100    79      0     10  0:00:07  0:00:07 --:--:--     0\r100    79    0     0  100    79      0      9  0:00:08  0:00:08 --:--:--     0\r100    79    0     0  100    79      0      8  0:00:09  0:00:09 --:--:--     0\r100    79    0     0  100    79      0      7  0:00:11  0:00:10  0:00:01     0\r100    79    0     0  100    79      0      7  0:00:11  0:00:11 --:--:--     0\r100    79    0     0  100    79      0      6  0:00:13  0:00:12  0:00:01     0\r100    79    0     0  100    79      0      5  0:00:15  0:00:13  0:00:02     0\r100    79    0     0  100    79      0      5  0:00:15  0:00:14  0:00:01     0\r100    79    0     0  100    79      0      5  0:00:15  0:00:15 --:--:--     0\ncurl: (28) Operation timed out after 15001 milliseconds with 0 bytes received\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    79    0     0  100    79      0     65  0:00:01  0:00:01 --:--:--    65\r100    79    0     0  100    79      0     35  0:00:02  0:00:02 --:--:--    35\r100    79    0     0  100    79      0     24  0:00:03  0:00:03 --:--:--    24\r100    79    0     0  100    79      0     18  0:00:04  0:00:04 --:--:--    18\r100    79    0     0  100    79      0     15  0:00:05  0:00:05 --:--:--    15\r100    79    0     0  100    79      0     12  0:00:06  0:00:06 --:--:--     0\r100    79    0     0  100    79      0     10  0:00:07  0:00:07 --:--:--     0\r100    79    0     0  100    79      0      9  0:00:08  0:00:08 --:--:--     0\r100    79    0     0  100    79      0      8  0:00:09  0:00:09 --:--:--     0\r100    79    0     0  100    79      0      7  0:00:11  0:00:10  0:00:01     0\r100    79    0     0  100    79      0      7  0:00:11  0:00:11 --:--:--     0\r100    79    0     0  100    79      0      6  0:00:13  0:00:12  0:00:01     0\r100    79    0     0  100    79      0      5  0:00:15  0:00:13  0:00:02     0\r100    79    0     0  100    79      0      5  0:00:15  0:00:14  0:00:01     0\r100    79    0     0  100    79      0      5  0:00:15  0:00:15 --:--:--     0\ncurl: (28) Operation timed out after 15001 milliseconds with 0 bytes received\n",
+      "exit": 28,
+      "description": "Test our updated translation API"
+    },
+    "title": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"text\": \"Hello world\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\"\n  }' \\\n  --max-time 15",
+    "time": {
+      "start": 1759402574995,
+      "end": 1759402590010
+    }
+  }
+}

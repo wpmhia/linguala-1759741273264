@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a491b437001xMggI1Uv3Z0AbP",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KoN1KVnnTbTfr76bGSAU4M",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run build",
+      "timeout": 30000,
+      "description": "Build the project to check for errors"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/6) ...\n   Generating static pages (1/6) \r\n   Generating static pages (2/6) \r\n   Generating static pages (4/6) \r\n ✓ Generating static pages (6/6)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    35.4 kB         131 kB\n├ ○ /_not-found                          873 B            88 kB\n├ ƒ /api/translate                       0 B                0 B\n└ ○ /env-check                           8.88 kB          96 kB\n+ First Load JS shared by all            87.1 kB\n  ├ chunks/117-f4a6a28978dd7abb.js       31.6 kB\n  ├ chunks/fd9d1056-e5107480c6bfd7c5.js  53.6 kB\n  └ other shared chunks (total)          1.86 kB\n\n\nƒ Middleware                             26.8 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/6) ...\n   Generating static pages (1/6) \r\n   Generating static pages (2/6) \r\n   Generating static pages (4/6) \r\n ✓ Generating static pages (6/6)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    35.4 kB         131 kB\n├ ○ /_not-found                          873 B            88 kB\n├ ƒ /api/translate                       0 B                0 B\n└ ○ /env-check                           8.88 kB          96 kB\n+ First Load JS shared by all            87.1 kB\n  ├ chunks/117-f4a6a28978dd7abb.js       31.6 kB\n  ├ chunks/fd9d1056-e5107480c6bfd7c5.js  53.6 kB\n  └ other shared chunks (total)          1.86 kB\n\n\nƒ Middleware                             26.8 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+      "exit": 0,
+      "description": "Build the project to check for errors"
+    },
+    "title": "npm run build",
+    "time": {
+      "start": 1759402637033,
+      "end": 1759402661070
+    }
+  }
+}

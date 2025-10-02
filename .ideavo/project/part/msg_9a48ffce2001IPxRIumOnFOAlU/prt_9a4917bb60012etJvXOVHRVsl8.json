@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4917bb60012etJvXOVHRVsl8",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_015bmZRETArWLCW2u9AsAqVD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"text\":\"Hi\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' \\\n  --connect-timeout 5 --max-time 10",
+      "description": "Test with shorter timeout and simpler data"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    49    0     0  100    49      0     40  0:00:01  0:00:01 --:--:--    40\r100    49    0     0  100    49      0     22  0:00:02  0:00:02 --:--:--    22\r100    49    0     0  100    49      0     15  0:00:03  0:00:03 --:--:--    15\r100    49    0     0  100    49      0     11  0:00:04  0:00:04 --:--:--    11\r100    49    0     0  100    49      0      9  0:00:05  0:00:05 --:--:--     9\r100    49    0     0  100    49      0      8  0:00:06  0:00:06 --:--:--     0\r100    49    0     0  100    49      0      6  0:00:08  0:00:07  0:00:01     0\r100    49    0     0  100    49      0      6  0:00:08  0:00:08 --:--:--     0\r100    49    0     0  100    49      0      5  0:00:09  0:00:09 --:--:--     0\r100    49    0     0  100    49      0      4  0:00:12  0:00:10  0:00:02     0\ncurl: (28) Operation timed out after 10001 milliseconds with 0 bytes received\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    49    0     0  100    49      0     40  0:00:01  0:00:01 --:--:--    40\r100    49    0     0  100    49      0     22  0:00:02  0:00:02 --:--:--    22\r100    49    0     0  100    49      0     15  0:00:03  0:00:03 --:--:--    15\r100    49    0     0  100    49      0     11  0:00:04  0:00:04 --:--:--    11\r100    49    0     0  100    49      0      9  0:00:05  0:00:05 --:--:--     9\r100    49    0     0  100    49      0      8  0:00:06  0:00:06 --:--:--     0\r100    49    0     0  100    49      0      6  0:00:08  0:00:07  0:00:01     0\r100    49    0     0  100    49      0      6  0:00:08  0:00:08 --:--:--     0\r100    49    0     0  100    49      0      5  0:00:09  0:00:09 --:--:--     0\r100    49    0     0  100    49      0      4  0:00:12  0:00:10  0:00:02     0\ncurl: (28) Operation timed out after 10001 milliseconds with 0 bytes received\n",
+      "exit": 28,
+      "description": "Test with shorter timeout and simpler data"
+    },
+    "title": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"text\":\"Hi\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' \\\n  --connect-timeout 5 --max-time 10",
+    "time": {
+      "start": 1759402623254,
+      "end": 1759402633270
+    }
+  }
+}

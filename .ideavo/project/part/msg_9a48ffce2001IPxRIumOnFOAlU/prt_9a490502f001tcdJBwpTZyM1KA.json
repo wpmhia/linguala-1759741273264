@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a490502f001tcdJBwpTZyM1KA",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Actually, let me check the correct format. The `extra_body` parameter is typically used by SDK libraries, but for raw HTTP requests, we should put the translation options directly in the body. Let me revert and fix:",
+  "time": {
+    "start": 1759402546761,
+    "end": 1759402546761
+  }
+}

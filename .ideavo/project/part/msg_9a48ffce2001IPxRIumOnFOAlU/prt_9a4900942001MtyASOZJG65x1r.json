@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4900942001MtyASOZJG65x1r",
+  "messageID": "msg_9a48ffce2001IPxRIumOnFOAlU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! I see the issue now. The `qwen-mt-turbo` model uses a special `translation_options` parameter in the `extra_body`. Let me update the API route to use the correct format:",
+  "time": {
+    "start": 1759402528179,
+    "end": 1759402528179
+  }
+}

@@ -12,6 +12,7 @@ import {
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { UserProfile } from "@/components/user-profile"
+import { PremiumFeatures } from "@/components/premium-features"
 
 // Common languages like Google Translate
 const LANGUAGES = [
@@ -334,25 +335,39 @@ export default function LingualaTranslator() {
           )}
         </div>
 
-        {/* Sign-in CTA for anonymous users */}
-        {!session?.user && (
-          <div className="mt-12 text-center">
-            <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                Get more with Linguala Translate
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Save translations, access more languages, and get personalized suggestions.
-              </p>
-              <Button 
-                onClick={() => window.location.href = '/auth/signin'}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2"
-              >
-                Sign in
-              </Button>
+        {/* Premium features and CTA */}
+        <div className="mt-12">
+          {!session?.user ? (
+            <div className="text-center">
+              <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto mb-8">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                  Get more with Linguala Translate
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Save translations, access more languages, and get personalized suggestions.
+                </p>
+                <div className="space-x-4">
+                  <Button 
+                    onClick={() => window.location.href = '/auth/signin'}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2"
+                  >
+                    Sign In
+                  </Button>
+                  <Button 
+                    onClick={() => window.location.href = '/auth/signup'}
+                    variant="outline"
+                    className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-2"
+                  >
+                    Create Account
+                  </Button>
+                </div>
+              </div>
+              <PremiumFeatures compact />
             </div>
-          </div>
-        )}
+          ) : (
+            <PremiumFeatures compact />
+          )}
+        </div>
       </main>
     </div>
   )

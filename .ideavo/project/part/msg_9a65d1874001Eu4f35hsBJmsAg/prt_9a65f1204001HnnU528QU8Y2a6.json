@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a65f1204001HnnU528QU8Y2a6",
+  "messageID": "msg_9a65d1874001Eu4f35hsBJmsAg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_012GbZHsys6cS9B6yzLETyf2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run dev",
+      "timeout": 10000,
+      "description": "Start dev server with new auth system"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2.5s\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2.5s\n",
+      "exit": null,
+      "description": "Start dev server with new auth system"
+    },
+    "title": "npm run dev",
+    "time": {
+      "start": 1759432873293,
+      "end": 1759432883299
+    }
+  }
+}

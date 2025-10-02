@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a6611c900013izEWl4kCIS57H",
+  "messageID": "msg_9a65d1874001Eu4f35hsBJmsAg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01AnCnENxXr2cH2k7sAkmPeq",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f curl 2>/dev/null || true",
+      "description": "Stop the hanging curl request"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Stop the hanging curl request"
+    },
+    "title": "pkill -f curl 2>/dev/null || true",
+    "time": {
+      "start": 1759433007092,
+      "end": 1759433007110
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a65fc88d001a9IkcahxcKhI3j",
+  "messageID": "msg_9a65d1874001Eu4f35hsBJmsAg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01G5mR6HTT1VLnYQiwcX37EX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { UserProfile } from \"@/components/user-profile\"",
+      "newString": "import { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { UserProfile } from \"@/components/user-profile\"\nimport { PremiumFeatures } from \"@/components/premium-features\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -11,8 +11,9 @@\n } from \"lucide-react\"\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { UserProfile } from \"@/components/user-profile\"\n+import { PremiumFeatures } from \"@/components/premium-features\"\n \n // Common languages like Google Translate\n const LANGUAGES = [\n   { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759432920982,
+      "end": 1759432920992
+    }
+  }
+}

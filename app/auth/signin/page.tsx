@@ -8,17 +8,24 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Separator } from "@/components/ui/separator"
-import { Mail, Chrome, AlertTriangle, CheckCircle } from "lucide-react"
+import { Mail, Chrome, AlertTriangle, CheckCircle, Eye, EyeOff } from "lucide-react"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
+import Link from "next/link"
 
 function SignInForm() {
-  const [email, setEmail] = useState("")
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  })
   const [isLoading, setIsLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
+  const [error, setError] = useState("")
   const [providers, setProviders] = useState<any>(null)
   const router = useRouter()
   const searchParams = useSearchParams()
-  const error = searchParams.get("error")
+  const urlError = searchParams.get("error")
+  const message = searchParams.get("message")
   const callbackUrl = searchParams.get("callbackUrl") || "/"
 
   useEffect(() => {
@@ -29,17 +36,44 @@ function SignInForm() {
     fetchProviders()
   }, [])
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }))
+    setError("") // Clear errors when user types
+  }
+
   const handleEmailSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email) return
+    if (!formData.email || !formData.password) return
 
     setIsLoading(true)
-    
-    // Simple approach: redirect directly to credentials sign-in
-    signIn("credentials", {
-      email,
-      callbackUrl,
-    })
+    setError("")
+
+    try {
+      const result = await signIn("credentials", {
+        email: formData.email,
+        password: formData.password,
+        callbackUrl,
+        redirect: false,
+      })
+      
+      if (result?.ok) {
+        setShowSuccess(true)
+        setTimeout(() => {
+          router.push(callbackUrl)
+        }, 1500)
+      } else {
+        console.error("Authentication failed:", result?.error)
+        setError("Invalid email or password")
+      }
+    } catch (error) {
+      console.error("Sign in error:", error)
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleOAuthSignIn = async (providerId: string) => {
@@ -94,7 +128,7 @@ function SignInForm() {
           </div>
           <CardTitle className="text-2xl font-semibold">Sign In to Linguala</CardTitle>
           <CardDescription>
-            Access your translation history, custom glossaries, and professional EU translation tools
+            Access your translation history, custom glossaries, and premium features
           </CardDescription>
         </CardHeader>
         
@@ -103,83 +137,122 @@ function SignInForm() {
             <Alert className="border-green-200 bg-green-50">
               <CheckCircle className="h-4 w-4 text-green-600" />
               <AlertDescription className="text-green-700">
-                Success! Welcome to Linguala. Redirecting to your dashboard...
-              </AlertDescription>
-            </Alert>
-          )}
-          
-          {error && !showSuccess && (
-            <Alert className="border-red-200 bg-red-50">
-              <AlertTriangle className="h-4 w-4 text-red-600" />
-              <AlertDescription className="text-red-700">
-                {getErrorMessage(error)}
+                Success! Welcome back to Linguala. Redirecting...
               </AlertDescription>
             </Alert>
           )}
 
-          {/* Email Sign In */}
-          <form onSubmit={handleEmailSignIn} className="space-y-3">
+          {message && !showSuccess && (
+            <Alert className="border-blue-200 bg-blue-50">
+              <CheckCircle className="h-4 w-4 text-blue-600" />
+              <AlertDescription className="text-blue-700">
+                {message}
+              </AlertDescription>
+            </Alert>
+          )}
+          
+          {(error || urlError) && !showSuccess && (
+            <Alert className="border-red-200 bg-red-50">
+              <AlertTriangle className="h-4 w-4 text-red-600" />
+              <AlertDescription className="text-red-700">
+                {error || (urlError ? getErrorMessage(urlError) : "")}
+              </AlertDescription>
+            </Alert>
+          )}
+
+          {/* OAuth Providers */}
+          {providers && providers.google && (
+            <>
+              <Button
+                variant="outline"
+                onClick={() => handleOAuthSignIn("google")}
+                disabled={isLoading || showSuccess}
+                className="w-full"
+              >
+                <Chrome className="h-4 w-4 mr-2" />
+                Continue with Google
+              </Button>
+
+              <div className="relative">
+                <Separator />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="bg-white px-2 text-xs text-gray-500">or continue with email</span>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Email/Password Sign In */}
+          <form onSubmit={handleEmailSignIn} className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email address
               </label>
               <Input
                 id="email"
+                name="email"
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={handleInputChange}
                 placeholder="Enter your email"
                 required
-                disabled={isLoading}
+                disabled={isLoading || showSuccess}
                 className="w-full"
               />
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+                Password
+              </label>
+              <div className="relative">
+                <Input
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  value={formData.password}
+                  onChange={handleInputChange}
+                  placeholder="Enter your password"
+                  required
+                  disabled={isLoading || showSuccess}
+                  className="w-full pr-10"
+                />
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-4 w-4 text-gray-400" />
+                  ) : (
+                    <Eye className="h-4 w-4 text-gray-400" />
+                  )}
+                </button>
+              </div>
             </div>
             
             <Button
               type="submit"
-              disabled={!email || isLoading || showSuccess}
+              disabled={!formData.email || !formData.password || isLoading || showSuccess}
               className="w-full bg-blue-600 hover:bg-blue-700"
             >
               <Mail className="h-4 w-4 mr-2" />
-              {showSuccess ? "Success!" : isLoading ? "Processing..." : "Continue with Email"}
+              {showSuccess ? "Success!" : isLoading ? "Signing In..." : "Sign In"}
             </Button>
-            
-            <div className="text-center">
-              <p className="text-xs text-gray-500">
-                New to Linguala? No account needed - we'll create one for you automatically
-              </p>
-            </div>
           </form>
 
-          {/* OAuth Providers */}
-          {providers && Object.keys(providers).length > 1 && (
-            <>
-              <div className="relative">
-                <Separator />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="bg-white px-2 text-xs text-gray-500">or continue with</span>
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                {providers.google && (
-                  <Button
-                    variant="outline"
-                    onClick={() => handleOAuthSignIn("google")}
-                    disabled={isLoading || showSuccess}
-                    className="w-full"
-                  >
-                    <Chrome className="h-4 w-4 mr-2" />
-                    Continue with Google
-                  </Button>
-                )}
-              </div>
-            </>
-          )}
+          <div className="text-center">
+            <p className="text-sm text-gray-600">
+              Don't have an account?{" "}
+              <Link href="/auth/signup" className="text-blue-600 hover:text-blue-500 font-medium">
+                Sign up
+              </Link>
+            </p>
+          </div>
 
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-4">
             <p className="text-xs text-blue-800 text-center">
-              <strong>First time here?</strong> Just enter your email or use Google - we'll automatically create your account and unlock all premium features!
+              <strong>New to Linguala?</strong> Create a free account to access premium translation features and custom glossaries!
             </p>
           </div>
           

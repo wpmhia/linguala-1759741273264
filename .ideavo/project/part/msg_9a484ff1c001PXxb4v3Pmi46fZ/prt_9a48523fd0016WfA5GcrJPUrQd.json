@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a48523fd0016WfA5GcrJPUrQd",
+  "messageID": "msg_9a484ff1c001PXxb4v3Pmi46fZ",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01QLdhzH2yiGQDE863cU1tMj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"DASHSCOPE_API_KEY length: ${#DASHSCOPE_API_KEY}\"",
+      "description": "Check if API key environment variable is set"
+    },
+    "output": "DASHSCOPE_API_KEY length: 35\n",
+    "metadata": {
+      "output": "DASHSCOPE_API_KEY length: 35\n",
+      "exit": 0,
+      "description": "Check if API key environment variable is set"
+    },
+    "title": "echo \"DASHSCOPE_API_KEY length: ${#DASHSCOPE_API_KEY}\"",
+    "time": {
+      "start": 1759401813794,
+      "end": 1759401813796
+    }
+  }
+}

@@ -17,10 +17,15 @@ import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { UserProfile } from "@/components/user-profile"
 
-// European-focused language data
+// Complete European language data
 const LANGUAGES = [
+  // Auto-detect
   { code: "auto", name: "Detect language", region: "auto", popular: true },
+  
+  // English - European lingua franca
   { code: "en", name: "English", region: "European Standard", popular: true },
+  
+  // Major European languages (most popular)
   { code: "de", name: "German", region: "Central Europe", popular: true },
   { code: "fr", name: "French", region: "Western Europe", popular: true },
   { code: "es", name: "Spanish", region: "Southern Europe", popular: true },
@@ -28,7 +33,42 @@ const LANGUAGES = [
   { code: "pt", name: "Portuguese", region: "Southern Europe", popular: true },
   { code: "ru", name: "Russian", region: "Eastern Europe", popular: true },
   { code: "pl", name: "Polish", region: "Eastern Europe", popular: true },
-  { code: "nl", name: "Dutch", region: "Western Europe", popular: true }
+  { code: "nl", name: "Dutch", region: "Western Europe", popular: true },
+  
+  // Nordic languages (Northern Europe)
+  { code: "da", name: "Danish", region: "Nordic Europe", popular: false },
+  { code: "sv", name: "Swedish", region: "Nordic Europe", popular: false },
+  { code: "no", name: "Norwegian", region: "Nordic Europe", popular: false },
+  { code: "fi", name: "Finnish", region: "Nordic Europe", popular: false },
+  { code: "is", name: "Icelandic", region: "Nordic Europe", popular: false },
+  
+  // Other Western European languages
+  { code: "be", name: "Belgian", region: "Western Europe", popular: false },
+  { code: "ga", name: "Irish", region: "Western Europe", popular: false },
+  { code: "cy", name: "Welsh", region: "Western Europe", popular: false },
+  { code: "mt", name: "Maltese", region: "Southern Europe", popular: false },
+  
+  // Central European languages
+  { code: "cs", name: "Czech", region: "Central Europe", popular: false },
+  { code: "sk", name: "Slovak", region: "Central Europe", popular: false },
+  { code: "hu", name: "Hungarian", region: "Central Europe", popular: false },
+  { code: "sl", name: "Slovenian", region: "Central Europe", popular: false },
+  { code: "hr", name: "Croatian", region: "Central Europe", popular: false },
+  
+  // Eastern European languages
+  { code: "uk", name: "Ukrainian", region: "Eastern Europe", popular: false },
+  { code: "bg", name: "Bulgarian", region: "Eastern Europe", popular: false },
+  { code: "ro", name: "Romanian", region: "Eastern Europe", popular: false },
+  { code: "lt", name: "Lithuanian", region: "Eastern Europe", popular: false },
+  { code: "lv", name: "Latvian", region: "Eastern Europe", popular: false },
+  { code: "et", name: "Estonian", region: "Eastern Europe", popular: false },
+  
+  // Balkan languages
+  { code: "sr", name: "Serbian", region: "Balkan Europe", popular: false },
+  { code: "bs", name: "Bosnian", region: "Balkan Europe", popular: false },
+  { code: "mk", name: "Macedonian", region: "Balkan Europe", popular: false },
+  { code: "sq", name: "Albanian", region: "Balkan Europe", popular: false },
+  { code: "el", name: "Greek", region: "Southern Europe", popular: false }
 ]
 
 export default function LingualaTranslator() {

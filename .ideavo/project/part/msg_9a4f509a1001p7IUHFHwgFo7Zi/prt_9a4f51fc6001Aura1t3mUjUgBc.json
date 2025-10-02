@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4f51fc6001Aura1t3mUjUgBc",
+  "messageID": "msg_9a4f509a1001p7IUHFHwgFo7Zi",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01GtwsLdvYQrPYC7Uj4pXgk1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 25,
+      "limit": 20
+    },
+    "output": "<file>\n00026|   { code: \"es\", name: \"Spanish\", region: \"Southern Europe\", popular: true },\n00027|   { code: \"it\", name: \"Italian\", region: \"Southern Europe\", popular: true },\n00028|   { code: \"pt\", name: \"Portuguese\", region: \"Southern Europe\", popular: true },\n00029|   { code: \"ru\", name: \"Russian\", region: \"Eastern Europe\", popular: true },\n00030|   { code: \"pl\", name: \"Polish\", region: \"Eastern Europe\", popular: true },\n00031|   { code: \"nl\", name: \"Dutch\", region: \"Western Europe\", popular: true }\n00032| ]\n00033| \n00034| export default function LingualaTranslator() {\n00035|   const { data: session, status } = useSession()\n00036|   \n00037|   // Core translation state\n00038|   const [sourceText, setSourceText] = useState(\"\")\n00039|   const [translatedText, setTranslatedText] = useState(\"\")\n00040|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00041|   const [targetLang, setTargetLang] = useState(\"en\")\n00042|   const [isTranslating, setIsTranslating] = useState(false)\n00043|   \n00044|   // UI state\n00045|   const [copySuccess, setCopySuccess] = useState(false)\n\n(File has more lines. Use 'offset' parameter to read beyond line 45)\n</file>",
+    "metadata": {
+      "preview": "  { code: \"es\", name: \"Spanish\", region: \"Southern Europe\", popular: true },\n  { code: \"it\", name: \"Italian\", region: \"Southern Europe\", popular: true },\n  { code: \"pt\", name: \"Portuguese\", region: \"Southern Europe\", popular: true },\n  { code: \"ru\", name: \"Russian\", region: \"Eastern Europe\", popular: true },\n  { code: \"pl\", name: \"Polish\", region: \"Eastern Europe\", popular: true },\n  { code: \"nl\", name: \"Dutch\", region: \"Western Europe\", popular: true }\n]\n\nexport default function LingualaTranslator() {\n  const { data: session, status } = useSession()\n  \n  // Core translation state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  const [isTranslating, setIsTranslating] = useState(false)\n  \n  // UI state\n  const [copySuccess, setCopySuccess] = useState(false)"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759409152634,
+      "end": 1759409152641
+    }
+  }
+}

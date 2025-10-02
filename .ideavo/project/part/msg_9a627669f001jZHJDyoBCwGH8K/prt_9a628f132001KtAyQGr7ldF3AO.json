@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a628f132001KtAyQGr7ldF3AO",
+  "messageID": "msg_9a627669f001jZHJDyoBCwGH8K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01UzhYegfqsa2Utz1zhfitD9",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                className=\"min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-0 focus-visible:ring-0 p-6 bg-gray-50\"",
+      "newString": "                className=\"min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6 bg-gray-50\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -268,9 +268,9 @@\n <Textarea\n   value={translatedText}\n   readOnly\n   placeholder={isTranslating ? \"Translating...\" : \"Translation\"}\n-  className=\"min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-0 focus-visible:ring-0 p-6 bg-gray-50\"\n+  className=\"min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6 bg-gray-50\"\n   style={{ fontSize: '16px', lineHeight: '1.5' }}\n />\n \n {/* Translation Controls */}\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759429326589,
+      "end": 1759429326593
+    }
+  }
+}

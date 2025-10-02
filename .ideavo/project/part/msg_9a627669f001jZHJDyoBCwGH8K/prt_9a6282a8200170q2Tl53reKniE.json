@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6282a8200170q2Tl53reKniE",
+  "messageID": "msg_9a627669f001jZHJDyoBCwGH8K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me check if there are any instances where focus indicators might not meet the 3:1 contrast requirement. I notice some components have `focus:ring-0` which removes focus indicators entirely - this is problematic for accessibility:",
+  "time": {
+    "start": 1759429276170,
+    "end": 1759429276170
+  }
+}

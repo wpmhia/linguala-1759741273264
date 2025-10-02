@@ -163,7 +163,7 @@ export default function LingualaTranslator() {
                 setSourceLang(value)
                 if (sourceText.trim()) translateText(sourceText, value, targetLang)
               }}>
-                <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0">
+                <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                   <div className="flex items-center space-x-2">
                     <span className="text-sm">{getLanguage(sourceLang).flag}</span>
                     <span className="font-medium text-sm">{getLanguage(sourceLang).name}</span>
@@ -197,7 +197,7 @@ export default function LingualaTranslator() {
                 setTargetLang(value)
                 if (sourceText.trim()) translateText(sourceText, sourceLang, value)
               }}>
-                <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0">
+                <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                   <div className="flex items-center space-x-2">
                     <span className="text-sm">{getLanguage(targetLang).flag}</span>
                     <span className="font-medium text-sm">{getLanguage(targetLang).name}</span>
@@ -228,7 +228,7 @@ export default function LingualaTranslator() {
                   onFocus={() => setFocusedArea('source')}
                   onBlur={() => setFocusedArea(null)}
                   placeholder="Enter text"
-                  className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-0 focus-visible:ring-0 p-6"
+                  className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6"
                   style={{ fontSize: '16px', lineHeight: '1.5' }}
                 />
                 
@@ -256,7 +256,7 @@ export default function LingualaTranslator() {
                     )}
                   </div>
                   
-                  <div className="text-xs text-gray-400">
+                  <div className="text-xs text-gray-600">
                     {sourceText.length} / 5000
                   </div>
                 </div>
@@ -269,7 +269,7 @@ export default function LingualaTranslator() {
                 value={translatedText}
                 readOnly
                 placeholder={isTranslating ? "Translating..." : "Translation"}
-                className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-0 focus-visible:ring-0 p-6 bg-gray-50"
+                className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6 bg-gray-50"
                 style={{ fontSize: '16px', lineHeight: '1.5' }}
               />
               

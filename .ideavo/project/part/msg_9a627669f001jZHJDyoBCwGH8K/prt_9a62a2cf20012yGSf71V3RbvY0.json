@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a62a2cf20012yGSf71V3RbvY0",
+  "messageID": "msg_9a627669f001jZHJDyoBCwGH8K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(accessibility): improve WCAG contrast and focus states",
+  "cost": 0.6535907999999998,
+  "tokens": {
+    "input": 1,
+    "output": 516,
+    "reasoning": 0,
+    "cache": {
+      "write": 410,
+      "read": 63239
+    }
+  }
+}

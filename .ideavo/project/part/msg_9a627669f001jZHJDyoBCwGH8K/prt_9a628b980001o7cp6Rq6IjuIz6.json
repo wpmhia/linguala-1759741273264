@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a628b980001o7cp6Rq6IjuIz6",
+  "messageID": "msg_9a627669f001jZHJDyoBCwGH8K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01YKjV5T8kctxcMFMtgPVpL9",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "              <Select value={targetLang} onValueChange={(value) => {\n                setTargetLang(value)\n                if (sourceText.trim()) translateText(sourceText, sourceLang, value)\n              }}>\n                <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0\">",
+      "newString": "              <Select value={targetLang} onValueChange={(value) => {\n                setTargetLang(value)\n                if (sourceText.trim()) translateText(sourceText, sourceLang, value)\n              }}>\n                <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -196,9 +196,9 @@\n <Select value={targetLang} onValueChange={(value) => {\n   setTargetLang(value)\n   if (sourceText.trim()) translateText(sourceText, sourceLang, value)\n }}>\n-  <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0\">\n+  <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">\n     <div className=\"flex items-center space-x-2\">\n       <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n       <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n     </div>\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759429312971,
+      "end": 1759429312975
+    }
+  }
+}

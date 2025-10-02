@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a62880f7001FQTYiGoIdVQeAe",
+  "messageID": "msg_9a627669f001jZHJDyoBCwGH8K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Mvr1YNUi2WVd29frAKaH1o",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 160,
+      "limit": 50
+    },
+    "output": "<file>\n00161|             <div className=\"flex items-center space-x-4\">\n00162|               <Select value={sourceLang} onValueChange={(value) => {\n00163|                 setSourceLang(value)\n00164|                 if (sourceText.trim()) translateText(sourceText, value, targetLang)\n00165|               }}>\n00166|                 <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0\">\n00167|                   <div className=\"flex items-center space-x-2\">\n00168|                     <span className=\"text-sm\">{getLanguage(sourceLang).flag}</span>\n00169|                     <span className=\"font-medium text-sm\">{getLanguage(sourceLang).name}</span>\n00170|                   </div>\n00171|                 </SelectTrigger>\n00172|                 <SelectContent>\n00173|                   {LANGUAGES.map(lang => (\n00174|                     <SelectItem key={lang.code} value={lang.code}>\n00175|                       <div className=\"flex items-center space-x-2\">\n00176|                         <span>{lang.flag}</span>\n00177|                         <span>{lang.name}</span>\n00178|                       </div>\n00179|                     </SelectItem>\n00180|                   ))}\n00181|                 </SelectContent>\n00182|               </Select>\n00183|             </div>\n00184| \n00185|             <Button\n00186|               variant=\"ghost\"\n00187|               size=\"sm\"\n00188|               onClick={swapLanguages}\n00189|               disabled={sourceLang === \"auto\"}\n00190|               className=\"p-2 rounded-full hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed\"\n00191|             >\n00192|               <ArrowUpDown className=\"h-4 w-4\" />\n00193|             </Button>\n00194| \n00195|             <div className=\"flex items-center space-x-4\">\n00196|               <Select value={targetLang} onValueChange={(value) => {\n00197|                 setTargetLang(value)\n00198|                 if (sourceText.trim()) translateText(sourceText, sourceLang, value)\n00199|               }}>\n00200|                 <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0\">\n00201|                   <div className=\"flex items-center space-x-2\">\n00202|                     <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n00203|                     <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n00204|                   </div>\n00205|                 </SelectTrigger>\n00206|                 <SelectContent>\n00207|                   {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n00208|                     <SelectItem key={lang.code} value={lang.code}>\n00209|                       <div className=\"flex items-center space-x-2\">\n00210|                         <span>{lang.flag}</span>\n\n(File has more lines. Use 'offset' parameter to read beyond line 210)\n</file>",
+    "metadata": {
+      "preview": "            <div className=\"flex items-center space-x-4\">\n              <Select value={sourceLang} onValueChange={(value) => {\n                setSourceLang(value)\n                if (sourceText.trim()) translateText(sourceText, value, targetLang)\n              }}>\n                <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0\">\n                  <div className=\"flex items-center space-x-2\">\n                    <span className=\"text-sm\">{getLanguage(sourceLang).flag}</span>\n                    <span className=\"font-medium text-sm\">{getLanguage(sourceLang).name}</span>\n                  </div>\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.map(lang => (\n                    <SelectItem key={lang.code} value={lang.code}>\n                      <div className=\"flex items-center space-x-2\">\n                        <span>{lang.flag}</span>\n                        <span>{lang.name}</span>\n                      </div>\n                    </SelectItem>\n                  ))}"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759429297064,
+      "end": 1759429297066
+    }
+  }
+}

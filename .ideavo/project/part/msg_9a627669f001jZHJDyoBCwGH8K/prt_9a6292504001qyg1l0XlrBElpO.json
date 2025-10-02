@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a6292504001qyg1l0XlrBElpO",
+  "messageID": "msg_9a627669f001jZHJDyoBCwGH8K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Kt4qexxwuuyrQEEk21J1Zi",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 325,
+      "limit": 15
+    },
+    "output": "<file>\n00326|                   Translate a document\n00327|                 </Button>\n00328|               </div>\n00329|               \n00330|               <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n00331|                 <span>Powered by Linguala Translate</span>\n00332|               </div>\n00333|             </div>\n00334|           )}\n00335|         </div>\n00336| \n00337|         {/* Sign-in CTA for anonymous users */}\n00338|         {!session?.user && (\n00339|           <div className=\"mt-12 text-center\">\n00340|             <div className=\"bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 340)\n</file>",
+    "metadata": {
+      "preview": "                  Translate a document\n                </Button>\n              </div>\n              \n              <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n                <span>Powered by Linguala Translate</span>\n              </div>\n            </div>\n          )}\n        </div>\n\n        {/* Sign-in CTA for anonymous users */}\n        {!session?.user && (\n          <div className=\"mt-12 text-center\">\n            <div className=\"bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto\">"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759429339013,
+      "end": 1759429339014
+    }
+  }
+}

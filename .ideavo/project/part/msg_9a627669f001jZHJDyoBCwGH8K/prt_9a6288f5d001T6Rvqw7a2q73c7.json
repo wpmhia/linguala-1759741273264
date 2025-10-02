@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a6288f5d001T6Rvqw7a2q73c7",
+  "messageID": "msg_9a627669f001jZHJDyoBCwGH8K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01VgiF88xn7eSUziFECcd8U6",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0\">",
+      "newString": "                <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">"
+    },
+    "error": "Error: oldString found multiple times and requires more code context to uniquely identify the intended match",
+    "time": {
+      "start": 1759429301652,
+      "end": 1759429301660
+    }
+  }
+}

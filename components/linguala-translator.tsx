@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { 
   ArrowUpDown, Copy, Download, Share2, Sparkles,
-  Check, BookOpen, History, Volume2, Globe,
+  Check, BookOpen, History, Globe,
   TrendingUp, Brain, Target, AlertCircle
 } from "lucide-react"
 import { toast } from "sonner"
@@ -104,18 +104,22 @@ export default function LingualaTranslator() {
       const response = await fetch('/api/translate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text, from, to })
+        body: JSON.stringify({ text, sourceLang: from, targetLang: to })
       })
       
       if (response.ok) {
         const data = await response.json()
         setTranslatedText(data.translatedText)
       } else {
-        throw new Error('Translation failed')
+        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))
+        console.error('Translation API error:', errorData)
+        throw new Error(errorData.error || 'Translation failed')
       }
     } catch (error) {
       console.error('Translation error:', error)
-      toast.error("Translation failed. Please try again.")
+      toast.error("Translation temporarily unavailable. Please try again later.")
+      // Set a helpful fallback message
+      setTranslatedText("Translation service is initializing. Please try again in a moment.")
     } finally {
       setIsTranslating(false)
     }

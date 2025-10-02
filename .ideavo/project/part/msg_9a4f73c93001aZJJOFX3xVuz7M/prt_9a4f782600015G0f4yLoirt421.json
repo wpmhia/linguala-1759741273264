@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4f782600015G0f4yLoirt421",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01QR49EfzQrRezdpxvwu1hjH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 185,
+      "limit": 30
+    },
+    "output": "<file>\n00186|                 variant=\"ghost\"\n00187|                 size=\"lg\"\n00188|                 onClick={swapLanguages}\n00189|                 disabled={sourceLang === \"auto\"}\n00190|                 className=\"p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50\"\n00191|               >\n00192|                 <ArrowUpDown className=\"h-5 w-5\" />\n00193|               </Button>\n00194| \n00195|               <Select value={targetLang} onValueChange={(value) => {\n00196|                 setTargetLang(value)\n00197|                 if (sourceText.trim()) translateText(sourceText, sourceLang, value)\n00198|               }}>\n00199|                 <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n00200|                   <SelectValue />\n00201|                 </SelectTrigger>\n00202|                 <SelectContent>\n00203|                   {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n00204|                     <SelectItem key={lang.code} value={lang.code}>\n00205|                       {lang.name}\n00206|                     </SelectItem>\n00207|                   ))}\n00208|                 </SelectContent>\n00209|               </Select>\n00210|             </div>\n00211| \n00212|             {/* Translation Areas */}\n00213|             <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-8\">\n00214|               {/* Source Text */}\n00215|               <div className=\"space-y-3\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 215)\n</file>",
+    "metadata": {
+      "preview": "                variant=\"ghost\"\n                size=\"lg\"\n                onClick={swapLanguages}\n                disabled={sourceLang === \"auto\"}\n                className=\"p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50\"\n              >\n                <ArrowUpDown className=\"h-5 w-5\" />\n              </Button>\n\n              <Select value={targetLang} onValueChange={(value) => {\n                setTargetLang(value)\n                if (sourceText.trim()) translateText(sourceText, sourceLang, value)\n              }}>\n                <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n                    <SelectItem key={lang.code} value={lang.code}>\n                      {lang.name}"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759409308881,
+      "end": 1759409308882
+    }
+  }
+}

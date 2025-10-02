@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4f88ae3001xfx3alX85fsb6S",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me also add better error handling and logging to the translation API to understand what's causing the 400 errors:",
+  "time": {
+    "start": 1759409376898,
+    "end": 1759409376898
+  }
+}

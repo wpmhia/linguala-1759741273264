@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4f76f19001njmwW0fZ6eR8bT",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01KxGsgVqhHCfmTMunu4bACz",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ text, from, to })\n      })",
+      "newString": "      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ text, sourceLang: from, targetLang: to })\n      })"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -103,9 +103,9 @@\n try {\n   const response = await fetch('/api/translate', {\n     method: 'POST',\n     headers: { 'Content-Type': 'application/json' },\n-    body: JSON.stringify({ text, from, to })\n+    body: JSON.stringify({ text, sourceLang: from, targetLang: to })\n   })\n   \n   if (response.ok) {\n     const data = await response.json()\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759409305037,
+      "end": 1759409305045
+    }
+  }
+}

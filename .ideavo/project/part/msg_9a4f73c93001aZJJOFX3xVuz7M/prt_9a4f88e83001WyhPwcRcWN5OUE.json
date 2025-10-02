@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4f88e83001WyhPwcRcWN5OUE",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01ToXJsLUWFwqhTXd12or1rj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "export async function POST(request: NextRequest) {\n  try {\n    const { text, sourceLang, targetLang, domain, glossary } = await request.json()\n\n    if (!text || !targetLang) {\n      return NextResponse.json(\n        { error: 'Text and target language are required' },\n        { status: 400 }\n      )\n    }",
+      "newString": "export async function POST(request: NextRequest) {\n  try {\n    const body = await request.json()\n    console.log('Translation request body:', body)\n    \n    const { text, sourceLang, targetLang, domain, glossary } = body\n\n    if (!text || !targetLang) {\n      console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n      return NextResponse.json(\n        { error: 'Text and target language are required' },\n        { status: 400 }\n      )\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -53,11 +53,15 @@\n }\n \n export async function POST(request: NextRequest) {\n   try {\n-    const { text, sourceLang, targetLang, domain, glossary } = await request.json()\n+    const body = await request.json()\n+    console.log('Translation request body:', body)\n+    \n+    const { text, sourceLang, targetLang, domain, glossary } = body\n \n     if (!text || !targetLang) {\n+      console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n       return NextResponse.json(\n         { error: 'Text and target language are required' },\n         { status: 400 }\n       )\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759409379824,
+      "end": 1759409379827
+    }
+  }
+}

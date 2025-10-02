@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4f76c13001tPoUCcOQ9StPya",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I found the issue! The frontend is sending `{ text, from, to }` but the API expects `{ text, sourceLang, targetLang }`. Let me fix this:",
+  "time": {
+    "start": 1759409303320,
+    "end": 1759409303320
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4f75a23001GPRt4WPob3RZUE",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The translation API looks like it's expecting parameters with different names. Let me check how the frontend is calling it:",
+  "time": {
+    "start": 1759409298770,
+    "end": 1759409298770
+  }
+}

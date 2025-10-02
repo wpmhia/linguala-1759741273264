@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4f79002001ouPKnm6uO7q4Yp",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01LzrTsTXR7nv3BWBsXP4JbE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "audio|Audio|playAudio|Volume|sound",
+      "include": "*.tsx"
+    },
+    "output": "Found 2 matches\n/home/user/project/components/linguala-translator.tsx:\n  Line 13:   Check, BookOpen, History, Volume2, Globe,\n\n/home/user/project/components/translator.tsx:\n  Line 17: import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check, Upload, FileText, Book, Search, Plus, Trash2, Edit3 } from \"lucide-react\"",
+    "metadata": {
+      "matches": 2,
+      "truncated": false
+    },
+    "title": "audio|Audio|playAudio|Volume|sound",
+    "time": {
+      "start": 1759409312493,
+      "end": 1759409312504
+    }
+  }
+}

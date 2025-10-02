@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4f7b60c001YfIe0v2LBT5LCd",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01EaTSwskVzJXzMWPdBnP8ds",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "playAudio|Volume2",
+      "path": "/home/user/project/components/linguala-translator.tsx"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "playAudio|Volume2",
+    "time": {
+      "start": 1759409322132,
+      "end": 1759409322137
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4f970e9001lO3O9c3ruyPjd4",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01TJnipQQ751ZKn2VGVuDLrc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const translateText = async (text: string, from: string, to: string) => {\n    if (!text.trim()) return\n    \n    setIsTranslating(true)\n    try {\n      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ text, sourceLang: from, targetLang: to })\n      })\n      \n      if (response.ok) {\n        const data = await response.json()\n        setTranslatedText(data.translatedText)\n      } else {\n        throw new Error('Translation failed')\n      }\n    } catch (error) {\n      console.error('Translation error:', error)\n      toast.error(\"Translation failed. Please try again.\")\n    } finally {\n      setIsTranslating(false)\n    }\n  }",
+      "newString": "  const translateText = async (text: string, from: string, to: string) => {\n    if (!text.trim()) return\n    \n    setIsTranslating(true)\n    try {\n      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ text, sourceLang: from, targetLang: to })\n      })\n      \n      if (response.ok) {\n        const data = await response.json()\n        setTranslatedText(data.translatedText)\n      } else {\n        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))\n        console.error('Translation API error:', errorData)\n        throw new Error(errorData.error || 'Translation failed')\n      }\n    } catch (error) {\n      console.error('Translation error:', error)\n      toast.error(\"Translation temporarily unavailable. Please try again later.\")\n      // Set a helpful fallback message\n      setTranslatedText(\"Translation service is initializing. Please try again in a moment.\")\n    } finally {\n      setIsTranslating(false)\n    }\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -110,13 +110,17 @@\n     if (response.ok) {\n       const data = await response.json()\n       setTranslatedText(data.translatedText)\n     } else {\n-      throw new Error('Translation failed')\n+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))\n+      console.error('Translation API error:', errorData)\n+      throw new Error(errorData.error || 'Translation failed')\n     }\n   } catch (error) {\n     console.error('Translation error:', error)\n-    toast.error(\"Translation failed. Please try again.\")\n+    toast.error(\"Translation temporarily unavailable. Please try again later.\")\n+    // Set a helpful fallback message\n+    setTranslatedText(\"Translation service is initializing. Please try again in a moment.\")\n   } finally {\n     setIsTranslating(false)\n   }\n }\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759409440930,
+      "end": 1759409440935
+    }
+  }
+}

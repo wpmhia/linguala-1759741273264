@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4f75d5b0011yRC83r7eqrn63",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Y1K2aj5R4bZk6QuZtYiPHf",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 100,
+      "limit": 20
+    },
+    "output": "<file>\n00101|     \n00102|     setIsTranslating(true)\n00103|     try {\n00104|       const response = await fetch('/api/translate', {\n00105|         method: 'POST',\n00106|         headers: { 'Content-Type': 'application/json' },\n00107|         body: JSON.stringify({ text, from, to })\n00108|       })\n00109|       \n00110|       if (response.ok) {\n00111|         const data = await response.json()\n00112|         setTranslatedText(data.translatedText)\n00113|       } else {\n00114|         throw new Error('Translation failed')\n00115|       }\n00116|     } catch (error) {\n00117|       console.error('Translation error:', error)\n00118|       toast.error(\"Translation failed. Please try again.\")\n00119|     } finally {\n00120|       setIsTranslating(false)\n\n(File has more lines. Use 'offset' parameter to read beyond line 120)\n</file>",
+    "metadata": {
+      "preview": "    \n    setIsTranslating(true)\n    try {\n      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ text, from, to })\n      })\n      \n      if (response.ok) {\n        const data = await response.json()\n        setTranslatedText(data.translatedText)\n      } else {\n        throw new Error('Translation failed')\n      }\n    } catch (error) {\n      console.error('Translation error:', error)\n      toast.error(\"Translation failed. Please try again.\")\n    } finally {\n      setIsTranslating(false)"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759409299812,
+      "end": 1759409299814
+    }
+  }
+}

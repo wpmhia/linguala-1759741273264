@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4fa3579001lQEK0LL6v4qBA2",
+  "messageID": "msg_9a4f73c93001aZJJOFX3xVuz7M",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translation): resolve API parameter mismatch and remove audio code",
+  "cost": 0.494448,
+  "tokens": {
+    "input": 0,
+    "output": 404,
+    "reasoning": 0,
+    "cache": {
+      "write": 629,
+      "read": 78632
+    }
+  }
+}

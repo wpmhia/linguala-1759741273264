@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a4f0668c001pjTDNWuRPmWStH",
+  "messageID": "msg_9a4eee4bd001WP2BOUsq2YueGv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_0118jyVybYgpkLpGUrgXs5PB",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "LingualaLogo|LingualaIcon"
+    },
+    "output": "Found 7 matches\n/home/user/project/components/ui/linguala-logo.tsx:\n  Line 5: interface LingualaLogoProps {\n  Line 11: export function LingualaLogo({ size = \"md\", showText = true, className }: LingualaLogoProps) {\n  Line 92: export function LingualaIcon({ className }: { className?: string }) {\n\n/home/user/project/components/linguala-translator.tsx:\n  Line 18: import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n  Line 111:             <LingualaLogo size=\"lg\" />\n\n/home/user/project/app/auth/signin/page.tsx:\n  Line 12: import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n  Line 88:             <LingualaLogo size=\"lg\" />",
+    "metadata": {
+      "matches": 7,
+      "truncated": false
+    },
+    "title": "LingualaLogo|LingualaIcon",
+    "time": {
+      "start": 1759408842961,
+      "end": 1759408842972
+    }
+  }
+}

@@ -16,19 +16,26 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "email", placeholder: "your@email.com" }
       },
       async authorize(credentials) {
+        console.log("Credentials provider called with:", credentials)
+        
         // Accept any valid email and create account automatically
         if (credentials?.email && credentials.email.includes('@')) {
           const emailParts = credentials.email.split('@')
           const username = emailParts[0]
           const domain = emailParts[1]
           
-          return {
+          const user = {
             id: `email_${credentials.email.replace(/[^a-zA-Z0-9]/g, '_')}`,
             email: credentials.email,
             name: username.charAt(0).toUpperCase() + username.slice(1),
             image: null,
           }
+          
+          console.log("Creating user:", user)
+          return user
         }
+        
+        console.log("Invalid email provided:", credentials?.email)
         return null
       }
     }),

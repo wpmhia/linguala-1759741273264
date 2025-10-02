@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a63b3603001iloIeS9GWN6QPk",
+  "messageID": "msg_9a63b0a73001ODSDAsx02oZeLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01VfpF9sLtfpGuyvuoH6oqbN",
+  "state": {
+    "status": "running",
+    "input": {
+      "command": "curl -s \"http://localhost:3000/api/auth/providers\" | head -20",
+      "description": "Check what auth providers are actually available"
+    },
+    "time": {
+      "start": 1759430523248
+    }
+  }
+}

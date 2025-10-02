@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a65448d9001T9VlJt2f55K3vK",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me test the auth flow. The issue seems to be that the credentials provider is too simplistic and may not be properly handling the authentication. Let me improve the authentication flow:",
+  "time": {
+    "start": 1759432166617,
+    "end": 1759432166617
+  }
+}

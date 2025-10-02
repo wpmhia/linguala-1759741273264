@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a653fa8e00158rLlEssUENZpm",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LjsXAivXHrLkU2oZSkVCoa",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -s \"http://localhost:3000/api/auth/providers\"",
+      "description": "Test auth providers after restart"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test auth providers after restart"
+    },
+    "title": "sleep 3 && curl -s \"http://localhost:3000/api/auth/providers\"",
+    "time": {
+      "start": 1759432146235,
+      "end": 1759432149255
+    }
+  }
+}

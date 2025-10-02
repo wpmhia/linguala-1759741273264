@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a6561042001x1u1LudyoLm7hX",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01MZc4e1LEDMpeue2g6aFuve",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "offset": 8,
+      "limit": 5
+    },
+    "output": "<file>\n00009|   // Comment out adapter for JWT session strategy\n00010|   // adapter: PrismaAdapter(prisma) as any,\n00011|   providers: [\n00012|     // Email-based account creation (no password needed)\n00013|     CredentialsProvider({\n\n(File has more lines. Use 'offset' parameter to read beyond line 13)\n</file>",
+    "metadata": {
+      "preview": "  // Comment out adapter for JWT session strategy\n  // adapter: PrismaAdapter(prisma) as any,\n  providers: [\n    // Email-based account creation (no password needed)\n    CredentialsProvider({"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759432283190,
+      "end": 1759432283192
+    }
+  }
+}

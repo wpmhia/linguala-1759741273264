@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a63b28e90016beZJbXdeP6knj",
+  "messageID": "msg_9a63b0a73001ODSDAsx02oZeLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01VGW3Ciwd77nFkEhNrw1nLj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "offset": 10,
+      "limit": 30
+    },
+    "output": "<file>\n00011|   providers: [\n00012|     // Email-based account creation (no password needed)\n00013|     CredentialsProvider({\n00014|       name: \"Email Account\",\n00015|       credentials: {\n00016|         email: { label: \"Email\", type: \"email\", placeholder: \"your@email.com\" }\n00017|       },\n00018|       async authorize(credentials) {\n00019|         // Accept any valid email and create account automatically\n00020|         if (credentials?.email && credentials.email.includes('@')) {\n00021|           const emailParts = credentials.email.split('@')\n00022|           const username = emailParts[0]\n00023|           const domain = emailParts[1]\n00024|           \n00025|           return {\n00026|             id: `email_${credentials.email.replace(/[^a-zA-Z0-9]/g, '_')}`,\n00027|             email: credentials.email,\n00028|             name: username.charAt(0).toUpperCase() + username.slice(1),\n00029|             image: null,\n00030|           }\n00031|         }\n00032|         return null\n00033|       }\n00034|     }),\n00035|     \n00036|     // Email provider - only enable if SMTP is configured\n00037|     ...(process.env.EMAIL_SERVER_HOST ? [\n00038|       EmailProvider({\n00039|         server: {\n00040|           host: process.env.EMAIL_SERVER_HOST,\n\n(File has more lines. Use 'offset' parameter to read beyond line 40)\n</file>",
+    "metadata": {
+      "preview": "  providers: [\n    // Email-based account creation (no password needed)\n    CredentialsProvider({\n      name: \"Email Account\",\n      credentials: {\n        email: { label: \"Email\", type: \"email\", placeholder: \"your@email.com\" }\n      },\n      async authorize(credentials) {\n        // Accept any valid email and create account automatically\n        if (credentials?.email && credentials.email.includes('@')) {\n          const emailParts = credentials.email.split('@')\n          const username = emailParts[0]\n          const domain = emailParts[1]\n          \n          return {\n            id: `email_${credentials.email.replace(/[^a-zA-Z0-9]/g, '_')}`,\n            email: credentials.email,\n            name: username.charAt(0).toUpperCase() + username.slice(1),\n            image: null,\n          }"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759430519678,
+      "end": 1759430519680
+    }
+  }
+}

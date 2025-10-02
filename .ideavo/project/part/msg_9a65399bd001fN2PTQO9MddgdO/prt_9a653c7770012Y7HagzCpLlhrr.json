@@ -1,0 +1,61 @@
+{
+  "id": "prt_9a653c7770012Y7HagzCpLlhrr",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01ECK1tC8yQYEq4CzcPJ9y3s",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Debug email authentication flow to find why nothing happens",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "debug-email-auth"
+        },
+        {
+          "content": "Fix authentication provider configuration",
+          "status": "pending",
+          "priority": "high",
+          "id": "fix-auth-provider"
+        },
+        {
+          "content": "Test email registration flow works",
+          "status": "pending",
+          "priority": "medium",
+          "id": "test-email-flow"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Debug email authentication flow to find why nothing happens\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\",\n    \"id\": \"debug-email-auth\"\n  },\n  {\n    \"content\": \"Fix authentication provider configuration\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"fix-auth-provider\"\n  },\n  {\n    \"content\": \"Test email registration flow works\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"test-email-flow\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Debug email authentication flow to find why nothing happens",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "debug-email-auth"
+        },
+        {
+          "content": "Fix authentication provider configuration",
+          "status": "pending",
+          "priority": "high",
+          "id": "fix-auth-provider"
+        },
+        {
+          "content": "Test email registration flow works",
+          "status": "pending",
+          "priority": "medium",
+          "id": "test-email-flow"
+        }
+      ]
+    },
+    "title": "3 todos",
+    "time": {
+      "start": 1759432133668,
+      "end": 1759432133668
+    }
+  }
+}

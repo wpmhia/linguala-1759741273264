@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a654c022001u8oj777msja2Wd",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01TMoFDtgKTtsJcMvP5xzTCK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "offset": 70,
+      "limit": 30
+    },
+    "output": "<file>\n00071|   \n00072|   callbacks: {\n00073|     async jwt({ token, user, account }) {\n00074|       if (user) {\n00075|         // For new OAuth users, generate a consistent ID\n00076|         if (account?.provider === 'google') {\n00077|           token.id = `google_${user.id}`\n00078|         } else if (account?.provider === 'credentials') {\n00079|           token.id = user.id\n00080|         } else {\n00081|           token.id = user.id || `user_${Date.now()}`\n00082|         }\n00083|         token.email = user.email\n00084|         token.name = user.name\n00085|         token.image = user.image\n00086|       }\n00087|       return token\n00088|     },\n00089|     async session({ session, token }) {\n00090|       if (session?.user && token) {\n00091|         session.user.id = token.id as string\n00092|         session.user.email = token.email as string\n00093|         session.user.name = token.name as string\n00094|         session.user.image = token.image as string\n00095|       }\n00096|       return session\n00097|     },\n00098|   },\n00099|   \n00100|   events: {\n\n(File has more lines. Use 'offset' parameter to read beyond line 100)\n</file>",
+    "metadata": {
+      "preview": "  \n  callbacks: {\n    async jwt({ token, user, account }) {\n      if (user) {\n        // For new OAuth users, generate a consistent ID\n        if (account?.provider === 'google') {\n          token.id = `google_${user.id}`\n        } else if (account?.provider === 'credentials') {\n          token.id = user.id\n        } else {\n          token.id = user.id || `user_${Date.now()}`\n        }\n        token.email = user.email\n        token.name = user.name\n        token.image = user.image\n      }\n      return token\n    },\n    async session({ session, token }) {\n      if (session?.user && token) {"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759432196835,
+      "end": 1759432196837
+    }
+  }
+}

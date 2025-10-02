@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a653db88001jjOxBIF1Y5QE4P",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01DN9NecGmwvbM7SwYLMYFYa",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s \"http://localhost:3000/api/auth/providers\" | python3 -m json.tool || echo \"API not responding\"",
+      "description": "Check auth providers API"
+    },
+    "output": "Expecting value: line 1 column 1 (char 0)\nAPI not responding\n",
+    "metadata": {
+      "output": "Expecting value: line 1 column 1 (char 0)\nAPI not responding\n",
+      "exit": 0,
+      "description": "Check auth providers API"
+    },
+    "title": "curl -s \"http://localhost:3000/api/auth/providers\" | python3 -m json.tool || echo \"API not responding\"",
+    "time": {
+      "start": 1759432138687,
+      "end": 1759432138759
+    }
+  }
+}

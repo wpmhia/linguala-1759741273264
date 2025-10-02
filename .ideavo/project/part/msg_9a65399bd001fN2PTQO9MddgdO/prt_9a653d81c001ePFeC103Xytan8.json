@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a653d81c001ePFeC103Xytan8",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "First, let me check what happens when you submit an email. Let me test the auth endpoint directly:",
+  "time": {
+    "start": 1759432137607,
+    "end": 1759432137607
+  }
+}

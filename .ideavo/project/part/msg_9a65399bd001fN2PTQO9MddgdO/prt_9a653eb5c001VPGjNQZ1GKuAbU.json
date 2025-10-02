@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a653eb5c001VPGjNQZ1GKuAbU",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01HBTg7dFcTpUbGNfD38YSCW",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" 2>/dev/null; sleep 1; npm run dev &",
+      "description": "Restart dev server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart dev server"
+    },
+    "title": "pkill -f \"next dev\" 2>/dev/null; sleep 1; npm run dev &",
+    "time": {
+      "start": 1759432142613,
+      "end": 1759432142629
+    }
+  }
+}

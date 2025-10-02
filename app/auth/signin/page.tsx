@@ -34,39 +34,12 @@ function SignInForm() {
     if (!email) return
 
     setIsLoading(true)
-    try {
-      // Try credentials provider first (demo mode)
-      const result = await signIn("credentials", {
-        email,
-        callbackUrl,
-        redirect: false,
-      })
-      
-      if (result?.ok) {
-        setShowSuccess(true)
-        setTimeout(() => {
-          router.push(callbackUrl)
-        }, 1500)
-      } else if (result?.error) {
-        // If credentials fail and email provider is available, try email
-        if (providers?.email) {
-          const emailResult = await signIn("email", {
-            email,
-            callbackUrl,
-            redirect: false,
-          })
-          if (emailResult?.ok) {
-            router.push("/auth/verify-request")
-          }
-        } else {
-          console.error("Authentication failed:", result.error)
-        }
-      }
-    } catch (error) {
-      console.error("Sign in error:", error)
-    } finally {
-      setIsLoading(false)
-    }
+    
+    // Simple approach: redirect directly to credentials sign-in
+    signIn("credentials", {
+      email,
+      callbackUrl,
+    })
   }
 
   const handleOAuthSignIn = async (providerId: string) => {

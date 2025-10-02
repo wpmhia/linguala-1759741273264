@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6561e54001wJyJDz2tKZN3gh",
+  "messageID": "msg_9a65399bd001fN2PTQO9MddgdO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The issue is that with JWT sessions and no adapter, the authentication might not be working properly. Let me simplify the approach by using a more direct sign-in method:",
+  "time": {
+    "start": 1759432286805,
+    "end": 1759432286805
+  }
+}

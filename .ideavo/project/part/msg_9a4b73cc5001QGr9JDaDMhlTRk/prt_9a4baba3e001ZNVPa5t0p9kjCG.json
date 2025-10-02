@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4baba3e001ZNVPa5t0p9kjCG",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01U6FysksbmbsCUoowbLasgX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run build",
+      "timeout": 20000,
+      "description": "Build application with TypeScript fix"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/11) ...\n   Generating static pages (2/11) \r\n   Generating static pages (5/11) \r\n ⨯ useSearchParams() should be wrapped in a suspense boundary at page \"/auth/signin\". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout\n    at a (/home/user/project/.next/server/chunks/700.js:1:30809)\n    at c (/home/user/project/.next/server/chunks/700.js:1:41792)\n    at N (/home/user/project/.next/server/app/auth/signin/page.js:1:3677)\n    at nj (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:46252)\n    at nM (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47572)\n    at nN (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64547)\n    at nI (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47011)\n    at nM (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47718)\n    at nM (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:61547)\n    at nN (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64547)\n\nError occurred prerendering page \"/auth/signin\". Read more: https://nextjs.org/docs/messages/prerender-error\n\n   Generating static pages (8/11) \r\n ✓ Generating static pages (11/11)\n\n> Export encountered errors on following paths:\n\t/auth/signin/page: /auth/signin\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/11) ...\n   Generating static pages (2/11) \r\n   Generating static pages (5/11) \r\n ⨯ useSearchParams() should be wrapped in a suspense boundary at page \"/auth/signin\". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout\n    at a (/home/user/project/.next/server/chunks/700.js:1:30809)\n    at c (/home/user/project/.next/server/chunks/700.js:1:41792)\n    at N (/home/user/project/.next/server/app/auth/signin/page.js:1:3677)\n    at nj (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:46252)\n    at nM (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47572)\n    at nN (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64547)\n    at nI (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47011)\n    at nM (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47718)\n    at nM (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:61547)\n    at nN (/home/user/project/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64547)\n\nError occurred prerendering page \"/auth/signin\". Read more: https://nextjs.org/docs/messages/prerender-error\n\n   Generating static pages (8/11) \r\n ✓ Generating static pages (11/11)\n\n> Export encountered errors on following paths:\n\t/auth/signin/page: /auth/signin\n",
+      "exit": 1,
+      "description": "Build application with TypeScript fix"
+    },
+    "title": "npm run build",
+    "time": {
+      "start": 1759405325641,
+      "end": 1759405343347
+    }
+  }
+}

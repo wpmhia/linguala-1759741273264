@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b8663e001ybeRGaUou5oCON",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_019Fbki13LPaooNBnDNHm73g",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/.env",
+      "oldString": "NEXTAUTH_URL=\"http://localhost:3000\"",
+      "newString": "NEXTAUTH_URL=http://localhost:3000"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/.env\n===================================================================\n--- /home/user/project/.env\n+++ /home/user/project/.env\n@@ -9,9 +9,9 @@\n DIRECT_URL=postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\n \n # Auth.js - Required for user authentication\n NEXTAUTH_SECRET=IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\n-NEXTAUTH_URL=\"http://localhost:3000\"\n+NEXTAUTH_URL=http://localhost:3000\n \n # OAuth Providers (Optional - for social login)\n # GOOGLE_CLIENT_ID=\"your-google-client-id\"\n # GOOGLE_CLIENT_SECRET=\"your-google-client-secret\"\n"
+    },
+    "title": ".env",
+    "time": {
+      "start": 1759405172989,
+      "end": 1759405172991
+    }
+  }
+}

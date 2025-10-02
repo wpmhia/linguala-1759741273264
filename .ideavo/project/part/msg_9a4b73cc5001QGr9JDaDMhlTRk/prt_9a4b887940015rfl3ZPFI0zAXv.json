@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b887940015rfl3ZPFI0zAXv",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01VqumyQJaANknpcwSd57wgF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npx prisma db push",
+      "description": "Push database schema to Neon database"
+    },
+    "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database\n\nError: Prisma schema validation - (get-config wasm)\nError code: P1012\nerror: Error validating datasource `db`: You must provide a nonempty URL. The environment variable `DATABASE_URL` resolved to an empty string.\n  -->  prisma/schema.prisma:10\n   | \n 9 |   provider = \"postgresql\"\n10 |   url      = env(\"DATABASE_URL\")\n   | \n\nValidation Error Count: 1\n[Context: getConfig]\n\nPrisma CLI Version : 5.22.0\n",
+    "metadata": {
+      "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database\n\nError: Prisma schema validation - (get-config wasm)\nError code: P1012\nerror: Error validating datasource `db`: You must provide a nonempty URL. The environment variable `DATABASE_URL` resolved to an empty string.\n  -->  prisma/schema.prisma:10\n   | \n 9 |   provider = \"postgresql\"\n10 |   url      = env(\"DATABASE_URL\")\n   | \n\nValidation Error Count: 1\n[Context: getConfig]\n\nPrisma CLI Version : 5.22.0\n",
+      "exit": 1,
+      "description": "Push database schema to Neon database"
+    },
+    "title": "npx prisma db push",
+    "time": {
+      "start": 1759405181306,
+      "end": 1759405182617
+    }
+  }
+}

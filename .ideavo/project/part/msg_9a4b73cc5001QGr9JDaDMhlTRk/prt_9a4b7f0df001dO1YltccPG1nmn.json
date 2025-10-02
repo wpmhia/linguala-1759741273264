@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4b7f0df001dO1YltccPG1nmn",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "It seems there's an issue with the environment variable parsing. Let me check if there are any special characters that need escaping:",
+  "time": {
+    "start": 1759405142855,
+    "end": 1759405142855
+  }
+}

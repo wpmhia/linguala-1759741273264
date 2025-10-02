@@ -1,0 +1,7 @@
+{
+  "id": "prt_9a4b73b93001IRrhN6GTaSkxBE",
+  "type": "text",
+  "text": "psql 'postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
+  "messageID": "msg_9a4b73b92001CmOYAZPknM9HwA",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

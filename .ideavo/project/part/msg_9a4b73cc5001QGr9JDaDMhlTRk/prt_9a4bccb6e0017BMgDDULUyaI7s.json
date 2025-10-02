@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4bccb6e0017BMgDDULUyaI7s",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(auth): integrate Neon DB and NextAuth with TypeScript fixes",
+  "cost": 1.0843578,
+  "tokens": {
+    "input": 1,
+    "output": 606,
+    "reasoning": 0,
+    "cache": {
+      "write": 186,
+      "read": 76933
+    }
+  }
+}

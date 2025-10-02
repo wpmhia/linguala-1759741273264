@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b763d60011JOd50YEaWB3w2",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01LrjEqgBWoryXCnktNv8aJR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/.env",
+      "oldString": "# Environment variables\n# Add your environment variables here\n\n# Translation Service - Required for the DeepL clone\nDASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n\n# Database (Optional - not used in current DeepL clone)\nDATABASE_URL=\nNEXT_PUBLIC_SUPABASE_URL=\nNEXT_PUBLIC_SUPABASE_ANON_KEY=",
+      "newString": "# Environment variables\n# Add your environment variables here\n\n# Translation Service - Required for the DeepL clone\nDASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n\n# Neon Database - Required for user authentication and data persistence\nDATABASE_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require\"\nDIRECT_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require\"\n\n# Auth.js - Required for user authentication\nNEXTAUTH_SECRET=\"your-secret-key-here-replace-with-generated-key\"\nNEXTAUTH_URL=\"http://localhost:3000\"\n\n# OAuth Providers (Optional - for social login)\n# GOOGLE_CLIENT_ID=\"your-google-client-id\"\n# GOOGLE_CLIENT_SECRET=\"your-google-client-secret\"\n# GITHUB_CLIENT_ID=\"your-github-client-id\"\n# GITHUB_CLIENT_SECRET=\"your-github-client-secret\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/.env\n===================================================================\n--- /home/user/project/.env\n+++ /home/user/project/.env\n@@ -3,8 +3,17 @@\n \n # Translation Service - Required for the DeepL clone\n DASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n \n-# Database (Optional - not used in current DeepL clone)\n-DATABASE_URL=\n-NEXT_PUBLIC_SUPABASE_URL=\n-NEXT_PUBLIC_SUPABASE_ANON_KEY=\n\\ No newline at end of file\n+# Neon Database - Required for user authentication and data persistence\n+DATABASE_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require\"\n+DIRECT_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require\"\n+\n+# Auth.js - Required for user authentication\n+NEXTAUTH_SECRET=\"your-secret-key-here-replace-with-generated-key\"\n+NEXTAUTH_URL=\"http://localhost:3000\"\n+\n+# OAuth Providers (Optional - for social login)\n+# GOOGLE_CLIENT_ID=\"your-google-client-id\"\n+# GOOGLE_CLIENT_SECRET=\"your-google-client-secret\"\n+# GITHUB_CLIENT_ID=\"your-github-client-id\"\n+# GITHUB_CLIENT_SECRET=\"your-github-client-secret\"\n\\ No newline at end of file\n"
+    },
+    "title": ".env",
+    "time": {
+      "start": 1759405110897,
+      "end": 1759405110902
+    }
+  }
+}

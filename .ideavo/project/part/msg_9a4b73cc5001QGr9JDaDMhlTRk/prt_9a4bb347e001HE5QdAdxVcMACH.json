@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4bb347e001HE5QdAdxVcMACH",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01BokwEdRbt19KCnyLtdudUL",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/auth/signin/page.tsx",
+      "offset": 1,
+      "limit": 15
+    },
+    "output": "<file>\n00002| \n00003| import { useState, useEffect } from \"react\"\n00004| import { signIn, getProviders } from \"next-auth/react\"\n00005| import { useRouter, useSearchParams } from \"next/navigation\"\n00006| import { Button } from \"@/components/ui/button\"\n00007| import { Input } from \"@/components/ui/input\"\n00008| import { Card, CardContent, CardDescription, CardHeader, CardTitle } from \"@/components/ui/card\"\n00009| import { Alert, AlertDescription } from \"@/components/ui/alert\"\n00010| import { Separator } from \"@/components/ui/separator\"\n00011| import { Mail, Github, Chrome, AlertTriangle } from \"lucide-react\"\n00012| \n00013| export default function SignInPage() {\n00014|   const [email, setEmail] = useState(\"\")\n00015|   const [isLoading, setIsLoading] = useState(false)\n00016|   const [providers, setProviders] = useState<any>(null)\n\n(File has more lines. Use 'offset' parameter to read beyond line 16)\n</file>",
+    "metadata": {
+      "preview": "\nimport { useState, useEffect } from \"react\"\nimport { signIn, getProviders } from \"next-auth/react\"\nimport { useRouter, useSearchParams } from \"next/navigation\"\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Card, CardContent, CardDescription, CardHeader, CardTitle } from \"@/components/ui/card\"\nimport { Alert, AlertDescription } from \"@/components/ui/alert\"\nimport { Separator } from \"@/components/ui/separator\"\nimport { Mail, Github, Chrome, AlertTriangle } from \"lucide-react\"\n\nexport default function SignInPage() {\n  const [email, setEmail] = useState(\"\")\n  const [isLoading, setIsLoading] = useState(false)\n  const [providers, setProviders] = useState<any>(null)"
+    },
+    "title": "app/auth/signin/page.tsx",
+    "time": {
+      "start": 1759405356896,
+      "end": 1759405356897
+    }
+  }
+}

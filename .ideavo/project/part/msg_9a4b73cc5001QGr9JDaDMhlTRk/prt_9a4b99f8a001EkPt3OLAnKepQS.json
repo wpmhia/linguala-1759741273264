@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b99f8a001EkPt3OLAnKepQS",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Pz3sckKjKkN78cAjbk54AG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm install @types/next-auth",
+      "description": "Install NextAuth type definitions"
+    },
+    "output": "npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.\nnpm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported\nnpm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 93 packages, removed 4 packages, changed 7 packages, and audited 440 packages in 8s\n\n74 packages are looking for funding\n  run `npm fund` for details\n\n8 vulnerabilities (3 low, 3 moderate, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n",
+    "metadata": {
+      "output": "npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.\nnpm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported\nnpm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 93 packages, removed 4 packages, changed 7 packages, and audited 440 packages in 8s\n\n74 packages are looking for funding\n  run `npm fund` for details\n\n8 vulnerabilities (3 low, 3 moderate, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n",
+      "exit": 0,
+      "description": "Install NextAuth type definitions"
+    },
+    "title": "npm install @types/next-auth",
+    "time": {
+      "start": 1759405253219,
+      "end": 1759405261875
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b7f348001OwaHovJ3qYF59D",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_0168e6Uipgxv2ZpRdionrTox",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo $DATABASE_URL",
+      "description": "Check if DATABASE_URL is properly set"
+    },
+    "output": "\n",
+    "metadata": {
+      "output": "\n",
+      "exit": 0,
+      "description": "Check if DATABASE_URL is properly set"
+    },
+    "title": "echo $DATABASE_URL",
+    "time": {
+      "start": 1759405143433,
+      "end": 1759405143435
+    }
+  }
+}

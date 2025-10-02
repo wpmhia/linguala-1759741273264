@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { signIn, getProviders } from "next-auth/react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -10,7 +10,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Separator } from "@/components/ui/separator"
 import { Mail, Github, Chrome, AlertTriangle } from "lucide-react"
 
-export default function SignInPage() {
+function SignInForm() {
   const [email, setEmail] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [providers, setProviders] = useState<any>(null)
@@ -171,5 +171,22 @@ export default function SignInPage() {
         </CardContent>
       </Card>
     </div>
+  )
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+        <Card className="w-full max-w-md">
+          <CardContent className="p-8 text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="text-gray-600 mt-4">Loading...</p>
+          </CardContent>
+        </Card>
+      </div>
+    }>
+      <SignInForm />
+    </Suspense>
   )
 }

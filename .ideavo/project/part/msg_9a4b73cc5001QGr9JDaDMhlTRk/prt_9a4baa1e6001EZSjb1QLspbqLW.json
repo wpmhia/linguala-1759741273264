@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4baa1e6001EZSjb1QLspbqLW",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01X6iF4nXJNdNtyC24k9QJDm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/glossary/route.ts",
+      "oldString": "  } catch (error) {\n    if (error.code === 'P2002') {\n      return NextResponse.json({ error: 'This glossary entry already exists' }, { status: 409 })\n    }\n    console.error('Failed to create glossary entry:', error)\n    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })\n  }",
+      "newString": "  } catch (error: any) {\n    if (error.code === 'P2002') {\n      return NextResponse.json({ error: 'This glossary entry already exists' }, { status: 409 })\n    }\n    console.error('Failed to create glossary entry:', error)\n    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/glossary/route.ts\n===================================================================\n--- /home/user/project/app/api/glossary/route.ts\n+++ /home/user/project/app/api/glossary/route.ts\n@@ -47,9 +47,9 @@\n     },\n   })\n \n   return NextResponse.json({ glossaryEntry })\n-} catch (error) {\n+} catch (error: any) {\n   if (error.code === 'P2002') {\n     return NextResponse.json({ error: 'This glossary entry already exists' }, { status: 409 })\n   }\n   console.error('Failed to create glossary entry:', error)\n"
+    },
+    "title": "app/api/glossary/route.ts",
+    "time": {
+      "start": 1759405320706,
+      "end": 1759405320710
+    }
+  }
+}

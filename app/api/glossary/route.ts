@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     })
 
     return NextResponse.json({ glossaryEntry })
-  } catch (error) {
+  } catch (error: any) {
     if (error.code === 'P2002') {
       return NextResponse.json({ error: 'This glossary entry already exists' }, { status: 409 })
     }

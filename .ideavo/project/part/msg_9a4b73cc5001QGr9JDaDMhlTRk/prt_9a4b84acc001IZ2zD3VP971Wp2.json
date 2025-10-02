@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b84acc001IZ2zD3VP971Wp2",
+  "messageID": "msg_9a4b73cc5001QGr9JDaDMhlTRk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_015AWwerUdpxiUicR4FBKBQ4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/.env",
+      "oldString": "NEXTAUTH_SECRET=\"IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\"",
+      "newString": "NEXTAUTH_SECRET=IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ="
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/.env\n===================================================================\n--- /home/user/project/.env\n+++ /home/user/project/.env\n@@ -8,9 +8,9 @@\n DATABASE_URL=postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\n DIRECT_URL=postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\n \n # Auth.js - Required for user authentication\n-NEXTAUTH_SECRET=\"IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\"\n+NEXTAUTH_SECRET=IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\n NEXTAUTH_URL=\"http://localhost:3000\"\n \n # OAuth Providers (Optional - for social login)\n # GOOGLE_CLIENT_ID=\"your-google-client-id\"\n"
+    },
+    "title": ".env",
+    "time": {
+      "start": 1759405168310,
+      "end": 1759405168312
+    }
+  }
+}

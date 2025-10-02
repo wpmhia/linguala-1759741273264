@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4c6389d001Q2a293hyqwUedr",
+  "messageID": "msg_9a4c6105c001QvlNLB5xvq6H0Z",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017J3jKdWViLJMbejTr6h4L2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 450,
+      "limit": 20
+    },
+    "output": "<file>\n00451|           <h1 className=\"text-4xl md:text-5xl font-bold text-gray-900 mb-4\">\n00452|             Professional AI Translation\n00453|           </h1>\n00454|           <p className=\"text-xl text-gray-600 mb-6 max-w-2xl mx-auto\">\n00455|             Translate with domain expertise, custom glossaries, and enterprise-grade accuracy\n00456|           </p>\n00457|           \n00458|           {/* Domain Quick Selection */}\n00459|           <div className=\"flex flex-wrap justify-center gap-3 mb-8\">\n00460|             {DOMAINS.map(domain => {\n00461|               const IconComponent = domain.icon\n00462|               return (\n00463|                 <Button\n00464|                   key={domain.code}\n00465|                   variant={selectedDomain === domain.code ? \"default\" : \"outline\"}\n00466|                   size=\"sm\"\n00467|                   onClick={() => setSelectedDomain(domain.code)}\n00468|                   className={`flex items-center space-x-2 transition-all duration-200 ${\n00469|                     selectedDomain === domain.code \n00470|                       ? `${domain.color} text-white hover:opacity-90` \n\n(File has more lines. Use 'offset' parameter to read beyond line 470)\n</file>",
+    "metadata": {
+      "preview": "          <h1 className=\"text-4xl md:text-5xl font-bold text-gray-900 mb-4\">\n            Professional AI Translation\n          </h1>\n          <p className=\"text-xl text-gray-600 mb-6 max-w-2xl mx-auto\">\n            Translate with domain expertise, custom glossaries, and enterprise-grade accuracy\n          </p>\n          \n          {/* Domain Quick Selection */}\n          <div className=\"flex flex-wrap justify-center gap-3 mb-8\">\n            {DOMAINS.map(domain => {\n              const IconComponent = domain.icon\n              return (\n                <Button\n                  key={domain.code}\n                  variant={selectedDomain === domain.code ? \"default\" : \"outline\"}\n                  size=\"sm\"\n                  onClick={() => setSelectedDomain(domain.code)}\n                  className={`flex items-center space-x-2 transition-all duration-200 ${\n                    selectedDomain === domain.code \n                      ? `${domain.color} text-white hover:opacity-90` "
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406078749,
+      "end": 1759406078750
+    }
+  }
+}

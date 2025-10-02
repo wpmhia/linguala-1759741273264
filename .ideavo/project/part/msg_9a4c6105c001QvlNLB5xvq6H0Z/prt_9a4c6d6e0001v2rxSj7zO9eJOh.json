@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4c6d6e0001v2rxSj7zO9eJOh",
+  "messageID": "msg_9a4c6105c001QvlNLB5xvq6H0Z",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014BUzdvw2bJPmw2XUWmLpqe",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" || true; npm start",
+      "timeout": 6000,
+      "description": "Restart Linguala with cleaner interface"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart Linguala with cleaner interface"
+    },
+    "title": "pkill -f \"next\" || true; npm start",
+    "time": {
+      "start": 1759406119622,
+      "end": 1759406119636
+    }
+  }
+}

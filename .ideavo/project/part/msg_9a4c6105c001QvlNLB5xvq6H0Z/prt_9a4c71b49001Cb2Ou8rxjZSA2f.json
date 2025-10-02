@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4c71b49001Cb2Ou8rxjZSA2f",
+  "messageID": "msg_9a4c6105c001QvlNLB5xvq6H0Z",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(ui): remove hero text from linguala translator",
+  "cost": 0.2998103999999999,
+  "tokens": {
+    "input": 5,
+    "output": 119,
+    "reasoning": 0,
+    "cache": {
+      "write": 171,
+      "read": 54448
+    }
+  }
+}

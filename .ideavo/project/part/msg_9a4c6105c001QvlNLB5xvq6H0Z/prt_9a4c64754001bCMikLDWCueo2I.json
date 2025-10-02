@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4c64754001bCMikLDWCueo2I",
+  "messageID": "msg_9a4c6105c001QvlNLB5xvq6H0Z",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01142mmTNiEHSE481sn1wgXb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "        {/* Hero Section with Domain Selection */}\n        <div className=\"text-center mb-8\">\n          <h1 className=\"text-4xl md:text-5xl font-bold text-gray-900 mb-4\">\n            Professional AI Translation\n          </h1>\n          <p className=\"text-xl text-gray-600 mb-6 max-w-2xl mx-auto\">\n            Translate with domain expertise, custom glossaries, and enterprise-grade accuracy\n          </p>\n          \n          {/* Domain Quick Selection */}\n          <div className=\"flex flex-wrap justify-center gap-3 mb-8\">",
+      "newString": "        {/* Domain Selection */}\n        <div className=\"text-center mb-8\">\n          <div className=\"flex flex-wrap justify-center gap-3 mb-8\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -445,18 +445,10 @@\n   </div>\n </header>\n \n <main className=\"max-w-7xl mx-auto px-4 py-8\">\n-  {/* Hero Section with Domain Selection */}\n+  {/* Domain Selection */}\n   <div className=\"text-center mb-8\">\n-    <h1 className=\"text-4xl md:text-5xl font-bold text-gray-900 mb-4\">\n-      Professional AI Translation\n-    </h1>\n-    <p className=\"text-xl text-gray-600 mb-6 max-w-2xl mx-auto\">\n-      Translate with domain expertise, custom glossaries, and enterprise-grade accuracy\n-    </p>\n-    \n-    {/* Domain Quick Selection */}\n     <div className=\"flex flex-wrap justify-center gap-3 mb-8\">\n       {DOMAINS.map(domain => {\n         const IconComponent = domain.icon\n         return (\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759406084551,
+      "end": 1759406084562
+    }
+  }
+}

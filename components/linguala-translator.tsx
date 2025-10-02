@@ -446,16 +446,8 @@ export default function LingualaTranslator() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Hero Section with Domain Selection */}
+        {/* Domain Selection */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Professional AI Translation
-          </h1>
-          <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
-            Translate with domain expertise, custom glossaries, and enterprise-grade accuracy
-          </p>
-          
-          {/* Domain Quick Selection */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {DOMAINS.map(domain => {
               const IconComponent = domain.icon

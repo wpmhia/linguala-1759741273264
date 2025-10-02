@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a1652a0010GiJbS5iFNxuGL",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01EYs6ASdBbJJJ5uv4j6zHo4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 95,
+      "limit": 10
+    },
+    "output": "<file>\n00096|   const [isTranslating, setIsTranslating] = useState(false)\n00097|   const [history, setHistory] = useState<TranslationHistory[]>([])\n00098|   const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n00099|   const [copySuccess, setCopySuccess] = useState(false)\n00100|   const debounceRef = useRef<NodeJS.Timeout>()\n00101| \n00102|   // Load history from localStorage on mount and check URL parameters\n00103|   useEffect(() => {\n00104|     const savedHistory = localStorage.getItem(\"translation-history\")\n00105|     if (savedHistory) {\n\n(File has more lines. Use 'offset' parameter to read beyond line 105)\n</file>",
+    "metadata": {
+      "preview": "  const [isTranslating, setIsTranslating] = useState(false)\n  const [history, setHistory] = useState<TranslationHistory[]>([])\n  const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n  const [copySuccess, setCopySuccess] = useState(false)\n  const debounceRef = useRef<NodeJS.Timeout>()\n\n  // Load history from localStorage on mount and check URL parameters\n  useEffect(() => {\n    const savedHistory = localStorage.getItem(\"translation-history\")\n    if (savedHistory) {"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403665254,
+      "end": 1759403665256
+    }
+  }
+}

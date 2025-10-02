@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a0f8f0001yMjACSzqofqrKR",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_017Y7vib8PGnRtwxFVvhe9Lb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from \"lucide-react\"",
+      "newString": "import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check, Upload, FileText, Book, Search, Plus, Trash2, Edit3 } from \"lucide-react\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -7,9 +7,9 @@\n import { Switch } from \"@/components/ui/switch\"\n import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\n import { Separator } from \"@/components/ui/separator\"\n import { Card, CardContent } from \"@/components/ui/card\"\n-import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from \"lucide-react\"\n+import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check, Upload, FileText, Book, Search, Plus, Trash2, Edit3 } from \"lucide-react\"\n import { toast } from \"sonner\"\n \n const LANGUAGES = [\n   { code: \"auto\", name: \"Detect language\" },\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403638844,
+      "end": 1759403638857
+    }
+  }
+}

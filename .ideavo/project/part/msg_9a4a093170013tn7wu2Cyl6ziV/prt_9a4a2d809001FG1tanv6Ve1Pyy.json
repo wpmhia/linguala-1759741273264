@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a2d809001FG1tanv6Ve1Pyy",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01BhcQAU8taLKdoczQb4KnpV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "        body: JSON.stringify({\n          text: text.trim(),\n          sourceLang: from,\n          targetLang: to,\n          domain: selectedDomain,\n          glossary: glossary.filter(entry => entry.domain === selectedDomain || entry.domain === 'general')\n        }),",
+      "newString": "        body: JSON.stringify({\n          text: applyGlossary(text.trim(), from, to),\n          sourceLang: from,\n          targetLang: to,\n          domain: selectedDomain,\n          glossary: glossary.filter(entry => entry.domain === selectedDomain || entry.domain === 'general')\n        }),"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -159,9 +159,9 @@\n headers: {\n   \"Content-Type\": \"application/json\",\n },\n body: JSON.stringify({\n-  text: text.trim(),\n+  text: applyGlossary(text.trim(), from, to),\n   sourceLang: from,\n   targetLang: to,\n   domain: selectedDomain,\n   glossary: glossary.filter(entry => entry.domain === selectedDomain || entry.domain === 'general')\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403762232,
+      "end": 1759403762237
+    }
+  }
+}

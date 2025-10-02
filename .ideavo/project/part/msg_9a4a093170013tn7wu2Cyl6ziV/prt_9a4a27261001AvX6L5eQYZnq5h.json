@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a27261001AvX6L5eQYZnq5h",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_013aFVM3aDA5Ya89xV41wHtm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 44,
+      "limit": 15
+    },
+    "output": "<file>\n00045| export async function POST(request: NextRequest) {\n00046|   try {\n00047|     const { text, sourceLang, targetLang } = await request.json()\n00048| \n00049|     if (!text || !targetLang) {\n00050|       return NextResponse.json(\n00051|         { error: 'Text and target language are required' },\n00052|         { status: 400 }\n00053|       )\n00054|     }\n00055| \n00056|     const apiKey = process.env.DASHSCOPE_API_KEY\n00057|     if (!apiKey) {\n00058|       return NextResponse.json(\n00059|         { error: 'API key not configured. Please set DASHSCOPE_API_KEY environment variable.' },\n\n(File has more lines. Use 'offset' parameter to read beyond line 59)\n</file>",
+    "metadata": {
+      "preview": "export async function POST(request: NextRequest) {\n  try {\n    const { text, sourceLang, targetLang } = await request.json()\n\n    if (!text || !targetLang) {\n      return NextResponse.json(\n        { error: 'Text and target language are required' },\n        { status: 400 }\n      )\n    }\n\n    const apiKey = process.env.DASHSCOPE_API_KEY\n    if (!apiKey) {\n      return NextResponse.json(\n        { error: 'API key not configured. Please set DASHSCOPE_API_KEY environment variable.' },"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759403734165,
+      "end": 1759403734168
+    }
+  }
+}

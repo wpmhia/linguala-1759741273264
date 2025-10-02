@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a49090001M6uLDbBqoR07HH",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014VXKesMSjRQbeH2DKVfTGG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n \"Textarea\" /home/user/project/components/translator.tsx",
+      "description": "Find textarea elements in translator"
+    },
+    "output": "5:import { Textarea } from \"@/components/ui/textarea\"\n741:              <Textarea\n765:              <Textarea\n",
+    "metadata": {
+      "output": "5:import { Textarea } from \"@/components/ui/textarea\"\n741:              <Textarea\n765:              <Textarea\n",
+      "exit": 0,
+      "description": "Find textarea elements in translator"
+    },
+    "title": "grep -n \"Textarea\" /home/user/project/components/translator.tsx",
+    "time": {
+      "start": 1759403873239,
+      "end": 1759403873255
+    }
+  }
+}

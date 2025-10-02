@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a12038001B1Y5Sd7nspXFM0",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Uj1ZyvTAFrS8y91wZvaYLz",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "]\n\ninterface TranslationHistory {",
+      "newString": "]\n\nconst DOMAINS = [\n  { code: \"general\", name: \"General\", description: \"General purpose translation\" },\n  { code: \"technical\", name: \"Technical/IT\", description: \"Software, hardware, programming\" },\n  { code: \"medical\", name: \"Medical\", description: \"Healthcare, pharmaceuticals, biology\" },\n  { code: \"legal\", name: \"Legal\", description: \"Contracts, laws, regulations\" },\n  { code: \"business\", name: \"Business\", description: \"Finance, marketing, corporate\" },\n  { code: \"academic\", name: \"Academic\", description: \"Research, education, scientific\" },\n  { code: \"creative\", name: \"Creative\", description: \"Literature, marketing copy, creative writing\" }\n]\n\ninterface GlossaryEntry {\n  id: string\n  source: string\n  target: string\n  domain: string\n  notes?: string\n}\n\ninterface TranslationHistory {"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -54,8 +54,26 @@\n   { code: \"id\", name: \"Indonesian\" },\n   { code: \"tl\", name: \"Filipino\" },\n ]\n \n+const DOMAINS = [\n+  { code: \"general\", name: \"General\", description: \"General purpose translation\" },\n+  { code: \"technical\", name: \"Technical/IT\", description: \"Software, hardware, programming\" },\n+  { code: \"medical\", name: \"Medical\", description: \"Healthcare, pharmaceuticals, biology\" },\n+  { code: \"legal\", name: \"Legal\", description: \"Contracts, laws, regulations\" },\n+  { code: \"business\", name: \"Business\", description: \"Finance, marketing, corporate\" },\n+  { code: \"academic\", name: \"Academic\", description: \"Research, education, scientific\" },\n+  { code: \"creative\", name: \"Creative\", description: \"Literature, marketing copy, creative writing\" }\n+]\n+\n+interface GlossaryEntry {\n+  id: string\n+  source: string\n+  target: string\n+  domain: string\n+  notes?: string\n+}\n+\n interface TranslationHistory {\n   id: string\n   sourceText: string\n   translatedText: string\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403650824,
+      "end": 1759403650829
+    }
+  }
+}

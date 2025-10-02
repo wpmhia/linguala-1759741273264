@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a15750001Jab8jKkT8B92Gf",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01AxdpoTNY7xcMkA92DBYbKT",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 80,
+      "limit": 15
+    },
+    "output": "<file>\n00081| \n00082| interface TranslationHistory {\n00083|   id: string\n00084|   sourceText: string\n00085|   translatedText: string\n00086|   sourceLang: string\n00087|   targetLang: string\n00088|   timestamp: number\n00089| }\n00090| \n00091| export default function Translator() {\n00092|   const [sourceText, setSourceText] = useState(\"\")\n00093|   const [translatedText, setTranslatedText] = useState(\"\")\n00094|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00095|   const [targetLang, setTargetLang] = useState(\"en\")\n\n(File has more lines. Use 'offset' parameter to read beyond line 95)\n</file>",
+    "metadata": {
+      "preview": "\ninterface TranslationHistory {\n  id: string\n  sourceText: string\n  translatedText: string\n  sourceLang: string\n  targetLang: string\n  timestamp: number\n}\n\nexport default function Translator() {\n  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403661777,
+      "end": 1759403661778
+    }
+  }
+}

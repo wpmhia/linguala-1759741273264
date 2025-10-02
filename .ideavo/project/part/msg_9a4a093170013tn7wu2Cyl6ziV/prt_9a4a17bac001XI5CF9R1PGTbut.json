@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a17bac001XI5CF9R1PGTbut",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_019ktCcsqNnsiUstTsxF1MEz",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "  const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n  const [copySuccess, setCopySuccess] = useState(false)\n  const debounceRef = useRef<NodeJS.Timeout>()",
+      "newString": "  const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n  const [copySuccess, setCopySuccess] = useState(false)\n  const [selectedDomain, setSelectedDomain] = useState(\"general\")\n  const [glossary, setGlossary] = useState<GlossaryEntry[]>([])\n  const [showGlossary, setShowGlossary] = useState(false)\n  const [newGlossaryEntry, setNewGlossaryEntry] = useState({ source: \"\", target: \"\", notes: \"\" })\n  const [historySearch, setHistorySearch] = useState(\"\")\n  const [showAdvancedHistory, setShowAdvancedHistory] = useState(false)\n  const debounceRef = useRef<NodeJS.Timeout>()"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -96,8 +96,14 @@\n const [isTranslating, setIsTranslating] = useState(false)\n const [history, setHistory] = useState<TranslationHistory[]>([])\n const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n const [copySuccess, setCopySuccess] = useState(false)\n+const [selectedDomain, setSelectedDomain] = useState(\"general\")\n+const [glossary, setGlossary] = useState<GlossaryEntry[]>([])\n+const [showGlossary, setShowGlossary] = useState(false)\n+const [newGlossaryEntry, setNewGlossaryEntry] = useState({ source: \"\", target: \"\", notes: \"\" })\n+const [historySearch, setHistorySearch] = useState(\"\")\n+const [showAdvancedHistory, setShowAdvancedHistory] = useState(false)\n const debounceRef = useRef<NodeJS.Timeout>()\n \n // Load history from localStorage on mount and check URL parameters\n useEffect(() => {\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403673499,
+      "end": 1759403673503
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a51411001eJu6TlrKDd50lF",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01DUtV3vRZHR2bLmZTkxt8T8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/extract-document/route.ts",
+      "content": "import { NextRequest, NextResponse } from 'next/server'\n\nexport async function POST(request: NextRequest) {\n  try {\n    const formData = await request.formData()\n    const file = formData.get('file') as File\n    \n    if (!file) {\n      return NextResponse.json({ error: 'No file provided' }, { status: 400 })\n    }\n\n    let content = ''\n    \n    if (file.type === 'text/plain') {\n      content = await file.text()\n    } else if (file.type === 'application/pdf') {\n      // For PDF files - in a real app you'd use a PDF parsing library like pdf-parse\n      // For now, we'll return a placeholder message\n      content = `[PDF Document: ${file.name}]\\n\\nNote: PDF text extraction is not fully implemented in this demo. Please copy and paste the text manually or convert to a text file.`\n    } else if (file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {\n      // For DOCX files - in a real app you'd use a library like mammoth\n      // For now, we'll return a placeholder message\n      content = `[DOCX Document: ${file.name}]\\n\\nNote: DOCX text extraction is not fully implemented in this demo. Please copy and paste the text manually or save as a text file.`\n    } else {\n      return NextResponse.json({ error: 'Unsupported file type' }, { status: 400 })\n    }\n\n    return NextResponse.json({ \n      content,\n      filename: file.name,\n      size: file.size\n    })\n    \n  } catch (error) {\n    console.error('Document extraction error:', error)\n    return NextResponse.json({ error: 'Failed to extract document content' }, { status: 500 })\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/api/extract-document/route.ts",
+      "exists": false
+    },
+    "title": "app/api/extract-document/route.ts",
+    "time": {
+      "start": 1759403911741,
+      "end": 1759403911742
+    }
+  }
+}

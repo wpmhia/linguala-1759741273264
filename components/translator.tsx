@@ -7,8 +7,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Switch } from "@/components/ui/switch"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Separator } from "@/components/ui/separator"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { Card, CardContent } from "@/components/ui/card"
-import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from "lucide-react"
+import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check, Upload, FileText, Book, Search, Plus, Trash2, Edit3 } from "lucide-react"
 import { toast } from "sonner"
 
 const LANGUAGES = [
@@ -55,6 +61,24 @@ const LANGUAGES = [
   { code: "tl", name: "Filipino" },
 ]
 
+const DOMAINS = [
+  { code: "general", name: "General", description: "General purpose translation" },
+  { code: "technical", name: "Technical/IT", description: "Software, hardware, programming" },
+  { code: "medical", name: "Medical", description: "Healthcare, pharmaceuticals, biology" },
+  { code: "legal", name: "Legal", description: "Contracts, laws, regulations" },
+  { code: "business", name: "Business", description: "Finance, marketing, corporate" },
+  { code: "academic", name: "Academic", description: "Research, education, scientific" },
+  { code: "creative", name: "Creative", description: "Literature, marketing copy, creative writing" }
+]
+
+interface GlossaryEntry {
+  id: string
+  source: string
+  target: string
+  domain: string
+  notes?: string
+}
+
 interface TranslationHistory {
   id: string
   sourceText: string
@@ -73,13 +97,28 @@ export default function Translator() {
   const [history, setHistory] = useState<TranslationHistory[]>([])
   const [realTimeEnabled, setRealTimeEnabled] = useState(true)
   const [copySuccess, setCopySuccess] = useState(false)
+  const [selectedDomain, setSelectedDomain] = useState("general")
+  const [glossary, setGlossary] = useState<GlossaryEntry[]>([])
+  const [showGlossary, setShowGlossary] = useState(false)
+  const [newGlossaryEntry, setNewGlossaryEntry] = useState({ source: "", target: "", notes: "" })
+  const [historySearch, setHistorySearch] = useState("")
+  const [showAdvancedHistory, setShowAdvancedHistory] = useState(false)
+  const [translationMode, setTranslationMode] = useState<'text' | 'document'>('text')
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null)
+  const [documentContent, setDocumentContent] = useState("")
+  const [isProcessingDocument, setIsProcessingDocument] = useState(false)
   const debounceRef = useRef<NodeJS.Timeout>()
 
-  // Load history from localStorage on mount and check URL parameters
+  // Load history and glossary from localStorage on mount and check URL parameters
   useEffect(() => {
     const savedHistory = localStorage.getItem("translation-history")
     if (savedHistory) {
       setHistory(JSON.parse(savedHistory))
+    }
+
+    const savedGlossary = localStorage.getItem("translation-glossary")
+    if (savedGlossary) {
+      setGlossary(JSON.parse(savedGlossary))
     }
 
     // Check for URL parameters for shared translations
@@ -106,6 +145,11 @@ export default function Translator() {
     localStorage.setItem("translation-history", JSON.stringify(history))
   }, [history])
 
+  // Save glossary to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("translation-glossary", JSON.stringify(glossary))
+  }, [glossary])
+
   const translateText = async (text: string, from: string, to: string) => {
     if (!text.trim()) {
       setTranslatedText("")
@@ -120,9 +164,11 @@ export default function Translator() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          text: text.trim(),
+          text: applyGlossary(text.trim(), from, to),
           sourceLang: from,
           targetLang: to,
+          domain: selectedDomain,
+          glossary: glossary.filter(entry => entry.domain === selectedDomain || entry.domain === 'general')
         }),
       })
 
@@ -288,6 +334,141 @@ export default function Translator() {
     setTranslatedText("")
   }
 
+  const applyGlossary = (text: string, fromLang: string, toLang: string) => {
+    let processedText = text
+    const relevantEntries = glossary.filter(entry => 
+      entry.domain === selectedDomain || entry.domain === 'general'
+    )
+    
+    relevantEntries.forEach(entry => {
+      const regex = new RegExp(`\\b${entry.source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi')
+      processedText = processedText.replace(regex, entry.target)
+    })
+    
+    return processedText
+  }
+
+  const addGlossaryEntry = () => {
+    if (!newGlossaryEntry.source.trim() || !newGlossaryEntry.target.trim()) {
+      toast.error("Source and target terms are required")
+      return
+    }
+
+    const entry: GlossaryEntry = {
+      id: Date.now().toString(),
+      source: newGlossaryEntry.source.trim(),
+      target: newGlossaryEntry.target.trim(),
+      domain: selectedDomain,
+      notes: newGlossaryEntry.notes.trim() || undefined
+    }
+
+    setGlossary(prev => [...prev, entry])
+    setNewGlossaryEntry({ source: "", target: "", notes: "" })
+    toast.success("Glossary entry added!")
+  }
+
+  const removeGlossaryEntry = (id: string) => {
+    setGlossary(prev => prev.filter(entry => entry.id !== id))
+    toast.success("Glossary entry removed!")
+  }
+
+  const filteredHistory = history.filter(item =>
+    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||
+    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||
+    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||
+    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())
+  )
+
+  const exportHistory = () => {
+    const exportData = {
+      history: filteredHistory,
+      exportDate: new Date().toISOString(),
+      totalItems: filteredHistory.length
+    }
+    
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `translation-history-${new Date().toISOString().split('T')[0]}.json`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+    toast.success("History exported successfully!")
+  }
+
+  const clearHistory = () => {
+    setHistory([])
+    toast.success("History cleared!")
+  }
+
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (!file) return
+
+    const allowedTypes = ['text/plain', 'application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+    if (!allowedTypes.includes(file.type)) {
+      toast.error("Please upload a TXT, PDF, or DOCX file")
+      return
+    }
+
+    setUploadedFile(file)
+    setIsProcessingDocument(true)
+
+    try {
+      if (file.type === 'text/plain') {
+        const content = await file.text()
+        setDocumentContent(content)
+        setSourceText(content)
+      } else {
+        // For PDF and DOCX, we'll need to extract text
+        // This is a simplified version - in production you'd use proper libraries
+        const formData = new FormData()
+        formData.append('file', file)
+        
+        const response = await fetch('/api/extract-document', {
+          method: 'POST',
+          body: formData
+        })
+        
+        if (response.ok) {
+          const data = await response.json()
+          setDocumentContent(data.content)
+          setSourceText(data.content)
+        } else {
+          throw new Error('Failed to extract document content')
+        }
+      }
+      
+      toast.success("Document uploaded successfully!")
+    } catch (error) {
+      console.error('Document processing error:', error)
+      toast.error("Failed to process document. Please try again.")
+    } finally {
+      setIsProcessingDocument(false)
+    }
+  }
+
+  const downloadTranslatedDocument = () => {
+    if (!translatedText.trim() || !uploadedFile) {
+      toast.error("No translated document to download")
+      return
+    }
+
+    const content = `Original Document: ${uploadedFile.name}\n\nTranslated Content:\n${translatedText}`
+    const blob = new Blob([content], { type: 'text/plain' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `translated-${uploadedFile.name.replace(/\.[^/.]+$/, "")}.txt`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+    toast.success("Translated document downloaded!")
+  }
+
   const getLanguageName = (code: string) => {
     return LANGUAGES.find(lang => lang.code === code)?.name || code
   }
@@ -303,7 +484,7 @@ export default function Translator() {
         <CardContent className="p-8">
           {/* Translation Settings */}
           <div className="flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-lg">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 {realTimeEnabled ? <Zap className="h-4 w-4 text-green-600" /> : <ZapOff className="h-4 w-4 text-gray-400" />}
                 <span className="text-sm font-medium">Real-time translation</span>
@@ -311,6 +492,23 @@ export default function Translator() {
                   checked={realTimeEnabled} 
                   onCheckedChange={setRealTimeEnabled}
                 />
+              </div>
+              
+              <div className="flex items-center space-x-2">
+                <Settings className="h-4 w-4 text-gray-600" />
+                <span className="text-sm font-medium">Domain:</span>
+                <Select value={selectedDomain} onValueChange={setSelectedDomain}>
+                  <SelectTrigger className="w-40">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {DOMAINS.map(domain => (
+                      <SelectItem key={domain.code} value={domain.code}>
+                        {domain.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
               {!realTimeEnabled && (
                 <Button 
@@ -382,6 +580,159 @@ export default function Translator() {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
+
+              {/* Glossary Button */}
+              <Dialog open={showGlossary} onOpenChange={setShowGlossary}>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="sm" className="flex items-center space-x-1">
+                    <Book className="h-4 w-4" />
+                    <span>Glossary</span>
+                    <Badge variant="secondary" className="ml-1">{glossary.length}</Badge>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle>Translation Glossary</DialogTitle>
+                  </DialogHeader>
+                  <Tabs defaultValue="manage" className="w-full">
+                    <TabsList>
+                      <TabsTrigger value="manage">Manage Terms</TabsTrigger>
+                      <TabsTrigger value="add">Add New Term</TabsTrigger>
+                    </TabsList>
+                    <TabsContent value="manage" className="space-y-4">
+                      <div className="grid gap-4 max-h-96 overflow-y-auto">
+                        {glossary.length === 0 ? (
+                          <p className="text-center text-gray-500 py-8">No glossary entries yet. Add your first term!</p>
+                        ) : (
+                          glossary.map(entry => (
+                            <div key={entry.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                              <div className="flex-1">
+                                <div className="flex items-center space-x-2">
+                                  <span className="font-medium">{entry.source}</span>
+                                  <ArrowUpDown className="h-3 w-3 text-gray-400" />
+                                  <span className="text-blue-600">{entry.target}</span>
+                                  <Badge variant="outline" className="text-xs">{DOMAINS.find(d => d.code === entry.domain)?.name}</Badge>
+                                </div>
+                                {entry.notes && <p className="text-sm text-gray-600 mt-1">{entry.notes}</p>}
+                              </div>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => removeGlossaryEntry(entry.id)}
+                                className="text-red-600 hover:text-red-700"
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </Button>
+                            </div>
+                          ))
+                        )}
+                      </div>
+                    </TabsContent>
+                    <TabsContent value="add" className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="source-term">Source Term</Label>
+                          <Input
+                            id="source-term"
+                            value={newGlossaryEntry.source}
+                            onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, source: e.target.value }))}
+                            placeholder="Enter source term"
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="target-term">Target Term</Label>
+                          <Input
+                            id="target-term"
+                            value={newGlossaryEntry.target}
+                            onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, target: e.target.value }))}
+                            placeholder="Enter target term"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <Label htmlFor="notes">Notes (Optional)</Label>
+                        <Input
+                          id="notes"
+                          value={newGlossaryEntry.notes}
+                          onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, notes: e.target.value }))}
+                          placeholder="Add context or usage notes"
+                        />
+                      </div>
+                      <Button onClick={addGlossaryEntry} className="w-full">
+                        <Plus className="h-4 w-4 mr-2" />
+                        Add to Glossary
+                      </Button>
+                    </TabsContent>
+                  </Tabs>
+                </DialogContent>
+              </Dialog>
+
+              {/* Advanced History Button */}
+              <Dialog open={showAdvancedHistory} onOpenChange={setShowAdvancedHistory}>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="sm" className="flex items-center space-x-1">
+                    <FileText className="h-4 w-4" />
+                    <span>History</span>
+                    <Badge variant="secondary" className="ml-1">{history.length}</Badge>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle>Translation History</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-2">
+                      <Search className="h-4 w-4 text-gray-400" />
+                      <Input
+                        value={historySearch}
+                        onChange={(e) => setHistorySearch(e.target.value)}
+                        placeholder="Search history..."
+                        className="flex-1"
+                      />
+                      <Button onClick={exportHistory} variant="outline" size="sm">
+                        <Download className="h-4 w-4 mr-2" />
+                        Export
+                      </Button>
+                      <Button onClick={clearHistory} variant="outline" size="sm" className="text-red-600">
+                        <Trash2 className="h-4 w-4 mr-2" />
+                        Clear
+                      </Button>
+                    </div>
+                    <div className="grid gap-3 max-h-96 overflow-y-auto">
+                      {filteredHistory.length === 0 ? (
+                        <p className="text-center text-gray-500 py-8">
+                          {historySearch ? "No matching translations found." : "No translation history yet."}
+                        </p>
+                      ) : (
+                        filteredHistory.map(item => (
+                          <div key={item.id} className="p-4 bg-gray-50 rounded-lg space-y-2">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center space-x-2 text-sm text-gray-600">
+                                <span>{getLanguageName(item.sourceLang)}</span>
+                                <ArrowUpDown className="h-3 w-3" />
+                                <span>{getLanguageName(item.targetLang)}</span>
+                                <span>•</span>
+                                <span>{new Date(item.timestamp).toLocaleDateString()}</span>
+                              </div>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => copyToClipboard(item.translatedText)}
+                              >
+                                <Copy className="h-4 w-4" />
+                              </Button>
+                            </div>
+                            <div className="text-sm">
+                              <p className="font-medium">{item.sourceText}</p>
+                              <p className="text-blue-600">{item.translatedText}</p>
+                            </div>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
 
@@ -439,7 +790,21 @@ export default function Translator() {
             </Button>
           </div>
 
-          {/* Translation Interface */}
+          {/* Translation Mode Selection */}
+          <Tabs value={translationMode} onValueChange={(value) => setTranslationMode(value as 'text' | 'document')} className="mb-6">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="text" className="flex items-center space-x-2">
+                <Edit3 className="h-4 w-4" />
+                <span>Text Translation</span>
+              </TabsTrigger>
+              <TabsTrigger value="document" className="flex items-center space-x-2">
+                <Upload className="h-4 w-4" />
+                <span>Document Translation</span>
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="text" className="mt-6">
+              {/* Text Translation Interface */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Source Text */}
             <div className="space-y-2">
@@ -493,6 +858,123 @@ export default function Translator() {
           {/* Translation Status */}
           {isTranslating && (
             <div className="flex items-center justify-center mt-4 text-blue-600">
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 mr-2"></div>
+              Translating...
+            </div>
+          )}
+            </TabsContent>
+
+            <TabsContent value="document" className="mt-6">
+              {/* Document Translation Interface */}
+              <div className="space-y-6">
+                {!uploadedFile ? (
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center hover:border-blue-400 transition-colors">
+                    <Upload className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">Upload Document</h3>
+                    <p className="text-gray-600 mb-4">Support for TXT, PDF, and DOCX files</p>
+                    <label htmlFor="file-upload" className="cursor-pointer">
+                      <Button variant="outline" asChild>
+                        <span>Choose File</span>
+                      </Button>
+                    </label>
+                    <input
+                      id="file-upload"
+                      type="file"
+                      accept=".txt,.pdf,.docx"
+                      onChange={handleFileUpload}
+                      className="hidden"
+                    />
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                      <div className="flex items-center space-x-3">
+                        <FileText className="h-8 w-8 text-blue-600" />
+                        <div>
+                          <p className="font-medium">{uploadedFile.name}</p>
+                          <p className="text-sm text-gray-600">{(uploadedFile.size / 1024).toFixed(1)} KB</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        {translatedText && (
+                          <Button onClick={downloadTranslatedDocument} variant="outline" size="sm">
+                            <Download className="h-4 w-4 mr-2" />
+                            Download Translation
+                          </Button>
+                        )}
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          onClick={() => {
+                            setUploadedFile(null)
+                            setDocumentContent("")
+                            setSourceText("")
+                            setTranslatedText("")
+                          }}
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+
+                    {isProcessingDocument && (
+                      <div className="flex items-center justify-center p-8">
+                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mr-3"></div>
+                        Processing document...
+                      </div>
+                    )}
+
+                    {documentContent && !isProcessingDocument && (
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label className="text-sm font-medium text-gray-700">
+                            Document Content ({getLanguageName(sourceLang)})
+                          </label>
+                          <div className="border rounded-lg p-4 bg-gray-50 max-h-96 overflow-y-auto">
+                            <pre className="whitespace-pre-wrap text-sm">{documentContent}</pre>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2">
+                          <label className="text-sm font-medium text-gray-700">
+                            Translation ({getLanguageName(targetLang)})
+                          </label>
+                          <div className="border rounded-lg p-4 bg-white min-h-96 max-h-96 overflow-y-auto">
+                            {isTranslating ? (
+                              <div className="flex items-center text-gray-500">
+                                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 mr-2"></div>
+                                Translating document...
+                              </div>
+                            ) : translatedText ? (
+                              <pre className="whitespace-pre-wrap text-sm">{translatedText}</pre>
+                            ) : (
+                              <p className="text-gray-500 text-sm">Click translate to see the result</p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {documentContent && !realTimeEnabled && (
+                      <div className="flex justify-center">
+                        <Button 
+                          onClick={() => translateText(documentContent, sourceLang, targetLang)}
+                          disabled={isTranslating}
+                          size="lg"
+                          className="bg-blue-600 hover:bg-blue-700"
+                        >
+                          {isTranslating ? "Translating..." : "Translate Document"}
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </TabsContent>
+          </Tabs>
+
+          {isTranslating && (
+            <div className="flex items-center justify-center text-blue-600 font-medium">
               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 mr-2"></div>
               Translating...
             </div>

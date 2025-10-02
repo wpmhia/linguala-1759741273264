@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a4580c001Asrg4LoAeIzdgC",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017kF6gKLygTwwLppZ1YYmfj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 620,
+      "limit": 20
+    },
+    "output": "<file>\n00621|                       />\n00622|                       <Button onClick={exportHistory} variant=\"outline\" size=\"sm\">\n00623|                         <Download className=\"h-4 w-4 mr-2\" />\n00624|                         Export\n00625|                       </Button>\n00626|                       <Button onClick={clearHistory} variant=\"outline\" size=\"sm\" className=\"text-red-600\">\n00627|                         <Trash2 className=\"h-4 w-4 mr-2\" />\n00628|                         Clear\n00629|                       </Button>\n00630|                     </div>\n00631|                     <div className=\"grid gap-3 max-h-96 overflow-y-auto\">\n00632|                       {filteredHistory.length === 0 ? (\n00633|                         <p className=\"text-center text-gray-500 py-8\">\n00634|                           {historySearch ? \"No matching translations found.\" : \"No translation history yet.\"}\n00635|                         </p>\n00636|                       ) : (\n00637|                         filteredHistory.map(item => (\n00638|                           <div key={item.id} className=\"p-4 bg-gray-50 rounded-lg space-y-2\">\n00639|                             <div className=\"flex items-center justify-between\">\n00640|                               <div className=\"flex items-center space-x-2 text-sm text-gray-600\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 640)\n</file>",
+    "metadata": {
+      "preview": "                      />\n                      <Button onClick={exportHistory} variant=\"outline\" size=\"sm\">\n                        <Download className=\"h-4 w-4 mr-2\" />\n                        Export\n                      </Button>\n                      <Button onClick={clearHistory} variant=\"outline\" size=\"sm\" className=\"text-red-600\">\n                        <Trash2 className=\"h-4 w-4 mr-2\" />\n                        Clear\n                      </Button>\n                    </div>\n                    <div className=\"grid gap-3 max-h-96 overflow-y-auto\">\n                      {filteredHistory.length === 0 ? (\n                        <p className=\"text-center text-gray-500 py-8\">\n                          {historySearch ? \"No matching translations found.\" : \"No translation history yet.\"}\n                        </p>\n                      ) : (\n                        filteredHistory.map(item => (\n                          <div key={item.id} className=\"p-4 bg-gray-50 rounded-lg space-y-2\">\n                            <div className=\"flex items-center justify-between\">\n                              <div className=\"flex items-center space-x-2 text-sm text-gray-600\">"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403858862,
+      "end": 1759403858864
+    }
+  }
+}

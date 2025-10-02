@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a1b9ef002tjCX1ZqzigNwH2",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_014txFz5wPwzcT3bGjzEoRgu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "  // Load history from localStorage on mount and check URL parameters\n  useEffect(() => {\n    const savedHistory = localStorage.getItem(\"translation-history\")\n    if (savedHistory) {\n      setHistory(JSON.parse(savedHistory))\n    }\n\n    // Check for URL parameters for shared translations\n    const urlParams = new URLSearchParams(window.location.search)\n    const sharedText = urlParams.get('text')\n    const sharedFrom = urlParams.get('from')\n    const sharedTo = urlParams.get('to')\n    \n    if (sharedText && sharedFrom && sharedTo) {\n      setSourceText(sharedText)\n      setSourceLang(sharedFrom)\n      setTargetLang(sharedTo)\n      // Auto-translate the shared content\n      setTimeout(() => {\n        translateText(sharedText, sharedFrom, sharedTo)\n      }, 100)\n      // Clean up URL\n      window.history.replaceState({}, '', window.location.pathname)\n    }\n  }, [])",
+      "newString": "  // Load history and glossary from localStorage on mount and check URL parameters\n  useEffect(() => {\n    const savedHistory = localStorage.getItem(\"translation-history\")\n    if (savedHistory) {\n      setHistory(JSON.parse(savedHistory))\n    }\n\n    const savedGlossary = localStorage.getItem(\"translation-glossary\")\n    if (savedGlossary) {\n      setGlossary(JSON.parse(savedGlossary))\n    }\n\n    // Check for URL parameters for shared translations\n    const urlParams = new URLSearchParams(window.location.search)\n    const sharedText = urlParams.get('text')\n    const sharedFrom = urlParams.get('from')\n    const sharedTo = urlParams.get('to')\n    \n    if (sharedText && sharedFrom && sharedTo) {\n      setSourceText(sharedText)\n      setSourceLang(sharedFrom)\n      setTargetLang(sharedTo)\n      // Auto-translate the shared content\n      setTimeout(() => {\n        translateText(sharedText, sharedFrom, sharedTo)\n      }, 100)\n      // Clean up URL\n      window.history.replaceState({}, '', window.location.pathname)\n    }\n  }, [])"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -104,15 +104,20 @@\n const [historySearch, setHistorySearch] = useState(\"\")\n const [showAdvancedHistory, setShowAdvancedHistory] = useState(false)\n const debounceRef = useRef<NodeJS.Timeout>()\n \n-// Load history from localStorage on mount and check URL parameters\n+// Load history and glossary from localStorage on mount and check URL parameters\n useEffect(() => {\n   const savedHistory = localStorage.getItem(\"translation-history\")\n   if (savedHistory) {\n     setHistory(JSON.parse(savedHistory))\n   }\n \n+  const savedGlossary = localStorage.getItem(\"translation-glossary\")\n+  if (savedGlossary) {\n+    setGlossary(JSON.parse(savedGlossary))\n+  }\n+\n   // Check for URL parameters for shared translations\n   const urlParams = new URLSearchParams(window.location.search)\n   const sharedText = urlParams.get('text')\n   const sharedFrom = urlParams.get('from')\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403691349,
+      "end": 1759403691356
+    }
+  }
+}

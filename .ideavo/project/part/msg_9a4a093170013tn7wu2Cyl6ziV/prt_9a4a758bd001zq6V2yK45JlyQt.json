@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4a758bd001zq6V2yK45JlyQt",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(translator): add domain, glossary, and document translation features",
+  "cost": 1.64057235,
+  "tokens": {
+    "input": 0,
+    "output": 654,
+    "reasoning": 0,
+    "cache": {
+      "write": 431,
+      "read": 97237
+    }
+  }
+}

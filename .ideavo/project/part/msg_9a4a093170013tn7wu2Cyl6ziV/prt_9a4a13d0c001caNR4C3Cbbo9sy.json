@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a13d0c001caNR4C3Cbbo9sy",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01QunUCeiw9mFBpCzP7LWMfC",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "import { Separator } from \"@/components/ui/separator\"",
+      "newString": "import { Separator } from \"@/components/ui/separator\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from \"@/components/ui/dialog\"\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -6,8 +6,14 @@\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n import { Switch } from \"@/components/ui/switch\"\n import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\n import { Separator } from \"@/components/ui/separator\"\n+import { Input } from \"@/components/ui/input\"\n+import { Label } from \"@/components/ui/label\"\n+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from \"@/components/ui/dialog\"\n+import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n+import { Badge } from \"@/components/ui/badge\"\n+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\"\n import { Card, CardContent } from \"@/components/ui/card\"\n import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check, Upload, FileText, Book, Search, Plus, Trash2, Edit3 } from \"lucide-react\"\n import { toast } from \"sonner\"\n \n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403656415,
+      "end": 1759403656419
+    }
+  }
+}

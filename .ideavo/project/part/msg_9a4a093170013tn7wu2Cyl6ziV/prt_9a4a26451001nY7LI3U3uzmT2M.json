@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a26451001nY7LI3U3uzmT2M",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01UKzNfoUj8xEP37GwdBZSQx",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 19,
+      "limit": 15
+    },
+    "output": "<file>\n00020|   no: 'Norwegian',\n00021|   fi: 'Finnish',\n00022|   pl: 'Polish',\n00023|   cs: 'Czech',\n00024|   hu: 'Hungarian',\n00025|   ro: 'Romanian',\n00026|   bg: 'Bulgarian',\n00027|   hr: 'Croatian',\n00028|   sk: 'Slovak',\n00029|   sl: 'Slovenian',\n00030|   et: 'Estonian',\n00031|   lv: 'Latvian',\n00032|   lt: 'Lithuanian',\n00033|   el: 'Greek',\n00034|   tr: 'Turkish',\n\n(File has more lines. Use 'offset' parameter to read beyond line 34)\n</file>",
+    "metadata": {
+      "preview": "  no: 'Norwegian',\n  fi: 'Finnish',\n  pl: 'Polish',\n  cs: 'Czech',\n  hu: 'Hungarian',\n  ro: 'Romanian',\n  bg: 'Bulgarian',\n  hr: 'Croatian',\n  sk: 'Slovak',\n  sl: 'Slovenian',\n  et: 'Estonian',\n  lv: 'Latvian',\n  lt: 'Lithuanian',\n  el: 'Greek',\n  tr: 'Turkish',"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759403730707,
+      "end": 1759403730709
+    }
+  }
+}

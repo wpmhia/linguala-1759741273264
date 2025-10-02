@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a1fe89001V7AIQqc57d0rdp",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01TFCwjeGQJS1BET5CofJEif",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "  // Save history to localStorage whenever it changes\n  useEffect(() => {\n    localStorage.setItem(\"translation-history\", JSON.stringify(history))\n  }, [history])",
+      "newString": "  // Save history to localStorage whenever it changes\n  useEffect(() => {\n    localStorage.setItem(\"translation-history\", JSON.stringify(history))\n  }, [history])\n\n  // Save glossary to localStorage whenever it changes\n  useEffect(() => {\n    localStorage.setItem(\"translation-glossary\", JSON.stringify(glossary))\n  }, [glossary])"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -140,8 +140,13 @@\n useEffect(() => {\n   localStorage.setItem(\"translation-history\", JSON.stringify(history))\n }, [history])\n \n+// Save glossary to localStorage whenever it changes\n+useEffect(() => {\n+  localStorage.setItem(\"translation-glossary\", JSON.stringify(glossary))\n+}, [glossary])\n+\n const translateText = async (text: string, from: string, to: string) => {\n   if (!text.trim()) {\n     setTranslatedText(\"\")\n     return\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403705578,
+      "end": 1759403705583
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a6fe1e001oPGXBpqzYhv00B",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01GdKR2H1wi5msra5KSCiehS",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"text\": \"Hello world\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\",\n    \"domain\": \"technical\",\n    \"glossary\": [{\"source\": \"hello\", \"target\": \"hola\", \"domain\": \"general\"}]\n  }' \\\n  --max-time 10",
+      "description": "Test enhanced API with domain and glossary"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   184    0     0  100   184      0    913 --:--:-- --:--:-- --:--:--   910\r100   184    0     0  100   184      0    152  0:00:01  0:00:01 --:--:--   152\r100   251    0    67  100   184     47    129  0:00:01  0:00:01 --:--:--   176\n{\"translatedText\":\"Hola mundo\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   184    0     0  100   184      0    913 --:--:-- --:--:-- --:--:--   910\r100   184    0     0  100   184      0    152  0:00:01  0:00:01 --:--:--   152\r100   251    0    67  100   184     47    129  0:00:01  0:00:01 --:--:--   176\n{\"translatedText\":\"Hola mundo\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}",
+      "exit": 0,
+      "description": "Test enhanced API with domain and glossary"
+    },
+    "title": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"text\": \"Hello world\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\",\n    \"domain\": \"technical\",\n    \"glossary\": [{\"source\": \"hello\", \"target\": \"hola\", \"domain\": \"general\"}]\n  }' \\\n  --max-time 10",
+    "time": {
+      "start": 1759404033756,
+      "end": 1759404035198
+    }
+  }
+}

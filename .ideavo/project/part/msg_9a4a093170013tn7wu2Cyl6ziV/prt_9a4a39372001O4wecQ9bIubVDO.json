@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a39372001O4wecQ9bIubVDO",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01VaVrt1ewabME6zJ3Cc6Uxh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 450,
+      "limit": 30
+    },
+    "output": "<file>\n00451|                 </Button>\n00452|               )}\n00453|             </div>\n00454|             \n00455|             <div className=\"flex items-center space-x-2\">\n00456|               {/* Copy Button */}\n00457|               <Button\n00458|                 variant=\"outline\"\n00459|                 size=\"sm\"\n00460|                 onClick={() => copyToClipboard(translatedText)}\n00461|                 disabled={!translatedText.trim()}\n00462|                 className=\"flex items-center space-x-1\"\n00463|               >\n00464|                 {copySuccess ? <Check className=\"h-4 w-4 text-green-600\" /> : <Copy className=\"h-4 w-4\" />}\n00465|                 <span>{copySuccess ? \"Copied!\" : \"Copy\"}</span>\n00466|               </Button>\n00467| \n00468|               {/* Download Dropdown */}\n00469|               <DropdownMenu>\n00470|                 <DropdownMenuTrigger asChild>\n00471|                   <Button \n00472|                     variant=\"outline\" \n00473|                     size=\"sm\"\n00474|                     disabled={!translatedText.trim()}\n00475|                     className=\"flex items-center space-x-1\"\n00476|                   >\n00477|                     <Download className=\"h-4 w-4\" />\n00478|                     <span>Download</span>\n00479|                   </Button>\n00480|                 </DropdownMenuTrigger>\n\n(File has more lines. Use 'offset' parameter to read beyond line 480)\n</file>",
+    "metadata": {
+      "preview": "                </Button>\n              )}\n            </div>\n            \n            <div className=\"flex items-center space-x-2\">\n              {/* Copy Button */}\n              <Button\n                variant=\"outline\"\n                size=\"sm\"\n                onClick={() => copyToClipboard(translatedText)}\n                disabled={!translatedText.trim()}\n                className=\"flex items-center space-x-1\"\n              >\n                {copySuccess ? <Check className=\"h-4 w-4 text-green-600\" /> : <Copy className=\"h-4 w-4\" />}\n                <span>{copySuccess ? \"Copied!\" : \"Copy\"}</span>\n              </Button>\n\n              {/* Download Dropdown */}\n              <DropdownMenu>\n                <DropdownMenuTrigger asChild>"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403808309,
+      "end": 1759403808310
+    }
+  }
+}

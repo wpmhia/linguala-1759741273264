@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a5887e001DkF9SrjpTyZWe8",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01GPuTFesgLy4ZpbDUsstp7t",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "          </div>\n\n          {/* Translation Interface */}",
+      "newString": "          </div>\n\n          {/* Translation Mode Selection */}\n          <Tabs value={translationMode} onValueChange={(value) => setTranslationMode(value as 'text' | 'document')} className=\"mb-6\">\n            <TabsList className=\"grid w-full grid-cols-2\">\n              <TabsTrigger value=\"text\" className=\"flex items-center space-x-2\">\n                <Edit3 className=\"h-4 w-4\" />\n                <span>Text Translation</span>\n              </TabsTrigger>\n              <TabsTrigger value=\"document\" className=\"flex items-center space-x-2\">\n                <Upload className=\"h-4 w-4\" />\n                <span>Document Translation</span>\n              </TabsTrigger>\n            </TabsList>\n\n            <TabsContent value=\"text\" className=\"mt-6\">\n              {/* Text Translation Interface */}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -789,9 +789,23 @@\n     Clear\n   </Button>\n </div>\n \n-{/* Translation Interface */}\n+{/* Translation Mode Selection */}\n+<Tabs value={translationMode} onValueChange={(value) => setTranslationMode(value as 'text' | 'document')} className=\"mb-6\">\n+  <TabsList className=\"grid w-full grid-cols-2\">\n+    <TabsTrigger value=\"text\" className=\"flex items-center space-x-2\">\n+      <Edit3 className=\"h-4 w-4\" />\n+      <span>Text Translation</span>\n+    </TabsTrigger>\n+    <TabsTrigger value=\"document\" className=\"flex items-center space-x-2\">\n+      <Upload className=\"h-4 w-4\" />\n+      <span>Document Translation</span>\n+    </TabsTrigger>\n+  </TabsList>\n+\n+  <TabsContent value=\"text\" className=\"mt-6\">\n+    {/* Text Translation Interface */}\n <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">\n   {/* Source Text */}\n   <div className=\"space-y-2\">\n     <div className=\"flex items-center justify-between\">\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403939298,
+      "end": 1759403939303
+    }
+  }
+}

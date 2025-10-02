@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a2f184001gFoqNUj6R2v5ZY",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01FyFmFxLReKiKPsuRCxX7Gz",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 295,
+      "limit": 20
+    },
+    "output": "<file>\n00296|       \n00297|       try {\n00298|         await navigator.clipboard.writeText(shareUrl)\n00299|         toast.success(\"Share URL copied to clipboard!\")\n00300|       } catch (error) {\n00301|         toast.error(\"Failed to copy share URL\")\n00302|       }\n00303|     } else {\n00304|       const shareText = `${sourceText} → ${translatedText}\\n\\nTranslated from ${LANGUAGES.find(l => l.code === sourceLang)?.name} to ${LANGUAGES.find(l => l.code === targetLang)?.name}`\n00305|       \n00306|       if (navigator.share) {\n00307|         try {\n00308|           await navigator.share({\n00309|             title: 'Translation',\n00310|             text: shareText\n00311|           })\n00312|         } catch (error) {\n00313|           // Fallback to clipboard\n00314|           await copyToClipboard(shareText)\n00315|         }\n\n(File has more lines. Use 'offset' parameter to read beyond line 315)\n</file>",
+    "metadata": {
+      "preview": "      \n      try {\n        await navigator.clipboard.writeText(shareUrl)\n        toast.success(\"Share URL copied to clipboard!\")\n      } catch (error) {\n        toast.error(\"Failed to copy share URL\")\n      }\n    } else {\n      const shareText = `${sourceText} → ${translatedText}\\n\\nTranslated from ${LANGUAGES.find(l => l.code === sourceLang)?.name} to ${LANGUAGES.find(l => l.code === targetLang)?.name}`\n      \n      if (navigator.share) {\n        try {\n          await navigator.share({\n            title: 'Translation',\n            text: shareText\n          })\n        } catch (error) {\n          // Fallback to clipboard\n          await copyToClipboard(shareText)\n        }"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403766849,
+      "end": 1759403766851
+    }
+  }
+}

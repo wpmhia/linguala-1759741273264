@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a10ca5001dAvUIOm3SsxNPd",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_013QWZmDfMUfYb7AhhPeu1nW",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 50,
+      "limit": 10
+    },
+    "output": "<file>\n00051|   { code: \"th\", name: \"Thai\" },\n00052|   { code: \"vi\", name: \"Vietnamese\" },\n00053|   { code: \"ms\", name: \"Malay\" },\n00054|   { code: \"id\", name: \"Indonesian\" },\n00055|   { code: \"tl\", name: \"Filipino\" },\n00056| ]\n00057| \n00058| interface TranslationHistory {\n00059|   id: string\n00060|   sourceText: string\n\n(File has more lines. Use 'offset' parameter to read beyond line 60)\n</file>",
+    "metadata": {
+      "preview": "  { code: \"th\", name: \"Thai\" },\n  { code: \"vi\", name: \"Vietnamese\" },\n  { code: \"ms\", name: \"Malay\" },\n  { code: \"id\", name: \"Indonesian\" },\n  { code: \"tl\", name: \"Filipino\" },\n]\n\ninterface TranslationHistory {\n  id: string\n  sourceText: string"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403642654,
+      "end": 1759403642656
+    }
+  }
+}

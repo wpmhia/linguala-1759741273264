@@ -44,7 +44,7 @@ const LANGUAGE_MAP: Record<string, string> = {
 
 export async function POST(request: NextRequest) {
   try {
-    const { text, sourceLang, targetLang } = await request.json()
+    const { text, sourceLang, targetLang, domain, glossary } = await request.json()
 
     if (!text || !targetLang) {
       return NextResponse.json(
@@ -64,6 +64,28 @@ export async function POST(request: NextRequest) {
     // Prepare the translation options
     const sourceLanguage = LANGUAGE_MAP[sourceLang] || (sourceLang === 'auto' ? 'auto' : sourceLang)
     const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang
+
+    // Apply glossary preprocessing if provided
+    let processedText = text
+    if (glossary && Array.isArray(glossary)) {
+      glossary.forEach((entry: any) => {
+        if (entry.source && entry.target) {
+          // Simple case-insensitive replacement
+          const regex = new RegExp(`\\b${entry.source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi')
+          processedText = processedText.replace(regex, `[GLOSSARY:${entry.target}]`)
+        }
+      })
+    }
+
+    // Add domain context to improve translation quality
+    const domainContexts: Record<string, string> = {
+      technical: "This is a technical/IT translation. Focus on accurate technical terminology.",
+      medical: "This is a medical translation. Use precise medical terminology.",
+      legal: "This is a legal translation. Maintain formal legal language and terminology.",
+      business: "This is a business translation. Use professional business terminology.",
+      academic: "This is an academic translation. Use scholarly and precise language.",
+      creative: "This is a creative translation. Maintain the tone and style of the original."
+    }
 
     // Call Qwen MT API using the correct format for qwen-mt-turbo
     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {

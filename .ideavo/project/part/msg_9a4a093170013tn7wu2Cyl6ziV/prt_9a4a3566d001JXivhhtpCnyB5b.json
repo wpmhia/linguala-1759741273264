@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a3566d001JXivhhtpCnyB5b",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01RM2iG1VzNXPYixCz6nbx1Q",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 400,
+      "limit": 25
+    },
+    "output": "<file>\n00401| \n00402|   const getLanguageName = (code: string) => {\n00403|     return LANGUAGES.find(lang => lang.code === code)?.name || code\n00404|   }\n00405| \n00406|   return (\n00407|     <div className=\"max-w-7xl mx-auto px-4 py-8 space-y-8\">\n00408|       <div className=\"text-center space-y-3\">\n00409|         <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n00410|         <p className=\"text-lg text-gray-600\">Fast, accurate translations powered by Qwen MT-Turbo</p>\n00411|       </div>\n00412| \n00413|       <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">\n00414|         <CardContent className=\"p-8\">\n00415|           {/* Translation Settings */}\n00416|           <div className=\"flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-lg\">\n00417|             <div className=\"flex items-center space-x-4\">\n00418|               <div className=\"flex items-center space-x-2\">\n00419|                 {realTimeEnabled ? <Zap className=\"h-4 w-4 text-green-600\" /> : <ZapOff className=\"h-4 w-4 text-gray-400\" />}\n00420|                 <span className=\"text-sm font-medium\">Real-time translation</span>\n00421|                 <Switch \n00422|                   checked={realTimeEnabled} \n00423|                   onCheckedChange={setRealTimeEnabled}\n00424|                 />\n00425|               </div>\n\n(File has more lines. Use 'offset' parameter to read beyond line 425)\n</file>",
+    "metadata": {
+      "preview": "\n  const getLanguageName = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code)?.name || code\n  }\n\n  return (\n    <div className=\"max-w-7xl mx-auto px-4 py-8 space-y-8\">\n      <div className=\"text-center space-y-3\">\n        <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n        <p className=\"text-lg text-gray-600\">Fast, accurate translations powered by Qwen MT-Turbo</p>\n      </div>\n\n      <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">\n        <CardContent className=\"p-8\">\n          {/* Translation Settings */}\n          <div className=\"flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-lg\">\n            <div className=\"flex items-center space-x-4\">\n              <div className=\"flex items-center space-x-2\">\n                {realTimeEnabled ? <Zap className=\"h-4 w-4 text-green-600\" /> : <ZapOff className=\"h-4 w-4 text-gray-400\" />}\n                <span className=\"text-sm font-medium\">Real-time translation</span>"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403792671,
+      "end": 1759403792673
+    }
+  }
+}

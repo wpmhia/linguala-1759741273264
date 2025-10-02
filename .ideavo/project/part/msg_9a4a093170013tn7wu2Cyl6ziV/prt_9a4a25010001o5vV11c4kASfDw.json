@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a25010001o5vV11c4kASfDw",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Fbgm1tzPujFmnCXGNhXGfE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "        body: JSON.stringify({\n          text: text.trim(),\n          sourceLang: from,\n          targetLang: to,\n        }),",
+      "newString": "        body: JSON.stringify({\n          text: text.trim(),\n          sourceLang: from,\n          targetLang: to,\n          domain: selectedDomain,\n          glossary: glossary.filter(entry => entry.domain === selectedDomain || entry.domain === 'general')\n        }),"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -162,8 +162,10 @@\n   body: JSON.stringify({\n     text: text.trim(),\n     sourceLang: from,\n     targetLang: to,\n+    domain: selectedDomain,\n+    glossary: glossary.filter(entry => entry.domain === selectedDomain || entry.domain === 'general')\n   }),\n })\n \n if (!response.ok) {\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403726769,
+      "end": 1759403726774
+    }
+  }
+}

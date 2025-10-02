@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a304e5001XAeDUl6YOJh51g",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01LAFWyYMgFeMoUCaAjjvgSk",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 320,
+      "limit": 20
+    },
+    "output": "<file>\n00321| \n00322|   const manualTranslate = () => {\n00323|     if (sourceText.trim()) {\n00324|       translateText(sourceText, sourceLang, targetLang)\n00325|     }\n00326|   }\n00327| \n00328|   const clearText = () => {\n00329|     setSourceText(\"\")\n00330|     setTranslatedText(\"\")\n00331|   }\n00332| \n00333|   const getLanguageName = (code: string) => {\n00334|     return LANGUAGES.find(lang => lang.code === code)?.name || code\n00335|   }\n00336| \n00337|   return (\n00338|     <div className=\"max-w-7xl mx-auto px-4 py-8 space-y-8\">\n00339|       <div className=\"text-center space-y-3\">\n00340|         <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n\n(File has more lines. Use 'offset' parameter to read beyond line 340)\n</file>",
+    "metadata": {
+      "preview": "\n  const manualTranslate = () => {\n    if (sourceText.trim()) {\n      translateText(sourceText, sourceLang, targetLang)\n    }\n  }\n\n  const clearText = () => {\n    setSourceText(\"\")\n    setTranslatedText(\"\")\n  }\n\n  const getLanguageName = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code)?.name || code\n  }\n\n  return (\n    <div className=\"max-w-7xl mx-auto px-4 py-8 space-y-8\">\n      <div className=\"text-center space-y-3\">\n        <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403771698,
+      "end": 1759403771700
+    }
+  }
+}

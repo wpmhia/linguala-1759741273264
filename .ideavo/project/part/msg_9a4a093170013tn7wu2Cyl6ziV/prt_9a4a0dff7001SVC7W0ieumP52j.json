@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4a0dff7001SVC7W0ieumP52j",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01EyiL3Tmfe52BjYSPe9Nxh8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 1,
+      "limit": 15
+    },
+    "output": "<file>\n00002| \n00003| import { useState, useRef, useEffect } from \"react\"\n00004| import { Button } from \"@/components/ui/button\"\n00005| import { Textarea } from \"@/components/ui/textarea\"\n00006| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00007| import { Switch } from \"@/components/ui/switch\"\n00008| import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\n00009| import { Separator } from \"@/components/ui/separator\"\n00010| import { Card, CardContent } from \"@/components/ui/card\"\n00011| import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from \"lucide-react\"\n00012| import { toast } from \"sonner\"\n00013| \n00014| const LANGUAGES = [\n00015|   { code: \"auto\", name: \"Detect language\" },\n00016|   // Northern European languages\n\n(File has more lines. Use 'offset' parameter to read beyond line 16)\n</file>",
+    "metadata": {
+      "preview": "\nimport { useState, useRef, useEffect } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\nimport { Separator } from \"@/components/ui/separator\"\nimport { Card, CardContent } from \"@/components/ui/card\"\nimport { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from \"lucide-react\"\nimport { toast } from \"sonner\"\n\nconst LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\" },\n  // Northern European languages"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403631508,
+      "end": 1759403631511
+    }
+  }
+}

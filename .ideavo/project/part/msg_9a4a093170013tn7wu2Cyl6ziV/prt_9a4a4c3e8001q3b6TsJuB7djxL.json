@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a4c3e8001q3b6TsJuB7djxL",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_012rC46ooJdrXdXMuzVprGLX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "  const [historySearch, setHistorySearch] = useState(\"\")\n  const [showAdvancedHistory, setShowAdvancedHistory] = useState(false)\n  const debounceRef = useRef<NodeJS.Timeout>()",
+      "newString": "  const [historySearch, setHistorySearch] = useState(\"\")\n  const [showAdvancedHistory, setShowAdvancedHistory] = useState(false)\n  const [translationMode, setTranslationMode] = useState<'text' | 'document'>('text')\n  const [uploadedFile, setUploadedFile] = useState<File | null>(null)\n  const [documentContent, setDocumentContent] = useState(\"\")\n  const [isProcessingDocument, setIsProcessingDocument] = useState(false)\n  const debounceRef = useRef<NodeJS.Timeout>()"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -102,8 +102,12 @@\n const [showGlossary, setShowGlossary] = useState(false)\n const [newGlossaryEntry, setNewGlossaryEntry] = useState({ source: \"\", target: \"\", notes: \"\" })\n const [historySearch, setHistorySearch] = useState(\"\")\n const [showAdvancedHistory, setShowAdvancedHistory] = useState(false)\n+const [translationMode, setTranslationMode] = useState<'text' | 'document'>('text')\n+const [uploadedFile, setUploadedFile] = useState<File | null>(null)\n+const [documentContent, setDocumentContent] = useState(\"\")\n+const [isProcessingDocument, setIsProcessingDocument] = useState(false)\n const debounceRef = useRef<NodeJS.Timeout>()\n \n // Load history and glossary from localStorage on mount and check URL parameters\n useEffect(() => {\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403888684,
+      "end": 1759403888690
+    }
+  }
+}

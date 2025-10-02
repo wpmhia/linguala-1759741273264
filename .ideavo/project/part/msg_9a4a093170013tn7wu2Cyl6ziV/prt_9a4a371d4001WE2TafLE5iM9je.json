@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4a371d4001WE2TafLE5iM9je",
+  "messageID": "msg_9a4a093170013tn7wu2Cyl6ziV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01UCQEejZdpr7XMh4vMxJdZM",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "          {/* Translation Settings */}\n          <div className=\"flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-lg\">\n            <div className=\"flex items-center space-x-4\">\n              <div className=\"flex items-center space-x-2\">\n                {realTimeEnabled ? <Zap className=\"h-4 w-4 text-green-600\" /> : <ZapOff className=\"h-4 w-4 text-gray-400\" />}\n                <span className=\"text-sm font-medium\">Real-time translation</span>\n                <Switch \n                  checked={realTimeEnabled} \n                  onCheckedChange={setRealTimeEnabled}\n                />\n              </div>",
+      "newString": "          {/* Translation Settings */}\n          <div className=\"flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-lg\">\n            <div className=\"flex items-center space-x-6\">\n              <div className=\"flex items-center space-x-2\">\n                {realTimeEnabled ? <Zap className=\"h-4 w-4 text-green-600\" /> : <ZapOff className=\"h-4 w-4 text-gray-400\" />}\n                <span className=\"text-sm font-medium\">Real-time translation</span>\n                <Switch \n                  checked={realTimeEnabled} \n                  onCheckedChange={setRealTimeEnabled}\n                />\n              </div>\n              \n              <div className=\"flex items-center space-x-2\">\n                <Settings className=\"h-4 w-4 text-gray-600\" />\n                <span className=\"text-sm font-medium\">Domain:</span>\n                <Select value={selectedDomain} onValueChange={setSelectedDomain}>\n                  <SelectTrigger className=\"w-40\">\n                    <SelectValue />\n                  </SelectTrigger>\n                  <SelectContent>\n                    {DOMAINS.map(domain => (\n                      <SelectItem key={domain.code} value={domain.code}>\n                        {domain.name}\n                      </SelectItem>\n                    ))}\n                  </SelectContent>\n                </Select>\n              </div>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -413,17 +413,34 @@\n <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">\n   <CardContent className=\"p-8\">\n     {/* Translation Settings */}\n     <div className=\"flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-lg\">\n-      <div className=\"flex items-center space-x-4\">\n+      <div className=\"flex items-center space-x-6\">\n         <div className=\"flex items-center space-x-2\">\n           {realTimeEnabled ? <Zap className=\"h-4 w-4 text-green-600\" /> : <ZapOff className=\"h-4 w-4 text-gray-400\" />}\n           <span className=\"text-sm font-medium\">Real-time translation</span>\n           <Switch \n             checked={realTimeEnabled} \n             onCheckedChange={setRealTimeEnabled}\n           />\n         </div>\n+        \n+        <div className=\"flex items-center space-x-2\">\n+          <Settings className=\"h-4 w-4 text-gray-600\" />\n+          <span className=\"text-sm font-medium\">Domain:</span>\n+          <Select value={selectedDomain} onValueChange={setSelectedDomain}>\n+            <SelectTrigger className=\"w-40\">\n+              <SelectValue />\n+            </SelectTrigger>\n+            <SelectContent>\n+              {DOMAINS.map(domain => (\n+                <SelectItem key={domain.code} value={domain.code}>\n+                  {domain.name}\n+                </SelectItem>\n+              ))}\n+            </SelectContent>\n+          </Select>\n+        </div>\n         {!realTimeEnabled && (\n           <Button \n             onClick={manualTranslate}\n             disabled={!sourceText.trim() || isTranslating}\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403804089,
+      "end": 1759403804097
+    }
+  }
+}

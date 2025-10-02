@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5073d98001PM0LKapNekgLA7",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_016wtxb6BJADWMFbjZxqmjJv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "export const authOptions: NextAuthOptions = {\n  adapter: PrismaAdapter(prisma) as any,\n  providers: [\n    // Email provider for magic link authentication\n    EmailProvider({\n      server: {\n        host: process.env.EMAIL_SERVER_HOST,\n        port: process.env.EMAIL_SERVER_PORT,\n        auth: {\n          user: process.env.EMAIL_SERVER_USER,\n          pass: process.env.EMAIL_SERVER_PASSWORD,\n        },\n      },\n      from: process.env.EMAIL_FROM,\n    }),\n    \n    // Google OAuth provider\n    GoogleProvider({\n      clientId: process.env.GOOGLE_CLIENT_ID || \"\",\n      clientSecret: process.env.GOOGLE_CLIENT_SECRET || \"\",\n    }),\n    \n    // GitHub OAuth provider\n    GitHubProvider({\n      clientId: process.env.GITHUB_CLIENT_ID || \"\",\n      clientSecret: process.env.GITHUB_CLIENT_SECRET || \"\",\n    }),\n  ],",
+      "newString": "export const authOptions: NextAuthOptions = {\n  adapter: PrismaAdapter(prisma) as any,\n  providers: [\n    // Email provider for magic link authentication\n    EmailProvider({\n      server: {\n        host: process.env.EMAIL_SERVER_HOST,\n        port: process.env.EMAIL_SERVER_PORT,\n        auth: {\n          user: process.env.EMAIL_SERVER_USER,\n          pass: process.env.EMAIL_SERVER_PASSWORD,\n        },\n      },\n      from: process.env.EMAIL_FROM,\n    }),\n    \n    // Google OAuth provider - only enable if credentials are configured\n    ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n      GoogleProvider({\n        clientId: process.env.GOOGLE_CLIENT_ID,\n        clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      })\n    ] : []),\n    \n    // GitHub OAuth provider - only enable if credentials are configured\n    ...(process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET ? [\n      GitHubProvider({\n        clientId: process.env.GITHUB_CLIENT_ID,\n        clientSecret: process.env.GITHUB_CLIENT_SECRET,\n      })\n    ] : []),\n  ],"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -20,19 +20,23 @@\n     },\n     from: process.env.EMAIL_FROM,\n   }),\n   \n-  // Google OAuth provider\n-  GoogleProvider({\n-    clientId: process.env.GOOGLE_CLIENT_ID || \"\",\n-    clientSecret: process.env.GOOGLE_CLIENT_SECRET || \"\",\n-  }),\n+  // Google OAuth provider - only enable if credentials are configured\n+  ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n+    GoogleProvider({\n+      clientId: process.env.GOOGLE_CLIENT_ID,\n+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n+    })\n+  ] : []),\n   \n-  // GitHub OAuth provider\n-  GitHubProvider({\n-    clientId: process.env.GITHUB_CLIENT_ID || \"\",\n-    clientSecret: process.env.GITHUB_CLIENT_SECRET || \"\",\n-  }),\n+  // GitHub OAuth provider - only enable if credentials are configured\n+  ...(process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET ? [\n+    GitHubProvider({\n+      clientId: process.env.GITHUB_CLIENT_ID,\n+      clientSecret: process.env.GITHUB_CLIENT_SECRET,\n+    })\n+  ] : []),\n ],\n \n session: {\n   strategy: \"database\",\n"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759410345595,
+      "end": 1759410345606
+    }
+  }
+}

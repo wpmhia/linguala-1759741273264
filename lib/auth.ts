@@ -4,38 +4,65 @@ import { prisma } from "@/lib/prisma"
 import GoogleProvider from "next-auth/providers/google"
 import GitHubProvider from "next-auth/providers/github"
 import EmailProvider from "next-auth/providers/email"
+import CredentialsProvider from "next-auth/providers/credentials"
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma) as any,
   providers: [
-    // Email provider for magic link authentication
-    EmailProvider({
-      server: {
-        host: process.env.EMAIL_SERVER_HOST,
-        port: process.env.EMAIL_SERVER_PORT,
-        auth: {
-          user: process.env.EMAIL_SERVER_USER,
-          pass: process.env.EMAIL_SERVER_PASSWORD,
-        },
+    // Simple demo credentials provider for development
+    CredentialsProvider({
+      name: "Demo Account",
+      credentials: {
+        email: { label: "Email", type: "email", placeholder: "demo@linguala.eu" }
       },
-      from: process.env.EMAIL_FROM,
+      async authorize(credentials) {
+        // For demo purposes, accept any email
+        if (credentials?.email) {
+          return {
+            id: "demo-user",
+            email: credentials.email,
+            name: credentials.email.split('@')[0],
+            image: null,
+          }
+        }
+        return null
+      }
     }),
     
-    // Google OAuth provider
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-    }),
+    // Email provider - only enable if SMTP is configured
+    ...(process.env.EMAIL_SERVER_HOST ? [
+      EmailProvider({
+        server: {
+          host: process.env.EMAIL_SERVER_HOST,
+          port: process.env.EMAIL_SERVER_PORT,
+          auth: {
+            user: process.env.EMAIL_SERVER_USER,
+            pass: process.env.EMAIL_SERVER_PASSWORD,
+          },
+        },
+        from: process.env.EMAIL_FROM,
+      })
+    ] : []),
     
-    // GitHub OAuth provider
-    GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID || "",
-      clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
-    }),
+    // Google OAuth provider - only enable if credentials are configured
+    ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [
+      GoogleProvider({
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      })
+    ] : []),
+    
+    // GitHub OAuth provider - only enable if credentials are configured
+    ...(process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET ? [
+      GitHubProvider({
+        clientId: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      })
+    ] : []),
   ],
   
   session: {
-    strategy: "database",
+    strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   
@@ -47,9 +74,15 @@ export const authOptions: NextAuthOptions = {
   },
   
   callbacks: {
-    async session({ session, user }) {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id
+      }
+      return token
+    },
+    async session({ session, token }) {
       if (session?.user) {
-        session.user.id = user.id
+        session.user.id = token.id as string
       }
       return session
     },

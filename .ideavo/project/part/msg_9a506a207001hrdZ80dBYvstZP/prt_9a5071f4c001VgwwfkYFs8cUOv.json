@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a5071f4c001VgwwfkYFs8cUOv",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The Google credentials are commented out. Let me also check what the sign-in page looks like to see if Google login is even shown:",
+  "time": {
+    "start": 1759410332495,
+    "end": 1759410332495
+  }
+}

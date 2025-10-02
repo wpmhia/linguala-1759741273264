@@ -34,14 +34,27 @@ function SignInForm() {
 
     setIsLoading(true)
     try {
-      const result = await signIn("email", {
+      // Try credentials provider first (demo mode)
+      const result = await signIn("credentials", {
         email,
         callbackUrl,
         redirect: false,
       })
       
       if (result?.ok) {
-        router.push("/auth/verify-request")
+        router.push(callbackUrl)
+      } else if (result?.error) {
+        // If credentials fail and email provider is available, try email
+        if (providers?.email) {
+          const emailResult = await signIn("email", {
+            email,
+            callbackUrl,
+            redirect: false,
+          })
+          if (emailResult?.ok) {
+            router.push("/auth/verify-request")
+          }
+        }
       }
     } catch (error) {
       console.error("Sign in error:", error)
@@ -89,7 +102,7 @@ function SignInForm() {
           </div>
           <CardTitle className="text-2xl font-semibold">Welcome to Linguala</CardTitle>
           <CardDescription>
-            Join Europe's translation platform. Access your personal history, custom glossaries, and professional European language tools
+            Join the EU's translation platform. Access your personal history, custom glossaries, and professional tools for all 24 EU languages
           </CardDescription>
         </CardHeader>
         

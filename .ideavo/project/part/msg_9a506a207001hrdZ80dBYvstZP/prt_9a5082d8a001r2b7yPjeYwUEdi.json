@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5082d8a001r2b7yPjeYwUEdi",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_017dJCfwEWjvk4wqCM4wr3aq",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "  callbacks: {\n    async session({ session, user }) {\n      if (session?.user) {\n        session.user.id = user.id\n      }\n      return session\n    },\n  },",
+      "newString": "  callbacks: {\n    async jwt({ token, user }) {\n      if (user) {\n        token.id = user.id\n      }\n      return token\n    },\n    async session({ session, token }) {\n      if (session?.user) {\n        session.user.id = token.id as string\n      }\n      return session\n    },\n  },"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -73,11 +73,17 @@\n   verifyRequest: '/auth/verify-request',\n },\n \n callbacks: {\n-  async session({ session, user }) {\n+  async jwt({ token, user }) {\n+    if (user) {\n+      token.id = user.id\n+    }\n+    return token\n+  },\n+  async session({ session, token }) {\n     if (session?.user) {\n-      session.user.id = user.id\n+      session.user.id = token.id as string\n     }\n     return session\n   },\n },\n"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759410402444,
+      "end": 1759410402449
+    }
+  }
+}

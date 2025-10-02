@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a506b9d6001BiQcInBFbAxX5p",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01NMJF8d9DnZoaWD5wLexKRr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts"
+    },
+    "output": "<file>\n00001| import { NextAuthOptions } from \"next-auth\"\n00002| import { PrismaAdapter } from \"@auth/prisma-adapter\"\n00003| import { prisma } from \"@/lib/prisma\"\n00004| import GoogleProvider from \"next-auth/providers/google\"\n00005| import GitHubProvider from \"next-auth/providers/github\"\n00006| import EmailProvider from \"next-auth/providers/email\"\n00007| \n00008| export const authOptions: NextAuthOptions = {\n00009|   adapter: PrismaAdapter(prisma) as any,\n00010|   providers: [\n00011|     // Email provider for magic link authentication\n00012|     EmailProvider({\n00013|       server: {\n00014|         host: process.env.EMAIL_SERVER_HOST,\n00015|         port: process.env.EMAIL_SERVER_PORT,\n00016|         auth: {\n00017|           user: process.env.EMAIL_SERVER_USER,\n00018|           pass: process.env.EMAIL_SERVER_PASSWORD,\n00019|         },\n00020|       },\n00021|       from: process.env.EMAIL_FROM,\n00022|     }),\n00023|     \n00024|     // Google OAuth provider\n00025|     GoogleProvider({\n00026|       clientId: process.env.GOOGLE_CLIENT_ID || \"\",\n00027|       clientSecret: process.env.GOOGLE_CLIENT_SECRET || \"\",\n00028|     }),\n00029|     \n00030|     // GitHub OAuth provider\n00031|     GitHubProvider({\n00032|       clientId: process.env.GITHUB_CLIENT_ID || \"\",\n00033|       clientSecret: process.env.GITHUB_CLIENT_SECRET || \"\",\n00034|     }),\n00035|   ],\n00036|   \n00037|   session: {\n00038|     strategy: \"database\",\n00039|     maxAge: 30 * 24 * 60 * 60, // 30 days\n00040|   },\n00041|   \n00042|   pages: {\n00043|     signIn: '/auth/signin',\n00044|     signOut: '/auth/signout',\n00045|     error: '/auth/error',\n00046|     verifyRequest: '/auth/verify-request',\n00047|   },\n00048|   \n00049|   callbacks: {\n00050|     async session({ session, user }) {\n00051|       if (session?.user) {\n00052|         session.user.id = user.id\n00053|       }\n00054|       return session\n00055|     },\n00056|   },\n00057|   \n00058|   events: {\n00059|     async createUser({ user }) {\n00060|       console.log(`New user created: ${user.email}`)\n00061|     },\n00062|   },\n00063| }\n</file>",
+    "metadata": {
+      "preview": "import { NextAuthOptions } from \"next-auth\"\nimport { PrismaAdapter } from \"@auth/prisma-adapter\"\nimport { prisma } from \"@/lib/prisma\"\nimport GoogleProvider from \"next-auth/providers/google\"\nimport GitHubProvider from \"next-auth/providers/github\"\nimport EmailProvider from \"next-auth/providers/email\"\n\nexport const authOptions: NextAuthOptions = {\n  adapter: PrismaAdapter(prisma) as any,\n  providers: [\n    // Email provider for magic link authentication\n    EmailProvider({\n      server: {\n        host: process.env.EMAIL_SERVER_HOST,\n        port: process.env.EMAIL_SERVER_PORT,\n        auth: {\n          user: process.env.EMAIL_SERVER_USER,\n          pass: process.env.EMAIL_SERVER_PASSWORD,\n        },\n      },"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759410306111,
+      "end": 1759410306118
+    }
+  }
+}

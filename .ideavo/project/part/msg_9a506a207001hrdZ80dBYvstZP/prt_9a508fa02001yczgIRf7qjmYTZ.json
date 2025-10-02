@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a508fa02001yczgIRf7qjmYTZ",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(auth): simplify authentication for demo/dev environment",
+  "cost": 1.02957555,
+  "tokens": {
+    "input": 1,
+    "output": 3,
+    "reasoning": 0,
+    "cache": {
+      "write": 9946,
+      "read": 0
+    }
+  }
+}

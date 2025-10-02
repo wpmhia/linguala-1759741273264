@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a5082bd7001QF1EKrrFQCgFNq",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I need to update the session callback to work with JWT:",
+  "time": {
+    "start": 1759410400649,
+    "end": 1759410400649
+  }
+}

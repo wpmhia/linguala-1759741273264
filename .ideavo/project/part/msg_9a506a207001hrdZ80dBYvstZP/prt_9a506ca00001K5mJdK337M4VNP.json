@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a506ca00001K5mJdK337M4VNP",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see the Google provider is configured, but the environment variables are missing. Let me check the current .env file:",
+  "time": {
+    "start": 1759410310362,
+    "end": 1759410310362
+  }
+}

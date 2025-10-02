@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a50814f70013T3wDkHl4PUprX",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I need to change the session strategy from \"database\" to \"jwt\" since we're using a credentials provider:",
+  "time": {
+    "start": 1759410395165,
+    "end": 1759410395165
+  }
+}

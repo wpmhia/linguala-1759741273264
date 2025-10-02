@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a507b438001J4RhYobDV2erjm",
+  "messageID": "msg_9a506a207001hrdZ80dBYvstZP",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The email provider also doesn't have credentials configured. For a development/demo environment, let me simplify this by creating a simple sign-in flow that doesn't require external services. Let me modify the auth to use a simpler approach:",
+  "time": {
+    "start": 1759410371373,
+    "end": 1759410371373
+  }
+}

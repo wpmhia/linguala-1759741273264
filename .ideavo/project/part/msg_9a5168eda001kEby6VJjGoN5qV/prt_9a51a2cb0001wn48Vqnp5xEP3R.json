@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a51a2cb0001wn48Vqnp5xEP3R",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01A2mP8MaUeGCC8wnNxeBaLg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 118,
+      "limit": 5
+    },
+    "output": "<file>\n00119|     \n00120|     const { text, sourceLang, targetLang, domain, glossary } = body\n00121| \n00122|     if (!text || !targetLang) {\n00123|       console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n\n(File has more lines. Use 'offset' parameter to read beyond line 123)\n</file>",
+    "metadata": {
+      "preview": "    \n    const { text, sourceLang, targetLang, domain, glossary } = body\n\n    if (!text || !targetLang) {\n      console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759411580721,
+      "end": 1759411580722
+    }
+  }
+}

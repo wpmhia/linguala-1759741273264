@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5170ba0001v2G60aNSoNPF1a",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01CbkwkBZDEa4xQwiUEpyu4o",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -s \"http://localhost:3000/api/auth/session\" || echo \"Error accessing session endpoint\"",
+      "description": "Test NextAuth session endpoint"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Test NextAuth session endpoint"
+    },
+    "title": "sleep 3 && curl -s \"http://localhost:3000/api/auth/session\" || echo \"Error accessing session endpoint\"",
+    "time": {
+      "start": 1759411376049,
+      "end": 1759411436073
+    }
+  }
+}

@@ -6,7 +6,8 @@ import EmailProvider from "next-auth/providers/email"
 import CredentialsProvider from "next-auth/providers/credentials"
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma) as any,
+  // Comment out adapter for JWT session strategy
+  // adapter: PrismaAdapter(prisma) as any,
   providers: [
     // Simple demo credentials provider for development
     CredentialsProvider({

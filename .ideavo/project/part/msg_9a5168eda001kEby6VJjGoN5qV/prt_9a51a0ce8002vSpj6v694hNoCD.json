@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a51a0ce8002vSpj6v694hNoCD",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01LGYwAEnUhk9mTeCEHAfosw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 87,
+      "limit": 30
+    },
+    "output": "<file>\n00088|     if (!text.trim()) return\n00089|     \n00090|     setIsTranslating(true)\n00091|     try {\n00092|       const response = await fetch('/api/translate', {\n00093|         method: 'POST',\n00094|         headers: { 'Content-Type': 'application/json' },\n00095|         body: JSON.stringify({ text, sourceLang: from, targetLang: to })\n00096|       })\n00097|       \n00098|       if (response.ok) {\n00099|         const data = await response.json()\n00100|         setTranslatedText(data.translatedText)\n00101|       } else {\n00102|         const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))\n00103|         console.error('Translation API error:', errorData)\n00104|         throw new Error(errorData.error || 'Translation failed')\n00105|       }\n00106|     } catch (error) {\n00107|       console.error('Translation error:', error)\n00108|       toast.error(\"Translation temporarily unavailable. Please try again later.\")\n00109|       // Set a helpful fallback message\n00110|       setTranslatedText(\"Translation service is initializing. Please try again in a moment.\")\n00111|     } finally {\n00112|       setIsTranslating(false)\n00113|     }\n00114|   }\n00115| \n00116|   const swapLanguages = () => {\n00117|     if (sourceLang === \"auto\") return\n\n(File has more lines. Use 'offset' parameter to read beyond line 117)\n</file>",
+    "metadata": {
+      "preview": "    if (!text.trim()) return\n    \n    setIsTranslating(true)\n    try {\n      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ text, sourceLang: from, targetLang: to })\n      })\n      \n      if (response.ok) {\n        const data = await response.json()\n        setTranslatedText(data.translatedText)\n      } else {\n        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))\n        console.error('Translation API error:', errorData)\n        throw new Error(errorData.error || 'Translation failed')\n      }\n    } catch (error) {\n      console.error('Translation error:', error)"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759411572569,
+      "end": 1759411572571
+    }
+  }
+}

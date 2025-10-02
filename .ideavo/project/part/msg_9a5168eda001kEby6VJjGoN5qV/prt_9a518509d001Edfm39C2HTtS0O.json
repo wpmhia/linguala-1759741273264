@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a518509d001Edfm39C2HTtS0O",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01NRarJz59NQMwuwWrGUapwK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"next dev\" && sleep 2 && PORT=3000 npm run dev &",
+      "description": "Restart dev server with fixed auth configuration"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart dev server with fixed auth configuration"
+    },
+    "title": "cd /home/user/project && pkill -f \"next dev\" && sleep 2 && PORT=3000 npm run dev &",
+    "time": {
+      "start": 1759411459267,
+      "end": 1759411459288
+    }
+  }
+}

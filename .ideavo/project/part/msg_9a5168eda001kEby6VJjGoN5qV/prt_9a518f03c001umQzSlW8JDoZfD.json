@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a518f03c001umQzSlW8JDoZfD",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The translate API looks correctly structured. The 400 errors are likely coming from missing parameters. Let me test the translation API with a proper request:",
+  "time": {
+    "start": 1759411500253,
+    "end": 1759411500253
+  }
+}

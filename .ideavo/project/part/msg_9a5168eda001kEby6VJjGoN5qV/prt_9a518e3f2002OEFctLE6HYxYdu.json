@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a518e3f2002OEFctLE6HYxYdu",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_019EQgrnDBWpb1or79gn3RYw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 115,
+      "limit": 30
+    },
+    "output": "<file>\n00116|   try {\n00117|     const body = await request.json()\n00118|     console.log('Translation request body:', body)\n00119|     \n00120|     const { text, sourceLang, targetLang, domain, glossary } = body\n00121| \n00122|     if (!text || !targetLang) {\n00123|       console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n00124|       return NextResponse.json(\n00125|         { error: 'Text and target language are required' },\n00126|         { status: 400 }\n00127|       )\n00128|     }\n00129| \n00130|     const apiKey = process.env.DASHSCOPE_API_KEY\n00131|     if (!apiKey) {\n00132|       return NextResponse.json(\n00133|         { error: 'API key not configured. Please set DASHSCOPE_API_KEY environment variable.' },\n00134|         { status: 500 }\n00135|       )\n00136|     }\n00137| \n00138|     // Prepare the translation options\n00139|     const sourceLanguage = LANGUAGE_MAP[sourceLang] || (sourceLang === 'auto' ? 'auto' : sourceLang)\n00140|     const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n00141| \n00142|     // Apply glossary preprocessing if provided\n00143|     let processedText = text\n00144|     if (glossary && Array.isArray(glossary)) {\n00145|       glossary.forEach((entry: any) => {\n\n(File has more lines. Use 'offset' parameter to read beyond line 145)\n</file>",
+    "metadata": {
+      "preview": "  try {\n    const body = await request.json()\n    console.log('Translation request body:', body)\n    \n    const { text, sourceLang, targetLang, domain, glossary } = body\n\n    if (!text || !targetLang) {\n      console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n      return NextResponse.json(\n        { error: 'Text and target language are required' },\n        { status: 400 }\n      )\n    }\n\n    const apiKey = process.env.DASHSCOPE_API_KEY\n    if (!apiKey) {\n      return NextResponse.json(\n        { error: 'API key not configured. Please set DASHSCOPE_API_KEY environment variable.' },\n        { status: 500 }\n      )"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759411496494,
+      "end": 1759411496495
+    }
+  }
+}

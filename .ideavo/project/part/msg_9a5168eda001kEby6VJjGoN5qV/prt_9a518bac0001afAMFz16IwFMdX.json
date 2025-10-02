@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a518bac0001afAMFz16IwFMdX",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01HNb3iBJAcadXGhguz3B8kt",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 1,
+      "limit": 20
+    },
+    "output": "<file>\n00002| \n00003| // Fallback translation for common phrases\n00004| function getFallbackTranslation(text: string, targetLanguage: string): string | null {\n00005|   const lowerText = text.toLowerCase().trim()\n00006|   \n00007|   const commonPhrases: Record<string, Record<string, string>> = {\n00008|     'hello': {\n00009|       'Danish': 'Hej',\n00010|       'Swedish': 'Hej', \n00011|       'Norwegian': 'Hei',\n00012|       'Finnish': 'Hei',\n00013|       'German': 'Hallo',\n00014|       'French': 'Bonjour',\n00015|       'Spanish': 'Hola',\n00016|       'Italian': 'Ciao',\n00017|       'Portuguese': 'Olá',\n00018|       'Dutch': 'Hallo',\n00019|       'Polish': 'Cześć',\n00020|       'Russian': 'Привет'\n00021|     },\n\n(File has more lines. Use 'offset' parameter to read beyond line 21)\n</file>",
+    "metadata": {
+      "preview": "\n// Fallback translation for common phrases\nfunction getFallbackTranslation(text: string, targetLanguage: string): string | null {\n  const lowerText = text.toLowerCase().trim()\n  \n  const commonPhrases: Record<string, Record<string, string>> = {\n    'hello': {\n      'Danish': 'Hej',\n      'Swedish': 'Hej', \n      'Norwegian': 'Hei',\n      'Finnish': 'Hei',\n      'German': 'Hallo',\n      'French': 'Bonjour',\n      'Spanish': 'Hola',\n      'Italian': 'Ciao',\n      'Portuguese': 'Olá',\n      'Dutch': 'Hallo',\n      'Polish': 'Cześć',\n      'Russian': 'Привет'\n    },"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759411486122,
+      "end": 1759411486124
+    }
+  }
+}

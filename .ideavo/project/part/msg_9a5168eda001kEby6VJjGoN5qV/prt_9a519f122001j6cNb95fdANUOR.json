@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a519f122001j6cNb95fdANUOR",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_013M9ocvFBTASJv34ENNFngh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 150,
+      "limit": 30
+    },
+    "output": "<file>\n00151|           <CardHeader className=\"pb-4\">\n00152|             <div className=\"text-center\">\n00153|               <h1 className=\"text-2xl font-bold text-gray-900 mb-2\">Official EU Translation Platform</h1>\n00154|               <p className=\"text-gray-600\">Professional translation tools for all 24 official EU languages</p>\n00155|             </div>\n00156|           </CardHeader>\n00157| \n00158|           <CardContent className=\"space-y-6\">\n00159|             {/* Language Selection */}\n00160|             <div className=\"flex items-center justify-center space-x-4\">\n00161|               <Select value={sourceLang} onValueChange={(value) => {\n00162|                 setSourceLang(value)\n00163|                 if (sourceText.trim()) translateText(sourceText, value, targetLang)\n00164|               }}>\n00165|                 <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n00166|                   <SelectValue />\n00167|                 </SelectTrigger>\n00168|                 <SelectContent>\n00169|                   {LANGUAGES.map(lang => (\n00170|                     <SelectItem key={lang.code} value={lang.code}>\n00171|                       {lang.name}\n00172|                     </SelectItem>\n00173|                   ))}\n00174|                 </SelectContent>\n00175|               </Select>\n00176| \n00177|               <Button\n00178|                 variant=\"ghost\"\n00179|                 size=\"lg\"\n00180|                 onClick={swapLanguages}\n\n(File has more lines. Use 'offset' parameter to read beyond line 180)\n</file>",
+    "metadata": {
+      "preview": "          <CardHeader className=\"pb-4\">\n            <div className=\"text-center\">\n              <h1 className=\"text-2xl font-bold text-gray-900 mb-2\">Official EU Translation Platform</h1>\n              <p className=\"text-gray-600\">Professional translation tools for all 24 official EU languages</p>\n            </div>\n          </CardHeader>\n\n          <CardContent className=\"space-y-6\">\n            {/* Language Selection */}\n            <div className=\"flex items-center justify-center space-x-4\">\n              <Select value={sourceLang} onValueChange={(value) => {\n                setSourceLang(value)\n                if (sourceText.trim()) translateText(sourceText, value, targetLang)\n              }}>\n                <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.map(lang => (\n                    <SelectItem key={lang.code} value={lang.code}>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759411565683,
+      "end": 1759411565684
+    }
+  }
+}

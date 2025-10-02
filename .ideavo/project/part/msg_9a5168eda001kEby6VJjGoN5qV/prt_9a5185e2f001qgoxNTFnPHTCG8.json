@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5185e2f001qgoxNTFnPHTCG8",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014vwSECPvezYH5vFiE39Haw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 4 && curl -s \"http://localhost:3000/api/auth/session\" && echo \"\"",
+      "description": "Test auth session after restart"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test auth session after restart"
+    },
+    "title": "sleep 4 && curl -s \"http://localhost:3000/api/auth/session\" && echo \"\"",
+    "time": {
+      "start": 1759411462415,
+      "end": 1759411466431
+    }
+  }
+}

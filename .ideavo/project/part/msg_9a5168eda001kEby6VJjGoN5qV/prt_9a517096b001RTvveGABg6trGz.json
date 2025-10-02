@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a517096b001RTvveGABg6trGz",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check the NextAuth API route to see what's causing the 500 errors:",
+  "time": {
+    "start": 1759411375007,
+    "end": 1759411375007
+  }
+}

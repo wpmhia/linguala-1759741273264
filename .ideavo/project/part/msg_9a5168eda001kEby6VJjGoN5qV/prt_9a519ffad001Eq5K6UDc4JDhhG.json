@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a519ffad001Eq5K6UDc4JDhhG",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01WnRb8DKzshUKV8XnaxG1sV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "const translateText",
+      "path": "/home/user/project/components",
+      "include": "*.tsx"
+    },
+    "output": "Found 3 matches\n/home/user/project/components/linguala-translator.tsx:\n  Line 87:   const translateText = async (text: string, from: string, to: string) => {\n\n/home/user/project/components/translator-nielsen.tsx:\n  Line 155:   const translateText = async (text: string, from: string, to: string) => {\n\n/home/user/project/components/translator.tsx:\n  Line 153:   const translateText = async (text: string, from: string, to: string) => {",
+    "metadata": {
+      "matches": 3,
+      "truncated": false
+    },
+    "title": "const translateText",
+    "time": {
+      "start": 1759411569384,
+      "end": 1759411569395
+    }
+  }
+}

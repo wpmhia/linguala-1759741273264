@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a518d5bc001D0W6Z3g8rPZ5Lo",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01PpKS5ciNvEvweC9pMy9BoJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "export async function POST",
+      "path": "/home/user/project/app/api/translate",
+      "include": "*.ts"
+    },
+    "output": "Found 1 matches\n/home/user/project/app/api/translate/route.ts:\n  Line 115: export async function POST(request: NextRequest) {",
+    "metadata": {
+      "matches": 1,
+      "truncated": false
+    },
+    "title": "export async function POST",
+    "time": {
+      "start": 1759411493201,
+      "end": 1759411493212
+    }
+  }
+}

@@ -1,32 +1,27 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
-// Auth.js required models
 model Account {
   id                String  @id @default(cuid())
   userId            String
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -40,18 +35,17 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
+  id                 String               @id @default(cuid())
+  name               String?
+  email              String?              @unique
+  emailVerified      DateTime?
+  image              String?
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
   accounts           Account[]
+  glossaryEntries    GlossaryEntry[]
   sessions           Session[]
   translations       Translation[]
-  glossaryEntries    GlossaryEntry[]
   translationHistory TranslationHistory[]
 
   @@map("users")
@@ -65,50 +59,46 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-// Translator-specific models
 model Translation {
   id             String   @id @default(cuid())
-  sourceText     String   @db.Text
-  translatedText String   @db.Text
+  sourceText     String
+  translatedText String
   sourceLang     String
   targetLang     String
   domain         String   @default("general")
   userId         String
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, createdAt])
 }
 
 model GlossaryEntry {
-  id       String  @id @default(cuid())
-  source   String
-  target   String
-  domain   String  @default("general")
-  notes    String?
-  userId   String
+  id        String   @id @default(cuid())
+  source    String
+  target    String
+  domain    String   @default("general")
+  notes     String?
+  userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId, domain])
   @@unique([userId, source, domain])
+  @@index([userId, domain])
 }
 
 model TranslationHistory {
   id             String   @id @default(cuid())
-  sourceText     String   @db.Text
-  translatedText String   @db.Text
+  sourceText     String
+  translatedText String
   sourceLang     String
   targetLang     String
   domain         String   @default("general")
   userId         String
   createdAt      DateTime @default(now())
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, createdAt])
 }

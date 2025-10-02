@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a51a3aae001wNigzCWKOH8Ff2",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API parameter names are correct. The problem might be that the frontend is running on a different port than expected. Let me check what's happening:",
+  "time": {
+    "start": 1759411584252,
+    "end": 1759411584252
+  }
+}

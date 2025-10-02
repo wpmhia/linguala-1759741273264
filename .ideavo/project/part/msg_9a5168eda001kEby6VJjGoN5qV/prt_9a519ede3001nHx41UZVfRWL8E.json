@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a519ede3001nHx41UZVfRWL8E",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check what's happening by looking at the front-end translator component to see how it's calling the API:",
+  "time": {
+    "start": 1759411564834,
+    "end": 1759411564834
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "prt_9a51ad452001Gi7QADKL5ed7VM",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01NQ5fn5fUNFw6g8w9G8zFEg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Fix server port and connection issues",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Fix NextAuth 500 errors",
+          "status": "completed",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Fix translate API 400 errors",
+          "status": "completed",
+          "priority": "medium",
+          "id": "3"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Fix server port and connection issues\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Fix NextAuth 500 errors\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Fix translate API 400 errors\",\n    \"status\": \"completed\",\n    \"priority\": \"medium\",\n    \"id\": \"3\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Fix server port and connection issues",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Fix NextAuth 500 errors",
+          "status": "completed",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Fix translate API 400 errors",
+          "status": "completed",
+          "priority": "medium",
+          "id": "3"
+        }
+      ]
+    },
+    "title": "0 todos",
+    "time": {
+      "start": 1759411625101,
+      "end": 1759411625102
+    }
+  }
+}

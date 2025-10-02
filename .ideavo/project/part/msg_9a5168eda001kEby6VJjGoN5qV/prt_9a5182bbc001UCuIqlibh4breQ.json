@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a5182bbc001UCuIqlibh4breQ",
+  "messageID": "msg_9a5168eda001kEby6VJjGoN5qV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01QT7StRMcpuukpyfAHAyzrg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "offset": 1,
+      "limit": 15
+    },
+    "output": "<file>\n00002| import { PrismaAdapter } from \"@auth/prisma-adapter\"\n00003| import { prisma } from \"@/lib/prisma\"\n00004| import GoogleProvider from \"next-auth/providers/google\"\n00005| import EmailProvider from \"next-auth/providers/email\"\n00006| import CredentialsProvider from \"next-auth/providers/credentials\"\n00007| \n00008| export const authOptions: NextAuthOptions = {\n00009|   adapter: PrismaAdapter(prisma) as any,\n00010|   providers: [\n00011|     // Simple demo credentials provider for development\n00012|     CredentialsProvider({\n00013|       name: \"Demo Account\",\n00014|       credentials: {\n00015|         email: { label: \"Email\", type: \"email\", placeholder: \"demo@linguala.eu\" }\n00016|       },\n\n(File has more lines. Use 'offset' parameter to read beyond line 16)\n</file>",
+    "metadata": {
+      "preview": "import { PrismaAdapter } from \"@auth/prisma-adapter\"\nimport { prisma } from \"@/lib/prisma\"\nimport GoogleProvider from \"next-auth/providers/google\"\nimport EmailProvider from \"next-auth/providers/email\"\nimport CredentialsProvider from \"next-auth/providers/credentials\"\n\nexport const authOptions: NextAuthOptions = {\n  adapter: PrismaAdapter(prisma) as any,\n  providers: [\n    // Simple demo credentials provider for development\n    CredentialsProvider({\n      name: \"Demo Account\",\n      credentials: {\n        email: { label: \"Email\", type: \"email\", placeholder: \"demo@linguala.eu\" }\n      },"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759411449636,
+      "end": 1759411449641
+    }
+  }
+}

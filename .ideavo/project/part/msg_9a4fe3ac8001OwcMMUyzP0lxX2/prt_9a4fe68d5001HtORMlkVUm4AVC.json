@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4fe68d5001HtORMlkVUm4AVC",
+  "messageID": "msg_9a4fe3ac8001OwcMMUyzP0lxX2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "You're correct! Let me change it back to `qwen-mt-turbo` which is the specialized machine translation model, and also use the proper translation API format:",
+  "time": {
+    "start": 1759409761612,
+    "end": 1759409761612
+  }
+}

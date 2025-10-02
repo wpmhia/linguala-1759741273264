@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4ff32d00010Au8uymjkJwboP",
+  "messageID": "msg_9a4fe3ac8001OwcMMUyzP0lxX2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "## ✅ Correct! Now Using qwen-mt-turbo\n\n**Fixed Model Configuration:**\n\n### 🎯 **Correct Translation Model:**\n- **Model:** `qwen-mt-turbo` ✅ (specialized machine translation)\n- **Previous:** `qwen-turbo` ❌ (general purpose chat model)\n\n### 🔧 **Proper API Format:**\n- **Translation Options:** Using `translation_options` with `source_lang` and `target_lang`\n- **Content:** Direct text input without translation prompts\n- **Specialized:** Leverages the MT model's built-in translation capabilities\n\n### 💡 **Why This Matters:**\n- **`qwen-mt-turbo`** is specifically designed for machine translation\n- **Better accuracy** for European language pairs\n- **Faster processing** for translation tasks\n- **Proper formatting** that follows Qwen MT API specifications\n\nNow the translation service is using the correct specialized model that should provide much better translation quality for your \"Wat gaan we vanavond eten\" → Danish example! 🇪🇺",
+  "time": {
+    "start": 1759409818114,
+    "end": 1759409818114
+  }
+}

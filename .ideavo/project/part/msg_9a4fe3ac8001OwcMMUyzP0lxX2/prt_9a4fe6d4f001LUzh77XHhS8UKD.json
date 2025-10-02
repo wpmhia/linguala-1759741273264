@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4fe6d4f001LUzh77XHhS8UKD",
+  "messageID": "msg_9a4fe3ac8001OwcMMUyzP0lxX2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01UGSVtAPA1xZ44VZNGWD5Rk",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "        body: JSON.stringify({\n          model: 'qwen-turbo',\n          messages: [{\n            role: 'user',\n            content: `Translate the following text from ${sourceLanguage} to ${targetLanguage}. Only provide the translation, no explanations:\\n\\n\"${text}\"`\n          }],\n          temperature: 0.1,\n          max_tokens: 1000\n        }),",
+      "newString": "        body: JSON.stringify({\n          model: 'qwen-mt-turbo',\n          messages: [{\n            role: 'user',\n            content: text\n          }],\n          translation_options: {\n            source_lang: sourceLanguage,\n            target_lang: targetLanguage\n          }\n        }),"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -183,15 +183,17 @@\n     'Authorization': `Bearer ${apiKey}`,\n     'Content-Type': 'application/json',\n   },\n   body: JSON.stringify({\n-    model: 'qwen-turbo',\n+    model: 'qwen-mt-turbo',\n     messages: [{\n       role: 'user',\n-      content: `Translate the following text from ${sourceLanguage} to ${targetLanguage}. Only provide the translation, no explanations:\\n\\n\"${text}\"`\n+      content: text\n     }],\n-    temperature: 0.1,\n-    max_tokens: 1000\n+    translation_options: {\n+      source_lang: sourceLanguage,\n+      target_lang: targetLanguage\n+    }\n   }),\n })\n \n if (!response.ok) {\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759409763856,
+      "end": 1759409763863
+    }
+  }
+}

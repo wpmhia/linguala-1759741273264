@@ -184,13 +184,15 @@ export async function POST(request: NextRequest) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'qwen-turbo',
+          model: 'qwen-mt-turbo',
           messages: [{
             role: 'user',
-            content: `Translate the following text from ${sourceLanguage} to ${targetLanguage}. Only provide the translation, no explanations:\n\n"${text}"`
+            content: text
           }],
-          temperature: 0.1,
-          max_tokens: 1000
+          translation_options: {
+            source_lang: sourceLanguage,
+            target_lang: targetLanguage
+          }
         }),
       })
 

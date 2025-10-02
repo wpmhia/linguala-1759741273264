@@ -1,0 +1,77 @@
+{
+  "id": "prt_9a47dac3e001ijsqb5yge2Gcqh",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01Vsekm1Z2tHpgikMbUtZi3q",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "edits": [
+        {
+          "oldString": "      <div className=\"text-center space-y-2\">\n        <h1 className=\"text-4xl font-bold text-gray-900\">DeepL Clone</h1>\n        <p className=\"text-gray-600\">Powered by Alibaba Cloud Qwen</p>\n      </div>",
+          "newString": "      <div className=\"text-center space-y-3\">\n        <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n        <p className=\"text-lg text-gray-600\">Fast, accurate translations powered by Qwen MT-Turbo</p>\n      </div>"
+        },
+        {
+          "oldString": "    <div className=\"max-w-6xl mx-auto p-6 space-y-6\">",
+          "newString": "    <div className=\"max-w-7xl mx-auto px-4 py-8 space-y-8\">"
+        },
+        {
+          "oldString": "      <Card className=\"shadow-lg\">\n        <CardContent className=\"p-6\">",
+          "newString": "      <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">\n        <CardContent className=\"p-8\">"
+        },
+        {
+          "oldString": "          {/* Language Selection */}\n          <div className=\"flex items-center justify-between mb-4\">",
+          "newString": "          {/* Language Selection */}\n          <div className=\"flex items-center justify-between mb-6\">"
+        },
+        {
+          "oldString": "                <SelectTrigger className=\"w-48\">\n                  <SelectValue />\n                </SelectTrigger>",
+          "newString": "                <SelectTrigger className=\"w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500\">\n                  <SelectValue />\n                </SelectTrigger>"
+        },
+        {
+          "oldString": "                <SelectTrigger className=\"w-48\">\n                  <SelectValue />\n                </SelectTrigger>",
+          "newString": "                <SelectTrigger className=\"w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500\">\n                  <SelectValue />\n                </SelectTrigger>"
+        },
+        {
+          "oldString": "              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={swapLanguages}\n                disabled={sourceLang === \"auto\"}\n                className=\"p-2\"\n              >\n                <ArrowUpDown className=\"h-4 w-4\" />",
+          "newString": "              <Button\n                variant=\"ghost\"\n                size=\"lg\"\n                onClick={swapLanguages}\n                disabled={sourceLang === \"auto\"}\n                className=\"p-3 hover:bg-blue-50 hover:text-blue-600 transition-colors\"\n              >\n                <ArrowUpDown className=\"h-5 w-5\" />"
+        },
+        {
+          "oldString": "            <Button variant=\"ghost\" size=\"sm\" onClick={clearText}>\n              <RotateCcw className=\"h-4 w-4 mr-2\" />\n              Clear\n            </Button>",
+          "newString": "            <Button variant=\"ghost\" size=\"lg\" onClick={clearText} className=\"hover:bg-red-50 hover:text-red-600 transition-colors\">\n              <RotateCcw className=\"h-5 w-5 mr-2\" />\n              Clear\n            </Button>"
+        },
+        {
+          "oldString": "          {/* Translation Interface */}\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-4\">",
+          "newString": "          {/* Translation Interface */}\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">"
+        },
+        {
+          "oldString": "              <Textarea\n                placeholder=\"Enter text to translate...\"\n                value={sourceText}\n                onChange={(e) => handleSourceTextChange(e.target.value)}\n                className=\"min-h-[200px] resize-none border-gray-300 focus:border-blue-500\"\n              />",
+          "newString": "              <Textarea\n                placeholder=\"Enter text to translate...\"\n                value={sourceText}\n                onChange={(e) => handleSourceTextChange(e.target.value)}\n                className=\"min-h-[250px] text-base resize-none border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all\"\n              />"
+        },
+        {
+          "oldString": "              <Textarea\n                placeholder={isTranslating ? \"Translating...\" : \"Translation will appear here...\"}\n                value={translatedText}\n                readOnly\n                className=\"min-h-[200px] resize-none border-gray-300 bg-gray-50\"\n              />",
+          "newString": "              <Textarea\n                placeholder={isTranslating ? \"Translating...\" : \"Translation will appear here...\"}\n                value={translatedText}\n                readOnly\n                className=\"min-h-[250px] text-base resize-none border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-blue-50\"\n              />"
+        },
+        {
+          "oldString": "                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  onClick={() => copyToClipboard(sourceText)}\n                  disabled={!sourceText}\n                >\n                  <Copy className=\"h-4 w-4\" />\n                </Button>",
+          "newString": "                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  onClick={() => copyToClipboard(sourceText)}\n                  disabled={!sourceText}\n                  className=\"hover:bg-blue-50 hover:text-blue-600 transition-colors\"\n                >\n                  <Copy className=\"h-4 w-4\" />\n                </Button>"
+        },
+        {
+          "oldString": "                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  onClick={() => copyToClipboard(translatedText)}\n                  disabled={!translatedText}\n                >\n                  <Copy className=\"h-4 w-4\" />\n                </Button>",
+          "newString": "                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  onClick={() => copyToClipboard(translatedText)}\n                  disabled={!translatedText}\n                  className=\"hover:bg-green-50 hover:text-green-600 transition-colors\"\n                >\n                  <Copy className=\"h-4 w-4\" />\n                </Button>"
+        },
+        {
+          "oldString": "        <Card className=\"shadow-lg\">\n          <CardContent className=\"p-6\">",
+          "newString": "        <Card className=\"shadow-lg border-0 bg-white/90 backdrop-blur-sm\">\n          <CardContent className=\"p-6\">"
+        }
+      ]
+    },
+    "error": "Error: oldString found multiple times and requires more code context to uniquely identify the intended match",
+    "time": {
+      "start": 1759401345140,
+      "end": 1759401345164
+    }
+  }
+}

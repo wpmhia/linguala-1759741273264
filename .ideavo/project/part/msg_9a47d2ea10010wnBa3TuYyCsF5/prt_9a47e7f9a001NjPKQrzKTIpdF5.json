@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a47e7f9a001NjPKQrzKTIpdF5",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_013rZz5Rs3XxvB15QYpS69qC",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "               <Select value={sourceLang} onValueChange={(value) => {\n                setSourceLang(value)\n                handleLanguageChange()\n              }}>\n                <SelectTrigger className=\"w-48\">\n                  <SelectValue />\n                </SelectTrigger>",
+      "newString": "               <Select value={sourceLang} onValueChange={(value) => {\n                setSourceLang(value)\n                handleLanguageChange()\n              }}>\n                <SelectTrigger className=\"w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500\">\n                  <SelectValue />\n                </SelectTrigger>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -157,13 +157,13 @@\n <CardContent className=\"p-8\">\n   {/* Language Selection */}\n   <div className=\"flex items-center justify-between mb-6\">\n     <div className=\"flex items-center space-x-4\">\n-      <Select value={sourceLang} onValueChange={(value) => {\n+       <Select value={sourceLang} onValueChange={(value) => {\n         setSourceLang(value)\n         handleLanguageChange()\n       }}>\n-        <SelectTrigger className=\"w-48\">\n+        <SelectTrigger className=\"w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500\">\n           <SelectValue />\n         </SelectTrigger>\n         <SelectContent>\n           {LANGUAGES.map((lang) => (\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759401380130,
+      "end": 1759401380139
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "prt_9a47ebd8c001VR0o7UTWRybUJV",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01Hs2jkGgAetpjKgCsRUsFkJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "edits": [
+        {
+          "oldString": "            <Button variant=\"ghost\" size=\"sm\" onClick={clearText}>\n              <RotateCcw className=\"h-4 w-4 mr-2\" />\n              Clear\n            </Button>",
+          "newString": "            <Button variant=\"ghost\" size=\"lg\" onClick={clearText} className=\"hover:bg-red-50 hover:text-red-600 transition-colors\">\n              <RotateCcw className=\"h-5 w-5 mr-2\" />\n              Clear\n            </Button>"
+        },
+        {
+          "oldString": "          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-4\">",
+          "newString": "          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">"
+        },
+        {
+          "oldString": "                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  onClick={() => copyToClipboard(sourceText)}\n                  disabled={!sourceText}\n                >\n                  <Copy className=\"h-4 w-4\" />\n                </Button>",
+          "newString": "                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  onClick={() => copyToClipboard(sourceText)}\n                  disabled={!sourceText}\n                  className=\"hover:bg-blue-50 hover:text-blue-600 transition-colors\"\n                >\n                  <Copy className=\"h-4 w-4\" />\n                </Button>"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -200,10 +200,10 @@\n       </SelectContent>\n     </Select>\n   </div>\n \n-  <Button variant=\"ghost\" size=\"sm\" onClick={clearText}>\n-    <RotateCcw className=\"h-4 w-4 mr-2\" />\n+  <Button variant=\"ghost\" size=\"lg\" onClick={clearText} className=\"hover:bg-red-50 hover:text-red-600 transition-colors\">\n+    <RotateCcw className=\"h-5 w-5 mr-2\" />\n     Clear\n   </Button>\n </div>\n \n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -207,9 +207,9 @@\n   </Button>\n </div>\n \n {/* Translation Interface */}\n-<div className=\"grid grid-cols-1 lg:grid-cols-2 gap-4\">\n+<div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">\n   {/* Source Text */}\n   <div className=\"space-y-2\">\n     <div className=\"flex items-center justify-between\">\n       <label className=\"text-sm font-medium text-gray-700\">\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -219,8 +219,9 @@\n     variant=\"ghost\"\n     size=\"sm\"\n     onClick={() => copyToClipboard(sourceText)}\n     disabled={!sourceText}\n+    className=\"hover:bg-blue-50 hover:text-blue-600 transition-colors\"\n   >\n     <Copy className=\"h-4 w-4\" />\n   </Button>\n </div>\n"
+        }
+      ]
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759401397777,
+      "end": 1759401397793
+    }
+  }
+}

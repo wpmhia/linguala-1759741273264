@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a47e9159001TziPvZ66O7ZJd7",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01SkzUsie66HagZ3QDD8QGpG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "               <Select value={targetLang} onValueChange={(value) => {\n                setTargetLang(value)\n                handleLanguageChange()\n              }}>\n                <SelectTrigger className=\"w-48\">\n                  <SelectValue />\n                </SelectTrigger>",
+      "newString": "               <Select value={targetLang} onValueChange={(value) => {\n                setTargetLang(value)\n                handleLanguageChange()\n              }}>\n                <SelectTrigger className=\"w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500\">\n                  <SelectValue />\n                </SelectTrigger>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -183,13 +183,13 @@\n >\n   <ArrowUpDown className=\"h-4 w-4\" />\n </Button>\n \n-<Select value={targetLang} onValueChange={(value) => {\n+ <Select value={targetLang} onValueChange={(value) => {\n   setTargetLang(value)\n   handleLanguageChange()\n }}>\n-  <SelectTrigger className=\"w-48\">\n+  <SelectTrigger className=\"w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500\">\n     <SelectValue />\n   </SelectTrigger>\n   <SelectContent>\n     {LANGUAGES.filter(lang => lang.code !== \"auto\").map((lang) => (\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759401384098,
+      "end": 1759401384102
+    }
+  }
+}

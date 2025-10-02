@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a47e2248001rj9uF3UqONAEhe",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01LN3hcvct8hVgWy1ba6YW4Q",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 150,
+      "limit": 10
+    },
+    "output": "<file>\n00151|       <div className=\"text-center space-y-3\">\n00152|         <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n00153|         <p className=\"text-lg text-gray-600\">Fast, accurate translations powered by Qwen MT-Turbo</p>\n00154|       </div>\n00155| \n00156|       <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">\n00157|         <CardContent className=\"p-8\">\n00158|           {/* Language Selection */}\n00159|           <div className=\"flex items-center justify-between mb-6\">\n00160|             <div className=\"flex items-center space-x-4\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 160)\n</file>",
+    "metadata": {
+      "preview": "      <div className=\"text-center space-y-3\">\n        <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n        <p className=\"text-lg text-gray-600\">Fast, accurate translations powered by Qwen MT-Turbo</p>\n      </div>\n\n      <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">\n        <CardContent className=\"p-8\">\n          {/* Language Selection */}\n          <div className=\"flex items-center justify-between mb-6\">\n            <div className=\"flex items-center space-x-4\">"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759401354444,
+      "end": 1759401354446
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "prt_9a47e54f90015hxGm3p4rsl28t",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_0194CUqNzbiFuSKwexqCfZAB",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "edits": [
+        {
+          "oldString": "                <SelectTrigger className=\"w-48\">\n                  <SelectValue />\n                </SelectTrigger>",
+          "newString": "                <SelectTrigger className=\"w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500\">\n                  <SelectValue />\n                </SelectTrigger>"
+        },
+        {
+          "oldString": "              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={swapLanguages}\n                disabled={sourceLang === \"auto\"}\n                className=\"p-2\"\n              >\n                <ArrowUpDown className=\"h-4 w-4\" />",
+          "newString": "              <Button\n                variant=\"ghost\"\n                size=\"lg\"\n                onClick={swapLanguages}\n                disabled={sourceLang === \"auto\"}\n                className=\"p-3 hover:bg-blue-50 hover:text-blue-600 transition-colors\"\n              >\n                <ArrowUpDown className=\"h-5 w-5\" />"
+        },
+        {
+          "oldString": "            <Button variant=\"ghost\" size=\"sm\" onClick={clearText}>\n              <RotateCcw className=\"h-4 w-4 mr-2\" />\n              Clear\n            </Button>",
+          "newString": "            <Button variant=\"ghost\" size=\"lg\" onClick={clearText} className=\"hover:bg-red-50 hover:text-red-600 transition-colors\">\n              <RotateCcw className=\"h-5 w-5 mr-2\" />\n              Clear\n            </Button>"
+        }
+      ]
+    },
+    "error": "Error: oldString found multiple times and requires more code context to uniquely identify the intended match",
+    "time": {
+      "start": 1759401372706,
+      "end": 1759401372712
+    }
+  }
+}

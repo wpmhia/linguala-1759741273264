@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a47da07d00190BRSPe4jcKsvg",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01SPRqVaVPSCFERMVuCYw8dR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/page.tsx"
+    },
+    "output": "<file>\n00001| import Translator from '@/components/translator'\n00002| \n00003| export default function Home() {\n00004|   return (\n00005|     <div className=\"min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100\">\n00006|       <Translator />\n00007|     </div>\n00008|   );\n00009| }\n00010| \n</file>",
+    "metadata": {
+      "preview": "import Translator from '@/components/translator'\n\nexport default function Home() {\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100\">\n      <Translator />\n    </div>\n  );\n}\n"
+    },
+    "title": "app/page.tsx",
+    "time": {
+      "start": 1759401320889,
+      "end": 1759401320891
+    }
+  }
+}

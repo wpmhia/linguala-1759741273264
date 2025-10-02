@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a47ea206001j052PBGbrMS5lU",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01M247HYDURrcHerRS9zyKet",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={swapLanguages}\n                disabled={sourceLang === \"auto\"}\n                className=\"p-2\"\n              >\n                <ArrowUpDown className=\"h-4 w-4\" />",
+      "newString": "              <Button\n                variant=\"ghost\"\n                size=\"lg\"\n                onClick={swapLanguages}\n                disabled={sourceLang === \"auto\"}\n                className=\"p-3 hover:bg-blue-50 hover:text-blue-600 transition-colors\"\n              >\n                <ArrowUpDown className=\"h-5 w-5\" />"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -175,14 +175,14 @@\n </Select>\n \n <Button\n   variant=\"ghost\"\n-  size=\"sm\"\n+  size=\"lg\"\n   onClick={swapLanguages}\n   disabled={sourceLang === \"auto\"}\n-  className=\"p-2\"\n+  className=\"p-3 hover:bg-blue-50 hover:text-blue-600 transition-colors\"\n >\n-  <ArrowUpDown className=\"h-4 w-4\" />\n+  <ArrowUpDown className=\"h-5 w-5\" />\n </Button>\n \n  <Select value={targetLang} onValueChange={(value) => {\n   setTargetLang(value)\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759401388286,
+      "end": 1759401388293
+    }
+  }
+}

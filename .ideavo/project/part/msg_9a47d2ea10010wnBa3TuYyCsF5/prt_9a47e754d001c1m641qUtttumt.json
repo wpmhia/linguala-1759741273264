@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a47e754d001c1m641qUtttumt",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01D5q78SnjcVnUGHFMGzqupj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 160,
+      "limit": 40
+    },
+    "output": "<file>\n00161|               <Select value={sourceLang} onValueChange={(value) => {\n00162|                 setSourceLang(value)\n00163|                 handleLanguageChange()\n00164|               }}>\n00165|                 <SelectTrigger className=\"w-48\">\n00166|                   <SelectValue />\n00167|                 </SelectTrigger>\n00168|                 <SelectContent>\n00169|                   {LANGUAGES.map((lang) => (\n00170|                     <SelectItem key={lang.code} value={lang.code}>\n00171|                       {lang.name}\n00172|                     </SelectItem>\n00173|                   ))}\n00174|                 </SelectContent>\n00175|               </Select>\n00176| \n00177|               <Button\n00178|                 variant=\"ghost\"\n00179|                 size=\"sm\"\n00180|                 onClick={swapLanguages}\n00181|                 disabled={sourceLang === \"auto\"}\n00182|                 className=\"p-2\"\n00183|               >\n00184|                 <ArrowUpDown className=\"h-4 w-4\" />\n00185|               </Button>\n00186| \n00187|               <Select value={targetLang} onValueChange={(value) => {\n00188|                 setTargetLang(value)\n00189|                 handleLanguageChange()\n00190|               }}>\n00191|                 <SelectTrigger className=\"w-48\">\n00192|                   <SelectValue />\n00193|                 </SelectTrigger>\n00194|                 <SelectContent>\n00195|                   {LANGUAGES.filter(lang => lang.code !== \"auto\").map((lang) => (\n00196|                     <SelectItem key={lang.code} value={lang.code}>\n00197|                       {lang.name}\n00198|                     </SelectItem>\n00199|                   ))}\n00200|                 </SelectContent>\n\n(File has more lines. Use 'offset' parameter to read beyond line 200)\n</file>",
+    "metadata": {
+      "preview": "              <Select value={sourceLang} onValueChange={(value) => {\n                setSourceLang(value)\n                handleLanguageChange()\n              }}>\n                <SelectTrigger className=\"w-48\">\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.map((lang) => (\n                    <SelectItem key={lang.code} value={lang.code}>\n                      {lang.name}\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={swapLanguages}"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759401375755,
+      "end": 1759401375757
+    }
+  }
+}

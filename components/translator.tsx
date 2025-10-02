@@ -147,22 +147,22 @@ export default function Translator() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6 space-y-6">
-      <div className="text-center space-y-2">
-        <h1 className="text-4xl font-bold text-gray-900">DeepL Clone</h1>
-        <p className="text-gray-600">Powered by Alibaba Cloud Qwen</p>
+    <div className="max-w-7xl mx-auto px-4 py-8 space-y-8">
+      <div className="text-center space-y-3">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Translator</h1>
+        <p className="text-lg text-gray-600">Fast, accurate translations powered by Qwen MT-Turbo</p>
       </div>
 
-      <Card className="shadow-lg">
-        <CardContent className="p-6">
+      <Card className="shadow-xl border-0 bg-white/95 backdrop-blur-sm">
+        <CardContent className="p-8">
           {/* Language Selection */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-4">
-              <Select value={sourceLang} onValueChange={(value) => {
+               <Select value={sourceLang} onValueChange={(value) => {
                 setSourceLang(value)
                 handleLanguageChange()
               }}>
-                <SelectTrigger className="w-48">
+                <SelectTrigger className="w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -176,19 +176,19 @@ export default function Translator() {
 
               <Button
                 variant="ghost"
-                size="sm"
+                size="lg"
                 onClick={swapLanguages}
                 disabled={sourceLang === "auto"}
-                className="p-2"
+                className="p-3 hover:bg-blue-50 hover:text-blue-600 transition-colors"
               >
-                <ArrowUpDown className="h-4 w-4" />
+                <ArrowUpDown className="h-5 w-5" />
               </Button>
 
-              <Select value={targetLang} onValueChange={(value) => {
+               <Select value={targetLang} onValueChange={(value) => {
                 setTargetLang(value)
                 handleLanguageChange()
               }}>
-                <SelectTrigger className="w-48">
+                <SelectTrigger className="w-52 h-12 text-base border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -201,14 +201,14 @@ export default function Translator() {
               </Select>
             </div>
 
-            <Button variant="ghost" size="sm" onClick={clearText}>
-              <RotateCcw className="h-4 w-4 mr-2" />
+            <Button variant="ghost" size="lg" onClick={clearText} className="hover:bg-red-50 hover:text-red-600 transition-colors">
+              <RotateCcw className="h-5 w-5 mr-2" />
               Clear
             </Button>
           </div>
 
           {/* Translation Interface */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Source Text */}
             <div className="space-y-2">
               <div className="flex items-center justify-between">
@@ -220,6 +220,7 @@ export default function Translator() {
                   size="sm"
                   onClick={() => copyToClipboard(sourceText)}
                   disabled={!sourceText}
+                  className="hover:bg-blue-50 hover:text-blue-600 transition-colors"
                 >
                   <Copy className="h-4 w-4" />
                 </Button>
@@ -228,7 +229,7 @@ export default function Translator() {
                 placeholder="Enter text to translate..."
                 value={sourceText}
                 onChange={(e) => handleSourceTextChange(e.target.value)}
-                className="min-h-[200px] resize-none border-gray-300 focus:border-blue-500"
+                className="min-h-[250px] text-base resize-none border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
               />
             </div>
 
@@ -243,6 +244,7 @@ export default function Translator() {
                   size="sm"
                   onClick={() => copyToClipboard(translatedText)}
                   disabled={!translatedText}
+                  className="hover:bg-green-50 hover:text-green-600 transition-colors"
                 >
                   <Copy className="h-4 w-4" />
                 </Button>
@@ -251,7 +253,7 @@ export default function Translator() {
                 placeholder={isTranslating ? "Translating..." : "Translation will appear here..."}
                 value={translatedText}
                 readOnly
-                className="min-h-[200px] resize-none border-gray-300 bg-gray-50"
+                className="min-h-[250px] text-base resize-none border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-blue-50"
               />
             </div>
           </div>
@@ -268,7 +270,7 @@ export default function Translator() {
 
       {/* Translation History */}
       {history.length > 0 && (
-        <Card className="shadow-lg">
+        <Card className="shadow-lg border-0 bg-white/90 backdrop-blur-sm">
           <CardContent className="p-6">
             <h2 className="text-xl font-semibold mb-4">Recent Translations</h2>
             <div className="space-y-3">

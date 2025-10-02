@@ -1,0 +1,50 @@
+{
+  "id": "prt_9a47eea30001b5EG6DPbGUjvUt",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_013gFkP2ZdgVtvCqkuewyYeQ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "edits": [
+        {
+          "oldString": "              <Textarea\n                placeholder=\"Enter text to translate...\"\n                value={sourceText}\n                onChange={(e) => handleSourceTextChange(e.target.value)}\n                className=\"min-h-[200px] resize-none border-gray-300 focus:border-blue-500\"\n              />",
+          "newString": "              <Textarea\n                placeholder=\"Enter text to translate...\"\n                value={sourceText}\n                onChange={(e) => handleSourceTextChange(e.target.value)}\n                className=\"min-h-[250px] text-base resize-none border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all\"\n              />"
+        },
+        {
+          "oldString": "                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  onClick={() => copyToClipboard(translatedText)}\n                  disabled={!translatedText}\n                >\n                  <Copy className=\"h-4 w-4\" />\n                </Button>",
+          "newString": "                <Button\n                  variant=\"ghost\"\n                  size=\"sm\"\n                  onClick={() => copyToClipboard(translatedText)}\n                  disabled={!translatedText}\n                  className=\"hover:bg-green-50 hover:text-green-600 transition-colors\"\n                >\n                  <Copy className=\"h-4 w-4\" />\n                </Button>"
+        },
+        {
+          "oldString": "              <Textarea\n                placeholder={isTranslating ? \"Translating...\" : \"Translation will appear here...\"}\n                value={translatedText}\n                readOnly\n                className=\"min-h-[200px] resize-none border-gray-300 bg-gray-50\"\n              />",
+          "newString": "              <Textarea\n                placeholder={isTranslating ? \"Translating...\" : \"Translation will appear here...\"}\n                value={translatedText}\n                readOnly\n                className=\"min-h-[250px] text-base resize-none border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-blue-50\"\n              />"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -228,9 +228,9 @@\n   <Textarea\n     placeholder=\"Enter text to translate...\"\n     value={sourceText}\n     onChange={(e) => handleSourceTextChange(e.target.value)}\n-    className=\"min-h-[200px] resize-none border-gray-300 focus:border-blue-500\"\n+    className=\"min-h-[250px] text-base resize-none border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all\"\n   />\n </div>\n \n {/* Translated Text */}\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -243,8 +243,9 @@\n     variant=\"ghost\"\n     size=\"sm\"\n     onClick={() => copyToClipboard(translatedText)}\n     disabled={!translatedText}\n+    className=\"hover:bg-green-50 hover:text-green-600 transition-colors\"\n   >\n     <Copy className=\"h-4 w-4\" />\n   </Button>\n </div>\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -252,9 +252,9 @@\n     <Textarea\n       placeholder={isTranslating ? \"Translating...\" : \"Translation will appear here...\"}\n       value={translatedText}\n       readOnly\n-      className=\"min-h-[200px] resize-none border-gray-300 bg-gray-50\"\n+      className=\"min-h-[250px] text-base resize-none border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-blue-50\"\n     />\n   </div>\n </div>\n \n"
+        }
+      ]
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759401411178,
+      "end": 1759401411192
+    }
+  }
+}

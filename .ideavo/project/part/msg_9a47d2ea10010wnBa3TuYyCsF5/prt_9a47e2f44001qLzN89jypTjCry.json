@@ -1,0 +1,41 @@
+{
+  "id": "prt_9a47e2f44001qLzN89jypTjCry",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01WrqqHiLGZafwpq7yTHsF1U",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "edits": [
+        {
+          "oldString": "    <div className=\"max-w-6xl mx-auto p-6 space-y-6\">",
+          "newString": "    <div className=\"max-w-7xl mx-auto px-4 py-8 space-y-8\">"
+        },
+        {
+          "oldString": "      <Card className=\"shadow-lg\">",
+          "newString": "      <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">"
+        },
+        {
+          "oldString": "        <CardContent className=\"p-6\">",
+          "newString": "        <CardContent className=\"p-8\">"
+        },
+        {
+          "oldString": "          <div className=\"flex items-center justify-between mb-4\">",
+          "newString": "          <div className=\"flex items-center justify-between mb-6\">"
+        },
+        {
+          "oldString": "          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-4\">",
+          "newString": "          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">"
+        }
+      ]
+    },
+    "error": "Error: oldString not found in content",
+    "time": {
+      "start": 1759401360431,
+      "end": 1759401360434
+    }
+  }
+}

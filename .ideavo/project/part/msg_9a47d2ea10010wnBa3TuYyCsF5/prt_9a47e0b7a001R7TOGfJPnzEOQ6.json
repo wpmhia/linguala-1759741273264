@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a47e0b7a001R7TOGfJPnzEOQ6",
+  "messageID": "msg_9a47d2ea10010wnBa3TuYyCsF5",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Mqe2AHZuKbvMyk5DVQ2bjX",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "      <div className=\"text-center space-y-2\">\n        <h1 className=\"text-4xl font-bold text-gray-900\">DeepL Clone</h1>\n        <p className=\"text-gray-600\">Powered by Alibaba Cloud Qwen</p>\n      </div>",
+      "newString": "      <div className=\"text-center space-y-3\">\n        <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n        <p className=\"text-lg text-gray-600\">Fast, accurate translations powered by Qwen MT-Turbo</p>\n      </div>"
+    },
+    "error": "Error: oldString not found in content",
+    "time": {
+      "start": 1759401351521,
+      "end": 1759401351528
+    }
+  }
+}

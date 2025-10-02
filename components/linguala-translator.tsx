@@ -8,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { 
   ArrowUpDown, Copy, Download, Share2, Sparkles,
   Check, BookOpen, History, Volume2, Globe,
@@ -137,12 +136,7 @@ export default function LingualaTranslator() {
                 <SelectContent>
                   {LANGUAGES.map(lang => (
                     <SelectItem key={lang.code} value={lang.code}>
-                      <div className="flex items-center space-x-2">
-                        <span>{lang.name}</span>
-                        {lang.region !== "auto" && (
-                          <Badge variant="outline" className="text-xs">{lang.region}</Badge>
-                        )}
-                      </div>
+                      {lang.name}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -168,10 +162,7 @@ export default function LingualaTranslator() {
                 <SelectContent>
                   {LANGUAGES.filter(lang => lang.code !== "auto").map(lang => (
                     <SelectItem key={lang.code} value={lang.code}>
-                      <div className="flex items-center space-x-2">
-                        <span>{lang.name}</span>
-                        <Badge variant="outline" className="text-xs">{lang.region}</Badge>
-                      </div>
+                      {lang.name}
                     </SelectItem>
                   ))}
                 </SelectContent>

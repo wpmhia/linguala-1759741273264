@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4f2d8030014QhXxRhf8gDlNF",
+  "messageID": "msg_9a4f2c6e5001uL2ZAYqEPcDCeV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017VwSAWDFe5pZ2dGedmg3sa",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 120,
+      "limit": 50
+    },
+    "output": "<file>\n00121|             <div className=\"text-center\">\n00122|               <h1 className=\"text-2xl font-bold text-gray-900 mb-2\">European Translation Platform</h1>\n00123|               <p className=\"text-gray-600\">Professional translation tools for European languages</p>\n00124|             </div>\n00125|           </CardHeader>\n00126| \n00127|           <CardContent className=\"space-y-6\">\n00128|             {/* Language Selection */}\n00129|             <div className=\"flex items-center justify-center space-x-4\">\n00130|               <Select value={sourceLang} onValueChange={(value) => {\n00131|                 setSourceLang(value)\n00132|                 if (sourceText.trim()) translateText(sourceText, value, targetLang)\n00133|               }}>\n00134|                 <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n00135|                   <SelectValue />\n00136|                 </SelectTrigger>\n00137|                 <SelectContent>\n00138|                   {LANGUAGES.map(lang => (\n00139|                     <SelectItem key={lang.code} value={lang.code}>\n00140|                       <div className=\"flex items-center space-x-2\">\n00141|                         <span>{lang.name}</span>\n00142|                         {lang.region !== \"auto\" && (\n00143|                           <Badge variant=\"outline\" className=\"text-xs\">{lang.region}</Badge>\n00144|                         )}\n00145|                       </div>\n00146|                     </SelectItem>\n00147|                   ))}\n00148|                 </SelectContent>\n00149|               </Select>\n00150| \n00151|               <Button\n00152|                 variant=\"ghost\"\n00153|                 size=\"lg\"\n00154|                 onClick={swapLanguages}\n00155|                 disabled={sourceLang === \"auto\"}\n00156|                 className=\"p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50\"\n00157|               >\n00158|                 <ArrowUpDown className=\"h-5 w-5\" />\n00159|               </Button>\n00160| \n00161|               <Select value={targetLang} onValueChange={(value) => {\n00162|                 setTargetLang(value)\n00163|                 if (sourceText.trim()) translateText(sourceText, sourceLang, value)\n00164|               }}>\n00165|                 <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n00166|                   <SelectValue />\n00167|                 </SelectTrigger>\n00168|                 <SelectContent>\n00169|                   {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n00170|                     <SelectItem key={lang.code} value={lang.code}>\n\n(File has more lines. Use 'offset' parameter to read beyond line 170)\n</file>",
+    "metadata": {
+      "preview": "            <div className=\"text-center\">\n              <h1 className=\"text-2xl font-bold text-gray-900 mb-2\">European Translation Platform</h1>\n              <p className=\"text-gray-600\">Professional translation tools for European languages</p>\n            </div>\n          </CardHeader>\n\n          <CardContent className=\"space-y-6\">\n            {/* Language Selection */}\n            <div className=\"flex items-center justify-center space-x-4\">\n              <Select value={sourceLang} onValueChange={(value) => {\n                setSourceLang(value)\n                if (sourceText.trim()) translateText(sourceText, value, targetLang)\n              }}>\n                <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.map(lang => (\n                    <SelectItem key={lang.code} value={lang.code}>\n                      <div className=\"flex items-center space-x-2\">"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759409003517,
+      "end": 1759409003527
+    }
+  }
+}

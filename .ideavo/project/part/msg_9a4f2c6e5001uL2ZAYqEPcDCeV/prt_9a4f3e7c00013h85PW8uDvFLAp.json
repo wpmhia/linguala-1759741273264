@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4f3e7c00013h85PW8uDvFLAp",
+  "messageID": "msg_9a4f2c6e5001uL2ZAYqEPcDCeV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(ui): remove language badges from translator dropdowns",
+  "cost": 0.29773109999999997,
+  "tokens": {
+    "input": 5,
+    "output": 206,
+    "reasoning": 0,
+    "cache": {
+      "write": 633,
+      "read": 62607
+    }
+  }
+}

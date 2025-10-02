@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4d445310017S5KvXhYwWMWzB",
+  "messageID": "msg_9a4d2f3a30017ILnFUU4KHTnHX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(languages): reorganize language dropdown with geographic grouping",
+  "cost": 0.4288512,
+  "tokens": {
+    "input": 6,
+    "output": 368,
+    "reasoning": 0,
+    "cache": {
+      "write": 171,
+      "read": 78873
+    }
+  }
+}

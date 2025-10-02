@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4d371ac001Z9UXSLKdKg3psO",
+  "messageID": "msg_9a4d2f3a30017ILnFUU4KHTnHX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! The dropdown is already showing languages in the new order since I reorganized the LANGUAGES array. The languages will now appear:\n\n1. **Auto-detect** (first)\n2. **English** (second) \n3. **Northern European languages** (Danish, Swedish, Norwegian, Finnish, Estonian, Latvian, Lithuanian, Dutch, German)\n4. **Southern European languages** (French, Spanish, Italian, Portuguese, Greek, Romanian, Bulgarian, Croatian, Slovenian)\n5. **Eastern European languages** (Russian, Polish, Czech, Slovak, Hungarian)\n6. **Middle East** (Turkish, Arabic)\n7. **Asian languages** (Chinese, Japanese, Korean, Hindi, Thai, Vietnamese, Malay, Indonesian, Filipino)\n\nLet me build and test this updated language organization:",
+  "time": {
+    "start": 1759406948712,
+    "end": 1759406948712
+  }
+}

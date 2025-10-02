@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4d3f1e8001tQp7SQrT65LGcV",
+  "messageID": "msg_9a4d2f3a30017ILnFUU4KHTnHX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01MCmvNomApdtnXqPchykVrp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" || true; npm start",
+      "timeout": 6000,
+      "description": "Start Linguala with reorganized languages"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Start Linguala with reorganized languages"
+    },
+    "title": "pkill -f \"next\" || true; npm start",
+    "time": {
+      "start": 1759406978585,
+      "end": 1759406978604
+    }
+  }
+}

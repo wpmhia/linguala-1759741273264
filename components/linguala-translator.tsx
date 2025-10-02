@@ -24,44 +24,52 @@ import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { UserProfile } from "@/components/user-profile"
 
-// Enhanced language data with regions and popularity
+// Enhanced language data organized by geographic regions
 const LANGUAGES = [
+  // Auto-detect
   { code: "auto", name: "Detect language", region: "auto", popular: true },
-  // Most Popular
-  { code: "en", name: "English", region: "Global", popular: true },
-  { code: "es", name: "Spanish", region: "Global", popular: true },
-  { code: "fr", name: "French", region: "Europe", popular: true },
-  { code: "de", name: "German", region: "Europe", popular: true },
-  { code: "it", name: "Italian", region: "Europe", popular: true },
-  { code: "pt", name: "Portuguese", region: "Global", popular: true },
-  { code: "ru", name: "Russian", region: "Europe", popular: true },
-  { code: "ja", name: "Japanese", region: "Asia", popular: true },
-  { code: "ko", name: "Korean", region: "Asia", popular: true },
-  { code: "zh", name: "Chinese", region: "Asia", popular: true },
-  { code: "ar", name: "Arabic", region: "Middle East", popular: true },
-  { code: "hi", name: "Hindi", region: "Asia", popular: true },
   
-  // European Languages
-  { code: "da", name: "Danish", region: "Europe", popular: false },
-  { code: "sv", name: "Swedish", region: "Europe", popular: false },
-  { code: "no", name: "Norwegian", region: "Europe", popular: false },
-  { code: "fi", name: "Finnish", region: "Europe", popular: false },
-  { code: "nl", name: "Dutch", region: "Europe", popular: false },
-  { code: "pl", name: "Polish", region: "Europe", popular: false },
-  { code: "cs", name: "Czech", region: "Europe", popular: false },
-  { code: "hu", name: "Hungarian", region: "Europe", popular: false },
-  { code: "ro", name: "Romanian", region: "Europe", popular: false },
-  { code: "bg", name: "Bulgarian", region: "Europe", popular: false },
-  { code: "hr", name: "Croatian", region: "Europe", popular: false },
-  { code: "sk", name: "Slovak", region: "Europe", popular: false },
-  { code: "sl", name: "Slovenian", region: "Europe", popular: false },
-  { code: "et", name: "Estonian", region: "Europe", popular: false },
-  { code: "lv", name: "Latvian", region: "Europe", popular: false },
-  { code: "lt", name: "Lithuanian", region: "Europe", popular: false },
-  { code: "el", name: "Greek", region: "Europe", popular: false },
-  { code: "tr", name: "Turkish", region: "Europe", popular: false },
+  // English first
+  { code: "en", name: "English", region: "Global", popular: true },
+  
+  // Northern European languages
+  { code: "da", name: "Danish", region: "Northern Europe", popular: false },
+  { code: "sv", name: "Swedish", region: "Northern Europe", popular: false },
+  { code: "no", name: "Norwegian", region: "Northern Europe", popular: false },
+  { code: "fi", name: "Finnish", region: "Northern Europe", popular: false },
+  { code: "et", name: "Estonian", region: "Northern Europe", popular: false },
+  { code: "lv", name: "Latvian", region: "Northern Europe", popular: false },
+  { code: "lt", name: "Lithuanian", region: "Northern Europe", popular: false },
+  { code: "nl", name: "Dutch", region: "Northern Europe", popular: false },
+  { code: "de", name: "German", region: "Northern Europe", popular: true },
+  
+  // Southern European languages
+  { code: "fr", name: "French", region: "Southern Europe", popular: true },
+  { code: "es", name: "Spanish", region: "Southern Europe", popular: true },
+  { code: "it", name: "Italian", region: "Southern Europe", popular: true },
+  { code: "pt", name: "Portuguese", region: "Southern Europe", popular: true },
+  { code: "el", name: "Greek", region: "Southern Europe", popular: false },
+  { code: "ro", name: "Romanian", region: "Southern Europe", popular: false },
+  { code: "bg", name: "Bulgarian", region: "Southern Europe", popular: false },
+  { code: "hr", name: "Croatian", region: "Southern Europe", popular: false },
+  { code: "sl", name: "Slovenian", region: "Southern Europe", popular: false },
+  
+  // Eastern European languages
+  { code: "ru", name: "Russian", region: "Eastern Europe", popular: true },
+  { code: "pl", name: "Polish", region: "Eastern Europe", popular: false },
+  { code: "cs", name: "Czech", region: "Eastern Europe", popular: false },
+  { code: "sk", name: "Slovak", region: "Eastern Europe", popular: false },
+  { code: "hu", name: "Hungarian", region: "Eastern Europe", popular: false },
+  
+  // Other regions
+  { code: "tr", name: "Turkish", region: "Middle East", popular: false },
+  { code: "ar", name: "Arabic", region: "Middle East", popular: true },
   
   // Asian Languages  
+  { code: "zh", name: "Chinese", region: "Asia", popular: true },
+  { code: "ja", name: "Japanese", region: "Asia", popular: true },
+  { code: "ko", name: "Korean", region: "Asia", popular: true },
+  { code: "hi", name: "Hindi", region: "Asia", popular: true },
   { code: "th", name: "Thai", region: "Asia", popular: false },
   { code: "vi", name: "Vietnamese", region: "Asia", popular: false },
   { code: "ms", name: "Malay", region: "Asia", popular: false },

@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4d3ffe0001XRR3IAjGsneZE2",
+  "messageID": "msg_9a4d2f3a30017ILnFUU4KHTnHX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LuZxYia7AMSLAV2SHisNkj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm start",
+      "timeout": 6000,
+      "description": "Start updated Linguala server"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n\n ✓ Starting...\n ✓ Ready in 477ms\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n\n ✓ Starting...\n ✓ Ready in 477ms\n",
+      "exit": null,
+      "description": "Start updated Linguala server"
+    },
+    "title": "npm start",
+    "time": {
+      "start": 1759406981741,
+      "end": 1759406987745
+    }
+  }
+}

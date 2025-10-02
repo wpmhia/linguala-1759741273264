@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4d423c3001dlGDYzrVd8ve7u",
+  "messageID": "msg_9a4d2f3a30017ILnFUU4KHTnHX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! ✅ **Language list reorganized successfully**\n\n## **🌍 New Language Organization in Linguala:**\n\n### **📍 Geographic Ordering:**\n1. **🔍 Auto-detect** - First option\n2. **🇬🇧 English** - Prioritized as primary international language  \n3. **❄️ Northern European** - Danish, Swedish, Norwegian, Finnish, Estonian, Latvian, Lithuanian, Dutch, German\n4. **☀️ Southern European** - French, Spanish, Italian, Portuguese, Greek, Romanian, Bulgarian, Croatian, Slovenian  \n5. **🏛️ Eastern European** - Russian, Polish, Czech, Slovak, Hungarian\n6. **🏺 Middle East** - Turkish, Arabic\n7. **🏮 Asian Languages** - Chinese, Japanese, Korean, Hindi, Thai, Vietnamese, Malay, Indonesian, Filipino\n\n### **🎯 Benefits of This Organization:**\n- **English first** - Most commonly used international language\n- **Regional clustering** - Makes it easier to find related languages\n- **Logical geographic flow** - Northern → Southern → Eastern Europe, then outward\n- **Intuitive navigation** - Users can quickly locate languages by region\n- **Better UX** - Reduces cognitive load when selecting languages\n\nThe language dropdown now provides a much more **intuitive and geographically logical** selection experience compared to the previous alphabetical/popularity-based organization. European users will especially appreciate the clear regional groupings! 🚀\n\n**Linguala** continues to provide superior UX compared to DeepL's basic alphabetical language list.",
+  "time": {
+    "start": 1759406997512,
+    "end": 1759406997512
+  }
+}

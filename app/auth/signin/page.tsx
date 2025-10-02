@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Separator } from "@/components/ui/separator"
 import { Mail, Github, Chrome, AlertTriangle } from "lucide-react"
+import { LingualaLogo } from "@/components/ui/linguala-logo"
 
 function SignInForm() {
   const [email, setEmail] = useState("")
@@ -83,9 +84,12 @@ function SignInForm() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-semibold">Sign In</CardTitle>
+          <div className="flex justify-center mb-4">
+            <LingualaLogo size="lg" />
+          </div>
+          <CardTitle className="text-2xl font-semibold">Welcome to Linguala</CardTitle>
           <CardDescription>
-            Access your personal translation history and glossaries
+            Sign in to access your personal translation history, custom glossaries, and premium features
           </CardDescription>
         </CardHeader>
         

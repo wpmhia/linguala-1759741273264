@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4c2af15001eHe3re6AU1yN1r",
+  "messageID": "msg_9a4be530e001C2J85uyZQgBGoS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KtUgCByFXxCa9G8cc4qmmp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" || true; npm start",
+      "timeout": 8000,
+      "description": "Start Linguala production server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Start Linguala production server"
+    },
+    "title": "pkill -f \"next\" || true; npm start",
+    "time": {
+      "start": 1759405847182,
+      "end": 1759405847194
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4be9d97001nH76aHrryJbgvp",
+  "messageID": "msg_9a4be530e001C2J85uyZQgBGoS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_014tbkcKdWaYzTNC5YyhYsBG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/ui/linguala-logo.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface LingualaLogoProps {\n  size?: \"sm\" | \"md\" | \"lg\" | \"xl\"\n  showText?: boolean\n  className?: string\n}\n\nexport function LingualaLogo({ size = \"md\", showText = true, className }: LingualaLogoProps) {\n  const sizeClasses = {\n    sm: \"w-6 h-6\",\n    md: \"w-8 h-8\", \n    lg: \"w-12 h-12\",\n    xl: \"w-16 h-16\"\n  }\n\n  const textSizeClasses = {\n    sm: \"text-lg\",\n    md: \"text-xl\",\n    lg: \"text-2xl\", \n    xl: \"text-3xl\"\n  }\n\n  return (\n    <div className={cn(\"flex items-center space-x-2\", className)}>\n      {/* Logo Icon - Modern geometric design */}\n      <div className={cn(\"relative flex items-center justify-center\", sizeClasses[size])}>\n        {/* Outer ring with gradient */}\n        <div className=\"absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 p-0.5\">\n          <div className=\"w-full h-full rounded-full bg-white flex items-center justify-center\">\n            {/* Inner symbol - Abstract \"L\" that looks like translation arrows */}\n            <svg\n              viewBox=\"0 0 24 24\"\n              className=\"w-3/4 h-3/4 text-transparent\"\n              fill=\"none\"\n              xmlns=\"http://www.w3.org/2000/svg\"\n            >\n              <defs>\n                <linearGradient id=\"logoGradient\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n                  <stop offset=\"0%\" stopColor=\"#3B82F6\" />\n                  <stop offset=\"50%\" stopColor=\"#8B5CF6\" />\n                  <stop offset=\"100%\" stopColor=\"#06B6D4\" />\n                </linearGradient>\n              </defs>\n              \n              {/* Stylized \"L\" with translation flow */}\n              <path\n                d=\"M6 4v12h4m0 0l3-3m-3 3l3 3m2-7h6m-2-2l2 2m-2 2l2-2\"\n                stroke=\"url(#logoGradient)\"\n                strokeWidth=\"2\"\n                strokeLinecap=\"round\"\n                strokeLinejoin=\"round\"\n                className=\"drop-shadow-sm\"\n              />\n              \n              {/* Accent dots for movement */}\n              <circle cx=\"9\" cy=\"8\" r=\"1\" fill=\"url(#logoGradient)\" opacity=\"0.6\" />\n              <circle cx=\"15\" cy=\"12\" r=\"1\" fill=\"url(#logoGradient)\" opacity=\"0.6\" />\n            </svg>\n          </div>\n        </div>\n      </div>\n\n      {/* Brand Text */}\n      {showText && (\n        <div className=\"flex flex-col\">\n          <span className={cn(\n            \"font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent tracking-tight\",\n            textSizeClasses[size]\n          )}>\n            Linguala\n          </span>\n          {size === \"xl\" && (\n            <span className=\"text-xs text-gray-500 -mt-1 tracking-widest uppercase\">\n              Advanced Translation\n            </span>\n          )}\n        </div>\n      )}\n    </div>\n  )\n}\n\n// Simple icon-only version for favicons\nexport function LingualaIcon({ className }: { className?: string }) {\n  return (\n    <div className={cn(\"w-8 h-8 relative\", className)}>\n      <div className=\"absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 p-0.5\">\n        <div className=\"w-full h-full rounded-full bg-white flex items-center justify-center\">\n          <svg\n            viewBox=\"0 0 24 24\"\n            className=\"w-5 h-5\"\n            fill=\"none\"\n            xmlns=\"http://www.w3.org/2000/svg\"\n          >\n            <defs>\n              <linearGradient id=\"iconGradient\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n                <stop offset=\"0%\" stopColor=\"#3B82F6\" />\n                <stop offset=\"50%\" stopColor=\"#8B5CF6\" />\n                <stop offset=\"100%\" stopColor=\"#06B6D4\" />\n              </linearGradient>\n            </defs>\n            <path\n              d=\"M6 4v12h4m0 0l3-3m-3 3l3 3m2-7h6m-2-2l2 2m-2 2l2-2\"\n              stroke=\"url(#iconGradient)\"\n              strokeWidth=\"2\"\n              strokeLinecap=\"round\"\n              strokeLinejoin=\"round\"\n            />\n            <circle cx=\"9\" cy=\"8\" r=\"1\" fill=\"url(#iconGradient)\" opacity=\"0.6\" />\n            <circle cx=\"15\" cy=\"12\" r=\"1\" fill=\"url(#iconGradient)\" opacity=\"0.6\" />\n          </svg>\n        </div>\n      </div>\n    </div>\n  )\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/components/ui/linguala-logo.tsx",
+      "exists": false
+    },
+    "title": "components/ui/linguala-logo.tsx",
+    "time": {
+      "start": 1759405596958,
+      "end": 1759405596961
+    }
+  }
+}

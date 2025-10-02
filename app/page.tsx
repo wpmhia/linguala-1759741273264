@@ -1,5 +1,5 @@
-import NielsenTranslator from '@/components/translator-nielsen'
+import LingualaTranslator from '@/components/linguala-translator'
 
 export default function Home() {
-  return <NielsenTranslator />
+  return <LingualaTranslator />
 }

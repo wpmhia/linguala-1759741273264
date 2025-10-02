@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4c2bd15001ezbr9ZunUkSUk5",
+  "messageID": "msg_9a4be530e001C2J85uyZQgBGoS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_018Jx35W7T5gdah78ueYCXSJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm start",
+      "timeout": 6000,
+      "description": "Start Linguala server"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n\n ✓ Starting...\nError: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id\n    at setupFsCheck (/home/user/project/node_modules/next/dist/server/lib/router-utils/filesystem.js:151:19)\n    at async initialize (/home/user/project/node_modules/next/dist/server/lib/router-server.js:64:23)\n    at async Server.<anonymous> (/home/user/project/node_modules/next/dist/server/lib/start-server.js:249:36)\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n\n ✓ Starting...\nError: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id\n    at setupFsCheck (/home/user/project/node_modules/next/dist/server/lib/router-utils/filesystem.js:151:19)\n    at async initialize (/home/user/project/node_modules/next/dist/server/lib/router-server.js:64:23)\n    at async Server.<anonymous> (/home/user/project/node_modules/next/dist/server/lib/start-server.js:249:36)\n",
+      "exit": 1,
+      "description": "Start Linguala server"
+    },
+    "title": "npm start",
+    "time": {
+      "start": 1759405850556,
+      "end": 1759405851208
+    }
+  }
+}

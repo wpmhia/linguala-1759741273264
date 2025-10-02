@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4c142670018gBZOkBkFYpXcF",
+  "messageID": "msg_9a4be530e001C2J85uyZQgBGoS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01BjewAgrm2BcAAxCAmYzSsy",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/page.tsx",
+      "oldString": "import NielsenTranslator from '@/components/translator-nielsen'\n\nexport default function Home() {\n  return <NielsenTranslator />\n}",
+      "newString": "import LingualaTranslator from '@/components/linguala-translator'\n\nexport default function Home() {\n  return <LingualaTranslator />\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/page.tsx\n===================================================================\n--- /home/user/project/app/page.tsx\n+++ /home/user/project/app/page.tsx\n@@ -1,5 +1,5 @@\n-import NielsenTranslator from '@/components/translator-nielsen'\n+import LingualaTranslator from '@/components/linguala-translator'\n \n export default function Home() {\n-  return <NielsenTranslator />\n+  return <LingualaTranslator />\n }\n"
+    },
+    "title": "app/page.tsx",
+    "time": {
+      "start": 1759405754062,
+      "end": 1759405754065
+    }
+  }
+}

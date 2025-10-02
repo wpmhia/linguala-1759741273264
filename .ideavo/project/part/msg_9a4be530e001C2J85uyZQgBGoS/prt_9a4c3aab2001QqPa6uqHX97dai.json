@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4c3aab2001QqPa6uqHX97dai",
+  "messageID": "msg_9a4be530e001C2J85uyZQgBGoS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01JgyLZVmJU8vebmkDiitPpY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "export const metadata: Metadata = {\n  title: 'Linguala - Advanced AI Translation Platform',\n  description: 'Professional translation platform with domain expertise, custom glossaries, and intelligent AI powered by Qwen. Translate with precision at Linguala.eu',\n  keywords: 'translation, AI, professional, linguala, domain translation, glossary, languages',\n  authors: [{ name: 'Linguala Team' }],\n  creator: 'Linguala',\n  publisher: 'Linguala',\n  robots: 'index, follow',\n  openGraph: {\n    type: 'website',\n    locale: 'en_US',\n    url: 'https://linguala.eu',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    siteName: 'Linguala',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    creator: '@linguala',\n  },\n};",
+      "newString": "export const metadata: Metadata = {\n  title: 'Linguala - Advanced AI Translation Platform',\n  description: 'Professional translation platform with domain expertise, custom glossaries, and intelligent AI powered by Qwen. Translate with precision at Linguala.eu',\n  keywords: 'translation, AI, professional, linguala, domain translation, glossary, languages',\n  authors: [{ name: 'Linguala Team' }],\n  creator: 'Linguala',\n  publisher: 'Linguala',\n  robots: 'index, follow',\n  openGraph: {\n    type: 'website',\n    locale: 'en_US',\n    url: 'https://linguala.eu',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    siteName: 'Linguala',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    creator: '@linguala',\n  },\n};\n\nexport const viewport = {\n  width: 'device-width',\n  initialScale: 1,\n  themeColor: '#3B82F6',\n};"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/layout.tsx\n===================================================================\n--- /home/user/project/app/layout.tsx\n+++ /home/user/project/app/layout.tsx\n@@ -27,9 +27,14 @@\n     title: 'Linguala - Advanced AI Translation Platform',\n     description: 'Professional translation platform with domain expertise and custom glossaries',\n     creator: '@linguala',\n   },\n+};\n \n+export const viewport = {\n+  width: 'device-width',\n+  initialScale: 1,\n+  themeColor: '#3B82F6',\n };\n \n export default function RootLayout({\n   children,\n"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759405918041,
+      "end": 1759405918047
+    }
+  }
+}

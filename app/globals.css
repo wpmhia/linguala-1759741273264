@@ -80,3 +80,115 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Linguala Custom Styles */
+@layer components {
+  .linguala-gradient {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #06B6D4 100%);
+  }
+  
+  .linguala-text-gradient {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .linguala-blur-bg {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .linguala-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .linguala-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .linguala-button {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .linguala-button:hover {
+    background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.5);
+  }
+  
+  .linguala-animate-in {
+    animation: linguala-slide-up 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes linguala-slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .linguala-shimmer {
+    background: linear-gradient(
+      110deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    animation: linguala-shimmer 2s infinite;
+  }
+  
+  @keyframes linguala-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  .linguala-pulse {
+    animation: linguala-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes linguala-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  /* Enhanced Focus States */
+  .linguala-focus {
+    @apply focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none;
+  }
+  
+  /* Custom Scrollbar */
+  .linguala-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .linguala-scrollbar::-webkit-scrollbar-track {
+    background: rgb(241, 245, 249);
+    border-radius: 4px;
+  }
+  
+  .linguala-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+    border-radius: 4px;
+  }
+  
+  .linguala-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2563EB, #7C3AED);
+  }
+}

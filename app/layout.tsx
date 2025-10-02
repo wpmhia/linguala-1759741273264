@@ -7,8 +7,33 @@ import { SessionProvider } from '@/components/providers/session-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'DeepL Clone - Powered by Qwen',
-  description: 'AI-powered translation tool using Alibaba Cloud Qwen',
+  title: 'Linguala - Advanced AI Translation Platform',
+  description: 'Professional translation platform with domain expertise, custom glossaries, and intelligent AI powered by Qwen. Translate with precision at Linguala.eu',
+  keywords: 'translation, AI, professional, linguala, domain translation, glossary, languages',
+  authors: [{ name: 'Linguala Team' }],
+  creator: 'Linguala',
+  publisher: 'Linguala',
+  robots: 'index, follow',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://linguala.eu',
+    title: 'Linguala - Advanced AI Translation Platform',
+    description: 'Professional translation platform with domain expertise and custom glossaries',
+    siteName: 'Linguala',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Linguala - Advanced AI Translation Platform',
+    description: 'Professional translation platform with domain expertise and custom glossaries',
+    creator: '@linguala',
+  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#3B82F6',
 };
 
 export default function RootLayout({

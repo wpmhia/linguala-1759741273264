@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a4beed0d001uwRYWFNhVzW2my",
+  "messageID": "msg_9a4be530e001C2J85uyZQgBGoS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01RqLCr9FT1GZYUR7TaesUNT",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "export const metadata: Metadata = {\n  title: 'DeepL Clone - Powered by Qwen',\n  description: 'AI-powered translation tool using Alibaba Cloud Qwen',\n};",
+      "newString": "export const metadata: Metadata = {\n  title: 'Linguala - Advanced AI Translation Platform',\n  description: 'Professional translation platform with domain expertise, custom glossaries, and intelligent AI powered by Qwen. Translate with precision at Linguala.eu',\n  keywords: 'translation, AI, professional, linguala, domain translation, glossary, languages',\n  authors: [{ name: 'Linguala Team' }],\n  creator: 'Linguala',\n  publisher: 'Linguala',\n  robots: 'index, follow',\n  openGraph: {\n    type: 'website',\n    locale: 'en_US',\n    url: 'https://linguala.eu',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    siteName: 'Linguala',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    creator: '@linguala',\n  },\n  viewport: 'width=device-width, initial-scale=1',\n  themeColor: '#3B82F6',\n};"
+    },
+    "error": "Error: You must read the file /home/user/project/app/layout.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759405606962,
+      "end": 1759405606965
+    }
+  }
+}

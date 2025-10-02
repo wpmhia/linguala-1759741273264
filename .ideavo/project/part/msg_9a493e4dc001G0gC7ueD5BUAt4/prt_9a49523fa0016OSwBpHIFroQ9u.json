@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a49523fa0016OSwBpHIFroQ9u",
+  "messageID": "msg_9a493e4dc001G0gC7ueD5BUAt4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "**Perfect!** 🇩🇰\n\nDanish is now fully supported! The translation works beautifully:\n\n- **English**: \"Hello, how are you?\"\n- **Danish**: \"Hej, hvordan går det?\"\n\nI've added **26 additional languages** to your DeepL clone, including:\n\n🇪🇺 **European Languages**: Danish, Dutch, Swedish, Norwegian, Finnish, Polish, Czech, Hungarian, Romanian, Bulgarian, Croatian, Slovak, Slovenian, Estonian, Latvian, Lithuanian, Greek, Turkish, Ukrainian\n\n🌍 **Other Languages**: Hebrew, Hindi, Thai, Vietnamese, Malay, Indonesian, Filipino\n\nYour translator now supports **38 languages total** (including auto-detect), making it much more comprehensive than the original 12 languages!\n\nYou can now:\n- Select Danish from the language dropdown in your browser at `http://localhost:3000`\n- Translate to/from Danish and all the other newly added languages\n- Use auto-detection with any of these languages\n\nThe qwen-mt-turbo model handles all these languages very well! 🚀",
+  "time": {
+    "start": 1759402867801,
+    "end": 1759402867801
+  }
+}

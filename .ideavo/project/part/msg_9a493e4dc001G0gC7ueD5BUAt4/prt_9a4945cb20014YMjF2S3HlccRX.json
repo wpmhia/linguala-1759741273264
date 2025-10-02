@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4945cb20014YMjF2S3HlccRX",
+  "messageID": "msg_9a493e4dc001G0gC7ueD5BUAt4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Kf3a7Xxif8seHYArMKUsBr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "const LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\" },\n  { code: \"en\", name: \"English\" },\n  { code: \"zh\", name: \"Chinese\" },\n  { code: \"ja\", name: \"Japanese\" },\n  { code: \"ko\", name: \"Korean\" },\n  { code: \"es\", name: \"Spanish\" },\n  { code: \"fr\", name: \"French\" },\n  { code: \"de\", name: \"German\" },\n  { code: \"it\", name: \"Italian\" },\n  { code: \"pt\", name: \"Portuguese\" },\n  { code: \"ru\", name: \"Russian\" },\n  { code: \"ar\", name: \"Arabic\" },\n]",
+      "newString": "const LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\" },\n  { code: \"en\", name: \"English\" },\n  { code: \"zh\", name: \"Chinese\" },\n  { code: \"ja\", name: \"Japanese\" },\n  { code: \"ko\", name: \"Korean\" },\n  { code: \"es\", name: \"Spanish\" },\n  { code: \"fr\", name: \"French\" },\n  { code: \"de\", name: \"German\" },\n  { code: \"it\", name: \"Italian\" },\n  { code: \"pt\", name: \"Portuguese\" },\n  { code: \"ru\", name: \"Russian\" },\n  { code: \"ar\", name: \"Arabic\" },\n  { code: \"da\", name: \"Danish\" },\n  { code: \"nl\", name: \"Dutch\" },\n  { code: \"sv\", name: \"Swedish\" },\n  { code: \"no\", name: \"Norwegian\" },\n  { code: \"fi\", name: \"Finnish\" },\n  { code: \"pl\", name: \"Polish\" },\n  { code: \"cs\", name: \"Czech\" },\n  { code: \"hu\", name: \"Hungarian\" },\n  { code: \"ro\", name: \"Romanian\" },\n  { code: \"bg\", name: \"Bulgarian\" },\n  { code: \"hr\", name: \"Croatian\" },\n  { code: \"sk\", name: \"Slovak\" },\n  { code: \"sl\", name: \"Slovenian\" },\n  { code: \"et\", name: \"Estonian\" },\n  { code: \"lv\", name: \"Latvian\" },\n  { code: \"lt\", name: \"Lithuanian\" },\n  { code: \"el\", name: \"Greek\" },\n  { code: \"tr\", name: \"Turkish\" },\n  { code: \"he\", name: \"Hebrew\" },\n  { code: \"hi\", name: \"Hindi\" },\n  { code: \"th\", name: \"Thai\" },\n  { code: \"vi\", name: \"Vietnamese\" },\n  { code: \"ms\", name: \"Malay\" },\n  { code: \"id\", name: \"Indonesian\" },\n  { code: \"tl\", name: \"Filipino\" },\n  { code: \"uk\", name: \"Ukrainian\" },\n]"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -20,8 +20,34 @@\n   { code: \"it\", name: \"Italian\" },\n   { code: \"pt\", name: \"Portuguese\" },\n   { code: \"ru\", name: \"Russian\" },\n   { code: \"ar\", name: \"Arabic\" },\n+  { code: \"da\", name: \"Danish\" },\n+  { code: \"nl\", name: \"Dutch\" },\n+  { code: \"sv\", name: \"Swedish\" },\n+  { code: \"no\", name: \"Norwegian\" },\n+  { code: \"fi\", name: \"Finnish\" },\n+  { code: \"pl\", name: \"Polish\" },\n+  { code: \"cs\", name: \"Czech\" },\n+  { code: \"hu\", name: \"Hungarian\" },\n+  { code: \"ro\", name: \"Romanian\" },\n+  { code: \"bg\", name: \"Bulgarian\" },\n+  { code: \"hr\", name: \"Croatian\" },\n+  { code: \"sk\", name: \"Slovak\" },\n+  { code: \"sl\", name: \"Slovenian\" },\n+  { code: \"et\", name: \"Estonian\" },\n+  { code: \"lv\", name: \"Latvian\" },\n+  { code: \"lt\", name: \"Lithuanian\" },\n+  { code: \"el\", name: \"Greek\" },\n+  { code: \"tr\", name: \"Turkish\" },\n+  { code: \"he\", name: \"Hebrew\" },\n+  { code: \"hi\", name: \"Hindi\" },\n+  { code: \"th\", name: \"Thai\" },\n+  { code: \"vi\", name: \"Vietnamese\" },\n+  { code: \"ms\", name: \"Malay\" },\n+  { code: \"id\", name: \"Indonesian\" },\n+  { code: \"tl\", name: \"Filipino\" },\n+  { code: \"uk\", name: \"Ukrainian\" },\n ]\n \n interface TranslationHistory {\n   id: string\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759402816605,
+      "end": 1759402816613
+    }
+  }
+}

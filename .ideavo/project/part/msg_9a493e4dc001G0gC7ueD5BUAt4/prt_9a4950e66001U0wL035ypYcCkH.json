@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4950e66001U0wL035ypYcCkH",
+  "messageID": "msg_9a493e4dc001G0gC7ueD5BUAt4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01DUu4zj7qoa13MFw4EJhVbD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"text\":\"Hello, how are you?\",\"sourceLang\":\"en\",\"targetLang\":\"da\"}' \\\n  --max-time 10",
+      "description": "Test Danish translation through our API"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    66    0     0  100    66      0     54  0:00:01  0:00:01 --:--:--    54\r100   145    0    79  100    66     62     52  0:00:01  0:00:01 --:--:--   115\n{\"translatedText\":\"Hej, hvordan går det?\",\"sourceLang\":\"en\",\"targetLang\":\"da\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    66    0     0  100    66      0     54  0:00:01  0:00:01 --:--:--    54\r100   145    0    79  100    66     62     52  0:00:01  0:00:01 --:--:--   115\n{\"translatedText\":\"Hej, hvordan går det?\",\"sourceLang\":\"en\",\"targetLang\":\"da\"}",
+      "exit": 0,
+      "description": "Test Danish translation through our API"
+    },
+    "title": "curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"text\":\"Hello, how are you?\",\"sourceLang\":\"en\",\"targetLang\":\"da\"}' \\\n  --max-time 10",
+    "time": {
+      "start": 1759402857427,
+      "end": 1759402858699
+    }
+  }
+}

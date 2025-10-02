@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4954142001kxFhjlhccpRxOh",
+  "messageID": "msg_9a493e4dc001G0gC7ueD5BUAt4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(translation): add 26 new languages including Danish support",
+  "cost": 0.39044084999999995,
+  "tokens": {
+    "input": 4,
+    "output": 253,
+    "reasoning": 0,
+    "cache": {
+      "write": 334,
+      "read": 59689
+    }
+  }
+}

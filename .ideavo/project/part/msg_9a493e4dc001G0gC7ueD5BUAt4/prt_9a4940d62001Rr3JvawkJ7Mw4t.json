@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4940d62001Rr3JvawkJ7Mw4t",
+  "messageID": "msg_9a493e4dc001G0gC7ueD5BUAt4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_019dUETj1rmZJE1mfcE7sQSs",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello world\"}],\n    \"translation_options\": {\"source_lang\": \"English\", \"target_lang\": \"Danish\"}\n  }' \\\n  --max-time 10",
+      "description": "Test Danish translation with qwen-mt-turbo"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   514  100   338  100   176    298    155  0:00:01  0:00:01 --:--:--   454\n{\"choices\":[{\"message\":{\"content\":\"Hej verden\",\"role\":\"assistant\"},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":50,\"completion_tokens\":4,\"total_tokens\":54},\"created\":1759402795,\"system_fingerprint\":null,\"model\":\"qwen-mt-turbo\",\"id\":\"chatcmpl-8d79586a-1033-909a-acc0-8af86406a0a7\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   514  100   338  100   176    298    155  0:00:01  0:00:01 --:--:--   454\n{\"choices\":[{\"message\":{\"content\":\"Hej verden\",\"role\":\"assistant\"},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":50,\"completion_tokens\":4,\"total_tokens\":54},\"created\":1759402795,\"system_fingerprint\":null,\"model\":\"qwen-mt-turbo\",\"id\":\"chatcmpl-8d79586a-1033-909a-acc0-8af86406a0a7\"}",
+      "exit": 0,
+      "description": "Test Danish translation with qwen-mt-turbo"
+    },
+    "title": "curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello world\"}],\n    \"translation_options\": {\"source_lang\": \"English\", \"target_lang\": \"Danish\"}\n  }' \\\n  --max-time 10",
+    "time": {
+      "start": 1759402793446,
+      "end": 1759402794601
+    }
+  }
+}

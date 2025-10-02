@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a494da6e001208n2r6VhUeatU",
+  "messageID": "msg_9a493e4dc001G0gC7ueD5BUAt4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Wernd4JarAyMR3kaQ7VwcV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" || true; npm start",
+      "timeout": 8000,
+      "description": "Restart production server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart production server"
+    },
+    "title": "pkill -f \"next\" || true; npm start",
+    "time": {
+      "start": 1759402843721,
+      "end": 1759402843737
+    }
+  }
+}

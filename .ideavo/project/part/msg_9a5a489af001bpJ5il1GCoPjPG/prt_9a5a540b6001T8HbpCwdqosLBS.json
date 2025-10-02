@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5a540b6001T8HbpCwdqosLBS",
+  "messageID": "msg_9a5a489af001bpJ5il1GCoPjPG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01MgvFFV1dPSLazuik7c9quR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build project to verify logo changes work correctly"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/14) ...\n   Generating static pages (3/14) \r\n   Generating static pages (6/14) \r\n   Generating static pages (10/14) \r\n ✓ Generating static pages (14/14)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    39.1 kB         153 kB\n├ ○ /_not-found                          873 B          88.1 kB\n├ ƒ /api/auth/[...nextauth]              0 B                0 B\n├ ƒ /api/extract-document                0 B                0 B\n├ ƒ /api/glossary                        0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n├ ƒ /api/translations                    0 B                0 B\n├ ○ /auth-debug                          956 B          97.8 kB\n├ ○ /auth/error                          2.9 kB         98.3 kB\n├ ○ /auth/signin                         4.18 kB         109 kB\n├ ○ /auth/signout                        2.49 kB         108 kB\n├ ○ /auth/verify-request                 179 B          96.1 kB\n└ ○ /env-check                           179 B          96.1 kB\n+ First Load JS shared by all            87.2 kB\n  ├ chunks/117-64c7de20eb4852fc.js       31.6 kB\n  ├ chunks/fd9d1056-3cc12540b8239c03.js  53.6 kB\n  └ other shared chunks (total)          1.96 kB\n\n\nƒ Middleware                             27.6 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/14) ...\n   Generating static pages (3/14) \r\n   Generating static pages (6/14) \r\n   Generating static pages (10/14) \r\n ✓ Generating static pages (14/14)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    39.1 kB         153 kB\n├ ○ /_not-found                          873 B          88.1 kB\n├ ƒ /api/auth/[...nextauth]              0 B                0 B\n├ ƒ /api/extract-document                0 B                0 B\n├ ƒ /api/glossary                        0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n├ ƒ /api/translations                    0 B                0 B\n├ ○ /auth-debug                          956 B          97.8 kB\n├ ○ /auth/error                          2.9 kB         98.3 kB\n├ ○ /auth/signin                         4.18 kB         109 kB\n├ ○ /auth/signout                        2.49 kB         108 kB\n├ ○ /auth/verify-request                 179 B          96.1 kB\n└ ○ /env-check                           179 B          96.1 kB\n+ First Load JS shared by all            87.2 kB\n  ├ chunks/117-64c7de20eb4852fc.js       31.6 kB\n  ├ chunks/fd9d1056-3cc12540b8239c03.js  53.6 kB\n  └ other shared chunks (total)          1.96 kB\n\n\nƒ Middleware                             27.6 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+      "exit": 0,
+      "description": "Build project to verify logo changes work correctly"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759420695438,
+      "end": 1759420724433
+    }
+  }
+}

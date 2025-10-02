@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a5a621af001FRby7K5gma3QFe",
+  "messageID": "msg_9a5a489af001bpJ5il1GCoPjPG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(ui): update Linguala logo to clean text design",
+  "cost": 0.4690647,
+  "tokens": {
+    "input": 6,
+    "output": 462,
+    "reasoning": 0,
+    "cache": {
+      "write": 141,
+      "read": 81496
+    }
+  }
+}

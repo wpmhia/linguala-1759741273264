@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a671422c001c58OY5zPQmoe0C",
+  "messageID": "msg_9a6711635001nimlrkoACWoL73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me check and fix the auth configuration. The main issue is likely in the session callback - it needs to properly fetch and include the premium fields:",
+  "time": {
+    "start": 1759434065347,
+    "end": 1759434065347
+  }
+}

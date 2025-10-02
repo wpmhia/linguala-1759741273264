@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a67145c4001fH88tSSbD3166N",
+  "messageID": "msg_9a6711635001nimlrkoACWoL73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_0156zZV47ZQyS2KqmEGC4Loc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "limit": 100
+    },
+    "output": "<file>\n00001| import { NextAuthOptions } from \"next-auth\"\n00002| import { PrismaAdapter } from \"@auth/prisma-adapter\"\n00003| import { prisma } from \"@/lib/prisma\"\n00004| import GoogleProvider from \"next-auth/providers/google\"\n00005| import CredentialsProvider from \"next-auth/providers/credentials\"\n00006| import bcrypt from \"bcryptjs\"\n00007| \n00008| export const authOptions: NextAuthOptions = {\n00009|   adapter: PrismaAdapter(prisma) as any,\n00010|   providers: [\n00011|     // Email/Password authentication\n00012|     CredentialsProvider({\n00013|       name: \"credentials\",\n00014|       credentials: {\n00015|         email: { label: \"Email\", type: \"email\" },\n00016|         password: { label: \"Password\", type: \"password\" }\n00017|       },\n00018|       async authorize(credentials) {\n00019|         if (!credentials?.email || !credentials?.password) {\n00020|           return null\n00021|         }\n00022| \n00023|         const user = await prisma.user.findUnique({\n00024|           where: {\n00025|             email: credentials.email\n00026|           }\n00027|         })\n00028| \n00029|         if (!user || !user.password) {\n00030|           return null\n00031|         }\n00032| \n00033|         const isPasswordValid = await bcrypt.compare(\n00034|           credentials.password,\n00035|           user.password\n00036|         )\n00037| \n00038|         if (!isPasswordValid) {\n00039|           return null\n00040|         }\n00041| \n00042|         return {\n00043|           id: user.id,\n00044|           email: user.email,\n00045|           name: user.name,\n00046|           image: user.image,\n00047|         }\n00048|       }\n00049|     }),\n00050|     \n00051|     // Google OAuth provider\n00052|     ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n00053|       GoogleProvider({\n00054|         clientId: process.env.GOOGLE_CLIENT_ID,\n00055|         clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n00056|       })\n00057|     ] : []),\n00058|   ],\n00059|   \n00060|   session: {\n00061|     strategy: \"database\",\n00062|     maxAge: 30 * 24 * 60 * 60, // 30 days\n00063|   },\n00064|   \n00065|   pages: {\n00066|     signIn: '/auth/signin',\n00067|     signOut: '/auth/signout',\n00068|     error: '/auth/error',\n00069|   },\n00070|   \n00071|   callbacks: {\n00072|     async session({ session, user }) {\n00073|       if (session?.user && user) {\n00074|         // Fetch fresh user data including premium status\n00075|         const dbUser = await prisma.user.findUnique({\n00076|           where: { id: user.id },\n00077|           select: {\n00078|             id: true,\n00079|             name: true,\n00080|             email: true,\n00081|             image: true,\n00082|             isPremium: true,\n00083|             premiumExpiresAt: true,\n00084|           }\n00085|         })\n00086| \n00087|         if (dbUser) {\n00088|           session.user.id = dbUser.id\n00089|           session.user.email = dbUser.email\n00090|           session.user.name = dbUser.name\n00091|           session.user.image = dbUser.image\n00092|           // Add premium status to session\n00093|           session.user.isPremium = dbUser.isPremium\n00094|           session.user.premiumExpiresAt = dbUser.premiumExpiresAt\n00095|         }\n00096|       }\n00097|       return session\n00098|     },\n00099|   },\n00100|   \n\n(File has more lines. Use 'offset' parameter to read beyond line 100)\n</file>",
+    "metadata": {
+      "preview": "import { NextAuthOptions } from \"next-auth\"\nimport { PrismaAdapter } from \"@auth/prisma-adapter\"\nimport { prisma } from \"@/lib/prisma\"\nimport GoogleProvider from \"next-auth/providers/google\"\nimport CredentialsProvider from \"next-auth/providers/credentials\"\nimport bcrypt from \"bcryptjs\"\n\nexport const authOptions: NextAuthOptions = {\n  adapter: PrismaAdapter(prisma) as any,\n  providers: [\n    // Email/Password authentication\n    CredentialsProvider({\n      name: \"credentials\",\n      credentials: {\n        email: { label: \"Email\", type: \"email\" },\n        password: { label: \"Password\", type: \"password\" }\n      },\n      async authorize(credentials) {\n        if (!credentials?.email || !credentials?.password) {\n          return null"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759434065827,
+      "end": 1759434065829
+    }
+  }
+}

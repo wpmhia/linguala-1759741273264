@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a67121ad00191e5uQiKEfcHy7",
+  "messageID": "msg_9a6711635001nimlrkoACWoL73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01BDxDdeFf998fZ64eyuR5mg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/debug/page.tsx",
+      "content": "import { getServerSession } from \"next-auth\"\nimport { authOptions } from \"@/lib/auth\"\n\nexport default async function DebugPage() {\n  const session = await getServerSession(authOptions)\n  \n  return (\n    <div className=\"p-8 max-w-4xl mx-auto\">\n      <h1 className=\"text-2xl font-bold mb-6\">Authentication Debug</h1>\n      \n      <div className=\"space-y-6\">\n        <div className=\"bg-gray-50 p-4 rounded-lg\">\n          <h2 className=\"text-lg font-semibold mb-2\">Server Session Status</h2>\n          <p className=\"mb-4\">Status: <span className=\"font-mono\">{session ? 'Authenticated' : 'Not authenticated'}</span></p>\n        </div>\n\n        <div className=\"bg-gray-50 p-4 rounded-lg\">\n          <h2 className=\"text-lg font-semibold mb-2\">Session Data</h2>\n          <pre className=\"bg-white p-4 rounded border text-sm overflow-auto\">\n            {JSON.stringify(session, null, 2)}\n          </pre>\n        </div>\n\n        <div className=\"bg-blue-50 p-4 rounded-lg border border-blue-200\">\n          <h3 className=\"font-semibold text-blue-900 mb-2\">Next Steps:</h3>\n          <ul className=\"text-blue-800 space-y-1 text-sm\">\n            <li>• If \"Not authenticated\": Go to <a href=\"/auth/signin\" className=\"underline\">/auth/signin</a></li>\n            <li>• If authenticated but no premium fields: Session callback needs fixing</li>\n            <li>• Check premium fields: isPremium, premiumExpiresAt should be present</li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  )\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/debug/page.tsx",
+      "exists": false
+    },
+    "title": "app/debug/page.tsx",
+    "time": {
+      "start": 1759434062468,
+      "end": 1759434062472
+    }
+  }
+}

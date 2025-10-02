@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a671755c001LLTTEbp7Mzyvys",
+  "messageID": "msg_9a6711635001nimlrkoACWoL73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(debug): add diagnostic page for authentication troubleshooting",
+  "cost": 0.08486925000000001,
+  "tokens": {
+    "input": 1,
+    "output": 209,
+    "reasoning": 0,
+    "cache": {
+      "write": 304,
+      "read": 47668
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6715026001ktiJ7a5ZZrAaEI",
+  "messageID": "msg_9a6711635001nimlrkoACWoL73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The auth configuration looks correct. The issue might be with the Prisma adapter type or the session strategy. Let me also check if there are environment variable issues. Let me check your types first:",
+  "time": {
+    "start": 1759434069095,
+    "end": 1759434069095
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a6715468001EDZ9S7e15YAc92",
+  "messageID": "msg_9a6711635001nimlrkoACWoL73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_0174F61BLzfLRDWH18wBnYVG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/types/next-auth.d.ts"
+    },
+    "output": "<file>\n00001| import NextAuth from \"next-auth\"\n00002| \n00003| declare module \"next-auth\" {\n00004|   interface Session {\n00005|     user: {\n00006|       id: string\n00007|       name?: string | null\n00008|       email?: string | null\n00009|       image?: string | null\n00010|       isPremium?: boolean\n00011|       premiumExpiresAt?: Date | null\n00012|     }\n00013|   }\n00014| \n00015|   interface User {\n00016|     id: string\n00017|     isPremium?: boolean\n00018|     premiumExpiresAt?: Date | null\n00019|   }\n00020| }\n</file>",
+    "metadata": {
+      "preview": "import NextAuth from \"next-auth\"\n\ndeclare module \"next-auth\" {\n  interface Session {\n    user: {\n      id: string\n      name?: string | null\n      email?: string | null\n      image?: string | null\n      isPremium?: boolean\n      premiumExpiresAt?: Date | null\n    }\n  }\n\n  interface User {\n    id: string\n    isPremium?: boolean\n    premiumExpiresAt?: Date | null\n  }\n}"
+    },
+    "title": "types/next-auth.d.ts",
+    "time": {
+      "start": 1759434069750,
+      "end": 1759434069754
+    }
+  }
+}

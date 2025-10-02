@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a65939cd00150OqzGzgV3dkYY",
+  "messageID": "msg_9a658f325001nRPtF1CaNSll60",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "First, let me check the current Prisma schema and update it for proper NextAuth integration:",
+  "time": {
+    "start": 1759432490155,
+    "end": 1759432490155
+  }
+}

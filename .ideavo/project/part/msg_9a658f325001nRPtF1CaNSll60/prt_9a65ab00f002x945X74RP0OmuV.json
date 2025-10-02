@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a65ab00f002x945X74RP0OmuV",
+  "messageID": "msg_9a658f325001nRPtF1CaNSll60",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01PxGVnqQkUt8iypC3k28yQm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/types/next-auth.d.ts",
+      "oldString": "import NextAuth from \"next-auth\"\n\ndeclare module \"next-auth\" {\n  interface Session {\n    user: {\n      id: string\n      name?: string | null\n      email?: string | null\n      image?: string | null\n    }\n  }\n\n  interface User {\n    id: string\n  }\n}",
+      "newString": "import NextAuth from \"next-auth\"\n\ndeclare module \"next-auth\" {\n  interface Session {\n    user: {\n      id: string\n      name?: string | null\n      email?: string | null\n      image?: string | null\n      isPremium?: boolean\n      premiumExpiresAt?: Date | null\n    }\n  }\n\n  interface User {\n    id: string\n    isPremium?: boolean\n    premiumExpiresAt?: Date | null\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/types/next-auth.d.ts\n===================================================================\n--- /home/user/project/types/next-auth.d.ts\n+++ /home/user/project/types/next-auth.d.ts\n@@ -6,11 +6,15 @@\n       id: string\n       name?: string | null\n       email?: string | null\n       image?: string | null\n+      isPremium?: boolean\n+      premiumExpiresAt?: Date | null\n     }\n   }\n \n   interface User {\n     id: string\n+    isPremium?: boolean\n+    premiumExpiresAt?: Date | null\n   }\n }\n\\ No newline at end of file\n"
+    },
+    "title": "types/next-auth.d.ts",
+    "time": {
+      "start": 1759432587528,
+      "end": 1759432587530
+    }
+  }
+}

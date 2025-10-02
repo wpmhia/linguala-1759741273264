@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a65968de001Qb0PZbo2PQzMqp",
+  "messageID": "msg_9a658f325001nRPtF1CaNSll60",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01JttVcJxYWjLdu512utkC8s",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm install bcryptjs @types/bcryptjs",
+      "description": "Install bcryptjs for password hashing"
+    },
+    "output": "npm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 4 packages, removed 4 packages, changed 8 packages, and audited 442 packages in 3s\n\n74 packages are looking for funding\n  run `npm fund` for details\n\n8 vulnerabilities (3 low, 3 moderate, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n",
+    "metadata": {
+      "output": "npm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 4 packages, removed 4 packages, changed 8 packages, and audited 442 packages in 3s\n\n74 packages are looking for funding\n  run `npm fund` for details\n\n8 vulnerabilities (3 low, 3 moderate, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n",
+      "exit": 0,
+      "description": "Install bcryptjs for password hashing"
+    },
+    "title": "npm install bcryptjs @types/bcryptjs",
+    "time": {
+      "start": 1759432502063,
+      "end": 1759432505154
+    }
+  }
+}

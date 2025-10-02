@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a65ac517001mTeIGezEHTzRr2",
+  "messageID": "msg_9a658f325001nRPtF1CaNSll60",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01FrznAJj3r6evSk4icSA2pV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/auth/register/route.ts",
+      "content": "import { NextRequest, NextResponse } from \"next/server\"\nimport { registerUser } from \"@/lib/auth\"\n\nexport async function POST(req: NextRequest) {\n  try {\n    const { email, password, name } = await req.json()\n\n    if (!email || !password) {\n      return NextResponse.json(\n        { error: \"Email and password are required\" },\n        { status: 400 }\n      )\n    }\n\n    // Basic email validation\n    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/\n    if (!emailRegex.test(email)) {\n      return NextResponse.json(\n        { error: \"Invalid email format\" },\n        { status: 400 }\n      )\n    }\n\n    // Basic password validation\n    if (password.length < 6) {\n      return NextResponse.json(\n        { error: \"Password must be at least 6 characters long\" },\n        { status: 400 }\n      )\n    }\n\n    const result = await registerUser(email, password, name)\n\n    if (result.success) {\n      return NextResponse.json(\n        { message: \"User registered successfully\", user: result.user },\n        { status: 201 }\n      )\n    } else {\n      return NextResponse.json(\n        { error: result.error },\n        { status: 400 }\n      )\n    }\n  } catch (error) {\n    console.error(\"Registration API error:\", error)\n    return NextResponse.json(\n      { error: \"Internal server error\" },\n      { status: 500 }\n    )\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/api/auth/register/route.ts",
+      "exists": false
+    },
+    "title": "app/api/auth/register/route.ts",
+    "time": {
+      "start": 1759432594512,
+      "end": 1759432594516
+    }
+  }
+}

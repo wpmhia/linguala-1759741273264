@@ -1,0 +1,7 @@
+{
+  "id": "prt_9a658f0cb001Xr6nrPTwmd1PHO",
+  "type": "text",
+  "text": "We want to use NextAuth.js with the Neon database. There is a login and sign-up option. People can use Google OAuth or create an account with an email and password. When logged in, the premium features will be accessible.",
+  "messageID": "msg_9a658f0ca001yZh6NIu15uaB5Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

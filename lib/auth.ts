@@ -2,60 +2,53 @@ import { NextAuthOptions } from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "@/lib/prisma"
 import GoogleProvider from "next-auth/providers/google"
-import EmailProvider from "next-auth/providers/email"
 import CredentialsProvider from "next-auth/providers/credentials"
+import bcrypt from "bcryptjs"
 
 export const authOptions: NextAuthOptions = {
-  // Comment out adapter for JWT session strategy
-  // adapter: PrismaAdapter(prisma) as any,
+  adapter: PrismaAdapter(prisma) as any,
   providers: [
-    // Email-based account creation (no password needed)
+    // Email/Password authentication
     CredentialsProvider({
-      name: "Email Account",
+      name: "credentials",
       credentials: {
-        email: { label: "Email", type: "email", placeholder: "your@email.com" }
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        console.log("Credentials provider called with:", credentials)
-        
-        // Accept any valid email and create account automatically
-        if (credentials?.email && credentials.email.includes('@')) {
-          const emailParts = credentials.email.split('@')
-          const username = emailParts[0]
-          const domain = emailParts[1]
-          
-          const user = {
-            id: `email_${credentials.email.replace(/[^a-zA-Z0-9]/g, '_')}`,
-            email: credentials.email,
-            name: username.charAt(0).toUpperCase() + username.slice(1),
-            image: null,
-          }
-          
-          console.log("Creating user:", user)
-          return user
+        if (!credentials?.email || !credentials?.password) {
+          return null
         }
-        
-        console.log("Invalid email provided:", credentials?.email)
-        return null
+
+        const user = await prisma.user.findUnique({
+          where: {
+            email: credentials.email
+          }
+        })
+
+        if (!user || !user.password) {
+          return null
+        }
+
+        const isPasswordValid = await bcrypt.compare(
+          credentials.password,
+          user.password
+        )
+
+        if (!isPasswordValid) {
+          return null
+        }
+
+        return {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          image: user.image,
+        }
       }
     }),
     
-    // Email provider - only enable if SMTP is configured
-    ...(process.env.EMAIL_SERVER_HOST ? [
-      EmailProvider({
-        server: {
-          host: process.env.EMAIL_SERVER_HOST,
-          port: process.env.EMAIL_SERVER_PORT,
-          auth: {
-            user: process.env.EMAIL_SERVER_USER,
-            pass: process.env.EMAIL_SERVER_PASSWORD,
-          },
-        },
-        from: process.env.EMAIL_FROM,
-      })
-    ] : []),
-    
-    // Google OAuth provider - only enable if credentials are configured
+    // Google OAuth provider
     ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [
       GoogleProvider({
         clientId: process.env.GOOGLE_CLIENT_ID,
@@ -65,7 +58,7 @@ export const authOptions: NextAuthOptions = {
   ],
   
   session: {
-    strategy: "jwt",
+    strategy: "database",
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   
@@ -73,32 +66,33 @@ export const authOptions: NextAuthOptions = {
     signIn: '/auth/signin',
     signOut: '/auth/signout',
     error: '/auth/error',
-    verifyRequest: '/auth/verify-request',
   },
   
   callbacks: {
-    async jwt({ token, user, account }) {
-      if (user) {
-        // For new OAuth users, generate a consistent ID
-        if (account?.provider === 'google') {
-          token.id = `google_${user.id}`
-        } else if (account?.provider === 'credentials') {
-          token.id = user.id
-        } else {
-          token.id = user.id || `user_${Date.now()}`
+    async session({ session, user }) {
+      if (session?.user && user) {
+        // Fetch fresh user data including premium status
+        const dbUser = await prisma.user.findUnique({
+          where: { id: user.id },
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            image: true,
+            isPremium: true,
+            premiumExpiresAt: true,
+          }
+        })
+
+        if (dbUser) {
+          session.user.id = dbUser.id
+          session.user.email = dbUser.email
+          session.user.name = dbUser.name
+          session.user.image = dbUser.image
+          // Add premium status to session
+          session.user.isPremium = dbUser.isPremium
+          session.user.premiumExpiresAt = dbUser.premiumExpiresAt
         }
-        token.email = user.email
-        token.name = user.name
-        token.image = user.image
-      }
-      return token
-    },
-    async session({ session, token }) {
-      if (session?.user && token) {
-        session.user.id = token.id as string
-        session.user.email = token.email as string
-        session.user.name = token.name as string
-        session.user.image = token.image as string
       }
       return session
     },
@@ -109,4 +103,36 @@ export const authOptions: NextAuthOptions = {
       console.log(`New user created: ${user.email}`)
     },
   },
+}
+
+// Helper function to register new users
+export async function registerUser(email: string, password: string, name?: string) {
+  try {
+    // Check if user already exists
+    const existingUser = await prisma.user.findUnique({
+      where: { email }
+    })
+
+    if (existingUser) {
+      throw new Error("User already exists")
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 12)
+
+    // Create user
+    const user = await prisma.user.create({
+      data: {
+        email,
+        password: hashedPassword,
+        name: name || email.split('@')[0],
+        isPremium: false, // New users start with free tier
+      }
+    })
+
+    return { success: true, user: { id: user.id, email: user.email, name: user.name } }
+  } catch (error) {
+    console.error("Registration error:", error)
+    return { success: false, error: error instanceof Error ? error.message : "Registration failed" }
+  }
 }

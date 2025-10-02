@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a6594ee10012lDR8UQ95SvqSU",
+  "messageID": "msg_9a658f325001nRPtF1CaNSll60",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_0161gnaKAFCkFmgso5caAsRZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/prisma/schema.prisma",
+      "oldString": "model User {\n  id                 String               @id @default(cuid())\n  name               String?\n  email              String?              @unique\n  emailVerified      DateTime?\n  image              String?\n  createdAt          DateTime             @default(now())\n  updatedAt          DateTime             @updatedAt\n  accounts           Account[]\n  glossaryEntries    GlossaryEntry[]\n  sessions           Session[]\n  translations       Translation[]\n  translationHistory TranslationHistory[]\n\n  @@map(\"users\")\n}",
+      "newString": "model User {\n  id                 String               @id @default(cuid())\n  name               String?\n  email              String?              @unique\n  emailVerified      DateTime?\n  image              String?\n  password           String?              // For email/password auth\n  isPremium          Boolean              @default(false)\n  premiumExpiresAt   DateTime?\n  createdAt          DateTime             @default(now())\n  updatedAt          DateTime             @updatedAt\n  accounts           Account[]\n  glossaryEntries    GlossaryEntry[]\n  sessions           Session[]\n  translations       Translation[]\n  translationHistory TranslationHistory[]\n\n  @@map(\"users\")\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/prisma/schema.prisma\n===================================================================\n--- /home/user/project/prisma/schema.prisma\n+++ /home/user/project/prisma/schema.prisma\n@@ -39,8 +39,11 @@\n name               String?\n email              String?              @unique\n emailVerified      DateTime?\n image              String?\n+password           String?              // For email/password auth\n+isPremium          Boolean              @default(false)\n+premiumExpiresAt   DateTime?\n createdAt          DateTime             @default(now())\n updatedAt          DateTime             @updatedAt\n accounts           Account[]\n glossaryEntries    GlossaryEntry[]\n"
+    },
+    "title": "prisma/schema.prisma",
+    "time": {
+      "start": 1759432498202,
+      "end": 1759432498215
+    }
+  }
+}

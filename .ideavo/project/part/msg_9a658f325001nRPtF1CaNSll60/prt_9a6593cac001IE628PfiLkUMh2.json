@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a6593cac001IE628PfiLkUMh2",
+  "messageID": "msg_9a658f325001nRPtF1CaNSll60",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01TrDkCigV4VyzF3jRRoAtMu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/prisma/schema.prisma"
+    },
+    "output": "<file>\n00001| generator client {\n00002|   provider = \"prisma-client-js\"\n00003| }\n00004| \n00005| datasource db {\n00006|   provider  = \"postgresql\"\n00007|   url       = env(\"DATABASE_URL\")\n00008|   directUrl = env(\"DIRECT_URL\")\n00009| }\n00010| \n00011| model Account {\n00012|   id                String  @id @default(cuid())\n00013|   userId            String\n00014|   type              String\n00015|   provider          String\n00016|   providerAccountId String\n00017|   refresh_token     String?\n00018|   access_token      String?\n00019|   expires_at        Int?\n00020|   token_type        String?\n00021|   scope             String?\n00022|   id_token          String?\n00023|   session_state     String?\n00024|   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)\n00025| \n00026|   @@unique([provider, providerAccountId])\n00027| }\n00028| \n00029| model Session {\n00030|   id           String   @id @default(cuid())\n00031|   sessionToken String   @unique\n00032|   userId       String\n00033|   expires      DateTime\n00034|   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)\n00035| }\n00036| \n00037| model User {\n00038|   id                 String               @id @default(cuid())\n00039|   name               String?\n00040|   email              String?              @unique\n00041|   emailVerified      DateTime?\n00042|   image              String?\n00043|   createdAt          DateTime             @default(now())\n00044|   updatedAt          DateTime             @updatedAt\n00045|   accounts           Account[]\n00046|   glossaryEntries    GlossaryEntry[]\n00047|   sessions           Session[]\n00048|   translations       Translation[]\n00049|   translationHistory TranslationHistory[]\n00050| \n00051|   @@map(\"users\")\n00052| }\n00053| \n00054| model VerificationToken {\n00055|   identifier String\n00056|   token      String   @unique\n00057|   expires    DateTime\n00058| \n00059|   @@unique([identifier, token])\n00060| }\n00061| \n00062| model Translation {\n00063|   id             String   @id @default(cuid())\n00064|   sourceText     String\n00065|   translatedText String\n00066|   sourceLang     String\n00067|   targetLang     String\n00068|   domain         String   @default(\"general\")\n00069|   userId         String\n00070|   createdAt      DateTime @default(now())\n00071|   updatedAt      DateTime @updatedAt\n00072|   user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)\n00073| \n00074|   @@index([userId, createdAt])\n00075| }\n00076| \n00077| model GlossaryEntry {\n00078|   id        String   @id @default(cuid())\n00079|   source    String\n00080|   target    String\n00081|   domain    String   @default(\"general\")\n00082|   notes     String?\n00083|   userId    String\n00084|   createdAt DateTime @default(now())\n00085|   updatedAt DateTime @updatedAt\n00086|   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)\n00087| \n00088|   @@unique([userId, source, domain])\n00089|   @@index([userId, domain])\n00090| }\n00091| \n00092| model TranslationHistory {\n00093|   id             String   @id @default(cuid())\n00094|   sourceText     String\n00095|   translatedText String\n00096|   sourceLang     String\n00097|   targetLang     String\n00098|   domain         String   @default(\"general\")\n00099|   userId         String\n00100|   createdAt      DateTime @default(now())\n00101|   user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)\n00102| \n00103|   @@index([userId, createdAt])\n00104| }\n00105| \n</file>",
+    "metadata": {
+      "preview": "generator client {\n  provider = \"prisma-client-js\"\n}\n\ndatasource db {\n  provider  = \"postgresql\"\n  url       = env(\"DATABASE_URL\")\n  directUrl = env(\"DIRECT_URL\")\n}\n\nmodel Account {\n  id                String  @id @default(cuid())\n  userId            String\n  type              String\n  provider          String\n  providerAccountId String\n  refresh_token     String?\n  access_token      String?\n  expires_at        Int?\n  token_type        String?"
+    },
+    "title": "prisma/schema.prisma",
+    "time": {
+      "start": 1759432490733,
+      "end": 1759432490737
+    }
+  }
+}

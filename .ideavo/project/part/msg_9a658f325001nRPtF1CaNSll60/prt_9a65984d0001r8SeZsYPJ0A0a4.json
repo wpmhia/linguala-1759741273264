@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a65984d0001r8SeZsYPJ0A0a4",
+  "messageID": "msg_9a658f325001nRPtF1CaNSll60",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_017tbitDdX6NdZb2WdiZHcCo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npx prisma migrate dev --name add_premium_and_password_fields",
+      "description": "Create migration for premium and password fields"
+    },
+    "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\nError: Prisma Migrate has detected that the environment is non-interactive, which is not supported.\n\n`prisma migrate dev` is an interactive command designed to create new migrations and evolve the database in development.\nTo apply existing migrations in deployments, use prisma migrate deploy.\nSee https://www.prisma.io/docs/reference/api-reference/command-reference#migrate-deploy\n",
+    "metadata": {
+      "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\nError: Prisma Migrate has detected that the environment is non-interactive, which is not supported.\n\n`prisma migrate dev` is an interactive command designed to create new migrations and evolve the database in development.\nTo apply existing migrations in deployments, use prisma migrate deploy.\nSee https://www.prisma.io/docs/reference/api-reference/command-reference#migrate-deploy\n",
+      "exit": 1,
+      "description": "Create migration for premium and password fields"
+    },
+    "title": "npx prisma migrate dev --name add_premium_and_password_fields",
+    "time": {
+      "start": 1759432509396,
+      "end": 1759432528675
+    }
+  }
+}

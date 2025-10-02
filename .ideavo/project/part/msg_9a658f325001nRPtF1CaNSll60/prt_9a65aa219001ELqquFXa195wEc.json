@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a65aa219001ELqquFXa195wEc",
+  "messageID": "msg_9a658f325001nRPtF1CaNSll60",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Hcs3gJPVy3Jd8wPo1qKqRK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/types/next-auth.d.ts"
+    },
+    "output": "<file>\n00001| import NextAuth from \"next-auth\"\n00002| \n00003| declare module \"next-auth\" {\n00004|   interface Session {\n00005|     user: {\n00006|       id: string\n00007|       name?: string | null\n00008|       email?: string | null\n00009|       image?: string | null\n00010|     }\n00011|   }\n00012| \n00013|   interface User {\n00014|     id: string\n00015|   }\n00016| }\n</file>",
+    "metadata": {
+      "preview": "import NextAuth from \"next-auth\"\n\ndeclare module \"next-auth\" {\n  interface Session {\n    user: {\n      id: string\n      name?: string | null\n      email?: string | null\n      image?: string | null\n    }\n  }\n\n  interface User {\n    id: string\n  }\n}"
+    },
+    "title": "types/next-auth.d.ts",
+    "time": {
+      "start": 1759432582234,
+      "end": 1759432582235
+    }
+  }
+}

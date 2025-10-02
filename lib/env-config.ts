@@ -1,6 +1,11 @@
 // IMPORTANT: When adding new env variables to the codebase, update this array
 export const ENV_VARIABLES: EnvVariable[] = [
-  // Add your active environment variables here
+  {
+    name: "DASHSCOPE_API_KEY",
+    description: "Alibaba Cloud DashScope API key for Qwen translation model access",
+    required: false,
+    instructions: "Go to [Alibaba Cloud Console](https://bailian.console.aliyun.com/) → Model Studio → Create API Key.\n Copy the generated API key that starts with 'sk-'.\n This is required for translation functionality."
+  }
 ];
 
 // SUPABASE/DATABASE VARIABLES (uncomment and add to ENV_VARIABLES array when adding database features)

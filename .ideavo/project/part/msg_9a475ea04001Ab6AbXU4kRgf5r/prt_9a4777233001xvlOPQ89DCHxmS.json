@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4777233001xvlOPQ89DCHxmS",
+  "messageID": "msg_9a475ea04001Ab6AbXU4kRgf5r",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01D7E9w35weFAsy6cnojXDZN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/page.tsx",
+      "oldString": "export default function Home() {\n  return (\n    <div\n      style={{\n        maxWidth: 1280,\n        margin: '0 auto',\n        padding: '2rem',\n        textAlign: 'center',\n      }}\n    >\n      Start prompting.\n    </div>\n  );\n}",
+      "newString": "import Translator from '@/components/translator'\n\nexport default function Home() {\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100\">\n      <Translator />\n    </div>\n  );\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/page.tsx\n===================================================================\n--- /home/user/project/app/page.tsx\n+++ /home/user/project/app/page.tsx\n@@ -1,14 +1,9 @@\n+import Translator from '@/components/translator'\n+\n export default function Home() {\n   return (\n-    <div\n-      style={{\n-        maxWidth: 1280,\n-        margin: '0 auto',\n-        padding: '2rem',\n-        textAlign: 'center',\n-      }}\n-    >\n-      Start prompting.\n+    <div className=\"min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100\">\n+      <Translator />\n     </div>\n   );\n }\n"
+    },
+    "title": "app/page.tsx",
+    "time": {
+      "start": 1759400918104,
+      "end": 1759400918108
+    }
+  }
+}

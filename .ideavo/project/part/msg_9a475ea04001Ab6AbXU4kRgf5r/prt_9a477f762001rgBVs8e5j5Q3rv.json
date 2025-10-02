@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a477f762001rgBVs8e5j5Q3rv",
+  "messageID": "msg_9a475ea04001Ab6AbXU4kRgf5r",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_014t16jD5Z8NyZ45KWWgjx9p",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/ui/textarea.tsx"
+    },
+    "output": "<file>\n00001| import * as React from 'react';\n00002| \n00003| import { cn } from '@/lib/utils';\n00004| \n00005| export interface TextareaProps\n00006|   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}\n00007| \n00008| const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(\n00009|   ({ className, ...props }, ref) => {\n00010|     return (\n00011|       <textarea\n00012|         className={cn(\n00013|           'flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',\n00014|           className\n00015|         )}\n00016|         ref={ref}\n00017|         {...props}\n00018|       />\n00019|     );\n00020|   }\n00021| );\n00022| Textarea.displayName = 'Textarea';\n00023| \n00024| export { Textarea };\n00025| \n</file>",
+    "metadata": {
+      "preview": "import * as React from 'react';\n\nimport { cn } from '@/lib/utils';\n\nexport interface TextareaProps\n  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}\n\nconst Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(\n  ({ className, ...props }, ref) => {\n    return (\n      <textarea\n        className={cn(\n          'flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',\n          className\n        )}\n        ref={ref}\n        {...props}\n      />\n    );\n  }"
+    },
+    "title": "components/ui/textarea.tsx",
+    "time": {
+      "start": 1759400949946,
+      "end": 1759400949948
+    }
+  }
+}

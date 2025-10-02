@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a4780483001GNzjTdvBKi051V",
+  "messageID": "msg_9a475ea04001Ab6AbXU4kRgf5r",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01DGggakmgB6URoxEaiUAxbv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/ui/sonner.tsx"
+    },
+    "output": "<file>\n00001| 'use client';\n00002| \n00003| import { useTheme } from 'next-themes';\n00004| import { Toaster as Sonner } from 'sonner';\n00005| \n00006| type ToasterProps = React.ComponentProps<typeof Sonner>;\n00007| \n00008| const Toaster = ({ ...props }: ToasterProps) => {\n00009|   const { theme = 'system' } = useTheme();\n00010| \n00011|   return (\n00012|     <Sonner\n00013|       theme={theme as ToasterProps['theme']}\n00014|       className=\"toaster group\"\n00015|       toastOptions={{\n00016|         classNames: {\n00017|           toast:\n00018|             'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg',\n00019|           description: 'group-[.toast]:text-muted-foreground',\n00020|           actionButton:\n00021|             'group-[.toast]:bg-primary group-[.toast]:text-primary-foreground',\n00022|           cancelButton:\n00023|             'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground',\n00024|         },\n00025|       }}\n00026|       {...props}\n00027|     />\n00028|   );\n00029| };\n00030| \n00031| export { Toaster };\n00032| \n</file>",
+    "metadata": {
+      "preview": "'use client';\n\nimport { useTheme } from 'next-themes';\nimport { Toaster as Sonner } from 'sonner';\n\ntype ToasterProps = React.ComponentProps<typeof Sonner>;\n\nconst Toaster = ({ ...props }: ToasterProps) => {\n  const { theme = 'system' } = useTheme();\n\n  return (\n    <Sonner\n      theme={theme as ToasterProps['theme']}\n      className=\"toaster group\"\n      toastOptions={{\n        classNames: {\n          toast:\n            'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg',\n          description: 'group-[.toast]:text-muted-foreground',\n          actionButton:"
+    },
+    "title": "components/ui/sonner.tsx",
+    "time": {
+      "start": 1759400953245,
+      "end": 1759400953249
+    }
+  }
+}

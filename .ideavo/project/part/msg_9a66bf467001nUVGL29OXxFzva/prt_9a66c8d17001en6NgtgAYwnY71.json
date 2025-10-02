@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a66c8d17001en6NgtgAYwnY71",
+  "messageID": "msg_9a66bf467001nUVGL29OXxFzva",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now visit http://localhost:3000/debug-session to see the session data and what's happening. This will help us understand:\n\n1. If the session includes the premium fields\n2. What the actual database user data looks like\n3. If there's a mismatch between session and database\n\nAfter checking that, we can also temporarily grant your user premium access to test if the premium features show up correctly. \n\nCan you visit http://localhost:3000/debug-session and share what you see?",
+  "time": {
+    "start": 1759433758410,
+    "end": 1759433758410
+  }
+}

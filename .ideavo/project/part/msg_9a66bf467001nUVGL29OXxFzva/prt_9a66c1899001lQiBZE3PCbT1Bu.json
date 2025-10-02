@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a66c1899001lQiBZE3PCbT1Bu",
+  "messageID": "msg_9a66bf467001nUVGL29OXxFzva",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The issue is that the session doesn't include the premium fields (`isPremium` and `premiumExpiresAt`) that are needed to determine premium status. Let me check the auth configuration to see if the session callback is properly including these fields.",
+  "time": {
+    "start": 1759433727580,
+    "end": 1759433727580
+  }
+}

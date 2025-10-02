@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a66c52a5001dYB8SbaLCfmBdl",
+  "messageID": "msg_9a66bf467001nUVGL29OXxFzva",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_018mjTBeUwMrdQjUsmfkz23e",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/debug-session/page.tsx",
+      "content": "\"use client\"\n\nimport { useSession } from \"next-auth/react\"\nimport { useState, useEffect } from \"react\"\n\nexport default function DebugSession() {\n  const { data: session, status } = useSession()\n  const [dbUser, setDbUser] = useState<any>(null)\n\n  useEffect(() => {\n    if (session?.user?.id) {\n      fetch(`/api/user/${session.user.id}`)\n        .then(res => res.json())\n        .then(data => setDbUser(data))\n        .catch(err => console.error('Error fetching user:', err))\n    }\n  }, [session?.user?.id])\n\n  return (\n    <div className=\"max-w-4xl mx-auto p-8\">\n      <h1 className=\"text-2xl font-bold mb-6\">Session Debug</h1>\n      \n      <div className=\"space-y-6\">\n        <div className=\"bg-gray-50 p-4 rounded-lg\">\n          <h2 className=\"text-lg font-semibold mb-2\">Session Status</h2>\n          <p>Status: {status}</p>\n        </div>\n\n        <div className=\"bg-gray-50 p-4 rounded-lg\">\n          <h2 className=\"text-lg font-semibold mb-2\">Session Data</h2>\n          <pre className=\"text-sm bg-white p-4 rounded border overflow-auto\">\n            {JSON.stringify(session, null, 2)}\n          </pre>\n        </div>\n\n        <div className=\"bg-gray-50 p-4 rounded-lg\">\n          <h2 className=\"text-lg font-semibold mb-2\">Database User</h2>\n          <pre className=\"text-sm bg-white p-4 rounded border overflow-auto\">\n            {JSON.stringify(dbUser, null, 2)}\n          </pre>\n        </div>\n      </div>\n    </div>\n  )\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/debug-session/page.tsx",
+      "exists": false
+    },
+    "title": "app/debug-session/page.tsx",
+    "time": {
+      "start": 1759433746680,
+      "end": 1759433746682
+    }
+  }
+}

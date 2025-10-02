@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a66c7cd2001BKkYey6YEVJRc0",
+  "messageID": "msg_9a66bf467001nUVGL29OXxFzva",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01V9JPbFavBQAvQTuS36gtvu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/user/[id]/route.ts",
+      "content": "import { NextRequest, NextResponse } from 'next/server'\nimport { prisma } from '@/lib/prisma'\n\nexport async function GET(\n  request: NextRequest,\n  { params }: { params: { id: string } }\n) {\n  try {\n    const user = await prisma.user.findUnique({\n      where: { id: params.id },\n      select: {\n        id: true,\n        email: true,\n        name: true,\n        image: true,\n        isPremium: true,\n        premiumExpiresAt: true,\n        createdAt: true,\n        updatedAt: true,\n      }\n    })\n\n    if (!user) {\n      return NextResponse.json({ error: 'User not found' }, { status: 404 })\n    }\n\n    return NextResponse.json(user)\n  } catch (error) {\n    console.error('Error fetching user:', error)\n    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/api/user/[id]/route.ts",
+      "exists": false
+    },
+    "title": "app/api/user/[id]/route.ts",
+    "time": {
+      "start": 1759433754026,
+      "end": 1759433754027
+    }
+  }
+}

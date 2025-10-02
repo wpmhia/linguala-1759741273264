@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a66c28dd002uFCV47v62D9BG7",
+  "messageID": "msg_9a66bf467001nUVGL29OXxFzva",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The auth configuration looks correct - it should be including the premium fields in the session. The issue might be that the user's premium status in the database is not set. Let me check what's happening by first checking if the user exists and their current premium status.",
+  "time": {
+    "start": 1759433731653,
+    "end": 1759433731653
+  }
+}

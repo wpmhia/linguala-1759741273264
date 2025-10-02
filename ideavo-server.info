@@ -4,17 +4,188 @@ $ next dev
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2.2s
- ✓ Compiled /middleware in 180ms
+ ✓ Ready in 2.1s
+ ✓ Compiled /middleware in 156ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
- ✓ Compiled / in 4.1s (811 modules)
- GET / 200 in 4971ms
- ✓ Compiled in 961ms (418 modules)
- GET / 200 in 43ms
+ ✓ Compiled / in 4s (811 modules)
+ GET / 200 in 4719ms
+ ✓ Compiled in 809ms (418 modules)
+ GET / 200 in 35ms
  ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
  ○ Compiling /api/auth/[...nextauth] ...
- ✓ Compiled /api/auth/[...nextauth] in 751ms (633 modules)
- GET /api/auth/session 200 in 1509ms
- GET /api/auth/session 200 in 110ms
+ ✓ Compiled /api/auth/[...nextauth] in 795ms (633 modules)
+ GET /api/auth/session 200 in 1544ms
+ GET /api/auth/session 200 in 26ms
+ ✓ Compiled /api/translate in 470ms (659 modules)
+Translation request body: { text: 'Is', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is ', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'I', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is d', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is du', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is d', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is di', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 1428ms
+ POST /api/translate 200 in 1076ms
+ POST /api/translate 200 in 1697ms
+ POST /api/translate 200 in 1409ms
+ POST /api/translate 200 in 1017ms
+Translation request body: { text: 'Is dit', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is dit ', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is dit g', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 988ms
+Translation request body: { text: 'Is dit go', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 1004ms
+ POST /api/translate 200 in 538ms
+ POST /api/translate 200 in 505ms
+Translation request body: { text: 'Is dit goe', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 517ms
+Translation request body: { text: 'Is dit goed', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 571ms
+Translation request body: { text: 'Is dit goed ', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 528ms
+Translation request body: { text: 'Is dit goed f', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 567ms
+ POST /api/translate 200 in 549ms
+Translation request body: { text: 'Is dit goed ', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 579ms
+Translation request body: { text: 'Is dit goed g', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is dit goed ge', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 540ms
+Translation request body: { text: 'Is dit goed ges', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 507ms
+Translation request body: { text: 'Is dit goed gesc', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 545ms
+Translation request body: { text: 'Is dit goed gescr', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 557ms
+ POST /api/translate 200 in 604ms
+ POST /api/translate 200 in 586ms
+Translation request body: { text: 'Is dit goed gesc', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is dit goed gesch', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: { text: 'Is dit goed geschr', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 531ms
+Translation request body: { text: 'Is dit goed geschre', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 538ms
+Translation request body: { text: 'Is dit goed geschrev', sourceLang: 'auto', targetLang: 'tr' }
+ POST /api/translate 200 in 551ms
+ POST /api/translate 200 in 509ms
+Translation request body: { text: 'Is dit goed geschreve', sourceLang: 'auto', targetLang: 'tr' }
+Translation request body: {
+  text: 'Is dit goed geschreven',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+Translation request body: {
+  text: 'Is dit goed geschreven ',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+Translation request body: {
+  text: 'Is dit goed geschreven i',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 577ms
+Translation request body: {
+  text: 'Is dit goed geschreven in',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+Translation request body: {
+  text: 'Is dit goed geschreven in ',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 542ms
+ POST /api/translate 200 in 570ms
+ POST /api/translate 200 in 554ms
+Translation request body: {
+  text: 'Is dit goed geschreven in t',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 567ms
+ POST /api/translate 200 in 980ms
+ POST /api/translate 200 in 603ms
+Translation request body: {
+  text: 'Is dit goed geschreven in tr',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 1007ms
+Translation request body: {
+  text: 'Is dit goed geschreven in t',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 604ms
+Translation request body: {
+  text: 'Is dit goed geschreven in tr',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 547ms
+Translation request body: {
+  text: 'Is dit goed geschreven in t',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 616ms
+Translation request body: {
+  text: 'Is dit goed geschreven in tu',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 602ms
+Translation request body: {
+  text: 'Is dit goed geschreven in tur',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+Translation request body: {
+  text: 'Is dit goed geschreven in turk',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+Translation request body: {
+  text: 'Is dit goed geschreven in turks',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 598ms
+ POST /api/translate 200 in 561ms
+Translation request body: {
+  text: 'Is dit goed geschreven in turks?',
+  sourceLang: 'auto',
+  targetLang: 'tr'
+}
+ POST /api/translate 200 in 562ms
+ POST /api/translate 200 in 596ms
+ POST /api/translate 200 in 604ms
+ ○ Compiling /auth/signup ...
+ ✓ Compiled /auth/signup in 1325ms (1135 modules)
+ GET /auth/signup 200 in 1617ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /api/auth/session 200 in 74ms
+ GET /api/auth/session 200 in 10ms
+ ✓ Compiled /api/auth/register in 336ms (698 modules)
+ POST /api/auth/register 201 in 2997ms
+ GET /api/auth/providers 200 in 40ms
+ GET /api/auth/csrf 200 in 14ms
+ POST /api/auth/callback/credentials 200 in 15ms
+ GET /api/auth/session 200 in 28ms
+ GET /api/auth/providers 200 in 32ms
+ GET /api/auth/signin?callbackUrl=https%3A%2F%2F4000-iltr9ta76gim4u483kakt.e2b.app%2F 302 in 13ms
+ ○ Compiling /auth/signin ...
+ ✓ Compiled /auth/signin in 806ms (1143 modules)
+ GET /auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000 200 in 1042ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /api/auth/session 200 in 68ms
+ GET /api/auth/providers 200 in 65ms
+ GET /api/auth/providers 200 in 15ms
+ GET /api/auth/session 200 in 17ms
+ GET /api/auth/providers 200 in 27ms
+ GET /api/auth/csrf 200 in 10ms
+ POST /api/auth/callback/credentials 200 in 12ms
+ GET /api/auth/session 200 in 27ms

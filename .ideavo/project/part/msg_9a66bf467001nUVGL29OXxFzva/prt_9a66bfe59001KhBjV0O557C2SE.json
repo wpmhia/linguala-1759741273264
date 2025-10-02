@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a66bfe59001KhBjV0O557C2SE",
+  "messageID": "msg_9a66bf467001nUVGL29OXxFzva",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The premium features aren't showing consistently because there's an issue with how the premium status is being handled. Let me check the premium features component and the session configuration.",
+  "time": {
+    "start": 1759433720578,
+    "end": 1759433720578
+  }
+}

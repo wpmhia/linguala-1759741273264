@@ -149,10 +149,6 @@ export default function LingualaTranslator() {
         {/* Main Translation Interface */}
         <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
           <CardHeader className="pb-4">
-            <div className="text-center">
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">Official EU Translation Platform</h1>
-              <p className="text-gray-600">Professional translation tools for all 24 official EU languages</p>
-            </div>
           </CardHeader>
 
           <CardContent className="space-y-6">

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6683fdf001OjrxP1CaHO83lu",
+  "messageID": "msg_9a6680466001MICKQ0eec3mZKu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The issue is that the `DASHSCOPE_API_KEY` is missing from your environment variables. This is the Alibaba Cloud API key needed for the Qwen translation model. You need to set this up to enable translation functionality.\n\nYou can check your current environment variables and get setup instructions by visiting: http://localhost:3000/env-check\n\nTo fix the translation issue, you need to:\n\n1. **Get a DashScope API Key:**\n   - Go to [Alibaba Cloud Console](https://bailian.console.aliyun.com/)\n   - Navigate to Model Studio \n   - Create an API Key\n   - Copy the generated API key (starts with 'sk-')\n\n2. **Add it to your `.env` file:**\n   ```\n   DASHSCOPE_API_KEY=sk-your-api-key-here\n   ```\n\n3. **Restart your development server** after adding the environment variable.\n\nOnce you have the API key configured, the translation should work properly for \"Kijk wat ik gemaakt heb het vertaalt gewoon\" and other text.",
+  "time": {
+    "start": 1759433479672,
+    "end": 1759433479672
+  }
+}

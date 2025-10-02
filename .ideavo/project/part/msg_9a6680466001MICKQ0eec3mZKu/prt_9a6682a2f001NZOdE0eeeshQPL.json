@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6682a2f001NZOdE0eeeshQPL",
+  "messageID": "msg_9a6680466001MICKQ0eec3mZKu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The translation is failing because the `DASHSCOPE_API_KEY` environment variable is not configured. Let me check the environment configuration to see if this API key is included in the system.",
+  "time": {
+    "start": 1759433469618,
+    "end": 1759433469618
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6681c67001gY3DZp9l7CMSxL",
+  "messageID": "msg_9a6680466001MICKQ0eec3mZKu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I need to check the translation functionality to see why it's temporarily unavailable. Let me examine the translation API route and related code.",
+  "time": {
+    "start": 1759433465775,
+    "end": 1759433465775
+  }
+}

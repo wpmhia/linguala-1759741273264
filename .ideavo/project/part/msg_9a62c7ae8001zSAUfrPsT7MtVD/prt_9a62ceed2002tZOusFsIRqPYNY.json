@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a62ceed2002tZOusFsIRqPYNY",
+  "messageID": "msg_9a62c7ae8001zSAUfrPsT7MtVD",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "## Google OAuth Setup Issue Analysis\n\nBased on the errors and your reference to the Google OAuth2 documentation, here's what needs to be checked:\n\n### 🔍 **Immediate Steps**:\n\n1. **Visit the auth debug page**: http://localhost:3000/auth-debug\n   - This will show if Google OAuth is properly configured\n\n2. **Check Google Cloud Console settings**:\n\n### 🔧 **Required Google Cloud Console Configuration**:\n\nYou need to verify these settings in your Google Cloud Console:\n\n#### **OAuth 2.0 Client Settings**:\n```\nApplication type: Web application\nName: Linguala (or your preferred name)\n\nAuthorized JavaScript origins:\n- http://localhost:3000\n- https://yourdomain.com (when deployed)\n\nAuthorized redirect URIs:\n- http://localhost:3000/api/auth/callback/google\n- https://yourdomain.com/api/auth/callback/google (when deployed)\n```\n\n### 🚨 **Common Issues**:\n\n1. **Redirect URI Mismatch**: The callback URL must exactly match what's in Google Console\n2. **Client ID/Secret**: Make sure they're copied correctly without extra spaces\n3. **OAuth Consent Screen**: Must be configured for external users\n\n### 📋 **Quick Checklist**:\n\nCan you verify:\n- [ ] Google Cloud Console project has OAuth 2.0 credentials created\n- [ ] Redirect URI includes: `http://localhost:3000/api/auth/callback/google`\n- [ ] OAuth consent screen is configured\n- [ ] Client ID and Secret are correctly copied to `.env`\n\n**Next step**: Visit http://localhost:3000/auth-debug to see the current provider status, then I can help you fix any specific configuration issues.",
+  "time": {
+    "start": 1759429595054,
+    "end": 1759429595054
+  }
+}

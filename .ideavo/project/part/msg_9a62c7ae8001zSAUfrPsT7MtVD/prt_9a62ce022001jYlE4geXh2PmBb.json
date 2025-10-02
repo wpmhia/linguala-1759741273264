@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a62ce022001jYlE4geXh2PmBb",
+  "messageID": "msg_9a62c7ae8001zSAUfrPsT7MtVD",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Fv36NGsv3PoTRJBujwziJ2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/auth-debug/page.tsx"
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { useEffect, useState } from \"react\"\n00004| import { getProviders } from \"next-auth/react\"\n00005| \n00006| export default function AuthDebugPage() {\n00007|   const [providers, setProviders] = useState<any>(null)\n00008|   const [loading, setLoading] = useState(true)\n00009|   const [error, setError] = useState<string | null>(null)\n00010| \n00011|   useEffect(() => {\n00012|     const fetchProviders = async () => {\n00013|       try {\n00014|         console.log(\"Fetching providers...\")\n00015|         const res = await getProviders()\n00016|         console.log(\"Providers response:\", res)\n00017|         setProviders(res)\n00018|       } catch (err) {\n00019|         console.error(\"Error fetching providers:\", err)\n00020|         setError(err instanceof Error ? err.message : \"Unknown error\")\n00021|       } finally {\n00022|         setLoading(false)\n00023|       }\n00024|     }\n00025|     fetchProviders()\n00026|   }, [])\n00027| \n00028|   if (loading) return <div className=\"p-8\">Loading providers...</div>\n00029|   if (error) return <div className=\"p-8 text-red-600\">Error: {error}</div>\n00030| \n00031|   return (\n00032|     <div className=\"p-8\">\n00033|       <h1 className=\"text-2xl font-bold mb-4\">Auth Debug</h1>\n00034|       \n00035|       <div className=\"mb-4\">\n00036|         <h2 className=\"text-lg font-semibold\">Environment Variables:</h2>\n00037|         <pre className=\"bg-gray-100 p-2 text-sm\">\n00038|           GOOGLE_CLIENT_ID: {process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ? \"Set\" : \"Not set (this is normal - it's server-side)\"}\n00039|           NEXTAUTH_URL: {process.env.NEXT_PUBLIC_NEXTAUTH_URL || \"Not set (using default)\"}\n00040|         </pre>\n00041|       </div>\n00042| \n00043|       <div className=\"mb-4\">\n00044|         <h2 className=\"text-lg font-semibold\">Available Providers:</h2>\n00045|         <pre className=\"bg-gray-100 p-2 text-sm\">\n00046|           {JSON.stringify(providers, null, 2)}\n00047|         </pre>\n00048|       </div>\n00049| \n00050|       <div className=\"mb-4\">\n00051|         <h2 className=\"text-lg font-semibold\">Provider Count:</h2>\n00052|         <p>{providers ? Object.keys(providers).length : 0} providers found</p>\n00053|       </div>\n00054| \n00055|       {providers?.google && (\n00056|         <div className=\"bg-green-100 p-4 rounded\">\n00057|           <p className=\"text-green-800\">✅ Google provider is configured!</p>\n00058|           <p className=\"text-sm\">ID: {providers.google.id}</p>\n00059|           <p className=\"text-sm\">Name: {providers.google.name}</p>\n00060|         </div>\n00061|       )}\n00062| \n00063|       {!providers?.google && (\n00064|         <div className=\"bg-red-100 p-4 rounded\">\n00065|           <p className=\"text-red-800\">❌ Google provider is NOT configured</p>\n00066|           <p className=\"text-sm\">This usually means environment variables are missing</p>\n00067|         </div>\n00068|       )}\n00069|     </div>\n00070|   )\n00071| }\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\nimport { getProviders } from \"next-auth/react\"\n\nexport default function AuthDebugPage() {\n  const [providers, setProviders] = useState<any>(null)\n  const [loading, setLoading] = useState(true)\n  const [error, setError] = useState<string | null>(null)\n\n  useEffect(() => {\n    const fetchProviders = async () => {\n      try {\n        console.log(\"Fetching providers...\")\n        const res = await getProviders()\n        console.log(\"Providers response:\", res)\n        setProviders(res)\n      } catch (err) {\n        console.error(\"Error fetching providers:\", err)\n        setError(err instanceof Error ? err.message : \"Unknown error\")"
+    },
+    "title": "app/auth-debug/page.tsx",
+    "time": {
+      "start": 1759429583341,
+      "end": 1759429583343
+    }
+  }
+}

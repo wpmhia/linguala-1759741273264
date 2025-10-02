@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a62cde34001U1MJ5FClCQfXRi",
+  "messageID": "msg_9a62c7ae8001zSAUfrPsT7MtVD",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check the auth debug page to see the provider status:",
+  "time": {
+    "start": 1759429582882,
+    "end": 1759429582882
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a674145b001xd8q1JXxXYKxtj",
+  "messageID": "msg_9a6731d1c001wcURH8Ag2idxr7",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01TNJTJSmatQkt6SySSA3Lia",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && cat .env",
+      "description": "Check current environment variables"
+    },
+    "output": "# Environment variables\n# Add your environment variables here\n\n# Translation Service - Required for the DeepL clone\nDASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n\n# Neon Database - Required for user authentication and data persistence\nDATABASE_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\"\nDIRECT_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\"\n\n# Auth.js - Required for user authentication\nNEXTAUTH_SECRET=IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\nNEXTAUTH_URL=http://localhost:3000\n\n# OAuth Providers (Optional - for social login)\nGOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\nGOOGLE_CLIENT_SECRET=\"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\"\n# GITHUB_CLIENT_ID=\"your-github-client-id\"\n# GITHUB_CLIENT_SECRET=\"your-github-client-secret\"",
+    "metadata": {
+      "output": "# Environment variables\n# Add your environment variables here\n\n# Translation Service - Required for the DeepL clone\nDASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n\n# Neon Database - Required for user authentication and data persistence\nDATABASE_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\"\nDIRECT_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\"\n\n# Auth.js - Required for user authentication\nNEXTAUTH_SECRET=IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\nNEXTAUTH_URL=http://localhost:3000\n\n# OAuth Providers (Optional - for social login)\nGOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\nGOOGLE_CLIENT_SECRET=\"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\"\n# GITHUB_CLIENT_ID=\"your-github-client-id\"\n# GITHUB_CLIENT_SECRET=\"your-github-client-secret\"",
+      "exit": 0,
+      "description": "Check current environment variables"
+    },
+    "title": "cd /home/user/project && cat .env",
+    "time": {
+      "start": 1759434249835,
+      "end": 1759434249847
+    }
+  }
+}

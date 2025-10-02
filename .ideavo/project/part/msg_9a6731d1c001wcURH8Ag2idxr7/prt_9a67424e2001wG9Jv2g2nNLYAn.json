@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a67424e2001wG9Jv2g2nNLYAn",
+  "messageID": "msg_9a6731d1c001wcURH8Ag2idxr7",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01RgaqBfX19BVP3ozuoVfJn2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/env-config.ts",
+      "offset": 70,
+      "limit": 20
+    },
+    "output": "<file>\n00071|   required: boolean\n00072| }\n00073| \n00074| export function checkMissingEnvVars(): string[] {\n00075|   return ENV_VARIABLES.filter(envVar => envVar.required && !process.env[envVar.name]).map(envVar => envVar.name)\n00076| }\n</file>",
+    "metadata": {
+      "preview": "  required: boolean\n}\n\nexport function checkMissingEnvVars(): string[] {\n  return ENV_VARIABLES.filter(envVar => envVar.required && !process.env[envVar.name]).map(envVar => envVar.name)\n}"
+    },
+    "title": "lib/env-config.ts",
+    "time": {
+      "start": 1759434254164,
+      "end": 1759434254165
+    }
+  }
+}

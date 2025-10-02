@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a6732a06001SknJPaLKM6Kcot",
+  "messageID": "msg_9a6731d1c001wcURH8Ag2idxr7",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01B5LoajbTi6KxTM8KrH4DnE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build the app to check for TypeScript errors"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/18) ...\n   Generating static pages (4/18) \r\n   Generating static pages (8/18) \r\n   Generating static pages (13/18) \r\n ✓ Generating static pages (18/18)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    54.9 kB         169 kB\n├ ○ /_not-found                          873 B          88.1 kB\n├ ƒ /api/auth/[...nextauth]              0 B                0 B\n├ ƒ /api/auth/register                   0 B                0 B\n├ ƒ /api/extract-document                0 B                0 B\n├ ƒ /api/glossary                        0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n├ ƒ /api/translations                    0 B                0 B\n├ ƒ /api/user/[id]                       0 B                0 B\n├ ○ /auth-debug                          956 B          97.8 kB\n├ ○ /auth/error                          2.87 kB        98.2 kB\n├ ○ /auth/signin                         4.63 kB         118 kB\n├ ○ /auth/signout                        2.47 kB         107 kB\n├ ○ /auth/signup                         4.59 kB         118 kB\n├ ○ /auth/verify-request                 179 B          96.1 kB\n├ ƒ /debug                               138 B          87.3 kB\n├ ○ /debug-session                       649 B          97.5 kB\n└ ○ /env-check                           179 B          96.1 kB\n+ First Load JS shared by all            87.2 kB\n  ├ chunks/117-50d6bd5ab2c49d8d.js       31.6 kB\n  ├ chunks/fd9d1056-346a4d4db4c146e1.js  53.6 kB\n  └ other shared chunks (total)          1.96 kB\n\n\nƒ Middleware                             27.6 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/18) ...\n   Generating static pages (4/18) \r\n   Generating static pages (8/18) \r\n   Generating static pages (13/18) \r\n ✓ Generating static pages (18/18)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    54.9 kB         169 kB\n├ ○ /_not-found                          873 B          88.1 kB\n├ ƒ /api/auth/[...nextauth]              0 B                0 B\n├ ƒ /api/auth/register                   0 B                0 B\n├ ƒ /api/extract-document                0 B                0 B\n├ ƒ /api/glossary                        0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n├ ƒ /api/translations                    0 B                0 B\n├ ƒ /api/user/[id]                       0 B                0 B\n├ ○ /auth-debug                          956 B          97.8 kB\n├ ○ /auth/error                          2.87 kB        98.2 kB\n├ ○ /auth/signin                         4.63 kB         118 kB\n├ ○ /auth/signout                        2.47 kB         107 kB\n├ ○ /auth/signup                         4.59 kB         118 kB\n├ ○ /auth/verify-request                 179 B          96.1 kB\n├ ƒ /debug                               138 B          87.3 kB\n├ ○ /debug-session                       649 B          97.5 kB\n└ ○ /env-check                           179 B          96.1 kB\n+ First Load JS shared by all            87.2 kB\n  ├ chunks/117-50d6bd5ab2c49d8d.js       31.6 kB\n  ├ chunks/fd9d1056-346a4d4db4c146e1.js  53.6 kB\n  └ other shared chunks (total)          1.96 kB\n\n\nƒ Middleware                             27.6 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+      "exit": 0,
+      "description": "Build the app to check for TypeScript errors"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759434190073,
+      "end": 1759434237218
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6732625001OJdlp2RRwijL8L",
+  "messageID": "msg_9a6731d1c001wcURH8Ag2idxr7",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The debug page isn't loading and sign-in isn't persisting. This indicates a fundamental NextAuth setup issue. Let me fix this step by step.",
+  "time": {
+    "start": 1759434189250,
+    "end": 1759434189250
+  }
+}

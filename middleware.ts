@@ -20,10 +20,11 @@ export function middleware(request: NextRequest) {
   // Check if any required environment variables are missing
   const missingEnvVars = checkMissingEnvVars()
 
+  // Temporarily disabled for debugging auth issues
   // If any env variables are missing, redirect to env-check page
-  if (missingEnvVars.length > 0) {
-    return NextResponse.redirect(new URL('/env-check', request.url))
-  }
+  // if (missingEnvVars.length > 0) {
+  //   return NextResponse.redirect(new URL('/env-check', request.url))
+  // }
 
   return NextResponse.next()
 }

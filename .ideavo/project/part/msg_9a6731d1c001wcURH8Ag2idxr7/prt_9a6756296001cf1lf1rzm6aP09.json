@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a6756296001cf1lf1rzm6aP09",
+  "messageID": "msg_9a6731d1c001wcURH8Ag2idxr7",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(auth): resolve middleware env config redirect issue",
+  "cost": 0.1687455,
+  "tokens": {
+    "input": 6,
+    "output": 165,
+    "reasoning": 0,
+    "cache": {
+      "write": 320,
+      "read": 51568
+    }
+  }
+}

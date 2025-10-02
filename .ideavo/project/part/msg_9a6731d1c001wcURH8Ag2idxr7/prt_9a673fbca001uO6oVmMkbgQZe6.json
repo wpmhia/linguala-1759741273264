@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a673fbca001uO6oVmMkbgQZe6",
+  "messageID": "msg_9a6731d1c001wcURH8Ag2idxr7",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The middleware is redirecting all pages to `/env-check` if required environment variables are missing! This is why you can't access any pages. Let me check what environment variables are missing:",
+  "time": {
+    "start": 1759434244272,
+    "end": 1759434244272
+  }
+}

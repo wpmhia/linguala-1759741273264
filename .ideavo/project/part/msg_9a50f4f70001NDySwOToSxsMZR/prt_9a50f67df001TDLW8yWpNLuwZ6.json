@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a50f67df001TDLW8yWpNLuwZ6",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_011JijeVqRHF1HVuGY8Bbp8A",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev",
+      "timeout": 10000,
+      "description": "Start development server to test Google OAuth"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2s\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2s\n",
+      "exit": null,
+      "description": "Start development server to test Google OAuth"
+    },
+    "title": "cd /home/user/project && npm run dev",
+    "time": {
+      "start": 1759410875274,
+      "end": 1759410885289
+    }
+  }
+}

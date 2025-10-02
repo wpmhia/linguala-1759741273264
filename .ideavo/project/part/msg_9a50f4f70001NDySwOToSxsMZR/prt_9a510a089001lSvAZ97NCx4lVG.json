@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a510a089001lSvAZ97NCx4lVG",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check the env configuration to see if Google OAuth variables are properly set up in the environment validation:",
+  "time": {
+    "start": 1759410955113,
+    "end": 1759410955113
+  }
+}

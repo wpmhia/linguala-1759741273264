@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a510ae4b001UxMtywI9fu27FU",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see the issue! The Google OAuth environment variables are not included in the `ENV_VARIABLES` array, which means they're not being properly validated or tracked. Let me add them to the configuration:",
+  "time": {
+    "start": 1759410959228,
+    "end": 1759410959228
+  }
+}

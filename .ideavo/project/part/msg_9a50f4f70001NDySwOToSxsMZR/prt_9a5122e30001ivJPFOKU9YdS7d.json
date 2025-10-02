@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5122e30001ivJPFOKU9YdS7d",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01HLWdBv49e8akDDjQDdDT3j",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && curl -s \"http://localhost:3000/api/auth/providers\" | python3 -m json.tool",
+      "description": "Check if Google provider is properly registered in NextAuth"
+    },
+    "output": "Expecting value: line 1 column 1 (char 0)\n",
+    "metadata": {
+      "output": "Expecting value: line 1 column 1 (char 0)\n",
+      "exit": 1,
+      "description": "Check if Google provider is properly registered in NextAuth"
+    },
+    "title": "cd /home/user/project && curl -s \"http://localhost:3000/api/auth/providers\" | python3 -m json.tool",
+    "time": {
+      "start": 1759411057289,
+      "end": 1759411057383
+    }
+  }
+}

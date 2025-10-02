@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a510ffd7001pEkDseL8Cn6Ggo",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01K7NJj5p5XCPbiyo2p16F2w",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npx prisma db status",
+      "description": "Check database migration status with npx"
+    },
+    "output": "\n! Unknown command \"status\"\n\n🏋️  Manage your database schema and lifecycle during development.\n\nUsage\n\n  $ prisma db [command] [options]\n\nOptions\n\n  -h, --help   Display this help message\n    --schema   Custom path to your Prisma schema\n\nCommands\n     pull   Pull the state from the database to the Prisma schema using introspection\n     push   Push the state from Prisma schema to the database during prototyping\n     seed   Seed your database\n  execute   Execute native commands to your database\n\nExamples\n\n  Run `prisma db pull`\n  $ prisma db pull\n\n  Run `prisma db push`\n  $ prisma db push\n\n  Run `prisma db seed`\n  $ prisma db seed\n\n  Run `prisma db execute`\n  $ prisma db execute\n\n",
+    "metadata": {
+      "output": "\n! Unknown command \"status\"\n\n🏋️  Manage your database schema and lifecycle during development.\n\nUsage\n\n  $ prisma db [command] [options]\n\nOptions\n\n  -h, --help   Display this help message\n    --schema   Custom path to your Prisma schema\n\nCommands\n     pull   Pull the state from the database to the Prisma schema using introspection\n     push   Push the state from Prisma schema to the database during prototyping\n     seed   Seed your database\n  execute   Execute native commands to your database\n\nExamples\n\n  Run `prisma db pull`\n  $ prisma db pull\n\n  Run `prisma db push`\n  $ prisma db push\n\n  Run `prisma db seed`\n  $ prisma db seed\n\n  Run `prisma db execute`\n  $ prisma db execute\n\n",
+      "exit": 1,
+      "description": "Check database migration status with npx"
+    },
+    "title": "cd /home/user/project && npx prisma db status",
+    "time": {
+      "start": 1759410979179,
+      "end": 1759410981286
+    }
+  }
+}

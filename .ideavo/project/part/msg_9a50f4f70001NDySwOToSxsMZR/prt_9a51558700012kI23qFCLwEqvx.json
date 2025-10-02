@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a51558700012kI23qFCLwEqvx",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Based on my analysis, here are the most likely causes and solutions for your Google OAuth issue:\n\n## **Expected Google OAuth Redirect URI**\n\nFor your current setup, you need this **exact** redirect URI in your Google Cloud Console:\n\n```\nhttp://localhost:3000/api/auth/callback/google\n```\n\n## **Common Google OAuth Issues & Solutions**\n\n### 1. **Redirect URI Mismatch** (Most Common)\n- Go to [Google Cloud Console](https://console.cloud.google.com/)\n- Navigate to: **APIs & Services** → **Credentials** \n- Find your OAuth 2.0 Client ID\n- Under **Authorized redirect URIs**, ensure you have:\n  ```\n  http://localhost:3000/api/auth/callback/google\n  ```\n\n### 2. **Environment Variables**\nYour `.env` looks correct, but verify Google Console credentials:\n```\nGOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\nGOOGLE_CLIENT_SECRET=\"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\"\n```\n\n### 3. **Test the OAuth Flow**\nVisit: `http://localhost:3000/auth/signin` and click the Google button.\n\n**What specific error are you seeing?** Common error messages:\n- `redirect_uri_mismatch` → Fix redirect URI in Google Console\n- `invalid_client` → Check Client ID/Secret\n- `access_denied` → User cancelled or consent screen issue",
+  "time": {
+    "start": 1759411272506,
+    "end": 1759411272506
+  }
+}

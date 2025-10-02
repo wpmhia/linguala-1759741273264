@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a51159c0001bB7YuW0mUFLrOV",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01B9Yg2ECG4Dd2tvr8whY7Bv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npx prisma migrate dev --name init_nextauth_tables",
+      "description": "Initialize database with NextAuth authentication tables"
+    },
+    "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\nError: Prisma Migrate has detected that the environment is non-interactive, which is not supported.\n\n`prisma migrate dev` is an interactive command designed to create new migrations and evolve the database in development.\nTo apply existing migrations in deployments, use prisma migrate deploy.\nSee https://www.prisma.io/docs/reference/api-reference/command-reference#migrate-deploy\n",
+    "metadata": {
+      "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\nError: Prisma Migrate has detected that the environment is non-interactive, which is not supported.\n\n`prisma migrate dev` is an interactive command designed to create new migrations and evolve the database in development.\nTo apply existing migrations in deployments, use prisma migrate deploy.\nSee https://www.prisma.io/docs/reference/api-reference/command-reference#migrate-deploy\n",
+      "exit": 1,
+      "description": "Initialize database with NextAuth authentication tables"
+    },
+    "title": "cd /home/user/project && npx prisma migrate dev --name init_nextauth_tables",
+    "time": {
+      "start": 1759411002659,
+      "end": 1759411022346
+    }
+  }
+}

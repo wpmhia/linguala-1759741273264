@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5111218001R54gOYO2VAm4Xl",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01RrUNYcu2wCPBKTT58Pobne",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npx prisma migrate status",
+      "description": "Check migration status using prisma migrate"
+    },
+    "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\nNo migration found in prisma/migrations\nThe current database is not managed by Prisma Migrate.\n        \nRead more about how to baseline an existing production database:\nhttps://pris.ly/d/migrate-baseline\n",
+    "metadata": {
+      "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\nNo migration found in prisma/migrations\nThe current database is not managed by Prisma Migrate.\n        \nRead more about how to baseline an existing production database:\nhttps://pris.ly/d/migrate-baseline\n",
+      "exit": 1,
+      "description": "Check migration status using prisma migrate"
+    },
+    "title": "cd /home/user/project && npx prisma migrate status",
+    "time": {
+      "start": 1759410984052,
+      "end": 1759410990534
+    }
+  }
+}

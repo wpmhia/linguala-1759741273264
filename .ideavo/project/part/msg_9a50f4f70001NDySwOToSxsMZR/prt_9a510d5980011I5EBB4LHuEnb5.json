@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a510d5980011I5EBB4LHuEnb5",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LyFTC1Cya7fGJG6fp2Wky1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && echo \"Testing Google OAuth configuration...\"",
+      "description": "Prepare to test Google OAuth setup"
+    },
+    "output": "Testing Google OAuth configuration...\n",
+    "metadata": {
+      "output": "Testing Google OAuth configuration...\n",
+      "exit": 0,
+      "description": "Prepare to test Google OAuth setup"
+    },
+    "title": "cd /home/user/project && echo \"Testing Google OAuth configuration...\"",
+    "time": {
+      "start": 1759410968667,
+      "end": 1759410968691
+    }
+  }
+}

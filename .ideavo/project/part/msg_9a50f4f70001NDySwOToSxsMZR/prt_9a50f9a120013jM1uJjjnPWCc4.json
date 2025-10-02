@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a50f9a120013jM1uJjjnPWCc4",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check what specific error you're seeing by examining the NextAuth configuration more closely and looking for common Google OAuth issues:",
+  "time": {
+    "start": 1759410888099,
+    "end": 1759410888099
+  }
+}

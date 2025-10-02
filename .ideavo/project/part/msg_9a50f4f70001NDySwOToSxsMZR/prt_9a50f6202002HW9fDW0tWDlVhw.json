@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a50f6202002HW9fDW0tWDlVhw",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see the Google OAuth credentials are configured. Let me check if they're properly being used and examine what specific issues might be occurring. Let me also check the current auth configuration and test the OAuth flow.",
+  "time": {
+    "start": 1759410874334,
+    "end": 1759410874334
+  }
+}

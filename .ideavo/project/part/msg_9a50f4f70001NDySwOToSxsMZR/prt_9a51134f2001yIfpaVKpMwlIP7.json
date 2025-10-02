@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a51134f2001yIfpaVKpMwlIP7",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The database needs to be initialized with Prisma migrations. Let me check what specific Google OAuth error you're experiencing and then set up the database properly:",
+  "time": {
+    "start": 1759410993521,
+    "end": 1759410993521
+  }
+}

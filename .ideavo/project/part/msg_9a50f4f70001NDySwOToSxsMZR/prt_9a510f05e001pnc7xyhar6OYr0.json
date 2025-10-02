@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a510f05e001pnc7xyhar6OYr0",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_019HutaidmmcuV85iHsqPb2H",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && bunx prisma db status",
+      "description": "Check if database migrations are up to date"
+    },
+    "output": "/bin/sh: 1: bunx: not found\n",
+    "metadata": {
+      "output": "/bin/sh: 1: bunx: not found\n",
+      "exit": 127,
+      "description": "Check if database migrations are up to date"
+    },
+    "title": "cd /home/user/project && bunx prisma db status",
+    "time": {
+      "start": 1759410975811,
+      "end": 1759410975821
+    }
+  }
+}

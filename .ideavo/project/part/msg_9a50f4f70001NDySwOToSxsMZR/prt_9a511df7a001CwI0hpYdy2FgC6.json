@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a511df7a001CwI0hpYdy2FgC6",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01UzbWdTDBDwToGgNost2Vof",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npx prisma db push",
+      "description": "Push schema to database for development setup"
+    },
+    "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\nThe database is already in sync with the Prisma schema.\n\nRunning generate... (Use --skip-generate to skip the generators)\n\u001b[2K\u001b[1A\u001b[2K\u001b[GRunning generate... - Prisma Client\n\u001b[2K\u001b[1A\u001b[2K\u001b[G✔ Generated Prisma Client (v5.22.0) to ./node_modules/@prisma/client in 158ms\n\n",
+    "metadata": {
+      "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\nThe database is already in sync with the Prisma schema.\n\nRunning generate... (Use --skip-generate to skip the generators)\n\u001b[2K\u001b[1A\u001b[2K\u001b[GRunning generate... - Prisma Client\n\u001b[2K\u001b[1A\u001b[2K\u001b[G✔ Generated Prisma Client (v5.22.0) to ./node_modules/@prisma/client in 158ms\n\n",
+      "exit": 0,
+      "description": "Push schema to database for development setup"
+    },
+    "title": "cd /home/user/project && npx prisma db push",
+    "time": {
+      "start": 1759411036753,
+      "end": 1759411046054
+    }
+  }
+}

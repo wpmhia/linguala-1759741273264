@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a5158e4b001556T2ECv4FI8BQ",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(oauth): add Google OAuth env vars to validation config",
+  "cost": 0.3742173000000001,
+  "tokens": {
+    "input": 3,
+    "output": 30,
+    "reasoning": 0,
+    "cache": {
+      "write": 674,
+      "read": 34030
+    }
+  }
+}

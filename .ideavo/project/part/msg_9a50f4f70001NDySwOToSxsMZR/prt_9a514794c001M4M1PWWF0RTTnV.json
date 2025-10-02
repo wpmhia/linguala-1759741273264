@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a514794c001M4M1PWWF0RTTnV",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01PbQ9WZa7aKqoncuy8ovyCm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s \"http://localhost:3000/auth-debug\" | grep -E \"(Google provider|providers found|Environment Variables)\" -A 5",
+      "description": "Check auth debug page for OAuth configuration status"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 1,
+      "description": "Check auth debug page for OAuth configuration status"
+    },
+    "title": "curl -s \"http://localhost:3000/auth-debug\" | grep -E \"(Google provider|providers found|Environment Variables)\" -A 5",
+    "time": {
+      "start": 1759411207872,
+      "end": 1759411255967
+    }
+  }
+}

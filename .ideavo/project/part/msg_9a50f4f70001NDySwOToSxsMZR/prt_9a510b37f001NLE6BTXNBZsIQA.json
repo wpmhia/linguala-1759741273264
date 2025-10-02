@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a510b37f001NLE6BTXNBZsIQA",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01ERu8rDzckLL6LzW2tYW6yg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/env-config.ts",
+      "oldString": "  {\n    name: \"NEXTAUTH_URL\",\n    description: \"Full URL where your Next.js app is deployed (for Auth.js callbacks)\",\n    required: false,\n    instructions: \"Set to your domain in production (e.g., https://yourdomain.com).\\nFor development, this defaults to http://localhost:3000.\\nRequired for OAuth providers and proper redirect handling.\"\n  }",
+      "newString": "  {\n    name: \"NEXTAUTH_URL\",\n    description: \"Full URL where your Next.js app is deployed (for Auth.js callbacks)\",\n    required: false,\n    instructions: \"Set to your domain in production (e.g., https://yourdomain.com).\\nFor development, this defaults to http://localhost:3000.\\nRequired for OAuth providers and proper redirect handling.\"\n  },\n  {\n    name: \"GOOGLE_CLIENT_ID\",\n    description: \"Google OAuth client ID for Google Sign-In integration\",\n    required: false,\n    instructions: \"Go to [Google Cloud Console](https://console.cloud.google.com/) → APIs & Services → Credentials → Create OAuth 2.0 Client ID.\\nSet authorized redirect URIs to: http://localhost:3000/api/auth/callback/google (dev) and https://yourdomain.com/api/auth/callback/google (prod).\\nCopy the generated Client ID.\"\n  },\n  {\n    name: \"GOOGLE_CLIENT_SECRET\",\n    description: \"Google OAuth client secret for Google Sign-In integration\",\n    required: false,\n    instructions: \"From the same Google Cloud Console OAuth 2.0 Client configuration.\\nCopy the generated Client Secret.\\nKeep this secret secure and never expose it publicly.\"\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/env-config.ts\n===================================================================\n--- /home/user/project/lib/env-config.ts\n+++ /home/user/project/lib/env-config.ts\n@@ -28,8 +28,20 @@\n     name: \"NEXTAUTH_URL\",\n     description: \"Full URL where your Next.js app is deployed (for Auth.js callbacks)\",\n     required: false,\n     instructions: \"Set to your domain in production (e.g., https://yourdomain.com).\\nFor development, this defaults to http://localhost:3000.\\nRequired for OAuth providers and proper redirect handling.\"\n+  },\n+  {\n+    name: \"GOOGLE_CLIENT_ID\",\n+    description: \"Google OAuth client ID for Google Sign-In integration\",\n+    required: false,\n+    instructions: \"Go to [Google Cloud Console](https://console.cloud.google.com/) → APIs & Services → Credentials → Create OAuth 2.0 Client ID.\\nSet authorized redirect URIs to: http://localhost:3000/api/auth/callback/google (dev) and https://yourdomain.com/api/auth/callback/google (prod).\\nCopy the generated Client ID.\"\n+  },\n+  {\n+    name: \"GOOGLE_CLIENT_SECRET\",\n+    description: \"Google OAuth client secret for Google Sign-In integration\",\n+    required: false,\n+    instructions: \"From the same Google Cloud Console OAuth 2.0 Client configuration.\\nCopy the generated Client Secret.\\nKeep this secret secure and never expose it publicly.\"\n   }\n ];\n \n // SUPABASE/DATABASE VARIABLES (uncomment and add to ENV_VARIABLES array when adding database features)\n"
+    },
+    "title": "lib/env-config.ts",
+    "time": {
+      "start": 1759410964563,
+      "end": 1759410964656
+    }
+  }
+}

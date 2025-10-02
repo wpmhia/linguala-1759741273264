@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a51544d3001XMikI1m4OjhJRb",
+  "messageID": "msg_9a50f4f70001NDySwOToSxsMZR",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check if there's an issue with the Google OAuth redirect URI. The most common problem is that the redirect URI in Google Cloud Console doesn't match the one NextAuth is using. Let me verify the expected redirect URI:",
+  "time": {
+    "start": 1759411259517,
+    "end": 1759411259517
+  }
+}

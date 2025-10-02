@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4b1820b001OSkhUU9PPyxqNG",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Great! I can see that Prisma is already set up. Now let me install the Auth.js dependencies for Next.js and the Neon database adapter:",
+  "time": {
+    "start": 1759404721682,
+    "end": 1759404721682
+  }
+}

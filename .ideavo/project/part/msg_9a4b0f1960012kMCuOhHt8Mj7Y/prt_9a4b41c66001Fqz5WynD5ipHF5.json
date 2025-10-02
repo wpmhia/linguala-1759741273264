@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b41c66001Fqz5WynD5ipHF5",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_019cxxmT9o3o7agJdZsaZhWP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator-nielsen.tsx",
+      "oldString": "export default function NielsenTranslator() {\n  // Core translation state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  const [selectedDomain, setSelectedDomain] = useState(\"general\")\n  const [isTranslating, setIsTranslating] = useState(false)\n  const [translationProgress, setTranslationProgress] = useState(0)\n\n  // UI state\n  const [showAdvanced, setShowAdvanced] = useState(false)\n  const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n  const [lastAction, setLastAction] = useState<string>(\"\")\n  const [errors, setErrors] = useState<string[]>([])\n\n  // Data state\n  const [history, setHistory] = useState<TranslationHistory[]>([])\n  const [glossary, setGlossary] = useState<GlossaryEntry[]>([])\n  const [historySearch, setHistorySearch] = useState(\"\")\n\n  const debounceRef = useRef<NodeJS.Timeout>()",
+      "newString": "export default function NielsenTranslator() {\n  const { data: session, status } = useSession()\n  \n  // Core translation state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  const [selectedDomain, setSelectedDomain] = useState(\"general\")\n  const [isTranslating, setIsTranslating] = useState(false)\n  const [translationProgress, setTranslationProgress] = useState(0)\n\n  // UI state\n  const [showAdvanced, setShowAdvanced] = useState(false)\n  const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n  const [lastAction, setLastAction] = useState<string>(\"\")\n  const [errors, setErrors] = useState<string[]>([])\n\n  // Data state\n  const [history, setHistory] = useState<TranslationHistory[]>([])\n  const [glossary, setGlossary] = useState<GlossaryEntry[]>([])\n  const [historySearch, setHistorySearch] = useState(\"\")\n\n  const debounceRef = useRef<NodeJS.Timeout>()"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator-nielsen.tsx\n===================================================================\n--- /home/user/project/components/translator-nielsen.tsx\n+++ /home/user/project/components/translator-nielsen.tsx\n@@ -93,8 +93,10 @@\n   notes?: string\n }\n \n export default function NielsenTranslator() {\n+  const { data: session, status } = useSession()\n+  \n   // Core translation state\n   const [sourceText, setSourceText] = useState(\"\")\n   const [translatedText, setTranslatedText] = useState(\"\")\n   const [sourceLang, setSourceLang] = useState(\"auto\")\n"
+    },
+    "title": "components/translator-nielsen.tsx",
+    "time": {
+      "start": 1759404898175,
+      "end": 1759404898184
+    }
+  }
+}

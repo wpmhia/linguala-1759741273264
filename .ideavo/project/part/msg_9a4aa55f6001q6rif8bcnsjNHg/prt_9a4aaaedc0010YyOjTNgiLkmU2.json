@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4aaaedc0010YyOjTNgiLkmU2",
+  "messageID": "msg_9a4aa55f6001q6rif8bcnsjNHg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01TPbmHDmRgviKnZUb8aSBxD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 1,
+      "limit": 15
+    },
+    "output": "<file>\n00002| \n00003| import { useState, useRef, useEffect } from \"react\"\n00004| import { Button } from \"@/components/ui/button\"\n00005| import { Textarea } from \"@/components/ui/textarea\"\n00006| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00007| import { Switch } from \"@/components/ui/switch\"\n00008| import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\n00009| import { Separator } from \"@/components/ui/separator\"\n00010| import { Input } from \"@/components/ui/input\"\n00011| import { Label } from \"@/components/ui/label\"\n00012| import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from \"@/components/ui/dialog\"\n00013| import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n00014| import { Badge } from \"@/components/ui/badge\"\n00015| import { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\"\n00016| import { Card, CardContent } from \"@/components/ui/card\"\n\n(File has more lines. Use 'offset' parameter to read beyond line 16)\n</file>",
+    "metadata": {
+      "preview": "\nimport { useState, useRef, useEffect } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\nimport { Separator } from \"@/components/ui/separator\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from \"@/components/ui/dialog\"\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger } from \"@/components/ui/collapsible\"\nimport { Card, CardContent } from \"@/components/ui/card\""
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759404274290,
+      "end": 1759404274293
+    }
+  }
+}

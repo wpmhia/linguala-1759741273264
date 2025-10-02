@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b46879001W6Sh9fT09EKNZd",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01LW3QSprE9jCJCqLhTb471f",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/glossary/route.ts",
+      "content": "import { NextRequest, NextResponse } from 'next/server'\nimport { getServerSession } from 'next-auth'\nimport { authOptions } from '@/lib/auth'\nimport { prisma } from '@/lib/prisma'\n\nexport async function GET() {\n  try {\n    const session = await getServerSession(authOptions)\n    \n    if (!session?.user?.id) {\n      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })\n    }\n\n    const glossaryEntries = await prisma.glossaryEntry.findMany({\n      where: { userId: session.user.id },\n      orderBy: { createdAt: 'desc' },\n    })\n\n    return NextResponse.json({ glossaryEntries })\n  } catch (error) {\n    console.error('Failed to fetch glossary:', error)\n    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })\n  }\n}\n\nexport async function POST(request: NextRequest) {\n  try {\n    const session = await getServerSession(authOptions)\n    \n    if (!session?.user?.id) {\n      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })\n    }\n\n    const { source, target, domain, notes } = await request.json()\n\n    if (!source || !target) {\n      return NextResponse.json({ error: 'Source and target terms are required' }, { status: 400 })\n    }\n\n    const glossaryEntry = await prisma.glossaryEntry.create({\n      data: {\n        source,\n        target,\n        domain: domain || 'general',\n        notes,\n        userId: session.user.id,\n      },\n    })\n\n    return NextResponse.json({ glossaryEntry })\n  } catch (error) {\n    if (error.code === 'P2002') {\n      return NextResponse.json({ error: 'This glossary entry already exists' }, { status: 409 })\n    }\n    console.error('Failed to create glossary entry:', error)\n    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })\n  }\n}\n\nexport async function DELETE(request: NextRequest) {\n  try {\n    const session = await getServerSession(authOptions)\n    \n    if (!session?.user?.id) {\n      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })\n    }\n\n    const { searchParams } = new URL(request.url)\n    const id = searchParams.get('id')\n\n    if (!id) {\n      return NextResponse.json({ error: 'Entry ID is required' }, { status: 400 })\n    }\n\n    await prisma.glossaryEntry.delete({\n      where: {\n        id,\n        userId: session.user.id, // Ensure user owns the entry\n      },\n    })\n\n    return NextResponse.json({ success: true })\n  } catch (error) {\n    console.error('Failed to delete glossary entry:', error)\n    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/api/glossary/route.ts",
+      "exists": false
+    },
+    "title": "app/api/glossary/route.ts",
+    "time": {
+      "start": 1759404917983,
+      "end": 1759404917985
+    }
+  }
+}

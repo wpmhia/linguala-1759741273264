@@ -5,6 +5,30 @@ export const ENV_VARIABLES: EnvVariable[] = [
     description: "Alibaba Cloud DashScope API key for Qwen model access",
     required: true,
     instructions: "Go to [Alibaba Cloud Console](https://bailian.console.aliyun.com/) → Model Studio → Create API Key.\nCopy the generated API key that starts with 'sk-'.\nThis is required for translation functionality."
+  },
+  {
+    name: "DATABASE_URL",
+    description: "Neon PostgreSQL database connection string for Prisma operations",
+    required: true,
+    instructions: "Go to [Neon Console](https://console.neon.tech/) → Your Project → Dashboard → Connection Details.\nCopy the 'Database URL' connection string (postgresql://...).\nThis is required for user authentication and data persistence."
+  },
+  {
+    name: "DIRECT_URL",
+    description: "Neon direct database connection for migrations (optional but recommended)",
+    required: false,
+    instructions: "Go to [Neon Console](https://console.neon.tech/) → Your Project → Dashboard → Connection Details.\nCopy the 'Direct connection' URL if available.\nThis improves migration performance."
+  },
+  {
+    name: "NEXTAUTH_SECRET",
+    description: "NextAuth.js secret for JWT encryption and session security",
+    required: true,
+    instructions: "Generate a random secret key using: openssl rand -base64 32\nOr visit [generate-secret.vercel.app](https://generate-secret.vercel.app/32)\nThis secures user sessions and authentication tokens."
+  },
+  {
+    name: "NEXTAUTH_URL",
+    description: "Full URL where your Next.js app is deployed (for Auth.js callbacks)",
+    required: false,
+    instructions: "Set to your domain in production (e.g., https://yourdomain.com).\nFor development, this defaults to http://localhost:3000.\nRequired for OAuth providers and proper redirect handling."
   }
 ];
 

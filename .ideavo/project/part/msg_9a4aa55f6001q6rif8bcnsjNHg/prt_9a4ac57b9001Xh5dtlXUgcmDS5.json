@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4ac57b9001Xh5dtlXUgcmDS5",
+  "messageID": "msg_9a4aa55f6001q6rif8bcnsjNHg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_017ya1ZWLVnKA85WyDqK1SAT",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/page.tsx",
+      "oldString": "import Translator from '@/components/translator'\n\nexport default function Home() {\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100\">\n      <Translator />\n    </div>\n  );\n}",
+      "newString": "import NielsenTranslator from '@/components/translator-nielsen'\n\nexport default function Home() {\n  return <NielsenTranslator />\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/page.tsx\n===================================================================\n--- /home/user/project/app/page.tsx\n+++ /home/user/project/app/page.tsx\n@@ -1,9 +1,5 @@\n-import Translator from '@/components/translator'\n+import NielsenTranslator from '@/components/translator-nielsen'\n \n export default function Home() {\n-  return (\n-    <div className=\"min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100\">\n-      <Translator />\n-    </div>\n-  );\n+  return <NielsenTranslator />\n }\n"
+    },
+    "title": "app/page.tsx",
+    "time": {
+      "start": 1759404383759,
+      "end": 1759404383768
+    }
+  }
+}

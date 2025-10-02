@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b3871a00109UMA5TcWa1g9t",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01BTYmv3qmnKqiCKhpDLRmBC",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';\n\nconst inter = Inter({ subsets: ['latin'] });\n\nexport const metadata: Metadata = {\n  title: 'DeepL Clone - Powered by Qwen',\n  description: 'AI-powered translation tool using Alibaba Cloud Qwen',\n};\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <html lang=\"en\">\n      <body className={inter.className}>\n        {children}\n        <Toaster />\n        {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}\n        <script src=\"/scripts/iframe-navigation.js\"></script>\n      </body>\n    </html>\n  );\n}",
+      "newString": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';\nimport { SessionProvider } from '@/components/providers/session-provider';\n\nconst inter = Inter({ subsets: ['latin'] });\n\nexport const metadata: Metadata = {\n  title: 'DeepL Clone - Powered by Qwen',\n  description: 'AI-powered translation tool using Alibaba Cloud Qwen',\n};\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <html lang=\"en\">\n      <body className={inter.className}>\n        <SessionProvider>\n          {children}\n        </SessionProvider>\n        <Toaster />\n        {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}\n        <script src=\"/scripts/iframe-navigation.js\"></script>\n      </body>\n    </html>\n  );\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/layout.tsx\n===================================================================\n--- /home/user/project/app/layout.tsx\n+++ /home/user/project/app/layout.tsx\n@@ -1,8 +1,9 @@\n import './globals.css';\n import type { Metadata } from 'next';\n import { Inter } from 'next/font/google';\n import { Toaster } from '@/components/ui/sonner';\n+import { SessionProvider } from '@/components/providers/session-provider';\n \n const inter = Inter({ subsets: ['latin'] });\n \n export const metadata: Metadata = {\n@@ -17,9 +18,11 @@\n }) {\n   return (\n     <html lang=\"en\">\n       <body className={inter.className}>\n-        {children}\n+        <SessionProvider>\n+          {children}\n+        </SessionProvider>\n         <Toaster />\n         {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}\n         <script src=\"/scripts/iframe-navigation.js\"></script>\n       </body>\n"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759404857434,
+      "end": 1759404857437
+    }
+  }
+}

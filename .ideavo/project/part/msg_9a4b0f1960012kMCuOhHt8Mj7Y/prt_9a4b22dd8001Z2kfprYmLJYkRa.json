@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b22dd8001Z2kfprYmLJYkRa",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01D5XQ4XhkzQD3SKbCXgHR35",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/env-config.ts",
+      "oldString": "// IMPORTANT: When adding new env variables to the codebase, update this array\nexport const ENV_VARIABLES: EnvVariable[] = [\n  {\n    name: \"DASHSCOPE_API_KEY\",\n    description: \"Alibaba Cloud DashScope API key for Qwen model access\",\n    required: true,\n    instructions: \"Go to [Alibaba Cloud Console](https://bailian.console.aliyun.com/) → Model Studio → Create API Key.\\nCopy the generated API key that starts with 'sk-'.\\nThis is required for translation functionality.\"\n  }\n];",
+      "newString": "// IMPORTANT: When adding new env variables to the codebase, update this array\nexport const ENV_VARIABLES: EnvVariable[] = [\n  {\n    name: \"DASHSCOPE_API_KEY\",\n    description: \"Alibaba Cloud DashScope API key for Qwen model access\",\n    required: true,\n    instructions: \"Go to [Alibaba Cloud Console](https://bailian.console.aliyun.com/) → Model Studio → Create API Key.\\nCopy the generated API key that starts with 'sk-'.\\nThis is required for translation functionality.\"\n  },\n  {\n    name: \"DATABASE_URL\",\n    description: \"Neon PostgreSQL database connection string for Prisma operations\",\n    required: true,\n    instructions: \"Go to [Neon Console](https://console.neon.tech/) → Your Project → Dashboard → Connection Details.\\nCopy the 'Database URL' connection string (postgresql://...).\\nThis is required for user authentication and data persistence.\"\n  },\n  {\n    name: \"DIRECT_URL\",\n    description: \"Neon direct database connection for migrations (optional but recommended)\",\n    required: false,\n    instructions: \"Go to [Neon Console](https://console.neon.tech/) → Your Project → Dashboard → Connection Details.\\nCopy the 'Direct connection' URL if available.\\nThis improves migration performance.\"\n  },\n  {\n    name: \"NEXTAUTH_SECRET\",\n    description: \"NextAuth.js secret for JWT encryption and session security\",\n    required: true,\n    instructions: \"Generate a random secret key using: openssl rand -base64 32\\nOr visit [generate-secret.vercel.app](https://generate-secret.vercel.app/32)\\nThis secures user sessions and authentication tokens.\"\n  },\n  {\n    name: \"NEXTAUTH_URL\",\n    description: \"Full URL where your Next.js app is deployed (for Auth.js callbacks)\",\n    required: false,\n    instructions: \"Set to your domain in production (e.g., https://yourdomain.com).\\nFor development, this defaults to http://localhost:3000.\\nRequired for OAuth providers and proper redirect handling.\"\n  }\n];"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/env-config.ts\n===================================================================\n--- /home/user/project/lib/env-config.ts\n+++ /home/user/project/lib/env-config.ts\n@@ -4,8 +4,32 @@\n     name: \"DASHSCOPE_API_KEY\",\n     description: \"Alibaba Cloud DashScope API key for Qwen model access\",\n     required: true,\n     instructions: \"Go to [Alibaba Cloud Console](https://bailian.console.aliyun.com/) → Model Studio → Create API Key.\\nCopy the generated API key that starts with 'sk-'.\\nThis is required for translation functionality.\"\n+  },\n+  {\n+    name: \"DATABASE_URL\",\n+    description: \"Neon PostgreSQL database connection string for Prisma operations\",\n+    required: true,\n+    instructions: \"Go to [Neon Console](https://console.neon.tech/) → Your Project → Dashboard → Connection Details.\\nCopy the 'Database URL' connection string (postgresql://...).\\nThis is required for user authentication and data persistence.\"\n+  },\n+  {\n+    name: \"DIRECT_URL\",\n+    description: \"Neon direct database connection for migrations (optional but recommended)\",\n+    required: false,\n+    instructions: \"Go to [Neon Console](https://console.neon.tech/) → Your Project → Dashboard → Connection Details.\\nCopy the 'Direct connection' URL if available.\\nThis improves migration performance.\"\n+  },\n+  {\n+    name: \"NEXTAUTH_SECRET\",\n+    description: \"NextAuth.js secret for JWT encryption and session security\",\n+    required: true,\n+    instructions: \"Generate a random secret key using: openssl rand -base64 32\\nOr visit [generate-secret.vercel.app](https://generate-secret.vercel.app/32)\\nThis secures user sessions and authentication tokens.\"\n+  },\n+  {\n+    name: \"NEXTAUTH_URL\",\n+    description: \"Full URL where your Next.js app is deployed (for Auth.js callbacks)\",\n+    required: false,\n+    instructions: \"Set to your domain in production (e.g., https://yourdomain.com).\\nFor development, this defaults to http://localhost:3000.\\nRequired for OAuth providers and proper redirect handling.\"\n   }\n ];\n \n // SUPABASE/DATABASE VARIABLES (uncomment and add to ENV_VARIABLES array when adding database features)\n"
+    },
+    "title": "lib/env-config.ts",
+    "time": {
+      "start": 1759404773849,
+      "end": 1759404773858
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b34244001EGT1LgaYwAPKxu",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01XABMYRzfLaU5cqwg5ZEVDZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/user-profile.tsx",
+      "content": "\"use client\"\n\nimport { useSession, signIn, signOut } from \"next-auth/react\"\nimport { Button } from \"@/components/ui/button\"\nimport { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\"\nimport { User, LogOut, Settings, History, BookOpen, LogIn } from \"lucide-react\"\n\nexport function UserProfile() {\n  const { data: session, status } = useSession()\n\n  if (status === \"loading\") {\n    return (\n      <div className=\"w-8 h-8 bg-gray-200 rounded-full animate-pulse\" />\n    )\n  }\n\n  if (!session) {\n    return (\n      <Button\n        variant=\"outline\"\n        onClick={() => signIn()}\n        className=\"flex items-center space-x-2\"\n      >\n        <LogIn className=\"h-4 w-4\" />\n        <span>Sign In</span>\n      </Button>\n    )\n  }\n\n  const user = session.user\n  const initials = user?.name\n    ? user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)\n    : user?.email?.[0].toUpperCase() || '?'\n\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button variant=\"ghost\" className=\"relative h-10 w-10 rounded-full\">\n          <Avatar className=\"h-10 w-10\">\n            <AvatarImage src={user?.image || undefined} alt={user?.name || \"User\"} />\n            <AvatarFallback className=\"bg-blue-500 text-white\">\n              {initials}\n            </AvatarFallback>\n          </Avatar>\n        </Button>\n      </DropdownMenuTrigger>\n      \n      <DropdownMenuContent className=\"w-56\" align=\"end\" forceMount>\n        <div className=\"flex items-center space-x-2 p-2\">\n          <Avatar className=\"h-8 w-8\">\n            <AvatarImage src={user?.image || undefined} alt={user?.name || \"User\"} />\n            <AvatarFallback className=\"bg-blue-500 text-white text-sm\">\n              {initials}\n            </AvatarFallback>\n          </Avatar>\n          <div className=\"flex flex-col space-y-1\">\n            <p className=\"text-sm font-medium leading-none\">{user?.name || \"User\"}</p>\n            <p className=\"text-xs leading-none text-muted-foreground\">\n              {user?.email}\n            </p>\n          </div>\n        </div>\n        \n        <DropdownMenuSeparator />\n        \n        <DropdownMenuItem>\n          <User className=\"mr-2 h-4 w-4\" />\n          <span>Profile</span>\n        </DropdownMenuItem>\n        \n        <DropdownMenuItem>\n          <History className=\"mr-2 h-4 w-4\" />\n          <span>My Translations</span>\n        </DropdownMenuItem>\n        \n        <DropdownMenuItem>\n          <BookOpen className=\"mr-2 h-4 w-4\" />\n          <span>My Glossaries</span>\n        </DropdownMenuItem>\n        \n        <DropdownMenuItem>\n          <Settings className=\"mr-2 h-4 w-4\" />\n          <span>Settings</span>\n        </DropdownMenuItem>\n        \n        <DropdownMenuSeparator />\n        \n        <DropdownMenuItem\n          className=\"text-red-600 focus:text-red-600\"\n          onClick={() => signOut()}\n        >\n          <LogOut className=\"mr-2 h-4 w-4\" />\n          <span>Sign out</span>\n        </DropdownMenuItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  )\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/components/user-profile.tsx",
+      "exists": false
+    },
+    "title": "components/user-profile.tsx",
+    "time": {
+      "start": 1759404846111,
+      "end": 1759404846113
+    }
+  }
+}

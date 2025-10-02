@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4b4e8d2001RqEXyHuAM6TGxT",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(auth): integrate Neon database with Auth.js for user management",
+  "cost": 1.3834057500000005,
+  "tokens": {
+    "input": 0,
+    "output": 879,
+    "reasoning": 0,
+    "cache": {
+      "write": 476,
+      "read": 90110
+    }
+  }
+}

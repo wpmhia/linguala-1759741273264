@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b18613001XK98npi3lHl5jC",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01HwYsqrSoA55Tj1FhCfPfbq",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm install next-auth @auth/prisma-adapter @neondatabase/serverless",
+      "description": "Install Auth.js and Neon database dependencies"
+    },
+    "output": "\nadded 38 packages, and audited 348 packages in 12s\n\n53 packages are looking for funding\n  run `npm fund` for details\n\n4 vulnerabilities (3 low, 1 moderate)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n",
+    "metadata": {
+      "output": "\nadded 38 packages, and audited 348 packages in 12s\n\n53 packages are looking for funding\n  run `npm fund` for details\n\n4 vulnerabilities (3 low, 1 moderate)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n",
+      "exit": 0,
+      "description": "Install Auth.js and Neon database dependencies"
+    },
+    "title": "npm install next-auth @auth/prisma-adapter @neondatabase/serverless",
+    "time": {
+      "start": 1759404722511,
+      "end": 1759404734469
+    }
+  }
+}

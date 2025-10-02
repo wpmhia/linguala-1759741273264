@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4b1cd95001UES96j93vyiut1",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! Now let me update the Prisma schema to include Auth.js models and our translator-specific models:",
+  "time": {
+    "start": 1759404740773,
+    "end": 1759404740773
+  }
+}

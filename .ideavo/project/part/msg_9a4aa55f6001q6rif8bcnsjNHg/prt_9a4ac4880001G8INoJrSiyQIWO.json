@@ -1,0 +1,17 @@
+{
+  "id": "prt_9a4ac4880001G8INoJrSiyQIWO",
+  "messageID": "msg_9a4aa55f6001q6rif8bcnsjNHg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01FJFdnUa2MKGv7C1DdLCioP",
+  "state": {
+    "status": "error",
+    "error": "Tool execution aborted",
+    "time": {
+      "start": 1759404818334,
+      "end": 1759404818334
+    },
+    "input": {}
+  }
+}

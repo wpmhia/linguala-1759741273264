@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4b44645001U2nwfzcndOGlq9",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01VE5EWDi3CnGADU9y6H95rF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translations/route.ts",
+      "content": "import { NextRequest, NextResponse } from 'next/server'\nimport { getServerSession } from 'next-auth'\nimport { authOptions } from '@/lib/auth'\nimport { prisma } from '@/lib/prisma'\n\nexport async function GET() {\n  try {\n    const session = await getServerSession(authOptions)\n    \n    if (!session?.user?.id) {\n      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })\n    }\n\n    const translations = await prisma.translationHistory.findMany({\n      where: { userId: session.user.id },\n      orderBy: { createdAt: 'desc' },\n      take: 100, // Limit to last 100 translations\n    })\n\n    return NextResponse.json({ translations })\n  } catch (error) {\n    console.error('Failed to fetch translations:', error)\n    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })\n  }\n}\n\nexport async function POST(request: NextRequest) {\n  try {\n    const session = await getServerSession(authOptions)\n    \n    if (!session?.user?.id) {\n      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })\n    }\n\n    const { sourceText, translatedText, sourceLang, targetLang, domain } = await request.json()\n\n    if (!sourceText || !translatedText || !sourceLang || !targetLang) {\n      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })\n    }\n\n    const translation = await prisma.translationHistory.create({\n      data: {\n        sourceText,\n        translatedText,\n        sourceLang,\n        targetLang,\n        domain: domain || 'general',\n        userId: session.user.id,\n      },\n    })\n\n    return NextResponse.json({ translation })\n  } catch (error) {\n    console.error('Failed to save translation:', error)\n    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/api/translations/route.ts",
+      "exists": false
+    },
+    "title": "app/api/translations/route.ts",
+    "time": {
+      "start": 1759404907547,
+      "end": 1759404907551
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4b3a87e001Mx948zu7Ol4iYT",
+  "messageID": "msg_9a4b0f1960012kMCuOhHt8Mj7Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01SPDGaQwh8tA2QSaFmFiwyk",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator-nielsen.tsx",
+      "offset": 1,
+      "limit": 20
+    },
+    "output": "<file>\n00002| \n00003| import { useState, useRef, useEffect } from \"react\"\n00004| import { Button } from \"@/components/ui/button\"\n00005| import { Textarea } from \"@/components/ui/textarea\"\n00006| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00007| import { Switch } from \"@/components/ui/switch\"\n00008| import { Input } from \"@/components/ui/input\"\n00009| import { Label } from \"@/components/ui/label\"\n00010| import { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\"\n00011| import { Progress } from \"@/components/ui/progress\"\n00012| import { Alert, AlertDescription } from \"@/components/ui/alert\"\n00013| import { \n00014|   ArrowUpDown, Copy, Download, Share2, Settings, \n00015|   Zap, ZapOff, Check, AlertTriangle, Info, \n00016|   ChevronDown, ChevronUp, BookOpen, History,\n00017|   Upload, FileText, Search, Trash2, Plus\n00018| } from \"lucide-react\"\n00019| import { toast } from \"sonner\"\n00020| \n00021| // Core data structures remain the same\n\n(File has more lines. Use 'offset' parameter to read beyond line 21)\n</file>",
+    "metadata": {
+      "preview": "\nimport { useState, useRef, useEffect } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\"\nimport { Progress } from \"@/components/ui/progress\"\nimport { Alert, AlertDescription } from \"@/components/ui/alert\"\nimport { \n  ArrowUpDown, Copy, Download, Share2, Settings, \n  Zap, ZapOff, Check, AlertTriangle, Info, \n  ChevronDown, ChevronUp, BookOpen, History,\n  Upload, FileText, Search, Trash2, Plus\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\n\n// Core data structures remain the same"
+    },
+    "title": "components/translator-nielsen.tsx",
+    "time": {
+      "start": 1759404861954,
+      "end": 1759404861956
+    }
+  }
+}

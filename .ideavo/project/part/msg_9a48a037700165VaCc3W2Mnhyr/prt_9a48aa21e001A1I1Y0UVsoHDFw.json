@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a48aa21e001A1I1Y0UVsoHDFw",
+  "messageID": "msg_9a48a037700165VaCc3W2Mnhyr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! Your translation app is now running with:\n\n✅ **Model**: `qwen-mt-turbo` (specialized for translation)  \n✅ **Endpoint**: International Singapore endpoint (`dashscope-intl.aliyuncs.com`)  \n✅ **API Key**: Your valid DashScope key  \n\nThe translation service should now work perfectly in your browser at `http://localhost:3000`. Try translating some text - it should respond much faster and more accurately since we're using the dedicated translation model!",
+  "time": {
+    "start": 1759402175893,
+    "end": 1759402175893
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "prt_9a48a026d001Th64CNDHLz52Gt",
+  "type": "text",
+  "text": "\n\n\nWe shall use Qwen-MT-Turbo\n\ncurl -X POST https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions -H \"Authorization: Bearer $DASHSCOPE_API_KEY\" -H \"Content-Type: application/json\" -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [\n        {\"role\":\"user\",\"content\":\"hi\"}\n      ],\n    \"stream\": true,\n    \n}'",
+  "messageID": "msg_9a48a026c001SoW1c1KJJtuypl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

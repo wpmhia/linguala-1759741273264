@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a48a1434001uGLHeJC7o61al1",
+  "messageID": "msg_9a48a037700165VaCc3W2Mnhyr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see! You want to use the `qwen-mt-turbo` model with the international endpoint. Let me update the API route to use the correct endpoint and model:",
+  "time": {
+    "start": 1759402137533,
+    "end": 1759402137533
+  }
+}

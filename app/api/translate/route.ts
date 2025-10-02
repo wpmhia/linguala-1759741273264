@@ -47,14 +47,14 @@ export async function POST(request: NextRequest) {
     }
 
     // Call Qwen API using OpenAI-compatible interface
-    const response = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-         model: 'qwen-plus',
+         model: 'qwen-mt-turbo',
         messages: [
           {
             role: 'system',

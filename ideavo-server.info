@@ -4,17 +4,58 @@ $ next dev
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2.2s
- ✓ Compiled /middleware in 173ms
+ ✓ Ready in 3.1s
+ ✓ Compiled /middleware in 252ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
- ✓ Compiled / in 4.5s (793 modules)
- GET / 200 in 5290ms
- ✓ Compiled in 866ms (408 modules)
- GET / 200 in 46ms
+ ✓ Compiled / in 7s (793 modules)
+ GET / 200 in 7795ms
+ ✓ Compiled in 850ms (408 modules)
+ GET / 200 in 211ms
  ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
  ○ Compiling /api/auth/[...nextauth] ...
- ✓ Compiled /api/auth/[...nextauth] in 885ms (624 modules)
- GET /api/auth/session 200 in 1638ms
- GET /api/auth/session 200 in 1645ms
+ ✓ Compiled /api/auth/[...nextauth] in 762ms (624 modules)
+ GET /api/auth/session 200 in 1475ms
+ GET /api/auth/session 200 in 27ms
+ ✓ Compiled /api/translate in 261ms (650 modules)
+Translation request body: { text: 'W', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Wa', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar ', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waa', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar i', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar is', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar is ', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 1124ms
+Translation request body: { text: 'Waar is d', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 1623ms
+Translation request body: { text: 'Waar is de', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 1057ms
+ POST /api/translate 200 in 1047ms
+Translation request body: { text: 'Waar is de ', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 487ms
+ POST /api/translate 200 in 1276ms
+ POST /api/translate 200 in 1120ms
+ POST /api/translate 200 in 1005ms
+ POST /api/translate 200 in 1309ms
+ POST /api/translate 200 in 568ms
+ POST /api/translate 200 in 552ms
+Translation request body: { text: 'Waar is de a', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar is de am', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar is de amb', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 525ms
+ POST /api/translate 200 in 513ms
+Translation request body: { text: 'Waar is de ambu', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 568ms
+Translation request body: { text: 'Waar is de ambul', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 546ms
+Translation request body: { text: 'Waar is de ambula', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar is de ambulan', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 561ms
+ POST /api/translate 200 in 513ms
+ POST /api/translate 200 in 509ms
+Translation request body: { text: 'Waar is de ambulanc', sourceLang: 'auto', targetLang: 'en' }
+Translation request body: { text: 'Waar is de ambulance', sourceLang: 'auto', targetLang: 'en' }
+ POST /api/translate 200 in 522ms
+ POST /api/translate 200 in 545ms

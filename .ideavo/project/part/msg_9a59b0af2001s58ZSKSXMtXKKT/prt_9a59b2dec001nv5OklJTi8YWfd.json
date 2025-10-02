@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a59b2dec001nv5OklJTi8YWfd",
+  "messageID": "msg_9a59b0af2001s58ZSKSXMtXKKT",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Qip9BiotAzyfMjGT5FNabp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "offset": 30,
+      "limit": 25
+    },
+    "output": "<file>\n00031|     \n00032|     // Email provider - only enable if SMTP is configured\n00033|     ...(process.env.EMAIL_SERVER_HOST ? [\n00034|       EmailProvider({\n00035|         server: {\n00036|           host: process.env.EMAIL_SERVER_HOST,\n00037|           port: process.env.EMAIL_SERVER_PORT,\n00038|           auth: {\n00039|             user: process.env.EMAIL_SERVER_USER,\n00040|             pass: process.env.EMAIL_SERVER_PASSWORD,\n00041|           },\n00042|         },\n00043|         from: process.env.EMAIL_FROM,\n00044|       })\n00045|     ] : []),\n00046|     \n00047|     // Google OAuth provider - only enable if credentials are configured\n00048|     ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n00049|       GoogleProvider({\n00050|         clientId: process.env.GOOGLE_CLIENT_ID,\n00051|         clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n00052|       })\n00053|     ] : []),\n00054|   ],\n00055|   \n\n(File has more lines. Use 'offset' parameter to read beyond line 55)\n</file>",
+    "metadata": {
+      "preview": "    \n    // Email provider - only enable if SMTP is configured\n    ...(process.env.EMAIL_SERVER_HOST ? [\n      EmailProvider({\n        server: {\n          host: process.env.EMAIL_SERVER_HOST,\n          port: process.env.EMAIL_SERVER_PORT,\n          auth: {\n            user: process.env.EMAIL_SERVER_USER,\n            pass: process.env.EMAIL_SERVER_PASSWORD,\n          },\n        },\n        from: process.env.EMAIL_FROM,\n      })\n    ] : []),\n    \n    // Google OAuth provider - only enable if credentials are configured\n    ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n      GoogleProvider({\n        clientId: process.env.GOOGLE_CLIENT_ID,"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759420035256,
+      "end": 1759420035270
+    }
+  }
+}

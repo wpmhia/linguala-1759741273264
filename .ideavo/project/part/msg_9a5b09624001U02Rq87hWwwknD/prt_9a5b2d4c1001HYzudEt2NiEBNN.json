@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a5b2d4c1001HYzudEt2NiEBNN",
+  "messageID": "msg_9a5b09624001U02Rq87hWwwknD",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_014YCsheN1PxrfiMPmGB1MQL",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/ui/linguala-logo.tsx",
+      "oldString": "export function LingualaLogo({ size = \"md\", className }: LingualaLogoProps) {\n  const textSizeClasses = {\n    sm: \"text-lg\",\n    md: \"text-xl\",\n    lg: \"text-3xl\", \n    xl: \"text-4xl\"\n  }\n\n  return (\n    <div className={cn(\"flex items-center\", className)}>\n      <span className={cn(\n        \"font-bold text-gray-900 tracking-tight\",\n        \"font-['Inter',_'system-ui',_sans-serif]\",\n        textSizeClasses[size]\n      )}>\n        Linguala Translate\n      </span>\n    </div>\n  )\n}",
+      "newString": "export function LingualaLogo({ size = \"md\", className }: LingualaLogoProps) {\n  const textSizeClasses = {\n    sm: \"text-lg\",\n    md: \"text-xl\",\n    lg: \"text-2xl\", \n    xl: \"text-3xl\"\n  }\n\n  return (\n    <div className={cn(\"flex items-center\", className)}>\n      <span className={cn(\n        \"font-normal text-gray-700\",\n        \"font-['Product_Sans',_'Roboto',_'Arial',_sans-serif]\",\n        textSizeClasses[size]\n      )}>\n        Linguala Translate\n      </span>\n    </div>\n  )\n}"
+    },
+    "error": "Error: You must read the file /home/user/project/components/ui/linguala-logo.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759421590375,
+      "end": 1759421590376
+    }
+  }
+}

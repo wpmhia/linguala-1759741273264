@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a5b332ac001UEIkSoZ47smzfn",
+  "messageID": "msg_9a5b09624001U02Rq87hWwwknD",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_019VsfGG3y5VZh19mcBtt6dt",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/ui/linguala-logo.tsx"
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| /**\n00004|  * Linguala Translate Logo - Clean Text-Based Design\n00005|  * \n00006|  * Design Elements:\n00007|  * - Clean, rounded typography for modern professional appearance\n00008|  * - Monochrome dark text for clean, professional look\n00009|  * - Simple, readable text-only approach\n00010|  * - Responsive sizing for different contexts\n00011|  */\n00012| \n00013| import { cn } from \"@/lib/utils\"\n00014| \n00015| interface LingualaLogoProps {\n00016|   size?: \"sm\" | \"md\" | \"lg\" | \"xl\"\n00017|   className?: string\n00018| }\n00019| \n00020| export function LingualaLogo({ size = \"md\", className }: LingualaLogoProps) {\n00021|   const textSizeClasses = {\n00022|     sm: \"text-lg\",\n00023|     md: \"text-xl\",\n00024|     lg: \"text-3xl\", \n00025|     xl: \"text-4xl\"\n00026|   }\n00027| \n00028|   return (\n00029|     <div className={cn(\"flex items-center\", className)}>\n00030|       <span className={cn(\n00031|         \"font-bold text-gray-900 tracking-tight\",\n00032|         \"font-['Inter',_'system-ui',_sans-serif]\",\n00033|         textSizeClasses[size]\n00034|       )}>\n00035|         Linguala Translate\n00036|       </span>\n00037|     </div>\n00038|   )\n00039| }\n00040| \n00041| // Compact version for small spaces\n00042| export function LingualaIcon({ className }: { className?: string }) {\n00043|   return (\n00044|     <div className={cn(\"flex items-center\", className)}>\n00045|       <span className=\"text-lg font-bold text-gray-900 font-['Inter',_'system-ui',_sans-serif]\">\n00046|         LT\n00047|       </span>\n00048|     </div>\n00049|   )\n00050| }\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\n/**\n * Linguala Translate Logo - Clean Text-Based Design\n * \n * Design Elements:\n * - Clean, rounded typography for modern professional appearance\n * - Monochrome dark text for clean, professional look\n * - Simple, readable text-only approach\n * - Responsive sizing for different contexts\n */\n\nimport { cn } from \"@/lib/utils\"\n\ninterface LingualaLogoProps {\n  size?: \"sm\" | \"md\" | \"lg\" | \"xl\"\n  className?: string\n}\n\nexport function LingualaLogo({ size = \"md\", className }: LingualaLogoProps) {"
+    },
+    "title": "components/ui/linguala-logo.tsx",
+    "time": {
+      "start": 1759421609148,
+      "end": 1759421609152
+    }
+  }
+}

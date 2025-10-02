@@ -21,15 +21,15 @@ export function LingualaLogo({ size = "md", className }: LingualaLogoProps) {
   const textSizeClasses = {
     sm: "text-lg",
     md: "text-xl",
-    lg: "text-3xl", 
-    xl: "text-4xl"
+    lg: "text-2xl", 
+    xl: "text-3xl"
   }
 
   return (
     <div className={cn("flex items-center", className)}>
       <span className={cn(
-        "font-bold text-gray-900 tracking-tight",
-        "font-['Inter',_'system-ui',_sans-serif]",
+        "font-normal text-gray-700",
+        "font-['Product_Sans',_'Roboto',_'Arial',_sans-serif]",
         textSizeClasses[size]
       )}>
         Linguala Translate
@@ -42,7 +42,7 @@ export function LingualaLogo({ size = "md", className }: LingualaLogoProps) {
 export function LingualaIcon({ className }: { className?: string }) {
   return (
     <div className={cn("flex items-center", className)}>
-      <span className="text-lg font-bold text-gray-900 font-['Inter',_'system-ui',_sans-serif]">
+      <span className="text-lg font-normal text-gray-700 font-['Product_Sans',_'Roboto',_'Arial',_sans-serif]">
         LT
       </span>
     </div>

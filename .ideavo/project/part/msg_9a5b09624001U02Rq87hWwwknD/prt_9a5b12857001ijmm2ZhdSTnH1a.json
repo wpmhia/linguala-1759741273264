@@ -1,0 +1,97 @@
+{
+  "id": "prt_9a5b12857001ijmm2ZhdSTnH1a",
+  "messageID": "msg_9a5b09624001U02Rq87hWwwknD",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01Nhf2aPFKS3rpcDDescPSfY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Analyze Google Translate design patterns",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Update main layout to Google Translate style",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Style language selectors with Google's design",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Update text areas to match Google Translate",
+          "status": "pending",
+          "priority": "medium",
+          "id": "4"
+        },
+        {
+          "content": "Implement Google's header and navigation",
+          "status": "pending",
+          "priority": "medium",
+          "id": "5"
+        },
+        {
+          "content": "Add Google-style logo and branding",
+          "status": "pending",
+          "priority": "low",
+          "id": "6"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Analyze Google Translate design patterns\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Update main layout to Google Translate style\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Style language selectors with Google's design\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"3\"\n  },\n  {\n    \"content\": \"Update text areas to match Google Translate\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"4\"\n  },\n  {\n    \"content\": \"Implement Google's header and navigation\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"5\"\n  },\n  {\n    \"content\": \"Add Google-style logo and branding\",\n    \"status\": \"pending\",\n    \"priority\": \"low\",\n    \"id\": \"6\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Analyze Google Translate design patterns",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Update main layout to Google Translate style",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Style language selectors with Google's design",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Update text areas to match Google Translate",
+          "status": "pending",
+          "priority": "medium",
+          "id": "4"
+        },
+        {
+          "content": "Implement Google's header and navigation",
+          "status": "pending",
+          "priority": "medium",
+          "id": "5"
+        },
+        {
+          "content": "Add Google-style logo and branding",
+          "status": "pending",
+          "priority": "low",
+          "id": "6"
+        }
+      ]
+    },
+    "title": "5 todos",
+    "time": {
+      "start": 1759421476916,
+      "end": 1759421476917
+    }
+  }
+}

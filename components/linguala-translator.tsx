@@ -5,58 +5,40 @@ import { useSession } from "next-auth/react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { 
-  ArrowUpDown, Copy, Download, Share2, Sparkles,
-  Check, BookOpen, History, Globe,
-  TrendingUp, Brain, Target, AlertCircle
+  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,
+  Check, X, Mic, Settings, History, FileText
 } from "lucide-react"
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { UserProfile } from "@/components/user-profile"
 
-// Official EU Languages (24 languages)
+// Common languages like Google Translate
 const LANGUAGES = [
-  // Auto-detect
-  { code: "auto", name: "Detect language", region: "auto", popular: true },
-  
-  // Most Popular EU Languages
-  { code: "en", name: "English", region: "EU Official", popular: true },
-  { code: "de", name: "German", region: "EU Official", popular: true },
-  { code: "fr", name: "French", region: "EU Official", popular: true },
-  { code: "es", name: "Spanish", region: "EU Official", popular: true },
-  { code: "it", name: "Italian", region: "EU Official", popular: true },
-  { code: "pt", name: "Portuguese", region: "EU Official", popular: true },
-  { code: "pl", name: "Polish", region: "EU Official", popular: true },
-  { code: "nl", name: "Dutch", region: "EU Official", popular: true },
-  
-  // Nordic EU Languages
-  { code: "da", name: "Danish", region: "EU Official", popular: false },
-  { code: "sv", name: "Swedish", region: "EU Official", popular: false },
-  { code: "fi", name: "Finnish", region: "EU Official", popular: false },
-  
-  // Western EU Languages
-  { code: "ga", name: "Irish", region: "EU Official", popular: false },
-  { code: "mt", name: "Maltese", region: "EU Official", popular: false },
-  
-  // Central EU Languages
-  { code: "cs", name: "Czech", region: "EU Official", popular: false },
-  { code: "sk", name: "Slovak", region: "EU Official", popular: false },
-  { code: "hu", name: "Hungarian", region: "EU Official", popular: false },
-  { code: "sl", name: "Slovenian", region: "EU Official", popular: false },
-  { code: "hr", name: "Croatian", region: "EU Official", popular: false },
-  
-  // Eastern EU Languages
-  { code: "bg", name: "Bulgarian", region: "EU Official", popular: false },
-  { code: "ro", name: "Romanian", region: "EU Official", popular: false },
-  { code: "lt", name: "Lithuanian", region: "EU Official", popular: false },
-  { code: "lv", name: "Latvian", region: "EU Official", popular: false },
-  { code: "et", name: "Estonian", region: "EU Official", popular: false },
-  
-  // Southern EU Languages
-  { code: "el", name: "Greek", region: "EU Official", popular: false }
+  { code: "auto", name: "Detect language", flag: "🌐" },
+  { code: "en", name: "English", flag: "🇺🇸" },
+  { code: "es", name: "Spanish", flag: "🇪🇸" },
+  { code: "fr", name: "French", flag: "🇫🇷" },
+  { code: "de", name: "German", flag: "🇩🇪" },
+  { code: "it", name: "Italian", flag: "🇮🇹" },
+  { code: "pt", name: "Portuguese", flag: "🇵🇹" },
+  { code: "ru", name: "Russian", flag: "🇷🇺" },
+  { code: "ja", name: "Japanese", flag: "🇯🇵" },
+  { code: "ko", name: "Korean", flag: "🇰🇷" },
+  { code: "zh", name: "Chinese", flag: "🇨🇳" },
+  { code: "ar", name: "Arabic", flag: "🇸🇦" },
+  { code: "hi", name: "Hindi", flag: "🇮🇳" },
+  { code: "nl", name: "Dutch", flag: "🇳🇱" },
+  { code: "sv", name: "Swedish", flag: "🇸🇪" },
+  { code: "da", name: "Danish", flag: "🇩🇰" },
+  { code: "no", name: "Norwegian", flag: "🇳🇴" },
+  { code: "fi", name: "Finnish", flag: "🇫🇮" },
+  { code: "pl", name: "Polish", flag: "🇵🇱" },
+  { code: "cs", name: "Czech", flag: "🇨🇿" },
+  { code: "hu", name: "Hungarian", flag: "🇭🇺" },
+  { code: "tr", name: "Turkish", flag: "🇹🇷" },
+  { code: "th", name: "Thai", flag: "🇹🇭" },
+  { code: "vi", name: "Vietnamese", flag: "🇻🇳" }
 ]
 
 export default function LingualaTranslator() {
@@ -71,16 +53,19 @@ export default function LingualaTranslator() {
   
   // UI state
   const [copySuccess, setCopySuccess] = useState(false)
+  const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)
 
   // Helper functions
-  const getLanguageName = (code: string) => {
-    return LANGUAGES.find(lang => lang.code === code)?.name || code
+  const getLanguage = (code: string) => {
+    return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]
   }
 
   const handleSourceTextChange = (text: string) => {
     setSourceText(text)
     if (text.trim()) {
       translateText(text, sourceLang, targetLang)
+    } else {
+      setTranslatedText("")
     }
   }
 
@@ -105,9 +90,7 @@ export default function LingualaTranslator() {
       }
     } catch (error) {
       console.error('Translation error:', error)
-      toast.error("Translation temporarily unavailable. Please try again later.")
-      // Set a helpful fallback message
-      setTranslatedText("Translation service is initializing. Please try again in a moment.")
+      setTranslatedText("Translation service temporarily unavailable. Please try again later.")
     } finally {
       setIsTranslating(false)
     }
@@ -133,239 +116,241 @@ export default function LingualaTranslator() {
     }
   }
 
+  const clearText = () => {
+    setSourceText("")
+    setTranslatedText("")
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
-      {/* Premium Header */}
-      <header className="bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-4">
+    <div className="min-h-screen bg-white">
+      {/* Google-style Header */}
+      <header className="border-b border-gray-200">
+        <div className="max-w-screen-xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <LingualaLogo size="lg" />
-            <UserProfile />
+            <div className="flex items-center space-x-8">
+              <LingualaLogo size="md" />
+              <nav className="hidden md:flex items-center space-x-6">
+                <button className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                  Text
+                </button>
+                <button className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                  Documents
+                </button>
+                <button className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                  Website
+                </button>
+              </nav>
+            </div>
+            <div className="flex items-center space-x-4">
+              {session?.user && (
+                <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+                  <History className="h-5 w-5" />
+                </button>
+              )}
+              <UserProfile />
+            </div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-screen-xl mx-auto px-6 py-8">
         {/* Main Translation Interface */}
-        <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
-          <CardHeader className="pb-4">
-          </CardHeader>
-
-          <CardContent className="space-y-6">
-            {/* Language Selection */}
-            <div className="flex items-center justify-center space-x-4">
+        <div className="bg-white">
+          {/* Language Selection Bar */}
+          <div className="flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4">
+            <div className="flex items-center space-x-4">
               <Select value={sourceLang} onValueChange={(value) => {
                 setSourceLang(value)
                 if (sourceText.trim()) translateText(sourceText, value, targetLang)
               }}>
-                <SelectTrigger className="w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors">
-                  <SelectValue />
+                <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm">{getLanguage(sourceLang).flag}</span>
+                    <span className="font-medium text-sm">{getLanguage(sourceLang).name}</span>
+                  </div>
                 </SelectTrigger>
                 <SelectContent>
                   {LANGUAGES.map(lang => (
                     <SelectItem key={lang.code} value={lang.code}>
-                      {lang.name}
+                      <div className="flex items-center space-x-2">
+                        <span>{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </div>
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
+            </div>
 
-              <Button
-                variant="ghost"
-                size="lg"
-                onClick={swapLanguages}
-                disabled={sourceLang === "auto"}
-                className="p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50"
-              >
-                <ArrowUpDown className="h-5 w-5" />
-              </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={swapLanguages}
+              disabled={sourceLang === "auto"}
+              className="p-2 rounded-full hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <ArrowUpDown className="h-4 w-4" />
+            </Button>
 
+            <div className="flex items-center space-x-4">
               <Select value={targetLang} onValueChange={(value) => {
                 setTargetLang(value)
                 if (sourceText.trim()) translateText(sourceText, sourceLang, value)
               }}>
-                <SelectTrigger className="w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors">
-                  <SelectValue />
+                <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-0 focus:ring-offset-0">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm">{getLanguage(targetLang).flag}</span>
+                    <span className="font-medium text-sm">{getLanguage(targetLang).name}</span>
+                  </div>
                 </SelectTrigger>
                 <SelectContent>
                   {LANGUAGES.filter(lang => lang.code !== "auto").map(lang => (
                     <SelectItem key={lang.code} value={lang.code}>
-                      {lang.name}
+                      <div className="flex items-center space-x-2">
+                        <span>{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </div>
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
+          </div>
 
-            {/* Translation Areas */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Source Text */}
-              <div className="space-y-3">
-                <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
-                  <Globe className="h-4 w-4" />
-                  <span>{getLanguageName(sourceLang)}</span>
-                </Label>
-                <div className="relative">
-                  <Textarea
-                    value={sourceText}
-                    onChange={(e) => handleSourceTextChange(e.target.value)}
-                    placeholder="Enter text to translate..."
-                    className="min-h-[200px] text-base border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
-                  />
-                  <div className="absolute bottom-2 right-2 flex items-center space-x-2">
-                    <div className={`text-xs ${
-                      sourceText.length > 4500 ? 'text-red-500 font-semibold' : 
-                      sourceText.length > 4000 ? 'text-orange-500' :
-                      'text-gray-400'
-                    }`}>
-                      {sourceText.length} / 5000
-                    </div>
-                    {sourceText.length > 4500 && (
-                      <AlertCircle className="h-4 w-4 text-red-500" />
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Translated Text */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
-                    <Sparkles className="h-4 w-4" />
-                    <span>{getLanguageName(targetLang)}</span>
-                  </Label>
+          {/* Translation Areas */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden">
+            {/* Source Text */}
+            <div className="relative">
+              <div className="border-b border-gray-200 lg:border-b-0 lg:border-r">
+                <Textarea
+                  value={sourceText}
+                  onChange={(e) => handleSourceTextChange(e.target.value)}
+                  onFocus={() => setFocusedArea('source')}
+                  onBlur={() => setFocusedArea(null)}
+                  placeholder="Enter text"
+                  className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-0 focus-visible:ring-0 p-6"
+                  style={{ fontSize: '16px', lineHeight: '1.5' }}
+                />
+                
+                {/* Source Text Controls */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    {translatedText && (
+                    {sourceText && (
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => copyToClipboard(translatedText)}
-                        className="text-gray-500 hover:text-blue-600"
+                        onClick={clearText}
+                        className="p-2 hover:bg-gray-100 rounded-full"
                       >
-                        {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                        <X className="h-4 w-4" />
+                      </Button>
+                    )}
+                    {session?.user && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="p-2 hover:bg-gray-100 rounded-full"
+                      >
+                        <Mic className="h-4 w-4" />
                       </Button>
                     )}
                   </div>
+                  
+                  <div className="text-xs text-gray-400">
+                    {sourceText.length} / 5000
+                  </div>
                 </div>
-                <Textarea
-                  value={translatedText}
-                  readOnly
-                  placeholder={isTranslating ? "Translating..." : "Translation will appear here"}
-                  className="min-h-[200px] text-base bg-gradient-to-br from-blue-50/50 to-indigo-50/50 border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
-                />
               </div>
             </div>
-          </CardContent>
-        </Card>
 
-        {/* Features showcase for anonymous users */}
-        {!session?.user && (
-          <div className="max-w-4xl mx-auto mb-8">
-            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
-              <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                    Unlock Professional EU Translation
-                  </h2>
-                  <p className="text-lg text-gray-600">
-                    Join thousands of EU professionals translating across all 24 official languages
-                  </p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                  {/* Domain Expertise */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 rounded-full bg-purple-500">
-                        <Brain className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Domain Expertise</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      7 specialized domains: Technology, Medical, Legal, Business, Academic, Creative
-                    </p>
+            {/* Translated Text */}
+            <div className="relative bg-gray-50">
+              <Textarea
+                value={translatedText}
+                readOnly
+                placeholder={isTranslating ? "Translating..." : "Translation"}
+                className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-0 focus-visible:ring-0 p-6 bg-gray-50"
+                style={{ fontSize: '16px', lineHeight: '1.5' }}
+              />
+              
+              {/* Translation Controls */}
+              {translatedText && (
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => copyToClipboard(translatedText)}
+                      className="p-2 hover:bg-gray-200 rounded-full"
+                    >
+                      {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                    </Button>
+                    {session?.user && (
+                      <>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="p-2 hover:bg-gray-200 rounded-full"
+                        >
+                          <Volume2 className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="p-2 hover:bg-gray-200 rounded-full"
+                        >
+                          <Star className="h-4 w-4" />
+                        </Button>
+                      </>
+                    )}
                   </div>
-
-                  {/* Custom Glossaries */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 rounded-full bg-green-500">
-                        <BookOpen className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Custom Glossaries</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      Build personal terminology databases for consistent professional translations
-                    </p>
-                  </div>
-
-                  {/* Translation History */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 rounded-full bg-blue-500">
-                        <History className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Translation History</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      Search and manage all your translations across devices with cloud sync
-                    </p>
-                  </div>
-
-                  {/* Export & Share */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 rounded-full bg-orange-500">
-                        <Download className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Export & Share</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      Download in multiple formats and create shareable translation links
-                    </p>
-                  </div>
-
-                  {/* Usage Analytics */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 rounded-full bg-indigo-500">
-                        <TrendingUp className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Usage Analytics</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      Track your translation patterns and improve your multilingual workflow
-                    </p>
-                  </div>
-
-                  {/* EU Official */}
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 rounded-full bg-blue-600">
-                        <Globe className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 ml-4">EU Official Languages</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      All 24 official EU languages with optimized cultural and business contexts
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="text-center">
-                  <Button 
-                    onClick={() => window.location.href = '/auth/signin'}
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-4 text-lg font-semibold"
+                  
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="p-2 hover:bg-gray-200 rounded-full"
                   >
-                    Join the Official EU Translation Platform - Free
+                    <MoreHorizontal className="h-4 w-4" />
                   </Button>
-                  <p className="text-sm text-gray-500 mt-3">
-                    Sign in to access all 24 EU languages, domain expertise, multilingual glossaries, and professional tools built for EU contexts.
-                  </p>
                 </div>
-              </CardContent>
-            </Card>
+              )}
+            </div>
+          </div>
+
+          {/* Bottom Actions */}
+          {session?.user && (
+            <div className="mt-6 flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <Button variant="outline" size="sm">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Translate a document
+                </Button>
+              </div>
+              
+              <div className="flex items-center space-x-2 text-sm text-gray-500">
+                <span>Powered by Linguala Translate</span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Sign-in CTA for anonymous users */}
+        {!session?.user && (
+          <div className="mt-12 text-center">
+            <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">
+                Get more with Linguala Translate
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Save translations, access more languages, and get personalized suggestions.
+              </p>
+              <Button 
+                onClick={() => window.location.href = '/auth/signin'}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2"
+              >
+                Sign in
+              </Button>
+            </div>
           </div>
         )}
       </main>

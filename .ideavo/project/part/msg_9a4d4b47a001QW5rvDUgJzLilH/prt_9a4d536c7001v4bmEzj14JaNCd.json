@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4d536c7001v4bmEzj14JaNCd",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_016kxCZ9K5UpFhR3J13pbRzc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/ui/linguala-logo.tsx",
+      "offset": 55,
+      "limit": 10
+    },
+    "output": "<file>\n00056|               />\n00057|               \n00058|               {/* Accent dots for movement */}\n00059|               <circle cx=\"9\" cy=\"8\" r=\"1\" fill=\"url(#logoGradient)\" opacity=\"0.6\" />\n00060|               <circle cx=\"15\" cy=\"12\" r=\"1\" fill=\"url(#logoGradient)\" opacity=\"0.6\" />\n00061|             </svg>\n00062|           </div>\n00063|         </div>\n00064|       </div>\n00065| \n\n(File has more lines. Use 'offset' parameter to read beyond line 65)\n</file>",
+    "metadata": {
+      "preview": "              />\n              \n              {/* Accent dots for movement */}\n              <circle cx=\"9\" cy=\"8\" r=\"1\" fill=\"url(#logoGradient)\" opacity=\"0.6\" />\n              <circle cx=\"15\" cy=\"12\" r=\"1\" fill=\"url(#logoGradient)\" opacity=\"0.6\" />\n            </svg>\n          </div>\n        </div>\n      </div>\n"
+    },
+    "title": "components/ui/linguala-logo.tsx",
+    "time": {
+      "start": 1759407061266,
+      "end": 1759407061268
+    }
+  }
+}

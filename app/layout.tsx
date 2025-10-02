@@ -7,25 +7,25 @@ import { SessionProvider } from '@/components/providers/session-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Linguala - Advanced AI Translation Platform',
-  description: 'Professional translation platform with domain expertise, custom glossaries, and intelligent AI powered by Qwen. Translate with precision at Linguala.eu',
-  keywords: 'translation, AI, professional, linguala, domain translation, glossary, languages',
-  authors: [{ name: 'Linguala Team' }],
+  title: 'Linguala - European AI Translation Platform',
+  description: 'The European translation platform built for European languages and culture. Professional domain expertise, custom glossaries, and intelligent AI. Based in Europe, for Europe.',
+  keywords: 'european translation, EU languages, european translator, linguala, multilingual europe, professional translation, domain expertise',
+  authors: [{ name: 'Linguala Europe' }],
   creator: 'Linguala',
-  publisher: 'Linguala',
+  publisher: 'Linguala Europe',
   robots: 'index, follow',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_EU',
     url: 'https://linguala.eu',
-    title: 'Linguala - Advanced AI Translation Platform',
-    description: 'Professional translation platform with domain expertise and custom glossaries',
+    title: 'Linguala - European AI Translation Platform',
+    description: 'The European translation platform built for European languages and culture',
     siteName: 'Linguala',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Linguala - Advanced AI Translation Platform',
-    description: 'Professional translation platform with domain expertise and custom glossaries',
+    title: 'Linguala - European AI Translation Platform',
+    description: 'European translation platform built for European languages and culture',
     creator: '@linguala',
   },
 };

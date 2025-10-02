@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4d6642a001oyacyqS7Y1ur91",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_015MY9FkigAc1u22oEjqwk4y",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                  <h3 className=\"text-lg font-semibold text-gray-900\">Unlock Premium Features</h3>\n                  <p className=\"text-sm text-gray-600\">\n                    Sign in to access domain expertise, custom glossaries, translation history, and more.\n                  </p>",
+      "newString": "                  <h3 className=\"text-lg font-semibold text-gray-900\">Join Europe's Translation Platform</h3>\n                  <p className=\"text-sm text-gray-600\">\n                    Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.\n                  </p>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -482,11 +482,11 @@\n   <div className=\"p-3 bg-blue-100 rounded-full\">\n     <BookOpen className=\"h-6 w-6 text-blue-600\" />\n   </div>\n </div>\n-<h3 className=\"text-lg font-semibold text-gray-900\">Unlock Premium Features</h3>\n+<h3 className=\"text-lg font-semibold text-gray-900\">Join Europe's Translation Platform</h3>\n <p className=\"text-sm text-gray-600\">\n-  Sign in to access domain expertise, custom glossaries, translation history, and more.\n+  Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.\n </p>\n <Button \n   onClick={() => window.location.href = '/auth/signin'}\n   className=\"bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white\"\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407140441,
+      "end": 1759407140447
+    }
+  }
+}

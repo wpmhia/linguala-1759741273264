@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4d6fe64001L5N3x5KnH7WMLt",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01U2HVqFpju8wWYRBqe735jM",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" || true; npm start",
+      "timeout": 6000,
+      "description": "Start European Linguala platform"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Start European Linguala platform"
+    },
+    "title": "pkill -f \"next\" || true; npm start",
+    "time": {
+      "start": 1759407178349,
+      "end": 1759407178373
+    }
+  }
+}

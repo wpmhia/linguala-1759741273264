@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4d65672002tPCxooFVyL3V0H",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01W3v39hhXJy7wnHYAggr62o",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 480,
+      "limit": 20
+    },
+    "output": "<file>\n00481|                   <div className=\"flex justify-center\">\n00482|                     <div className=\"p-3 bg-blue-100 rounded-full\">\n00483|                       <BookOpen className=\"h-6 w-6 text-blue-600\" />\n00484|                     </div>\n00485|                   </div>\n00486|                   <h3 className=\"text-lg font-semibold text-gray-900\">Unlock Premium Features</h3>\n00487|                   <p className=\"text-sm text-gray-600\">\n00488|                     Sign in to access domain expertise, custom glossaries, translation history, and more.\n00489|                   </p>\n00490|                   <Button \n00491|                     onClick={() => window.location.href = '/auth/signin'}\n00492|                     className=\"bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white\"\n00493|                   >\n00494|                     Sign In\n00495|                   </Button>\n00496|                 </div>\n00497|               </CardContent>\n00498|             </Card>\n00499|           </div>\n00500|         )}\n\n(File has more lines. Use 'offset' parameter to read beyond line 500)\n</file>",
+    "metadata": {
+      "preview": "                  <div className=\"flex justify-center\">\n                    <div className=\"p-3 bg-blue-100 rounded-full\">\n                      <BookOpen className=\"h-6 w-6 text-blue-600\" />\n                    </div>\n                  </div>\n                  <h3 className=\"text-lg font-semibold text-gray-900\">Unlock Premium Features</h3>\n                  <p className=\"text-sm text-gray-600\">\n                    Sign in to access domain expertise, custom glossaries, translation history, and more.\n                  </p>\n                  <Button \n                    onClick={() => window.location.href = '/auth/signin'}\n                    className=\"bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white\"\n                  >\n                    Sign In\n                  </Button>\n                </div>\n              </CardContent>\n            </Card>\n          </div>\n        )}"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407135220,
+      "end": 1759407135222
+    }
+  }
+}

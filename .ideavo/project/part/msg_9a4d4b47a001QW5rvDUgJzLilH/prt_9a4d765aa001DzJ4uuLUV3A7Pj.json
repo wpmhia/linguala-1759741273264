@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a4d765aa001DzJ4uuLUV3A7Pj",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(ui): emphasize Linguala's European brand identity",
+  "cost": 0.6583254000000001,
+  "tokens": {
+    "input": 0,
+    "output": 523,
+    "reasoning": 0,
+    "cache": {
+      "write": 170,
+      "read": 89404
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a4d521c4001MlL1Hs81RCuXa0",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_011ydh7Qy6vbdZwTWqTGKFsT",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/ui/linguala-logo.tsx",
+      "oldString": "          {size === \"xl\" && (\n            <span className=\"text-xs text-gray-500 -mt-1 tracking-widest uppercase\">\n              Advanced Translation\n            </span>\n          )}",
+      "newString": "          {size === \"xl\" && (\n            <span className=\"text-xs text-gray-500 -mt-1 tracking-widest uppercase\">\n              European Translation\n            </span>\n          )}"
+    },
+    "error": "Error: You must read the file /home/user/project/components/ui/linguala-logo.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759407057530,
+      "end": 1759407057532
+    }
+  }
+}

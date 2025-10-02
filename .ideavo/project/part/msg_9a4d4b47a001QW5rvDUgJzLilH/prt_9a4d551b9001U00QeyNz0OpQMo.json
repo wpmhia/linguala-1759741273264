@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4d551b9001U00QeyNz0OpQMo",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_018mA1iKKjmbeCLg6AiaUdZf",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/ui/linguala-logo.tsx",
+      "offset": 75,
+      "limit": 5
+    },
+    "output": "<file>\n00076|             <span className=\"text-xs text-gray-500 -mt-1 tracking-widest uppercase\">\n00077|               Advanced Translation\n00078|             </span>\n00079|           )}\n00080|         </div>\n\n(File has more lines. Use 'offset' parameter to read beyond line 80)\n</file>",
+    "metadata": {
+      "preview": "            <span className=\"text-xs text-gray-500 -mt-1 tracking-widest uppercase\">\n              Advanced Translation\n            </span>\n          )}\n        </div>"
+    },
+    "title": "components/ui/linguala-logo.tsx",
+    "time": {
+      "start": 1759407068210,
+      "end": 1759407068212
+    }
+  }
+}

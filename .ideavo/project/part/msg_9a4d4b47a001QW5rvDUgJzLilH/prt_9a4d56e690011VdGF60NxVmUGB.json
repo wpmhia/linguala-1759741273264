@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4d56e690011VdGF60NxVmUGB",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01QSCS8gZLVTK3wdfX8K6w8T",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/auth/signin/page.tsx",
+      "offset": 88,
+      "limit": 10
+    },
+    "output": "<file>\n00089|           </div>\n00090|           <CardTitle className=\"text-2xl font-semibold\">Welcome to Linguala</CardTitle>\n00091|           <CardDescription>\n00092|             Sign in to access your personal translation history, custom glossaries, and premium features\n00093|           </CardDescription>\n00094|         </CardHeader>\n00095|         \n00096|         <CardContent className=\"space-y-4\">\n00097|           {error && (\n00098|             <Alert className=\"border-red-200 bg-red-50\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 98)\n</file>",
+    "metadata": {
+      "preview": "          </div>\n          <CardTitle className=\"text-2xl font-semibold\">Welcome to Linguala</CardTitle>\n          <CardDescription>\n            Sign in to access your personal translation history, custom glossaries, and premium features\n          </CardDescription>\n        </CardHeader>\n        \n        <CardContent className=\"space-y-4\">\n          {error && (\n            <Alert className=\"border-red-200 bg-red-50\">"
+    },
+    "title": "app/auth/signin/page.tsx",
+    "time": {
+      "start": 1759407075669,
+      "end": 1759407075670
+    }
+  }
+}

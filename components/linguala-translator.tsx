@@ -24,52 +24,54 @@ import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { UserProfile } from "@/components/user-profile"
 
-// Enhanced language data organized by geographic regions
+// European-focused language data - European languages prioritized
 const LANGUAGES = [
   // Auto-detect
   { code: "auto", name: "Detect language", region: "auto", popular: true },
   
-  // English first
-  { code: "en", name: "English", region: "Global", popular: true },
+  // English - European lingua franca
+  { code: "en", name: "English", region: "European Standard", popular: true },
   
-  // Northern European languages
-  { code: "da", name: "Danish", region: "Northern Europe", popular: false },
-  { code: "sv", name: "Swedish", region: "Northern Europe", popular: false },
-  { code: "no", name: "Norwegian", region: "Northern Europe", popular: false },
-  { code: "fi", name: "Finnish", region: "Northern Europe", popular: false },
-  { code: "et", name: "Estonian", region: "Northern Europe", popular: false },
-  { code: "lv", name: "Latvian", region: "Northern Europe", popular: false },
-  { code: "lt", name: "Lithuanian", region: "Northern Europe", popular: false },
-  { code: "nl", name: "Dutch", region: "Northern Europe", popular: false },
-  { code: "de", name: "German", region: "Northern Europe", popular: true },
-  
-  // Southern European languages
-  { code: "fr", name: "French", region: "Southern Europe", popular: true },
+  // Major European languages (most popular)
+  { code: "de", name: "German", region: "Central Europe", popular: true },
+  { code: "fr", name: "French", region: "Western Europe", popular: true },
   { code: "es", name: "Spanish", region: "Southern Europe", popular: true },
   { code: "it", name: "Italian", region: "Southern Europe", popular: true },
   { code: "pt", name: "Portuguese", region: "Southern Europe", popular: true },
-  { code: "el", name: "Greek", region: "Southern Europe", popular: false },
-  { code: "ro", name: "Romanian", region: "Southern Europe", popular: false },
-  { code: "bg", name: "Bulgarian", region: "Southern Europe", popular: false },
-  { code: "hr", name: "Croatian", region: "Southern Europe", popular: false },
-  { code: "sl", name: "Slovenian", region: "Southern Europe", popular: false },
-  
-  // Eastern European languages
   { code: "ru", name: "Russian", region: "Eastern Europe", popular: true },
-  { code: "pl", name: "Polish", region: "Eastern Europe", popular: false },
-  { code: "cs", name: "Czech", region: "Eastern Europe", popular: false },
-  { code: "sk", name: "Slovak", region: "Eastern Europe", popular: false },
-  { code: "hu", name: "Hungarian", region: "Eastern Europe", popular: false },
+  { code: "pl", name: "Polish", region: "Eastern Europe", popular: true },
+  { code: "nl", name: "Dutch", region: "Western Europe", popular: true },
   
-  // Other regions
-  { code: "tr", name: "Turkish", region: "Middle East", popular: false },
-  { code: "ar", name: "Arabic", region: "Middle East", popular: true },
+  // Nordic languages
+  { code: "da", name: "Danish", region: "Nordic Europe", popular: false },
+  { code: "sv", name: "Swedish", region: "Nordic Europe", popular: false },
+  { code: "no", name: "Norwegian", region: "Nordic Europe", popular: false },
+  { code: "fi", name: "Finnish", region: "Nordic Europe", popular: false },
   
-  // Asian Languages  
-  { code: "zh", name: "Chinese", region: "Asia", popular: true },
-  { code: "ja", name: "Japanese", region: "Asia", popular: true },
-  { code: "ko", name: "Korean", region: "Asia", popular: true },
-  { code: "hi", name: "Hindi", region: "Asia", popular: true },
+  // Baltic languages
+  { code: "et", name: "Estonian", region: "Baltic Europe", popular: false },
+  { code: "lv", name: "Latvian", region: "Baltic Europe", popular: false },
+  { code: "lt", name: "Lithuanian", region: "Baltic Europe", popular: false },
+  
+  // Central & Eastern European languages
+  { code: "cs", name: "Czech", region: "Central Europe", popular: false },
+  { code: "sk", name: "Slovak", region: "Central Europe", popular: false },
+  { code: "hu", name: "Hungarian", region: "Central Europe", popular: false },
+  { code: "ro", name: "Romanian", region: "Eastern Europe", popular: false },
+  { code: "bg", name: "Bulgarian", region: "Eastern Europe", popular: false },
+  { code: "hr", name: "Croatian", region: "Southeastern Europe", popular: false },
+  { code: "sl", name: "Slovenian", region: "Central Europe", popular: false },
+  { code: "el", name: "Greek", region: "Southeastern Europe", popular: false },
+  
+  // European neighbors
+  { code: "tr", name: "Turkish", region: "Europe/Asia", popular: false },
+  
+  // Global languages (non-European)
+  { code: "ar", name: "Arabic", region: "Middle East", popular: false },
+  { code: "zh", name: "Chinese", region: "Asia", popular: false },
+  { code: "ja", name: "Japanese", region: "Asia", popular: false },
+  { code: "ko", name: "Korean", region: "Asia", popular: false },
+  { code: "hi", name: "Hindi", region: "Asia", popular: false },
   { code: "th", name: "Thai", region: "Asia", popular: false },
   { code: "vi", name: "Vietnamese", region: "Asia", popular: false },
   { code: "ms", name: "Malay", region: "Asia", popular: false },
@@ -481,9 +483,9 @@ export default function LingualaTranslator() {
                       <BookOpen className="h-6 w-6 text-blue-600" />
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">Unlock Premium Features</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">Join Europe's Translation Platform</h3>
                   <p className="text-sm text-gray-600">
-                    Sign in to access domain expertise, custom glossaries, translation history, and more.
+                    Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.
                   </p>
                   <Button 
                     onClick={() => window.location.href = '/auth/signin'}

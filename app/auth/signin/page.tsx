@@ -89,7 +89,7 @@ function SignInForm() {
           </div>
           <CardTitle className="text-2xl font-semibold">Welcome to Linguala</CardTitle>
           <CardDescription>
-            Sign in to access your personal translation history, custom glossaries, and premium features
+            Join Europe's translation platform. Access your personal history, custom glossaries, and professional European language tools
           </CardDescription>
         </CardHeader>
         

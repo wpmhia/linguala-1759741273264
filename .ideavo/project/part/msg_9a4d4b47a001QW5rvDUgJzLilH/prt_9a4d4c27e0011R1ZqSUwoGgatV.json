@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a4d4c27e0011R1ZqSUwoGgatV",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01QNng5c8kcMEmMsNK6CA9zo",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "export const metadata: Metadata = {\n  title: 'Linguala - Advanced AI Translation Platform',\n  description: 'Professional translation platform with domain expertise, custom glossaries, and intelligent AI powered by Qwen. Translate with precision at Linguala.eu',\n  keywords: 'translation, AI, professional, linguala, domain translation, glossary, languages',\n  authors: [{ name: 'Linguala Team' }],\n  creator: 'Linguala',\n  publisher: 'Linguala',\n  robots: 'index, follow',\n  openGraph: {\n    type: 'website',\n    locale: 'en_US',\n    url: 'https://linguala.eu',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    siteName: 'Linguala',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    creator: '@linguala',\n  },\n};",
+      "newString": "export const metadata: Metadata = {\n  title: 'Linguala - European AI Translation Platform',\n  description: 'The European translation platform built for European languages and culture. Professional domain expertise, custom glossaries, and intelligent AI. Based in Europe, for Europe.',\n  keywords: 'european translation, EU languages, european translator, linguala, multilingual europe, professional translation, domain expertise',\n  authors: [{ name: 'Linguala Europe' }],\n  creator: 'Linguala',\n  publisher: 'Linguala Europe',\n  robots: 'index, follow',\n  openGraph: {\n    type: 'website',\n    locale: 'en_EU',\n    url: 'https://linguala.eu',\n    title: 'Linguala - European AI Translation Platform',\n    description: 'The European translation platform built for European languages and culture',\n    siteName: 'Linguala',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Linguala - European AI Translation Platform',\n    description: 'European translation platform built for European languages and culture',\n    creator: '@linguala',\n  },\n};"
+    },
+    "error": "Error: You must read the file /home/user/project/app/layout.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759407039414,
+      "end": 1759407039417
+    }
+  }
+}

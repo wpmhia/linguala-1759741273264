@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4d4eecf001O9Tp0MZV34us1J",
+  "messageID": "msg_9a4d4b47a001QW5rvDUgJzLilH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01ABjioGT17aom52gsaTARek",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "offset": 8,
+      "limit": 25
+    },
+    "output": "<file>\n00009| export const metadata: Metadata = {\n00010|   title: 'Linguala - Advanced AI Translation Platform',\n00011|   description: 'Professional translation platform with domain expertise, custom glossaries, and intelligent AI powered by Qwen. Translate with precision at Linguala.eu',\n00012|   keywords: 'translation, AI, professional, linguala, domain translation, glossary, languages',\n00013|   authors: [{ name: 'Linguala Team' }],\n00014|   creator: 'Linguala',\n00015|   publisher: 'Linguala',\n00016|   robots: 'index, follow',\n00017|   openGraph: {\n00018|     type: 'website',\n00019|     locale: 'en_US',\n00020|     url: 'https://linguala.eu',\n00021|     title: 'Linguala - Advanced AI Translation Platform',\n00022|     description: 'Professional translation platform with domain expertise and custom glossaries',\n00023|     siteName: 'Linguala',\n00024|   },\n00025|   twitter: {\n00026|     card: 'summary_large_image',\n00027|     title: 'Linguala - Advanced AI Translation Platform',\n00028|     description: 'Professional translation platform with domain expertise and custom glossaries',\n00029|     creator: '@linguala',\n00030|   },\n00031| };\n00032| \n00033| export const viewport = {\n\n(File has more lines. Use 'offset' parameter to read beyond line 33)\n</file>",
+    "metadata": {
+      "preview": "export const metadata: Metadata = {\n  title: 'Linguala - Advanced AI Translation Platform',\n  description: 'Professional translation platform with domain expertise, custom glossaries, and intelligent AI powered by Qwen. Translate with precision at Linguala.eu',\n  keywords: 'translation, AI, professional, linguala, domain translation, glossary, languages',\n  authors: [{ name: 'Linguala Team' }],\n  creator: 'Linguala',\n  publisher: 'Linguala',\n  robots: 'index, follow',\n  openGraph: {\n    type: 'website',\n    locale: 'en_US',\n    url: 'https://linguala.eu',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',\n    siteName: 'Linguala',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Linguala - Advanced AI Translation Platform',\n    description: 'Professional translation platform with domain expertise and custom glossaries',"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759407042602,
+      "end": 1759407042607
+    }
+  }
+}

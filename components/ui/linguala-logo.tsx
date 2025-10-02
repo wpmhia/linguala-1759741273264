@@ -74,7 +74,7 @@ export function LingualaLogo({ size = "md", showText = true, className }: Lingua
           </span>
           {size === "xl" && (
             <span className="text-xs text-gray-500 -mt-1 tracking-widest uppercase">
-              Advanced Translation
+              European Translation
             </span>
           )}
         </div>

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a53d2252001XWpBwHefk0yMlQ",
+  "messageID": "msg_9a53cf24f0015FZwsMtUwJmj9I",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_012nSTRnYr7fMitRLtDV4zHL",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 140,
+      "limit": 50
+    },
+    "output": "<file>\n00141|           <div className=\"flex items-center justify-between\">\n00142|             <LingualaLogo size=\"lg\" />\n00143|             <UserProfile />\n00144|           </div>\n00145|         </div>\n00146|       </header>\n00147| \n00148|       <main className=\"max-w-7xl mx-auto px-4 py-8\">\n00149|         {/* Main Translation Interface */}\n00150|         <Card className=\"shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8\">\n00151|           <CardHeader className=\"pb-4\">\n00152|           </CardHeader>\n00153| \n00154|           <CardContent className=\"space-y-6\">\n00155|             {/* Language Selection */}\n00156|             <div className=\"flex items-center justify-center space-x-4\">\n00157|               <Select value={sourceLang} onValueChange={(value) => {\n00158|                 setSourceLang(value)\n00159|                 if (sourceText.trim()) translateText(sourceText, value, targetLang)\n00160|               }}>\n00161|                 <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n00162|                   <SelectValue />\n00163|                 </SelectTrigger>\n00164|                 <SelectContent>\n00165|                   {LANGUAGES.map(lang => (\n00166|                     <SelectItem key={lang.code} value={lang.code}>\n00167|                       {lang.name}\n00168|                     </SelectItem>\n00169|                   ))}\n00170|                 </SelectContent>\n00171|               </Select>\n00172| \n00173|               <Button\n00174|                 variant=\"ghost\"\n00175|                 size=\"lg\"\n00176|                 onClick={swapLanguages}\n00177|                 disabled={sourceLang === \"auto\"}\n00178|                 className=\"p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50\"\n00179|               >\n00180|                 <ArrowUpDown className=\"h-5 w-5\" />\n00181|               </Button>\n00182| \n00183|               <Select value={targetLang} onValueChange={(value) => {\n00184|                 setTargetLang(value)\n00185|                 if (sourceText.trim()) translateText(sourceText, sourceLang, value)\n00186|               }}>\n00187|                 <SelectTrigger className=\"w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors\">\n00188|                   <SelectValue />\n00189|                 </SelectTrigger>\n00190|                 <SelectContent>\n\n(File has more lines. Use 'offset' parameter to read beyond line 190)\n</file>",
+    "metadata": {
+      "preview": "          <div className=\"flex items-center justify-between\">\n            <LingualaLogo size=\"lg\" />\n            <UserProfile />\n          </div>\n        </div>\n      </header>\n\n      <main className=\"max-w-7xl mx-auto px-4 py-8\">\n        {/* Main Translation Interface */}\n        <Card className=\"shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8\">\n          <CardHeader className=\"pb-4\">\n          </CardHeader>\n\n          <CardContent className=\"space-y-6\">\n            {/* Language Selection */}\n            <div className=\"flex items-center justify-center space-x-4\">\n              <Select value={sourceLang} onValueChange={(value) => {\n                setSourceLang(value)\n                if (sourceText.trim()) translateText(sourceText, value, targetLang)\n              }}>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759413871854,
+      "end": 1759413871857
+    }
+  }
+}

@@ -4,30 +4,17 @@ $ next dev
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2.3s
- ✓ Compiled /middleware in 199ms
+ ✓ Ready in 2.2s
+ ✓ Compiled /middleware in 173ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
- ✓ Compiled / in 5.2s (793 modules)
- GET / 200 in 6114ms
- ✓ Compiled in 938ms (408 modules)
- GET / 200 in 65ms
+ ✓ Compiled / in 4.5s (793 modules)
+ GET / 200 in 5290ms
+ ✓ Compiled in 866ms (408 modules)
+ GET / 200 in 46ms
  ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
  ○ Compiling /api/auth/[...nextauth] ...
- ✓ Compiled /api/auth/[...nextauth] in 876ms (624 modules)
- GET /api/auth/session 200 in 1630ms
- GET /api/auth/session 200 in 36ms
- GET /api/auth/providers 200 in 40ms
- GET /api/auth/signin?callbackUrl=https%3A%2F%2F4000-iltr9ta76gim4u483kakt.e2b.app%2F 302 in 17ms
- ○ Compiling /auth/signin ...
- ✓ Compiled /auth/signin in 1532ms (1042 modules)
- GET /auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000 200 in 1832ms
- ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
- GET /api/auth/providers 200 in 91ms
- GET /api/auth/providers 200 in 13ms
- GET /api/auth/session 200 in 13ms
- GET /api/auth/session 200 in 21ms
- GET /api/auth/providers 200 in 28ms
- GET /api/auth/csrf 200 in 13ms
- POST /api/auth/signin/google 200 in 14ms
+ ✓ Compiled /api/auth/[...nextauth] in 885ms (624 modules)
+ GET /api/auth/session 200 in 1638ms
+ GET /api/auth/session 200 in 1645ms

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a53d056f001xc0q1YWgaeOOl9",
+  "messageID": "msg_9a53cf24f0015FZwsMtUwJmj9I",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01P8JVwMeR4E9Ti8vXWf9akD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 1,
+      "limit": 50
+    },
+    "output": "<file>\n00002| \n00003| import { useState, useRef, useEffect } from \"react\"\n00004| import { useSession } from \"next-auth/react\"\n00005| import { Button } from \"@/components/ui/button\"\n00006| import { Textarea } from \"@/components/ui/textarea\"\n00007| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00008| import { Input } from \"@/components/ui/input\"\n00009| import { Label } from \"@/components/ui/label\"\n00010| import { Card, CardContent, CardHeader } from \"@/components/ui/card\"\n00011| import { \n00012|   ArrowUpDown, Copy, Download, Share2, Sparkles,\n00013|   Check, BookOpen, History, Globe,\n00014|   TrendingUp, Brain, Target, AlertCircle\n00015| } from \"lucide-react\"\n00016| import { toast } from \"sonner\"\n00017| import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n00018| import { UserProfile } from \"@/components/user-profile\"\n00019| \n00020| // Official EU Languages (24 languages)\n00021| const LANGUAGES = [\n00022|   // Auto-detect\n00023|   { code: \"auto\", name: \"Detect language\", region: \"auto\", popular: true },\n00024|   \n00025|   // Most Popular EU Languages\n00026|   { code: \"en\", name: \"English\", region: \"EU Official\", popular: true },\n00027|   { code: \"de\", name: \"German\", region: \"EU Official\", popular: true },\n00028|   { code: \"fr\", name: \"French\", region: \"EU Official\", popular: true },\n00029|   { code: \"es\", name: \"Spanish\", region: \"EU Official\", popular: true },\n00030|   { code: \"it\", name: \"Italian\", region: \"EU Official\", popular: true },\n00031|   { code: \"pt\", name: \"Portuguese\", region: \"EU Official\", popular: true },\n00032|   { code: \"pl\", name: \"Polish\", region: \"EU Official\", popular: true },\n00033|   { code: \"nl\", name: \"Dutch\", region: \"EU Official\", popular: true },\n00034|   \n00035|   // Nordic EU Languages\n00036|   { code: \"da\", name: \"Danish\", region: \"EU Official\", popular: false },\n00037|   { code: \"sv\", name: \"Swedish\", region: \"EU Official\", popular: false },\n00038|   { code: \"fi\", name: \"Finnish\", region: \"EU Official\", popular: false },\n00039|   \n00040|   // Western EU Languages\n00041|   { code: \"ga\", name: \"Irish\", region: \"EU Official\", popular: false },\n00042|   { code: \"mt\", name: \"Maltese\", region: \"EU Official\", popular: false },\n00043|   \n00044|   // Central EU Languages\n00045|   { code: \"cs\", name: \"Czech\", region: \"EU Official\", popular: false },\n00046|   { code: \"sk\", name: \"Slovak\", region: \"EU Official\", popular: false },\n00047|   { code: \"hu\", name: \"Hungarian\", region: \"EU Official\", popular: false },\n00048|   { code: \"sl\", name: \"Slovenian\", region: \"EU Official\", popular: false },\n00049|   { code: \"hr\", name: \"Croatian\", region: \"EU Official\", popular: false },\n00050|   \n00051|   // Eastern EU Languages\n\n(File has more lines. Use 'offset' parameter to read beyond line 51)\n</file>",
+    "metadata": {
+      "preview": "\nimport { useState, useRef, useEffect } from \"react\"\nimport { useSession } from \"next-auth/react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Card, CardContent, CardHeader } from \"@/components/ui/card\"\nimport { \n  ArrowUpDown, Copy, Download, Share2, Sparkles,\n  Check, BookOpen, History, Globe,\n  TrendingUp, Brain, Target, AlertCircle\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { UserProfile } from \"@/components/user-profile\"\n\n// Official EU Languages (24 languages)\nconst LANGUAGES = ["
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759413864936,
+      "end": 1759413864945
+    }
+  }
+}

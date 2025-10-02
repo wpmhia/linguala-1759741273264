@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a53d1383001WLt2TKc2xXRXBx",
+  "messageID": "msg_9a53cf24f0015FZwsMtUwJmj9I",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01AEHzmgzvG2A7CrjiZh3ieu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 65,
+      "limit": 30
+    },
+    "output": "<file>\n00066|   const [sourceText, setSourceText] = useState(\"\")\n00067|   const [translatedText, setTranslatedText] = useState(\"\")\n00068|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00069|   const [targetLang, setTargetLang] = useState(\"en\")\n00070|   const [isTranslating, setIsTranslating] = useState(false)\n00071|   \n00072|   // UI state\n00073|   const [copySuccess, setCopySuccess] = useState(false)\n00074| \n00075|   // Helper functions\n00076|   const getLanguageName = (code: string) => {\n00077|     return LANGUAGES.find(lang => lang.code === code)?.name || code\n00078|   }\n00079| \n00080|   const handleSourceTextChange = (text: string) => {\n00081|     setSourceText(text)\n00082|     if (text.trim()) {\n00083|       translateText(text, sourceLang, targetLang)\n00084|     }\n00085|   }\n00086| \n00087|   const translateText = async (text: string, from: string, to: string) => {\n00088|     if (!text.trim()) return\n00089|     \n00090|     setIsTranslating(true)\n00091|     try {\n00092|       const response = await fetch('/api/translate', {\n00093|         method: 'POST',\n00094|         headers: { 'Content-Type': 'application/json' },\n00095|         body: JSON.stringify({ text, sourceLang: from, targetLang: to })\n\n(File has more lines. Use 'offset' parameter to read beyond line 95)\n</file>",
+    "metadata": {
+      "preview": "  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  const [isTranslating, setIsTranslating] = useState(false)\n  \n  // UI state\n  const [copySuccess, setCopySuccess] = useState(false)\n\n  // Helper functions\n  const getLanguageName = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code)?.name || code\n  }\n\n  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    if (text.trim()) {\n      translateText(text, sourceLang, targetLang)\n    }\n  }"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759413868014,
+      "end": 1759413868015
+    }
+  }
+}

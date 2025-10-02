@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a67761d50028XXQ04WtKIMpgJ",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_019PcfNXbTffi5NhouwskRdj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "  callbacks: {\n    async session({ session, user }) {\n      if (session?.user && user) {\n        // Fetch fresh user data including premium status\n        const dbUser = await prisma.user.findUnique({\n          where: { id: user.id },\n          select: {\n            id: true,\n            name: true,\n            email: true,\n            image: true,\n            isPremium: true,\n            premiumExpiresAt: true,\n          }\n        })\n\n        if (dbUser) {\n          session.user.id = dbUser.id\n          session.user.email = dbUser.email\n          session.user.name = dbUser.name\n          session.user.image = dbUser.image\n          // Add premium status to session\n          session.user.isPremium = dbUser.isPremium\n          session.user.premiumExpiresAt = dbUser.premiumExpiresAt\n        }\n      }\n      return session\n    },\n  },",
+      "newString": "  callbacks: {\n    async jwt({ token, user }) {\n      // Save user data to JWT token on sign in\n      if (user) {\n        token.id = user.id\n        token.isPremium = user.isPremium\n        token.premiumExpiresAt = user.premiumExpiresAt\n      }\n      return token\n    },\n    async session({ session, token }) {\n      // Send token data to the client\n      if (token) {\n        session.user.id = token.id as string\n        session.user.isPremium = token.isPremium as boolean\n        session.user.premiumExpiresAt = token.premiumExpiresAt as Date\n      }\n      return session\n    },\n  },"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -69,33 +69,24 @@\n   error: '/auth/error',\n },\n \n callbacks: {\n-  async session({ session, user }) {\n-    if (session?.user && user) {\n-      // Fetch fresh user data including premium status\n-      const dbUser = await prisma.user.findUnique({\n-        where: { id: user.id },\n-        select: {\n-          id: true,\n-          name: true,\n-          email: true,\n-          image: true,\n-          isPremium: true,\n-          premiumExpiresAt: true,\n-        }\n-      })\n-\n-      if (dbUser) {\n-        session.user.id = dbUser.id\n-        session.user.email = dbUser.email\n-        session.user.name = dbUser.name\n-        session.user.image = dbUser.image\n-        // Add premium status to session\n-        session.user.isPremium = dbUser.isPremium\n-        session.user.premiumExpiresAt = dbUser.premiumExpiresAt\n-      }\n+  async jwt({ token, user }) {\n+    // Save user data to JWT token on sign in\n+    if (user) {\n+      token.id = user.id\n+      token.isPremium = user.isPremium\n+      token.premiumExpiresAt = user.premiumExpiresAt\n     }\n+    return token\n+  },\n+  async session({ session, token }) {\n+    // Send token data to the client\n+    if (token) {\n+      session.user.id = token.id as string\n+      session.user.isPremium = token.isPremium as boolean\n+      session.user.premiumExpiresAt = token.premiumExpiresAt as Date\n+    }\n     return session\n   },\n },\n \n"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759434470449,
+      "end": 1759434470461
+    }
+  }
+}

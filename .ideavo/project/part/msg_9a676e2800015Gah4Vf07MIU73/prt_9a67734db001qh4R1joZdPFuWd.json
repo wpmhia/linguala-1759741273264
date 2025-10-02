@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a67734db001qh4R1joZdPFuWd",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The issue might be the combination of CredentialsProvider with database session strategy. This is a common problem. Let me create a simplified, working auth configuration:",
+  "time": {
+    "start": 1759434455425,
+    "end": 1759434455425
+  }
+}

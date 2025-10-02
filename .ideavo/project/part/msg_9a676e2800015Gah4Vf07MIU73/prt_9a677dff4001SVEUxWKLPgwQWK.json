@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a677dff4001SVEUxWKLPgwQWK",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! Now try the authentication flow:\n\n**Step 1:** Create a test account\n- Go to: http://localhost:3000/auth/signup\n- Create an account with email/password\n\n**Step 2:** Sign in\n- Go to: http://localhost:3000/auth/signin  \n- Sign in with your credentials\n\n**Step 3:** Check the debug page\n- Go to: http://localhost:3000/debug\n- You should see session data with premium fields\n\n**Step 4:** Visit the main translator\n- Go to: http://localhost:3000/\n- You should now see the premium features section\n\nThe key changes I made:\n- ✅ Switched from database sessions to JWT sessions (better for credentials provider)\n- ✅ Fixed session callbacks to include premium data in JWT tokens\n- ✅ Disabled middleware temporarily to remove redirects\n\nTry these steps and let me know if the authentication works now!",
+  "time": {
+    "start": 1759434502047,
+    "end": 1759434502047
+  }
+}

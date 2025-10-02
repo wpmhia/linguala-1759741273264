@@ -6,9 +6,8 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcryptjs"
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma) as any,
   providers: [
-    // Email/Password authentication
+    // Email/Password authentication  
     CredentialsProvider({
       name: "credentials",
       credentials: {
@@ -44,6 +43,8 @@ export const authOptions: NextAuthOptions = {
           email: user.email,
           name: user.name,
           image: user.image,
+          isPremium: user.isPremium,
+          premiumExpiresAt: user.premiumExpiresAt,
         }
       }
     }),
@@ -58,7 +59,7 @@ export const authOptions: NextAuthOptions = {
   ],
   
   session: {
-    strategy: "database",
+    strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   
@@ -69,30 +70,21 @@ export const authOptions: NextAuthOptions = {
   },
   
   callbacks: {
-    async session({ session, user }) {
-      if (session?.user && user) {
-        // Fetch fresh user data including premium status
-        const dbUser = await prisma.user.findUnique({
-          where: { id: user.id },
-          select: {
-            id: true,
-            name: true,
-            email: true,
-            image: true,
-            isPremium: true,
-            premiumExpiresAt: true,
-          }
-        })
-
-        if (dbUser) {
-          session.user.id = dbUser.id
-          session.user.email = dbUser.email
-          session.user.name = dbUser.name
-          session.user.image = dbUser.image
-          // Add premium status to session
-          session.user.isPremium = dbUser.isPremium
-          session.user.premiumExpiresAt = dbUser.premiumExpiresAt
-        }
+    async jwt({ token, user }) {
+      // Save user data to JWT token on sign in
+      if (user) {
+        token.id = user.id
+        token.isPremium = user.isPremium
+        token.premiumExpiresAt = user.premiumExpiresAt
+      }
+      return token
+    },
+    async session({ session, token }) {
+      // Send token data to the client
+      if (token) {
+        session.user.id = token.id as string
+        session.user.isPremium = token.isPremium as boolean
+        session.user.premiumExpiresAt = token.premiumExpiresAt as Date
       }
       return session
     },

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a677f40f001lo3k3b4BmUeL5Z",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(auth): refactor NextAuth config to use JWT strategy",
+  "cost": 0.22506765,
+  "tokens": {
+    "input": 3,
+    "output": 212,
+    "reasoning": 0,
+    "cache": {
+      "write": 190,
+      "read": 56731
+    }
+  }
+}

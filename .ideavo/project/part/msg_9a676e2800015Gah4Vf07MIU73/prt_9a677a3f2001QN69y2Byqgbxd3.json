@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a677a3f2001QN69y2Byqgbxd3",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_019vajHyy4jHzt6KV9DTjs4v",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"next dev\" && npm run dev &",
+      "description": "Restart development server with new auth config"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart development server with new auth config"
+    },
+    "title": "cd /home/user/project && pkill -f \"next dev\" && npm run dev &",
+    "time": {
+      "start": 1759434483627,
+      "end": 1759434483650
+    }
+  }
+}

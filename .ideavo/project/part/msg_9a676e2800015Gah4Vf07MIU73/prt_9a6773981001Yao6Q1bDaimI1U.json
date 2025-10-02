@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a6773981001Yao6Q1bDaimI1U",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Hgyp7tNFUQ1fYAXZ3x1JrE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "export const authOptions: NextAuthOptions = {\n  adapter: PrismaAdapter(prisma) as any,\n  providers: [\n    // Email/Password authentication\n    CredentialsProvider({\n      name: \"credentials\",\n      credentials: {\n        email: { label: \"Email\", type: \"email\" },\n        password: { label: \"Password\", type: \"password\" }\n      },\n      async authorize(credentials) {\n        if (!credentials?.email || !credentials?.password) {\n          return null\n        }\n\n        const user = await prisma.user.findUnique({\n          where: {\n            email: credentials.email\n          }\n        })\n\n        if (!user || !user.password) {\n          return null\n        }\n\n        const isPasswordValid = await bcrypt.compare(\n          credentials.password,\n          user.password\n        )\n\n        if (!isPasswordValid) {\n          return null\n        }\n\n        return {\n          id: user.id,\n          email: user.email,\n          name: user.name,\n          image: user.image,\n        }\n      }\n    }),\n    \n    // Google OAuth provider\n    ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n      GoogleProvider({\n        clientId: process.env.GOOGLE_CLIENT_ID,\n        clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      })\n    ] : []),\n  ],\n  \n  session: {\n    strategy: \"database\",\n    maxAge: 30 * 24 * 60 * 60, // 30 days\n  },",
+      "newString": "export const authOptions: NextAuthOptions = {\n  providers: [\n    // Email/Password authentication  \n    CredentialsProvider({\n      name: \"credentials\",\n      credentials: {\n        email: { label: \"Email\", type: \"email\" },\n        password: { label: \"Password\", type: \"password\" }\n      },\n      async authorize(credentials) {\n        if (!credentials?.email || !credentials?.password) {\n          return null\n        }\n\n        const user = await prisma.user.findUnique({\n          where: {\n            email: credentials.email\n          }\n        })\n\n        if (!user || !user.password) {\n          return null\n        }\n\n        const isPasswordValid = await bcrypt.compare(\n          credentials.password,\n          user.password\n        )\n\n        if (!isPasswordValid) {\n          return null\n        }\n\n        return {\n          id: user.id,\n          email: user.email,\n          name: user.name,\n          image: user.image,\n          isPremium: user.isPremium,\n          premiumExpiresAt: user.premiumExpiresAt,\n        }\n      }\n    }),\n    \n    // Google OAuth provider\n    ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n      GoogleProvider({\n        clientId: process.env.GOOGLE_CLIENT_ID,\n        clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n      })\n    ] : []),\n  ],\n  \n  session: {\n    strategy: \"jwt\",\n    maxAge: 30 * 24 * 60 * 60, // 30 days\n  },"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -5,11 +5,10 @@\n import CredentialsProvider from \"next-auth/providers/credentials\"\n import bcrypt from \"bcryptjs\"\n \n export const authOptions: NextAuthOptions = {\n-  adapter: PrismaAdapter(prisma) as any,\n   providers: [\n-    // Email/Password authentication\n+    // Email/Password authentication  \n     CredentialsProvider({\n       name: \"credentials\",\n       credentials: {\n         email: { label: \"Email\", type: \"email\" },\n@@ -43,8 +42,10 @@\n           id: user.id,\n           email: user.email,\n           name: user.name,\n           image: user.image,\n+          isPremium: user.isPremium,\n+          premiumExpiresAt: user.premiumExpiresAt,\n         }\n       }\n     }),\n     \n@@ -57,9 +58,9 @@\n     ] : []),\n   ],\n   \n   session: {\n-    strategy: \"database\",\n+    strategy: \"jwt\",\n     maxAge: 30 * 24 * 60 * 60, // 30 days\n   },\n   \n   pages: {\n"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759434463285,
+      "end": 1759434463295
+    }
+  }
+}

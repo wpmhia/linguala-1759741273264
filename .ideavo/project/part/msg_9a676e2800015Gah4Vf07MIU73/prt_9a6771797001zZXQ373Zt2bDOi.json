@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a6771797001zZXQ373Zt2bDOi",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_018sCUHkuT4pA414Pkf7EfZx",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "import { NextAuthOptions } from \"next-auth\"\nimport { PrismaAdapter } from \"@auth/prisma-adapter\"\nimport { prisma } from \"@/lib/prisma\"\nimport GoogleProvider from \"next-auth/providers/google\"\nimport CredentialsProvider from \"next-auth/providers/credentials\"\nimport bcrypt from \"bcryptjs\"\n\nexport const authOptions: NextAuthOptions = {\n  adapter: PrismaAdapter(prisma) as any,",
+      "newString": "import { NextAuthOptions } from \"next-auth\"\nimport { PrismaAdapter } from \"@auth/prisma-adapter\"\nimport { prisma } from \"@/lib/prisma\"\nimport GoogleProvider from \"next-auth/providers/google\"\nimport CredentialsProvider from \"next-auth/providers/credentials\"\nimport bcrypt from \"bcryptjs\"\n\nexport const authOptions: NextAuthOptions = {\n  adapter: PrismaAdapter(prisma),"
+    },
+    "error": "Error: You must read the file /home/user/project/lib/auth.ts before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759434449391,
+      "end": 1759434449392
+    }
+  }
+}

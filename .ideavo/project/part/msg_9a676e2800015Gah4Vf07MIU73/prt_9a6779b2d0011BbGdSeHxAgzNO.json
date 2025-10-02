@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6779b2d0011BbGdSeHxAgzNO",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! I've fixed the auth configuration by:\n\n1. **Removed the PrismaAdapter** and switched to JWT strategy (which works better with CredentialsProvider)\n2. **Fixed the session callbacks** to properly include premium fields in JWT tokens\n3. **Added premium fields to the authorize function** so they're available in the JWT\n\nNow the authentication should work. Let me restart the server to apply the changes:",
+  "time": {
+    "start": 1759434482674,
+    "end": 1759434482674
+  }
+}

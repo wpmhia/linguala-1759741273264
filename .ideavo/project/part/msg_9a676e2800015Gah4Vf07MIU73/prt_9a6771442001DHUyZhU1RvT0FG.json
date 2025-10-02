@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a6771442001DHUyZhU1RvT0FG",
+  "messageID": "msg_9a676e2800015Gah4Vf07MIU73",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API route looks correct. Let me check if there's an issue with the auth configuration. The problem might be with the PrismaAdapter import or configuration:",
+  "time": {
+    "start": 1759434446741,
+    "end": 1759434446741
+  }
+}

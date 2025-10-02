@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a53a14aa001rRkQHczf0Rb0d3",
+  "messageID": "msg_9a539dea4001sjPq8IycMeJ3xL",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017wTYcfhhVWco62xVLdKhVw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/auth/signin/page.tsx",
+      "offset": 65,
+      "limit": 15
+    },
+    "output": "<file>\n00066|   const handleOAuthSignIn = async (providerId: string) => {\n00067|     setIsLoading(true)\n00068|     try {\n00069|       await signIn(providerId, { callbackUrl })\n00070|     } catch (error) {\n00071|       console.error(\"OAuth sign in error:\", error)\n00072|       setIsLoading(false)\n00073|     }\n00074|   }\n00075| \n00076|   const getErrorMessage = (error: string) => {\n00077|     switch (error) {\n00078|       case \"OAuthSignin\":\n00079|       case \"OAuthCallback\":\n00080|       case \"OAuthCreateAccount\":\n\n(File has more lines. Use 'offset' parameter to read beyond line 80)\n</file>",
+    "metadata": {
+      "preview": "  const handleOAuthSignIn = async (providerId: string) => {\n    setIsLoading(true)\n    try {\n      await signIn(providerId, { callbackUrl })\n    } catch (error) {\n      console.error(\"OAuth sign in error:\", error)\n      setIsLoading(false)\n    }\n  }\n\n  const getErrorMessage = (error: string) => {\n    switch (error) {\n      case \"OAuthSignin\":\n      case \"OAuthCallback\":\n      case \"OAuthCreateAccount\":"
+    },
+    "title": "app/auth/signin/page.tsx",
+    "time": {
+      "start": 1759413671992,
+      "end": 1759413671994
+    }
+  }
+}

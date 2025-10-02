@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a498728e001rYeocBlQqjki1p",
+  "messageID": "msg_9a4982bcb001awJoTzYslZHNdf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01RKRveYJ1uuYwEEEfYUgWEs",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 11,
+      "limit": 40
+    },
+    "output": "<file>\n00012|   { code: \"auto\", name: \"Detect language\" },\n00013|   { code: \"en\", name: \"English\" },\n00014|   { code: \"zh\", name: \"Chinese\" },\n00015|   { code: \"ja\", name: \"Japanese\" },\n00016|   { code: \"ko\", name: \"Korean\" },\n00017|   { code: \"es\", name: \"Spanish\" },\n00018|   { code: \"fr\", name: \"French\" },\n00019|   { code: \"de\", name: \"German\" },\n00020|   { code: \"it\", name: \"Italian\" },\n00021|   { code: \"pt\", name: \"Portuguese\" },\n00022|   { code: \"ru\", name: \"Russian\" },\n00023|   { code: \"ar\", name: \"Arabic\" },\n00024|   { code: \"da\", name: \"Danish\" },\n00025|   { code: \"nl\", name: \"Dutch\" },\n00026|   { code: \"sv\", name: \"Swedish\" },\n00027|   { code: \"no\", name: \"Norwegian\" },\n00028|   { code: \"fi\", name: \"Finnish\" },\n00029|   { code: \"pl\", name: \"Polish\" },\n00030|   { code: \"cs\", name: \"Czech\" },\n00031|   { code: \"hu\", name: \"Hungarian\" },\n00032|   { code: \"ro\", name: \"Romanian\" },\n00033|   { code: \"bg\", name: \"Bulgarian\" },\n00034|   { code: \"hr\", name: \"Croatian\" },\n00035|   { code: \"sk\", name: \"Slovak\" },\n00036|   { code: \"sl\", name: \"Slovenian\" },\n00037|   { code: \"et\", name: \"Estonian\" },\n00038|   { code: \"lv\", name: \"Latvian\" },\n00039|   { code: \"lt\", name: \"Lithuanian\" },\n00040|   { code: \"el\", name: \"Greek\" },\n00041|   { code: \"tr\", name: \"Turkish\" },\n00042|   { code: \"he\", name: \"Hebrew\" },\n00043|   { code: \"hi\", name: \"Hindi\" },\n00044|   { code: \"th\", name: \"Thai\" },\n00045|   { code: \"vi\", name: \"Vietnamese\" },\n00046|   { code: \"ms\", name: \"Malay\" },\n00047|   { code: \"id\", name: \"Indonesian\" },\n00048|   { code: \"tl\", name: \"Filipino\" },\n00049|   { code: \"uk\", name: \"Ukrainian\" },\n00050| ]\n00051| \n\n(File has more lines. Use 'offset' parameter to read beyond line 51)\n</file>",
+    "metadata": {
+      "preview": "  { code: \"auto\", name: \"Detect language\" },\n  { code: \"en\", name: \"English\" },\n  { code: \"zh\", name: \"Chinese\" },\n  { code: \"ja\", name: \"Japanese\" },\n  { code: \"ko\", name: \"Korean\" },\n  { code: \"es\", name: \"Spanish\" },\n  { code: \"fr\", name: \"French\" },\n  { code: \"de\", name: \"German\" },\n  { code: \"it\", name: \"Italian\" },\n  { code: \"pt\", name: \"Portuguese\" },\n  { code: \"ru\", name: \"Russian\" },\n  { code: \"ar\", name: \"Arabic\" },\n  { code: \"da\", name: \"Danish\" },\n  { code: \"nl\", name: \"Dutch\" },\n  { code: \"sv\", name: \"Swedish\" },\n  { code: \"no\", name: \"Norwegian\" },\n  { code: \"fi\", name: \"Finnish\" },\n  { code: \"pl\", name: \"Polish\" },\n  { code: \"cs\", name: \"Czech\" },\n  { code: \"hu\", name: \"Hungarian\" },"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403079058,
+      "end": 1759403079062
+    }
+  }
+}

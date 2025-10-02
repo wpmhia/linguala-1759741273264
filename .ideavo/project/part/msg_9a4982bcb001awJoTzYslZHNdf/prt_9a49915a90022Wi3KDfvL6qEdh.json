@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a49915a90022Wi3KDfvL6qEdh",
+  "messageID": "msg_9a4982bcb001awJoTzYslZHNdf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KRKrzijwgsYPCZrtHkiRyi",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" || true; npm start",
+      "timeout": 8000,
+      "description": "Restart with reordered languages"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart with reordered languages"
+    },
+    "title": "pkill -f \"next\" || true; npm start",
+    "time": {
+      "start": 1759403120988,
+      "end": 1759403121000
+    }
+  }
+}

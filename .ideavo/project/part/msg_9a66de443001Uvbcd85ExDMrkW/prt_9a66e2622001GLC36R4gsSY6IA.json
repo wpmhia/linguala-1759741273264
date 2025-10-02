@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a66e2622001GLC36R4gsSY6IA",
+  "messageID": "msg_9a66de443001Uvbcd85ExDMrkW",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01CYnYMvSnNmzH2jMD4u5p4c",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/auth/[...nextauth]/route.ts"
+    },
+    "output": "<file>\n00001| import NextAuth from \"next-auth\"\n00002| import { authOptions } from \"@/lib/auth\"\n00003| \n00004| const handler = NextAuth(authOptions)\n00005| \n00006| export { handler as GET, handler as POST }\n</file>",
+    "metadata": {
+      "preview": "import NextAuth from \"next-auth\"\nimport { authOptions } from \"@/lib/auth\"\n\nconst handler = NextAuth(authOptions)\n\nexport { handler as GET, handler as POST }"
+    },
+    "title": "app/api/auth/[...nextauth]/route.ts",
+    "time": {
+      "start": 1759433860947,
+      "end": 1759433860948
+    }
+  }
+}

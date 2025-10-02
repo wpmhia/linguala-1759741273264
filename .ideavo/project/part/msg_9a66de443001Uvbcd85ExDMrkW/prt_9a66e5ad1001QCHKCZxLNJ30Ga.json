@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a66e5ad1001QCHKCZxLNJ30Ga",
+  "messageID": "msg_9a66de443001Uvbcd85ExDMrkW",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Qt6dVLcTAhyXtdutCNgvcc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npx prisma generate",
+      "description": "Generate Prisma client with updated schema"
+    },
+    "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\n\n✔ Generated Prisma Client (v5.22.0) to ./node_modules/@prisma/client in 194ms\n\nStart by importing your Prisma Client (See: https://pris.ly/d/importing-client)\n\nTip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate\n\n",
+    "metadata": {
+      "output": "Environment variables loaded from .env\nPrisma schema loaded from prisma/schema.prisma\n\n✔ Generated Prisma Client (v5.22.0) to ./node_modules/@prisma/client in 194ms\n\nStart by importing your Prisma Client (See: https://pris.ly/d/importing-client)\n\nTip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate\n\n",
+      "exit": 0,
+      "description": "Generate Prisma client with updated schema"
+    },
+    "title": "cd /home/user/project && npx prisma generate",
+    "time": {
+      "start": 1759433874698,
+      "end": 1759433877089
+    }
+  }
+}

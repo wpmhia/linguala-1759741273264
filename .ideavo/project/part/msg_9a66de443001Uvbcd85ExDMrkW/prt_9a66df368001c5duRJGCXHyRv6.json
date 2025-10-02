@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a66df368001c5duRJGCXHyRv6",
+  "messageID": "msg_9a66de443001Uvbcd85ExDMrkW",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The sign-in isn't working properly. Those errors are from the ideavo chat interface, not your app. Let me check the session provider setup and authentication flow.",
+  "time": {
+    "start": 1759433849021,
+    "end": 1759433849021
+  }
+}

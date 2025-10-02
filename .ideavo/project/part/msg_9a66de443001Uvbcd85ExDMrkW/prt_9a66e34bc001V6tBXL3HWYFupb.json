@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a66e34bc001V6tBXL3HWYFupb",
+  "messageID": "msg_9a66de443001Uvbcd85ExDMrkW",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01MLgsFhpHAZMRpLUivrtF5F",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npx prisma db pull",
+      "description": "Check database schema sync"
+    },
+    "output": "Prisma schema loaded from prisma/schema.prisma\nEnvironment variables loaded from .env\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\n- Introspecting based on datasource defined in prisma/schema.prisma\n✔ Introspected 7 models and wrote them into prisma/schema.prisma in 4.81s\n      \n*** WARNING ***\n\nThese models were enriched with `@@map` information taken from the previous Prisma schema:\n  - \"User\"\n\nRun prisma generate to generate Prisma Client.\n\n",
+    "metadata": {
+      "output": "Prisma schema loaded from prisma/schema.prisma\nEnvironment variables loaded from .env\nDatasource \"db\": PostgreSQL database \"neondb\", schema \"public\" at \"ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech\"\n\n- Introspecting based on datasource defined in prisma/schema.prisma\n✔ Introspected 7 models and wrote them into prisma/schema.prisma in 4.81s\n      \n*** WARNING ***\n\nThese models were enriched with `@@map` information taken from the previous Prisma schema:\n  - \"User\"\n\nRun prisma generate to generate Prisma Client.\n\n",
+      "exit": 0,
+      "description": "Check database schema sync"
+    },
+    "title": "cd /home/user/project && npx prisma db pull",
+    "time": {
+      "start": 1759433864987,
+      "end": 1759433871213
+    }
+  }
+}

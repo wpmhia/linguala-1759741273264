@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a66e70dd001wIcrrWyFVkoW8X",
+  "messageID": "msg_9a66de443001Uvbcd85ExDMrkW",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01T48uPoR4ifcqKFUeCPXJcD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && curl -X POST http://localhost:3000/api/auth/session -H \"Content-Type: application/json\"",
+      "description": "Check current session state"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to localhost port 3000 after 0 ms: Couldn't connect to server\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to localhost port 3000 after 0 ms: Couldn't connect to server\n",
+      "exit": 7,
+      "description": "Check current session state"
+    },
+    "title": "cd /home/user/project && curl -X POST http://localhost:3000/api/auth/session -H \"Content-Type: application/json\"",
+    "time": {
+      "start": 1759433880598,
+      "end": 1759433880650
+    }
+  }
+}

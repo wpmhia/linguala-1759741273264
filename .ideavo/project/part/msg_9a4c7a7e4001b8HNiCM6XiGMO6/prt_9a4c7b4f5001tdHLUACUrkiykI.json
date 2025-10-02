@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a4c7b4f5001tdHLUACUrkiykI",
+  "messageID": "msg_9a4c7a7e4001b8HNiCM6XiGMO6",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The real-time toggle controls when translations happen:\n\n**Real-time ON** (default):\n- Translations happen automatically as you type\n- Uses a 800ms debounce delay (waits for you to stop typing)\n- More convenient for quick translations\n\n**Real-time OFF**:\n- Translations only happen when you click the \"Translate\" button\n- Gives users full control over when to translate\n- Better for longer texts or when you want to finish writing first\n\nThis gives users flexibility - some prefer instant feedback while typing, others prefer to complete their text before translating. It's a UX enhancement that DeepL doesn't offer.\n\nWould you like me to adjust the debounce timing or change how this feature works?",
+  "time": {
+    "start": 1759406179219,
+    "end": 1759406179219
+  }
+}

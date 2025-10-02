@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4e36f4f001eXJa9NWon2RrJL",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01FDTpgNzE2vup6rfRYR7xzq",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 490,
+      "limit": 20
+    },
+    "output": "<file>\n00491|   }\n00492| \n00493|   const filteredHistory = history.filter(item =>\n00494|     item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n00495|     item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n00496|     getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n00497|     getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n00498|   )\n00499| \n00500|   return (\n00501|     <div className=\"min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50\">\n00502|       {/* Premium Header */}\n00503|       <header className=\"bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50\">\n00504|         <div className=\"max-w-7xl mx-auto px-4 py-4\">\n00505|           <div className=\"flex items-center justify-between\">\n00506|             <LingualaLogo size=\"lg\" />\n00507|             \n00508|             <div className=\"flex items-center space-x-4\">\n00509|               {/* Stats for authenticated users */}\n00510|               {session?.user && (\n\n(File has more lines. Use 'offset' parameter to read beyond line 510)\n</file>",
+    "metadata": {
+      "preview": "  }\n\n  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n  )\n\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50\">\n      {/* Premium Header */}\n      <header className=\"bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50\">\n        <div className=\"max-w-7xl mx-auto px-4 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <LingualaLogo size=\"lg\" />\n            \n            <div className=\"flex items-center space-x-4\">\n              {/* Stats for authenticated users */}\n              {session?.user && ("
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407993478,
+      "end": 1759407993481
+    }
+  }
+}

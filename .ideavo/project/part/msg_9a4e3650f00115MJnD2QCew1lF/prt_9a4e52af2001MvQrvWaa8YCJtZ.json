@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4e52af2001MvQrvWaa8YCJtZ",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01SuimhNvnDmAXJZDg5KqvEe",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "        {session?.user && (\n          <div className=\"flex justify-center space-x-4\">\n          <DropdownMenu>",
+      "newString": "        {session?.user && (\n          <div className=\"flex justify-center space-x-4\">\n            <DropdownMenu>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -1051,9 +1051,9 @@\n \n {/* Quick Actions - Only for authenticated users */}\n {session?.user && (\n   <div className=\"flex justify-center space-x-4\">\n-  <DropdownMenu>\n+    <DropdownMenu>\n     <DropdownMenuTrigger asChild>\n       <Button variant=\"outline\" className=\"shadow-lg\">\n         <Download className=\"h-4 w-4 mr-2\" />\n         Export\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408107582,
+      "end": 1759408107593
+    }
+  }
+}

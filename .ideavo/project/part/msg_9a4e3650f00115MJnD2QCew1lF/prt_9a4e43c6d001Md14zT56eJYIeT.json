@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4e43c6d001Md14zT56eJYIeT",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01NfUmXi7n9b93HpFNrXQdux",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && grep -n \"export.*function\\|export default\" components/linguala-translator.tsx",
+      "description": "Find component export declaration"
+    },
+    "output": "153:export default function LingualaTranslator() {\n",
+    "metadata": {
+      "output": "153:export default function LingualaTranslator() {\n",
+      "exit": 0,
+      "description": "Find component export declaration"
+    },
+    "title": "cd /home/user/project && grep -n \"export.*function\\|export default\" components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408046097,
+      "end": 1759408046107
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4e51c24001mPowCKquY96l7P",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01RFXVdxW2rQYBg9pKVoz9mF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 1052,
+      "limit": 15
+    },
+    "output": "<file>\n01053|         {session?.user && (\n01054|           <div className=\"flex justify-center space-x-4\">\n01055|           <DropdownMenu>\n01056|             <DropdownMenuTrigger asChild>\n01057|               <Button variant=\"outline\" className=\"shadow-lg\">\n01058|                 <Download className=\"h-4 w-4 mr-2\" />\n01059|                 Export\n01060|               </Button>\n01061|             </DropdownMenuTrigger>\n01062|             <DropdownMenuContent>\n01063|               <DropdownMenuItem onClick={() => {\n01064|                 if (!translatedText) return toast.error(\"No translation to export\")\n01065|                 const content = `${sourceText}\\n\\n→ ${translatedText}`\n01066|                 const blob = new Blob([content], { type: 'text/plain' })\n01067|                 const url = URL.createObjectURL(blob)\n\n(File has more lines. Use 'offset' parameter to read beyond line 1067)\n</file>",
+    "metadata": {
+      "preview": "        {session?.user && (\n          <div className=\"flex justify-center space-x-4\">\n          <DropdownMenu>\n            <DropdownMenuTrigger asChild>\n              <Button variant=\"outline\" className=\"shadow-lg\">\n                <Download className=\"h-4 w-4 mr-2\" />\n                Export\n              </Button>\n            </DropdownMenuTrigger>\n            <DropdownMenuContent>\n              <DropdownMenuItem onClick={() => {\n                if (!translatedText) return toast.error(\"No translation to export\")\n                const content = `${sourceText}\\n\\n→ ${translatedText}`\n                const blob = new Blob([content], { type: 'text/plain' })\n                const url = URL.createObjectURL(blob)"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408103082,
+      "end": 1759408103083
+    }
+  }
+}

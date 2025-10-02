@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4e4fa6b001aVV2SmKnl2CH0D",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01MZrauvpw7ktjcGgDodTgX4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 1130,
+      "limit": 10
+    },
+    "output": "<file>\n01131|             </DropdownMenuContent>\n01132|           </DropdownMenu>\n01133|           </div>\n01134|         )}\n01135|       </main>\n01136|     </div>\n01137|   )\n01138| }\n</file>",
+    "metadata": {
+      "preview": "            </DropdownMenuContent>\n          </DropdownMenu>\n          </div>\n        )}\n      </main>\n    </div>\n  )\n}"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408094455,
+      "end": 1759408094456
+    }
+  }
+}

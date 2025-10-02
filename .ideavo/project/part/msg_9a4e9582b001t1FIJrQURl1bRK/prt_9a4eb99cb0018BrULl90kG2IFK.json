@@ -1,0 +1,29 @@
+{
+  "id": "prt_9a4eb99cb0018BrULl90kG2IFK",
+  "messageID": "msg_9a4e9582b001t1FIJrQURl1bRK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_012TsjFj4zRSLoMGdqgT3Pge",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "\"use client\"\n\nimport { useState } from \"react\"\nimport { useSession } from \"next-auth/react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Card, CardContent, CardHeader } from \"@/components/ui/card\"",
+          "newString": "\"use client\"\n\nimport { useState, useRef, useEffect } from \"react\"\nimport { useSession } from \"next-auth/react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Card, CardContent, CardHeader } from \"@/components/ui/card\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from \"@/components/ui/dialog\"\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\nimport { Separator } from \"@/components/ui/separator\"\nimport { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\nimport { \n  ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n  Check, BookOpen, History, Upload, FileText,\n  Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n  TrendingUp, Award, Users, Palette, Brain, Target,\n  HelpCircle, RotateCcw, Keyboard, AlertCircle, Info\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { UserProfile } from \"@/components/user-profile\""
+        },
+        {
+          "oldString": "export default function LingualaTranslator() {\n  const { data: session } = useSession()\n  const [sourceText, setSourceText] = useState(\"\")",
+          "newString": "// European-focused language data\nconst LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\", region: \"auto\", popular: true },\n  { code: \"en\", name: \"English\", region: \"European Standard\", popular: true },\n  { code: \"de\", name: \"German\", region: \"Central Europe\", popular: true },\n  { code: \"fr\", name: \"French\", region: \"Western Europe\", popular: true },\n  { code: \"es\", name: \"Spanish\", region: \"Southern Europe\", popular: true },\n  { code: \"it\", name: \"Italian\", region: \"Southern Europe\", popular: true },\n  { code: \"pt\", name: \"Portuguese\", region: \"Southern Europe\", popular: true },\n  { code: \"ru\", name: \"Russian\", region: \"Eastern Europe\", popular: true },\n  { code: \"pl\", name: \"Polish\", region: \"Eastern Europe\", popular: true },\n  { code: \"nl\", name: \"Dutch\", region: \"Western Europe\", popular: true }\n]\n\nconst DOMAINS = [\n  { code: \"general\", name: \"General\", icon: Globe, color: \"bg-blue-500\" },\n  { code: \"tech\", name: \"Technology\", icon: Brain, color: \"bg-purple-500\" },\n  { code: \"medical\", name: \"Medical\", icon: Target, color: \"bg-red-500\" },\n  { code: \"legal\", name: \"Legal\", icon: BookOpen, color: \"bg-indigo-500\" },\n  { code: \"business\", name: \"Business\", icon: TrendingUp, color: \"bg-green-500\" },\n  { code: \"academic\", name: \"Academic\", icon: Award, color: \"bg-yellow-500\" },\n  { code: \"creative\", name: \"Creative\", icon: Palette, color: \"bg-pink-500\" }\n]\n\nexport default function LingualaTranslator() {\n  const { data: session, status } = useSession()\n  \n  // Core translation state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  const [selectedDomain, setSelectedDomain] = useState(\"general\")\n  const [isTranslating, setIsTranslating] = useState(false)\n  const [translationProgress, setTranslationProgress] = useState(0)\n  \n  // UI state\n  const [copySuccess, setCopySuccess] = useState(false)\n  const [showGlossary, setShowGlossary] = useState(false)\n  const [showHistory, setShowHistory] = useState(false)\n  const [historySearch, setHistorySearch] = useState(\"\")\n  \n  // Data states\n  const [history, setHistory] = useState([])\n  const [glossary, setGlossary] = useState([])\n  const [newGlossaryEntry, setNewGlossaryEntry] = useState({\n    source: \"\",\n    target: \"\",\n    notes: \"\",\n    domain: \"general\"\n  })"
+        }
+      ]
+    },
+    "error": "Error: File /home/user/project/components/linguala-translator.tsx has been modified since it was last read.\nLast modification: 2025-10-02T12:34:24.965Z\nLast read: 2025-10-02T12:34:15.711Z\n\nPlease read the file again before modifying it.",
+    "time": {
+      "start": 1759408544895,
+      "end": 1759408544900
+    }
+  }
+}

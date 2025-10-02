@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4eac28a001Zi6PoFAYlj3p9b",
+  "messageID": "msg_9a4e9582b001t1FIJrQURl1bRK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_012HRNc7PiUr4KAdPfphN7EV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Test build with minimal working component"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\nFailed to compile.\n\n./components/linguala-translator-broken.tsx:356:56\nType error: Cannot find name 'targetText'.\n\n\u001b[0m \u001b[90m 354 |\u001b[39m     \u001b[90m// Store previous state for undo\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 355 |\u001b[39m     \u001b[36mif\u001b[39m (sourceText \u001b[33m!==\u001b[39m text) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 356 |\u001b[39m       setLastTranslation({ source\u001b[33m:\u001b[39m sourceText\u001b[33m,\u001b[39m target\u001b[33m:\u001b[39m targetText })\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 357 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 358 |\u001b[39m     \u001b[0m\n\u001b[0m \u001b[90m 359 |\u001b[39m     setSourceText(text)\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\nFailed to compile.\n\n./components/linguala-translator-broken.tsx:356:56\nType error: Cannot find name 'targetText'.\n\n\u001b[0m \u001b[90m 354 |\u001b[39m     \u001b[90m// Store previous state for undo\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 355 |\u001b[39m     \u001b[36mif\u001b[39m (sourceText \u001b[33m!==\u001b[39m text) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 356 |\u001b[39m       setLastTranslation({ source\u001b[33m:\u001b[39m sourceText\u001b[33m,\u001b[39m target\u001b[33m:\u001b[39m targetText })\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 357 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 358 |\u001b[39m     \u001b[0m\n\u001b[0m \u001b[90m 359 |\u001b[39m     setSourceText(text)\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n",
+      "exit": 1,
+      "description": "Test build with minimal working component"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759408473490,
+      "end": 1759408489608
+    }
+  }
+}

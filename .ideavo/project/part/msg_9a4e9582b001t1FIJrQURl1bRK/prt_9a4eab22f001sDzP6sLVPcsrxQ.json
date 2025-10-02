@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4eab22f001sDzP6sLVPcsrxQ",
+  "messageID": "msg_9a4e9582b001t1FIJrQURl1bRK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01YNVrgtbrjD4eyhXquTZkqY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && mv components/linguala-translator.tsx components/linguala-translator-broken.tsx && mv components/linguala-translator-backup.tsx components/linguala-translator.tsx",
+      "description": "Replace broken file with minimal working version"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Replace broken file with minimal working version"
+    },
+    "title": "cd /home/user/project && mv components/linguala-translator.tsx components/linguala-translator-broken.tsx && mv components/linguala-translator-backup.tsx components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408469774,
+      "end": 1759408469794
+    }
+  }
+}

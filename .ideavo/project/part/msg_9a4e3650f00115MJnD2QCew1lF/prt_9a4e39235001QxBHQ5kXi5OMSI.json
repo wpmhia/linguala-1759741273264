@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4e39235001QxBHQ5kXi5OMSI",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01EJkoNaoKJxsppR1iEHcTsX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 493,
+      "limit": 10
+    },
+    "output": "<file>\n00494|     item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n00495|     item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n00496|     getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n00497|     getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n00498|   )\n00499| \n00500|   return (\n00501|     <div className=\"min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50\">\n00502|       {/* Premium Header */}\n00503|       <header className=\"bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 503)\n</file>",
+    "metadata": {
+      "preview": "    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n  )\n\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50\">\n      {/* Premium Header */}\n      <header className=\"bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50\">"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408002243,
+      "end": 1759408002245
+    }
+  }
+}

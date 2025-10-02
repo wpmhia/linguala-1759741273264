@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4e45fc900145lH84kdUY5Rod",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_016HqD8djGmeXfTZjNMFmN8o",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && sed -n '490,510p' components/linguala-translator.tsx",
+      "description": "Check lines around the problematic return statement"
+    },
+    "output": "    return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]\n  }\n\n  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n  )\n\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50\">\n      {/* Premium Header */}\n      <header className=\"bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50\">\n        <div className=\"max-w-7xl mx-auto px-4 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <LingualaLogo size=\"lg\" />\n            \n            <div className=\"flex items-center space-x-4\">\n              {/* Stats for authenticated users */}\n              {session?.user && (\n",
+    "metadata": {
+      "output": "    return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]\n  }\n\n  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n  )\n\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50\">\n      {/* Premium Header */}\n      <header className=\"bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50\">\n        <div className=\"max-w-7xl mx-auto px-4 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <LingualaLogo size=\"lg\" />\n            \n            <div className=\"flex items-center space-x-4\">\n              {/* Stats for authenticated users */}\n              {session?.user && (\n",
+      "exit": 0,
+      "description": "Check lines around the problematic return statement"
+    },
+    "title": "cd /home/user/project && sed -n '490,510p' components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408055002,
+      "end": 1759408055009
+    }
+  }
+}

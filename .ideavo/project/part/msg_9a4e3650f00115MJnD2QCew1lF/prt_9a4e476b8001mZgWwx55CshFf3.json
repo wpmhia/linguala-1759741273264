@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4e476b8001mZgWwx55CshFf3",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Cd4z1JMsuyt9ac1pX735BP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 480,
+      "limit": 15
+    },
+    "output": "<file>\n00481|       fetch(`/api/glossary?id=${id}`, { method: 'DELETE' }).catch(console.error)\n00482|     }\n00483|   }\n00484| \n00485|   const getLanguageName = (code: string) => {\n00486|     return LANGUAGES.find(lang => lang.code === code)?.name || code\n00487|   }\n00488| \n00489|   const getDomainInfo = (code: string) => {\n00490|     return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]\n00491|   }\n00492| \n00493|   const filteredHistory = history.filter(item =>\n00494|     item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n00495|     item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n\n(File has more lines. Use 'offset' parameter to read beyond line 495)\n</file>",
+    "metadata": {
+      "preview": "      fetch(`/api/glossary?id=${id}`, { method: 'DELETE' }).catch(console.error)\n    }\n  }\n\n  const getLanguageName = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code)?.name || code\n  }\n\n  const getDomainInfo = (code: string) => {\n    return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]\n  }\n\n  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408060719,
+      "end": 1759408060720
+    }
+  }
+}

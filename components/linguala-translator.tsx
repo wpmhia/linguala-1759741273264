@@ -5,35 +5,23 @@ import { useSession } from "next-auth/react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Switch } from "@/components/ui/switch"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Separator } from "@/components/ui/separator"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { 
-  ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,
-  Check, BookOpen, History, Upload, FileText,
-  Search, Trash2, Plus, Volume2, ChevronRight, Globe,
-  TrendingUp, Award, Users, Palette, Brain, Target,
-  HelpCircle, RotateCcw, Keyboard, AlertCircle, Info
+  ArrowUpDown, Copy, Download, Share2, Sparkles,
+  Check, BookOpen, History, Volume2, Globe,
+  TrendingUp, Brain, Target, AlertCircle
 } from "lucide-react"
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { UserProfile } from "@/components/user-profile"
 
-// European-focused language data - European languages prioritized
+// European-focused language data
 const LANGUAGES = [
-  // Auto-detect
   { code: "auto", name: "Detect language", region: "auto", popular: true },
-  
-  // English - European lingua franca
   { code: "en", name: "English", region: "European Standard", popular: true },
-  
-  // Major European languages (most popular)
   { code: "de", name: "German", region: "Central Europe", popular: true },
   { code: "fr", name: "French", region: "Western Europe", popular: true },
   { code: "es", name: "Spanish", region: "Southern Europe", popular: true },
@@ -41,114 +29,8 @@ const LANGUAGES = [
   { code: "pt", name: "Portuguese", region: "Southern Europe", popular: true },
   { code: "ru", name: "Russian", region: "Eastern Europe", popular: true },
   { code: "pl", name: "Polish", region: "Eastern Europe", popular: true },
-  { code: "nl", name: "Dutch", region: "Western Europe", popular: true },
-  
-  // Nordic languages
-  { code: "da", name: "Danish", region: "Nordic Europe", popular: false },
-  { code: "sv", name: "Swedish", region: "Nordic Europe", popular: false },
-  { code: "no", name: "Norwegian", region: "Nordic Europe", popular: false },
-  { code: "fi", name: "Finnish", region: "Nordic Europe", popular: false },
-  
-  // Baltic languages
-  { code: "et", name: "Estonian", region: "Baltic Europe", popular: false },
-  { code: "lv", name: "Latvian", region: "Baltic Europe", popular: false },
-  { code: "lt", name: "Lithuanian", region: "Baltic Europe", popular: false },
-  
-  // Central & Eastern European languages
-  { code: "cs", name: "Czech", region: "Central Europe", popular: false },
-  { code: "sk", name: "Slovak", region: "Central Europe", popular: false },
-  { code: "hu", name: "Hungarian", region: "Central Europe", popular: false },
-  { code: "ro", name: "Romanian", region: "Eastern Europe", popular: false },
-  { code: "bg", name: "Bulgarian", region: "Eastern Europe", popular: false },
-  { code: "hr", name: "Croatian", region: "Southeastern Europe", popular: false },
-  { code: "sl", name: "Slovenian", region: "Central Europe", popular: false },
-  { code: "el", name: "Greek", region: "Southeastern Europe", popular: false },
-  
-  // European neighbors
-  { code: "tr", name: "Turkish", region: "Europe/Asia", popular: false },
-  
-  // Global languages (non-European)
-  { code: "ar", name: "Arabic", region: "Middle East", popular: false },
-  { code: "zh", name: "Chinese", region: "Asia", popular: false },
-  { code: "ja", name: "Japanese", region: "Asia", popular: false },
-  { code: "ko", name: "Korean", region: "Asia", popular: false },
-  { code: "hi", name: "Hindi", region: "Asia", popular: false },
-  { code: "th", name: "Thai", region: "Asia", popular: false },
-  { code: "vi", name: "Vietnamese", region: "Asia", popular: false },
-  { code: "ms", name: "Malay", region: "Asia", popular: false },
-  { code: "id", name: "Indonesian", region: "Asia", popular: false },
-  { code: "tl", name: "Filipino", region: "Asia", popular: false },
+  { code: "nl", name: "Dutch", region: "Western Europe", popular: true }
 ]
-
-const DOMAINS = [
-  { 
-    code: "general", 
-    name: "General", 
-    description: "Everyday conversations and general content",
-    icon: Globe,
-    color: "bg-blue-500"
-  },
-  { 
-    code: "technical", 
-    name: "Technology", 
-    description: "Software, IT, engineering, and technical documentation",
-    icon: Brain,
-    color: "bg-purple-500"
-  },
-  { 
-    code: "medical", 
-    name: "Medical", 
-    description: "Healthcare, pharmaceuticals, medical research",
-    icon: Award,
-    color: "bg-green-500"
-  },
-  { 
-    code: "legal", 
-    name: "Legal", 
-    description: "Contracts, legal documents, regulatory content",
-    icon: Target,
-    color: "bg-red-500"
-  },
-  { 
-    code: "business", 
-    name: "Business", 
-    description: "Finance, marketing, corporate communications",
-    icon: TrendingUp,
-    color: "bg-orange-500"
-  },
-  { 
-    code: "academic", 
-    name: "Academic", 
-    description: "Research papers, educational content, scholarly articles",
-    icon: Users,
-    color: "bg-indigo-500"
-  },
-  { 
-    code: "creative", 
-    name: "Creative", 
-    description: "Literature, marketing copy, creative writing",
-    icon: Palette,
-    color: "bg-pink-500"
-  }
-]
-
-interface TranslationHistory {
-  id: string
-  sourceText: string
-  translatedText: string
-  sourceLang: string
-  targetLang: string
-  domain: string
-  timestamp: number
-}
-
-interface GlossaryEntry {
-  id: string
-  source: string
-  target: string
-  domain: string
-  notes?: string
-}
 
 export default function LingualaTranslator() {
   const { data: session, status } = useSession()
@@ -158,258 +40,46 @@ export default function LingualaTranslator() {
   const [translatedText, setTranslatedText] = useState("")
   const [sourceLang, setSourceLang] = useState("auto")
   const [targetLang, setTargetLang] = useState("en")
-  const [selectedDomain, setSelectedDomain] = useState("general")
   const [isTranslating, setIsTranslating] = useState(false)
-  const [translationProgress, setTranslationProgress] = useState(0)
-  const [lastTranslation, setLastTranslation] = useState<{source: string, target: string} | null>(null)
-
+  
   // UI state
   const [copySuccess, setCopySuccess] = useState(false)
-  const [showHelp, setShowHelp] = useState(false)
-  const [recentLanguagePairs, setRecentLanguagePairs] = useState<{from: string, to: string}[]>([])
-  const [showGlossary, setShowGlossary] = useState(false)
-  const [showHistory, setShowHistory] = useState(false)
-  const [showSettings, setShowSettings] = useState(false)
-  const [translationMode, setTranslationMode] = useState<'text' | 'document'>('text')
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null)
-  const [isProcessingDocument, setIsProcessingDocument] = useState(false)
 
-  // Data state
-  const [history, setHistory] = useState<TranslationHistory[]>([])
-  const [glossary, setGlossary] = useState<GlossaryEntry[]>([])
-  const [historySearch, setHistorySearch] = useState("")
-  const [newGlossaryEntry, setNewGlossaryEntry] = useState({ source: "", target: "", notes: "" })
+  // Helper functions
+  const getLanguageName = (code: string) => {
+    return LANGUAGES.find(lang => lang.code === code)?.name || code
+  }
 
-  const debounceRef = useRef<NodeJS.Timeout>()
-
-  // Load data from database for authenticated users only
-  useEffect(() => {
-    if (session?.user) {
-      // Load from database for authenticated users
-      loadUserData()
-    }
-    // Anonymous users start fresh each session - no data persistence
-
-    // Handle shared URLs
-    const urlParams = new URLSearchParams(window.location.search)
-    const sharedText = urlParams.get('text')
-    const sharedFrom = urlParams.get('from')
-    const sharedTo = urlParams.get('to')
-    
-    if (sharedText && sharedFrom && sharedTo) {
-      setSourceText(sharedText)
-      setSourceLang(sharedFrom)
-      setTargetLang(sharedTo)
-      setTimeout(() => translateText(sharedText, sharedFrom, sharedTo), 100)
-      window.history.replaceState({}, '', window.location.pathname)
-    }
-  }, [session])
-
-  // Save data - disabled for anonymous users
-  useEffect(() => {
-    // History and glossary are only saved for authenticated users
-    // Anonymous users get core translation functionality only
-  }, [history, session])
-
-  useEffect(() => {
-    // Glossary management is only available for authenticated users
-  }, [glossary, session])
-
-  const loadUserData = async () => {
-    try {
-      const [historyRes, glossaryRes] = await Promise.all([
-        fetch('/api/translations'),
-        fetch('/api/glossary')
-      ])
-      
-      if (historyRes.ok) {
-        const { translations } = await historyRes.json()
-        setHistory(translations.map((t: any) => ({
-          id: t.id,
-          sourceText: t.sourceText,
-          translatedText: t.translatedText,
-          sourceLang: t.sourceLang,
-          targetLang: t.targetLang,
-          domain: t.domain,
-          timestamp: new Date(t.createdAt).getTime()
-        })))
-      }
-      
-      if (glossaryRes.ok) {
-        const { glossaryEntries } = await glossaryRes.json()
-        setGlossary(glossaryEntries.map((g: any) => ({
-          id: g.id,
-          source: g.source,
-          target: g.target,
-          domain: g.domain,
-          notes: g.notes
-        })))
-      }
-    } catch (error) {
-      console.error('Failed to load user data:', error)
+  const handleSourceTextChange = (text: string) => {
+    setSourceText(text)
+    if (text.trim()) {
+      translateText(text, sourceLang, targetLang)
     }
   }
 
   const translateText = async (text: string, from: string, to: string) => {
-    if (!text.trim()) {
-      setTranslatedText("")
-      return
-    }
-
+    if (!text.trim()) return
+    
     setIsTranslating(true)
-    setTranslationProgress(0)
-    
-    // Simulate progress for better UX
-    const progressInterval = setInterval(() => {
-      setTranslationProgress(prev => Math.min(prev + Math.random() * 30, 90))
-    }, 200)
-
     try {
-      const response = await fetch("/api/translate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          text: text.trim(),
-          sourceLang: from,
-          targetLang: to,
-          domain: session?.user ? selectedDomain : 'general',
-          glossary: session?.user ? glossary.filter(entry => 
-            entry.domain === selectedDomain || entry.domain === 'general'
-          ) : []
-        }),
+      const response = await fetch('/api/translate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text, from, to })
       })
-
-      if (!response.ok) throw new Error("Translation failed")
-
-      const data = await response.json()
-      setTranslatedText(data.translatedText)
-      setTranslationProgress(100)
-
-      // Save to history only if authenticated
-      if (session?.user) {
-        const historyItem: TranslationHistory = {
-          id: Date.now().toString(),
-          sourceText: text.trim(),
-          translatedText: data.translatedText,
-          sourceLang: from,
-          targetLang: to,
-          domain: selectedDomain,
-          timestamp: Date.now(),
-        }
-        
-        setHistory(prev => [historyItem, ...prev.slice(0, 99)])
-
-        // Save to database
-        fetch('/api/translations', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            sourceText: text.trim(),
-            translatedText: data.translatedText,
-            sourceLang: from,
-            targetLang: to,
-            domain: selectedDomain
-          })
-        }).catch(console.error)
-      }
-
-    } catch (error) {
-      console.error("Translation error:", error)
       
-      // Better error messages (Nielsen's Error Recovery heuristic)
-      if (error instanceof TypeError && error.message.includes('fetch')) {
-        toast.error("Connection failed. Please check your internet and try again.", {
-          action: {
-            label: "Retry",
-            onClick: () => translateText(text, from, to)
-          }
-        })
-      } else if (text.length > 5000) {
-        toast.error("Text too long. Please shorten to under 5,000 characters.", {
-          action: {
-            label: "Trim Text",
-            onClick: () => {
-              const trimmed = text.substring(0, 5000)
-              setSourceText(trimmed)
-              translateText(trimmed, from, to)
-            }
-          }
-        })
+      if (response.ok) {
+        const data = await response.json()
+        setTranslatedText(data.translatedText)
       } else {
-        toast.error("Translation failed. Our servers may be busy - please try again in a moment.", {
-          action: {
-            label: "Retry",
-            onClick: () => setTimeout(() => translateText(text, from, to), 2000)
-          }
-        })
+        throw new Error('Translation failed')
       }
+    } catch (error) {
+      console.error('Translation error:', error)
+      toast.error("Translation failed. Please try again.")
     } finally {
-      clearInterval(progressInterval)
       setIsTranslating(false)
-      setTranslationProgress(0)
     }
-  }
-
-  const handleSourceTextChange = (text: string) => {
-    // Store previous state for undo
-    if (sourceText !== text) {
-      setLastTranslation({ source: sourceText, target: targetText })
-    }
-    
-    setSourceText(text)
-    
-    // Auto-translate after 1 second of no typing
-    if (autoTranslate) {
-      clearTimeout(debounceTimer.current!)
-      debounceTimer.current = setTimeout(() => {
-        if (text.trim()) {
-          translateText(text)
-        } else {
-          setTargetText('')
-        }
-      }, 1000)
-    }
-  }
-
-  // Undo functionality (Nielsen's User Control heuristic)
-  const handleUndo = () => {
-    if (lastTranslation) {
-      setSourceText(lastTranslation.source)
-      setTargetText(lastTranslation.target)
-      setLastTranslation(null)
-    }
-  }
-
-  // Keyboard shortcuts (Nielsen's Efficiency heuristic)
-  useEffect(() => {
-    const handleKeyboard = (e: KeyboardEvent) => {
-      if (e.ctrlKey || e.metaKey) {
-        switch (e.key) {
-          case 'Enter':
-            e.preventDefault()
-            if (sourceText.trim()) translateText(sourceText)
-            break
-          case 'k':
-            e.preventDefault()
-            setShowHelp(!showHelp)
-            break
-          case 'z':
-            if (!e.shiftKey) {
-              e.preventDefault()
-              handleUndo()
-            }
-            break
-          case 'ArrowDown':
-            e.preventDefault()
-            swapLanguages()
-            break
-        }
-      }
-    }
-    
-    document.addEventListener('keydown', handleKeyboard)
-    return () => document.removeEventListener('keydown', handleKeyboard)
-  }, [sourceText, showHelp, lastTranslation])
   }
 
   const swapLanguages = () => {
@@ -428,74 +98,9 @@ export default function LingualaTranslator() {
       toast.success("Copied to clipboard!")
       setTimeout(() => setCopySuccess(false), 2000)
     } catch (error) {
-      toast.error("Failed to copy text")
+      toast.error("Failed to copy to clipboard")
     }
   }
-
-  const playAudio = (text: string, lang: string) => {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text)
-      utterance.lang = lang
-      speechSynthesis.speak(utterance)
-    }
-  }
-
-  const addGlossaryEntry = async () => {
-    if (!newGlossaryEntry.source.trim() || !newGlossaryEntry.target.trim()) {
-      toast.error("Source and target terms are required")
-      return
-    }
-
-    const entry: GlossaryEntry = {
-      id: Date.now().toString(),
-      source: newGlossaryEntry.source.trim(),
-      target: newGlossaryEntry.target.trim(),
-      domain: selectedDomain,
-      notes: newGlossaryEntry.notes.trim() || undefined
-    }
-
-    setGlossary(prev => [...prev, entry])
-    setNewGlossaryEntry({ source: "", target: "", notes: "" })
-    toast.success("Glossary entry added!")
-
-    // Save to database if authenticated
-    if (session?.user) {
-      fetch('/api/glossary', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source: entry.source,
-          target: entry.target,
-          domain: entry.domain,
-          notes: entry.notes
-        })
-      }).catch(console.error)
-    }
-  }
-
-  const removeGlossaryEntry = async (id: string) => {
-    setGlossary(prev => prev.filter(entry => entry.id !== id))
-    toast.success("Glossary entry removed!")
-
-    if (session?.user) {
-      fetch(`/api/glossary?id=${id}`, { method: 'DELETE' }).catch(console.error)
-    }
-  }
-
-  const getLanguageName = (code: string) => {
-    return LANGUAGES.find(lang => lang.code === code)?.name || code
-  }
-
-  const getDomainInfo = (code: string) => {
-    return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]
-  }
-
-  const filteredHistory = history.filter(item =>
-    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||
-    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||
-    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||
-    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())
-  )
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
@@ -504,254 +109,18 @@ export default function LingualaTranslator() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <LingualaLogo size="lg" />
-            
-            <div className="flex items-center space-x-4">
-              {/* Stats for authenticated users */}
-              {session?.user && (
-                <div className="hidden md:flex items-center space-x-4 text-sm text-gray-600">
-                  <div className="flex items-center space-x-1">
-                    <History className="h-4 w-4" />
-                    <span>{history.length} translations</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <BookOpen className="h-4 w-4" />
-                    <span>{glossary.length} terms</span>
-                  </div>
-                </div>
-              )}
-              
-              <UserProfile />
-            </div>
+            <UserProfile />
           </div>
         </div>
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Domain Selection - Only for authenticated users */}
-        {session?.user && (
-          <div className="text-center mb-8">
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {DOMAINS.map(domain => {
-                const IconComponent = domain.icon
-                return (
-                  <Button
-                    key={domain.code}
-                    variant={selectedDomain === domain.code ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedDomain(domain.code)}
-                    className={`flex items-center space-x-2 transition-all duration-200 ${
-                      selectedDomain === domain.code 
-                        ? `${domain.color} text-white hover:opacity-90` 
-                        : "hover:scale-105"
-                    }`}
-                  >
-                    <IconComponent className="h-4 w-4" />
-                    <span>{domain.name}</span>
-                  </Button>
-                )
-              })}
-            </div>
-          </div>
-        )}
-
-
-
         {/* Main Translation Interface */}
         <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
           <CardHeader className="pb-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                {/* Current domain - Only for authenticated users */}
-                {session?.user && (
-                  <Badge variant="secondary" className="flex items-center space-x-1">
-                    <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />
-                    <span>{getDomainInfo(selectedDomain).name}</span>
-                  </Badge>
-                )}
-              </div>
-
-              {/* Action Buttons - Only for authenticated users */}
-              {session?.user && (
-                <div className="flex items-center space-x-2">
-                <Dialog open={showGlossary} onOpenChange={setShowGlossary}>
-                  <DialogTrigger asChild>
-                    <Button variant="outline" size="sm">
-                      <BookOpen className="h-4 w-4 mr-2" />
-                      Glossary
-                      <Badge variant="secondary" className="ml-2">{glossary.length}</Badge>
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="flex items-center space-x-2">
-                        <BookOpen className="h-5 w-5" />
-                        <span>Custom Glossary</span>
-                      </DialogTitle>
-                    </DialogHeader>
-                    <Tabs defaultValue="manage" className="w-full">
-                      <TabsList>
-                        <TabsTrigger value="manage">Manage Terms</TabsTrigger>
-                        <TabsTrigger value="add">Add New Term</TabsTrigger>
-                      </TabsList>
-                      <TabsContent value="manage" className="space-y-4">
-                        <div className="grid gap-4 max-h-96 overflow-y-auto">
-                          {glossary.length === 0 ? (
-                            <div className="text-center py-12">
-                              <BookOpen className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-                              <p className="text-gray-500">No glossary entries yet.</p>
-                              <p className="text-sm text-gray-400">Add custom terms to improve translation accuracy.</p>
-                            </div>
-                          ) : (
-                            glossary.map(entry => (
-                              <div key={entry.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                <div className="flex-1">
-                                  <div className="flex items-center space-x-3">
-                                    <span className="font-medium text-gray-900">{entry.source}</span>
-                                    <ChevronRight className="h-4 w-4 text-gray-400" />
-                                    <span className="text-blue-600 font-medium">{entry.target}</span>
-                                    <Badge variant="outline" className="text-xs">
-                                      {getDomainInfo(entry.domain).name}
-                                    </Badge>
-                                  </div>
-                                  {entry.notes && (
-                                    <p className="text-sm text-gray-600 mt-1">{entry.notes}</p>
-                                  )}
-                                </div>
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  onClick={() => removeGlossaryEntry(entry.id)}
-                                  className="text-red-600 hover:text-red-700 hover:bg-red-50"
-                                >
-                                  <Trash2 className="h-4 w-4" />
-                                </Button>
-                              </div>
-                            ))
-                          )}
-                        </div>
-                      </TabsContent>
-                      <TabsContent value="add" className="space-y-4">
-                        <div className="grid grid-cols-2 gap-4">
-                          <div>
-                            <Label htmlFor="source-term">Source Term</Label>
-                            <Input
-                              id="source-term"
-                              value={newGlossaryEntry.source}
-                              onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, source: e.target.value }))}
-                              placeholder="Enter source term"
-                              className="mt-1"
-                            />
-                          </div>
-                          <div>
-                            <Label htmlFor="target-term">Target Term</Label>
-                            <Input
-                              id="target-term"
-                              value={newGlossaryEntry.target}
-                              onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, target: e.target.value }))}
-                              placeholder="Enter target term"
-                              className="mt-1"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <Label htmlFor="notes">Context & Notes</Label>
-                          <Input
-                            id="notes"
-                            value={newGlossaryEntry.notes}
-                            onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, notes: e.target.value }))}
-                            placeholder="Add context, usage notes, or examples"
-                            className="mt-1"
-                          />
-                        </div>
-                        <Button onClick={addGlossaryEntry} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
-                          <Plus className="h-4 w-4 mr-2" />
-                          Add to Glossary
-                        </Button>
-                      </TabsContent>
-                    </Tabs>
-                  </DialogContent>
-                </Dialog>
-
-                <Dialog open={showHistory} onOpenChange={setShowHistory}>
-                  <DialogTrigger asChild>
-                    <Button variant="outline" size="sm">
-                      <History className="h-4 w-4 mr-2" />
-                      History
-                      <Badge variant="secondary" className="ml-2">{history.length}</Badge>
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="flex items-center space-x-2">
-                        <History className="h-5 w-5" />
-                        <span>Translation History</span>
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-2">
-                        <div className="relative flex-1">
-                          <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                          <Input
-                            value={historySearch}
-                            onChange={(e) => setHistorySearch(e.target.value)}
-                            placeholder="Search translations..."
-                            className="pl-10"
-                          />
-                        </div>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => setHistory([])}
-                          className="text-red-600 hover:text-red-700"
-                        >
-                          <Trash2 className="h-4 w-4 mr-2" />
-                          Clear All
-                        </Button>
-                      </div>
-                      
-                      <div className="grid gap-3 max-h-96 overflow-y-auto">
-                        {filteredHistory.length === 0 ? (
-                          <div className="text-center py-12">
-                            <History className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-                            <p className="text-gray-500">
-                              {historySearch ? "No matching translations found." : "No translation history yet."}
-                            </p>
-                          </div>
-                        ) : (
-                          filteredHistory.map(item => (
-                            <div key={item.id} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                              <div className="flex items-center justify-between mb-2">
-                                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                                  <span className="font-medium">{getLanguageName(item.sourceLang)}</span>
-                                  <ChevronRight className="h-3 w-3" />
-                                  <span className="font-medium">{getLanguageName(item.targetLang)}</span>
-                                  <Badge variant="outline" className="text-xs">
-                                    {getDomainInfo(item.domain).name}
-                                  </Badge>
-                                  <span>•</span>
-                                  <span>{new Date(item.timestamp).toLocaleDateString()}</span>
-                                </div>
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  onClick={() => copyToClipboard(item.translatedText)}
-                                >
-                                  <Copy className="h-4 w-4" />
-                                </Button>
-                              </div>
-                              <div className="space-y-1">
-                                <p className="text-sm text-gray-700">{item.sourceText}</p>
-                                <p className="text-sm text-blue-600 font-medium">{item.translatedText}</p>
-                              </div>
-                            </div>
-                          ))
-                        )}
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-                </div>
-              )}
+            <div className="text-center">
+              <h1 className="text-2xl font-bold text-gray-900 mb-2">European Translation Platform</h1>
+              <p className="text-gray-600">Professional translation tools for European languages</p>
             </div>
           </CardHeader>
 
@@ -766,29 +135,16 @@ export default function LingualaTranslator() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <div className="p-2">
-                    <div className="text-xs font-semibold text-gray-500 mb-2">POPULAR</div>
-                    {LANGUAGES.filter(lang => lang.popular).map(lang => (
-                      <SelectItem key={lang.code} value={lang.code} className="flex items-center">
-                        <div className="flex items-center space-x-2">
-                          <span>{lang.name}</span>
-                          {lang.region !== "auto" && (
-                            <Badge variant="outline" className="text-xs">{lang.region}</Badge>
-                          )}
-                        </div>
-                      </SelectItem>
-                    ))}
-                    <Separator className="my-2" />
-                    <div className="text-xs font-semibold text-gray-500 mb-2">ALL LANGUAGES</div>
-                    {LANGUAGES.filter(lang => !lang.popular).map(lang => (
-                      <SelectItem key={lang.code} value={lang.code}>
-                        <div className="flex items-center space-x-2">
-                          <span>{lang.name}</span>
+                  {LANGUAGES.map(lang => (
+                    <SelectItem key={lang.code} value={lang.code}>
+                      <div className="flex items-center space-x-2">
+                        <span>{lang.name}</span>
+                        {lang.region !== "auto" && (
                           <Badge variant="outline" className="text-xs">{lang.region}</Badge>
-                        </div>
-                      </SelectItem>
-                    ))}
-                  </div>
+                        )}
+                      </div>
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
 
@@ -797,7 +153,7 @@ export default function LingualaTranslator() {
                 size="lg"
                 onClick={swapLanguages}
                 disabled={sourceLang === "auto"}
-                className="p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50"
               >
                 <ArrowUpDown className="h-5 w-5" />
               </Button>
@@ -810,27 +166,14 @@ export default function LingualaTranslator() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <div className="p-2">
-                    <div className="text-xs font-semibold text-gray-500 mb-2">POPULAR</div>
-                    {LANGUAGES.filter(lang => lang.popular && lang.code !== "auto").map(lang => (
-                      <SelectItem key={lang.code} value={lang.code}>
-                        <div className="flex items-center space-x-2">
-                          <span>{lang.name}</span>
-                          <Badge variant="outline" className="text-xs">{lang.region}</Badge>
-                        </div>
-                      </SelectItem>
-                    ))}
-                    <Separator className="my-2" />
-                    <div className="text-xs font-semibold text-gray-500 mb-2">ALL LANGUAGES</div>
-                    {LANGUAGES.filter(lang => !lang.popular && lang.code !== "auto").map(lang => (
-                      <SelectItem key={lang.code} value={lang.code}>
-                        <div className="flex items-center space-x-2">
-                          <span>{lang.name}</span>
-                          <Badge variant="outline" className="text-xs">{lang.region}</Badge>
-                        </div>
-                      </SelectItem>
-                    ))}
-                  </div>
+                  {LANGUAGES.filter(lang => lang.code !== "auto").map(lang => (
+                    <SelectItem key={lang.code} value={lang.code}>
+                      <div className="flex items-center space-x-2">
+                        <span>{lang.name}</span>
+                        <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+                      </div>
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
@@ -839,22 +182,10 @@ export default function LingualaTranslator() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Source Text */}
               <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
-                    <Globe className="h-4 w-4" />
-                    <span>{getLanguageName(sourceLang)}</span>
-                  </Label>
-                  {sourceText && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => playAudio(sourceText, sourceLang)}
-                      className="text-gray-500 hover:text-blue-600"
-                    >
-                      <Volume2 className="h-4 w-4" />
-                    </Button>
-                  )}
-                </div>
+                <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
+                  <Globe className="h-4 w-4" />
+                  <span>{getLanguageName(sourceLang)}</span>
+                </Label>
                 <div className="relative">
                   <Textarea
                     value={sourceText}
@@ -886,59 +217,29 @@ export default function LingualaTranslator() {
                   </Label>
                   <div className="flex items-center space-x-2">
                     {translatedText && (
-                      <>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => playAudio(translatedText, targetLang)}
-                          className="text-gray-500 hover:text-blue-600"
-                        >
-                          <Volume2 className="h-4 w-4" />
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => copyToClipboard(translatedText)}
-                          className="text-gray-500 hover:text-blue-600"
-                        >
-                          {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
-                        </Button>
-                      </>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => copyToClipboard(translatedText)}
+                        className="text-gray-500 hover:text-blue-600"
+                      >
+                        {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                      </Button>
                     )}
                   </div>
                 </div>
-                <div className="relative">
-                  <Textarea
-                    value={translatedText}
-                    readOnly
-                    placeholder={isTranslating ? "Translating..." : "Translation will appear here"}
-                    className="min-h-[200px] text-base bg-gradient-to-br from-blue-50/50 to-indigo-50/50 border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
-                  />
-                  {isTranslating && translationProgress > 0 && (
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <div className="bg-white/80 rounded-full p-2">
-                        <div className="flex items-center space-x-2">
-                          <Sparkles className="h-3 w-3 text-blue-500 animate-pulse" />
-                          <div className="flex-1 bg-gray-200 rounded-full h-1">
-                            <div 
-                              className="bg-gradient-to-r from-blue-500 to-purple-500 h-1 rounded-full transition-all duration-300"
-                              style={{ width: `${translationProgress}%` }}
-                            />
-                          </div>
-                          <span className="text-xs text-gray-600">{Math.round(translationProgress)}%</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                <Textarea
+                  value={translatedText}
+                  readOnly
+                  placeholder={isTranslating ? "Translating..." : "Translation will appear here"}
+                  className="min-h-[200px] text-base bg-gradient-to-br from-blue-50/50 to-indigo-50/50 border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
+                />
               </div>
             </div>
-
-
           </CardContent>
         </Card>
 
-        {/* Features unlock section - for anonymous users */}
+        {/* Features showcase for anonymous users */}
         {!session?.user && (
           <div className="max-w-4xl mx-auto mb-8">
             <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
@@ -1046,90 +347,6 @@ export default function LingualaTranslator() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-        )}
-
-        {/* Quick Actions - Only for authenticated users */}
-        {session?.user && (
-          <div className="flex justify-center space-x-4">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="shadow-lg">
-                <Download className="h-4 w-4 mr-2" />
-                Export
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => {
-                if (!translatedText) return toast.error("No translation to export")
-                const content = `${sourceText}\n\n→ ${translatedText}`
-                const blob = new Blob([content], { type: 'text/plain' })
-                const url = URL.createObjectURL(blob)
-                const a = document.createElement('a')
-                a.href = url
-                a.download = 'linguala-translation.txt'
-                a.click()
-                URL.revokeObjectURL(url)
-                toast.success("Translation exported!")
-              }}>
-                Export as TXT
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => {
-                if (!translatedText) return toast.error("No translation to export")
-                const data = {
-                  source: { text: sourceText, language: sourceLang },
-                  target: { text: translatedText, language: targetLang },
-                  domain: selectedDomain,
-                  timestamp: new Date().toISOString()
-                }
-                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
-                const url = URL.createObjectURL(blob)
-                const a = document.createElement('a')
-                a.href = url
-                a.download = 'linguala-translation.json'
-                a.click()
-                URL.revokeObjectURL(url)
-                toast.success("Translation exported!")
-              }}>
-                Export as JSON
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="shadow-lg">
-                <Share2 className="h-4 w-4 mr-2" />
-                Share
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={async () => {
-                if (!translatedText) return toast.error("No translation to share")
-                const params = new URLSearchParams({
-                  text: sourceText,
-                  from: sourceLang,
-                  to: targetLang
-                })
-                const shareUrl = `https://linguala.eu?${params.toString()}`
-                await copyToClipboard(shareUrl)
-                toast.success("Share link copied!")
-              }}>
-                Copy Share Link
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={async () => {
-                if (!translatedText) return toast.error("No translation to share")
-                const shareText = `${sourceText} → ${translatedText}\n\nTranslated with Linguala.eu`
-                if (navigator.share) {
-                  await navigator.share({ title: 'Linguala Translation', text: shareText })
-                } else {
-                  await copyToClipboard(shareText)
-                }
-              }}>
-                Share Translation
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
           </div>
         )}
       </main>

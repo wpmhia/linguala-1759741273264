@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4e5b150001TZ23Fcr1S5IMmI",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_014PBXgbiEAtp9xYoQ2npE2w",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 475,
+      "limit": 25
+    },
+    "output": "<file>\n00476|   const removeGlossaryEntry = async (id: string) => {\n00477|     setGlossary(prev => prev.filter(entry => entry.id !== id))\n00478|     toast.success(\"Glossary entry removed!\")\n00479| \n00480|     if (session?.user) {\n00481|       fetch(`/api/glossary?id=${id}`, { method: 'DELETE' }).catch(console.error)\n00482|     }\n00483|   }\n00484| \n00485|   const getLanguageName = (code: string) => {\n00486|     return LANGUAGES.find(lang => lang.code === code)?.name || code\n00487|   }\n00488| \n00489|   const getDomainInfo = (code: string) => {\n00490|     return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]\n00491|   }\n00492| \n00493|   const filteredHistory = history.filter(item =>\n00494|     item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n00495|     item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n00496|     getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n00497|     getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n00498|   )\n00499| \n00500|   return (\n\n(File has more lines. Use 'offset' parameter to read beyond line 500)\n</file>",
+    "metadata": {
+      "preview": "  const removeGlossaryEntry = async (id: string) => {\n    setGlossary(prev => prev.filter(entry => entry.id !== id))\n    toast.success(\"Glossary entry removed!\")\n\n    if (session?.user) {\n      fetch(`/api/glossary?id=${id}`, { method: 'DELETE' }).catch(console.error)\n    }\n  }\n\n  const getLanguageName = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code)?.name || code\n  }\n\n  const getDomainInfo = (code: string) => {\n    return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]\n  }\n\n  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408141410,
+      "end": 1759408141412
+    }
+  }
+}

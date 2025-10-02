@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4e44bfe001xTIK9X7JU5fpVG",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01LGVDV7trGAkibtfHkU9WJP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 150,
+      "limit": 10
+    },
+    "output": "<file>\n00151| }\n00152| \n00153| export default function LingualaTranslator() {\n00154|   const { data: session, status } = useSession()\n00155|   \n00156|   // Core translation state\n00157|   const [sourceText, setSourceText] = useState(\"\")\n00158|   const [translatedText, setTranslatedText] = useState(\"\")\n00159|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00160|   const [targetLang, setTargetLang] = useState(\"en\")\n\n(File has more lines. Use 'offset' parameter to read beyond line 160)\n</file>",
+    "metadata": {
+      "preview": "}\n\nexport default function LingualaTranslator() {\n  const { data: session, status } = useSession()\n  \n  // Core translation state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408049922,
+      "end": 1759408049924
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a4e4d813001iUUM1QWXp9IOq6",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01HEKxeFeC1jv31txGkSpMwJ",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "    </div>\n  )\n}",
+      "newString": "    </div>\n  )\n}"
+    },
+    "error": "Error: oldString and newString must be different",
+    "time": {
+      "start": 1759408085890,
+      "end": 1759408085890
+    }
+  }
+}

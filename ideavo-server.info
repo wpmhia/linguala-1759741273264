@@ -4,17 +4,2000 @@ $ next dev
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 1988ms
- ✓ Compiled /middleware in 153ms
+ ✓ Ready in 2.5s
+ ✓ Compiled /middleware in 174ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
- ✓ Compiled / in 4s (829 modules)
- GET / 200 in 4682ms
- ✓ Compiled in 719ms (426 modules)
- GET / 200 in 36ms
+ ⨯ ./components/linguala-translator.tsx
+Error: 
+  [31mx[0m Return statement is not allowed here
+      ,-[[36;1;4m/home/user/project/components/linguala-translator.tsx[0m:497:1]
+ [2m 497[0m |         getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())
+ [2m 498[0m |       )
+ [2m 499[0m |     
+ [2m 500[0m | [31;1m,[0m[31;1m-[0m[31;1m>[0m   return (
+ [2m 501[0m | [31;1m|[0m       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+ [2m 502[0m | [31;1m|[0m         {/* Premium Header */}
+ [2m 503[0m | [31;1m|[0m         <header className="bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50">
+ [2m 504[0m | [31;1m|[0m           <div className="max-w-7xl mx-auto px-4 py-4">
+ [2m 505[0m | [31;1m|[0m             <div className="flex items-center justify-between">
+ [2m 506[0m | [31;1m|[0m               <LingualaLogo size="lg" />
+ [2m 507[0m | [31;1m|[0m               
+ [2m 508[0m | [31;1m|[0m               <div className="flex items-center space-x-4">
+ [2m 509[0m | [31;1m|[0m                 {/* Stats for authenticated users */}
+ [2m 510[0m | [31;1m|[0m                 {session?.user && (
+ [2m 511[0m | [31;1m|[0m                   <div className="hidden md:flex items-center space-x-4 text-sm text-gray-600">
+ [2m 512[0m | [31;1m|[0m                     <div className="flex items-center space-x-1">
+ [2m 513[0m | [31;1m|[0m                       <History className="h-4 w-4" />
+ [2m 514[0m | [31;1m|[0m                       <span>{history.length} translations</span>
+ [2m 515[0m | [31;1m|[0m                     </div>
+ [2m 516[0m | [31;1m|[0m                     <div className="flex items-center space-x-1">
+ [2m 517[0m | [31;1m|[0m                       <BookOpen className="h-4 w-4" />
+ [2m 518[0m | [31;1m|[0m                       <span>{glossary.length} terms</span>
+ [2m 519[0m | [31;1m|[0m                     </div>
+ [2m 520[0m | [31;1m|[0m                   </div>
+ [2m 521[0m | [31;1m|[0m                 )}
+ [2m 522[0m | [31;1m|[0m                 
+ [2m 523[0m | [31;1m|[0m                 <UserProfile />
+ [2m 524[0m | [31;1m|[0m               </div>
+ [2m 525[0m | [31;1m|[0m             </div>
+ [2m 526[0m | [31;1m|[0m           </div>
+ [2m 527[0m | [31;1m|[0m         </header>
+ [2m 528[0m | [31;1m|[0m   
+ [2m 529[0m | [31;1m|[0m         <main className="max-w-7xl mx-auto px-4 py-8">
+ [2m 530[0m | [31;1m|[0m           {/* Domain Selection - Only for authenticated users */}
+ [2m 531[0m | [31;1m|[0m           {session?.user && (
+ [2m 532[0m | [31;1m|[0m             <div className="text-center mb-8">
+ [2m 533[0m | [31;1m|[0m               <div className="flex flex-wrap justify-center gap-3 mb-8">
+ [2m 534[0m | [31;1m|[0m                 {DOMAINS.map(domain => {
+ [2m 535[0m | [31;1m|[0m                   const IconComponent = domain.icon
+ [2m 536[0m | [31;1m|[0m                   return (
+ [2m 537[0m | [31;1m|[0m                     <Button
+ [2m 538[0m | [31;1m|[0m                       key={domain.code}
+ [2m 539[0m | [31;1m|[0m                       variant={selectedDomain === domain.code ? "default" : "outline"}
+ [2m 540[0m | [31;1m|[0m                       size="sm"
+ [2m 541[0m | [31;1m|[0m                       onClick={() => setSelectedDomain(domain.code)}
+ [2m 542[0m | [31;1m|[0m                       className={`flex items-center space-x-2 transition-all duration-200 ${
+ [2m 543[0m | [31;1m|[0m                         selectedDomain === domain.code 
+ [2m 544[0m | [31;1m|[0m                           ? `${domain.color} text-white hover:opacity-90` 
+ [2m 545[0m | [31;1m|[0m                           : "hover:scale-105"
+ [2m 546[0m | [31;1m|[0m                       }`}
+ [2m 547[0m | [31;1m|[0m                     >
+ [2m 548[0m | [31;1m|[0m                       <IconComponent className="h-4 w-4" />
+ [2m 549[0m | [31;1m|[0m                       <span>{domain.name}</span>
+ [2m 550[0m | [31;1m|[0m                     </Button>
+ [2m 551[0m | [31;1m|[0m                   )
+ [2m 552[0m | [31;1m|[0m                 })}
+ [2m 553[0m | [31;1m|[0m               </div>
+ [2m 554[0m | [31;1m|[0m             </div>
+ [2m 555[0m | [31;1m|[0m           )}
+ [2m 556[0m | [31;1m|[0m   
+ [2m 557[0m | [31;1m|[0m   
+ [2m 558[0m | [31;1m|[0m   
+ [2m 559[0m | [31;1m|[0m           {/* Main Translation Interface */}
+ [2m 560[0m | [31;1m|[0m           <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
+ [2m 561[0m | [31;1m|[0m             <CardHeader className="pb-4">
+ [2m 562[0m | [31;1m|[0m               <div className="flex items-center justify-between">
+ [2m 563[0m | [31;1m|[0m                 <div className="flex items-center space-x-4">
+ [2m 564[0m | [31;1m|[0m                   {/* Current domain - Only for authenticated users */}
+ [2m 565[0m | [31;1m|[0m                   {session?.user && (
+ [2m 566[0m | [31;1m|[0m                     <Badge variant="secondary" className="flex items-center space-x-1">
+ [2m 567[0m | [31;1m|[0m                       <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />
+ [2m 568[0m | [31;1m|[0m                       <span>{getDomainInfo(selectedDomain).name}</span>
+ [2m 569[0m | [31;1m|[0m                     </Badge>
+ [2m 570[0m | [31;1m|[0m                   )}
+ [2m 571[0m | [31;1m|[0m                 </div>
+ [2m 572[0m | [31;1m|[0m   
+ [2m 573[0m | [31;1m|[0m                 {/* Action Buttons - Only for authenticated users */}
+ [2m 574[0m | [31;1m|[0m                 {session?.user && (
+ [2m 575[0m | [31;1m|[0m                   <div className="flex items-center space-x-2">
+ [2m 576[0m | [31;1m|[0m                   <Dialog open={showGlossary} onOpenChange={setShowGlossary}>
+ [2m 577[0m | [31;1m|[0m                     <DialogTrigger asChild>
+ [2m 578[0m | [31;1m|[0m                       <Button variant="outline" size="sm">
+ [2m 579[0m | [31;1m|[0m                         <BookOpen className="h-4 w-4 mr-2" />
+ [2m 580[0m | [31;1m|[0m                         Glossary
+ [2m 581[0m | [31;1m|[0m                         <Badge variant="secondary" className="ml-2">{glossary.length}</Badge>
+ [2m 582[0m | [31;1m|[0m                       </Button>
+ [2m 583[0m | [31;1m|[0m                     </DialogTrigger>
+ [2m 584[0m | [31;1m|[0m                     <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+ [2m 585[0m | [31;1m|[0m                       <DialogHeader>
+ [2m 586[0m | [31;1m|[0m                         <DialogTitle className="flex items-center space-x-2">
+ [2m 587[0m | [31;1m|[0m                           <BookOpen className="h-5 w-5" />
+ [2m 588[0m | [31;1m|[0m                           <span>Custom Glossary</span>
+ [2m 589[0m | [31;1m|[0m                         </DialogTitle>
+ [2m 590[0m | [31;1m|[0m                       </DialogHeader>
+ [2m 591[0m | [31;1m|[0m                       <Tabs defaultValue="manage" className="w-full">
+ [2m 592[0m | [31;1m|[0m                         <TabsList>
+ [2m 593[0m | [31;1m|[0m                           <TabsTrigger value="manage">Manage Terms</TabsTrigger>
+ [2m 594[0m | [31;1m|[0m                           <TabsTrigger value="add">Add New Term</TabsTrigger>
+ [2m 595[0m | [31;1m|[0m                         </TabsList>
+ [2m 596[0m | [31;1m|[0m                         <TabsContent value="manage" className="space-y-4">
+ [2m 597[0m | [31;1m|[0m                           <div className="grid gap-4 max-h-96 overflow-y-auto">
+ [2m 598[0m | [31;1m|[0m                             {glossary.length === 0 ? (
+ [2m 599[0m | [31;1m|[0m                               <div className="text-center py-12">
+ [2m 600[0m | [31;1m|[0m                                 <BookOpen className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+ [2m 601[0m | [31;1m|[0m                                 <p className="text-gray-500">No glossary entries yet.</p>
+ [2m 602[0m | [31;1m|[0m                                 <p className="text-sm text-gray-400">Add custom terms to improve translation accuracy.</p>
+ [2m 603[0m | [31;1m|[0m                               </div>
+ [2m 604[0m | [31;1m|[0m                             ) : (
+ [2m 605[0m | [31;1m|[0m                               glossary.map(entry => (
+ [2m 606[0m | [31;1m|[0m                                 <div key={entry.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+ [2m 607[0m | [31;1m|[0m                                   <div className="flex-1">
+ [2m 608[0m | [31;1m|[0m                                     <div className="flex items-center space-x-3">
+ [2m 609[0m | [31;1m|[0m                                       <span className="font-medium text-gray-900">{entry.source}</span>
+ [2m 610[0m | [31;1m|[0m                                       <ChevronRight className="h-4 w-4 text-gray-400" />
+ [2m 611[0m | [31;1m|[0m                                       <span className="text-blue-600 font-medium">{entry.target}</span>
+ [2m 612[0m | [31;1m|[0m                                       <Badge variant="outline" className="text-xs">
+ [2m 613[0m | [31;1m|[0m                                         {getDomainInfo(entry.domain).name}
+ [2m 614[0m | [31;1m|[0m                                       </Badge>
+ [2m 615[0m | [31;1m|[0m                                     </div>
+ [2m 616[0m | [31;1m|[0m                                     {entry.notes && (
+ [2m 617[0m | [31;1m|[0m                                       <p className="text-sm text-gray-600 mt-1">{entry.notes}</p>
+ [2m 618[0m | [31;1m|[0m                                     )}
+ [2m 619[0m | [31;1m|[0m                                   </div>
+ [2m 620[0m | [31;1m|[0m                                   <Button
+ [2m 621[0m | [31;1m|[0m                                     variant="ghost"
+ [2m 622[0m | [31;1m|[0m                                     size="sm"
+ [2m 623[0m | [31;1m|[0m                                     onClick={() => removeGlossaryEntry(entry.id)}
+ [2m 624[0m | [31;1m|[0m                                     className="text-red-600 hover:text-red-700 hover:bg-red-50"
+ [2m 625[0m | [31;1m|[0m                                   >
+ [2m 626[0m | [31;1m|[0m                                     <Trash2 className="h-4 w-4" />
+ [2m 627[0m | [31;1m|[0m                                   </Button>
+ [2m 628[0m | [31;1m|[0m                                 </div>
+ [2m 629[0m | [31;1m|[0m                               ))
+ [2m 630[0m | [31;1m|[0m                             )}
+ [2m 631[0m | [31;1m|[0m                           </div>
+ [2m 632[0m | [31;1m|[0m                         </TabsContent>
+ [2m 633[0m | [31;1m|[0m                         <TabsContent value="add" className="space-y-4">
+ [2m 634[0m | [31;1m|[0m                           <div className="grid grid-cols-2 gap-4">
+ [2m 635[0m | [31;1m|[0m                             <div>
+ [2m 636[0m | [31;1m|[0m                               <Label htmlFor="source-term">Source Term</Label>
+ [2m 637[0m | [31;1m|[0m                               <Input
+ [2m 638[0m | [31;1m|[0m                                 id="source-term"
+ [2m 639[0m | [31;1m|[0m                                 value={newGlossaryEntry.source}
+ [2m 640[0m | [31;1m|[0m                                 onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, source: e.target.value }))}
+ [2m 641[0m | [31;1m|[0m                                 placeholder="Enter source term"
+ [2m 642[0m | [31;1m|[0m                                 className="mt-1"
+ [2m 643[0m | [31;1m|[0m                               />
+ [2m 644[0m | [31;1m|[0m                             </div>
+ [2m 645[0m | [31;1m|[0m                             <div>
+ [2m 646[0m | [31;1m|[0m                               <Label htmlFor="target-term">Target Term</Label>
+ [2m 647[0m | [31;1m|[0m                               <Input
+ [2m 648[0m | [31;1m|[0m                                 id="target-term"
+ [2m 649[0m | [31;1m|[0m                                 value={newGlossaryEntry.target}
+ [2m 650[0m | [31;1m|[0m                                 onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, target: e.target.value }))}
+ [2m 651[0m | [31;1m|[0m                                 placeholder="Enter target term"
+ [2m 652[0m | [31;1m|[0m                                 className="mt-1"
+ [2m 653[0m | [31;1m|[0m                               />
+ [2m 654[0m | [31;1m|[0m                             </div>
+ [2m 655[0m | [31;1m|[0m                           </div>
+ [2m 656[0m | [31;1m|[0m                           <div>
+ [2m 657[0m | [31;1m|[0m                             <Label htmlFor="notes">Context & Notes</Label>
+ [2m 658[0m | [31;1m|[0m                             <Input
+ [2m 659[0m | [31;1m|[0m                               id="notes"
+ [2m 660[0m | [31;1m|[0m                               value={newGlossaryEntry.notes}
+ [2m 661[0m | [31;1m|[0m                               onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, notes: e.target.value }))}
+ [2m 662[0m | [31;1m|[0m                               placeholder="Add context, usage notes, or examples"
+ [2m 663[0m | [31;1m|[0m                               className="mt-1"
+ [2m 664[0m | [31;1m|[0m                             />
+ [2m 665[0m | [31;1m|[0m                           </div>
+ [2m 666[0m | [31;1m|[0m                           <Button onClick={addGlossaryEntry} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+ [2m 667[0m | [31;1m|[0m                             <Plus className="h-4 w-4 mr-2" />
+ [2m 668[0m | [31;1m|[0m                             Add to Glossary
+ [2m 669[0m | [31;1m|[0m                           </Button>
+ [2m 670[0m | [31;1m|[0m                         </TabsContent>
+ [2m 671[0m | [31;1m|[0m                       </Tabs>
+ [2m 672[0m | [31;1m|[0m                     </DialogContent>
+ [2m 673[0m | [31;1m|[0m                   </Dialog>
+ [2m 674[0m | [31;1m|[0m   
+ [2m 675[0m | [31;1m|[0m                   <Dialog open={showHistory} onOpenChange={setShowHistory}>
+ [2m 676[0m | [31;1m|[0m                     <DialogTrigger asChild>
+ [2m 677[0m | [31;1m|[0m                       <Button variant="outline" size="sm">
+ [2m 678[0m | [31;1m|[0m                         <History className="h-4 w-4 mr-2" />
+ [2m 679[0m | [31;1m|[0m                         History
+ [2m 680[0m | [31;1m|[0m                         <Badge variant="secondary" className="ml-2">{history.length}</Badge>
+ [2m 681[0m | [31;1m|[0m                       </Button>
+ [2m 682[0m | [31;1m|[0m                     </DialogTrigger>
+ [2m 683[0m | [31;1m|[0m                     <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+ [2m 684[0m | [31;1m|[0m                       <DialogHeader>
+ [2m 685[0m | [31;1m|[0m                         <DialogTitle className="flex items-center space-x-2">
+ [2m 686[0m | [31;1m|[0m                           <History className="h-5 w-5" />
+ [2m 687[0m | [31;1m|[0m                           <span>Translation History</span>
+ [2m 688[0m | [31;1m|[0m                         </DialogTitle>
+ [2m 689[0m | [31;1m|[0m                       </DialogHeader>
+ [2m 690[0m | [31;1m|[0m                       <div className="space-y-4">
+ [2m 691[0m | [31;1m|[0m                         <div className="flex items-center space-x-2">
+ [2m 692[0m | [31;1m|[0m                           <div className="relative flex-1">
+ [2m 693[0m | [31;1m|[0m                             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+ [2m 694[0m | [31;1m|[0m                             <Input
+ [2m 695[0m | [31;1m|[0m                               value={historySearch}
+ [2m 696[0m | [31;1m|[0m                               onChange={(e) => setHistorySearch(e.target.value)}
+ [2m 697[0m | [31;1m|[0m                               placeholder="Search translations..."
+ [2m 698[0m | [31;1m|[0m                               className="pl-10"
+ [2m 699[0m | [31;1m|[0m                             />
+ [2m 700[0m | [31;1m|[0m                           </div>
+ [2m 701[0m | [31;1m|[0m                           <Button 
+ [2m 702[0m | [31;1m|[0m                             variant="outline" 
+ [2m 703[0m | [31;1m|[0m                             size="sm"
+ [2m 704[0m | [31;1m|[0m                             onClick={() => setHistory([])}
+ [2m 705[0m | [31;1m|[0m                             className="text-red-600 hover:text-red-700"
+ [2m 706[0m | [31;1m|[0m                           >
+ [2m 707[0m | [31;1m|[0m                             <Trash2 className="h-4 w-4 mr-2" />
+ [2m 708[0m | [31;1m|[0m                             Clear All
+ [2m 709[0m | [31;1m|[0m                           </Button>
+ [2m 710[0m | [31;1m|[0m                         </div>
+ [2m 711[0m | [31;1m|[0m                         
+ [2m 712[0m | [31;1m|[0m                         <div className="grid gap-3 max-h-96 overflow-y-auto">
+ [2m 713[0m | [31;1m|[0m                           {filteredHistory.length === 0 ? (
+ [2m 714[0m | [31;1m|[0m                             <div className="text-center py-12">
+ [2m 715[0m | [31;1m|[0m                               <History className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+ [2m 716[0m | [31;1m|[0m                               <p className="text-gray-500">
+ [2m 717[0m | [31;1m|[0m                                 {historySearch ? "No matching translations found." : "No translation history yet."}
+ [2m 718[0m | [31;1m|[0m                               </p>
+ [2m 719[0m | [31;1m|[0m                             </div>
+ [2m 720[0m | [31;1m|[0m                           ) : (
+ [2m 721[0m | [31;1m|[0m                             filteredHistory.map(item => (
+ [2m 722[0m | [31;1m|[0m                               <div key={item.id} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+ [2m 723[0m | [31;1m|[0m                                 <div className="flex items-center justify-between mb-2">
+ [2m 724[0m | [31;1m|[0m                                   <div className="flex items-center space-x-2 text-sm text-gray-600">
+ [2m 725[0m | [31;1m|[0m                                     <span className="font-medium">{getLanguageName(item.sourceLang)}</span>
+ [2m 726[0m | [31;1m|[0m                                     <ChevronRight className="h-3 w-3" />
+ [2m 727[0m | [31;1m|[0m                                     <span className="font-medium">{getLanguageName(item.targetLang)}</span>
+ [2m 728[0m | [31;1m|[0m                                     <Badge variant="outline" className="text-xs">
+ [2m 729[0m | [31;1m|[0m                                       {getDomainInfo(item.domain).name}
+ [2m 730[0m | [31;1m|[0m                                     </Badge>
+ [2m 731[0m | [31;1m|[0m                                     <span>•</span>
+ [2m 732[0m | [31;1m|[0m                                     <span>{new Date(item.timestamp).toLocaleDateString()}</span>
+ [2m 733[0m | [31;1m|[0m                                   </div>
+ [2m 734[0m | [31;1m|[0m                                   <Button
+ [2m 735[0m | [31;1m|[0m                                     variant="ghost"
+ [2m 736[0m | [31;1m|[0m                                     size="sm"
+ [2m 737[0m | [31;1m|[0m                                     onClick={() => copyToClipboard(item.translatedText)}
+ [2m 738[0m | [31;1m|[0m                                   >
+ [2m 739[0m | [31;1m|[0m                                     <Copy className="h-4 w-4" />
+ [2m 740[0m | [31;1m|[0m                                   </Button>
+ [2m 741[0m | [31;1m|[0m                                 </div>
+ [2m 742[0m | [31;1m|[0m                                 <div className="space-y-1">
+ [2m 743[0m | [31;1m|[0m                                   <p className="text-sm text-gray-700">{item.sourceText}</p>
+ [2m 744[0m | [31;1m|[0m                                   <p className="text-sm text-blue-600 font-medium">{item.translatedText}</p>
+ [2m 745[0m | [31;1m|[0m                                 </div>
+ [2m 746[0m | [31;1m|[0m                               </div>
+ [2m 747[0m | [31;1m|[0m                             ))
+ [2m 748[0m | [31;1m|[0m                           )}
+ [2m 749[0m | [31;1m|[0m                         </div>
+ [2m 750[0m | [31;1m|[0m                       </div>
+ [2m 751[0m | [31;1m|[0m                     </DialogContent>
+ [2m 752[0m | [31;1m|[0m                   </Dialog>
+ [2m 753[0m | [31;1m|[0m                   </div>
+ [2m 754[0m | [31;1m|[0m                 )}
+ [2m 755[0m | [31;1m|[0m               </div>
+ [2m 756[0m | [31;1m|[0m             </CardHeader>
+ [2m 757[0m | [31;1m|[0m   
+ [2m 758[0m | [31;1m|[0m             <CardContent className="space-y-6">
+ [2m 759[0m | [31;1m|[0m               {/* Language Selection */}
+ [2m 760[0m | [31;1m|[0m               <div className="flex items-center justify-center space-x-4">
+ [2m 761[0m | [31;1m|[0m                 <Select value={sourceLang} onValueChange={(value) => {
+ [2m 762[0m | [31;1m|[0m                   setSourceLang(value)
+ [2m 763[0m | [31;1m|[0m                   if (sourceText.trim()) translateText(sourceText, value, targetLang)
+ [2m 764[0m | [31;1m|[0m                 }}>
+ [2m 765[0m | [31;1m|[0m                   <SelectTrigger className="w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors">
+ [2m 766[0m | [31;1m|[0m                     <SelectValue />
+ [2m 767[0m | [31;1m|[0m                   </SelectTrigger>
+ [2m 768[0m | [31;1m|[0m                   <SelectContent>
+ [2m 769[0m | [31;1m|[0m                     <div className="p-2">
+ [2m 770[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">POPULAR</div>
+ [2m 771[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => lang.popular).map(lang => (
+ [2m 772[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code} className="flex items-center">
+ [2m 773[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 774[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 775[0m | [31;1m|[0m                             {lang.region !== "auto" && (
+ [2m 776[0m | [31;1m|[0m                               <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 777[0m | [31;1m|[0m                             )}
+ [2m 778[0m | [31;1m|[0m                           </div>
+ [2m 779[0m | [31;1m|[0m                         </SelectItem>
+ [2m 780[0m | [31;1m|[0m                       ))}
+ [2m 781[0m | [31;1m|[0m                       <Separator className="my-2" />
+ [2m 782[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">ALL LANGUAGES</div>
+ [2m 783[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => !lang.popular).map(lang => (
+ [2m 784[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 785[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 786[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 787[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 788[0m | [31;1m|[0m                           </div>
+ [2m 789[0m | [31;1m|[0m                         </SelectItem>
+ [2m 790[0m | [31;1m|[0m                       ))}
+ [2m 791[0m | [31;1m|[0m                     </div>
+ [2m 792[0m | [31;1m|[0m                   </SelectContent>
+ [2m 793[0m | [31;1m|[0m                 </Select>
+ [2m 794[0m | [31;1m|[0m   
+ [2m 795[0m | [31;1m|[0m                 <Button
+ [2m 796[0m | [31;1m|[0m                   variant="ghost"
+ [2m 797[0m | [31;1m|[0m                   size="lg"
+ [2m 798[0m | [31;1m|[0m                   onClick={swapLanguages}
+ [2m 799[0m | [31;1m|[0m                   disabled={sourceLang === "auto"}
+ [2m 800[0m | [31;1m|[0m                   className="p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+ [2m 801[0m | [31;1m|[0m                 >
+ [2m 802[0m | [31;1m|[0m                   <ArrowUpDown className="h-5 w-5" />
+ [2m 803[0m | [31;1m|[0m                 </Button>
+ [2m 804[0m | [31;1m|[0m   
+ [2m 805[0m | [31;1m|[0m                 <Select value={targetLang} onValueChange={(value) => {
+ [2m 806[0m | [31;1m|[0m                   setTargetLang(value)
+ [2m 807[0m | [31;1m|[0m                   if (sourceText.trim()) translateText(sourceText, sourceLang, value)
+ [2m 808[0m | [31;1m|[0m                 }}>
+ [2m 809[0m | [31;1m|[0m                   <SelectTrigger className="w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors">
+ [2m 810[0m | [31;1m|[0m                     <SelectValue />
+ [2m 811[0m | [31;1m|[0m                   </SelectTrigger>
+ [2m 812[0m | [31;1m|[0m                   <SelectContent>
+ [2m 813[0m | [31;1m|[0m                     <div className="p-2">
+ [2m 814[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">POPULAR</div>
+ [2m 815[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => lang.popular && lang.code !== "auto").map(lang => (
+ [2m 816[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 817[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 818[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 819[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 820[0m | [31;1m|[0m                           </div>
+ [2m 821[0m | [31;1m|[0m                         </SelectItem>
+ [2m 822[0m | [31;1m|[0m                       ))}
+ [2m 823[0m | [31;1m|[0m                       <Separator className="my-2" />
+ [2m 824[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">ALL LANGUAGES</div>
+ [2m 825[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => !lang.popular && lang.code !== "auto").map(lang => (
+ [2m 826[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 827[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 828[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 829[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 830[0m | [31;1m|[0m                           </div>
+ [2m 831[0m | [31;1m|[0m                         </SelectItem>
+ [2m 832[0m | [31;1m|[0m                       ))}
+ [2m 833[0m | [31;1m|[0m                     </div>
+ [2m 834[0m | [31;1m|[0m                   </SelectContent>
+ [2m 835[0m | [31;1m|[0m                 </Select>
+ [2m 836[0m | [31;1m|[0m               </div>
+ [2m 837[0m | [31;1m|[0m   
+ [2m 838[0m | [31;1m|[0m               {/* Translation Areas */}
+ [2m 839[0m | [31;1m|[0m               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+ [2m 840[0m | [31;1m|[0m                 {/* Source Text */}
+ [2m 841[0m | [31;1m|[0m                 <div className="space-y-3">
+ [2m 842[0m | [31;1m|[0m                   <div className="flex items-center justify-between">
+ [2m 843[0m | [31;1m|[0m                     <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
+ [2m 844[0m | [31;1m|[0m                       <Globe className="h-4 w-4" />
+ [2m 845[0m | [31;1m|[0m                       <span>{getLanguageName(sourceLang)}</span>
+ [2m 846[0m | [31;1m|[0m                     </Label>
+ [2m 847[0m | [31;1m|[0m                     {sourceText && (
+ [2m 848[0m | [31;1m|[0m                       <Button
+ [2m 849[0m | [31;1m|[0m                         variant="ghost"
+ [2m 850[0m | [31;1m|[0m                         size="sm"
+ [2m 851[0m | [31;1m|[0m                         onClick={() => playAudio(sourceText, sourceLang)}
+ [2m 852[0m | [31;1m|[0m                         className="text-gray-500 hover:text-blue-600"
+ [2m 853[0m | [31;1m|[0m                       >
+ [2m 854[0m | [31;1m|[0m                         <Volume2 className="h-4 w-4" />
+ [2m 855[0m | [31;1m|[0m                       </Button>
+ [2m 856[0m | [31;1m|[0m                     )}
+ [2m 857[0m | [31;1m|[0m                   </div>
+ [2m 858[0m | [31;1m|[0m                   <div className="relative">
+ [2m 859[0m | [31;1m|[0m                     <Textarea
+ [2m 860[0m | [31;1m|[0m                       value={sourceText}
+ [2m 861[0m | [31;1m|[0m                       onChange={(e) => handleSourceTextChange(e.target.value)}
+ [2m 862[0m | [31;1m|[0m                       placeholder="Enter text to translate..."
+ [2m 863[0m | [31;1m|[0m                       className="min-h-[200px] text-base border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
+ [2m 864[0m | [31;1m|[0m                     />
+ [2m 865[0m | [31;1m|[0m                     <div className="absolute bottom-2 right-2 flex items-center space-x-2">
+ [2m 866[0m | [31;1m|[0m                       <div className={`text-xs ${
+ [2m 867[0m | [31;1m|[0m                         sourceText.length > 4500 ? 'text-red-500 font-semibold' : 
+ [2m 868[0m | [31;1m|[0m                         sourceText.length > 4000 ? 'text-orange-500' :
+ [2m 869[0m | [31;1m|[0m                         'text-gray-400'
+ [2m 870[0m | [31;1m|[0m                       }`}>
+ [2m 871[0m | [31;1m|[0m                         {sourceText.length} / 5000
+ [2m 872[0m | [31;1m|[0m                       </div>
+ [2m 873[0m | [31;1m|[0m                       {sourceText.length > 4500 && (
+ [2m 874[0m | [31;1m|[0m                         <AlertCircle className="h-4 w-4 text-red-500" />
+ [2m 875[0m | [31;1m|[0m                       )}
+ [2m 876[0m | [31;1m|[0m                     </div>
+ [2m 877[0m | [31;1m|[0m                   </div>
+ [2m 878[0m | [31;1m|[0m                 </div>
+ [2m 879[0m | [31;1m|[0m   
+ [2m 880[0m | [31;1m|[0m                 {/* Translated Text */}
+ [2m 881[0m | [31;1m|[0m                 <div className="space-y-3">
+ [2m 882[0m | [31;1m|[0m                   <div className="flex items-center justify-between">
+ [2m 883[0m | [31;1m|[0m                     <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
+ [2m 884[0m | [31;1m|[0m                       <Sparkles className="h-4 w-4" />
+ [2m 885[0m | [31;1m|[0m                       <span>{getLanguageName(targetLang)}</span>
+ [2m 886[0m | [31;1m|[0m                     </Label>
+ [2m 887[0m | [31;1m|[0m                     <div className="flex items-center space-x-2">
+ [2m 888[0m | [31;1m|[0m                       {translatedText && (
+ [2m 889[0m | [31;1m|[0m                         <>
+ [2m 890[0m | [31;1m|[0m                           <Button
+ [2m 891[0m | [31;1m|[0m                             variant="ghost"
+ [2m 892[0m | [31;1m|[0m                             size="sm"
+ [2m 893[0m | [31;1m|[0m                             onClick={() => playAudio(translatedText, targetLang)}
+ [2m 894[0m | [31;1m|[0m                             className="text-gray-500 hover:text-blue-600"
+ [2m 895[0m | [31;1m|[0m                           >
+ [2m 896[0m | [31;1m|[0m                             <Volume2 className="h-4 w-4" />
+ [2m 897[0m | [31;1m|[0m                           </Button>
+ [2m 898[0m | [31;1m|[0m                           <Button
+ [2m 899[0m | [31;1m|[0m                             variant="ghost"
+ [2m 900[0m | [31;1m|[0m                             size="sm"
+ [2m 901[0m | [31;1m|[0m                             onClick={() => copyToClipboard(translatedText)}
+ [2m 902[0m | [31;1m|[0m                             className="text-gray-500 hover:text-blue-600"
+ [2m 903[0m | [31;1m|[0m                           >
+ [2m 904[0m | [31;1m|[0m                             {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+ [2m 905[0m | [31;1m|[0m                           </Button>
+ [2m 906[0m | [31;1m|[0m                         </>
+ [2m 907[0m | [31;1m|[0m                       )}
+ [2m 908[0m | [31;1m|[0m                     </div>
+ [2m 909[0m | [31;1m|[0m                   </div>
+ [2m 910[0m | [31;1m|[0m                   <div className="relative">
+ [2m 911[0m | [31;1m|[0m                     <Textarea
+ [2m 912[0m | [31;1m|[0m                       value={translatedText}
+ [2m 913[0m | [31;1m|[0m                       readOnly
+ [2m 914[0m | [31;1m|[0m                       placeholder={isTranslating ? "Translating..." : "Translation will appear here"}
+ [2m 915[0m | [31;1m|[0m                       className="min-h-[200px] text-base bg-gradient-to-br from-blue-50/50 to-indigo-50/50 border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
+ [2m 916[0m | [31;1m|[0m                     />
+ [2m 917[0m | [31;1m|[0m                     {isTranslating && translationProgress > 0 && (
+ [2m 918[0m | [31;1m|[0m                       <div className="absolute bottom-2 left-2 right-2">
+ [2m 919[0m | [31;1m|[0m                         <div className="bg-white/80 rounded-full p-2">
+ [2m 920[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 921[0m | [31;1m|[0m                             <Sparkles className="h-3 w-3 text-blue-500 animate-pulse" />
+ [2m 922[0m | [31;1m|[0m                             <div className="flex-1 bg-gray-200 rounded-full h-1">
+ [2m 923[0m | [31;1m|[0m                               <div 
+ [2m 924[0m | [31;1m|[0m                                 className="bg-gradient-to-r from-blue-500 to-purple-500 h-1 rounded-full transition-all duration-300"
+ [2m 925[0m | [31;1m|[0m                                 style={{ width: `${translationProgress}%` }}
+ [2m 926[0m | [31;1m|[0m                               />
+ [2m 927[0m | [31;1m|[0m                             </div>
+ [2m 928[0m | [31;1m|[0m                             <span className="text-xs text-gray-600">{Math.round(translationProgress)}%</span>
+ [2m 929[0m | [31;1m|[0m                           </div>
+ [2m 930[0m | [31;1m|[0m                         </div>
+ [2m 931[0m | [31;1m|[0m                       </div>
+ [2m 932[0m | [31;1m|[0m                     )}
+ [2m 933[0m | [31;1m|[0m                   </div>
+ [2m 934[0m | [31;1m|[0m                 </div>
+ [2m 935[0m | [31;1m|[0m               </div>
+ [2m 936[0m | [31;1m|[0m   
+ [2m 937[0m | [31;1m|[0m   
+ [2m 938[0m | [31;1m|[0m             </CardContent>
+ [2m 939[0m | [31;1m|[0m           </Card>
+ [2m 940[0m | [31;1m|[0m   
+ [2m 941[0m | [31;1m|[0m           {/* Features unlock section - for anonymous users */}
+ [2m 942[0m | [31;1m|[0m           {!session?.user && (
+ [2m 943[0m | [31;1m|[0m             <div className="max-w-4xl mx-auto mb-8">
+ [2m 944[0m | [31;1m|[0m               <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+ [2m 945[0m | [31;1m|[0m                 <CardContent className="p-8">
+ [2m 946[0m | [31;1m|[0m                   <div className="text-center mb-8">
+ [2m 947[0m | [31;1m|[0m                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
+ [2m 948[0m | [31;1m|[0m                       Unlock Professional European Translation
+ [2m 949[0m | [31;1m|[0m                     </h2>
+ [2m 950[0m | [31;1m|[0m                     <p className="text-lg text-gray-600">
+ [2m 951[0m | [31;1m|[0m                       Join thousands of European professionals using advanced translation tools
+ [2m 952[0m | [31;1m|[0m                     </p>
+ [2m 953[0m | [31;1m|[0m                   </div>
+ [2m 954[0m | [31;1m|[0m                   
+ [2m 955[0m | [31;1m|[0m                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+ [2m 956[0m | [31;1m|[0m                     {/* Domain Expertise */}
+ [2m 957[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 958[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 959[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-purple-500">
+ [2m 960[0m | [31;1m|[0m                           <Brain className="h-6 w-6 text-white" />
+ [2m 961[0m | [31;1m|[0m                         </div>
+ [2m 962[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Domain Expertise</h3>
+ [2m 963[0m | [31;1m|[0m                       </div>
+ [2m 964[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 965[0m | [31;1m|[0m                         7 specialized domains: Technology, Medical, Legal, Business, Academic, Creative
+ [2m 966[0m | [31;1m|[0m                       </p>
+ [2m 967[0m | [31;1m|[0m                     </div>
+ [2m 968[0m | [31;1m|[0m   
+ [2m 969[0m | [31;1m|[0m                     {/* Custom Glossaries */}
+ [2m 970[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 971[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 972[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-green-500">
+ [2m 973[0m | [31;1m|[0m                           <BookOpen className="h-6 w-6 text-white" />
+ [2m 974[0m | [31;1m|[0m                         </div>
+ [2m 975[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Custom Glossaries</h3>
+ [2m 976[0m | [31;1m|[0m                       </div>
+ [2m 977[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 978[0m | [31;1m|[0m                         Build personal terminology databases for consistent professional translations
+ [2m 979[0m | [31;1m|[0m                       </p>
+ [2m 980[0m | [31;1m|[0m                     </div>
+ [2m 981[0m | [31;1m|[0m   
+ [2m 982[0m | [31;1m|[0m                     {/* Translation History */}
+ [2m 983[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 984[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 985[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-blue-500">
+ [2m 986[0m | [31;1m|[0m                           <History className="h-6 w-6 text-white" />
+ [2m 987[0m | [31;1m|[0m                         </div>
+ [2m 988[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Translation History</h3>
+ [2m 989[0m | [31;1m|[0m                       </div>
+ [2m 990[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 991[0m | [31;1m|[0m                         Search and manage all your translations across devices with cloud sync
+ [2m 992[0m | [31;1m|[0m                       </p>
+ [2m 993[0m | [31;1m|[0m                     </div>
+ [2m 994[0m | [31;1m|[0m   
+ [2m 995[0m | [31;1m|[0m                     {/* Export & Share */}
+ [2m 996[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 997[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 998[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-orange-500">
+ [2m 999[0m | [31;1m|[0m                           <Download className="h-6 w-6 text-white" />
+ [2m1000[0m | [31;1m|[0m                         </div>
+ [2m1001[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Export & Share</h3>
+ [2m1002[0m | [31;1m|[0m                       </div>
+ [2m1003[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1004[0m | [31;1m|[0m                         Download in multiple formats and create shareable translation links
+ [2m1005[0m | [31;1m|[0m                       </p>
+ [2m1006[0m | [31;1m|[0m                     </div>
+ [2m1007[0m | [31;1m|[0m   
+ [2m1008[0m | [31;1m|[0m                     {/* Usage Analytics */}
+ [2m1009[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m1010[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m1011[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-indigo-500">
+ [2m1012[0m | [31;1m|[0m                           <TrendingUp className="h-6 w-6 text-white" />
+ [2m1013[0m | [31;1m|[0m                         </div>
+ [2m1014[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Usage Analytics</h3>
+ [2m1015[0m | [31;1m|[0m                       </div>
+ [2m1016[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1017[0m | [31;1m|[0m                         Track your translation patterns and improve your multilingual workflow
+ [2m1018[0m | [31;1m|[0m                       </p>
+ [2m1019[0m | [31;1m|[0m                     </div>
+ [2m1020[0m | [31;1m|[0m   
+ [2m1021[0m | [31;1m|[0m                     {/* European Focus */}
+ [2m1022[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m1023[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m1024[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-red-500">
+ [2m1025[0m | [31;1m|[0m                           <Globe className="h-6 w-6 text-white" />
+ [2m1026[0m | [31;1m|[0m                         </div>
+ [2m1027[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">European Focus</h3>
+ [2m1028[0m | [31;1m|[0m                       </div>
+ [2m1029[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1030[0m | [31;1m|[0m                         Optimized for European languages, culture, and business contexts
+ [2m1031[0m | [31;1m|[0m                       </p>
+ [2m1032[0m | [31;1m|[0m                     </div>
+ [2m1033[0m | [31;1m|[0m                   </div>
+ [2m1034[0m | [31;1m|[0m                   
+ [2m1035[0m | [31;1m|[0m                   <div className="text-center">
+ [2m1036[0m | [31;1m|[0m                     <Button 
+ [2m1037[0m | [31;1m|[0m                       onClick={() => window.location.href = '/auth/signin'}
+ [2m1038[0m | [31;1m|[0m                       size="lg"
+ [2m1039[0m | [31;1m|[0m                       className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+ [2m1040[0m | [31;1m|[0m                     >
+ [2m1041[0m | [31;1m|[0m                       Join Europe's Translation Platform - Free
+ [2m1042[0m | [31;1m|[0m                     </Button>
+ [2m1043[0m | [31;1m|[0m                     <p className="text-sm text-gray-500 mt-3">
+ [2m1044[0m | [31;1m|[0m                       Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.
+ [2m1045[0m | [31;1m|[0m                     </p>
+ [2m1046[0m | [31;1m|[0m                   </div>
+ [2m1047[0m | [31;1m|[0m                 </CardContent>
+ [2m1048[0m | [31;1m|[0m               </Card>
+ [2m1049[0m | [31;1m|[0m             </div>
+ [2m1050[0m | [31;1m|[0m           )}
+ [2m1051[0m | [31;1m|[0m   
+ [2m1052[0m | [31;1m|[0m           {/* Quick Actions - Only for authenticated users */}
+ [2m1053[0m | [31;1m|[0m           {session?.user && (
+ [2m1054[0m | [31;1m|[0m             <div className="flex justify-center space-x-4">
+ [2m1055[0m | [31;1m|[0m             <DropdownMenu>
+ [2m1056[0m | [31;1m|[0m               <DropdownMenuTrigger asChild>
+ [2m1057[0m | [31;1m|[0m                 <Button variant="outline" className="shadow-lg">
+ [2m1058[0m | [31;1m|[0m                   <Download className="h-4 w-4 mr-2" />
+ [2m1059[0m | [31;1m|[0m                   Export
+ [2m1060[0m | [31;1m|[0m                 </Button>
+ [2m1061[0m | [31;1m|[0m               </DropdownMenuTrigger>
+ [2m1062[0m | [31;1m|[0m               <DropdownMenuContent>
+ [2m1063[0m | [31;1m|[0m                 <DropdownMenuItem onClick={() => {
+ [2m1064[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to export")
+ [2m1065[0m | [31;1m|[0m                   const content = `${sourceText}\n\n→ ${translatedText}`
+ [2m1066[0m | [31;1m|[0m                   const blob = new Blob([content], { type: 'text/plain' })
+ [2m1067[0m | [31;1m|[0m                   const url = URL.createObjectURL(blob)
+ [2m1068[0m | [31;1m|[0m                   const a = document.createElement('a')
+ [2m1069[0m | [31;1m|[0m                   a.href = url
+ [2m1070[0m | [31;1m|[0m                   a.download = 'linguala-translation.txt'
+ [2m1071[0m | [31;1m|[0m                   a.click()
+ [2m1072[0m | [31;1m|[0m                   URL.revokeObjectURL(url)
+ [2m1073[0m | [31;1m|[0m                   toast.success("Translation exported!")
+ [2m1074[0m | [31;1m|[0m                 }}>
+ [2m1075[0m | [31;1m|[0m                   Export as TXT
+ [2m1076[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1077[0m | [31;1m|[0m                 <DropdownMenuItem onClick={() => {
+ [2m1078[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to export")
+ [2m1079[0m | [31;1m|[0m                   const data = {
+ [2m1080[0m | [31;1m|[0m                     source: { text: sourceText, language: sourceLang },
+ [2m1081[0m | [31;1m|[0m                     target: { text: translatedText, language: targetLang },
+ [2m1082[0m | [31;1m|[0m                     domain: selectedDomain,
+ [2m1083[0m | [31;1m|[0m                     timestamp: new Date().toISOString()
+ [2m1084[0m | [31;1m|[0m                   }
+ [2m1085[0m | [31;1m|[0m                   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+ [2m1086[0m | [31;1m|[0m                   const url = URL.createObjectURL(blob)
+ [2m1087[0m | [31;1m|[0m                   const a = document.createElement('a')
+ [2m1088[0m | [31;1m|[0m                   a.href = url
+ [2m1089[0m | [31;1m|[0m                   a.download = 'linguala-translation.json'
+ [2m1090[0m | [31;1m|[0m                   a.click()
+ [2m1091[0m | [31;1m|[0m                   URL.revokeObjectURL(url)
+ [2m1092[0m | [31;1m|[0m                   toast.success("Translation exported!")
+ [2m1093[0m | [31;1m|[0m                 }}>
+ [2m1094[0m | [31;1m|[0m                   Export as JSON
+ [2m1095[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1096[0m | [31;1m|[0m               </DropdownMenuContent>
+ [2m1097[0m | [31;1m|[0m             </DropdownMenu>
+ [2m1098[0m | [31;1m|[0m   
+ [2m1099[0m | [31;1m|[0m             <DropdownMenu>
+ [2m1100[0m | [31;1m|[0m               <DropdownMenuTrigger asChild>
+ [2m1101[0m | [31;1m|[0m                 <Button variant="outline" className="shadow-lg">
+ [2m1102[0m | [31;1m|[0m                   <Share2 className="h-4 w-4 mr-2" />
+ [2m1103[0m | [31;1m|[0m                   Share
+ [2m1104[0m | [31;1m|[0m                 </Button>
+ [2m1105[0m | [31;1m|[0m               </DropdownMenuTrigger>
+ [2m1106[0m | [31;1m|[0m               <DropdownMenuContent>
+ [2m1107[0m | [31;1m|[0m                 <DropdownMenuItem onClick={async () => {
+ [2m1108[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to share")
+ [2m1109[0m | [31;1m|[0m                   const params = new URLSearchParams({
+ [2m1110[0m | [31;1m|[0m                     text: sourceText,
+ [2m1111[0m | [31;1m|[0m                     from: sourceLang,
+ [2m1112[0m | [31;1m|[0m                     to: targetLang
+ [2m1113[0m | [31;1m|[0m                   })
+ [2m1114[0m | [31;1m|[0m                   const shareUrl = `https://linguala.eu?${params.toString()}`
+ [2m1115[0m | [31;1m|[0m                   await copyToClipboard(shareUrl)
+ [2m1116[0m | [31;1m|[0m                   toast.success("Share link copied!")
+ [2m1117[0m | [31;1m|[0m                 }}>
+ [2m1118[0m | [31;1m|[0m                   Copy Share Link
+ [2m1119[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1120[0m | [31;1m|[0m                 <DropdownMenuItem onClick={async () => {
+ [2m1121[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to share")
+ [2m1122[0m | [31;1m|[0m                   const shareText = `${sourceText} → ${translatedText}\n\nTranslated with Linguala.eu`
+ [2m1123[0m | [31;1m|[0m                   if (navigator.share) {
+ [2m1124[0m | [31;1m|[0m                     await navigator.share({ title: 'Linguala Translation', text: shareText })
+ [2m1125[0m | [31;1m|[0m                   } else {
+ [2m1126[0m | [31;1m|[0m                     await copyToClipboard(shareText)
+ [2m1127[0m | [31;1m|[0m                   }
+ [2m1128[0m | [31;1m|[0m                 }}>
+ [2m1129[0m | [31;1m|[0m                   Share Translation
+ [2m1130[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1131[0m | [31;1m|[0m               </DropdownMenuContent>
+ [2m1132[0m | [31;1m|[0m             </DropdownMenu>
+ [2m1133[0m | [31;1m|[0m             </div>
+ [2m1134[0m | [31;1m|[0m           )}
+ [2m1135[0m | [31;1m|[0m         </main>
+ [2m1136[0m | [31;1m|[0m       </div>
+ [2m1137[0m | [31;1m`[0m[31;1m-[0m[31;1m>[0m   )
+ [2m1138[0m |     }
+      `----
+
+  [31mx[0m Expression expected
+      ,-[[36;1;4m/home/user/project/components/linguala-translator.tsx[0m:1135:1]
+ [2m1135[0m |       </main>
+ [2m1136[0m |     </div>
+ [2m1137[0m |   )
+ [2m1138[0m | }
+      : [31;1m^[0m
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/linguala-translator.tsx
+./app/page.tsx
+ ⨯ ./components/linguala-translator.tsx
+Error: 
+  [31mx[0m Return statement is not allowed here
+      ,-[[36;1;4m/home/user/project/components/linguala-translator.tsx[0m:497:1]
+ [2m 497[0m |         getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())
+ [2m 498[0m |       )
+ [2m 499[0m |     
+ [2m 500[0m | [31;1m,[0m[31;1m-[0m[31;1m>[0m   return (
+ [2m 501[0m | [31;1m|[0m       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+ [2m 502[0m | [31;1m|[0m         {/* Premium Header */}
+ [2m 503[0m | [31;1m|[0m         <header className="bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50">
+ [2m 504[0m | [31;1m|[0m           <div className="max-w-7xl mx-auto px-4 py-4">
+ [2m 505[0m | [31;1m|[0m             <div className="flex items-center justify-between">
+ [2m 506[0m | [31;1m|[0m               <LingualaLogo size="lg" />
+ [2m 507[0m | [31;1m|[0m               
+ [2m 508[0m | [31;1m|[0m               <div className="flex items-center space-x-4">
+ [2m 509[0m | [31;1m|[0m                 {/* Stats for authenticated users */}
+ [2m 510[0m | [31;1m|[0m                 {session?.user && (
+ [2m 511[0m | [31;1m|[0m                   <div className="hidden md:flex items-center space-x-4 text-sm text-gray-600">
+ [2m 512[0m | [31;1m|[0m                     <div className="flex items-center space-x-1">
+ [2m 513[0m | [31;1m|[0m                       <History className="h-4 w-4" />
+ [2m 514[0m | [31;1m|[0m                       <span>{history.length} translations</span>
+ [2m 515[0m | [31;1m|[0m                     </div>
+ [2m 516[0m | [31;1m|[0m                     <div className="flex items-center space-x-1">
+ [2m 517[0m | [31;1m|[0m                       <BookOpen className="h-4 w-4" />
+ [2m 518[0m | [31;1m|[0m                       <span>{glossary.length} terms</span>
+ [2m 519[0m | [31;1m|[0m                     </div>
+ [2m 520[0m | [31;1m|[0m                   </div>
+ [2m 521[0m | [31;1m|[0m                 )}
+ [2m 522[0m | [31;1m|[0m                 
+ [2m 523[0m | [31;1m|[0m                 <UserProfile />
+ [2m 524[0m | [31;1m|[0m               </div>
+ [2m 525[0m | [31;1m|[0m             </div>
+ [2m 526[0m | [31;1m|[0m           </div>
+ [2m 527[0m | [31;1m|[0m         </header>
+ [2m 528[0m | [31;1m|[0m   
+ [2m 529[0m | [31;1m|[0m         <main className="max-w-7xl mx-auto px-4 py-8">
+ [2m 530[0m | [31;1m|[0m           {/* Domain Selection - Only for authenticated users */}
+ [2m 531[0m | [31;1m|[0m           {session?.user && (
+ [2m 532[0m | [31;1m|[0m             <div className="text-center mb-8">
+ [2m 533[0m | [31;1m|[0m               <div className="flex flex-wrap justify-center gap-3 mb-8">
+ [2m 534[0m | [31;1m|[0m                 {DOMAINS.map(domain => {
+ [2m 535[0m | [31;1m|[0m                   const IconComponent = domain.icon
+ [2m 536[0m | [31;1m|[0m                   return (
+ [2m 537[0m | [31;1m|[0m                     <Button
+ [2m 538[0m | [31;1m|[0m                       key={domain.code}
+ [2m 539[0m | [31;1m|[0m                       variant={selectedDomain === domain.code ? "default" : "outline"}
+ [2m 540[0m | [31;1m|[0m                       size="sm"
+ [2m 541[0m | [31;1m|[0m                       onClick={() => setSelectedDomain(domain.code)}
+ [2m 542[0m | [31;1m|[0m                       className={`flex items-center space-x-2 transition-all duration-200 ${
+ [2m 543[0m | [31;1m|[0m                         selectedDomain === domain.code 
+ [2m 544[0m | [31;1m|[0m                           ? `${domain.color} text-white hover:opacity-90` 
+ [2m 545[0m | [31;1m|[0m                           : "hover:scale-105"
+ [2m 546[0m | [31;1m|[0m                       }`}
+ [2m 547[0m | [31;1m|[0m                     >
+ [2m 548[0m | [31;1m|[0m                       <IconComponent className="h-4 w-4" />
+ [2m 549[0m | [31;1m|[0m                       <span>{domain.name}</span>
+ [2m 550[0m | [31;1m|[0m                     </Button>
+ [2m 551[0m | [31;1m|[0m                   )
+ [2m 552[0m | [31;1m|[0m                 })}
+ [2m 553[0m | [31;1m|[0m               </div>
+ [2m 554[0m | [31;1m|[0m             </div>
+ [2m 555[0m | [31;1m|[0m           )}
+ [2m 556[0m | [31;1m|[0m   
+ [2m 557[0m | [31;1m|[0m   
+ [2m 558[0m | [31;1m|[0m   
+ [2m 559[0m | [31;1m|[0m           {/* Main Translation Interface */}
+ [2m 560[0m | [31;1m|[0m           <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
+ [2m 561[0m | [31;1m|[0m             <CardHeader className="pb-4">
+ [2m 562[0m | [31;1m|[0m               <div className="flex items-center justify-between">
+ [2m 563[0m | [31;1m|[0m                 <div className="flex items-center space-x-4">
+ [2m 564[0m | [31;1m|[0m                   {/* Current domain - Only for authenticated users */}
+ [2m 565[0m | [31;1m|[0m                   {session?.user && (
+ [2m 566[0m | [31;1m|[0m                     <Badge variant="secondary" className="flex items-center space-x-1">
+ [2m 567[0m | [31;1m|[0m                       <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />
+ [2m 568[0m | [31;1m|[0m                       <span>{getDomainInfo(selectedDomain).name}</span>
+ [2m 569[0m | [31;1m|[0m                     </Badge>
+ [2m 570[0m | [31;1m|[0m                   )}
+ [2m 571[0m | [31;1m|[0m                 </div>
+ [2m 572[0m | [31;1m|[0m   
+ [2m 573[0m | [31;1m|[0m                 {/* Action Buttons - Only for authenticated users */}
+ [2m 574[0m | [31;1m|[0m                 {session?.user && (
+ [2m 575[0m | [31;1m|[0m                   <div className="flex items-center space-x-2">
+ [2m 576[0m | [31;1m|[0m                   <Dialog open={showGlossary} onOpenChange={setShowGlossary}>
+ [2m 577[0m | [31;1m|[0m                     <DialogTrigger asChild>
+ [2m 578[0m | [31;1m|[0m                       <Button variant="outline" size="sm">
+ [2m 579[0m | [31;1m|[0m                         <BookOpen className="h-4 w-4 mr-2" />
+ [2m 580[0m | [31;1m|[0m                         Glossary
+ [2m 581[0m | [31;1m|[0m                         <Badge variant="secondary" className="ml-2">{glossary.length}</Badge>
+ [2m 582[0m | [31;1m|[0m                       </Button>
+ [2m 583[0m | [31;1m|[0m                     </DialogTrigger>
+ [2m 584[0m | [31;1m|[0m                     <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+ [2m 585[0m | [31;1m|[0m                       <DialogHeader>
+ [2m 586[0m | [31;1m|[0m                         <DialogTitle className="flex items-center space-x-2">
+ [2m 587[0m | [31;1m|[0m                           <BookOpen className="h-5 w-5" />
+ [2m 588[0m | [31;1m|[0m                           <span>Custom Glossary</span>
+ [2m 589[0m | [31;1m|[0m                         </DialogTitle>
+ [2m 590[0m | [31;1m|[0m                       </DialogHeader>
+ [2m 591[0m | [31;1m|[0m                       <Tabs defaultValue="manage" className="w-full">
+ [2m 592[0m | [31;1m|[0m                         <TabsList>
+ [2m 593[0m | [31;1m|[0m                           <TabsTrigger value="manage">Manage Terms</TabsTrigger>
+ [2m 594[0m | [31;1m|[0m                           <TabsTrigger value="add">Add New Term</TabsTrigger>
+ [2m 595[0m | [31;1m|[0m                         </TabsList>
+ [2m 596[0m | [31;1m|[0m                         <TabsContent value="manage" className="space-y-4">
+ [2m 597[0m | [31;1m|[0m                           <div className="grid gap-4 max-h-96 overflow-y-auto">
+ [2m 598[0m | [31;1m|[0m                             {glossary.length === 0 ? (
+ [2m 599[0m | [31;1m|[0m                               <div className="text-center py-12">
+ [2m 600[0m | [31;1m|[0m                                 <BookOpen className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+ [2m 601[0m | [31;1m|[0m                                 <p className="text-gray-500">No glossary entries yet.</p>
+ [2m 602[0m | [31;1m|[0m                                 <p className="text-sm text-gray-400">Add custom terms to improve translation accuracy.</p>
+ [2m 603[0m | [31;1m|[0m                               </div>
+ [2m 604[0m | [31;1m|[0m                             ) : (
+ [2m 605[0m | [31;1m|[0m                               glossary.map(entry => (
+ [2m 606[0m | [31;1m|[0m                                 <div key={entry.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+ [2m 607[0m | [31;1m|[0m                                   <div className="flex-1">
+ [2m 608[0m | [31;1m|[0m                                     <div className="flex items-center space-x-3">
+ [2m 609[0m | [31;1m|[0m                                       <span className="font-medium text-gray-900">{entry.source}</span>
+ [2m 610[0m | [31;1m|[0m                                       <ChevronRight className="h-4 w-4 text-gray-400" />
+ [2m 611[0m | [31;1m|[0m                                       <span className="text-blue-600 font-medium">{entry.target}</span>
+ [2m 612[0m | [31;1m|[0m                                       <Badge variant="outline" className="text-xs">
+ [2m 613[0m | [31;1m|[0m                                         {getDomainInfo(entry.domain).name}
+ [2m 614[0m | [31;1m|[0m                                       </Badge>
+ [2m 615[0m | [31;1m|[0m                                     </div>
+ [2m 616[0m | [31;1m|[0m                                     {entry.notes && (
+ [2m 617[0m | [31;1m|[0m                                       <p className="text-sm text-gray-600 mt-1">{entry.notes}</p>
+ [2m 618[0m | [31;1m|[0m                                     )}
+ [2m 619[0m | [31;1m|[0m                                   </div>
+ [2m 620[0m | [31;1m|[0m                                   <Button
+ [2m 621[0m | [31;1m|[0m                                     variant="ghost"
+ [2m 622[0m | [31;1m|[0m                                     size="sm"
+ [2m 623[0m | [31;1m|[0m                                     onClick={() => removeGlossaryEntry(entry.id)}
+ [2m 624[0m | [31;1m|[0m                                     className="text-red-600 hover:text-red-700 hover:bg-red-50"
+ [2m 625[0m | [31;1m|[0m                                   >
+ [2m 626[0m | [31;1m|[0m                                     <Trash2 className="h-4 w-4" />
+ [2m 627[0m | [31;1m|[0m                                   </Button>
+ [2m 628[0m | [31;1m|[0m                                 </div>
+ [2m 629[0m | [31;1m|[0m                               ))
+ [2m 630[0m | [31;1m|[0m                             )}
+ [2m 631[0m | [31;1m|[0m                           </div>
+ [2m 632[0m | [31;1m|[0m                         </TabsContent>
+ [2m 633[0m | [31;1m|[0m                         <TabsContent value="add" className="space-y-4">
+ [2m 634[0m | [31;1m|[0m                           <div className="grid grid-cols-2 gap-4">
+ [2m 635[0m | [31;1m|[0m                             <div>
+ [2m 636[0m | [31;1m|[0m                               <Label htmlFor="source-term">Source Term</Label>
+ [2m 637[0m | [31;1m|[0m                               <Input
+ [2m 638[0m | [31;1m|[0m                                 id="source-term"
+ [2m 639[0m | [31;1m|[0m                                 value={newGlossaryEntry.source}
+ [2m 640[0m | [31;1m|[0m                                 onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, source: e.target.value }))}
+ [2m 641[0m | [31;1m|[0m                                 placeholder="Enter source term"
+ [2m 642[0m | [31;1m|[0m                                 className="mt-1"
+ [2m 643[0m | [31;1m|[0m                               />
+ [2m 644[0m | [31;1m|[0m                             </div>
+ [2m 645[0m | [31;1m|[0m                             <div>
+ [2m 646[0m | [31;1m|[0m                               <Label htmlFor="target-term">Target Term</Label>
+ [2m 647[0m | [31;1m|[0m                               <Input
+ [2m 648[0m | [31;1m|[0m                                 id="target-term"
+ [2m 649[0m | [31;1m|[0m                                 value={newGlossaryEntry.target}
+ [2m 650[0m | [31;1m|[0m                                 onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, target: e.target.value }))}
+ [2m 651[0m | [31;1m|[0m                                 placeholder="Enter target term"
+ [2m 652[0m | [31;1m|[0m                                 className="mt-1"
+ [2m 653[0m | [31;1m|[0m                               />
+ [2m 654[0m | [31;1m|[0m                             </div>
+ [2m 655[0m | [31;1m|[0m                           </div>
+ [2m 656[0m | [31;1m|[0m                           <div>
+ [2m 657[0m | [31;1m|[0m                             <Label htmlFor="notes">Context & Notes</Label>
+ [2m 658[0m | [31;1m|[0m                             <Input
+ [2m 659[0m | [31;1m|[0m                               id="notes"
+ [2m 660[0m | [31;1m|[0m                               value={newGlossaryEntry.notes}
+ [2m 661[0m | [31;1m|[0m                               onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, notes: e.target.value }))}
+ [2m 662[0m | [31;1m|[0m                               placeholder="Add context, usage notes, or examples"
+ [2m 663[0m | [31;1m|[0m                               className="mt-1"
+ [2m 664[0m | [31;1m|[0m                             />
+ [2m 665[0m | [31;1m|[0m                           </div>
+ [2m 666[0m | [31;1m|[0m                           <Button onClick={addGlossaryEntry} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+ [2m 667[0m | [31;1m|[0m                             <Plus className="h-4 w-4 mr-2" />
+ [2m 668[0m | [31;1m|[0m                             Add to Glossary
+ [2m 669[0m | [31;1m|[0m                           </Button>
+ [2m 670[0m | [31;1m|[0m                         </TabsContent>
+ [2m 671[0m | [31;1m|[0m                       </Tabs>
+ [2m 672[0m | [31;1m|[0m                     </DialogContent>
+ [2m 673[0m | [31;1m|[0m                   </Dialog>
+ [2m 674[0m | [31;1m|[0m   
+ [2m 675[0m | [31;1m|[0m                   <Dialog open={showHistory} onOpenChange={setShowHistory}>
+ [2m 676[0m | [31;1m|[0m                     <DialogTrigger asChild>
+ [2m 677[0m | [31;1m|[0m                       <Button variant="outline" size="sm">
+ [2m 678[0m | [31;1m|[0m                         <History className="h-4 w-4 mr-2" />
+ [2m 679[0m | [31;1m|[0m                         History
+ [2m 680[0m | [31;1m|[0m                         <Badge variant="secondary" className="ml-2">{history.length}</Badge>
+ [2m 681[0m | [31;1m|[0m                       </Button>
+ [2m 682[0m | [31;1m|[0m                     </DialogTrigger>
+ [2m 683[0m | [31;1m|[0m                     <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+ [2m 684[0m | [31;1m|[0m                       <DialogHeader>
+ [2m 685[0m | [31;1m|[0m                         <DialogTitle className="flex items-center space-x-2">
+ [2m 686[0m | [31;1m|[0m                           <History className="h-5 w-5" />
+ [2m 687[0m | [31;1m|[0m                           <span>Translation History</span>
+ [2m 688[0m | [31;1m|[0m                         </DialogTitle>
+ [2m 689[0m | [31;1m|[0m                       </DialogHeader>
+ [2m 690[0m | [31;1m|[0m                       <div className="space-y-4">
+ [2m 691[0m | [31;1m|[0m                         <div className="flex items-center space-x-2">
+ [2m 692[0m | [31;1m|[0m                           <div className="relative flex-1">
+ [2m 693[0m | [31;1m|[0m                             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+ [2m 694[0m | [31;1m|[0m                             <Input
+ [2m 695[0m | [31;1m|[0m                               value={historySearch}
+ [2m 696[0m | [31;1m|[0m                               onChange={(e) => setHistorySearch(e.target.value)}
+ [2m 697[0m | [31;1m|[0m                               placeholder="Search translations..."
+ [2m 698[0m | [31;1m|[0m                               className="pl-10"
+ [2m 699[0m | [31;1m|[0m                             />
+ [2m 700[0m | [31;1m|[0m                           </div>
+ [2m 701[0m | [31;1m|[0m                           <Button 
+ [2m 702[0m | [31;1m|[0m                             variant="outline" 
+ [2m 703[0m | [31;1m|[0m                             size="sm"
+ [2m 704[0m | [31;1m|[0m                             onClick={() => setHistory([])}
+ [2m 705[0m | [31;1m|[0m                             className="text-red-600 hover:text-red-700"
+ [2m 706[0m | [31;1m|[0m                           >
+ [2m 707[0m | [31;1m|[0m                             <Trash2 className="h-4 w-4 mr-2" />
+ [2m 708[0m | [31;1m|[0m                             Clear All
+ [2m 709[0m | [31;1m|[0m                           </Button>
+ [2m 710[0m | [31;1m|[0m                         </div>
+ [2m 711[0m | [31;1m|[0m                         
+ [2m 712[0m | [31;1m|[0m                         <div className="grid gap-3 max-h-96 overflow-y-auto">
+ [2m 713[0m | [31;1m|[0m                           {filteredHistory.length === 0 ? (
+ [2m 714[0m | [31;1m|[0m                             <div className="text-center py-12">
+ [2m 715[0m | [31;1m|[0m                               <History className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+ [2m 716[0m | [31;1m|[0m                               <p className="text-gray-500">
+ [2m 717[0m | [31;1m|[0m                                 {historySearch ? "No matching translations found." : "No translation history yet."}
+ [2m 718[0m | [31;1m|[0m                               </p>
+ [2m 719[0m | [31;1m|[0m                             </div>
+ [2m 720[0m | [31;1m|[0m                           ) : (
+ [2m 721[0m | [31;1m|[0m                             filteredHistory.map(item => (
+ [2m 722[0m | [31;1m|[0m                               <div key={item.id} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+ [2m 723[0m | [31;1m|[0m                                 <div className="flex items-center justify-between mb-2">
+ [2m 724[0m | [31;1m|[0m                                   <div className="flex items-center space-x-2 text-sm text-gray-600">
+ [2m 725[0m | [31;1m|[0m                                     <span className="font-medium">{getLanguageName(item.sourceLang)}</span>
+ [2m 726[0m | [31;1m|[0m                                     <ChevronRight className="h-3 w-3" />
+ [2m 727[0m | [31;1m|[0m                                     <span className="font-medium">{getLanguageName(item.targetLang)}</span>
+ [2m 728[0m | [31;1m|[0m                                     <Badge variant="outline" className="text-xs">
+ [2m 729[0m | [31;1m|[0m                                       {getDomainInfo(item.domain).name}
+ [2m 730[0m | [31;1m|[0m                                     </Badge>
+ [2m 731[0m | [31;1m|[0m                                     <span>•</span>
+ [2m 732[0m | [31;1m|[0m                                     <span>{new Date(item.timestamp).toLocaleDateString()}</span>
+ [2m 733[0m | [31;1m|[0m                                   </div>
+ [2m 734[0m | [31;1m|[0m                                   <Button
+ [2m 735[0m | [31;1m|[0m                                     variant="ghost"
+ [2m 736[0m | [31;1m|[0m                                     size="sm"
+ [2m 737[0m | [31;1m|[0m                                     onClick={() => copyToClipboard(item.translatedText)}
+ [2m 738[0m | [31;1m|[0m                                   >
+ [2m 739[0m | [31;1m|[0m                                     <Copy className="h-4 w-4" />
+ [2m 740[0m | [31;1m|[0m                                   </Button>
+ [2m 741[0m | [31;1m|[0m                                 </div>
+ [2m 742[0m | [31;1m|[0m                                 <div className="space-y-1">
+ [2m 743[0m | [31;1m|[0m                                   <p className="text-sm text-gray-700">{item.sourceText}</p>
+ [2m 744[0m | [31;1m|[0m                                   <p className="text-sm text-blue-600 font-medium">{item.translatedText}</p>
+ [2m 745[0m | [31;1m|[0m                                 </div>
+ [2m 746[0m | [31;1m|[0m                               </div>
+ [2m 747[0m | [31;1m|[0m                             ))
+ [2m 748[0m | [31;1m|[0m                           )}
+ [2m 749[0m | [31;1m|[0m                         </div>
+ [2m 750[0m | [31;1m|[0m                       </div>
+ [2m 751[0m | [31;1m|[0m                     </DialogContent>
+ [2m 752[0m | [31;1m|[0m                   </Dialog>
+ [2m 753[0m | [31;1m|[0m                   </div>
+ [2m 754[0m | [31;1m|[0m                 )}
+ [2m 755[0m | [31;1m|[0m               </div>
+ [2m 756[0m | [31;1m|[0m             </CardHeader>
+ [2m 757[0m | [31;1m|[0m   
+ [2m 758[0m | [31;1m|[0m             <CardContent className="space-y-6">
+ [2m 759[0m | [31;1m|[0m               {/* Language Selection */}
+ [2m 760[0m | [31;1m|[0m               <div className="flex items-center justify-center space-x-4">
+ [2m 761[0m | [31;1m|[0m                 <Select value={sourceLang} onValueChange={(value) => {
+ [2m 762[0m | [31;1m|[0m                   setSourceLang(value)
+ [2m 763[0m | [31;1m|[0m                   if (sourceText.trim()) translateText(sourceText, value, targetLang)
+ [2m 764[0m | [31;1m|[0m                 }}>
+ [2m 765[0m | [31;1m|[0m                   <SelectTrigger className="w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors">
+ [2m 766[0m | [31;1m|[0m                     <SelectValue />
+ [2m 767[0m | [31;1m|[0m                   </SelectTrigger>
+ [2m 768[0m | [31;1m|[0m                   <SelectContent>
+ [2m 769[0m | [31;1m|[0m                     <div className="p-2">
+ [2m 770[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">POPULAR</div>
+ [2m 771[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => lang.popular).map(lang => (
+ [2m 772[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code} className="flex items-center">
+ [2m 773[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 774[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 775[0m | [31;1m|[0m                             {lang.region !== "auto" && (
+ [2m 776[0m | [31;1m|[0m                               <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 777[0m | [31;1m|[0m                             )}
+ [2m 778[0m | [31;1m|[0m                           </div>
+ [2m 779[0m | [31;1m|[0m                         </SelectItem>
+ [2m 780[0m | [31;1m|[0m                       ))}
+ [2m 781[0m | [31;1m|[0m                       <Separator className="my-2" />
+ [2m 782[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">ALL LANGUAGES</div>
+ [2m 783[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => !lang.popular).map(lang => (
+ [2m 784[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 785[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 786[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 787[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 788[0m | [31;1m|[0m                           </div>
+ [2m 789[0m | [31;1m|[0m                         </SelectItem>
+ [2m 790[0m | [31;1m|[0m                       ))}
+ [2m 791[0m | [31;1m|[0m                     </div>
+ [2m 792[0m | [31;1m|[0m                   </SelectContent>
+ [2m 793[0m | [31;1m|[0m                 </Select>
+ [2m 794[0m | [31;1m|[0m   
+ [2m 795[0m | [31;1m|[0m                 <Button
+ [2m 796[0m | [31;1m|[0m                   variant="ghost"
+ [2m 797[0m | [31;1m|[0m                   size="lg"
+ [2m 798[0m | [31;1m|[0m                   onClick={swapLanguages}
+ [2m 799[0m | [31;1m|[0m                   disabled={sourceLang === "auto"}
+ [2m 800[0m | [31;1m|[0m                   className="p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+ [2m 801[0m | [31;1m|[0m                 >
+ [2m 802[0m | [31;1m|[0m                   <ArrowUpDown className="h-5 w-5" />
+ [2m 803[0m | [31;1m|[0m                 </Button>
+ [2m 804[0m | [31;1m|[0m   
+ [2m 805[0m | [31;1m|[0m                 <Select value={targetLang} onValueChange={(value) => {
+ [2m 806[0m | [31;1m|[0m                   setTargetLang(value)
+ [2m 807[0m | [31;1m|[0m                   if (sourceText.trim()) translateText(sourceText, sourceLang, value)
+ [2m 808[0m | [31;1m|[0m                 }}>
+ [2m 809[0m | [31;1m|[0m                   <SelectTrigger className="w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors">
+ [2m 810[0m | [31;1m|[0m                     <SelectValue />
+ [2m 811[0m | [31;1m|[0m                   </SelectTrigger>
+ [2m 812[0m | [31;1m|[0m                   <SelectContent>
+ [2m 813[0m | [31;1m|[0m                     <div className="p-2">
+ [2m 814[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">POPULAR</div>
+ [2m 815[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => lang.popular && lang.code !== "auto").map(lang => (
+ [2m 816[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 817[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 818[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 819[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 820[0m | [31;1m|[0m                           </div>
+ [2m 821[0m | [31;1m|[0m                         </SelectItem>
+ [2m 822[0m | [31;1m|[0m                       ))}
+ [2m 823[0m | [31;1m|[0m                       <Separator className="my-2" />
+ [2m 824[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">ALL LANGUAGES</div>
+ [2m 825[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => !lang.popular && lang.code !== "auto").map(lang => (
+ [2m 826[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 827[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 828[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 829[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 830[0m | [31;1m|[0m                           </div>
+ [2m 831[0m | [31;1m|[0m                         </SelectItem>
+ [2m 832[0m | [31;1m|[0m                       ))}
+ [2m 833[0m | [31;1m|[0m                     </div>
+ [2m 834[0m | [31;1m|[0m                   </SelectContent>
+ [2m 835[0m | [31;1m|[0m                 </Select>
+ [2m 836[0m | [31;1m|[0m               </div>
+ [2m 837[0m | [31;1m|[0m   
+ [2m 838[0m | [31;1m|[0m               {/* Translation Areas */}
+ [2m 839[0m | [31;1m|[0m               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+ [2m 840[0m | [31;1m|[0m                 {/* Source Text */}
+ [2m 841[0m | [31;1m|[0m                 <div className="space-y-3">
+ [2m 842[0m | [31;1m|[0m                   <div className="flex items-center justify-between">
+ [2m 843[0m | [31;1m|[0m                     <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
+ [2m 844[0m | [31;1m|[0m                       <Globe className="h-4 w-4" />
+ [2m 845[0m | [31;1m|[0m                       <span>{getLanguageName(sourceLang)}</span>
+ [2m 846[0m | [31;1m|[0m                     </Label>
+ [2m 847[0m | [31;1m|[0m                     {sourceText && (
+ [2m 848[0m | [31;1m|[0m                       <Button
+ [2m 849[0m | [31;1m|[0m                         variant="ghost"
+ [2m 850[0m | [31;1m|[0m                         size="sm"
+ [2m 851[0m | [31;1m|[0m                         onClick={() => playAudio(sourceText, sourceLang)}
+ [2m 852[0m | [31;1m|[0m                         className="text-gray-500 hover:text-blue-600"
+ [2m 853[0m | [31;1m|[0m                       >
+ [2m 854[0m | [31;1m|[0m                         <Volume2 className="h-4 w-4" />
+ [2m 855[0m | [31;1m|[0m                       </Button>
+ [2m 856[0m | [31;1m|[0m                     )}
+ [2m 857[0m | [31;1m|[0m                   </div>
+ [2m 858[0m | [31;1m|[0m                   <div className="relative">
+ [2m 859[0m | [31;1m|[0m                     <Textarea
+ [2m 860[0m | [31;1m|[0m                       value={sourceText}
+ [2m 861[0m | [31;1m|[0m                       onChange={(e) => handleSourceTextChange(e.target.value)}
+ [2m 862[0m | [31;1m|[0m                       placeholder="Enter text to translate..."
+ [2m 863[0m | [31;1m|[0m                       className="min-h-[200px] text-base border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
+ [2m 864[0m | [31;1m|[0m                     />
+ [2m 865[0m | [31;1m|[0m                     <div className="absolute bottom-2 right-2 flex items-center space-x-2">
+ [2m 866[0m | [31;1m|[0m                       <div className={`text-xs ${
+ [2m 867[0m | [31;1m|[0m                         sourceText.length > 4500 ? 'text-red-500 font-semibold' : 
+ [2m 868[0m | [31;1m|[0m                         sourceText.length > 4000 ? 'text-orange-500' :
+ [2m 869[0m | [31;1m|[0m                         'text-gray-400'
+ [2m 870[0m | [31;1m|[0m                       }`}>
+ [2m 871[0m | [31;1m|[0m                         {sourceText.length} / 5000
+ [2m 872[0m | [31;1m|[0m                       </div>
+ [2m 873[0m | [31;1m|[0m                       {sourceText.length > 4500 && (
+ [2m 874[0m | [31;1m|[0m                         <AlertCircle className="h-4 w-4 text-red-500" />
+ [2m 875[0m | [31;1m|[0m                       )}
+ [2m 876[0m | [31;1m|[0m                     </div>
+ [2m 877[0m | [31;1m|[0m                   </div>
+ [2m 878[0m | [31;1m|[0m                 </div>
+ [2m 879[0m | [31;1m|[0m   
+ [2m 880[0m | [31;1m|[0m                 {/* Translated Text */}
+ [2m 881[0m | [31;1m|[0m                 <div className="space-y-3">
+ [2m 882[0m | [31;1m|[0m                   <div className="flex items-center justify-between">
+ [2m 883[0m | [31;1m|[0m                     <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
+ [2m 884[0m | [31;1m|[0m                       <Sparkles className="h-4 w-4" />
+ [2m 885[0m | [31;1m|[0m                       <span>{getLanguageName(targetLang)}</span>
+ [2m 886[0m | [31;1m|[0m                     </Label>
+ [2m 887[0m | [31;1m|[0m                     <div className="flex items-center space-x-2">
+ [2m 888[0m | [31;1m|[0m                       {translatedText && (
+ [2m 889[0m | [31;1m|[0m                         <>
+ [2m 890[0m | [31;1m|[0m                           <Button
+ [2m 891[0m | [31;1m|[0m                             variant="ghost"
+ [2m 892[0m | [31;1m|[0m                             size="sm"
+ [2m 893[0m | [31;1m|[0m                             onClick={() => playAudio(translatedText, targetLang)}
+ [2m 894[0m | [31;1m|[0m                             className="text-gray-500 hover:text-blue-600"
+ [2m 895[0m | [31;1m|[0m                           >
+ [2m 896[0m | [31;1m|[0m                             <Volume2 className="h-4 w-4" />
+ [2m 897[0m | [31;1m|[0m                           </Button>
+ [2m 898[0m | [31;1m|[0m                           <Button
+ [2m 899[0m | [31;1m|[0m                             variant="ghost"
+ [2m 900[0m | [31;1m|[0m                             size="sm"
+ [2m 901[0m | [31;1m|[0m                             onClick={() => copyToClipboard(translatedText)}
+ [2m 902[0m | [31;1m|[0m                             className="text-gray-500 hover:text-blue-600"
+ [2m 903[0m | [31;1m|[0m                           >
+ [2m 904[0m | [31;1m|[0m                             {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+ [2m 905[0m | [31;1m|[0m                           </Button>
+ [2m 906[0m | [31;1m|[0m                         </>
+ [2m 907[0m | [31;1m|[0m                       )}
+ [2m 908[0m | [31;1m|[0m                     </div>
+ [2m 909[0m | [31;1m|[0m                   </div>
+ [2m 910[0m | [31;1m|[0m                   <div className="relative">
+ [2m 911[0m | [31;1m|[0m                     <Textarea
+ [2m 912[0m | [31;1m|[0m                       value={translatedText}
+ [2m 913[0m | [31;1m|[0m                       readOnly
+ [2m 914[0m | [31;1m|[0m                       placeholder={isTranslating ? "Translating..." : "Translation will appear here"}
+ [2m 915[0m | [31;1m|[0m                       className="min-h-[200px] text-base bg-gradient-to-br from-blue-50/50 to-indigo-50/50 border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
+ [2m 916[0m | [31;1m|[0m                     />
+ [2m 917[0m | [31;1m|[0m                     {isTranslating && translationProgress > 0 && (
+ [2m 918[0m | [31;1m|[0m                       <div className="absolute bottom-2 left-2 right-2">
+ [2m 919[0m | [31;1m|[0m                         <div className="bg-white/80 rounded-full p-2">
+ [2m 920[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 921[0m | [31;1m|[0m                             <Sparkles className="h-3 w-3 text-blue-500 animate-pulse" />
+ [2m 922[0m | [31;1m|[0m                             <div className="flex-1 bg-gray-200 rounded-full h-1">
+ [2m 923[0m | [31;1m|[0m                               <div 
+ [2m 924[0m | [31;1m|[0m                                 className="bg-gradient-to-r from-blue-500 to-purple-500 h-1 rounded-full transition-all duration-300"
+ [2m 925[0m | [31;1m|[0m                                 style={{ width: `${translationProgress}%` }}
+ [2m 926[0m | [31;1m|[0m                               />
+ [2m 927[0m | [31;1m|[0m                             </div>
+ [2m 928[0m | [31;1m|[0m                             <span className="text-xs text-gray-600">{Math.round(translationProgress)}%</span>
+ [2m 929[0m | [31;1m|[0m                           </div>
+ [2m 930[0m | [31;1m|[0m                         </div>
+ [2m 931[0m | [31;1m|[0m                       </div>
+ [2m 932[0m | [31;1m|[0m                     )}
+ [2m 933[0m | [31;1m|[0m                   </div>
+ [2m 934[0m | [31;1m|[0m                 </div>
+ [2m 935[0m | [31;1m|[0m               </div>
+ [2m 936[0m | [31;1m|[0m   
+ [2m 937[0m | [31;1m|[0m   
+ [2m 938[0m | [31;1m|[0m             </CardContent>
+ [2m 939[0m | [31;1m|[0m           </Card>
+ [2m 940[0m | [31;1m|[0m   
+ [2m 941[0m | [31;1m|[0m           {/* Features unlock section - for anonymous users */}
+ [2m 942[0m | [31;1m|[0m           {!session?.user && (
+ [2m 943[0m | [31;1m|[0m             <div className="max-w-4xl mx-auto mb-8">
+ [2m 944[0m | [31;1m|[0m               <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+ [2m 945[0m | [31;1m|[0m                 <CardContent className="p-8">
+ [2m 946[0m | [31;1m|[0m                   <div className="text-center mb-8">
+ [2m 947[0m | [31;1m|[0m                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
+ [2m 948[0m | [31;1m|[0m                       Unlock Professional European Translation
+ [2m 949[0m | [31;1m|[0m                     </h2>
+ [2m 950[0m | [31;1m|[0m                     <p className="text-lg text-gray-600">
+ [2m 951[0m | [31;1m|[0m                       Join thousands of European professionals using advanced translation tools
+ [2m 952[0m | [31;1m|[0m                     </p>
+ [2m 953[0m | [31;1m|[0m                   </div>
+ [2m 954[0m | [31;1m|[0m                   
+ [2m 955[0m | [31;1m|[0m                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+ [2m 956[0m | [31;1m|[0m                     {/* Domain Expertise */}
+ [2m 957[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 958[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 959[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-purple-500">
+ [2m 960[0m | [31;1m|[0m                           <Brain className="h-6 w-6 text-white" />
+ [2m 961[0m | [31;1m|[0m                         </div>
+ [2m 962[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Domain Expertise</h3>
+ [2m 963[0m | [31;1m|[0m                       </div>
+ [2m 964[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 965[0m | [31;1m|[0m                         7 specialized domains: Technology, Medical, Legal, Business, Academic, Creative
+ [2m 966[0m | [31;1m|[0m                       </p>
+ [2m 967[0m | [31;1m|[0m                     </div>
+ [2m 968[0m | [31;1m|[0m   
+ [2m 969[0m | [31;1m|[0m                     {/* Custom Glossaries */}
+ [2m 970[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 971[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 972[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-green-500">
+ [2m 973[0m | [31;1m|[0m                           <BookOpen className="h-6 w-6 text-white" />
+ [2m 974[0m | [31;1m|[0m                         </div>
+ [2m 975[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Custom Glossaries</h3>
+ [2m 976[0m | [31;1m|[0m                       </div>
+ [2m 977[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 978[0m | [31;1m|[0m                         Build personal terminology databases for consistent professional translations
+ [2m 979[0m | [31;1m|[0m                       </p>
+ [2m 980[0m | [31;1m|[0m                     </div>
+ [2m 981[0m | [31;1m|[0m   
+ [2m 982[0m | [31;1m|[0m                     {/* Translation History */}
+ [2m 983[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 984[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 985[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-blue-500">
+ [2m 986[0m | [31;1m|[0m                           <History className="h-6 w-6 text-white" />
+ [2m 987[0m | [31;1m|[0m                         </div>
+ [2m 988[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Translation History</h3>
+ [2m 989[0m | [31;1m|[0m                       </div>
+ [2m 990[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 991[0m | [31;1m|[0m                         Search and manage all your translations across devices with cloud sync
+ [2m 992[0m | [31;1m|[0m                       </p>
+ [2m 993[0m | [31;1m|[0m                     </div>
+ [2m 994[0m | [31;1m|[0m   
+ [2m 995[0m | [31;1m|[0m                     {/* Export & Share */}
+ [2m 996[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 997[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 998[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-orange-500">
+ [2m 999[0m | [31;1m|[0m                           <Download className="h-6 w-6 text-white" />
+ [2m1000[0m | [31;1m|[0m                         </div>
+ [2m1001[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Export & Share</h3>
+ [2m1002[0m | [31;1m|[0m                       </div>
+ [2m1003[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1004[0m | [31;1m|[0m                         Download in multiple formats and create shareable translation links
+ [2m1005[0m | [31;1m|[0m                       </p>
+ [2m1006[0m | [31;1m|[0m                     </div>
+ [2m1007[0m | [31;1m|[0m   
+ [2m1008[0m | [31;1m|[0m                     {/* Usage Analytics */}
+ [2m1009[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m1010[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m1011[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-indigo-500">
+ [2m1012[0m | [31;1m|[0m                           <TrendingUp className="h-6 w-6 text-white" />
+ [2m1013[0m | [31;1m|[0m                         </div>
+ [2m1014[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Usage Analytics</h3>
+ [2m1015[0m | [31;1m|[0m                       </div>
+ [2m1016[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1017[0m | [31;1m|[0m                         Track your translation patterns and improve your multilingual workflow
+ [2m1018[0m | [31;1m|[0m                       </p>
+ [2m1019[0m | [31;1m|[0m                     </div>
+ [2m1020[0m | [31;1m|[0m   
+ [2m1021[0m | [31;1m|[0m                     {/* European Focus */}
+ [2m1022[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m1023[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m1024[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-red-500">
+ [2m1025[0m | [31;1m|[0m                           <Globe className="h-6 w-6 text-white" />
+ [2m1026[0m | [31;1m|[0m                         </div>
+ [2m1027[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">European Focus</h3>
+ [2m1028[0m | [31;1m|[0m                       </div>
+ [2m1029[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1030[0m | [31;1m|[0m                         Optimized for European languages, culture, and business contexts
+ [2m1031[0m | [31;1m|[0m                       </p>
+ [2m1032[0m | [31;1m|[0m                     </div>
+ [2m1033[0m | [31;1m|[0m                   </div>
+ [2m1034[0m | [31;1m|[0m                   
+ [2m1035[0m | [31;1m|[0m                   <div className="text-center">
+ [2m1036[0m | [31;1m|[0m                     <Button 
+ [2m1037[0m | [31;1m|[0m                       onClick={() => window.location.href = '/auth/signin'}
+ [2m1038[0m | [31;1m|[0m                       size="lg"
+ [2m1039[0m | [31;1m|[0m                       className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+ [2m1040[0m | [31;1m|[0m                     >
+ [2m1041[0m | [31;1m|[0m                       Join Europe's Translation Platform - Free
+ [2m1042[0m | [31;1m|[0m                     </Button>
+ [2m1043[0m | [31;1m|[0m                     <p className="text-sm text-gray-500 mt-3">
+ [2m1044[0m | [31;1m|[0m                       Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.
+ [2m1045[0m | [31;1m|[0m                     </p>
+ [2m1046[0m | [31;1m|[0m                   </div>
+ [2m1047[0m | [31;1m|[0m                 </CardContent>
+ [2m1048[0m | [31;1m|[0m               </Card>
+ [2m1049[0m | [31;1m|[0m             </div>
+ [2m1050[0m | [31;1m|[0m           )}
+ [2m1051[0m | [31;1m|[0m   
+ [2m1052[0m | [31;1m|[0m           {/* Quick Actions - Only for authenticated users */}
+ [2m1053[0m | [31;1m|[0m           {session?.user && (
+ [2m1054[0m | [31;1m|[0m             <div className="flex justify-center space-x-4">
+ [2m1055[0m | [31;1m|[0m             <DropdownMenu>
+ [2m1056[0m | [31;1m|[0m               <DropdownMenuTrigger asChild>
+ [2m1057[0m | [31;1m|[0m                 <Button variant="outline" className="shadow-lg">
+ [2m1058[0m | [31;1m|[0m                   <Download className="h-4 w-4 mr-2" />
+ [2m1059[0m | [31;1m|[0m                   Export
+ [2m1060[0m | [31;1m|[0m                 </Button>
+ [2m1061[0m | [31;1m|[0m               </DropdownMenuTrigger>
+ [2m1062[0m | [31;1m|[0m               <DropdownMenuContent>
+ [2m1063[0m | [31;1m|[0m                 <DropdownMenuItem onClick={() => {
+ [2m1064[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to export")
+ [2m1065[0m | [31;1m|[0m                   const content = `${sourceText}\n\n→ ${translatedText}`
+ [2m1066[0m | [31;1m|[0m                   const blob = new Blob([content], { type: 'text/plain' })
+ [2m1067[0m | [31;1m|[0m                   const url = URL.createObjectURL(blob)
+ [2m1068[0m | [31;1m|[0m                   const a = document.createElement('a')
+ [2m1069[0m | [31;1m|[0m                   a.href = url
+ [2m1070[0m | [31;1m|[0m                   a.download = 'linguala-translation.txt'
+ [2m1071[0m | [31;1m|[0m                   a.click()
+ [2m1072[0m | [31;1m|[0m                   URL.revokeObjectURL(url)
+ [2m1073[0m | [31;1m|[0m                   toast.success("Translation exported!")
+ [2m1074[0m | [31;1m|[0m                 }}>
+ [2m1075[0m | [31;1m|[0m                   Export as TXT
+ [2m1076[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1077[0m | [31;1m|[0m                 <DropdownMenuItem onClick={() => {
+ [2m1078[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to export")
+ [2m1079[0m | [31;1m|[0m                   const data = {
+ [2m1080[0m | [31;1m|[0m                     source: { text: sourceText, language: sourceLang },
+ [2m1081[0m | [31;1m|[0m                     target: { text: translatedText, language: targetLang },
+ [2m1082[0m | [31;1m|[0m                     domain: selectedDomain,
+ [2m1083[0m | [31;1m|[0m                     timestamp: new Date().toISOString()
+ [2m1084[0m | [31;1m|[0m                   }
+ [2m1085[0m | [31;1m|[0m                   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+ [2m1086[0m | [31;1m|[0m                   const url = URL.createObjectURL(blob)
+ [2m1087[0m | [31;1m|[0m                   const a = document.createElement('a')
+ [2m1088[0m | [31;1m|[0m                   a.href = url
+ [2m1089[0m | [31;1m|[0m                   a.download = 'linguala-translation.json'
+ [2m1090[0m | [31;1m|[0m                   a.click()
+ [2m1091[0m | [31;1m|[0m                   URL.revokeObjectURL(url)
+ [2m1092[0m | [31;1m|[0m                   toast.success("Translation exported!")
+ [2m1093[0m | [31;1m|[0m                 }}>
+ [2m1094[0m | [31;1m|[0m                   Export as JSON
+ [2m1095[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1096[0m | [31;1m|[0m               </DropdownMenuContent>
+ [2m1097[0m | [31;1m|[0m             </DropdownMenu>
+ [2m1098[0m | [31;1m|[0m   
+ [2m1099[0m | [31;1m|[0m             <DropdownMenu>
+ [2m1100[0m | [31;1m|[0m               <DropdownMenuTrigger asChild>
+ [2m1101[0m | [31;1m|[0m                 <Button variant="outline" className="shadow-lg">
+ [2m1102[0m | [31;1m|[0m                   <Share2 className="h-4 w-4 mr-2" />
+ [2m1103[0m | [31;1m|[0m                   Share
+ [2m1104[0m | [31;1m|[0m                 </Button>
+ [2m1105[0m | [31;1m|[0m               </DropdownMenuTrigger>
+ [2m1106[0m | [31;1m|[0m               <DropdownMenuContent>
+ [2m1107[0m | [31;1m|[0m                 <DropdownMenuItem onClick={async () => {
+ [2m1108[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to share")
+ [2m1109[0m | [31;1m|[0m                   const params = new URLSearchParams({
+ [2m1110[0m | [31;1m|[0m                     text: sourceText,
+ [2m1111[0m | [31;1m|[0m                     from: sourceLang,
+ [2m1112[0m | [31;1m|[0m                     to: targetLang
+ [2m1113[0m | [31;1m|[0m                   })
+ [2m1114[0m | [31;1m|[0m                   const shareUrl = `https://linguala.eu?${params.toString()}`
+ [2m1115[0m | [31;1m|[0m                   await copyToClipboard(shareUrl)
+ [2m1116[0m | [31;1m|[0m                   toast.success("Share link copied!")
+ [2m1117[0m | [31;1m|[0m                 }}>
+ [2m1118[0m | [31;1m|[0m                   Copy Share Link
+ [2m1119[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1120[0m | [31;1m|[0m                 <DropdownMenuItem onClick={async () => {
+ [2m1121[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to share")
+ [2m1122[0m | [31;1m|[0m                   const shareText = `${sourceText} → ${translatedText}\n\nTranslated with Linguala.eu`
+ [2m1123[0m | [31;1m|[0m                   if (navigator.share) {
+ [2m1124[0m | [31;1m|[0m                     await navigator.share({ title: 'Linguala Translation', text: shareText })
+ [2m1125[0m | [31;1m|[0m                   } else {
+ [2m1126[0m | [31;1m|[0m                     await copyToClipboard(shareText)
+ [2m1127[0m | [31;1m|[0m                   }
+ [2m1128[0m | [31;1m|[0m                 }}>
+ [2m1129[0m | [31;1m|[0m                   Share Translation
+ [2m1130[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1131[0m | [31;1m|[0m               </DropdownMenuContent>
+ [2m1132[0m | [31;1m|[0m             </DropdownMenu>
+ [2m1133[0m | [31;1m|[0m             </div>
+ [2m1134[0m | [31;1m|[0m           )}
+ [2m1135[0m | [31;1m|[0m         </main>
+ [2m1136[0m | [31;1m|[0m       </div>
+ [2m1137[0m | [31;1m`[0m[31;1m-[0m[31;1m>[0m   )
+ [2m1138[0m |     }
+      `----
+
+  [31mx[0m Expression expected
+      ,-[[36;1;4m/home/user/project/components/linguala-translator.tsx[0m:1135:1]
+ [2m1135[0m |       </main>
+ [2m1136[0m |     </div>
+ [2m1137[0m |   )
+ [2m1138[0m | }
+      : [31;1m^[0m
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/linguala-translator.tsx
+./app/page.tsx
+ ⨯ ./components/linguala-translator.tsx
+Error: 
+  [31mx[0m Return statement is not allowed here
+      ,-[[36;1;4m/home/user/project/components/linguala-translator.tsx[0m:497:1]
+ [2m 497[0m |         getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())
+ [2m 498[0m |       )
+ [2m 499[0m |     
+ [2m 500[0m | [31;1m,[0m[31;1m-[0m[31;1m>[0m   return (
+ [2m 501[0m | [31;1m|[0m       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50">
+ [2m 502[0m | [31;1m|[0m         {/* Premium Header */}
+ [2m 503[0m | [31;1m|[0m         <header className="bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50">
+ [2m 504[0m | [31;1m|[0m           <div className="max-w-7xl mx-auto px-4 py-4">
+ [2m 505[0m | [31;1m|[0m             <div className="flex items-center justify-between">
+ [2m 506[0m | [31;1m|[0m               <LingualaLogo size="lg" />
+ [2m 507[0m | [31;1m|[0m               
+ [2m 508[0m | [31;1m|[0m               <div className="flex items-center space-x-4">
+ [2m 509[0m | [31;1m|[0m                 {/* Stats for authenticated users */}
+ [2m 510[0m | [31;1m|[0m                 {session?.user && (
+ [2m 511[0m | [31;1m|[0m                   <div className="hidden md:flex items-center space-x-4 text-sm text-gray-600">
+ [2m 512[0m | [31;1m|[0m                     <div className="flex items-center space-x-1">
+ [2m 513[0m | [31;1m|[0m                       <History className="h-4 w-4" />
+ [2m 514[0m | [31;1m|[0m                       <span>{history.length} translations</span>
+ [2m 515[0m | [31;1m|[0m                     </div>
+ [2m 516[0m | [31;1m|[0m                     <div className="flex items-center space-x-1">
+ [2m 517[0m | [31;1m|[0m                       <BookOpen className="h-4 w-4" />
+ [2m 518[0m | [31;1m|[0m                       <span>{glossary.length} terms</span>
+ [2m 519[0m | [31;1m|[0m                     </div>
+ [2m 520[0m | [31;1m|[0m                   </div>
+ [2m 521[0m | [31;1m|[0m                 )}
+ [2m 522[0m | [31;1m|[0m                 
+ [2m 523[0m | [31;1m|[0m                 <UserProfile />
+ [2m 524[0m | [31;1m|[0m               </div>
+ [2m 525[0m | [31;1m|[0m             </div>
+ [2m 526[0m | [31;1m|[0m           </div>
+ [2m 527[0m | [31;1m|[0m         </header>
+ [2m 528[0m | [31;1m|[0m   
+ [2m 529[0m | [31;1m|[0m         <main className="max-w-7xl mx-auto px-4 py-8">
+ [2m 530[0m | [31;1m|[0m           {/* Domain Selection - Only for authenticated users */}
+ [2m 531[0m | [31;1m|[0m           {session?.user && (
+ [2m 532[0m | [31;1m|[0m             <div className="text-center mb-8">
+ [2m 533[0m | [31;1m|[0m               <div className="flex flex-wrap justify-center gap-3 mb-8">
+ [2m 534[0m | [31;1m|[0m                 {DOMAINS.map(domain => {
+ [2m 535[0m | [31;1m|[0m                   const IconComponent = domain.icon
+ [2m 536[0m | [31;1m|[0m                   return (
+ [2m 537[0m | [31;1m|[0m                     <Button
+ [2m 538[0m | [31;1m|[0m                       key={domain.code}
+ [2m 539[0m | [31;1m|[0m                       variant={selectedDomain === domain.code ? "default" : "outline"}
+ [2m 540[0m | [31;1m|[0m                       size="sm"
+ [2m 541[0m | [31;1m|[0m                       onClick={() => setSelectedDomain(domain.code)}
+ [2m 542[0m | [31;1m|[0m                       className={`flex items-center space-x-2 transition-all duration-200 ${
+ [2m 543[0m | [31;1m|[0m                         selectedDomain === domain.code 
+ [2m 544[0m | [31;1m|[0m                           ? `${domain.color} text-white hover:opacity-90` 
+ [2m 545[0m | [31;1m|[0m                           : "hover:scale-105"
+ [2m 546[0m | [31;1m|[0m                       }`}
+ [2m 547[0m | [31;1m|[0m                     >
+ [2m 548[0m | [31;1m|[0m                       <IconComponent className="h-4 w-4" />
+ [2m 549[0m | [31;1m|[0m                       <span>{domain.name}</span>
+ [2m 550[0m | [31;1m|[0m                     </Button>
+ [2m 551[0m | [31;1m|[0m                   )
+ [2m 552[0m | [31;1m|[0m                 })}
+ [2m 553[0m | [31;1m|[0m               </div>
+ [2m 554[0m | [31;1m|[0m             </div>
+ [2m 555[0m | [31;1m|[0m           )}
+ [2m 556[0m | [31;1m|[0m   
+ [2m 557[0m | [31;1m|[0m   
+ [2m 558[0m | [31;1m|[0m   
+ [2m 559[0m | [31;1m|[0m           {/* Main Translation Interface */}
+ [2m 560[0m | [31;1m|[0m           <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
+ [2m 561[0m | [31;1m|[0m             <CardHeader className="pb-4">
+ [2m 562[0m | [31;1m|[0m               <div className="flex items-center justify-between">
+ [2m 563[0m | [31;1m|[0m                 <div className="flex items-center space-x-4">
+ [2m 564[0m | [31;1m|[0m                   {/* Current domain - Only for authenticated users */}
+ [2m 565[0m | [31;1m|[0m                   {session?.user && (
+ [2m 566[0m | [31;1m|[0m                     <Badge variant="secondary" className="flex items-center space-x-1">
+ [2m 567[0m | [31;1m|[0m                       <div className={`w-2 h-2 rounded-full ${getDomainInfo(selectedDomain).color}`} />
+ [2m 568[0m | [31;1m|[0m                       <span>{getDomainInfo(selectedDomain).name}</span>
+ [2m 569[0m | [31;1m|[0m                     </Badge>
+ [2m 570[0m | [31;1m|[0m                   )}
+ [2m 571[0m | [31;1m|[0m                 </div>
+ [2m 572[0m | [31;1m|[0m   
+ [2m 573[0m | [31;1m|[0m                 {/* Action Buttons - Only for authenticated users */}
+ [2m 574[0m | [31;1m|[0m                 {session?.user && (
+ [2m 575[0m | [31;1m|[0m                   <div className="flex items-center space-x-2">
+ [2m 576[0m | [31;1m|[0m                   <Dialog open={showGlossary} onOpenChange={setShowGlossary}>
+ [2m 577[0m | [31;1m|[0m                     <DialogTrigger asChild>
+ [2m 578[0m | [31;1m|[0m                       <Button variant="outline" size="sm">
+ [2m 579[0m | [31;1m|[0m                         <BookOpen className="h-4 w-4 mr-2" />
+ [2m 580[0m | [31;1m|[0m                         Glossary
+ [2m 581[0m | [31;1m|[0m                         <Badge variant="secondary" className="ml-2">{glossary.length}</Badge>
+ [2m 582[0m | [31;1m|[0m                       </Button>
+ [2m 583[0m | [31;1m|[0m                     </DialogTrigger>
+ [2m 584[0m | [31;1m|[0m                     <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+ [2m 585[0m | [31;1m|[0m                       <DialogHeader>
+ [2m 586[0m | [31;1m|[0m                         <DialogTitle className="flex items-center space-x-2">
+ [2m 587[0m | [31;1m|[0m                           <BookOpen className="h-5 w-5" />
+ [2m 588[0m | [31;1m|[0m                           <span>Custom Glossary</span>
+ [2m 589[0m | [31;1m|[0m                         </DialogTitle>
+ [2m 590[0m | [31;1m|[0m                       </DialogHeader>
+ [2m 591[0m | [31;1m|[0m                       <Tabs defaultValue="manage" className="w-full">
+ [2m 592[0m | [31;1m|[0m                         <TabsList>
+ [2m 593[0m | [31;1m|[0m                           <TabsTrigger value="manage">Manage Terms</TabsTrigger>
+ [2m 594[0m | [31;1m|[0m                           <TabsTrigger value="add">Add New Term</TabsTrigger>
+ [2m 595[0m | [31;1m|[0m                         </TabsList>
+ [2m 596[0m | [31;1m|[0m                         <TabsContent value="manage" className="space-y-4">
+ [2m 597[0m | [31;1m|[0m                           <div className="grid gap-4 max-h-96 overflow-y-auto">
+ [2m 598[0m | [31;1m|[0m                             {glossary.length === 0 ? (
+ [2m 599[0m | [31;1m|[0m                               <div className="text-center py-12">
+ [2m 600[0m | [31;1m|[0m                                 <BookOpen className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+ [2m 601[0m | [31;1m|[0m                                 <p className="text-gray-500">No glossary entries yet.</p>
+ [2m 602[0m | [31;1m|[0m                                 <p className="text-sm text-gray-400">Add custom terms to improve translation accuracy.</p>
+ [2m 603[0m | [31;1m|[0m                               </div>
+ [2m 604[0m | [31;1m|[0m                             ) : (
+ [2m 605[0m | [31;1m|[0m                               glossary.map(entry => (
+ [2m 606[0m | [31;1m|[0m                                 <div key={entry.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+ [2m 607[0m | [31;1m|[0m                                   <div className="flex-1">
+ [2m 608[0m | [31;1m|[0m                                     <div className="flex items-center space-x-3">
+ [2m 609[0m | [31;1m|[0m                                       <span className="font-medium text-gray-900">{entry.source}</span>
+ [2m 610[0m | [31;1m|[0m                                       <ChevronRight className="h-4 w-4 text-gray-400" />
+ [2m 611[0m | [31;1m|[0m                                       <span className="text-blue-600 font-medium">{entry.target}</span>
+ [2m 612[0m | [31;1m|[0m                                       <Badge variant="outline" className="text-xs">
+ [2m 613[0m | [31;1m|[0m                                         {getDomainInfo(entry.domain).name}
+ [2m 614[0m | [31;1m|[0m                                       </Badge>
+ [2m 615[0m | [31;1m|[0m                                     </div>
+ [2m 616[0m | [31;1m|[0m                                     {entry.notes && (
+ [2m 617[0m | [31;1m|[0m                                       <p className="text-sm text-gray-600 mt-1">{entry.notes}</p>
+ [2m 618[0m | [31;1m|[0m                                     )}
+ [2m 619[0m | [31;1m|[0m                                   </div>
+ [2m 620[0m | [31;1m|[0m                                   <Button
+ [2m 621[0m | [31;1m|[0m                                     variant="ghost"
+ [2m 622[0m | [31;1m|[0m                                     size="sm"
+ [2m 623[0m | [31;1m|[0m                                     onClick={() => removeGlossaryEntry(entry.id)}
+ [2m 624[0m | [31;1m|[0m                                     className="text-red-600 hover:text-red-700 hover:bg-red-50"
+ [2m 625[0m | [31;1m|[0m                                   >
+ [2m 626[0m | [31;1m|[0m                                     <Trash2 className="h-4 w-4" />
+ [2m 627[0m | [31;1m|[0m                                   </Button>
+ [2m 628[0m | [31;1m|[0m                                 </div>
+ [2m 629[0m | [31;1m|[0m                               ))
+ [2m 630[0m | [31;1m|[0m                             )}
+ [2m 631[0m | [31;1m|[0m                           </div>
+ [2m 632[0m | [31;1m|[0m                         </TabsContent>
+ [2m 633[0m | [31;1m|[0m                         <TabsContent value="add" className="space-y-4">
+ [2m 634[0m | [31;1m|[0m                           <div className="grid grid-cols-2 gap-4">
+ [2m 635[0m | [31;1m|[0m                             <div>
+ [2m 636[0m | [31;1m|[0m                               <Label htmlFor="source-term">Source Term</Label>
+ [2m 637[0m | [31;1m|[0m                               <Input
+ [2m 638[0m | [31;1m|[0m                                 id="source-term"
+ [2m 639[0m | [31;1m|[0m                                 value={newGlossaryEntry.source}
+ [2m 640[0m | [31;1m|[0m                                 onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, source: e.target.value }))}
+ [2m 641[0m | [31;1m|[0m                                 placeholder="Enter source term"
+ [2m 642[0m | [31;1m|[0m                                 className="mt-1"
+ [2m 643[0m | [31;1m|[0m                               />
+ [2m 644[0m | [31;1m|[0m                             </div>
+ [2m 645[0m | [31;1m|[0m                             <div>
+ [2m 646[0m | [31;1m|[0m                               <Label htmlFor="target-term">Target Term</Label>
+ [2m 647[0m | [31;1m|[0m                               <Input
+ [2m 648[0m | [31;1m|[0m                                 id="target-term"
+ [2m 649[0m | [31;1m|[0m                                 value={newGlossaryEntry.target}
+ [2m 650[0m | [31;1m|[0m                                 onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, target: e.target.value }))}
+ [2m 651[0m | [31;1m|[0m                                 placeholder="Enter target term"
+ [2m 652[0m | [31;1m|[0m                                 className="mt-1"
+ [2m 653[0m | [31;1m|[0m                               />
+ [2m 654[0m | [31;1m|[0m                             </div>
+ [2m 655[0m | [31;1m|[0m                           </div>
+ [2m 656[0m | [31;1m|[0m                           <div>
+ [2m 657[0m | [31;1m|[0m                             <Label htmlFor="notes">Context & Notes</Label>
+ [2m 658[0m | [31;1m|[0m                             <Input
+ [2m 659[0m | [31;1m|[0m                               id="notes"
+ [2m 660[0m | [31;1m|[0m                               value={newGlossaryEntry.notes}
+ [2m 661[0m | [31;1m|[0m                               onChange={(e) => setNewGlossaryEntry(prev => ({ ...prev, notes: e.target.value }))}
+ [2m 662[0m | [31;1m|[0m                               placeholder="Add context, usage notes, or examples"
+ [2m 663[0m | [31;1m|[0m                               className="mt-1"
+ [2m 664[0m | [31;1m|[0m                             />
+ [2m 665[0m | [31;1m|[0m                           </div>
+ [2m 666[0m | [31;1m|[0m                           <Button onClick={addGlossaryEntry} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+ [2m 667[0m | [31;1m|[0m                             <Plus className="h-4 w-4 mr-2" />
+ [2m 668[0m | [31;1m|[0m                             Add to Glossary
+ [2m 669[0m | [31;1m|[0m                           </Button>
+ [2m 670[0m | [31;1m|[0m                         </TabsContent>
+ [2m 671[0m | [31;1m|[0m                       </Tabs>
+ [2m 672[0m | [31;1m|[0m                     </DialogContent>
+ [2m 673[0m | [31;1m|[0m                   </Dialog>
+ [2m 674[0m | [31;1m|[0m   
+ [2m 675[0m | [31;1m|[0m                   <Dialog open={showHistory} onOpenChange={setShowHistory}>
+ [2m 676[0m | [31;1m|[0m                     <DialogTrigger asChild>
+ [2m 677[0m | [31;1m|[0m                       <Button variant="outline" size="sm">
+ [2m 678[0m | [31;1m|[0m                         <History className="h-4 w-4 mr-2" />
+ [2m 679[0m | [31;1m|[0m                         History
+ [2m 680[0m | [31;1m|[0m                         <Badge variant="secondary" className="ml-2">{history.length}</Badge>
+ [2m 681[0m | [31;1m|[0m                       </Button>
+ [2m 682[0m | [31;1m|[0m                     </DialogTrigger>
+ [2m 683[0m | [31;1m|[0m                     <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+ [2m 684[0m | [31;1m|[0m                       <DialogHeader>
+ [2m 685[0m | [31;1m|[0m                         <DialogTitle className="flex items-center space-x-2">
+ [2m 686[0m | [31;1m|[0m                           <History className="h-5 w-5" />
+ [2m 687[0m | [31;1m|[0m                           <span>Translation History</span>
+ [2m 688[0m | [31;1m|[0m                         </DialogTitle>
+ [2m 689[0m | [31;1m|[0m                       </DialogHeader>
+ [2m 690[0m | [31;1m|[0m                       <div className="space-y-4">
+ [2m 691[0m | [31;1m|[0m                         <div className="flex items-center space-x-2">
+ [2m 692[0m | [31;1m|[0m                           <div className="relative flex-1">
+ [2m 693[0m | [31;1m|[0m                             <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+ [2m 694[0m | [31;1m|[0m                             <Input
+ [2m 695[0m | [31;1m|[0m                               value={historySearch}
+ [2m 696[0m | [31;1m|[0m                               onChange={(e) => setHistorySearch(e.target.value)}
+ [2m 697[0m | [31;1m|[0m                               placeholder="Search translations..."
+ [2m 698[0m | [31;1m|[0m                               className="pl-10"
+ [2m 699[0m | [31;1m|[0m                             />
+ [2m 700[0m | [31;1m|[0m                           </div>
+ [2m 701[0m | [31;1m|[0m                           <Button 
+ [2m 702[0m | [31;1m|[0m                             variant="outline" 
+ [2m 703[0m | [31;1m|[0m                             size="sm"
+ [2m 704[0m | [31;1m|[0m                             onClick={() => setHistory([])}
+ [2m 705[0m | [31;1m|[0m                             className="text-red-600 hover:text-red-700"
+ [2m 706[0m | [31;1m|[0m                           >
+ [2m 707[0m | [31;1m|[0m                             <Trash2 className="h-4 w-4 mr-2" />
+ [2m 708[0m | [31;1m|[0m                             Clear All
+ [2m 709[0m | [31;1m|[0m                           </Button>
+ [2m 710[0m | [31;1m|[0m                         </div>
+ [2m 711[0m | [31;1m|[0m                         
+ [2m 712[0m | [31;1m|[0m                         <div className="grid gap-3 max-h-96 overflow-y-auto">
+ [2m 713[0m | [31;1m|[0m                           {filteredHistory.length === 0 ? (
+ [2m 714[0m | [31;1m|[0m                             <div className="text-center py-12">
+ [2m 715[0m | [31;1m|[0m                               <History className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+ [2m 716[0m | [31;1m|[0m                               <p className="text-gray-500">
+ [2m 717[0m | [31;1m|[0m                                 {historySearch ? "No matching translations found." : "No translation history yet."}
+ [2m 718[0m | [31;1m|[0m                               </p>
+ [2m 719[0m | [31;1m|[0m                             </div>
+ [2m 720[0m | [31;1m|[0m                           ) : (
+ [2m 721[0m | [31;1m|[0m                             filteredHistory.map(item => (
+ [2m 722[0m | [31;1m|[0m                               <div key={item.id} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+ [2m 723[0m | [31;1m|[0m                                 <div className="flex items-center justify-between mb-2">
+ [2m 724[0m | [31;1m|[0m                                   <div className="flex items-center space-x-2 text-sm text-gray-600">
+ [2m 725[0m | [31;1m|[0m                                     <span className="font-medium">{getLanguageName(item.sourceLang)}</span>
+ [2m 726[0m | [31;1m|[0m                                     <ChevronRight className="h-3 w-3" />
+ [2m 727[0m | [31;1m|[0m                                     <span className="font-medium">{getLanguageName(item.targetLang)}</span>
+ [2m 728[0m | [31;1m|[0m                                     <Badge variant="outline" className="text-xs">
+ [2m 729[0m | [31;1m|[0m                                       {getDomainInfo(item.domain).name}
+ [2m 730[0m | [31;1m|[0m                                     </Badge>
+ [2m 731[0m | [31;1m|[0m                                     <span>•</span>
+ [2m 732[0m | [31;1m|[0m                                     <span>{new Date(item.timestamp).toLocaleDateString()}</span>
+ [2m 733[0m | [31;1m|[0m                                   </div>
+ [2m 734[0m | [31;1m|[0m                                   <Button
+ [2m 735[0m | [31;1m|[0m                                     variant="ghost"
+ [2m 736[0m | [31;1m|[0m                                     size="sm"
+ [2m 737[0m | [31;1m|[0m                                     onClick={() => copyToClipboard(item.translatedText)}
+ [2m 738[0m | [31;1m|[0m                                   >
+ [2m 739[0m | [31;1m|[0m                                     <Copy className="h-4 w-4" />
+ [2m 740[0m | [31;1m|[0m                                   </Button>
+ [2m 741[0m | [31;1m|[0m                                 </div>
+ [2m 742[0m | [31;1m|[0m                                 <div className="space-y-1">
+ [2m 743[0m | [31;1m|[0m                                   <p className="text-sm text-gray-700">{item.sourceText}</p>
+ [2m 744[0m | [31;1m|[0m                                   <p className="text-sm text-blue-600 font-medium">{item.translatedText}</p>
+ [2m 745[0m | [31;1m|[0m                                 </div>
+ [2m 746[0m | [31;1m|[0m                               </div>
+ [2m 747[0m | [31;1m|[0m                             ))
+ [2m 748[0m | [31;1m|[0m                           )}
+ [2m 749[0m | [31;1m|[0m                         </div>
+ [2m 750[0m | [31;1m|[0m                       </div>
+ [2m 751[0m | [31;1m|[0m                     </DialogContent>
+ [2m 752[0m | [31;1m|[0m                   </Dialog>
+ [2m 753[0m | [31;1m|[0m                   </div>
+ [2m 754[0m | [31;1m|[0m                 )}
+ [2m 755[0m | [31;1m|[0m               </div>
+ [2m 756[0m | [31;1m|[0m             </CardHeader>
+ [2m 757[0m | [31;1m|[0m   
+ [2m 758[0m | [31;1m|[0m             <CardContent className="space-y-6">
+ [2m 759[0m | [31;1m|[0m               {/* Language Selection */}
+ [2m 760[0m | [31;1m|[0m               <div className="flex items-center justify-center space-x-4">
+ [2m 761[0m | [31;1m|[0m                 <Select value={sourceLang} onValueChange={(value) => {
+ [2m 762[0m | [31;1m|[0m                   setSourceLang(value)
+ [2m 763[0m | [31;1m|[0m                   if (sourceText.trim()) translateText(sourceText, value, targetLang)
+ [2m 764[0m | [31;1m|[0m                 }}>
+ [2m 765[0m | [31;1m|[0m                   <SelectTrigger className="w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors">
+ [2m 766[0m | [31;1m|[0m                     <SelectValue />
+ [2m 767[0m | [31;1m|[0m                   </SelectTrigger>
+ [2m 768[0m | [31;1m|[0m                   <SelectContent>
+ [2m 769[0m | [31;1m|[0m                     <div className="p-2">
+ [2m 770[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">POPULAR</div>
+ [2m 771[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => lang.popular).map(lang => (
+ [2m 772[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code} className="flex items-center">
+ [2m 773[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 774[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 775[0m | [31;1m|[0m                             {lang.region !== "auto" && (
+ [2m 776[0m | [31;1m|[0m                               <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 777[0m | [31;1m|[0m                             )}
+ [2m 778[0m | [31;1m|[0m                           </div>
+ [2m 779[0m | [31;1m|[0m                         </SelectItem>
+ [2m 780[0m | [31;1m|[0m                       ))}
+ [2m 781[0m | [31;1m|[0m                       <Separator className="my-2" />
+ [2m 782[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">ALL LANGUAGES</div>
+ [2m 783[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => !lang.popular).map(lang => (
+ [2m 784[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 785[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 786[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 787[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 788[0m | [31;1m|[0m                           </div>
+ [2m 789[0m | [31;1m|[0m                         </SelectItem>
+ [2m 790[0m | [31;1m|[0m                       ))}
+ [2m 791[0m | [31;1m|[0m                     </div>
+ [2m 792[0m | [31;1m|[0m                   </SelectContent>
+ [2m 793[0m | [31;1m|[0m                 </Select>
+ [2m 794[0m | [31;1m|[0m   
+ [2m 795[0m | [31;1m|[0m                 <Button
+ [2m 796[0m | [31;1m|[0m                   variant="ghost"
+ [2m 797[0m | [31;1m|[0m                   size="lg"
+ [2m 798[0m | [31;1m|[0m                   onClick={swapLanguages}
+ [2m 799[0m | [31;1m|[0m                   disabled={sourceLang === "auto"}
+ [2m 800[0m | [31;1m|[0m                   className="p-3 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+ [2m 801[0m | [31;1m|[0m                 >
+ [2m 802[0m | [31;1m|[0m                   <ArrowUpDown className="h-5 w-5" />
+ [2m 803[0m | [31;1m|[0m                 </Button>
+ [2m 804[0m | [31;1m|[0m   
+ [2m 805[0m | [31;1m|[0m                 <Select value={targetLang} onValueChange={(value) => {
+ [2m 806[0m | [31;1m|[0m                   setTargetLang(value)
+ [2m 807[0m | [31;1m|[0m                   if (sourceText.trim()) translateText(sourceText, sourceLang, value)
+ [2m 808[0m | [31;1m|[0m                 }}>
+ [2m 809[0m | [31;1m|[0m                   <SelectTrigger className="w-48 h-12 border-2 border-gray-200 hover:border-blue-400 focus:border-blue-500 transition-colors">
+ [2m 810[0m | [31;1m|[0m                     <SelectValue />
+ [2m 811[0m | [31;1m|[0m                   </SelectTrigger>
+ [2m 812[0m | [31;1m|[0m                   <SelectContent>
+ [2m 813[0m | [31;1m|[0m                     <div className="p-2">
+ [2m 814[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">POPULAR</div>
+ [2m 815[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => lang.popular && lang.code !== "auto").map(lang => (
+ [2m 816[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 817[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 818[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 819[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 820[0m | [31;1m|[0m                           </div>
+ [2m 821[0m | [31;1m|[0m                         </SelectItem>
+ [2m 822[0m | [31;1m|[0m                       ))}
+ [2m 823[0m | [31;1m|[0m                       <Separator className="my-2" />
+ [2m 824[0m | [31;1m|[0m                       <div className="text-xs font-semibold text-gray-500 mb-2">ALL LANGUAGES</div>
+ [2m 825[0m | [31;1m|[0m                       {LANGUAGES.filter(lang => !lang.popular && lang.code !== "auto").map(lang => (
+ [2m 826[0m | [31;1m|[0m                         <SelectItem key={lang.code} value={lang.code}>
+ [2m 827[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 828[0m | [31;1m|[0m                             <span>{lang.name}</span>
+ [2m 829[0m | [31;1m|[0m                             <Badge variant="outline" className="text-xs">{lang.region}</Badge>
+ [2m 830[0m | [31;1m|[0m                           </div>
+ [2m 831[0m | [31;1m|[0m                         </SelectItem>
+ [2m 832[0m | [31;1m|[0m                       ))}
+ [2m 833[0m | [31;1m|[0m                     </div>
+ [2m 834[0m | [31;1m|[0m                   </SelectContent>
+ [2m 835[0m | [31;1m|[0m                 </Select>
+ [2m 836[0m | [31;1m|[0m               </div>
+ [2m 837[0m | [31;1m|[0m   
+ [2m 838[0m | [31;1m|[0m               {/* Translation Areas */}
+ [2m 839[0m | [31;1m|[0m               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+ [2m 840[0m | [31;1m|[0m                 {/* Source Text */}
+ [2m 841[0m | [31;1m|[0m                 <div className="space-y-3">
+ [2m 842[0m | [31;1m|[0m                   <div className="flex items-center justify-between">
+ [2m 843[0m | [31;1m|[0m                     <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
+ [2m 844[0m | [31;1m|[0m                       <Globe className="h-4 w-4" />
+ [2m 845[0m | [31;1m|[0m                       <span>{getLanguageName(sourceLang)}</span>
+ [2m 846[0m | [31;1m|[0m                     </Label>
+ [2m 847[0m | [31;1m|[0m                     {sourceText && (
+ [2m 848[0m | [31;1m|[0m                       <Button
+ [2m 849[0m | [31;1m|[0m                         variant="ghost"
+ [2m 850[0m | [31;1m|[0m                         size="sm"
+ [2m 851[0m | [31;1m|[0m                         onClick={() => playAudio(sourceText, sourceLang)}
+ [2m 852[0m | [31;1m|[0m                         className="text-gray-500 hover:text-blue-600"
+ [2m 853[0m | [31;1m|[0m                       >
+ [2m 854[0m | [31;1m|[0m                         <Volume2 className="h-4 w-4" />
+ [2m 855[0m | [31;1m|[0m                       </Button>
+ [2m 856[0m | [31;1m|[0m                     )}
+ [2m 857[0m | [31;1m|[0m                   </div>
+ [2m 858[0m | [31;1m|[0m                   <div className="relative">
+ [2m 859[0m | [31;1m|[0m                     <Textarea
+ [2m 860[0m | [31;1m|[0m                       value={sourceText}
+ [2m 861[0m | [31;1m|[0m                       onChange={(e) => handleSourceTextChange(e.target.value)}
+ [2m 862[0m | [31;1m|[0m                       placeholder="Enter text to translate..."
+ [2m 863[0m | [31;1m|[0m                       className="min-h-[200px] text-base border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
+ [2m 864[0m | [31;1m|[0m                     />
+ [2m 865[0m | [31;1m|[0m                     <div className="absolute bottom-2 right-2 flex items-center space-x-2">
+ [2m 866[0m | [31;1m|[0m                       <div className={`text-xs ${
+ [2m 867[0m | [31;1m|[0m                         sourceText.length > 4500 ? 'text-red-500 font-semibold' : 
+ [2m 868[0m | [31;1m|[0m                         sourceText.length > 4000 ? 'text-orange-500' :
+ [2m 869[0m | [31;1m|[0m                         'text-gray-400'
+ [2m 870[0m | [31;1m|[0m                       }`}>
+ [2m 871[0m | [31;1m|[0m                         {sourceText.length} / 5000
+ [2m 872[0m | [31;1m|[0m                       </div>
+ [2m 873[0m | [31;1m|[0m                       {sourceText.length > 4500 && (
+ [2m 874[0m | [31;1m|[0m                         <AlertCircle className="h-4 w-4 text-red-500" />
+ [2m 875[0m | [31;1m|[0m                       )}
+ [2m 876[0m | [31;1m|[0m                     </div>
+ [2m 877[0m | [31;1m|[0m                   </div>
+ [2m 878[0m | [31;1m|[0m                 </div>
+ [2m 879[0m | [31;1m|[0m   
+ [2m 880[0m | [31;1m|[0m                 {/* Translated Text */}
+ [2m 881[0m | [31;1m|[0m                 <div className="space-y-3">
+ [2m 882[0m | [31;1m|[0m                   <div className="flex items-center justify-between">
+ [2m 883[0m | [31;1m|[0m                     <Label className="text-base font-semibold text-gray-700 flex items-center space-x-2">
+ [2m 884[0m | [31;1m|[0m                       <Sparkles className="h-4 w-4" />
+ [2m 885[0m | [31;1m|[0m                       <span>{getLanguageName(targetLang)}</span>
+ [2m 886[0m | [31;1m|[0m                     </Label>
+ [2m 887[0m | [31;1m|[0m                     <div className="flex items-center space-x-2">
+ [2m 888[0m | [31;1m|[0m                       {translatedText && (
+ [2m 889[0m | [31;1m|[0m                         <>
+ [2m 890[0m | [31;1m|[0m                           <Button
+ [2m 891[0m | [31;1m|[0m                             variant="ghost"
+ [2m 892[0m | [31;1m|[0m                             size="sm"
+ [2m 893[0m | [31;1m|[0m                             onClick={() => playAudio(translatedText, targetLang)}
+ [2m 894[0m | [31;1m|[0m                             className="text-gray-500 hover:text-blue-600"
+ [2m 895[0m | [31;1m|[0m                           >
+ [2m 896[0m | [31;1m|[0m                             <Volume2 className="h-4 w-4" />
+ [2m 897[0m | [31;1m|[0m                           </Button>
+ [2m 898[0m | [31;1m|[0m                           <Button
+ [2m 899[0m | [31;1m|[0m                             variant="ghost"
+ [2m 900[0m | [31;1m|[0m                             size="sm"
+ [2m 901[0m | [31;1m|[0m                             onClick={() => copyToClipboard(translatedText)}
+ [2m 902[0m | [31;1m|[0m                             className="text-gray-500 hover:text-blue-600"
+ [2m 903[0m | [31;1m|[0m                           >
+ [2m 904[0m | [31;1m|[0m                             {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+ [2m 905[0m | [31;1m|[0m                           </Button>
+ [2m 906[0m | [31;1m|[0m                         </>
+ [2m 907[0m | [31;1m|[0m                       )}
+ [2m 908[0m | [31;1m|[0m                     </div>
+ [2m 909[0m | [31;1m|[0m                   </div>
+ [2m 910[0m | [31;1m|[0m                   <div className="relative">
+ [2m 911[0m | [31;1m|[0m                     <Textarea
+ [2m 912[0m | [31;1m|[0m                       value={translatedText}
+ [2m 913[0m | [31;1m|[0m                       readOnly
+ [2m 914[0m | [31;1m|[0m                       placeholder={isTranslating ? "Translating..." : "Translation will appear here"}
+ [2m 915[0m | [31;1m|[0m                       className="min-h-[200px] text-base bg-gradient-to-br from-blue-50/50 to-indigo-50/50 border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
+ [2m 916[0m | [31;1m|[0m                     />
+ [2m 917[0m | [31;1m|[0m                     {isTranslating && translationProgress > 0 && (
+ [2m 918[0m | [31;1m|[0m                       <div className="absolute bottom-2 left-2 right-2">
+ [2m 919[0m | [31;1m|[0m                         <div className="bg-white/80 rounded-full p-2">
+ [2m 920[0m | [31;1m|[0m                           <div className="flex items-center space-x-2">
+ [2m 921[0m | [31;1m|[0m                             <Sparkles className="h-3 w-3 text-blue-500 animate-pulse" />
+ [2m 922[0m | [31;1m|[0m                             <div className="flex-1 bg-gray-200 rounded-full h-1">
+ [2m 923[0m | [31;1m|[0m                               <div 
+ [2m 924[0m | [31;1m|[0m                                 className="bg-gradient-to-r from-blue-500 to-purple-500 h-1 rounded-full transition-all duration-300"
+ [2m 925[0m | [31;1m|[0m                                 style={{ width: `${translationProgress}%` }}
+ [2m 926[0m | [31;1m|[0m                               />
+ [2m 927[0m | [31;1m|[0m                             </div>
+ [2m 928[0m | [31;1m|[0m                             <span className="text-xs text-gray-600">{Math.round(translationProgress)}%</span>
+ [2m 929[0m | [31;1m|[0m                           </div>
+ [2m 930[0m | [31;1m|[0m                         </div>
+ [2m 931[0m | [31;1m|[0m                       </div>
+ [2m 932[0m | [31;1m|[0m                     )}
+ [2m 933[0m | [31;1m|[0m                   </div>
+ [2m 934[0m | [31;1m|[0m                 </div>
+ [2m 935[0m | [31;1m|[0m               </div>
+ [2m 936[0m | [31;1m|[0m   
+ [2m 937[0m | [31;1m|[0m   
+ [2m 938[0m | [31;1m|[0m             </CardContent>
+ [2m 939[0m | [31;1m|[0m           </Card>
+ [2m 940[0m | [31;1m|[0m   
+ [2m 941[0m | [31;1m|[0m           {/* Features unlock section - for anonymous users */}
+ [2m 942[0m | [31;1m|[0m           {!session?.user && (
+ [2m 943[0m | [31;1m|[0m             <div className="max-w-4xl mx-auto mb-8">
+ [2m 944[0m | [31;1m|[0m               <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+ [2m 945[0m | [31;1m|[0m                 <CardContent className="p-8">
+ [2m 946[0m | [31;1m|[0m                   <div className="text-center mb-8">
+ [2m 947[0m | [31;1m|[0m                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
+ [2m 948[0m | [31;1m|[0m                       Unlock Professional European Translation
+ [2m 949[0m | [31;1m|[0m                     </h2>
+ [2m 950[0m | [31;1m|[0m                     <p className="text-lg text-gray-600">
+ [2m 951[0m | [31;1m|[0m                       Join thousands of European professionals using advanced translation tools
+ [2m 952[0m | [31;1m|[0m                     </p>
+ [2m 953[0m | [31;1m|[0m                   </div>
+ [2m 954[0m | [31;1m|[0m                   
+ [2m 955[0m | [31;1m|[0m                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+ [2m 956[0m | [31;1m|[0m                     {/* Domain Expertise */}
+ [2m 957[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 958[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 959[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-purple-500">
+ [2m 960[0m | [31;1m|[0m                           <Brain className="h-6 w-6 text-white" />
+ [2m 961[0m | [31;1m|[0m                         </div>
+ [2m 962[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Domain Expertise</h3>
+ [2m 963[0m | [31;1m|[0m                       </div>
+ [2m 964[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 965[0m | [31;1m|[0m                         7 specialized domains: Technology, Medical, Legal, Business, Academic, Creative
+ [2m 966[0m | [31;1m|[0m                       </p>
+ [2m 967[0m | [31;1m|[0m                     </div>
+ [2m 968[0m | [31;1m|[0m   
+ [2m 969[0m | [31;1m|[0m                     {/* Custom Glossaries */}
+ [2m 970[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 971[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 972[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-green-500">
+ [2m 973[0m | [31;1m|[0m                           <BookOpen className="h-6 w-6 text-white" />
+ [2m 974[0m | [31;1m|[0m                         </div>
+ [2m 975[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Custom Glossaries</h3>
+ [2m 976[0m | [31;1m|[0m                       </div>
+ [2m 977[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 978[0m | [31;1m|[0m                         Build personal terminology databases for consistent professional translations
+ [2m 979[0m | [31;1m|[0m                       </p>
+ [2m 980[0m | [31;1m|[0m                     </div>
+ [2m 981[0m | [31;1m|[0m   
+ [2m 982[0m | [31;1m|[0m                     {/* Translation History */}
+ [2m 983[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 984[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 985[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-blue-500">
+ [2m 986[0m | [31;1m|[0m                           <History className="h-6 w-6 text-white" />
+ [2m 987[0m | [31;1m|[0m                         </div>
+ [2m 988[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Translation History</h3>
+ [2m 989[0m | [31;1m|[0m                       </div>
+ [2m 990[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m 991[0m | [31;1m|[0m                         Search and manage all your translations across devices with cloud sync
+ [2m 992[0m | [31;1m|[0m                       </p>
+ [2m 993[0m | [31;1m|[0m                     </div>
+ [2m 994[0m | [31;1m|[0m   
+ [2m 995[0m | [31;1m|[0m                     {/* Export & Share */}
+ [2m 996[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m 997[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m 998[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-orange-500">
+ [2m 999[0m | [31;1m|[0m                           <Download className="h-6 w-6 text-white" />
+ [2m1000[0m | [31;1m|[0m                         </div>
+ [2m1001[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Export & Share</h3>
+ [2m1002[0m | [31;1m|[0m                       </div>
+ [2m1003[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1004[0m | [31;1m|[0m                         Download in multiple formats and create shareable translation links
+ [2m1005[0m | [31;1m|[0m                       </p>
+ [2m1006[0m | [31;1m|[0m                     </div>
+ [2m1007[0m | [31;1m|[0m   
+ [2m1008[0m | [31;1m|[0m                     {/* Usage Analytics */}
+ [2m1009[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m1010[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m1011[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-indigo-500">
+ [2m1012[0m | [31;1m|[0m                           <TrendingUp className="h-6 w-6 text-white" />
+ [2m1013[0m | [31;1m|[0m                         </div>
+ [2m1014[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">Usage Analytics</h3>
+ [2m1015[0m | [31;1m|[0m                       </div>
+ [2m1016[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1017[0m | [31;1m|[0m                         Track your translation patterns and improve your multilingual workflow
+ [2m1018[0m | [31;1m|[0m                       </p>
+ [2m1019[0m | [31;1m|[0m                     </div>
+ [2m1020[0m | [31;1m|[0m   
+ [2m1021[0m | [31;1m|[0m                     {/* European Focus */}
+ [2m1022[0m | [31;1m|[0m                     <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+ [2m1023[0m | [31;1m|[0m                       <div className="flex items-center mb-4">
+ [2m1024[0m | [31;1m|[0m                         <div className="p-3 rounded-full bg-red-500">
+ [2m1025[0m | [31;1m|[0m                           <Globe className="h-6 w-6 text-white" />
+ [2m1026[0m | [31;1m|[0m                         </div>
+ [2m1027[0m | [31;1m|[0m                         <h3 className="text-lg font-semibold text-gray-900 ml-4">European Focus</h3>
+ [2m1028[0m | [31;1m|[0m                       </div>
+ [2m1029[0m | [31;1m|[0m                       <p className="text-gray-600 text-sm leading-relaxed">
+ [2m1030[0m | [31;1m|[0m                         Optimized for European languages, culture, and business contexts
+ [2m1031[0m | [31;1m|[0m                       </p>
+ [2m1032[0m | [31;1m|[0m                     </div>
+ [2m1033[0m | [31;1m|[0m                   </div>
+ [2m1034[0m | [31;1m|[0m                   
+ [2m1035[0m | [31;1m|[0m                   <div className="text-center">
+ [2m1036[0m | [31;1m|[0m                     <Button 
+ [2m1037[0m | [31;1m|[0m                       onClick={() => window.location.href = '/auth/signin'}
+ [2m1038[0m | [31;1m|[0m                       size="lg"
+ [2m1039[0m | [31;1m|[0m                       className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+ [2m1040[0m | [31;1m|[0m                     >
+ [2m1041[0m | [31;1m|[0m                       Join Europe's Translation Platform - Free
+ [2m1042[0m | [31;1m|[0m                     </Button>
+ [2m1043[0m | [31;1m|[0m                     <p className="text-sm text-gray-500 mt-3">
+ [2m1044[0m | [31;1m|[0m                       Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.
+ [2m1045[0m | [31;1m|[0m                     </p>
+ [2m1046[0m | [31;1m|[0m                   </div>
+ [2m1047[0m | [31;1m|[0m                 </CardContent>
+ [2m1048[0m | [31;1m|[0m               </Card>
+ [2m1049[0m | [31;1m|[0m             </div>
+ [2m1050[0m | [31;1m|[0m           )}
+ [2m1051[0m | [31;1m|[0m   
+ [2m1052[0m | [31;1m|[0m           {/* Quick Actions - Only for authenticated users */}
+ [2m1053[0m | [31;1m|[0m           {session?.user && (
+ [2m1054[0m | [31;1m|[0m             <div className="flex justify-center space-x-4">
+ [2m1055[0m | [31;1m|[0m             <DropdownMenu>
+ [2m1056[0m | [31;1m|[0m               <DropdownMenuTrigger asChild>
+ [2m1057[0m | [31;1m|[0m                 <Button variant="outline" className="shadow-lg">
+ [2m1058[0m | [31;1m|[0m                   <Download className="h-4 w-4 mr-2" />
+ [2m1059[0m | [31;1m|[0m                   Export
+ [2m1060[0m | [31;1m|[0m                 </Button>
+ [2m1061[0m | [31;1m|[0m               </DropdownMenuTrigger>
+ [2m1062[0m | [31;1m|[0m               <DropdownMenuContent>
+ [2m1063[0m | [31;1m|[0m                 <DropdownMenuItem onClick={() => {
+ [2m1064[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to export")
+ [2m1065[0m | [31;1m|[0m                   const content = `${sourceText}\n\n→ ${translatedText}`
+ [2m1066[0m | [31;1m|[0m                   const blob = new Blob([content], { type: 'text/plain' })
+ [2m1067[0m | [31;1m|[0m                   const url = URL.createObjectURL(blob)
+ [2m1068[0m | [31;1m|[0m                   const a = document.createElement('a')
+ [2m1069[0m | [31;1m|[0m                   a.href = url
+ [2m1070[0m | [31;1m|[0m                   a.download = 'linguala-translation.txt'
+ [2m1071[0m | [31;1m|[0m                   a.click()
+ [2m1072[0m | [31;1m|[0m                   URL.revokeObjectURL(url)
+ [2m1073[0m | [31;1m|[0m                   toast.success("Translation exported!")
+ [2m1074[0m | [31;1m|[0m                 }}>
+ [2m1075[0m | [31;1m|[0m                   Export as TXT
+ [2m1076[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1077[0m | [31;1m|[0m                 <DropdownMenuItem onClick={() => {
+ [2m1078[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to export")
+ [2m1079[0m | [31;1m|[0m                   const data = {
+ [2m1080[0m | [31;1m|[0m                     source: { text: sourceText, language: sourceLang },
+ [2m1081[0m | [31;1m|[0m                     target: { text: translatedText, language: targetLang },
+ [2m1082[0m | [31;1m|[0m                     domain: selectedDomain,
+ [2m1083[0m | [31;1m|[0m                     timestamp: new Date().toISOString()
+ [2m1084[0m | [31;1m|[0m                   }
+ [2m1085[0m | [31;1m|[0m                   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+ [2m1086[0m | [31;1m|[0m                   const url = URL.createObjectURL(blob)
+ [2m1087[0m | [31;1m|[0m                   const a = document.createElement('a')
+ [2m1088[0m | [31;1m|[0m                   a.href = url
+ [2m1089[0m | [31;1m|[0m                   a.download = 'linguala-translation.json'
+ [2m1090[0m | [31;1m|[0m                   a.click()
+ [2m1091[0m | [31;1m|[0m                   URL.revokeObjectURL(url)
+ [2m1092[0m | [31;1m|[0m                   toast.success("Translation exported!")
+ [2m1093[0m | [31;1m|[0m                 }}>
+ [2m1094[0m | [31;1m|[0m                   Export as JSON
+ [2m1095[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1096[0m | [31;1m|[0m               </DropdownMenuContent>
+ [2m1097[0m | [31;1m|[0m             </DropdownMenu>
+ [2m1098[0m | [31;1m|[0m   
+ [2m1099[0m | [31;1m|[0m             <DropdownMenu>
+ [2m1100[0m | [31;1m|[0m               <DropdownMenuTrigger asChild>
+ [2m1101[0m | [31;1m|[0m                 <Button variant="outline" className="shadow-lg">
+ [2m1102[0m | [31;1m|[0m                   <Share2 className="h-4 w-4 mr-2" />
+ [2m1103[0m | [31;1m|[0m                   Share
+ [2m1104[0m | [31;1m|[0m                 </Button>
+ [2m1105[0m | [31;1m|[0m               </DropdownMenuTrigger>
+ [2m1106[0m | [31;1m|[0m               <DropdownMenuContent>
+ [2m1107[0m | [31;1m|[0m                 <DropdownMenuItem onClick={async () => {
+ [2m1108[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to share")
+ [2m1109[0m | [31;1m|[0m                   const params = new URLSearchParams({
+ [2m1110[0m | [31;1m|[0m                     text: sourceText,
+ [2m1111[0m | [31;1m|[0m                     from: sourceLang,
+ [2m1112[0m | [31;1m|[0m                     to: targetLang
+ [2m1113[0m | [31;1m|[0m                   })
+ [2m1114[0m | [31;1m|[0m                   const shareUrl = `https://linguala.eu?${params.toString()}`
+ [2m1115[0m | [31;1m|[0m                   await copyToClipboard(shareUrl)
+ [2m1116[0m | [31;1m|[0m                   toast.success("Share link copied!")
+ [2m1117[0m | [31;1m|[0m                 }}>
+ [2m1118[0m | [31;1m|[0m                   Copy Share Link
+ [2m1119[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1120[0m | [31;1m|[0m                 <DropdownMenuItem onClick={async () => {
+ [2m1121[0m | [31;1m|[0m                   if (!translatedText) return toast.error("No translation to share")
+ [2m1122[0m | [31;1m|[0m                   const shareText = `${sourceText} → ${translatedText}\n\nTranslated with Linguala.eu`
+ [2m1123[0m | [31;1m|[0m                   if (navigator.share) {
+ [2m1124[0m | [31;1m|[0m                     await navigator.share({ title: 'Linguala Translation', text: shareText })
+ [2m1125[0m | [31;1m|[0m                   } else {
+ [2m1126[0m | [31;1m|[0m                     await copyToClipboard(shareText)
+ [2m1127[0m | [31;1m|[0m                   }
+ [2m1128[0m | [31;1m|[0m                 }}>
+ [2m1129[0m | [31;1m|[0m                   Share Translation
+ [2m1130[0m | [31;1m|[0m                 </DropdownMenuItem>
+ [2m1131[0m | [31;1m|[0m               </DropdownMenuContent>
+ [2m1132[0m | [31;1m|[0m             </DropdownMenu>
+ [2m1133[0m | [31;1m|[0m             </div>
+ [2m1134[0m | [31;1m|[0m           )}
+ [2m1135[0m | [31;1m|[0m         </main>
+ [2m1136[0m | [31;1m|[0m       </div>
+ [2m1137[0m | [31;1m`[0m[31;1m-[0m[31;1m>[0m   )
+ [2m1138[0m |     }
+      `----
+
+  [31mx[0m Expression expected
+      ,-[[36;1;4m/home/user/project/components/linguala-translator.tsx[0m:1135:1]
+ [2m1135[0m |       </main>
+ [2m1136[0m |     </div>
+ [2m1137[0m |   )
+ [2m1138[0m | }
+      : [31;1m^[0m
+      `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/linguala-translator.tsx
+./app/page.tsx
+ GET / 500 in 5672ms
+ GET / 500 in 44ms
  ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
- ○ Compiling /api/auth/[...nextauth] ...
- ✓ Compiled /api/auth/[...nextauth] in 702ms (645 modules)
- GET /api/auth/session 200 in 1398ms
- GET /api/auth/session 200 in 27ms

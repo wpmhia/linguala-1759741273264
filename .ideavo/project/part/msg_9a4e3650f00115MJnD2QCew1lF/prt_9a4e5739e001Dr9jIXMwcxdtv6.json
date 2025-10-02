@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a4e5739e001Dr9jIXMwcxdtv6",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01H9fX37UTFNuYuNfGwBmKBu",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n  )\n\n  return (",
+      "newString": "  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n  )\n\n  return ("
+    },
+    "error": "Error: oldString and newString must be different",
+    "time": {
+      "start": 1759408127618,
+      "end": 1759408127618
+    }
+  }
+}

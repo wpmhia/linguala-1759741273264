@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4e3c9ce001sjzMcQWzhd8ggo",
+  "messageID": "msg_9a4e3650f00115MJnD2QCew1lF",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01UzJBuEQZzYxS7qspf5jDko",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && sed -n '485,505p' components/linguala-translator.tsx",
+      "description": "Check broader context around the error"
+    },
+    "output": "  const getLanguageName = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code)?.name || code\n  }\n\n  const getDomainInfo = (code: string) => {\n    return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]\n  }\n\n  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n  )\n\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50\">\n      {/* Premium Header */}\n      <header className=\"bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50\">\n        <div className=\"max-w-7xl mx-auto px-4 py-4\">\n          <div className=\"flex items-center justify-between\">\n",
+    "metadata": {
+      "output": "  const getLanguageName = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code)?.name || code\n  }\n\n  const getDomainInfo = (code: string) => {\n    return DOMAINS.find(domain => domain.code === code) || DOMAINS[0]\n  }\n\n  const filteredHistory = history.filter(item =>\n    item.sourceText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    item.translatedText.toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.sourceLang).toLowerCase().includes(historySearch.toLowerCase()) ||\n    getLanguageName(item.targetLang).toLowerCase().includes(historySearch.toLowerCase())\n  )\n\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50\">\n      {/* Premium Header */}\n      <header className=\"bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50\">\n        <div className=\"max-w-7xl mx-auto px-4 py-4\">\n          <div className=\"flex items-center justify-between\">\n",
+      "exit": 0,
+      "description": "Check broader context around the error"
+    },
+    "title": "cd /home/user/project && sed -n '485,505p' components/linguala-translator.tsx",
+    "time": {
+      "start": 1759408016618,
+      "end": 1759408016632
+    }
+  }
+}

@@ -5,16 +5,16 @@ $ next dev
 
  ✓ Starting...
  ✓ Ready in 2.1s
- ✓ Compiled /middleware in 168ms
+ ✓ Compiled /middleware in 163ms
  ✓ Compiled (73 modules)
  ○ Compiling / ...
- ✓ Compiled / in 3.7s (787 modules)
- GET / 200 in 4363ms
- ✓ Compiled in 718ms (405 modules)
+ ✓ Compiled / in 4.4s (787 modules)
+ GET / 200 in 5106ms
+ ✓ Compiled in 805ms (405 modules)
  GET / 200 in 38ms
  ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
  ○ Compiling /api/auth/[...nextauth] ...
- ✓ Compiled /api/auth/[...nextauth] in 799ms (621 modules)
- GET /api/auth/session 200 in 1500ms
- GET /api/auth/session 200 in 28ms
+ ✓ Compiled /api/auth/[...nextauth] in 861ms (621 modules)
+ GET /api/auth/session 200 in 1550ms
+ GET /api/auth/session 200 in 27ms

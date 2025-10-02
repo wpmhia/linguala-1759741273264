@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a60f17b3001t7IwkvnVdQZUcV",
+  "messageID": "msg_9a60e7df000135hCimcyd5wCIs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01QJfLdVzMdfW7T9gjAs39rw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n \"🇺🇸\" /home/user/project/components/*.tsx",
+      "description": "Check for other US flags in components"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 1,
+      "description": "Check for other US flags in components"
+    },
+    "title": "grep -n \"🇺🇸\" /home/user/project/components/*.tsx",
+    "time": {
+      "start": 1759427631966,
+      "end": 1759427631979
+    }
+  }
+}

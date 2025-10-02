@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a60ed9da0012ylopLpEX0sdVr",
+  "messageID": "msg_9a60e7df000135hCimcyd5wCIs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01N41YZ2t13hdPu3Ft4UTvLa",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  { code: \"en\", name: \"English\", flag: \"🇺🇸\" },",
+      "newString": "  { code: \"en\", name: \"English\", flag: \"🇬🇧\" },"
+    },
+    "error": "Error: You must read the file /home/user/project/components/linguala-translator.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759427616424,
+      "end": 1759427616425
+    }
+  }
+}

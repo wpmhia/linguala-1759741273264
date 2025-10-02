@@ -1,0 +1,61 @@
+{
+  "id": "prt_9a60ea59200176cgfKHKQPujNH",
+  "messageID": "msg_9a60e7df000135hCimcyd5wCIs",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_0172MgmDM9sFbgt4s8xjEXQb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Find language selection component with flag icons",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "find-language-selector"
+        },
+        {
+          "content": "Update English flag from US to UK/British flag",
+          "status": "pending",
+          "priority": "high",
+          "id": "update-english-flag"
+        },
+        {
+          "content": "Verify flag changes work correctly",
+          "status": "pending",
+          "priority": "medium",
+          "id": "verify-flag-changes"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Find language selection component with flag icons\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\",\n    \"id\": \"find-language-selector\"\n  },\n  {\n    \"content\": \"Update English flag from US to UK/British flag\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"update-english-flag\"\n  },\n  {\n    \"content\": \"Verify flag changes work correctly\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"verify-flag-changes\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Find language selection component with flag icons",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "find-language-selector"
+        },
+        {
+          "content": "Update English flag from US to UK/British flag",
+          "status": "pending",
+          "priority": "high",
+          "id": "update-english-flag"
+        },
+        {
+          "content": "Verify flag changes work correctly",
+          "status": "pending",
+          "priority": "medium",
+          "id": "verify-flag-changes"
+        }
+      ]
+    },
+    "title": "3 todos",
+    "time": {
+      "start": 1759427602937,
+      "end": 1759427602942
+    }
+  }
+}

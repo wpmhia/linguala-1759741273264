@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a49d0459001mkZ8xQuiyY9cf6",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Q6nPHEn7aRbiFSBx7exfYk",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 150,
+      "limit": 20
+    },
+    "output": "<file>\n00151|   }\n00152| \n00153|   const handleLanguageChange = () => {\n00154|     if (sourceText.trim()) {\n00155|       translateText(sourceText, sourceLang, targetLang)\n00156|     }\n00157|   }\n00158| \n00159|   const swapLanguages = () => {\n00160|     if (sourceLang === \"auto\") return\n00161|     \n00162|     setSourceLang(targetLang)\n00163|     setTargetLang(sourceLang)\n00164|     setSourceText(translatedText)\n00165|     setTranslatedText(sourceText)\n00166|   }\n00167| \n00168|   const copyToClipboard = async (text: string) => {\n00169|     try {\n00170|       await navigator.clipboard.writeText(text)\n\n(File has more lines. Use 'offset' parameter to read beyond line 170)\n</file>",
+    "metadata": {
+      "preview": "  }\n\n  const handleLanguageChange = () => {\n    if (sourceText.trim()) {\n      translateText(sourceText, sourceLang, targetLang)\n    }\n  }\n\n  const swapLanguages = () => {\n    if (sourceLang === \"auto\") return\n    \n    setSourceLang(targetLang)\n    setTargetLang(sourceLang)\n    setSourceText(translatedText)\n    setTranslatedText(sourceText)\n  }\n\n  const copyToClipboard = async (text: string) => {\n    try {\n      await navigator.clipboard.writeText(text)"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403378334,
+      "end": 1759403378335
+    }
+  }
+}

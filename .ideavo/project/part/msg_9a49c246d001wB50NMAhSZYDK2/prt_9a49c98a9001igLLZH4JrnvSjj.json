@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a49c98a9001igLLZH4JrnvSjj",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01CvWHbsayJWHSJ4jCAbut4Q",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"",
+      "newString": "import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\nimport { Separator } from \"@/components/ui/separator\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -3,8 +3,11 @@\n import { useState, useRef, useEffect } from \"react\"\n import { Button } from \"@/components/ui/button\"\n import { Textarea } from \"@/components/ui/textarea\"\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n+import { Switch } from \"@/components/ui/switch\"\n+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\n+import { Separator } from \"@/components/ui/separator\"\n import { Card, CardContent } from \"@/components/ui/card\"\n import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from \"lucide-react\"\n import { toast } from \"sonner\"\n \n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403351887,
+      "end": 1759403351891
+    }
+  }
+}

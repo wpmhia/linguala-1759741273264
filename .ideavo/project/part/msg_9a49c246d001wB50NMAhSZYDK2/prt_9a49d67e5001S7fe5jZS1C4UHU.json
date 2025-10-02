@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a49d67e5001S7fe5jZS1C4UHU",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01MqAkreQCQdE2i4eZRRfZqC",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "return \\(",
+      "path": "/home/user/project/components/translator.tsx"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "return \\(",
+    "time": {
+      "start": 1759403403807,
+      "end": 1759403403814
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "prt_9a49c3794001dMbvVi1UZMSVN5",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01SUxRA1YsfgeXS1xZGKutxZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Add real-time translation toggle switch",
+          "status": "pending",
+          "priority": "high",
+          "id": "realtime-toggle"
+        },
+        {
+          "content": "Enhance copy to clipboard functionality with visual feedback",
+          "status": "pending",
+          "priority": "high",
+          "id": "copy-clipboard"
+        },
+        {
+          "content": "Add download translation as text/PDF functionality",
+          "status": "pending",
+          "priority": "medium",
+          "id": "download-translation"
+        },
+        {
+          "content": "Implement share functionality (URL sharing, social media)",
+          "status": "pending",
+          "priority": "medium",
+          "id": "share-functionality"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Add real-time translation toggle switch\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"realtime-toggle\"\n  },\n  {\n    \"content\": \"Enhance copy to clipboard functionality with visual feedback\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"copy-clipboard\"\n  },\n  {\n    \"content\": \"Add download translation as text/PDF functionality\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"download-translation\"\n  },\n  {\n    \"content\": \"Implement share functionality (URL sharing, social media)\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"share-functionality\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Add real-time translation toggle switch",
+          "status": "pending",
+          "priority": "high",
+          "id": "realtime-toggle"
+        },
+        {
+          "content": "Enhance copy to clipboard functionality with visual feedback",
+          "status": "pending",
+          "priority": "high",
+          "id": "copy-clipboard"
+        },
+        {
+          "content": "Add download translation as text/PDF functionality",
+          "status": "pending",
+          "priority": "medium",
+          "id": "download-translation"
+        },
+        {
+          "content": "Implement share functionality (URL sharing, social media)",
+          "status": "pending",
+          "priority": "medium",
+          "id": "share-functionality"
+        }
+      ]
+    },
+    "title": "4 todos",
+    "time": {
+      "start": 1759403328023,
+      "end": 1759403328024
+    }
+  }
+}

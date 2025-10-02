@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a49c88c9001UX7zE9w6NH25AP",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Cf88mez9RwycPCZrgbhY9m",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "import { Copy, ArrowUpDown, Volume2, RotateCcw } from \"lucide-react\"",
+      "newString": "import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from \"lucide-react\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -4,9 +4,9 @@\n import { Button } from \"@/components/ui/button\"\n import { Textarea } from \"@/components/ui/textarea\"\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n import { Card, CardContent } from \"@/components/ui/card\"\n-import { Copy, ArrowUpDown, Volume2, RotateCcw } from \"lucide-react\"\n+import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from \"lucide-react\"\n import { toast } from \"sonner\"\n \n const LANGUAGES = [\n   { code: \"auto\", name: \"Detect language\" },\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403347515,
+      "end": 1759403347525
+    }
+  }
+}

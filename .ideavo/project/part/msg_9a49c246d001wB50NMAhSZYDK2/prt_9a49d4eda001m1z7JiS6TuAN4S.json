@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a49d4eda001m1z7JiS6TuAN4S",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017YJwcFhiY9iN3Tvem2MH5h",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 200,
+      "limit": 30
+    },
+    "output": "<file>\n00201|           text: translatedText,\n00202|           language: targetLang,\n00203|           languageName: LANGUAGES.find(l => l.code === targetLang)?.name\n00204|         },\n00205|         timestamp: new Date().toISOString()\n00206|       }, null, 2)\n00207|       mimeType = 'application/json'\n00208|       filename = 'translation.json'\n00209|     }\n00210| \n00211|     const blob = new Blob([content], { type: mimeType })\n00212|     const url = URL.createObjectURL(blob)\n00213|     const a = document.createElement('a')\n00214|     a.href = url\n00215|     a.download = filename\n00216|     document.body.appendChild(a)\n00217|     a.click()\n00218|     document.body.removeChild(a)\n00219|     URL.revokeObjectURL(url)\n00220|     toast.success(`Downloaded as ${filename}`)\n00221|   }\n00222| \n00223|   const shareTranslation = async (method: 'url' | 'text') => {\n00224|     if (!translatedText.trim()) {\n00225|       toast.error(\"No translation to share\")\n00226|       return\n00227|     }\n00228| \n00229|     if (method === 'url') {\n00230|       const params = new URLSearchParams({\n\n(File has more lines. Use 'offset' parameter to read beyond line 230)\n</file>",
+    "metadata": {
+      "preview": "          text: translatedText,\n          language: targetLang,\n          languageName: LANGUAGES.find(l => l.code === targetLang)?.name\n        },\n        timestamp: new Date().toISOString()\n      }, null, 2)\n      mimeType = 'application/json'\n      filename = 'translation.json'\n    }\n\n    const blob = new Blob([content], { type: mimeType })\n    const url = URL.createObjectURL(blob)\n    const a = document.createElement('a')\n    a.href = url\n    a.download = filename\n    document.body.appendChild(a)\n    a.click()\n    document.body.removeChild(a)\n    URL.revokeObjectURL(url)\n    toast.success(`Downloaded as ${filename}`)"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403397857,
+      "end": 1759403397860
+    }
+  }
+}

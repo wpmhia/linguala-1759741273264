@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a49cee88001P0KCHFar33skaO",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_018L4c8TJQLRFMXhcrW6gBHW",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    \n    // Debounce translation\n    if (debounceRef.current) {\n      clearTimeout(debounceRef.current)\n    }\n    \n    debounceRef.current = setTimeout(() => {\n      translateText(text, sourceLang, targetLang)\n    }, 500)\n  }",
+      "newString": "  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    \n    // Only auto-translate if real-time is enabled\n    if (realTimeEnabled) {\n      // Debounce translation\n      if (debounceRef.current) {\n        clearTimeout(debounceRef.current)\n      }\n      \n      debounceRef.current = setTimeout(() => {\n        translateText(text, sourceLang, targetLang)\n      }, 500)\n    }\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -136,16 +136,19 @@\n \n const handleSourceTextChange = (text: string) => {\n   setSourceText(text)\n   \n-  // Debounce translation\n-  if (debounceRef.current) {\n-    clearTimeout(debounceRef.current)\n+  // Only auto-translate if real-time is enabled\n+  if (realTimeEnabled) {\n+    // Debounce translation\n+    if (debounceRef.current) {\n+      clearTimeout(debounceRef.current)\n+    }\n+    \n+    debounceRef.current = setTimeout(() => {\n+      translateText(text, sourceLang, targetLang)\n+    }, 500)\n   }\n-  \n-  debounceRef.current = setTimeout(() => {\n-    translateText(text, sourceLang, targetLang)\n-  }, 500)\n }\n \n const handleLanguageChange = () => {\n   if (sourceText.trim()) {\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403374451,
+      "end": 1759403374456
+    }
+  }
+}

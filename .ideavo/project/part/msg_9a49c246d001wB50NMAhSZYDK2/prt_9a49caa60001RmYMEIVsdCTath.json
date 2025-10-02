@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a49caa60001RmYMEIVsdCTath",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01SLw2MV3uY65t62TVWp2PVN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 67,
+      "limit": 10
+    },
+    "output": "<file>\n00068|   const [sourceText, setSourceText] = useState(\"\")\n00069|   const [translatedText, setTranslatedText] = useState(\"\")\n00070|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00071|   const [targetLang, setTargetLang] = useState(\"en\")\n00072|   const [isTranslating, setIsTranslating] = useState(false)\n00073|   const [history, setHistory] = useState<TranslationHistory[]>([])\n00074|   const debounceRef = useRef<NodeJS.Timeout>()\n00075| \n00076|   // Load history from localStorage on mount\n00077|   useEffect(() => {\n\n(File has more lines. Use 'offset' parameter to read beyond line 77)\n</file>",
+    "metadata": {
+      "preview": "  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  const [isTranslating, setIsTranslating] = useState(false)\n  const [history, setHistory] = useState<TranslationHistory[]>([])\n  const debounceRef = useRef<NodeJS.Timeout>()\n\n  // Load history from localStorage on mount\n  useEffect(() => {"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403355319,
+      "end": 1759403355320
+    }
+  }
+}

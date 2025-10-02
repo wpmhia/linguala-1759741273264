@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a49cb888001yaA7ELe9Zj1s2r",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01XvSRgthbtKswfCX2KHRGgF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "oldString": "  const [isTranslating, setIsTranslating] = useState(false)\n  const [history, setHistory] = useState<TranslationHistory[]>([])\n  const debounceRef = useRef<NodeJS.Timeout>()",
+      "newString": "  const [isTranslating, setIsTranslating] = useState(false)\n  const [history, setHistory] = useState<TranslationHistory[]>([])\n  const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n  const [copySuccess, setCopySuccess] = useState(false)\n  const debounceRef = useRef<NodeJS.Timeout>()"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translator.tsx\n===================================================================\n--- /home/user/project/components/translator.tsx\n+++ /home/user/project/components/translator.tsx\n@@ -70,8 +70,10 @@\n const [sourceLang, setSourceLang] = useState(\"auto\")\n const [targetLang, setTargetLang] = useState(\"en\")\n const [isTranslating, setIsTranslating] = useState(false)\n const [history, setHistory] = useState<TranslationHistory[]>([])\n+const [realTimeEnabled, setRealTimeEnabled] = useState(true)\n+const [copySuccess, setCopySuccess] = useState(false)\n const debounceRef = useRef<NodeJS.Timeout>()\n \n // Load history from localStorage on mount\n useEffect(() => {\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403360378,
+      "end": 1759403360382
+    }
+  }
+}

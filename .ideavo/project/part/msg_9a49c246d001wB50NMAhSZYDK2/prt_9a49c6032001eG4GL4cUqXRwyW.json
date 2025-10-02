@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a49c6032001eG4GL4cUqXRwyW",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01B9p7xynycDFcLJmjVwU1zJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 52,
+      "limit": 30
+    },
+    "output": "<file>\n00053| ]\n00054| \n00055| interface TranslationHistory {\n00056|   id: string\n00057|   sourceText: string\n00058|   translatedText: string\n00059|   sourceLang: string\n00060|   targetLang: string\n00061|   timestamp: number\n00062| }\n00063| \n00064| export default function Translator() {\n00065|   const [sourceText, setSourceText] = useState(\"\")\n00066|   const [translatedText, setTranslatedText] = useState(\"\")\n00067|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00068|   const [targetLang, setTargetLang] = useState(\"en\")\n00069|   const [isTranslating, setIsTranslating] = useState(false)\n00070|   const [history, setHistory] = useState<TranslationHistory[]>([])\n00071|   const debounceRef = useRef<NodeJS.Timeout>()\n00072| \n00073|   // Load history from localStorage on mount\n00074|   useEffect(() => {\n00075|     const savedHistory = localStorage.getItem(\"translation-history\")\n00076|     if (savedHistory) {\n00077|       setHistory(JSON.parse(savedHistory))\n00078|     }\n00079|   }, [])\n00080| \n00081|   // Save history to localStorage whenever it changes\n00082|   useEffect(() => {\n\n(File has more lines. Use 'offset' parameter to read beyond line 82)\n</file>",
+    "metadata": {
+      "preview": "]\n\ninterface TranslationHistory {\n  id: string\n  sourceText: string\n  translatedText: string\n  sourceLang: string\n  targetLang: string\n  timestamp: number\n}\n\nexport default function Translator() {\n  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  const [isTranslating, setIsTranslating] = useState(false)\n  const [history, setHistory] = useState<TranslationHistory[]>([])\n  const debounceRef = useRef<NodeJS.Timeout>()\n"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403336662,
+      "end": 1759403336666
+    }
+  }
+}

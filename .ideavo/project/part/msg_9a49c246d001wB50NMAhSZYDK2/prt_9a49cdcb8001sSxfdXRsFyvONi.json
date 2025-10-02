@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a49cdcb8001sSxfdXRsFyvONi",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01QUPfbui9hWfrW34F8KQF1F",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 135,
+      "limit": 15
+    },
+    "output": "<file>\n00136| \n00137|   const handleSourceTextChange = (text: string) => {\n00138|     setSourceText(text)\n00139|     \n00140|     // Debounce translation\n00141|     if (debounceRef.current) {\n00142|       clearTimeout(debounceRef.current)\n00143|     }\n00144|     \n00145|     debounceRef.current = setTimeout(() => {\n00146|       translateText(text, sourceLang, targetLang)\n00147|     }, 500)\n00148|   }\n00149| \n00150|   const handleLanguageChange = () => {\n\n(File has more lines. Use 'offset' parameter to read beyond line 150)\n</file>",
+    "metadata": {
+      "preview": "\n  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    \n    // Debounce translation\n    if (debounceRef.current) {\n      clearTimeout(debounceRef.current)\n    }\n    \n    debounceRef.current = setTimeout(() => {\n      translateText(text, sourceLang, targetLang)\n    }, 500)\n  }\n\n  const handleLanguageChange = () => {"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403368184,
+      "end": 1759403368186
+    }
+  }
+}

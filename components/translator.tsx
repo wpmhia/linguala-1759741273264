@@ -4,8 +4,11 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Switch } from "@/components/ui/switch"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
-import { Copy, ArrowUpDown, Volume2, RotateCcw } from "lucide-react"
+import { Copy, ArrowUpDown, Volume2, RotateCcw, Download, Share2, Settings, Zap, ZapOff, Check } from "lucide-react"
 import { toast } from "sonner"
 
 const LANGUAGES = [
@@ -68,13 +71,33 @@ export default function Translator() {
   const [targetLang, setTargetLang] = useState("en")
   const [isTranslating, setIsTranslating] = useState(false)
   const [history, setHistory] = useState<TranslationHistory[]>([])
+  const [realTimeEnabled, setRealTimeEnabled] = useState(true)
+  const [copySuccess, setCopySuccess] = useState(false)
   const debounceRef = useRef<NodeJS.Timeout>()
 
-  // Load history from localStorage on mount
+  // Load history from localStorage on mount and check URL parameters
   useEffect(() => {
     const savedHistory = localStorage.getItem("translation-history")
     if (savedHistory) {
       setHistory(JSON.parse(savedHistory))
+    }
+
+    // Check for URL parameters for shared translations
+    const urlParams = new URLSearchParams(window.location.search)
+    const sharedText = urlParams.get('text')
+    const sharedFrom = urlParams.get('from')
+    const sharedTo = urlParams.get('to')
+    
+    if (sharedText && sharedFrom && sharedTo) {
+      setSourceText(sharedText)
+      setSourceLang(sharedFrom)
+      setTargetLang(sharedTo)
+      // Auto-translate the shared content
+      setTimeout(() => {
+        translateText(sharedText, sharedFrom, sharedTo)
+      }, 100)
+      // Clean up URL
+      window.history.replaceState({}, '', window.location.pathname)
     }
   }, [])
 
@@ -132,14 +155,17 @@ export default function Translator() {
   const handleSourceTextChange = (text: string) => {
     setSourceText(text)
     
-    // Debounce translation
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current)
+    // Only auto-translate if real-time is enabled
+    if (realTimeEnabled) {
+      // Debounce translation
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current)
+      }
+      
+      debounceRef.current = setTimeout(() => {
+        translateText(text, sourceLang, targetLang)
+      }, 500)
     }
-    
-    debounceRef.current = setTimeout(() => {
-      translateText(text, sourceLang, targetLang)
-    }, 500)
   }
 
   const handleLanguageChange = () => {
@@ -160,9 +186,100 @@ export default function Translator() {
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text)
+      setCopySuccess(true)
       toast.success("Copied to clipboard!")
+      setTimeout(() => setCopySuccess(false), 2000)
     } catch (error) {
       toast.error("Failed to copy text")
+    }
+  }
+
+  const downloadTranslation = (format: 'txt' | 'json') => {
+    if (!translatedText.trim()) {
+      toast.error("No translation to download")
+      return
+    }
+
+    let content: string
+    let mimeType: string
+    let filename: string
+
+    if (format === 'txt') {
+      content = `Original (${LANGUAGES.find(l => l.code === sourceLang)?.name}):\n${sourceText}\n\nTranslation (${LANGUAGES.find(l => l.code === targetLang)?.name}):\n${translatedText}`
+      mimeType = 'text/plain'
+      filename = 'translation.txt'
+    } else {
+      content = JSON.stringify({
+        source: {
+          text: sourceText,
+          language: sourceLang,
+          languageName: LANGUAGES.find(l => l.code === sourceLang)?.name
+        },
+        target: {
+          text: translatedText,
+          language: targetLang,
+          languageName: LANGUAGES.find(l => l.code === targetLang)?.name
+        },
+        timestamp: new Date().toISOString()
+      }, null, 2)
+      mimeType = 'application/json'
+      filename = 'translation.json'
+    }
+
+    const blob = new Blob([content], { type: mimeType })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = filename
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+    toast.success(`Downloaded as ${filename}`)
+  }
+
+  const shareTranslation = async (method: 'url' | 'text') => {
+    if (!translatedText.trim()) {
+      toast.error("No translation to share")
+      return
+    }
+
+    if (method === 'url') {
+      const params = new URLSearchParams({
+        text: sourceText,
+        from: sourceLang,
+        to: targetLang
+      })
+      const shareUrl = `${window.location.origin}?${params.toString()}`
+      
+      try {
+        await navigator.clipboard.writeText(shareUrl)
+        toast.success("Share URL copied to clipboard!")
+      } catch (error) {
+        toast.error("Failed to copy share URL")
+      }
+    } else {
+      const shareText = `${sourceText} → ${translatedText}\n\nTranslated from ${LANGUAGES.find(l => l.code === sourceLang)?.name} to ${LANGUAGES.find(l => l.code === targetLang)?.name}`
+      
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Translation',
+            text: shareText
+          })
+        } catch (error) {
+          // Fallback to clipboard
+          await copyToClipboard(shareText)
+        }
+      } else {
+        await copyToClipboard(shareText)
+      }
+    }
+  }
+
+  const manualTranslate = () => {
+    if (sourceText.trim()) {
+      translateText(sourceText, sourceLang, targetLang)
     }
   }
 
@@ -184,6 +301,92 @@ export default function Translator() {
 
       <Card className="shadow-xl border-0 bg-white/95 backdrop-blur-sm">
         <CardContent className="p-8">
+          {/* Translation Settings */}
+          <div className="flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-lg">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                {realTimeEnabled ? <Zap className="h-4 w-4 text-green-600" /> : <ZapOff className="h-4 w-4 text-gray-400" />}
+                <span className="text-sm font-medium">Real-time translation</span>
+                <Switch 
+                  checked={realTimeEnabled} 
+                  onCheckedChange={setRealTimeEnabled}
+                />
+              </div>
+              {!realTimeEnabled && (
+                <Button 
+                  onClick={manualTranslate}
+                  disabled={!sourceText.trim() || isTranslating}
+                  size="sm"
+                  className="bg-blue-600 hover:bg-blue-700"
+                >
+                  {isTranslating ? "Translating..." : "Translate"}
+                </Button>
+              )}
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              {/* Copy Button */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => copyToClipboard(translatedText)}
+                disabled={!translatedText.trim()}
+                className="flex items-center space-x-1"
+              >
+                {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                <span>{copySuccess ? "Copied!" : "Copy"}</span>
+              </Button>
+
+              {/* Download Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    disabled={!translatedText.trim()}
+                    className="flex items-center space-x-1"
+                  >
+                    <Download className="h-4 w-4" />
+                    <span>Download</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem onClick={() => downloadTranslation('txt')}>
+                    Download as Text
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => downloadTranslation('json')}>
+                    Download as JSON
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {/* Share Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    disabled={!translatedText.trim()}
+                    className="flex items-center space-x-1"
+                  >
+                    <Share2 className="h-4 w-4" />
+                    <span>Share</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem onClick={() => shareTranslation('text')}>
+                    Share Translation
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => shareTranslation('url')}>
+                    Copy Share URL
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          </div>
+
+          <Separator className="mb-6" />
+
           {/* Language Selection */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-4">

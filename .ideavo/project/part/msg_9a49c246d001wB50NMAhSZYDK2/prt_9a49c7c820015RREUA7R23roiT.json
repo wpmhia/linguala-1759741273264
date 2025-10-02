@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a49c7c820015RREUA7R23roiT",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01TFcVbzt2Px1bGSKU22btoU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 1,
+      "limit": 10
+    },
+    "output": "<file>\n00002| \n00003| import { useState, useRef, useEffect } from \"react\"\n00004| import { Button } from \"@/components/ui/button\"\n00005| import { Textarea } from \"@/components/ui/textarea\"\n00006| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00007| import { Card, CardContent } from \"@/components/ui/card\"\n00008| import { Copy, ArrowUpDown, Volume2, RotateCcw } from \"lucide-react\"\n00009| import { toast } from \"sonner\"\n00010| \n00011| const LANGUAGES = [\n\n(File has more lines. Use 'offset' parameter to read beyond line 11)\n</file>",
+    "metadata": {
+      "preview": "\nimport { useState, useRef, useEffect } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Card, CardContent } from \"@/components/ui/card\"\nimport { Copy, ArrowUpDown, Volume2, RotateCcw } from \"lucide-react\"\nimport { toast } from \"sonner\"\n\nconst LANGUAGES = ["
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403343582,
+      "end": 1759403343584
+    }
+  }
+}

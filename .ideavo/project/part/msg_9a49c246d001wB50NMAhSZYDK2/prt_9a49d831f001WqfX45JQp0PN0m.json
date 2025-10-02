@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a49d831f001WqfX45JQp0PN0m",
+  "messageID": "msg_9a49c246d001wB50NMAhSZYDK2",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01MKnn4oLJj92TDZNxmG8xok",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "offset": 270,
+      "limit": 20
+    },
+    "output": "<file>\n00271|   }\n00272| \n00273|   const getLanguageName = (code: string) => {\n00274|     return LANGUAGES.find(lang => lang.code === code)?.name || code\n00275|   }\n00276| \n00277|   return (\n00278|     <div className=\"max-w-7xl mx-auto px-4 py-8 space-y-8\">\n00279|       <div className=\"text-center space-y-3\">\n00280|         <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n00281|         <p className=\"text-lg text-gray-600\">Fast, accurate translations powered by Qwen MT-Turbo</p>\n00282|       </div>\n00283| \n00284|       <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">\n00285|         <CardContent className=\"p-8\">\n00286|           {/* Language Selection */}\n00287|           <div className=\"flex items-center justify-between mb-6\">\n00288|             <div className=\"flex items-center space-x-4\">\n00289|                <Select value={sourceLang} onValueChange={(value) => {\n00290|                 setSourceLang(value)\n\n(File has more lines. Use 'offset' parameter to read beyond line 290)\n</file>",
+    "metadata": {
+      "preview": "  }\n\n  const getLanguageName = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code)?.name || code\n  }\n\n  return (\n    <div className=\"max-w-7xl mx-auto px-4 py-8 space-y-8\">\n      <div className=\"text-center space-y-3\">\n        <h1 className=\"text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent\">Translator</h1>\n        <p className=\"text-lg text-gray-600\">Fast, accurate translations powered by Qwen MT-Turbo</p>\n      </div>\n\n      <Card className=\"shadow-xl border-0 bg-white/95 backdrop-blur-sm\">\n        <CardContent className=\"p-8\">\n          {/* Language Selection */}\n          <div className=\"flex items-center justify-between mb-6\">\n            <div className=\"flex items-center space-x-4\">\n               <Select value={sourceLang} onValueChange={(value) => {\n                setSourceLang(value)"
+    },
+    "title": "components/translator.tsx",
+    "time": {
+      "start": 1759403410837,
+      "end": 1759403410838
+    }
+  }
+}

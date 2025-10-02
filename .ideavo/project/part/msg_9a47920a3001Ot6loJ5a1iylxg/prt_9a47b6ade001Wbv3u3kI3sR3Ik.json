@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a47b6ade001Wbv3u3kI3sR3Ik",
+  "messageID": "msg_9a47920a3001Ot6loJ5a1iylxg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(translation): integrate DashScope translation API",
+  "cost": 1.04988915,
+  "tokens": {
+    "input": 1,
+    "output": 144,
+    "reasoning": 0,
+    "cache": {
+      "write": 9839,
+      "read": 0
+    }
+  }
+}

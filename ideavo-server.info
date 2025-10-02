@@ -1,0 +1,21 @@
+$ next dev
+  ▲ Next.js 14.2.31
+  - Local:        http://localhost:4000
+  - Environments: .env
+
+ ✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+ ✓ Ready in 1860ms
+ ✓ Compiled /middleware in 206ms
+ ✓ Compiled (73 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 7.4s (661 modules)
+ GET / 200 in 8182ms
+ ✓ Compiled in 881ms (337 modules)
+ GET / 200 in 146ms
+ ⚠ Cross origin request detected from 4000-iltr9ta76gim4u483kakt.e2b.app to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins

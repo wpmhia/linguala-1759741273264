@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a47ab1390018GiS5lSkOU7WtN",
+  "messageID": "msg_9a47920a3001Ot6loJ5a1iylxg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01RLj8T7cyd5xTHNpQbecVF2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/.env"
+    },
+    "output": "<file>\n00001| # Environment variables\n00002| # Add your environment variables here\n00003| \n00004| DATABASE_URL=\n00005| NEXT_PUBLIC_SUPABASE_URL=\n00006| NEXT_PUBLIC_SUPABASE_ANON_KEY=\n</file>",
+    "metadata": {
+      "preview": "# Environment variables\n# Add your environment variables here\n\nDATABASE_URL=\nNEXT_PUBLIC_SUPABASE_URL=\nNEXT_PUBLIC_SUPABASE_ANON_KEY="
+    },
+    "title": ".env",
+    "time": {
+      "start": 1759401128670,
+      "end": 1759401128671
+    }
+  }
+}

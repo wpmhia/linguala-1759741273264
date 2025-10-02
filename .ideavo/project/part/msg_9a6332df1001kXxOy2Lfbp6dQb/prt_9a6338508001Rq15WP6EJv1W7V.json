@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a6338508001Rq15WP6EJv1W7V",
+  "messageID": "msg_9a6332df1001kXxOy2Lfbp6dQb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01C3kW41HJuosyftjaMtkBvJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 2 && npm run dev &",
+      "description": "Restart dev server with OAuth disabled"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart dev server with OAuth disabled"
+    },
+    "title": "pkill -f \"next dev\" && sleep 2 && npm run dev &",
+    "time": {
+      "start": 1759430019167,
+      "end": 1759430019187
+    }
+  }
+}

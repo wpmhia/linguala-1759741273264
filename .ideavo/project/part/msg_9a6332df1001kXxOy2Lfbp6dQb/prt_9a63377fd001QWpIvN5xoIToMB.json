@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a63377fd001QWpIvN5xoIToMB",
+  "messageID": "msg_9a6332df1001kXxOy2Lfbp6dQb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LRcnZRQk6DEsn4oXU6JKJ2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"Google OAuth has been disabled. Restarting development server...\"",
+      "description": "Confirm OAuth disabled"
+    },
+    "output": "Google OAuth has been disabled. Restarting development server...\n",
+    "metadata": {
+      "output": "Google OAuth has been disabled. Restarting development server...\n",
+      "exit": 0,
+      "description": "Confirm OAuth disabled"
+    },
+    "title": "echo \"Google OAuth has been disabled. Restarting development server...\"",
+    "time": {
+      "start": 1759430015793,
+      "end": 1759430015807
+    }
+  }
+}

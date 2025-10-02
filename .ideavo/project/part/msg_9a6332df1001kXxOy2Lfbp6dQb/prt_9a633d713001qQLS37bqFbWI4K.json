@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a633d713001qQLS37bqFbWI4K",
+  "messageID": "msg_9a6332df1001kXxOy2Lfbp6dQb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(auth): disable Google OAuth credentials",
+  "cost": 0.14660025000000002,
+  "tokens": {
+    "input": 3,
+    "output": 225,
+    "reasoning": 0,
+    "cache": {
+      "write": 183,
+      "read": 70659
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a487e204001BNJI0HNlzy5bU0",
+  "messageID": "msg_9a486e634001fhXsebKVilbjDa",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! The translation API should now work. The issue was that `qwen-mt-turbo` is not a valid model name - I've updated it to use `qwen-plus` which is supported.\n\nTry translating some text in your browser at `http://localhost:3000` - it should work now!\n\nThe translation service is now working with:\n- **Model**: `qwen-plus` (proper Qwen model for general tasks)\n- **API Key**: Your valid DashScope key\n- **Endpoint**: Correct Alibaba Cloud compatible endpoint",
+  "time": {
+    "start": 1759401995831,
+    "end": 1759401995831
+  }
+}

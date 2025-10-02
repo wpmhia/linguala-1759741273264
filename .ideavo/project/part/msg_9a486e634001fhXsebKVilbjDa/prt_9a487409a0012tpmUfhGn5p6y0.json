@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a487409a0012tpmUfhGn5p6y0",
+  "messageID": "msg_9a486e634001fhXsebKVilbjDa",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see the issue! The documentation shows that `qwen-mt-turbo` is NOT in the list of supported models. Looking at the supported models, I need to use one of the available models like `qwen-plus`, `qwen-turbo`, etc.\n\nLet me update the API route to use a supported model:",
+  "time": {
+    "start": 1759401952942,
+    "end": 1759401952942
+  }
+}

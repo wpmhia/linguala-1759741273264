@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a486f329001lrpCmWN4KoXoDQ",
+  "messageID": "msg_9a486e634001fhXsebKVilbjDa",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01KyHYNmhKrxtVozsExfRkvu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/.env"
+    },
+    "output": "<file>\n00001| # Environment variables\n00002| # Add your environment variables here\n00003| \n00004| # Translation Service - Required for the DeepL clone\n00005| DASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n00006| \n00007| # Database (Optional - not used in current DeepL clone)\n00008| DATABASE_URL=\n00009| NEXT_PUBLIC_SUPABASE_URL=\n00010| NEXT_PUBLIC_SUPABASE_ANON_KEY=\n</file>",
+    "metadata": {
+      "preview": "# Environment variables\n# Add your environment variables here\n\n# Translation Service - Required for the DeepL clone\nDASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n\n# Database (Optional - not used in current DeepL clone)\nDATABASE_URL=\nNEXT_PUBLIC_SUPABASE_URL=\nNEXT_PUBLIC_SUPABASE_ANON_KEY="
+    },
+    "title": ".env",
+    "time": {
+      "start": 1759401932015,
+      "end": 1759401932022
+    }
+  }
+}

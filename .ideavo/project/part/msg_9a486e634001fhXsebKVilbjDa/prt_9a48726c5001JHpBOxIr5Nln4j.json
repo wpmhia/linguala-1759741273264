@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a48726c5001JHpBOxIr5Nln4j",
+  "messageID": "msg_9a486e634001fhXsebKVilbjDa",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API is still returning an invalid key error. Let me check if there might be an issue with the model name or endpoint. Let me try a different approach - let me check if the Qwen model is available and what the correct endpoint should be:",
+  "time": {
+    "start": 1759401946004,
+    "end": 1759401946004
+  }
+}

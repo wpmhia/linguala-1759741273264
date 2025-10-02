@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a487f36c001jkI90vmnhmT3nB",
+  "messageID": "msg_9a486e634001fhXsebKVilbjDa",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translate): update Qwen model to supported `qwen-plus`",
+  "cost": 0.18431325,
+  "tokens": {
+    "input": 3,
+    "output": 128,
+    "reasoning": 0,
+    "cache": {
+      "write": 196,
+      "read": 33388
+    }
+  }
+}

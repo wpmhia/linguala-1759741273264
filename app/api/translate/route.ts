@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen-mt-turbo',
+         model: 'qwen-plus',
         messages: [
           {
             role: 'system',

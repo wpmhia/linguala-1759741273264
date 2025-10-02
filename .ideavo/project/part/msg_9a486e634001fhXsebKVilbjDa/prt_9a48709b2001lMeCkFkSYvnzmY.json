@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a48709b2001lMeCkFkSYvnzmY",
+  "messageID": "msg_9a486e634001fhXsebKVilbjDa",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LNdU1xRExygykXMkhpcpep",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST \"https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a professional translator. Provide accurate translations without any additional commentary, explanations, or formatting. Return only the translated text.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": \"Translate the following text to Spanish. Only return the translation without any additional explanation or formatting:\\n\\nHello world\"\n      }\n    ],\n    \"temperature\": 0.3,\n    \"max_tokens\": 2000\n  }'",
+      "description": "Test DashScope API directly with the provided key"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   701  100   173  100   528    186    568 --:--:-- --:--:-- --:--:--   754\n{\"error\":{\"message\":\"Incorrect API key provided. \",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"},\"request_id\":\"cb6f384f-8cee-4c56-a733-ac79fcd041fd\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   701  100   173  100   528    186    568 --:--:-- --:--:-- --:--:--   754\n{\"error\":{\"message\":\"Incorrect API key provided. \",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"},\"request_id\":\"cb6f384f-8cee-4c56-a733-ac79fcd041fd\"}",
+      "exit": 0,
+      "description": "Test DashScope API directly with the provided key"
+    },
+    "title": "curl -X POST \"https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a professional translator. Provide accurate translations without any additional commentary, explanations, or formatting. Return only the translated text.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": \"Translate the following text to Spanish. Only return the translation without any additional explanation or formatting:\\n\\nHello world\"\n      }\n    ],\n    \"temperature\": 0.3,\n    \"max_tokens\": 2000\n  }'",
+    "time": {
+      "start": 1759401941331,
+      "end": 1759401942282
+    }
+  }
+}

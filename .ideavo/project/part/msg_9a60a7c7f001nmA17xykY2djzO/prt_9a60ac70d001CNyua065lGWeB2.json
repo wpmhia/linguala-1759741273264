@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a60ac70d001CNyua065lGWeB2",
+  "messageID": "msg_9a60a7c7f001nmA17xykY2djzO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01FNwrp92mfc9ewr4xvyCnGb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/providers/session-provider.tsx"
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { SessionProvider as NextAuthSessionProvider } from \"next-auth/react\"\n00004| import { ReactNode } from \"react\"\n00005| \n00006| interface Props {\n00007|   children: ReactNode\n00008| }\n00009| \n00010| export function SessionProvider({ children }: Props) {\n00011|   return <NextAuthSessionProvider>{children}</NextAuthSessionProvider>\n00012| }\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { SessionProvider as NextAuthSessionProvider } from \"next-auth/react\"\nimport { ReactNode } from \"react\"\n\ninterface Props {\n  children: ReactNode\n}\n\nexport function SessionProvider({ children }: Props) {\n  return <NextAuthSessionProvider>{children}</NextAuthSessionProvider>\n}"
+    },
+    "title": "components/providers/session-provider.tsx",
+    "time": {
+      "start": 1759427348897,
+      "end": 1759427348899
+    }
+  }
+}

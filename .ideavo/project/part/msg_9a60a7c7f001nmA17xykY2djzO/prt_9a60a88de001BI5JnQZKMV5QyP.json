@@ -1,0 +1,19 @@
+{
+  "id": "prt_9a60a88de001BI5JnQZKMV5QyP",
+  "messageID": "msg_9a60a7c7f001nmA17xykY2djzO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01CchBPWz1VszBjueERpQLAC",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/lib/auth.ts"
+    },
+    "error": "Error: File /lib/auth.ts is not in the current working directory",
+    "time": {
+      "start": 1759427332732,
+      "end": 1759427332732
+    }
+  }
+}

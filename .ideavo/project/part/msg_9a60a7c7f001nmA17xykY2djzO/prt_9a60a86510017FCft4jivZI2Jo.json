@@ -1,0 +1,19 @@
+{
+  "id": "prt_9a60a86510017FCft4jivZI2Jo",
+  "messageID": "msg_9a60a7c7f001nmA17xykY2djzO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01N2jt5vuCpnPr4LF6p897aK",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/app/auth/signin/page.tsx"
+    },
+    "error": "Error: File /app/auth/signin/page.tsx is not in the current working directory",
+    "time": {
+      "start": 1759427332318,
+      "end": 1759427332318
+    }
+  }
+}

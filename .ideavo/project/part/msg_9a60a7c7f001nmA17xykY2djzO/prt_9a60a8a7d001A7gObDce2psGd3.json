@@ -1,0 +1,19 @@
+{
+  "id": "prt_9a60a8a7d001A7gObDce2psGd3",
+  "messageID": "msg_9a60a7c7f001nmA17xykY2djzO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01HemLDdPrLXJFHBJ5MhEjzw",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/app/api/auth/[...nextauth]/route.ts"
+    },
+    "error": "Error: File /app/api/auth/[...nextauth]/route.ts is not in the current working directory",
+    "time": {
+      "start": 1759427333047,
+      "end": 1759427333048
+    }
+  }
+}

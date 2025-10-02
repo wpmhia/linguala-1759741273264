@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a60ab5d0001Nl7fe8pvhV436z",
+  "messageID": "msg_9a60a7c7f001nmA17xykY2djzO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "list",
+  "callID": "toolu_01Qb3e2ycdtqwGwsWcMJcTx7",
+  "state": {
+    "status": "completed",
+    "input": {
+      "path": "/home/user/project/app/auth"
+    },
+    "output": "/home/user/project/app/auth/\n  error/\n    page.tsx\n  signin/\n    page.tsx\n  signout/\n    page.tsx\n  verify-request/\n    page.tsx\n",
+    "metadata": {
+      "count": 4,
+      "truncated": false
+    },
+    "title": "app/auth",
+    "time": {
+      "start": 1759427344433,
+      "end": 1759427344444
+    }
+  }
+}

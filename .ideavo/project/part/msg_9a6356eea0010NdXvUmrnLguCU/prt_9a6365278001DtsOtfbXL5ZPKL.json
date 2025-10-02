@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a6365278001DtsOtfbXL5ZPKL",
+  "messageID": "msg_9a6356eea0010NdXvUmrnLguCU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(auth): configure Google OAuth for localhost development",
+  "cost": 0.21425699999999998,
+  "tokens": {
+    "input": 1,
+    "output": 500,
+    "reasoning": 0,
+    "cache": {
+      "write": 521,
+      "read": 73967
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a63610df001izUkKyvtw5bGEM",
+  "messageID": "msg_9a6356eea0010NdXvUmrnLguCU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "- ✅ **next-auth v4.24.11** with Google Provider\n\n### **4. OAuth client configuration (from your credentials):**\n- **Client ID**: `839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com`\n- **Required redirect URI**: `http://localhost:3000/api/auth/callback/google`\n- **Required JavaScript origin**: `http://localhost:3000`\n\n### **5. Current Implementation:**",
+  "time": {
+    "start": 1759430187156,
+    "end": 1759430187156
+  }
+}

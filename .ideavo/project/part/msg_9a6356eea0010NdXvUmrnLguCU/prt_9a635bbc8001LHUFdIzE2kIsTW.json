@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a635bbc8001LHUFdIzE2kIsTW",
+  "messageID": "msg_9a6356eea0010NdXvUmrnLguCU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014rAkdyk4z8YBujDQyHn1vE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\"",
+      "description": "Stop current dev server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Stop current dev server"
+    },
+    "title": "pkill -f \"next dev\"",
+    "time": {
+      "start": 1759430164088,
+      "end": 1759430164120
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a635aa3d001QBlm8hNMVOJvmV",
+  "messageID": "msg_9a6356eea0010NdXvUmrnLguCU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01CiibXTgo2e1znUnY4Q2kMp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/.env",
+      "oldString": "#GOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\n#GOOGLE_CLIENT_SECRET=\"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\"",
+      "newString": "GOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\nGOOGLE_CLIENT_SECRET=\"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\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/.env\n===================================================================\n--- /home/user/project/.env\n+++ /home/user/project/.env\n@@ -12,8 +12,8 @@\n NEXTAUTH_SECRET=IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\n NEXTAUTH_URL=http://localhost:3000\n \n # OAuth Providers (Optional - for social login)\n-#GOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\n-#GOOGLE_CLIENT_SECRET=\"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\"\n+GOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\n+GOOGLE_CLIENT_SECRET=\"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\"\n # GITHUB_CLIENT_ID=\"your-github-client-id\"\n # GITHUB_CLIENT_SECRET=\"your-github-client-secret\"\n\\ No newline at end of file\n"
+    },
+    "title": ".env",
+    "time": {
+      "start": 1759430160611,
+      "end": 1759430160618
+    }
+  }
+}

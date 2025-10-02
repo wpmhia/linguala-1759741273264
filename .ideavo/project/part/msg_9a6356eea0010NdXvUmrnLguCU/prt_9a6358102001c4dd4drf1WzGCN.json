@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a6358102001c4dd4drf1WzGCN",
+  "messageID": "msg_9a6356eea0010NdXvUmrnLguCU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01VYx1mawRaHWom8msUkh3f8",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/.env",
+      "oldString": "#GOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\n#GOOGLE_CLIENT_SECRET=\"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\"",
+      "newString": "GOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\nGOOGLE_CLIENT_SECRET=\"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\""
+    },
+    "error": "Error: You must read the file /home/user/project/.env before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759430152724,
+      "end": 1759430152728
+    }
+  }
+}

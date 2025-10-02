@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a636033d001RG2RF21swTNIpj",
+  "messageID": "msg_9a6356eea0010NdXvUmrnLguCU",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01UX8cEgNFnuHnBQTG4Jfvnh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep \"next-auth\" /home/user/project/package.json",
+      "description": "Check NextAuth version"
+    },
+    "output": "    \"@types/next-auth\": \"^3.13.0\",\n    \"next-auth\": \"^4.24.11\",\n",
+    "metadata": {
+      "output": "    \"@types/next-auth\": \"^3.13.0\",\n    \"next-auth\": \"^4.24.11\",\n",
+      "exit": 0,
+      "description": "Check NextAuth version"
+    },
+    "title": "grep \"next-auth\" /home/user/project/package.json",
+    "time": {
+      "start": 1759430182419,
+      "end": 1759430182428
+    }
+  }
+}

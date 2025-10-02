@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a59cd42c0015GbY0oW2GV2dBo",
+  "messageID": "msg_9a59c7a09001G3jHwjabiTA7c0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01NNMajiF1rNRtgmZZyQQw3Y",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts"
+    },
+    "output": "<file>\n00001| import { NextAuthOptions } from \"next-auth\"\n00002| import { PrismaAdapter } from \"@auth/prisma-adapter\"\n00003| import { prisma } from \"@/lib/prisma\"\n00004| import GoogleProvider from \"next-auth/providers/google\"\n00005| import EmailProvider from \"next-auth/providers/email\"\n00006| import CredentialsProvider from \"next-auth/providers/credentials\"\n00007| \n00008| export const authOptions: NextAuthOptions = {\n00009|   // Comment out adapter for JWT session strategy\n00010|   // adapter: PrismaAdapter(prisma) as any,\n00011|   providers: [\n00012|     // Simple demo credentials provider for development\n00013|     CredentialsProvider({\n00014|       name: \"Demo Account\",\n00015|       credentials: {\n00016|         email: { label: \"Email\", type: \"email\", placeholder: \"demo@linguala.eu\" }\n00017|       },\n00018|       async authorize(credentials) {\n00019|         // For demo purposes, accept any email\n00020|         if (credentials?.email) {\n00021|           return {\n00022|             id: \"demo-user\",\n00023|             email: credentials.email,\n00024|             name: credentials.email.split('@')[0],\n00025|             image: null,\n00026|           }\n00027|         }\n00028|         return null\n00029|       }\n00030|     }),\n00031|     \n00032|     // Email provider - only enable if SMTP is configured\n00033|     ...(process.env.EMAIL_SERVER_HOST ? [\n00034|       EmailProvider({\n00035|         server: {\n00036|           host: process.env.EMAIL_SERVER_HOST,\n00037|           port: process.env.EMAIL_SERVER_PORT,\n00038|           auth: {\n00039|             user: process.env.EMAIL_SERVER_USER,\n00040|             pass: process.env.EMAIL_SERVER_PASSWORD,\n00041|           },\n00042|         },\n00043|         from: process.env.EMAIL_FROM,\n00044|       })\n00045|     ] : []),\n00046|     \n00047|     // Google OAuth provider - only enable if credentials are configured\n00048|     ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [\n00049|       GoogleProvider({\n00050|         clientId: process.env.GOOGLE_CLIENT_ID,\n00051|         clientSecret: process.env.GOOGLE_CLIENT_SECRET,\n00052|       })\n00053|     ] : []),\n00054|   ],\n00055|   \n00056|   session: {\n00057|     strategy: \"jwt\",\n00058|     maxAge: 30 * 24 * 60 * 60, // 30 days\n00059|   },\n00060|   \n00061|   pages: {\n00062|     signIn: '/auth/signin',\n00063|     signOut: '/auth/signout',\n00064|     error: '/auth/error',\n00065|     verifyRequest: '/auth/verify-request',\n00066|   },\n00067|   \n00068|   callbacks: {\n00069|     async jwt({ token, user }) {\n00070|       if (user) {\n00071|         token.id = user.id\n00072|       }\n00073|       return token\n00074|     },\n00075|     async session({ session, token }) {\n00076|       if (session?.user) {\n00077|         session.user.id = token.id as string\n00078|       }\n00079|       return session\n00080|     },\n00081|   },\n00082|   \n00083|   events: {\n00084|     async createUser({ user }) {\n00085|       console.log(`New user created: ${user.email}`)\n00086|     },\n00087|   },\n00088| }\n</file>",
+    "metadata": {
+      "preview": "import { NextAuthOptions } from \"next-auth\"\nimport { PrismaAdapter } from \"@auth/prisma-adapter\"\nimport { prisma } from \"@/lib/prisma\"\nimport GoogleProvider from \"next-auth/providers/google\"\nimport EmailProvider from \"next-auth/providers/email\"\nimport CredentialsProvider from \"next-auth/providers/credentials\"\n\nexport const authOptions: NextAuthOptions = {\n  // Comment out adapter for JWT session strategy\n  // adapter: PrismaAdapter(prisma) as any,\n  providers: [\n    // Simple demo credentials provider for development\n    CredentialsProvider({\n      name: \"Demo Account\",\n      credentials: {\n        email: { label: \"Email\", type: \"email\", placeholder: \"demo@linguala.eu\" }\n      },\n      async authorize(credentials) {\n        // For demo purposes, accept any email\n        if (credentials?.email) {"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759420142906,
+      "end": 1759420142910
+    }
+  }
+}

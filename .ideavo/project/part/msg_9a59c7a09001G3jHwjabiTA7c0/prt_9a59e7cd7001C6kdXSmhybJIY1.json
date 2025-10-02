@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a59e7cd7001C6kdXSmhybJIY1",
+  "messageID": "msg_9a59c7a09001G3jHwjabiTA7c0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_018smN4xo6s56PdCEpmpgkiP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/auth/signin/page.tsx",
+      "oldString": "  const handleOAuthSignIn = async (providerId: string) => {\n    setIsLoading(true)\n    try {\n      await signIn(providerId, { callbackUrl })\n    } catch (error) {\n      console.error(\"OAuth sign in error:\", error)\n      setIsLoading(false)\n    }\n  }",
+      "newString": "  const handleOAuthSignIn = async (providerId: string) => {\n    setIsLoading(true)\n    try {\n      const result = await signIn(providerId, { \n        callbackUrl,\n        redirect: false \n      })\n      \n      if (result?.ok) {\n        setShowSuccess(true)\n        setTimeout(() => {\n          window.location.href = callbackUrl\n        }, 1500)\n      } else if (result?.url) {\n        // OAuth redirect\n        window.location.href = result.url\n      }\n    } catch (error) {\n      console.error(\"OAuth sign in error:\", error)\n      setIsLoading(false)\n    }\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/auth/signin/page.tsx\n===================================================================\n--- /home/user/project/app/auth/signin/page.tsx\n+++ /home/user/project/app/auth/signin/page.tsx\n@@ -71,9 +71,22 @@\n \n const handleOAuthSignIn = async (providerId: string) => {\n   setIsLoading(true)\n   try {\n-    await signIn(providerId, { callbackUrl })\n+    const result = await signIn(providerId, { \n+      callbackUrl,\n+      redirect: false \n+    })\n+    \n+    if (result?.ok) {\n+      setShowSuccess(true)\n+      setTimeout(() => {\n+        window.location.href = callbackUrl\n+      }, 1500)\n+    } else if (result?.url) {\n+      // OAuth redirect\n+      window.location.href = result.url\n+    }\n   } catch (error) {\n     console.error(\"OAuth sign in error:\", error)\n     setIsLoading(false)\n   }\n"
+    },
+    "title": "app/auth/signin/page.tsx",
+    "time": {
+      "start": 1759420254402,
+      "end": 1759420254408
+    }
+  }
+}

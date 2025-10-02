@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a59ea1a2002Inxn0Ef59iPP1Z",
+  "messageID": "msg_9a59c7a09001G3jHwjabiTA7c0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Bmevd9qbGsT3X1wJYFfKFA",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/auth/signin/page.tsx",
+      "oldString": "        <CardContent className=\"space-y-4\">\n          {error && (\n            <Alert className=\"border-red-200 bg-red-50\">\n              <AlertTriangle className=\"h-4 w-4 text-red-600\" />\n              <AlertDescription className=\"text-red-700\">\n                {getErrorMessage(error)}\n              </AlertDescription>\n            </Alert>\n          )}",
+      "newString": "        <CardContent className=\"space-y-4\">\n          {showSuccess && (\n            <Alert className=\"border-green-200 bg-green-50\">\n              <CheckCircle className=\"h-4 w-4 text-green-600\" />\n              <AlertDescription className=\"text-green-700\">\n                Success! Welcome to Linguala. Redirecting to your dashboard...\n              </AlertDescription>\n            </Alert>\n          )}\n          \n          {error && !showSuccess && (\n            <Alert className=\"border-red-200 bg-red-50\">\n              <AlertTriangle className=\"h-4 w-4 text-red-600\" />\n              <AlertDescription className=\"text-red-700\">\n                {getErrorMessage(error)}\n              </AlertDescription>\n            </Alert>\n          )}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/auth/signin/page.tsx\n===================================================================\n--- /home/user/project/app/auth/signin/page.tsx\n+++ /home/user/project/app/auth/signin/page.tsx\n@@ -125,9 +125,18 @@\n   </CardDescription>\n </CardHeader>\n \n <CardContent className=\"space-y-4\">\n-  {error && (\n+  {showSuccess && (\n+    <Alert className=\"border-green-200 bg-green-50\">\n+      <CheckCircle className=\"h-4 w-4 text-green-600\" />\n+      <AlertDescription className=\"text-green-700\">\n+        Success! Welcome to Linguala. Redirecting to your dashboard...\n+      </AlertDescription>\n+    </Alert>\n+  )}\n+  \n+  {error && !showSuccess && (\n     <Alert className=\"border-red-200 bg-red-50\">\n       <AlertTriangle className=\"h-4 w-4 text-red-600\" />\n       <AlertDescription className=\"text-red-700\">\n         {getErrorMessage(error)}\n"
+    },
+    "title": "app/auth/signin/page.tsx",
+    "time": {
+      "start": 1759420264368,
+      "end": 1759420264374
+    }
+  }
+}

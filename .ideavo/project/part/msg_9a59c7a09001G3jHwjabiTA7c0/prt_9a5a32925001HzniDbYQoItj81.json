@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a5a32925001HzniDbYQoItj81",
+  "messageID": "msg_9a59c7a09001G3jHwjabiTA7c0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(auth): complete overhaul of authentication flow",
+  "cost": 0.97528845,
+  "tokens": {
+    "input": 4,
+    "output": 858,
+    "reasoning": 0,
+    "cache": {
+      "write": 453,
+      "read": 74173
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a59ed867001ECgX3yKSCRWlmy",
+  "messageID": "msg_9a59c7a09001G3jHwjabiTA7c0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01SBMWA5hfzzphUKn59q5MEh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/auth/signin/page.tsx",
+      "oldString": "                    disabled={isLoading}",
+      "newString": "                    disabled={isLoading || showSuccess}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/auth/signin/page.tsx\n===================================================================\n--- /home/user/project/app/auth/signin/page.tsx\n+++ /home/user/project/app/auth/signin/page.tsx\n@@ -192,9 +192,9 @@\n {providers.google && (\n   <Button\n     variant=\"outline\"\n     onClick={() => handleOAuthSignIn(\"google\")}\n-    disabled={isLoading}\n+    disabled={isLoading || showSuccess}\n     className=\"w-full\"\n   >\n     <Chrome className=\"h-4 w-4 mr-2\" />\n     Continue with Google\n"
+    },
+    "title": "app/auth/signin/page.tsx",
+    "time": {
+      "start": 1759420275657,
+      "end": 1759420275659
+    }
+  }
+}

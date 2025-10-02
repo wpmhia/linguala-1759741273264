@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a59e2bc5001Q5hi4iYKF9XTRJ",
+  "messageID": "msg_9a59c7a09001G3jHwjabiTA7c0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01BNGN6VCxUkcZ1yeuMxKTep",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "    // Simple demo credentials provider for development\n    CredentialsProvider({\n      name: \"Demo Account\",\n      credentials: {\n        email: { label: \"Email\", type: \"email\", placeholder: \"demo@linguala.eu\" }\n      },\n      async authorize(credentials) {\n        // For demo purposes, accept any email\n        if (credentials?.email) {\n          return {\n            id: \"demo-user\",\n            email: credentials.email,\n            name: credentials.email.split('@')[0],\n            image: null,\n          }\n        }\n        return null\n      }\n    }),",
+      "newString": "    // Email-based account creation (no password needed)\n    CredentialsProvider({\n      name: \"Email Account\",\n      credentials: {\n        email: { label: \"Email\", type: \"email\", placeholder: \"your@email.com\" }\n      },\n      async authorize(credentials) {\n        // Accept any valid email and create account automatically\n        if (credentials?.email && credentials.email.includes('@')) {\n          const emailParts = credentials.email.split('@')\n          const username = emailParts[0]\n          const domain = emailParts[1]\n          \n          return {\n            id: `email_${credentials.email.replace(/[^a-zA-Z0-9]/g, '_')}`,\n            email: credentials.email,\n            name: username.charAt(0).toUpperCase() + username.slice(1),\n            image: null,\n          }\n        }\n        return null\n      }\n    }),"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -8,21 +8,25 @@\n export const authOptions: NextAuthOptions = {\n   // Comment out adapter for JWT session strategy\n   // adapter: PrismaAdapter(prisma) as any,\n   providers: [\n-    // Simple demo credentials provider for development\n+    // Email-based account creation (no password needed)\n     CredentialsProvider({\n-      name: \"Demo Account\",\n+      name: \"Email Account\",\n       credentials: {\n-        email: { label: \"Email\", type: \"email\", placeholder: \"demo@linguala.eu\" }\n+        email: { label: \"Email\", type: \"email\", placeholder: \"your@email.com\" }\n       },\n       async authorize(credentials) {\n-        // For demo purposes, accept any email\n-        if (credentials?.email) {\n+        // Accept any valid email and create account automatically\n+        if (credentials?.email && credentials.email.includes('@')) {\n+          const emailParts = credentials.email.split('@')\n+          const username = emailParts[0]\n+          const domain = emailParts[1]\n+          \n           return {\n-            id: \"demo-user\",\n+            id: `email_${credentials.email.replace(/[^a-zA-Z0-9]/g, '_')}`,\n             email: credentials.email,\n-            name: credentials.email.split('@')[0],\n+            name: username.charAt(0).toUpperCase() + username.slice(1),\n             image: null,\n           }\n         }\n         return null\n"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759420236315,
+      "end": 1759420236319
+    }
+  }
+}

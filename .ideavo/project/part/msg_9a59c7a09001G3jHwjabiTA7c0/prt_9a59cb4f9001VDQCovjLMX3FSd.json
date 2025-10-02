@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a59cb4f9001VDQCovjLMX3FSd",
+  "messageID": "msg_9a59c7a09001G3jHwjabiTA7c0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "First, let me fix the JWT callback to properly handle new OAuth users:",
+  "time": {
+    "start": 1759420135127,
+    "end": 1759420135127
+  }
+}

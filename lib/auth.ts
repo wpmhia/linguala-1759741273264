@@ -9,19 +9,23 @@ export const authOptions: NextAuthOptions = {
   // Comment out adapter for JWT session strategy
   // adapter: PrismaAdapter(prisma) as any,
   providers: [
-    // Simple demo credentials provider for development
+    // Email-based account creation (no password needed)
     CredentialsProvider({
-      name: "Demo Account",
+      name: "Email Account",
       credentials: {
-        email: { label: "Email", type: "email", placeholder: "demo@linguala.eu" }
+        email: { label: "Email", type: "email", placeholder: "your@email.com" }
       },
       async authorize(credentials) {
-        // For demo purposes, accept any email
-        if (credentials?.email) {
+        // Accept any valid email and create account automatically
+        if (credentials?.email && credentials.email.includes('@')) {
+          const emailParts = credentials.email.split('@')
+          const username = emailParts[0]
+          const domain = emailParts[1]
+          
           return {
-            id: "demo-user",
+            id: `email_${credentials.email.replace(/[^a-zA-Z0-9]/g, '_')}`,
             email: credentials.email,
-            name: credentials.email.split('@')[0],
+            name: username.charAt(0).toUpperCase() + username.slice(1),
             image: null,
           }
         }
@@ -66,15 +70,28 @@ export const authOptions: NextAuthOptions = {
   },
   
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
       if (user) {
-        token.id = user.id
+        // For new OAuth users, generate a consistent ID
+        if (account?.provider === 'google') {
+          token.id = `google_${user.id}`
+        } else if (account?.provider === 'credentials') {
+          token.id = user.id
+        } else {
+          token.id = user.id || `user_${Date.now()}`
+        }
+        token.email = user.email
+        token.name = user.name
+        token.image = user.image
       }
       return token
     },
     async session({ session, token }) {
-      if (session?.user) {
+      if (session?.user && token) {
         session.user.id = token.id as string
+        session.user.email = token.email as string
+        session.user.name = token.name as string
+        session.user.image = token.image as string
       }
       return session
     },

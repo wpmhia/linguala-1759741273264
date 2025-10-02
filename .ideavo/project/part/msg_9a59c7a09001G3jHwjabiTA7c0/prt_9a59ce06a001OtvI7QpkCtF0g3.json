@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a59ce06a001OtvI7QpkCtF0g3",
+  "messageID": "msg_9a59c7a09001G3jHwjabiTA7c0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01D9319i4cLH9JqeuB6eHrFh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/auth.ts",
+      "oldString": "  callbacks: {\n    async jwt({ token, user }) {\n      if (user) {\n        token.id = user.id\n      }\n      return token\n    },\n    async session({ session, token }) {\n      if (session?.user) {\n        session.user.id = token.id as string\n      }\n      return session\n    },\n  },",
+      "newString": "  callbacks: {\n    async jwt({ token, user, account }) {\n      if (user) {\n        // For new OAuth users, generate a consistent ID\n        if (account?.provider === 'google') {\n          token.id = `google_${user.id}`\n        } else if (account?.provider === 'credentials') {\n          token.id = user.id\n        } else {\n          token.id = user.id || `user_${Date.now()}`\n        }\n        token.email = user.email\n        token.name = user.name\n        token.image = user.image\n      }\n      return token\n    },\n    async session({ session, token }) {\n      if (session?.user && token) {\n        session.user.id = token.id as string\n        session.user.email = token.email as string\n        session.user.name = token.name as string\n        session.user.image = token.image as string\n      }\n      return session\n    },\n  },"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/auth.ts\n===================================================================\n--- /home/user/project/lib/auth.ts\n+++ /home/user/project/lib/auth.ts\n@@ -65,17 +65,30 @@\n   verifyRequest: '/auth/verify-request',\n },\n \n callbacks: {\n-  async jwt({ token, user }) {\n+  async jwt({ token, user, account }) {\n     if (user) {\n-      token.id = user.id\n+      // For new OAuth users, generate a consistent ID\n+      if (account?.provider === 'google') {\n+        token.id = `google_${user.id}`\n+      } else if (account?.provider === 'credentials') {\n+        token.id = user.id\n+      } else {\n+        token.id = user.id || `user_${Date.now()}`\n+      }\n+      token.email = user.email\n+      token.name = user.name\n+      token.image = user.image\n     }\n     return token\n   },\n   async session({ session, token }) {\n-    if (session?.user) {\n+    if (session?.user && token) {\n       session.user.id = token.id as string\n+      session.user.email = token.email as string\n+      session.user.name = token.name as string\n+      session.user.image = token.image as string\n     }\n     return session\n   },\n },\n"
+    },
+    "title": "lib/auth.ts",
+    "time": {
+      "start": 1759420150373,
+      "end": 1759420150396
+    }
+  }
+}

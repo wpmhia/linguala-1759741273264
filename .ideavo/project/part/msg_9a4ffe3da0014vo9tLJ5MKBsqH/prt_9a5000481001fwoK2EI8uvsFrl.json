@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a5000481001fwoK2EI8uvsFrl",
+  "messageID": "msg_9a4ffe3da0014vo9tLJ5MKBsqH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01XgrMdsBoHb522ao1cY6R7z",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 59,
+      "limit": 15
+    },
+    "output": "<file>\n00060|   { code: \"bg\", name: \"Bulgarian\", region: \"Eastern Europe\", popular: false },\n00061|   { code: \"ro\", name: \"Romanian\", region: \"Eastern Europe\", popular: false },\n00062|   { code: \"lt\", name: \"Lithuanian\", region: \"Eastern Europe\", popular: false },\n00063|   { code: \"lv\", name: \"Latvian\", region: \"Eastern Europe\", popular: false },\n00064|   { code: \"et\", name: \"Estonian\", region: \"Eastern Europe\", popular: false },\n00065|   \n00066|   // Balkan languages\n00067|   { code: \"sr\", name: \"Serbian\", region: \"Balkan Europe\", popular: false },\n00068|   { code: \"bs\", name: \"Bosnian\", region: \"Balkan Europe\", popular: false },\n00069|   { code: \"mk\", name: \"Macedonian\", region: \"Balkan Europe\", popular: false },\n00070|   { code: \"sq\", name: \"Albanian\", region: \"Balkan Europe\", popular: false },\n00071|   { code: \"el\", name: \"Greek\", region: \"Southern Europe\", popular: false }\n00072| ]\n00073| \n00074| export default function LingualaTranslator() {\n\n(File has more lines. Use 'offset' parameter to read beyond line 74)\n</file>",
+    "metadata": {
+      "preview": "  { code: \"bg\", name: \"Bulgarian\", region: \"Eastern Europe\", popular: false },\n  { code: \"ro\", name: \"Romanian\", region: \"Eastern Europe\", popular: false },\n  { code: \"lt\", name: \"Lithuanian\", region: \"Eastern Europe\", popular: false },\n  { code: \"lv\", name: \"Latvian\", region: \"Eastern Europe\", popular: false },\n  { code: \"et\", name: \"Estonian\", region: \"Eastern Europe\", popular: false },\n  \n  // Balkan languages\n  { code: \"sr\", name: \"Serbian\", region: \"Balkan Europe\", popular: false },\n  { code: \"bs\", name: \"Bosnian\", region: \"Balkan Europe\", popular: false },\n  { code: \"mk\", name: \"Macedonian\", region: \"Balkan Europe\", popular: false },\n  { code: \"sq\", name: \"Albanian\", region: \"Balkan Europe\", popular: false },\n  { code: \"el\", name: \"Greek\", region: \"Southern Europe\", popular: false }\n]\n\nexport default function LingualaTranslator() {"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759409866480,
+      "end": 1759409866482
+    }
+  }
+}

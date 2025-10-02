@@ -17,58 +17,46 @@ import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { UserProfile } from "@/components/user-profile"
 
-// Complete European language data
+// Official EU Languages (24 languages)
 const LANGUAGES = [
   // Auto-detect
   { code: "auto", name: "Detect language", region: "auto", popular: true },
   
-  // English - European lingua franca
-  { code: "en", name: "English", region: "European Standard", popular: true },
+  // Most Popular EU Languages
+  { code: "en", name: "English", region: "EU Official", popular: true },
+  { code: "de", name: "German", region: "EU Official", popular: true },
+  { code: "fr", name: "French", region: "EU Official", popular: true },
+  { code: "es", name: "Spanish", region: "EU Official", popular: true },
+  { code: "it", name: "Italian", region: "EU Official", popular: true },
+  { code: "pt", name: "Portuguese", region: "EU Official", popular: true },
+  { code: "pl", name: "Polish", region: "EU Official", popular: true },
+  { code: "nl", name: "Dutch", region: "EU Official", popular: true },
   
-  // Major European languages (most popular)
-  { code: "de", name: "German", region: "Central Europe", popular: true },
-  { code: "fr", name: "French", region: "Western Europe", popular: true },
-  { code: "es", name: "Spanish", region: "Southern Europe", popular: true },
-  { code: "it", name: "Italian", region: "Southern Europe", popular: true },
-  { code: "pt", name: "Portuguese", region: "Southern Europe", popular: true },
-  { code: "ru", name: "Russian", region: "Eastern Europe", popular: true },
-  { code: "pl", name: "Polish", region: "Eastern Europe", popular: true },
-  { code: "nl", name: "Dutch", region: "Western Europe", popular: true },
+  // Nordic EU Languages
+  { code: "da", name: "Danish", region: "EU Official", popular: false },
+  { code: "sv", name: "Swedish", region: "EU Official", popular: false },
+  { code: "fi", name: "Finnish", region: "EU Official", popular: false },
   
-  // Nordic languages (Northern Europe)
-  { code: "da", name: "Danish", region: "Nordic Europe", popular: false },
-  { code: "sv", name: "Swedish", region: "Nordic Europe", popular: false },
-  { code: "no", name: "Norwegian", region: "Nordic Europe", popular: false },
-  { code: "fi", name: "Finnish", region: "Nordic Europe", popular: false },
-  { code: "is", name: "Icelandic", region: "Nordic Europe", popular: false },
+  // Western EU Languages
+  { code: "ga", name: "Irish", region: "EU Official", popular: false },
+  { code: "mt", name: "Maltese", region: "EU Official", popular: false },
   
-  // Other Western European languages
-  { code: "be", name: "Belgian", region: "Western Europe", popular: false },
-  { code: "ga", name: "Irish", region: "Western Europe", popular: false },
-  { code: "cy", name: "Welsh", region: "Western Europe", popular: false },
-  { code: "mt", name: "Maltese", region: "Southern Europe", popular: false },
+  // Central EU Languages
+  { code: "cs", name: "Czech", region: "EU Official", popular: false },
+  { code: "sk", name: "Slovak", region: "EU Official", popular: false },
+  { code: "hu", name: "Hungarian", region: "EU Official", popular: false },
+  { code: "sl", name: "Slovenian", region: "EU Official", popular: false },
+  { code: "hr", name: "Croatian", region: "EU Official", popular: false },
   
-  // Central European languages
-  { code: "cs", name: "Czech", region: "Central Europe", popular: false },
-  { code: "sk", name: "Slovak", region: "Central Europe", popular: false },
-  { code: "hu", name: "Hungarian", region: "Central Europe", popular: false },
-  { code: "sl", name: "Slovenian", region: "Central Europe", popular: false },
-  { code: "hr", name: "Croatian", region: "Central Europe", popular: false },
+  // Eastern EU Languages
+  { code: "bg", name: "Bulgarian", region: "EU Official", popular: false },
+  { code: "ro", name: "Romanian", region: "EU Official", popular: false },
+  { code: "lt", name: "Lithuanian", region: "EU Official", popular: false },
+  { code: "lv", name: "Latvian", region: "EU Official", popular: false },
+  { code: "et", name: "Estonian", region: "EU Official", popular: false },
   
-  // Eastern European languages
-  { code: "uk", name: "Ukrainian", region: "Eastern Europe", popular: false },
-  { code: "bg", name: "Bulgarian", region: "Eastern Europe", popular: false },
-  { code: "ro", name: "Romanian", region: "Eastern Europe", popular: false },
-  { code: "lt", name: "Lithuanian", region: "Eastern Europe", popular: false },
-  { code: "lv", name: "Latvian", region: "Eastern Europe", popular: false },
-  { code: "et", name: "Estonian", region: "Eastern Europe", popular: false },
-  
-  // Balkan languages
-  { code: "sr", name: "Serbian", region: "Balkan Europe", popular: false },
-  { code: "bs", name: "Bosnian", region: "Balkan Europe", popular: false },
-  { code: "mk", name: "Macedonian", region: "Balkan Europe", popular: false },
-  { code: "sq", name: "Albanian", region: "Balkan Europe", popular: false },
-  { code: "el", name: "Greek", region: "Southern Europe", popular: false }
+  // Southern EU Languages
+  { code: "el", name: "Greek", region: "EU Official", popular: false }
 ]
 
 export default function LingualaTranslator() {
@@ -162,8 +150,8 @@ export default function LingualaTranslator() {
         <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
           <CardHeader className="pb-4">
             <div className="text-center">
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">European Translation Platform</h1>
-              <p className="text-gray-600">Professional translation tools for European languages</p>
+              <h1 className="text-2xl font-bold text-gray-900 mb-2">Official EU Translation Platform</h1>
+              <p className="text-gray-600">Professional translation tools for all 24 official EU languages</p>
             </div>
           </CardHeader>
 
@@ -281,10 +269,10 @@ export default function LingualaTranslator() {
               <CardContent className="p-8">
                 <div className="text-center mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                    Unlock Professional European Translation
+                    Unlock Professional EU Translation
                   </h2>
                   <p className="text-lg text-gray-600">
-                    Join thousands of European professionals using advanced translation tools
+                    Join thousands of EU professionals translating across all 24 official languages
                   </p>
                 </div>
                 
@@ -354,16 +342,16 @@ export default function LingualaTranslator() {
                     </p>
                   </div>
 
-                  {/* European Focus */}
+                  {/* EU Official */}
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
                     <div className="flex items-center mb-4">
-                      <div className="p-3 rounded-full bg-red-500">
+                      <div className="p-3 rounded-full bg-blue-600">
                         <Globe className="h-6 w-6 text-white" />
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900 ml-4">European Focus</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 ml-4">EU Official Languages</h3>
                     </div>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Optimized for European languages, culture, and business contexts
+                      All 24 official EU languages with optimized cultural and business contexts
                     </p>
                   </div>
                 </div>
@@ -372,12 +360,12 @@ export default function LingualaTranslator() {
                   <Button 
                     onClick={() => window.location.href = '/auth/signin'}
                     size="lg"
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+                    className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-4 text-lg font-semibold"
                   >
-                    Join Europe's Translation Platform - Free
+                    Join the Official EU Translation Platform - Free
                   </Button>
                   <p className="text-sm text-gray-500 mt-3">
-                    Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.
+                    Sign in to access all 24 EU languages, domain expertise, multilingual glossaries, and professional tools built for EU contexts.
                   </p>
                 </div>
               </CardContent>

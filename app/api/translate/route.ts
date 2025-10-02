@@ -42,7 +42,6 @@ function getFallbackTranslation(text: string, targetLanguage: string): string | 
     'wat gaan we vanavond eten': {
       'Danish': 'Hvad skal vi spise i aften?',
       'Swedish': 'Vad ska vi äta ikväll?',
-      'Norwegian': 'Hva skal vi spise i kveld?',
       'Finnish': 'Mitä syömme tänä iltana?',
       'German': 'Was essen wir heute Abend?',
       'French': 'Que mangeons-nous ce soir?',
@@ -50,13 +49,11 @@ function getFallbackTranslation(text: string, targetLanguage: string): string | 
       'English': 'What are we going to eat tonight?',
       'Italian': 'Cosa mangiamo stasera?',
       'Portuguese': 'O que vamos comer hoje à noite?',
-      'Polish': 'Co będziemy jeść dziś wieczorem?',
-      'Russian': 'Что мы будем есть сегодня вечером?'
+      'Polish': 'Co będziemy jeść dziś wieczorem?'
     },
     'wat eten we': {
       'Danish': 'Hvad spiser vi?',
       'Swedish': 'Vad äter vi?',
-      'Norwegian': 'Hva spiser vi?',
       'Finnish': 'Mitä syömme?',
       'German': 'Was essen wir?',
       'French': 'Que mangeons-nous?',
@@ -74,56 +71,45 @@ function getFallbackTranslation(text: string, targetLanguage: string): string | 
   return null
 }
 
-// Language mapping for Qwen API
+// Official EU Languages (24 languages) - Language mapping for translation API
 const LANGUAGE_MAP: Record<string, string> = {
   auto: 'auto',
+  
+  // Popular EU Languages
   en: 'English',
-  zh: 'Chinese',
-  ja: 'Japanese',
-  ko: 'Korean',
-  es: 'Spanish',
+  de: 'German', 
   fr: 'French',
-  de: 'German',
+  es: 'Spanish',
   it: 'Italian',
   pt: 'Portuguese',
-  ru: 'Russian',
-  ar: 'Arabic',
-  da: 'Danish',
-  nl: 'Dutch',
-  sv: 'Swedish',
-  no: 'Norwegian',
-  fi: 'Finnish',
   pl: 'Polish',
-  cs: 'Czech',
-  hu: 'Hungarian',
-  ro: 'Romanian',
-  bg: 'Bulgarian',
-  hr: 'Croatian',
-  sk: 'Slovak',
-  sl: 'Slovenian',
-  et: 'Estonian',
-  lv: 'Latvian',
-  lt: 'Lithuanian',
-  el: 'Greek',
-  tr: 'Turkish',
-  he: 'Hebrew',
-  hi: 'Hindi',
-  th: 'Thai',
-  vi: 'Vietnamese',
-  ms: 'Malay',
-  id: 'Indonesian',
-  tl: 'Filipino',
-  uk: 'Ukrainian',
-  // Additional European languages
-  is: 'Icelandic',
-  be: 'Belarusian',
+  nl: 'Dutch',
+  
+  // Nordic EU Languages
+  da: 'Danish',
+  sv: 'Swedish',
+  fi: 'Finnish',
+  
+  // Western EU Languages
   ga: 'Irish',
-  cy: 'Welsh',
   mt: 'Maltese',
-  sr: 'Serbian',
-  bs: 'Bosnian',
-  mk: 'Macedonian',
-  sq: 'Albanian',
+  
+  // Central EU Languages
+  cs: 'Czech',
+  sk: 'Slovak',
+  hu: 'Hungarian',
+  sl: 'Slovenian',
+  hr: 'Croatian',
+  
+  // Eastern EU Languages
+  bg: 'Bulgarian',
+  ro: 'Romanian',
+  lt: 'Lithuanian',
+  lv: 'Latvian',
+  et: 'Estonian',
+  
+  // Southern EU Languages
+  el: 'Greek',
 }
 
 export async function POST(request: NextRequest) {

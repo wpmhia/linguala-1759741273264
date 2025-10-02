@@ -92,7 +92,7 @@ export function LingualaLogo({ size = "md", showText = true, className }: Lingua
           </span>
           {(size === "lg" || size === "xl") && (
             <span className="text-xs text-gray-600 -mt-1 tracking-widest uppercase font-medium">
-              European Translation
+              EU Translation Platform
             </span>
           )}
         </div>

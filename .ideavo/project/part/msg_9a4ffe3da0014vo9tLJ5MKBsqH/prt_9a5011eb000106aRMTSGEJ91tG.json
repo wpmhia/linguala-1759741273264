@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a5011eb000106aRMTSGEJ91tG",
+  "messageID": "msg_9a4ffe3da0014vo9tLJ5MKBsqH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_014BSk7VBmgs6H2PCGWdbSzd",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 106,
+      "limit": 15
+    },
+    "output": "<file>\n00107|   el: 'Greek',\n00108|   tr: 'Turkish',\n00109|   he: 'Hebrew',\n00110|   hi: 'Hindi',\n00111|   th: 'Thai',\n00112|   vi: 'Vietnamese',\n00113|   ms: 'Malay',\n00114|   id: 'Indonesian',\n00115|   tl: 'Filipino',\n00116|   uk: 'Ukrainian',\n00117|   // Additional European languages\n00118|   is: 'Icelandic',\n00119|   be: 'Belarusian',\n00120|   ga: 'Irish',\n00121|   cy: 'Welsh',\n\n(File has more lines. Use 'offset' parameter to read beyond line 121)\n</file>",
+    "metadata": {
+      "preview": "  el: 'Greek',\n  tr: 'Turkish',\n  he: 'Hebrew',\n  hi: 'Hindi',\n  th: 'Thai',\n  vi: 'Vietnamese',\n  ms: 'Malay',\n  id: 'Indonesian',\n  tl: 'Filipino',\n  uk: 'Ukrainian',\n  // Additional European languages\n  is: 'Icelandic',\n  be: 'Belarusian',\n  ga: 'Irish',\n  cy: 'Welsh',"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759409938750,
+      "end": 1759409938751
+    }
+  }
+}

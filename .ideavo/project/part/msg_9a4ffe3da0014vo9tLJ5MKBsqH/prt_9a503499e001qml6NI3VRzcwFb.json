@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a503499e001qml6NI3VRzcwFb",
+  "messageID": "msg_9a4ffe3da0014vo9tLJ5MKBsqH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(linguala): limit languages to 24 official EU languages",
+  "cost": 0.8141596499999999,
+  "tokens": {
+    "input": 0,
+    "output": 460,
+    "reasoning": 0,
+    "cache": {
+      "write": 631,
+      "read": 99147
+    }
+  }
+}

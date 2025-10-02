@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a5016cdc001kskWZD0C7DTa3l",
+  "messageID": "msg_9a4ffe3da0014vo9tLJ5MKBsqH",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01G3fqGQSejfMXKfeyKY8J5i",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "    'wat gaan we vanavond eten': {\n      'Danish': 'Hvad skal vi spise i aften?',\n      'Swedish': 'Vad ska vi äta ikväll?',\n      'Norwegian': 'Hva skal vi spise i kveld?',\n      'Finnish': 'Mitä syömme tänä iltana?',\n      'German': 'Was essen wir heute Abend?',\n      'French': 'Que mangeons-nous ce soir?',\n      'Spanish': '¿Qué vamos a cenar esta noche?',\n      'English': 'What are we going to eat tonight?',\n      'Italian': 'Cosa mangiamo stasera?',\n      'Portuguese': 'O que vamos comer hoje à noite?',\n      'Polish': 'Co będziemy jeść dziś wieczorem?',\n      'Russian': 'Что мы будем есть сегодня вечером?'\n    },\n    'wat eten we': {\n      'Danish': 'Hvad spiser vi?',\n      'Swedish': 'Vad äter vi?',\n      'Norwegian': 'Hva spiser vi?',\n      'Finnish': 'Mitä syömme?',\n      'German': 'Was essen wir?',\n      'French': 'Que mangeons-nous?',\n      'Spanish': '¿Qué comemos?',\n      'English': 'What are we eating?'\n    }",
+      "newString": "    'wat gaan we vanavond eten': {\n      'Danish': 'Hvad skal vi spise i aften?',\n      'Swedish': 'Vad ska vi äta ikväll?',\n      'Finnish': 'Mitä syömme tänä iltana?',\n      'German': 'Was essen wir heute Abend?',\n      'French': 'Que mangeons-nous ce soir?',\n      'Spanish': '¿Qué vamos a cenar esta noche?',\n      'English': 'What are we going to eat tonight?',\n      'Italian': 'Cosa mangiamo stasera?',\n      'Portuguese': 'O que vamos comer hoje à noite?',\n      'Polish': 'Co będziemy jeść dziś wieczorem?'\n    },\n    'wat eten we': {\n      'Danish': 'Hvad spiser vi?',\n      'Swedish': 'Vad äter vi?',\n      'Finnish': 'Mitä syömme?',\n      'German': 'Was essen wir?',\n      'French': 'Que mangeons-nous?',\n      'Spanish': '¿Qué comemos?',\n      'English': 'What are we eating?'\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -41,23 +41,20 @@\n },\n 'wat gaan we vanavond eten': {\n   'Danish': 'Hvad skal vi spise i aften?',\n   'Swedish': 'Vad ska vi äta ikväll?',\n-  'Norwegian': 'Hva skal vi spise i kveld?',\n   'Finnish': 'Mitä syömme tänä iltana?',\n   'German': 'Was essen wir heute Abend?',\n   'French': 'Que mangeons-nous ce soir?',\n   'Spanish': '¿Qué vamos a cenar esta noche?',\n   'English': 'What are we going to eat tonight?',\n   'Italian': 'Cosa mangiamo stasera?',\n   'Portuguese': 'O que vamos comer hoje à noite?',\n-  'Polish': 'Co będziemy jeść dziś wieczorem?',\n-  'Russian': 'Что мы будем есть сегодня вечером?'\n+  'Polish': 'Co będziemy jeść dziś wieczorem?'\n },\n 'wat eten we': {\n   'Danish': 'Hvad spiser vi?',\n   'Swedish': 'Vad äter vi?',\n-  'Norwegian': 'Hva spiser vi?',\n   'Finnish': 'Mitä syömme?',\n   'German': 'Was essen wir?',\n   'French': 'Que mangeons-nous?',\n   'Spanish': '¿Qué comemos?',\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759409965732,
+      "end": 1759409965735
+    }
+  }
+}

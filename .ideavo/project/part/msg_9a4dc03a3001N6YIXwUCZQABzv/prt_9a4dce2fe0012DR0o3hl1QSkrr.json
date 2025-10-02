@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a4dce2fe0012DR0o3hl1QSkrr",
+  "messageID": "msg_9a4dc03a3001N6YIXwUCZQABzv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_0197nxU42eoxgzLu7F4u27Wb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run build",
+      "timeout": 30000,
+      "description": "Build Linguala with new features section layout"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/11) ...\n   Generating static pages (2/11) \r\n   Generating static pages (5/11) \r\n   Generating static pages (8/11) \r\n ✓ Generating static pages (11/11)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    46.7 kB         161 kB\n├ ○ /_not-found                          873 B          88.1 kB\n├ ƒ /api/auth/[...nextauth]              0 B                0 B\n├ ƒ /api/extract-document                0 B                0 B\n├ ƒ /api/glossary                        0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n├ ƒ /api/translations                    0 B                0 B\n├ ○ /auth/signin                         4.04 kB         109 kB\n├ ○ /auth/verify-request                 179 B          96.1 kB\n└ ○ /env-check                           179 B          96.1 kB\n+ First Load JS shared by all            87.2 kB\n  ├ chunks/117-50d6bd5ab2c49d8d.js       31.6 kB\n  ├ chunks/fd9d1056-346a4d4db4c146e1.js  53.6 kB\n  └ other shared chunks (total)          1.96 kB\n\n\nƒ Middleware                             27.3 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/11) ...\n   Generating static pages (2/11) \r\n   Generating static pages (5/11) \r\n   Generating static pages (8/11) \r\n ✓ Generating static pages (11/11)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    46.7 kB         161 kB\n├ ○ /_not-found                          873 B          88.1 kB\n├ ƒ /api/auth/[...nextauth]              0 B                0 B\n├ ƒ /api/extract-document                0 B                0 B\n├ ƒ /api/glossary                        0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n├ ƒ /api/translations                    0 B                0 B\n├ ○ /auth/signin                         4.04 kB         109 kB\n├ ○ /auth/verify-request                 179 B          96.1 kB\n└ ○ /env-check                           179 B          96.1 kB\n+ First Load JS shared by all            87.2 kB\n  ├ chunks/117-50d6bd5ab2c49d8d.js       31.6 kB\n  ├ chunks/fd9d1056-346a4d4db4c146e1.js  53.6 kB\n  └ other shared chunks (total)          1.96 kB\n\n\nƒ Middleware                             27.3 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+      "exit": 0,
+      "description": "Build Linguala with new features section layout"
+    },
+    "title": "npm run build",
+    "time": {
+      "start": 1759407564522,
+      "end": 1759407593992
+    }
+  }
+}

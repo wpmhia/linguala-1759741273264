@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4dc5dac001ty4fH8NMW2Nsq1",
+  "messageID": "msg_9a4dc03a3001N6YIXwUCZQABzv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01H9FzyJ8GeZoS1ZmapYGNUP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 870,
+      "limit": 15
+    },
+    "output": "<file>\n00871| \n00872|           </CardContent>\n00873|         </Card>\n00874| \n00875|         {/* Quick Actions - Only for authenticated users */}\n00876|         {session?.user && (\n00877|           <div className=\"flex justify-center space-x-4\">\n00878|           <DropdownMenu>\n00879|             <DropdownMenuTrigger asChild>\n00880|               <Button variant=\"outline\" className=\"shadow-lg\">\n00881|                 <Download className=\"h-4 w-4 mr-2\" />\n00882|                 Export\n00883|               </Button>\n00884|             </DropdownMenuTrigger>\n00885|             <DropdownMenuContent>\n\n(File has more lines. Use 'offset' parameter to read beyond line 885)\n</file>",
+    "metadata": {
+      "preview": "\n          </CardContent>\n        </Card>\n\n        {/* Quick Actions - Only for authenticated users */}\n        {session?.user && (\n          <div className=\"flex justify-center space-x-4\">\n          <DropdownMenu>\n            <DropdownMenuTrigger asChild>\n              <Button variant=\"outline\" className=\"shadow-lg\">\n                <Download className=\"h-4 w-4 mr-2\" />\n                Export\n              </Button>\n            </DropdownMenuTrigger>\n            <DropdownMenuContent>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407530017,
+      "end": 1759407530019
+    }
+  }
+}

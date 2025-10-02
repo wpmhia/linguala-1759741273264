@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a4dc7661001DYigGO24dU0Ppt",
+  "messageID": "msg_9a4dc03a3001N6YIXwUCZQABzv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01NgdzpLCrg41Bqx9StNjdjJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "        {/* Sign-in CTA for anonymous users */}\n        {!session?.user && (\n          <div className=\"text-center mb-8\">\n            <Card className=\"max-w-md mx-auto bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200\">\n              <CardContent className=\"p-6\">\n                <div className=\"text-center space-y-3\">\n                  <div className=\"flex justify-center\">\n                    <div className=\"p-3 bg-blue-100 rounded-full\">\n                      <BookOpen className=\"h-6 w-6 text-blue-600\" />\n                    </div>\n                  </div>\n                  <h3 className=\"text-lg font-semibold text-gray-900\">Join Europe's Translation Platform</h3>\n                  <p className=\"text-sm text-gray-600\">\n                    Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.\n                  </p>\n                  <Button \n                    onClick={() => window.location.href = '/auth/signin'}\n                    className=\"bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white\"\n                  >\n                    Sign In\n                  </Button>\n                </div>\n              </CardContent>\n            </Card>\n          </div>\n        )}",
+      "newString": ""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -471,35 +471,10 @@\n     </div>\n   </div>\n )}\n \n-{/* Sign-in CTA for anonymous users */}\n-{!session?.user && (\n-  <div className=\"text-center mb-8\">\n-    <Card className=\"max-w-md mx-auto bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200\">\n-      <CardContent className=\"p-6\">\n-        <div className=\"text-center space-y-3\">\n-          <div className=\"flex justify-center\">\n-            <div className=\"p-3 bg-blue-100 rounded-full\">\n-              <BookOpen className=\"h-6 w-6 text-blue-600\" />\n-            </div>\n-          </div>\n-          <h3 className=\"text-lg font-semibold text-gray-900\">Join Europe's Translation Platform</h3>\n-          <p className=\"text-sm text-gray-600\">\n-            Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.\n-          </p>\n-          <Button \n-            onClick={() => window.location.href = '/auth/signin'}\n-            className=\"bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white\"\n-          >\n-            Sign In\n-          </Button>\n-        </div>\n-      </CardContent>\n-    </Card>\n-  </div>\n-)}\n \n+\n {/* Main Translation Interface */}\n <Card className=\"shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8\">\n   <CardHeader className=\"pb-4\">\n     <div className=\"flex items-center justify-between\">\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407539254,
+      "end": 1759407539267
+    }
+  }
+}

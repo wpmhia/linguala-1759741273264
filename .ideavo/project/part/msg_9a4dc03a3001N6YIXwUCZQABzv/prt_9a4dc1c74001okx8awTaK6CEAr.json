@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a4dc1c74001okx8awTaK6CEAr",
+  "messageID": "msg_9a4dc03a3001N6YIXwUCZQABzv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01YXJo1rPqzfm2Ti8CXjUfAd",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 15,
+      "limit": 10
+    },
+    "output": "<file>\n00016| import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\n00017| import { \n00018|   ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n00019|   Check, BookOpen, History, Upload, FileText,\n00020|   Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n00021|   TrendingUp, Award, Users, Palette, Brain, Target\n00022| } from \"lucide-react\"\n00023| import { toast } from \"sonner\"\n00024| import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n00025| import { UserProfile } from \"@/components/user-profile\"\n\n(File has more lines. Use 'offset' parameter to read beyond line 25)\n</file>",
+    "metadata": {
+      "preview": "import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\nimport { \n  ArrowUpDown, Copy, Download, Share2, Settings, Sparkles,\n  Check, BookOpen, History, Upload, FileText,\n  Search, Trash2, Plus, Volume2, ChevronRight, Globe,\n  TrendingUp, Award, Users, Palette, Brain, Target\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { UserProfile } from \"@/components/user-profile\""
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759407513804,
+      "end": 1759407513809
+    }
+  }
+}

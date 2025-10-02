@@ -472,32 +472,7 @@ export default function LingualaTranslator() {
           </div>
         )}
 
-        {/* Sign-in CTA for anonymous users */}
-        {!session?.user && (
-          <div className="text-center mb-8">
-            <Card className="max-w-md mx-auto bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
-              <CardContent className="p-6">
-                <div className="text-center space-y-3">
-                  <div className="flex justify-center">
-                    <div className="p-3 bg-blue-100 rounded-full">
-                      <BookOpen className="h-6 w-6 text-blue-600" />
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900">Join Europe's Translation Platform</h3>
-                  <p className="text-sm text-gray-600">
-                    Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.
-                  </p>
-                  <Button 
-                    onClick={() => window.location.href = '/auth/signin'}
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
-                  >
-                    Sign In
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        )}
+
 
         {/* Main Translation Interface */}
         <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm mb-8">
@@ -871,6 +846,117 @@ export default function LingualaTranslator() {
 
           </CardContent>
         </Card>
+
+        {/* Features unlock section - for anonymous users */}
+        {!session?.user && (
+          <div className="max-w-4xl mx-auto mb-8">
+            <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+              <CardContent className="p-8">
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                    Unlock Professional European Translation
+                  </h2>
+                  <p className="text-lg text-gray-600">
+                    Join thousands of European professionals using advanced translation tools
+                  </p>
+                </div>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                  {/* Domain Expertise */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 rounded-full bg-purple-500">
+                        <Brain className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Domain Expertise</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      7 specialized domains: Technology, Medical, Legal, Business, Academic, Creative
+                    </p>
+                  </div>
+
+                  {/* Custom Glossaries */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 rounded-full bg-green-500">
+                        <BookOpen className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Custom Glossaries</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Build personal terminology databases for consistent professional translations
+                    </p>
+                  </div>
+
+                  {/* Translation History */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 rounded-full bg-blue-500">
+                        <History className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Translation History</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Search and manage all your translations across devices with cloud sync
+                    </p>
+                  </div>
+
+                  {/* Export & Share */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 rounded-full bg-orange-500">
+                        <Download className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Export & Share</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Download in multiple formats and create shareable translation links
+                    </p>
+                  </div>
+
+                  {/* Usage Analytics */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 rounded-full bg-indigo-500">
+                        <TrendingUp className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 ml-4">Usage Analytics</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Track your translation patterns and improve your multilingual workflow
+                    </p>
+                  </div>
+
+                  {/* European Focus */}
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 rounded-full bg-red-500">
+                        <Globe className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 ml-4">European Focus</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Optimized for European languages, culture, and business contexts
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <Button 
+                    onClick={() => window.location.href = '/auth/signin'}
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+                  >
+                    Join Europe's Translation Platform - Free
+                  </Button>
+                  <p className="text-sm text-gray-500 mt-3">
+                    Sign in to access European domain expertise, multilingual glossaries, and professional tools built for European languages.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
 
         {/* Quick Actions - Only for authenticated users */}
         {session?.user && (

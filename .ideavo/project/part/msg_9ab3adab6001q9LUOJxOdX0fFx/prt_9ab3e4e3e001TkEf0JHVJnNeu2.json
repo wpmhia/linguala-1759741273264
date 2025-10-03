@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab3e4e3e001TkEf0JHVJnNeu2",
+  "messageID": "msg_9ab3adab6001q9LUOJxOdX0fFx",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01PFJSdrUi9SxDcHGg1vGxhU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"this text have bad grammar and i need to improve it so its more better\",\"operation\":\"improve\"}' --max-time 12",
+      "description": "Test qwen3-max improve writing"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   103    0     0  100   103      0    104 --:--:-- --:--:-- --:--:--   104\r100   320    0   217  100   103    219    104 --:--:-- --:--:-- --:--:--   324\n{\"originalText\":\"this text have bad grammar and i need to improve it so its more better\",\"improvedText\":\"This text have bad grammar and I need to improve it so it's more better.\",\"operation\":\"improve\",\"fallback\":true}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   103    0     0  100   103      0    104 --:--:-- --:--:-- --:--:--   104\r100   320    0   217  100   103    219    104 --:--:-- --:--:-- --:--:--   324\n{\"originalText\":\"this text have bad grammar and i need to improve it so its more better\",\"improvedText\":\"This text have bad grammar and I need to improve it so it's more better.\",\"operation\":\"improve\",\"fallback\":true}",
+      "exit": 0,
+      "description": "Test qwen3-max improve writing"
+    },
+    "title": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"this text have bad grammar and i need to improve it so its more better\",\"operation\":\"improve\"}' --max-time 12",
+    "time": {
+      "start": 1759514613221,
+      "end": 1759514617297
+    }
+  }
+}

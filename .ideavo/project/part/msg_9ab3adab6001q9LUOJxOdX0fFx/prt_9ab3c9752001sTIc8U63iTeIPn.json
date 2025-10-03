@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab3c9752001sTIc8U63iTeIPn",
+  "messageID": "msg_9ab3adab6001q9LUOJxOdX0fFx",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_015ty3q7qHijeknZkEhcZSHd",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build with qwen3-max for improve writing"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\nFailed to compile.\n\n./app/api/translate/route.ts:117:10\nType error: 'response' is of type 'unknown'.\n\n\u001b[0m \u001b[90m 115 |\u001b[39m     \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mrace([apiCall\u001b[33m,\u001b[39m timeout])\u001b[0m\n\u001b[0m \u001b[90m 116 |\u001b[39m     \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 117 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 118 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`API request failed: ${response.status}`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 119 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 120 |\u001b[39m\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\nFailed to compile.\n\n./app/api/translate/route.ts:117:10\nType error: 'response' is of type 'unknown'.\n\n\u001b[0m \u001b[90m 115 |\u001b[39m     \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m.\u001b[39mrace([apiCall\u001b[33m,\u001b[39m timeout])\u001b[0m\n\u001b[0m \u001b[90m 116 |\u001b[39m     \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 117 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 118 |\u001b[39m       \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`API request failed: ${response.status}`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 119 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 120 |\u001b[39m\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n",
+      "exit": 1,
+      "description": "Build with qwen3-max for improve writing"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759514499571,
+      "end": 1759514516340
+    }
+  }
+}

@@ -36,22 +36,7 @@ export async function POST(request: NextRequest) {
         break
 
       case 'improve':
-        // Use fallback for now due to API reliability issues
-        result = {
-          originalText: text,
-          improvedText: text
-            .replace(/\bi\b/g, 'I')
-            .replace(/\bim\b/g, 'I\'m')
-            .replace(/\bits\b/g, 'it\'s')
-            .replace(/\byour\b/g, 'you\'re')
-            .replace(/\bwont\b/g, 'won\'t')
-            .replace(/\bdont\b/g, 'don\'t')
-            .replace(/\bcant\b/g, 'can\'t')
-            .replace(/\s+/g, ' ')
-            .trim(),
-          operation: 'improve',
-          fallback: true
-        }
+        result = await improveWritingWithQwen3Max(text)
         break
 
       case 'rephrase':
@@ -73,25 +58,7 @@ export async function POST(request: NextRequest) {
         break
 
       case 'summarize':
-        // Use fallback for now due to API reliability issues
-        const sentences = text.match(/[^\.!?]+[\.!?]+/g) || [text]
-        const targetLength = Math.max(Math.floor(text.length * 0.4), 50)
-        let summary = ''
-        
-        for (const sentence of sentences) {
-          if (summary.length + sentence.length <= targetLength) {
-            summary += sentence.trim() + ' '
-          } else {
-            break
-          }
-        }
-        
-        result = {
-          originalText: text,
-          summaryText: summary.trim() || (text.length > 100 ? text.substring(0, 100) + '...' : text),
-          operation: 'summarize',
-          fallback: true
-        }
+        result = await summarizeTextFast(text)
         break
 
       default:
@@ -112,38 +79,41 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Text improvement function
-async function improveWriting(text: string) {
+// Text improvement function using qwen3-max
+async function improveWritingWithQwen3Max(text: string) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
   try {
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout
-    
-    const response = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    // Create a race condition between the API call and timeout
+    const apiCall = fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen-turbo',
+        model: 'qwen-max',
         messages: [
           {
             role: 'system',
-            content: 'You are a professional writing assistant. Improve the given text by enhancing clarity, grammar, style, and readability while maintaining the original meaning. Return only the improved text without explanations.'
+            content: 'You are a professional writing assistant. Improve the given text by enhancing clarity, grammar, style, and readability while maintaining the original meaning and tone. Fix any grammatical errors, improve word choice, and enhance sentence structure. Return only the improved text without explanations or quotes.'
           },
           {
             role: 'user',
             content: text
           }
-        ]
-      }),
-      signal: controller.signal
+        ],
+        max_tokens: 1000,
+        temperature: 0.3
+      })
     })
 
-    clearTimeout(timeoutId)
+    const timeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Timeout')), 8000)
+    )
 
+    const response = await Promise.race([apiCall, timeout]) as Response
+    
     if (!response.ok) {
       throw new Error(`API request failed: ${response.status}`)
     }
@@ -151,20 +121,35 @@ async function improveWriting(text: string) {
     const data = await response.json()
     const improvedText = data.choices[0]?.message?.content?.trim()
 
-    return {
-      originalText: text,
-      improvedText: improvedText || text,
-      operation: 'improve'
+    if (improvedText && improvedText !== text) {
+      return {
+        originalText: text,
+        improvedText,
+        operation: 'improve'
+      }
+    } else {
+      throw new Error('No improvement received')
     }
   } catch (error) {
     console.error('Improve writing error:', error)
-    // Simple fallback - basic grammar improvements
+    // Enhanced fallback - basic grammar and style improvements
     const basicImprovement = text
-      .replace(/\bi\b/g, 'I')
-      .replace(/\bim\b/g, 'I\'m')
-      .replace(/\bits\b/g, 'it\'s')
-      .replace(/\byour\b/g, 'you\'re')
+      // Fix common contractions
+      .replace(/\bi\b/gi, 'I')
+      .replace(/\bim\b/gi, "I'm")
+      .replace(/\bits\b/gi, "it's")
+      .replace(/\byour\b(?=\s+(going|coming|feeling))/gi, "you're")
+      .replace(/\bwont\b/gi, "won't")
+      .replace(/\bdont\b/gi, "don't")
+      .replace(/\bcant\b/gi, "can't")
+      .replace(/\bwere\b(?=\s+going)/gi, "we're")
+      .replace(/\btheir\b(?=\s+(happy|sad|coming|going))/gi, "they're")
+      // Fix double spaces
       .replace(/\s+/g, ' ')
+      // Capitalize first letter
+      .replace(/^[a-z]/, match => match.toUpperCase())
+      // Fix sentence endings
+      .replace(/([a-z])\s*$/i, '$1.')
       .trim()
     
     return {
@@ -239,60 +224,45 @@ async function rephraseText(text: string) {
   }
 }
 
-// Text summarization function
-async function summarizeText(text: string) {
-  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
-  
-  try {
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout
-    
-    const response = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'qwen-turbo',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a professional summarization assistant. Create a concise summary of the given text that captures the main points and key information. Keep it clear and well-structured. Return only the summary without explanations.'
-          },
-          {
-            role: 'user',
-            content: text
-          }
-        ]
-      }),
-      signal: controller.signal
-    })
-
-    clearTimeout(timeoutId)
-
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.status}`)
-    }
-
-    const data = await response.json()
-    const summaryText = data.choices[0]?.message?.content?.trim()
-
+// Fast summarization function with immediate fallback
+async function summarizeTextFast(text: string) {
+  // For short texts, return as-is
+  if (text.length <= 100) {
     return {
       originalText: text,
-      summaryText: summaryText || text,
+      summaryText: text,
       operation: 'summarize'
     }
-  } catch (error) {
-    console.error('Summarize text error:', error)
-    // Simple fallback - take first sentences up to ~50% of length
-    const sentences = text.match(/[^\.!?]+[\.!?]+/g) || [text]
-    const targetLength = Math.max(Math.floor(text.length * 0.3), 50)
+  }
+
+  try {
+    // Smart sentence-based summarization
+    const sentences = text.match(/[^.!?]+[.!?]+/g) || []
+    
+    if (sentences.length === 0) {
+      // No proper sentences found, use word-based approach
+      const words = text.split(' ')
+      const targetWords = Math.max(Math.floor(words.length * 0.5), 10)
+      const summary = words.slice(0, targetWords).join(' ') + (words.length > targetWords ? '...' : '')
+      
+      return {
+        originalText: text,
+        summaryText: summary,
+        operation: 'summarize',
+        fallback: true
+      }
+    }
+
+    // Take first 1-2 sentences or up to 40% of original length
+    const targetLength = Math.max(Math.floor(text.length * 0.4), 80)
     let summary = ''
+    let sentenceCount = 0
     
     for (const sentence of sentences) {
-      if (summary.length + sentence.length <= targetLength) {
-        summary += sentence
+      const trimmedSentence = sentence.trim()
+      if (summary.length + trimmedSentence.length <= targetLength && sentenceCount < 3) {
+        summary += (summary ? ' ' : '') + trimmedSentence
+        sentenceCount++
       } else {
         break
       }
@@ -300,7 +270,16 @@ async function summarizeText(text: string) {
     
     return {
       originalText: text,
-      summaryText: summary || text.substring(0, targetLength) + '...',
+      summaryText: summary || text.substring(0, Math.min(100, text.length)) + '...',
+      operation: 'summarize',
+      fallback: true
+    }
+  } catch (error) {
+    console.error('Summarize text error:', error)
+    
+    return {
+      originalText: text,
+      summaryText: text.substring(0, Math.min(100, text.length)) + '...',
       operation: 'summarize',
       fallback: true
     }

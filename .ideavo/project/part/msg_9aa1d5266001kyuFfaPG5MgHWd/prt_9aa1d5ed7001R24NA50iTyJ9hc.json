@@ -1,0 +1,11 @@
+{
+  "id": "prt_9aa1d5ed7001R24NA50iTyJ9hc",
+  "messageID": "msg_9aa1d5266001kyuFfaPG5MgHWd",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "These console messages are browser extension logs and audio context warnings that are unrelated to your translation application. They appear to be from:\n\n1. **Imprivata CE** - A healthcare identity management browser extension\n2. **AudioContext warnings** - Standard browser audio permission messages\n3. **Failed reconnect** - Some browser extension trying to reconnect\n\nThese are **not errors from your translation app** - they're external browser extension activity.\n\nYour translation application is working correctly. The text translation functionality is intact and the document translation features have been successfully removed as requested.\n\nThe application is ready for production use with just text-to-text translation capabilities.",
+  "time": {
+    "start": 1759495678981,
+    "end": 1759495678981
+  }
+}

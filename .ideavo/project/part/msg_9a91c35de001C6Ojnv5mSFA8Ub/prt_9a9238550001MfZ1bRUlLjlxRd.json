@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9238550001MfZ1bRUlLjlxRd",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Q2NpD2NSqCkG5TBVzhebGY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && echo \"Hello world test document\" > temp/uploads/test_prod.txt && curl -X POST http://localhost:3000/api/documents/upload -F \"file=@temp/uploads/test_prod.txt\"",
+      "description": "Test document upload on production server"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   441    0   224  100   217   1061   1028 --:--:-- --:--:-- --:--:--  2090\n{\"success\":true,\"fileId\":\"doc_1759479303158_cd0bjd1taut\",\"fileName\":\"test_prod.txt\",\"fileType\":\"txt\",\"fileSize\":26,\"wordCount\":4,\"pageCount\":0,\"storedPath\":\"/home/user/project/temp/uploads/doc_1759479303158_cd0bjd1taut.txt\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   441    0   224  100   217   1061   1028 --:--:-- --:--:-- --:--:--  2090\n{\"success\":true,\"fileId\":\"doc_1759479303158_cd0bjd1taut\",\"fileName\":\"test_prod.txt\",\"fileType\":\"txt\",\"fileSize\":26,\"wordCount\":4,\"pageCount\":0,\"storedPath\":\"/home/user/project/temp/uploads/doc_1759479303158_cd0bjd1taut.txt\"}",
+      "exit": 0,
+      "description": "Test document upload on production server"
+    },
+    "title": "cd /home/user/project && echo \"Hello world test document\" > temp/uploads/test_prod.txt && curl -X POST http://localhost:3000/api/documents/upload -F \"file=@temp/uploads/test_prod.txt\"",
+    "time": {
+      "start": 1759479302937,
+      "end": 1759479303169
+    }
+  }
+}

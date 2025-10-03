@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a921826c0013HFXT95hOXKwP5",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01JNYH3bHnFDmJ7FUjFY5Bj1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' --max-time 10",
+      "description": "Test simplified translation service"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    52    0     0  100    52      0    258 --:--:-- --:--:-- --:--:--   258\r100    52    0     0  100    52      0     43  0:00:01  0:00:01 --:--:--    43\r100    52    0     0  100    52      0     23  0:00:02  0:00:02 --:--:--    23\r100    52    0     0  100    52      0     16  0:00:03  0:00:03 --:--:--    16\r100    52    0     0  100    52      0     12  0:00:04  0:00:04 --:--:--    12\r100    52    0     0  100    52      0      9  0:00:05  0:00:05 --:--:--     0\r100    52    0     0  100    52      0      8  0:00:06  0:00:06 --:--:--     0\r100    52    0     0  100    52      0      7  0:00:07  0:00:07 --:--:--     0\r100    52    0     0  100    52      0      6  0:00:08  0:00:08 --:--:--     0\r100    52    0     0  100    52      0      5  0:00:10  0:00:09  0:00:01     0\r100    52    0     0  100    52      0      5  0:00:10  0:00:10 --:--:--     0\ncurl: (28) Operation timed out after 10000 milliseconds with 0 bytes received\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    52    0     0  100    52      0    258 --:--:-- --:--:-- --:--:--   258\r100    52    0     0  100    52      0     43  0:00:01  0:00:01 --:--:--    43\r100    52    0     0  100    52      0     23  0:00:02  0:00:02 --:--:--    23\r100    52    0     0  100    52      0     16  0:00:03  0:00:03 --:--:--    16\r100    52    0     0  100    52      0     12  0:00:04  0:00:04 --:--:--    12\r100    52    0     0  100    52      0      9  0:00:05  0:00:05 --:--:--     0\r100    52    0     0  100    52      0      8  0:00:06  0:00:06 --:--:--     0\r100    52    0     0  100    52      0      7  0:00:07  0:00:07 --:--:--     0\r100    52    0     0  100    52      0      6  0:00:08  0:00:08 --:--:--     0\r100    52    0     0  100    52      0      5  0:00:10  0:00:09  0:00:01     0\r100    52    0     0  100    52      0      5  0:00:10  0:00:10 --:--:--     0\ncurl: (28) Operation timed out after 10000 milliseconds with 0 bytes received\n",
+      "exit": 28,
+      "description": "Test simplified translation service"
+    },
+    "title": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' --max-time 10",
+    "time": {
+      "start": 1759479170775,
+      "end": 1759479180788
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a92382bc002g7SgsLE4vxJVla",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Excellent! The production server works perfectly. The issue was with the development server. Let me test document translation now:",
+  "time": {
+    "start": 1759479301455,
+    "end": 1759479301455
+  }
+}

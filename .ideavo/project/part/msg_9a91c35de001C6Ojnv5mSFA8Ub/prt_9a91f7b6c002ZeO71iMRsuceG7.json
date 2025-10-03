@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a91f7b6c002ZeO71iMRsuceG7",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01M34YPwYgKme6aSy8CtaiEw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && timeout 30 node test-api.js",
+      "description": "Test DashScope API directly"
+    },
+    "output": "Testing API key...\nAPI key present: sk-ad9...\nMaking request to DashScope...\nResponse status: 200\nSuccess: {\n  choices: [\n    {\n      message: [Object],\n      finish_reason: 'stop',\n      index: 0,\n      logprobs: null\n    }\n  ],\n  object: 'chat.completion',\n  usage: { prompt_tokens: 48, completion_tokens: 2, total_tokens: 50 },\n  created: 1759479039,\n  system_fingerprint: null,\n  model: 'qwen-mt-turbo',\n  id: 'chatcmpl-ecdeaacf-68a6-9e55-96e9-b3b533000c66'\n}\n",
+    "metadata": {
+      "output": "Testing API key...\nAPI key present: sk-ad9...\nMaking request to DashScope...\nResponse status: 200\nSuccess: {\n  choices: [\n    {\n      message: [Object],\n      finish_reason: 'stop',\n      index: 0,\n      logprobs: null\n    }\n  ],\n  object: 'chat.completion',\n  usage: { prompt_tokens: 48, completion_tokens: 2, total_tokens: 50 },\n  created: 1759479039,\n  system_fingerprint: null,\n  model: 'qwen-mt-turbo',\n  id: 'chatcmpl-ecdeaacf-68a6-9e55-96e9-b3b533000c66'\n}\n",
+      "exit": 0,
+      "description": "Test DashScope API directly"
+    },
+    "title": "cd /home/user/project && timeout 30 node test-api.js",
+    "time": {
+      "start": 1759479037397,
+      "end": 1759479038961
+    }
+  }
+}

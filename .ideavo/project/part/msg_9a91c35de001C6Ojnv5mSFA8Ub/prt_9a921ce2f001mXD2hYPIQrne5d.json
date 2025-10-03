@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a921ce2f001mXD2hYPIQrne5d",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01TTpgGB3Vt5ocabXfQtFejr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl http://localhost:3000/api/test --max-time 5",
+      "description": "Test basic API route"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\ncurl: (56) Recv failure: Connection reset by peer\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\ncurl: (56) Recv failure: Connection reset by peer\n",
+      "exit": 56,
+      "description": "Test basic API route"
+    },
+    "title": "curl http://localhost:3000/api/test --max-time 5",
+    "time": {
+      "start": 1759479189655,
+      "end": 1759479191207
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a92272b8001M7yee2AfBXjjvF",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Build is successful. The issue seems to be with the development server specifically. Let me try running the production build instead:",
+  "time": {
+    "start": 1759479231959,
+    "end": 1759479231959
+  }
+}

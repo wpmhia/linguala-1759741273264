@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a91c85d6001e49ScBil0SZ6kz",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me test the document translation API directly and capture the server-side error:",
+  "time": {
+    "start": 1759478843453,
+    "end": 1759478843453
+  }
+}

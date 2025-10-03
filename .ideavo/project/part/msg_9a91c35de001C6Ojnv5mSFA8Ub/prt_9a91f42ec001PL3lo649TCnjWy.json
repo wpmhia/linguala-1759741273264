@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a91f42ec001PL3lo649TCnjWy",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Grd6aHxt9zf3vWhdU8JeKu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && fuser -k 3000/tcp 2>/dev/null && fuser -k 3001/tcp 2>/dev/null && echo \"Ports cleared\"",
+      "description": "Force clear ports"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 127,
+      "description": "Force clear ports"
+    },
+    "title": "cd /home/user/project && fuser -k 3000/tcp 2>/dev/null && fuser -k 3001/tcp 2>/dev/null && echo \"Ports cleared\"",
+    "time": {
+      "start": 1759479023405,
+      "end": 1759479023415
+    }
+  }
+}

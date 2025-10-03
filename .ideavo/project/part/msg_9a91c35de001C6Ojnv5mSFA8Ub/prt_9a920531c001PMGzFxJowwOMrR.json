@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a920531c001PMGzFxJowwOMrR",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01RZD6MFkqe5GowyaLs8YVXe",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "    // Use DashScope translation API\n    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${apiKey}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: [{\n          role: 'user',\n          content: processedText\n        }],\n        translation_options: {\n          source_lang: sourceLanguage,\n          target_lang: targetLanguage\n        }\n      }),\n    })",
+      "newString": "    // Use DashScope translation API with timeout\n    const controller = new AbortController()\n    const timeoutId = setTimeout(() => controller.abort(), 30000) // 30 second timeout\n\n    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${apiKey}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: [{\n          role: 'user',\n          content: processedText\n        }],\n        translation_options: {\n          source_lang: sourceLanguage,\n          target_lang: targetLanguage\n        }\n      }),\n      signal: controller.signal\n    })\n    \n    clearTimeout(timeoutId)"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -158,9 +158,12 @@\n     }\n   })\n }\n \n-// Use DashScope translation API\n+// Use DashScope translation API with timeout\n+const controller = new AbortController()\n+const timeoutId = setTimeout(() => controller.abort(), 30000) // 30 second timeout\n+\n const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n   method: 'POST',\n   headers: {\n     'Authorization': `Bearer ${apiKey}`,\n@@ -176,9 +179,12 @@\n       source_lang: sourceLanguage,\n       target_lang: targetLanguage\n     }\n   }),\n+  signal: controller.signal\n })\n+\n+clearTimeout(timeoutId)\n \n if (!response.ok) {\n   const errorData = await response.text()\n   console.error('DashScope API error:', response.status, errorData)\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759479097055,
+      "end": 1759479097074
+    }
+  }
+}

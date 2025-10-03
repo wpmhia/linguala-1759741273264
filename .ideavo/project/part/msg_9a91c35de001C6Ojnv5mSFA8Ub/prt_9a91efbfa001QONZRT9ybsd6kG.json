@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a91efbfa001QONZRT9ybsd6kG",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01VoLF8BUNBunu16mucn8b9R",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f node && pkill -f next && sleep 2 && lsof -ti:3000 | xargs kill -9 2>/dev/null || echo \"Port cleared\" && npm run dev > server.log 2>&1 & sleep 4",
+      "description": "Force kill all processes and restart server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Force kill all processes and restart server"
+    },
+    "title": "cd /home/user/project && pkill -f node && pkill -f next && sleep 2 && lsof -ti:3000 | xargs kill -9 2>/dev/null || echo \"Port cleared\" && npm run dev > server.log 2>&1 & sleep 4",
+    "time": {
+      "start": 1759479005561,
+      "end": 1759479009571
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a91f931c001V0M5m013Ouhbbd",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_013geBHWa3oirTnkL4ZxP1PB",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && rm test-api.js",
+      "description": "Clean up test file"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Clean up test file"
+    },
+    "title": "cd /home/user/project && rm test-api.js",
+    "time": {
+      "start": 1759479043432,
+      "end": 1759479043445
+    }
+  }
+}

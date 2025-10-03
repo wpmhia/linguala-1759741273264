@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a91d854e00176mo4F8Bs60gyJ",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LwhzG7EhsxRyjiCn4XX3PT",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X GET http://localhost:3000 --max-time 5",
+      "description": "Test if server is responding at all"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\ncurl: (28) Operation timed out after 5001 milliseconds with 0 bytes received\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\ncurl: (28) Operation timed out after 5001 milliseconds with 0 bytes received\n",
+      "exit": 28,
+      "description": "Test if server is responding at all"
+    },
+    "title": "curl -X GET http://localhost:3000 --max-time 5",
+    "time": {
+      "start": 1759478909309,
+      "end": 1759478914324
+    }
+  }
+}

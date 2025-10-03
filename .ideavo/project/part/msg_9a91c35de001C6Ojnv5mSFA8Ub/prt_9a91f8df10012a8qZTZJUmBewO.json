@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a91f8df10012a8qZTZJUmBewO",
+  "messageID": "msg_9a91c35de001C6Ojnv5mSFA8Ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Great! The DashScope API is working fine. The issue must be somewhere in the Next.js application. Since the direct API call works, the problem is likely in the server startup or a circular dependency. Let me simplify the translation service and remove the potentially problematic parts:",
+  "time": {
+    "start": 1759479042842,
+    "end": 1759479042842
+  }
+}

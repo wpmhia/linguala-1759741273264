@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9a9c2bf001Bz480HsvAdCFv5",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_018gghvMMkDdDGMWVD2ATnJ1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev 2>&1 | tee -a current.log &",
+      "description": "Start dev server and capture logs"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 3.5s\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 3.5s\n",
+      "exit": 0,
+      "description": "Start dev server and capture logs"
+    },
+    "title": "cd /home/user/project && npm run dev 2>&1 | tee -a current.log &",
+    "time": {
+      "start": 1759488099895,
+      "end": 1759488159920
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9aab8940010pqgXh8cMB0tlm",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01G8eMP1w6niNDqAnfWrZAsA",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:3000/api/documents/translate -H \"Content-Type: application/json\" -d '{\"fileId\":\"test\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' -v",
+      "description": "Test the failing API endpoint directly"
+    },
+    "output": "Note: Unnecessary use of -X or --request, POST is already inferred.\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...\n* Connected to localhost (127.0.0.1) port 3000 (#0)\n> POST /api/documents/translate HTTP/1.1\r\n> Host: localhost:3000\r\n> User-Agent: curl/7.88.1\r\n> Accept: */*\r\n> Content-Type: application/json\r\n> Content-Length: 53\r\n> \r\n} [53 bytes data]\n\r100    53    0     0  100    53      0     43  0:00:01  0:00:01 --:--:--    43\r100    53    0     0  100    53      0     23  0:00:02  0:00:02 --:--:--    23\r100    53    0     0  100    53      0     16  0:00:03  0:00:03 --:--:--    16\r100    53    0     0  100    53      0     12  0:00:04  0:00:04 --:--:--    12\r100    53    0     0  100    53      0     10  0:00:05  0:00:05 --:--:--    10< HTTP/1.1 400 Bad Request\r\n< vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch\r\n< content-type: application/json\r\n< Date: Fri, 03 Oct 2025 10:42:51 GMT\r\n< Connection: keep-alive\r\n< Keep-Alive: timeout=5\r\n< Transfer-Encoding: chunked\r\n< \r\n\r100    53    0     0  100    53      0      9  0:00:05  0:00:05 --:--:--     0{ [192 bytes data]\n\r100   234    0   181  100    53     32      9  0:00:05  0:00:05 --:--:--    53\n* Connection #0 to host localhost left intact\n{\"error\":\"Invalid input\",\"details\":[{\"code\":\"invalid_value\",\"values\":[\"pdf\",\"docx\",\"txt\"],\"path\":[\"fileType\"],\"message\":\"Invalid option: expected one of \\\"pdf\\\"|\\\"docx\\\"|\\\"txt\\\"\"}]}",
+    "metadata": {
+      "output": "Note: Unnecessary use of -X or --request, POST is already inferred.\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...\n* Connected to localhost (127.0.0.1) port 3000 (#0)\n> POST /api/documents/translate HTTP/1.1\r\n> Host: localhost:3000\r\n> User-Agent: curl/7.88.1\r\n> Accept: */*\r\n> Content-Type: application/json\r\n> Content-Length: 53\r\n> \r\n} [53 bytes data]\n\r100    53    0     0  100    53      0     43  0:00:01  0:00:01 --:--:--    43\r100    53    0     0  100    53      0     23  0:00:02  0:00:02 --:--:--    23\r100    53    0     0  100    53      0     16  0:00:03  0:00:03 --:--:--    16\r100    53    0     0  100    53      0     12  0:00:04  0:00:04 --:--:--    12\r100    53    0     0  100    53      0     10  0:00:05  0:00:05 --:--:--    10< HTTP/1.1 400 Bad Request\r\n< vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch\r\n< content-type: application/json\r\n< Date: Fri, 03 Oct 2025 10:42:51 GMT\r\n< Connection: keep-alive\r\n< Keep-Alive: timeout=5\r\n< Transfer-Encoding: chunked\r\n< \r\n\r100    53    0     0  100    53      0      9  0:00:05  0:00:05 --:--:--     0{ [192 bytes data]\n\r100   234    0   181  100    53     32      9  0:00:05  0:00:05 --:--:--    53\n* Connection #0 to host localhost left intact\n{\"error\":\"Invalid input\",\"details\":[{\"code\":\"invalid_value\",\"values\":[\"pdf\",\"docx\",\"txt\"],\"path\":[\"fileType\"],\"message\":\"Invalid option: expected one of \\\"pdf\\\"|\\\"docx\\\"|\\\"txt\\\"\"}]}",
+      "exit": 0,
+      "description": "Test the failing API endpoint directly"
+    },
+    "title": "sleep 3 && curl -X POST http://localhost:3000/api/documents/translate -H \"Content-Type: application/json\" -d '{\"fileId\":\"test\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' -v",
+    "time": {
+      "start": 1759488163303,
+      "end": 1759488171989
+    }
+  }
+}

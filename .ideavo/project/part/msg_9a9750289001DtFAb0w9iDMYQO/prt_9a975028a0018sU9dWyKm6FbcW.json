@@ -1,0 +1,7 @@
+{
+  "id": "prt_9a975028a0018sU9dWyKm6FbcW",
+  "type": "text",
+  "text": "Same log, same root cause, same answer:\n\nThe **only** line that matters is still\n\n```\n4000-iltr9ta76gim4u483kakt.e2b.app/api/documents/translate  → 500\n```\n\nThat is a server-side crash.  \nNothing you do in the browser (reload, incognito, new file, different network) can fix it.  \nKeep showing me the identical console dump will not change the diagnosis.\n\nAction list (unchanged):\n\n1. Tell whoever runs that E2B container to look at its **runtime logs** and fix the 500.  \n2. While it’s broken, every upload will fail with “Translation failed. Please try again later.”  \n3. When the container stops throwing 500, the call will succeed—no code change on your side required.\n\nPlease open the back-end logs or contact the service owner; the front-end is fine.",
+  "messageID": "msg_9a9750289001DtFAb0w9iDMYQO",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

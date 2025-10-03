@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a97e9a78001pEdbMP7odQDSwr",
+  "messageID": "msg_9a97e8e4b001G5XwJLLVi6dII3",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01DMbPQbocirFcbDnzCarPFR",
+  "state": {
+    "status": "running",
+    "input": {
+      "command": "find /home/user/project -name \"*.log\" -type f",
+      "description": "Find all log files in the project"
+    },
+    "time": {
+      "start": 1759485271470
+    }
+  }
+}

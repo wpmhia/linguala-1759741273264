@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a9ab354e001H0OI7dsnAi0lnL",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! The upload API **is** returning `fileType` on line 148. Let me test a real file upload and translation to see what's happening:",
+  "time": {
+    "start": 1759488195422,
+    "end": 1759488195422
+  }
+}

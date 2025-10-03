@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9ae00390019ZEsp8qgWBjSul",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_016sUcHaaCi9sWEUrJcarBGw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:3000/api/documents/upload -F \"file=@/tmp/test.txt\" -v --max-time 10",
+      "description": "Test upload in production mode"
+    },
+    "output": "Note: Unnecessary use of -X or --request, POST is already inferred.\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...\n* Connected to localhost (127.0.0.1) port 3000 (#0)\n> POST /api/documents/upload HTTP/1.1\r\n> Host: localhost:3000\r\n> User-Agent: curl/7.88.1\r\n> Accept: */*\r\n> Content-Length: 224\r\n> Content-Type: multipart/form-data; boundary=------------------------4d8ddbd73948b9b9\r\n> \r\n} [224 bytes data]\n* We are completely uploaded and fine\n< HTTP/1.1 200 OK\r\n< vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch\r\n< content-type: application/json\r\n< Date: Fri, 03 Oct 2025 10:46:21 GMT\r\n< Connection: keep-alive\r\n< Keep-Alive: timeout=5\r\n< Transfer-Encoding: chunked\r\n< \r\n{ [230 bytes data]\n\r100   443    0   219  100   224    355    363 --:--:-- --:--:-- --:--:--   719\n* Connection #0 to host localhost left intact\n{\"success\":true,\"fileId\":\"doc_1759488381609_f4m9zzmqme6\",\"fileName\":\"test.txt\",\"fileType\":\"txt\",\"fileSize\":38,\"wordCount\":5,\"pageCount\":0,\"storedPath\":\"/home/user/project/temp/uploads/doc_1759488381609_f4m9zzmqme6.txt\"}",
+    "metadata": {
+      "output": "Note: Unnecessary use of -X or --request, POST is already inferred.\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...\n* Connected to localhost (127.0.0.1) port 3000 (#0)\n> POST /api/documents/upload HTTP/1.1\r\n> Host: localhost:3000\r\n> User-Agent: curl/7.88.1\r\n> Accept: */*\r\n> Content-Length: 224\r\n> Content-Type: multipart/form-data; boundary=------------------------4d8ddbd73948b9b9\r\n> \r\n} [224 bytes data]\n* We are completely uploaded and fine\n< HTTP/1.1 200 OK\r\n< vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch\r\n< content-type: application/json\r\n< Date: Fri, 03 Oct 2025 10:46:21 GMT\r\n< Connection: keep-alive\r\n< Keep-Alive: timeout=5\r\n< Transfer-Encoding: chunked\r\n< \r\n{ [230 bytes data]\n\r100   443    0   219  100   224    355    363 --:--:-- --:--:-- --:--:--   719\n* Connection #0 to host localhost left intact\n{\"success\":true,\"fileId\":\"doc_1759488381609_f4m9zzmqme6\",\"fileName\":\"test.txt\",\"fileType\":\"txt\",\"fileSize\":38,\"wordCount\":5,\"pageCount\":0,\"storedPath\":\"/home/user/project/temp/uploads/doc_1759488381609_f4m9zzmqme6.txt\"}",
+      "exit": 0,
+      "description": "Test upload in production mode"
+    },
+    "title": "sleep 3 && curl -X POST http://localhost:3000/api/documents/upload -F \"file=@/tmp/test.txt\" -v --max-time 10",
+    "time": {
+      "start": 1759488377968,
+      "end": 1759488381634
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a9a9aaa0001NWZl2vBorzvYKT",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_0131JWLgv6hK9ynLNdWc7EQ5",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/server.log"
+    },
+    "output": "<file>\n00001| \n00002| > ideavo-nextjs@0.1.0 dev\n00003| > next dev\n00004| \n00005|  ⚠ Port 3000 is in use, trying 3001 instead.\n00006|   ▲ Next.js 14.2.31\n00007|   - Local:        http://localhost:3001\n00008|   - Environments: .env\n00009| \n00010|  ✓ Starting...\n00011|  ✓ Ready in 2.5s\n00012| \u001b[?25h\n00013| \n</file>",
+    "metadata": {
+      "preview": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n ⚠ Port 3000 is in use, trying 3001 instead.\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3001\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2.5s\n\u001b[?25h\n"
+    },
+    "title": "server.log",
+    "time": {
+      "start": 1759488093318,
+      "end": 1759488093320
+    }
+  }
+}

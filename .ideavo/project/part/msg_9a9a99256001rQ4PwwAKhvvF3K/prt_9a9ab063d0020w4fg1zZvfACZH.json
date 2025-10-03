@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a9ab063d0020w4fg1zZvfACZH",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01JCyWWuUkzRmMXU81qudGFD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "/api/documents/translate",
+      "include": "*.tsx,*.ts"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "/api/documents/translate",
+    "time": {
+      "start": 1759488182289,
+      "end": 1759488182313
+    }
+  }
+}

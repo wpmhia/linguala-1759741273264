@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a9a9b4ab002wC22ZcCuGvHm3R",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_0175nMbPGywMKpeHXX1ZDk3R",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/dev.log"
+    },
+    "output": "<file>\n00001| \n00002| > ideavo-nextjs@0.1.0 dev\n00003| > next dev\n00004| \n00005|   ▲ Next.js 14.2.31\n00006|   - Local:        http://localhost:3000\n00007|   - Environments: .env\n00008| \n00009|  ✓ Starting...\n00010|  ✓ Ready in 2.8s\n00011|  ○ Compiling /api/translate ...\n00012|  ✓ Compiled /api/translate in 1267ms (57 modules)\n00013| Translation request body: { text: 'hello', sourceLang: 'en', targetLang: 'es' }\n00014|  POST /api/translate 200 in 3182ms\n00015| Translation request body: {\n00016|   text: 'This is a test document for translation. It contains multiple sentences.',\n00017|   sourceLang: 'en',\n00018|   targetLang: 'es'\n00019| }\n00020|  POST /api/translate 200 in 1085ms\n00021|  ○ Compiling /api/documents/upload ...\n00022|  ✓ Compiled /api/documents/upload in 2s (618 modules)\n00023|  POST /api/documents/upload 400 in 2564ms\n00024|  ✓ Compiled in 279ms (618 modules)\n00025|  ✓ Compiled in 227ms (618 modules)\n00026|  ✓ Compiled in 215ms (618 modules)\n00027|  POST /api/documents/upload 200 in 289ms\n00028|  ✓ Compiled /api/documents/translate in 306ms (690 modules)\n00029| Starting translation: txt file from en to es\n00030| Processing text file: 26 characters\n00031| Translating chunk 1/1\n00032| Translation completed: 30 characters\n00033|  POST /api/documents/translate 200 in 1564ms\n00034|  ✓ Compiled /api/documents/download/[fileId] in 194ms (692 modules)\n00035|  GET /api/documents/download/translated_doc_1759478198011_658ldaoit6e 200 in 649ms\n00036| \n</file>",
+    "metadata": {
+      "preview": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2.8s\n ○ Compiling /api/translate ...\n ✓ Compiled /api/translate in 1267ms (57 modules)\nTranslation request body: { text: 'hello', sourceLang: 'en', targetLang: 'es' }\n POST /api/translate 200 in 3182ms\nTranslation request body: {\n  text: 'This is a test document for translation. It contains multiple sentences.',\n  sourceLang: 'en',\n  targetLang: 'es'\n}\n POST /api/translate 200 in 1085ms"
+    },
+    "title": "dev.log",
+    "time": {
+      "start": 1759488095712,
+      "end": 1759488095713
+    }
+  }
+}

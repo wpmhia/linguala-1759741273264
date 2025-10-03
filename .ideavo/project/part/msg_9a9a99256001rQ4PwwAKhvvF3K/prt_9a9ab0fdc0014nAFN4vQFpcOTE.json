@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a9ab0fdc0014nAFN4vQFpcOTE",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01E6S8ZAGJWuLLimFWYzpypn",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/documents/document-uploader.tsx",
+      "offset": 150,
+      "limit": 50
+    },
+    "output": "<file>\n00151|       const result = await response.json()\n00152|       updateFileStatus(fileId, { \n00153|         status: 'translated', \n00154|         progress: 100,\n00155|         translationResult: result\n00156|       })\n00157| \n00158|       toast.success('Document translated successfully!')\n00159|       onFileProcessed?.(result)\n00160| \n00161|     } catch (error) {\n00162|       console.error('Translation error:', error)\n00163|       const errorMessage = error instanceof Error ? error.message : 'Translation failed'\n00164|       updateFileStatus(fileId, { \n00165|         status: 'error', \n00166|         error: errorMessage \n00167|       })\n00168|       toast.error(`Translation failed: ${errorMessage}`)\n00169|     }\n00170|   }\n00171| \n00172|   const updateFileStatus = (fileId: string, updates: Partial<DocumentFile>) => {\n00173|     setFiles(prev => prev.map(file => \n00174|       file.id === fileId ? { ...file, ...updates } : file\n00175|     ))\n00176|   }\n00177| \n00178|   const removeFile = (fileId: string) => {\n00179|     setFiles(prev => prev.filter(file => file.id !== fileId))\n00180|   }\n00181| \n00182|   const downloadFile = async (file: DocumentFile) => {\n00183|     if (!file.translationResult) return\n00184| \n00185|     try {\n00186|       const response = await fetch(file.translationResult.downloadPath)\n00187|       if (!response.ok) throw new Error('Download failed')\n00188| \n00189|       const blob = await response.blob()\n00190|       const url = window.URL.createObjectURL(blob)\n00191|       const a = document.createElement('a')\n00192|       a.href = url\n00193|       a.download = file.translationResult.translatedFileName\n00194|       document.body.appendChild(a)\n00195|       a.click()\n00196|       window.URL.revokeObjectURL(url)\n00197|       document.body.removeChild(a)\n00198| \n00199|       toast.success('File downloaded successfully!')\n00200|     } catch (error) {\n\n(File has more lines. Use 'offset' parameter to read beyond line 200)\n</file>",
+    "metadata": {
+      "preview": "      const result = await response.json()\n      updateFileStatus(fileId, { \n        status: 'translated', \n        progress: 100,\n        translationResult: result\n      })\n\n      toast.success('Document translated successfully!')\n      onFileProcessed?.(result)\n\n    } catch (error) {\n      console.error('Translation error:', error)\n      const errorMessage = error instanceof Error ? error.message : 'Translation failed'\n      updateFileStatus(fileId, { \n        status: 'error', \n        error: errorMessage \n      })\n      toast.error(`Translation failed: ${errorMessage}`)\n    }\n  }"
+    },
+    "title": "components/documents/document-uploader.tsx",
+    "time": {
+      "start": 1759488185270,
+      "end": 1759488185272
+    }
+  }
+}

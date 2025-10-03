@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9ac4481001wfPFhZYxIH6Qhn",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01B5D2R73EoWrbDncetkC5kD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 2",
+      "description": "Kill hanging dev server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill hanging dev server"
+    },
+    "title": "pkill -f \"next dev\" && sleep 2",
+    "time": {
+      "start": 1759488264052,
+      "end": 1759488264093
+    }
+  }
+}

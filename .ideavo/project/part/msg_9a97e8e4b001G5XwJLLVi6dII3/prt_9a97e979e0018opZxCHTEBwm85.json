@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a97e979e0018opZxCHTEBwm85",
+  "messageID": "msg_9a97e8e4b001G5XwJLLVi6dII3",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "You're right - let me check the actual server logs to diagnose the 500 error in the document translation API:",
+  "time": {
+    "start": 1759485270577,
+    "end": 1759485270577
+  }
+}

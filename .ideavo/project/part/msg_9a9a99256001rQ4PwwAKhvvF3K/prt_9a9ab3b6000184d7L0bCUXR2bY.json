@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9ab3b6000184d7L0bCUXR2bY",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01C8ypdyEWADKxF98QvLXFAy",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && echo \"Test document content for translation\" > /tmp/test.txt",
+      "description": "Create test file"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Create test file"
+    },
+    "title": "cd /home/user/project && echo \"Test document content for translation\" > /tmp/test.txt",
+    "time": {
+      "start": 1759488196500,
+      "end": 1759488196522
+    }
+  }
+}

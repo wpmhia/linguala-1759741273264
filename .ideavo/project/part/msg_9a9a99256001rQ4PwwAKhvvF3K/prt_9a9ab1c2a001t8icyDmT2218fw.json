@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a9ab1c2a001t8icyDmT2218fw",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01B63RUS7Cpnegq1T4DLaWZw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/documents/document-uploader.tsx",
+      "offset": 120,
+      "limit": 40
+    },
+    "output": "<file>\n00121|         status: 'error', \n00122|         error: errorMessage \n00123|       })\n00124|       toast.error(`Failed to upload ${documentFile.file.name}: ${errorMessage}`)\n00125|     }\n00126|   }\n00127| \n00128|   const translateDocument = async (fileId: string, uploadResult: any) => {\n00129|     try {\n00130|       updateFileStatus(fileId, { status: 'processing', progress: 0 })\n00131| \n00132|       const response = await fetch('/api/documents/translate', {\n00133|         method: 'POST',\n00134|         headers: {\n00135|           'Content-Type': 'application/json'\n00136|         },\n00137|         body: JSON.stringify({\n00138|           fileId: uploadResult.fileId,\n00139|           sourceLang,\n00140|           targetLang,\n00141|           fileName: uploadResult.fileName,\n00142|           fileType: uploadResult.fileType\n00143|         })\n00144|       })\n00145| \n00146|       if (!response.ok) {\n00147|         const errorData = await response.json()\n00148|         throw new Error(errorData.error || 'Translation failed')\n00149|       }\n00150| \n00151|       const result = await response.json()\n00152|       updateFileStatus(fileId, { \n00153|         status: 'translated', \n00154|         progress: 100,\n00155|         translationResult: result\n00156|       })\n00157| \n00158|       toast.success('Document translated successfully!')\n00159|       onFileProcessed?.(result)\n00160| \n\n(File has more lines. Use 'offset' parameter to read beyond line 160)\n</file>",
+    "metadata": {
+      "preview": "        status: 'error', \n        error: errorMessage \n      })\n      toast.error(`Failed to upload ${documentFile.file.name}: ${errorMessage}`)\n    }\n  }\n\n  const translateDocument = async (fileId: string, uploadResult: any) => {\n    try {\n      updateFileStatus(fileId, { status: 'processing', progress: 0 })\n\n      const response = await fetch('/api/documents/translate', {\n        method: 'POST',\n        headers: {\n          'Content-Type': 'application/json'\n        },\n        body: JSON.stringify({\n          fileId: uploadResult.fileId,\n          sourceLang,\n          targetLang,"
+    },
+    "title": "components/documents/document-uploader.tsx",
+    "time": {
+      "start": 1759488188081,
+      "end": 1759488188082
+    }
+  }
+}

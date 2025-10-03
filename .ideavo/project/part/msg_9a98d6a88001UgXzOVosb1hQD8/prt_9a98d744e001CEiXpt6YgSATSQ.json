@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a98d744e001CEiXpt6YgSATSQ",
+  "messageID": "msg_9a98d6a88001UgXzOVosb1hQD8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Xp2z7hySNrJZg5sRTR6XCs",
+  "state": {
+    "status": "running",
+    "input": {
+      "command": "cd /home/user/project && cat server.log",
+      "description": "Check server logs for 500 error details"
+    },
+    "time": {
+      "start": 1759486244676
+    }
+  }
+}

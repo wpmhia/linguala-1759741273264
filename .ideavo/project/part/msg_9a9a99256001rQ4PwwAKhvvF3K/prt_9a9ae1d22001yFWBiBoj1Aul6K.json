@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9ae1d22001yFWBiBoj1Aul6K",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_015Bcag8vn1XCb8meyZLhkNf",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3000/api/documents/translate -H \"Content-Type: application/json\" -d '{\"fileId\":\"doc_1759488381609_f4m9zzmqme6\",\"sourceLang\":\"en\",\"targetLang\":\"es\",\"fileName\":\"test.txt\",\"fileType\":\"txt\"}' -v --max-time 30",
+      "description": "Test translation in production mode"
+    },
+    "output": "Note: Unnecessary use of -X or --request, POST is already inferred.\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...\n* Connected to localhost (127.0.0.1) port 3000 (#0)\n> POST /api/documents/translate HTTP/1.1\r\n> Host: localhost:3000\r\n> User-Agent: curl/7.88.1\r\n> Accept: */*\r\n> Content-Type: application/json\r\n> Content-Length: 117\r\n> \r\n} [117 bytes data]\n< HTTP/1.1 200 OK\r\n< vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch\r\n< content-type: application/json\r\n< Date: Fri, 03 Oct 2025 10:46:25 GMT\r\n< Connection: keep-alive\r\n< Keep-Alive: timeout=5\r\n< Transfer-Encoding: chunked\r\n< \r\n{ [261 bytes data]\n\r100   367    0   250  100   117   3169   1483 --:--:-- --:--:-- --:--:--  4705\n* Connection #0 to host localhost left intact\n{\"success\":true,\"translatedFileId\":\"translated_doc_1759488381609_f4m9zzmqme6\",\"originalFileName\":\"test.txt\",\"translatedFileName\":\"test.txt_translated.txt\",\"fileSize\":6,\"downloadPath\":\"/api/documents/download/translated_doc_1759488381609_f4m9zzmqme6\"}",
+    "metadata": {
+      "output": "Note: Unnecessary use of -X or --request, POST is already inferred.\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...\n* Connected to localhost (127.0.0.1) port 3000 (#0)\n> POST /api/documents/translate HTTP/1.1\r\n> Host: localhost:3000\r\n> User-Agent: curl/7.88.1\r\n> Accept: */*\r\n> Content-Type: application/json\r\n> Content-Length: 117\r\n> \r\n} [117 bytes data]\n< HTTP/1.1 200 OK\r\n< vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch\r\n< content-type: application/json\r\n< Date: Fri, 03 Oct 2025 10:46:25 GMT\r\n< Connection: keep-alive\r\n< Keep-Alive: timeout=5\r\n< Transfer-Encoding: chunked\r\n< \r\n{ [261 bytes data]\n\r100   367    0   250  100   117   3169   1483 --:--:-- --:--:-- --:--:--  4705\n* Connection #0 to host localhost left intact\n{\"success\":true,\"translatedFileId\":\"translated_doc_1759488381609_f4m9zzmqme6\",\"originalFileName\":\"test.txt\",\"translatedFileName\":\"test.txt_translated.txt\",\"fileSize\":6,\"downloadPath\":\"/api/documents/download/translated_doc_1759488381609_f4m9zzmqme6\"}",
+      "exit": 0,
+      "description": "Test translation in production mode"
+    },
+    "title": "curl -X POST http://localhost:3000/api/documents/translate -H \"Content-Type: application/json\" -d '{\"fileId\":\"doc_1759488381609_f4m9zzmqme6\",\"sourceLang\":\"en\",\"targetLang\":\"es\",\"fileName\":\"test.txt\",\"fileType\":\"txt\"}' -v --max-time 30",
+    "time": {
+      "start": 1759488385604,
+      "end": 1759488385711
+    }
+  }
+}

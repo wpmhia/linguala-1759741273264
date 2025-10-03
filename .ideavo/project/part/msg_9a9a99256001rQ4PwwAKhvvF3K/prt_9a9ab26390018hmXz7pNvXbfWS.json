@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a9ab26390018hmXz7pNvXbfWS",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Good! The frontend is correctly sending the `fileType` parameter. The issue must be that the upload result doesn't contain the `fileType`. Let me check the upload API:",
+  "time": {
+    "start": 1759488191106,
+    "end": 1759488191106
+  }
+}

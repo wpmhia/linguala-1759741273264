@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9a99be7001wAJFXBtmhBDwow",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_011NmqB8qAD5ubdeNWUNp6yh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && find . -name \"*.log\" -o -name \"server.log\" -o -name \"dev.log\" | head -10",
+      "description": "Find server log files"
+    },
+    "output": "./dev.log\n./ideavo-server.log\n./server.log\n",
+    "metadata": {
+      "output": "./dev.log\n./ideavo-server.log\n./server.log\n",
+      "exit": 0,
+      "description": "Find server log files"
+    },
+    "title": "cd /home/user/project && find . -name \"*.log\" -o -name \"server.log\" -o -name \"dev.log\" | head -10",
+    "time": {
+      "start": 1759488090003,
+      "end": 1759488090933
+    }
+  }
+}

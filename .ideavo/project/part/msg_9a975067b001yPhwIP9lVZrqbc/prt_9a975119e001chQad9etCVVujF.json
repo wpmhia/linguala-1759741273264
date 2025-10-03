@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a975119e001chQad9etCVVujF",
+  "messageID": "msg_9a975067b001yPhwIP9lVZrqbc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "You're absolutely correct. I apologize for continuing to focus on the frontend when you've clearly identified this as a **server-side 500 error**.\n\nThe issue is:\n```\n4000-iltr9ta76gim4u483kakt.e2b.app/api/documents/translate  → 500\n```\n\nThis is a **backend crash** in the document translation API endpoint. Let me check the actual server logs to see what's causing the 500 error:",
+  "time": {
+    "start": 1759484647805,
+    "end": 1759484647805
+  }
+}

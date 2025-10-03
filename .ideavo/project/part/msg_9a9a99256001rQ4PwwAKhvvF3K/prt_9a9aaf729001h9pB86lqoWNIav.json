@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a9aaf729001h9pB86lqoWNIav",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I see the issue! The API requires a `fileType` parameter but the frontend request isn't providing it. Let me check how the frontend is calling this API:",
+  "time": {
+    "start": 1759488178848,
+    "end": 1759488178848
+  }
+}

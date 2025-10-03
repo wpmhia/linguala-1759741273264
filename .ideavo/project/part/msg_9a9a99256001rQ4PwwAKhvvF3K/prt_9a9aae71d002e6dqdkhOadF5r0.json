@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a9aae71d002e6dqdkhOadF5r0",
+  "messageID": "msg_9a9a99256001rQ4PwwAKhvvF3K",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Found the issue! The API is returning a 400 error, not 500. Let me check the API route to see what's wrong:",
+  "time": {
+    "start": 1759488174593,
+    "end": 1759488174593
+  }
+}

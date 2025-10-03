@@ -1,0 +1,27 @@
+{
+  "id": "prt_9a8d5d533001APdCtQJl0FtkuY",
+  "messageID": "msg_9a8d2a540001V7ZSq0pkuzbbmn",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_011Y9f2jPhfitAsYLbwAAS4C",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"next dev\" && npm run dev",
+      "timeout": 8000,
+      "description": "Start simplified translation app"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Start simplified translation app"
+    },
+    "title": "cd /home/user/project && pkill -f \"next dev\" && npm run dev",
+    "time": {
+      "start": 1759474210960,
+      "end": 1759474210976
+    }
+  }
+}

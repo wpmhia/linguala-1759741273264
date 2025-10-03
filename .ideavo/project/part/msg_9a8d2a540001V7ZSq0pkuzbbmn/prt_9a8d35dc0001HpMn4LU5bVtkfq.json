@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8d35dc0001HpMn4LU5bVtkfq",
+  "messageID": "msg_9a8d2a540001V7ZSq0pkuzbbmn",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01CKwk3XKriqefTwwCqmPWtK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm uninstall puppeteer cheerio @mozilla/readability jsdom validator url-parse zod @types/validator @types/jsdom",
+      "description": "Remove web scraping libraries"
+    },
+    "output": "npm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 2 packages, removed 181 packages, changed 13 packages, and audited 427 packages in 3s\n\n69 packages are looking for funding\n  run `npm fund` for details\n\n5 vulnerabilities (3 moderate, 2 critical)\n\nTo address all issues, run:\n  npm audit fix\n\nRun `npm audit` for details.\n",
+    "metadata": {
+      "output": "npm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 2 packages, removed 181 packages, changed 13 packages, and audited 427 packages in 3s\n\n69 packages are looking for funding\n  run `npm fund` for details\n\n5 vulnerabilities (3 moderate, 2 critical)\n\nTo address all issues, run:\n  npm audit fix\n\nRun `npm audit` for details.\n",
+      "exit": 0,
+      "description": "Remove web scraping libraries"
+    },
+    "title": "cd /home/user/project && npm uninstall puppeteer cheerio @mozilla/readability jsdom validator url-parse zod @types/validator @types/jsdom",
+    "time": {
+      "start": 1759474049701,
+      "end": 1759474052759
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a8d45f98001x0D9dzv4k0kFWL",
+  "messageID": "msg_9a8d2a540001V7ZSq0pkuzbbmn",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01FWBfrkL7N2dVBNNHJduwik",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "limit": 10
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { useState, useEffect } from \"react\"\n00004| import { Button } from \"@/components/ui/button\"\n00005| import { Textarea } from \"@/components/ui/textarea\"\n00006| import { Input } from \"@/components/ui/input\"\n00007| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00008| import { Alert, AlertDescription } from \"@/components/ui/alert\"\n00009| import { \n00010|   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n\n(File has more lines. Use 'offset' parameter to read beyond line 10)\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { useState, useEffect } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Input } from \"@/components/ui/input\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Alert, AlertDescription } from \"@/components/ui/alert\"\nimport { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759474115124,
+      "end": 1759474115127
+    }
+  }
+}

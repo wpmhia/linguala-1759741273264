@@ -1,0 +1,73 @@
+{
+  "id": "prt_9a8d34df4002Lw5i8nKkYo8asP",
+  "messageID": "msg_9a8d2a540001V7ZSq0pkuzbbmn",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_014fgSMf6k8acFo1Zx4p5wFC",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Remove website translation functionality",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "remove-1"
+        },
+        {
+          "content": "Remove web scraping API endpoint",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-2"
+        },
+        {
+          "content": "Clean up unused libraries",
+          "status": "in_progress",
+          "priority": "medium",
+          "id": "remove-3"
+        },
+        {
+          "content": "Simplify translator component",
+          "status": "pending",
+          "priority": "high",
+          "id": "remove-4"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Remove website translation functionality\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\",\n    \"id\": \"remove-1\"\n  },\n  {\n    \"content\": \"Remove web scraping API endpoint\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"remove-2\"\n  },\n  {\n    \"content\": \"Clean up unused libraries\",\n    \"status\": \"in_progress\",\n    \"priority\": \"medium\",\n    \"id\": \"remove-3\"\n  },\n  {\n    \"content\": \"Simplify translator component\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"remove-4\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Remove website translation functionality",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "remove-1"
+        },
+        {
+          "content": "Remove web scraping API endpoint",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-2"
+        },
+        {
+          "content": "Clean up unused libraries",
+          "status": "in_progress",
+          "priority": "medium",
+          "id": "remove-3"
+        },
+        {
+          "content": "Simplify translator component",
+          "status": "pending",
+          "priority": "high",
+          "id": "remove-4"
+        }
+      ]
+    },
+    "title": "3 todos",
+    "time": {
+      "start": 1759474045750,
+      "end": 1759474045750
+    }
+  }
+}

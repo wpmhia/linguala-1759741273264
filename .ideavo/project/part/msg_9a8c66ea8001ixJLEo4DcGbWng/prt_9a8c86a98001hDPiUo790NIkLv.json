@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c86a98001hDPiUo790NIkLv",
+  "messageID": "msg_9a8c66ea8001ixJLEo4DcGbWng",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_011UZ2SKawir1QeLrpQVWMjW",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/url-utils.ts",
+      "content": "import validator from 'validator'\nimport { parse as parseUrl } from 'url-parse'\n\nexport interface URLValidationResult {\n  isValid: boolean\n  normalizedUrl?: string\n  error?: string\n  domain?: string\n  protocol?: string\n}\n\nexport function validateAndNormalizeUrl(input: string): URLValidationResult {\n  if (!input || typeof input !== 'string') {\n    return {\n      isValid: false,\n      error: 'URL is required'\n    }\n  }\n\n  const trimmedInput = input.trim()\n  \n  if (!trimmedInput) {\n    return {\n      isValid: false,\n      error: 'URL cannot be empty'\n    }\n  }\n\n  // Try to add protocol if missing\n  let urlToValidate = trimmedInput\n  if (!trimmedInput.startsWith('http://') && !trimmedInput.startsWith('https://')) {\n    urlToValidate = `https://${trimmedInput}`\n  }\n\n  // Basic URL validation\n  if (!validator.isURL(urlToValidate, {\n    protocols: ['http', 'https'],\n    require_protocol: true,\n    require_host: true,\n    require_valid_protocol: true,\n    allow_underscores: true,\n    allow_trailing_dot: false,\n    allow_protocol_relative_urls: false,\n  })) {\n    return {\n      isValid: false,\n      error: 'Invalid URL format'\n    }\n  }\n\n  try {\n    const parsed = parseUrl(urlToValidate)\n    \n    // Additional validation\n    if (!parsed.hostname || parsed.hostname.length === 0) {\n      return {\n        isValid: false,\n        error: 'Invalid hostname'\n      }\n    }\n\n    // Check for localhost/private IPs (security measure)\n    const hostname = parsed.hostname.toLowerCase()\n    const privatePatterns = [\n      /^localhost$/,\n      /^127\\./,\n      /^10\\./,\n      /^172\\.(1[6-9]|2[0-9]|3[0-1])\\./,\n      /^192\\.168\\./,\n      /^::1$/,\n      /^fc00:/,\n      /^fd00:/,\n    ]\n\n    const isPrivate = privatePatterns.some(pattern => pattern.test(hostname))\n    if (isPrivate && process.env.NODE_ENV === 'production') {\n      return {\n        isValid: false,\n        error: 'Private/local URLs are not allowed'\n      }\n    }\n\n    // Check for suspicious TLDs (optional security measure)\n    const suspiciousTlds = ['.tk', '.ml', '.ga', '.cf']\n    const hasSuspiciousTld = suspiciousTlds.some(tld => hostname.endsWith(tld))\n    \n    return {\n      isValid: true,\n      normalizedUrl: urlToValidate,\n      domain: parsed.hostname,\n      protocol: parsed.protocol,\n      ...(hasSuspiciousTld && { \n        warning: 'This domain uses a TLD that may be associated with spam or malicious content' \n      })\n    }\n\n  } catch (error) {\n    return {\n      isValid: false,\n      error: 'Failed to parse URL'\n    }\n  }\n}\n\nexport function extractDomainFromUrl(url: string): string | null {\n  try {\n    const validation = validateAndNormalizeUrl(url)\n    return validation.domain || null\n  } catch {\n    return null\n  }\n}\n\nexport function isValidDomain(domain: string): boolean {\n  const dummyUrl = `https://${domain}`\n  const validation = validateAndNormalizeUrl(dummyUrl)\n  return validation.isValid\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/lib/url-utils.ts",
+      "exists": false
+    },
+    "title": "lib/url-utils.ts",
+    "time": {
+      "start": 1759473342951,
+      "end": 1759473342952
+    }
+  }
+}

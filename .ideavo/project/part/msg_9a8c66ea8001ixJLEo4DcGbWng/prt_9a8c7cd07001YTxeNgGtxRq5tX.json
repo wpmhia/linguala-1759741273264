@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c7cd07001YTxeNgGtxRq5tX",
+  "messageID": "msg_9a8c66ea8001ixJLEo4DcGbWng",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KbDjAcrS8Gf1jUqwXnpQKT",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm install @tanstack/react-query-devtools",
+      "description": "Install React Query devtools"
+    },
+    "output": "\nadded 2 packages, and audited 570 packages in 2s\n\n97 packages are looking for funding\n  run `npm fund` for details\n\n5 vulnerabilities (3 moderate, 2 critical)\n\nTo address all issues, run:\n  npm audit fix\n\nRun `npm audit` for details.\n",
+    "metadata": {
+      "output": "\nadded 2 packages, and audited 570 packages in 2s\n\n97 packages are looking for funding\n  run `npm fund` for details\n\n5 vulnerabilities (3 moderate, 2 critical)\n\nTo address all issues, run:\n  npm audit fix\n\nRun `npm audit` for details.\n",
+      "exit": 0,
+      "description": "Install React Query devtools"
+    },
+    "title": "cd /home/user/project && npm install @tanstack/react-query-devtools",
+    "time": {
+      "start": 1759473291132,
+      "end": 1759473293672
+    }
+  }
+}

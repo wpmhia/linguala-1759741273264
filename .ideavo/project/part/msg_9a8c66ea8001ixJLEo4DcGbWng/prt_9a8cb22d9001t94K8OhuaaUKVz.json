@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8cb22d9001t94K8OhuaaUKVz",
+  "messageID": "msg_9a8c66ea8001ixJLEo4DcGbWng",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01X1E9NCj3Fovj6hU8AR7NwY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/scrape-website/route.ts",
+      "oldString": "    browser = await puppeteer.launch({\n      headless: 'new',",
+      "newString": "    browser = await puppeteer.launch({\n      headless: true,"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/scrape-website/route.ts\n===================================================================\n--- /home/user/project/app/api/scrape-website/route.ts\n+++ /home/user/project/app/api/scrape-website/route.ts\n@@ -39,9 +39,9 @@\n let browser: any = null\n \n try {\n   browser = await puppeteer.launch({\n-    headless: 'new',\n+    headless: true,\n     args: [\n       '--no-sandbox',\n       '--disable-setuid-sandbox',\n       '--disable-dev-shm-usage',\n"
+    },
+    "title": "app/api/scrape-website/route.ts",
+    "time": {
+      "start": 1759473510157,
+      "end": 1759473510163
+    }
+  }
+}

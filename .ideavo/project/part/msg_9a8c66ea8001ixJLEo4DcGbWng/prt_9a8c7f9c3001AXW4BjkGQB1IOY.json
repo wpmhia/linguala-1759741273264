@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a8c7f9c3001AXW4BjkGQB1IOY",
+  "messageID": "msg_9a8c66ea8001ixJLEo4DcGbWng",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01ETzBREXtMfMQwfzYppgt2y",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx"
+    },
+    "output": "<file>\n00001| import './globals.css';\n00002| import type { Metadata } from 'next';\n00003| import { Inter } from 'next/font/google';\n00004| import { Toaster } from '@/components/ui/sonner';\n00005| \n00006| const inter = Inter({ subsets: ['latin'] });\n00007| \n00008| export const metadata: Metadata = {\n00009|   title: 'Linguala - European AI Translation Platform',\n00010|   description: 'The European translation platform built for European languages and culture. Professional domain expertise, custom glossaries, and intelligent AI. Based in Europe, for Europe.',\n00011|   keywords: 'european translation, EU languages, european translator, linguala, multilingual europe, professional translation, domain expertise',\n00012|   authors: [{ name: 'Linguala Europe' }],\n00013|   creator: 'Linguala',\n00014|   publisher: 'Linguala Europe',\n00015|   robots: 'index, follow',\n00016|   openGraph: {\n00017|     type: 'website',\n00018|     locale: 'en_EU',\n00019|     url: 'https://linguala.eu',\n00020|     title: 'Linguala - European AI Translation Platform',\n00021|     description: 'The European translation platform built for European languages and culture',\n00022|     siteName: 'Linguala',\n00023|   },\n00024|   twitter: {\n00025|     card: 'summary_large_image',\n00026|     title: 'Linguala - European AI Translation Platform',\n00027|     description: 'European translation platform built for European languages and culture',\n00028|     creator: '@linguala',\n00029|   },\n00030| };\n00031| \n00032| export const viewport = {\n00033|   width: 'device-width',\n00034|   initialScale: 1,\n00035|   themeColor: '#3B82F6',\n00036| };\n00037| \n00038| export default function RootLayout({\n00039|   children,\n00040| }: {\n00041|   children: React.ReactNode;\n00042| }) {\n00043|   return (\n00044|     <html lang=\"en\">\n00045|       <body className={inter.className}>\n00046|         {children}\n00047|         <Toaster />\n00048|         {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}\n00049|         <script src=\"/scripts/iframe-navigation.js\"></script>\n00050|       </body>\n00051|     </html>\n00052|   );\n00053| }\n00054| \n</file>",
+    "metadata": {
+      "preview": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';\n\nconst inter = Inter({ subsets: ['latin'] });\n\nexport const metadata: Metadata = {\n  title: 'Linguala - European AI Translation Platform',\n  description: 'The European translation platform built for European languages and culture. Professional domain expertise, custom glossaries, and intelligent AI. Based in Europe, for Europe.',\n  keywords: 'european translation, EU languages, european translator, linguala, multilingual europe, professional translation, domain expertise',\n  authors: [{ name: 'Linguala Europe' }],\n  creator: 'Linguala',\n  publisher: 'Linguala Europe',\n  robots: 'index, follow',\n  openGraph: {\n    type: 'website',\n    locale: 'en_EU',\n    url: 'https://linguala.eu',\n    title: 'Linguala - European AI Translation Platform',"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759473302262,
+      "end": 1759473302264
+    }
+  }
+}

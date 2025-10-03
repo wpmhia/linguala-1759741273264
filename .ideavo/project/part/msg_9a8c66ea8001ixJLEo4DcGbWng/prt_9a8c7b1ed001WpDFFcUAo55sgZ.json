@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a8c7b1ed001WpDFFcUAo55sgZ",
+  "messageID": "msg_9a8c66ea8001ixJLEo4DcGbWng",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let's setup React Query for better API state management and create a query provider:",
+  "time": {
+    "start": 1759473284181,
+    "end": 1759473284181
+  }
+}

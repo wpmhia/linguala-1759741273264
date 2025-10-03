@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c807a60029hKh3pr6hqs44U",
+  "messageID": "msg_9a8c66ea8001ixJLEo4DcGbWng",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01NJ87Z8o5hgWz6xB22ABdf6",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';",
+      "newString": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';\nimport { QueryProvider } from '@/components/providers/query-provider';"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/layout.tsx\n===================================================================\n--- /home/user/project/app/layout.tsx\n+++ /home/user/project/app/layout.tsx\n@@ -1,8 +1,9 @@\n import './globals.css';\n import type { Metadata } from 'next';\n import { Inter } from 'next/font/google';\n import { Toaster } from '@/components/ui/sonner';\n+import { QueryProvider } from '@/components/providers/query-provider';\n \n const inter = Inter({ subsets: ['latin'] });\n \n export const metadata: Metadata = {\n"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759473306971,
+      "end": 1759473306976
+    }
+  }
+}

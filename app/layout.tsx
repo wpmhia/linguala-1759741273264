@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/sonner';
+import { QueryProvider } from '@/components/providers/query-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -43,7 +44,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+        <QueryProvider>
+          {children}
+        </QueryProvider>
         <Toaster />
         {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}
         <script src="/scripts/iframe-navigation.js"></script>

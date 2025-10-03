@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c7b455001eDeiZGKP75fpnv",
+  "messageID": "msg_9a8c66ea8001ixJLEo4DcGbWng",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01L5N2W5p7WpC6CCKCAZSm34",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/providers/query-provider.tsx",
+      "content": "\"use client\"\n\nimport { QueryClient, QueryClientProvider } from '@tanstack/react-query'\nimport { ReactQueryDevtools } from '@tanstack/react-query-devtools'\nimport { useState } from 'react'\n\nexport function QueryProvider({ children }: { children: React.ReactNode }) {\n  const [queryClient] = useState(() => \n    new QueryClient({\n      defaultOptions: {\n        queries: {\n          staleTime: 5 * 60 * 1000, // 5 minutes\n          retry: (failureCount, error: any) => {\n            // Don't retry on 4xx errors\n            if (error?.status >= 400 && error?.status < 500) {\n              return false\n            }\n            return failureCount < 2\n          },\n        },\n        mutations: {\n          retry: false,\n        },\n      },\n    })\n  )\n\n  return (\n    <QueryClientProvider client={queryClient}>\n      {children}\n      <ReactQueryDevtools initialIsOpen={false} />\n    </QueryClientProvider>\n  )\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/components/providers/query-provider.tsx",
+      "exists": false
+    },
+    "title": "components/providers/query-provider.tsx",
+    "time": {
+      "start": 1759473287624,
+      "end": 1759473287625
+    }
+  }
+}

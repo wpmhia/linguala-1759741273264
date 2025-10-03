@@ -1,16 +1,20 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 import { 
   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,
-  Check, X, Mic, Settings, History, FileText
+  Check, X, Mic, Settings, History, FileText, Globe, AlertTriangle, Loader2
 } from "lucide-react"
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
+import { useWebsiteScraper } from "@/hooks/use-website-scraper"
+import { useTranslation } from "@/hooks/use-translation"
+import { validateAndNormalizeUrl } from "@/lib/url-utils"
 
 // Common languages like Google Translate
 const LANGUAGES = [
@@ -46,13 +50,18 @@ export default function LingualaTranslator() {
   const [translatedText, setTranslatedText] = useState("")
   const [sourceLang, setSourceLang] = useState("auto")
   const [targetLang, setTargetLang] = useState("en")
-  const [isTranslating, setIsTranslating] = useState(false)
   
   // UI state
   const [copySuccess, setCopySuccess] = useState(false)
   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)
   const [mode, setMode] = useState<'text' | 'documents' | 'website'>('text')
   const [websiteUrl, setWebsiteUrl] = useState("")
+  const [urlValidation, setUrlValidation] = useState<{isValid: boolean; error?: string}>({ isValid: true })
+  const [scrapedContent, setScrapedContent] = useState<{title: string; content: string} | null>(null)
+
+  // React Query hooks
+  const websiteScraper = useWebsiteScraper()
+  const translation = useTranslation()
 
   // Helper functions
   const getLanguage = (code: string) => {
@@ -61,38 +70,82 @@ export default function LingualaTranslator() {
 
   const handleSourceTextChange = (text: string) => {
     setSourceText(text)
-    if (text.trim()) {
-      translateText(text, sourceLang, targetLang)
-    } else {
+    if (text.trim() && mode === 'text') {
+      handleTranslation(text)
+    } else if (!text.trim()) {
       setTranslatedText("")
     }
   }
 
-  const translateText = async (text: string, from: string, to: string) => {
+  const handleTranslation = (text: string) => {
     if (!text.trim()) return
-    
-    setIsTranslating(true)
-    try {
-      const response = await fetch('/api/translate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text, sourceLang: from, targetLang: to })
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
+
+    translation.mutate({
+      text,
+      sourceLang,
+      targetLang
+    }, {
+      onSuccess: (data) => {
         setTranslatedText(data.translatedText)
-      } else {
-        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))
-        console.error('Translation API error:', errorData)
-        throw new Error(errorData.error || 'Translation failed')
+        if (data.fallback) {
+          toast.info("Using fallback translation")
+        }
+      },
+      onError: (error) => {
+        console.error('Translation error:', error)
+        setTranslatedText("Translation service temporarily unavailable. Please try again later.")
+        toast.error("Translation failed")
       }
-    } catch (error) {
-      console.error('Translation error:', error)
-      setTranslatedText("Translation service temporarily unavailable. Please try again later.")
-    } finally {
-      setIsTranslating(false)
+    })
+  }
+
+  const handleUrlChange = (url: string) => {
+    setWebsiteUrl(url)
+    
+    if (!url.trim()) {
+      setUrlValidation({ isValid: true })
+      return
     }
+
+    const validation = validateAndNormalizeUrl(url)
+    setUrlValidation(validation)
+  }
+
+  const handleWebsiteTranslation = () => {
+    if (!websiteUrl.trim()) return
+
+    const validation = validateAndNormalizeUrl(websiteUrl)
+    
+    if (!validation.isValid) {
+      toast.error(validation.error || "Invalid URL")
+      return
+    }
+
+    websiteScraper.mutate({
+      url: validation.normalizedUrl!,
+      extractMethod: 'readability',
+      timeout: 15000
+    }, {
+      onSuccess: (data) => {
+        setScrapedContent({
+          title: data.title,
+          content: data.content
+        })
+        setSourceText(data.content)
+        toast.success(`Scraped "${data.title}" (${data.contentLength} characters)`)
+        
+        // Auto-translate if content is available
+        if (data.content) {
+          handleTranslation(data.content)
+        }
+      },
+      onError: (error: any) => {
+        console.error('Website scraping error:', error)
+        const errorMessage = error.response?.data?.error || 'Failed to scrape website'
+        toast.error(errorMessage)
+        setScrapedContent(null)
+      }
+    })
   }
 
   const swapLanguages = () => {
@@ -119,52 +172,22 @@ export default function LingualaTranslator() {
     setSourceText("")
     setTranslatedText("")
     setWebsiteUrl("")
+    setScrapedContent(null)
+    setUrlValidation({ isValid: true })
   }
 
-  const translateWebsite = async (url: string) => {
-    if (!url.trim()) return
-    
-    // Add https:// if no protocol is specified
-    let formattedUrl = url.trim()
-    if (!formattedUrl.startsWith('http://') && !formattedUrl.startsWith('https://')) {
-      formattedUrl = 'https://' + formattedUrl
-    }
-    
-    setIsTranslating(true)
-    setSourceText(`Translating website: ${formattedUrl}`)
-    
-    try {
-      // For demo purposes, we'll extract some common website text
-      // In a real implementation, you'd fetch and parse the website content
-      const demoContent = `Welcome to our website! We offer professional services and high-quality products. Our team is dedicated to providing excellent customer support. Contact us today to learn more about our offerings.`
+  // Auto-translate when languages change
+  useEffect(() => {
+    if (sourceText.trim() && mode === 'text') {
+      const timeoutId = setTimeout(() => {
+        handleTranslation(sourceText)
+      }, 300) // Debounce
       
-      const response = await fetch('/api/translate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          text: demoContent, 
-          sourceLang: sourceLang, 
-          targetLang: targetLang 
-        })
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
-        setSourceText(demoContent)
-        setTranslatedText(data.translatedText)
-        toast.success("Website content translated! (Demo mode)")
-      } else {
-        throw new Error('Translation failed')
-      }
-    } catch (error) {
-      console.error('Website translation error:', error)
-      setSourceText("")
-      setTranslatedText("Website translation temporarily unavailable. Please try translating text directly.")
-      toast.error("Could not translate website")
-    } finally {
-      setIsTranslating(false)
+      return () => clearTimeout(timeoutId)
     }
-  }
+  }, [sourceLang, targetLang])
+
+  const isLoading = translation.isPending || websiteScraper.isPending
 
   return (
     <div className="min-h-screen bg-white">
@@ -206,6 +229,7 @@ export default function LingualaTranslator() {
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
+                  <Globe className="h-4 w-4 mr-1 inline" />
                   Website
                 </button>
               </nav>
@@ -228,10 +252,7 @@ export default function LingualaTranslator() {
           {/* Language Selection Bar */}
           <div className="flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4">
             <div className="flex items-center space-x-4">
-              <Select value={sourceLang} onValueChange={(value) => {
-                setSourceLang(value)
-                if (sourceText.trim()) translateText(sourceText, value, targetLang)
-              }}>
+              <Select value={sourceLang} onValueChange={setSourceLang}>
                 <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                   <div className="flex items-center space-x-2">
                     <span className="text-sm">{getLanguage(sourceLang).flag}</span>
@@ -262,10 +283,7 @@ export default function LingualaTranslator() {
             </Button>
 
             <div className="flex items-center space-x-4">
-              <Select value={targetLang} onValueChange={(value) => {
-                setTargetLang(value)
-                if (sourceText.trim()) translateText(sourceText, sourceLang, value)
-              }}>
+              <Select value={targetLang} onValueChange={setTargetLang}>
                 <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                   <div className="flex items-center space-x-2">
                     <span className="text-sm">{getLanguage(targetLang).flag}</span>
@@ -288,36 +306,69 @@ export default function LingualaTranslator() {
 
           {/* Website URL Input (only show in website mode) */}
           {mode === 'website' && (
-            <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <div className="flex items-center space-x-4">
-                <label className="text-sm font-medium text-blue-900 whitespace-nowrap">
-                  Website URL:
-                </label>
-                <div className="flex-1 flex space-x-2">
-                  <input
-                    type="url"
-                    value={websiteUrl}
-                    onChange={(e) => setWebsiteUrl(e.target.value)}
-                    placeholder="Enter website URL (e.g., example.com or https://example.com)"
-                    className="flex-1 px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    onKeyPress={(e) => {
-                      if (e.key === 'Enter') {
-                        translateWebsite(websiteUrl)
-                      }
-                    }}
-                  />
-                  <Button
-                    onClick={() => translateWebsite(websiteUrl)}
-                    disabled={!websiteUrl.trim() || isTranslating}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6"
-                  >
-                    {isTranslating ? "Translating..." : "Translate Site"}
-                  </Button>
+            <div className="mb-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="flex items-center space-x-4 mb-3">
+                  <label className="text-sm font-medium text-blue-900 whitespace-nowrap">
+                    Website URL:
+                  </label>
+                  <div className="flex-1 flex space-x-2">
+                    <Input
+                      type="url"
+                      value={websiteUrl}
+                      onChange={(e) => handleUrlChange(e.target.value)}
+                      placeholder="Enter website URL (e.g., example.com or https://example.com)"
+                      className={`flex-1 ${!urlValidation.isValid ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : 'border-blue-300 focus:border-blue-500 focus:ring-blue-500'}`}
+                      onKeyPress={(e) => {
+                        if (e.key === 'Enter' && urlValidation.isValid) {
+                          handleWebsiteTranslation()
+                        }
+                      }}
+                    />
+                    <Button
+                      onClick={handleWebsiteTranslation}
+                      disabled={!websiteUrl.trim() || !urlValidation.isValid || isLoading}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-6"
+                    >
+                      {websiteScraper.isPending ? (
+                        <>
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                          Scraping...
+                        </>
+                      ) : (
+                        "Translate Site"
+                      )}
+                    </Button>
+                  </div>
                 </div>
+                
+                {!urlValidation.isValid && urlValidation.error && (
+                  <Alert className="mt-2 border-red-200 bg-red-50">
+                    <AlertTriangle className="h-4 w-4 text-red-600" />
+                    <AlertDescription className="text-red-700">
+                      {urlValidation.error}
+                    </AlertDescription>
+                  </Alert>
+                )}
+                
+                <p className="text-xs text-blue-700 mt-2">
+                  💡 Professional web scraping with Mozilla Readability for clean content extraction
+                </p>
               </div>
-              <p className="text-xs text-blue-700 mt-2">
-                💡 Demo mode: This will translate sample website content. Full website scraping coming soon!
-              </p>
+
+              {scrapedContent && (
+                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <Check className="h-4 w-4 text-green-600" />
+                    <span className="text-sm font-medium text-green-800">
+                      Successfully scraped: {scrapedContent.title}
+                    </span>
+                  </div>
+                  <p className="text-xs text-green-700">
+                    Content extracted and ready for translation ({scrapedContent.content.length} characters)
+                  </p>
+                </div>
+              )}
             </div>
           )}
 
@@ -334,6 +385,7 @@ export default function LingualaTranslator() {
                   placeholder={mode === 'website' ? "Website content will appear here..." : "Enter text"}
                   className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6"
                   style={{ fontSize: '16px', lineHeight: '1.5' }}
+                  disabled={mode === 'website'}
                 />
                 
                 {/* Source Text Controls */}
@@ -353,6 +405,7 @@ export default function LingualaTranslator() {
                       variant="ghost"
                       size="sm"
                       className="p-2 hover:bg-gray-100 rounded-full"
+                      disabled
                     >
                       <Mic className="h-4 w-4" />
                     </Button>
@@ -370,13 +423,29 @@ export default function LingualaTranslator() {
               <Textarea
                 value={translatedText}
                 readOnly
-                placeholder={isTranslating ? "Translating..." : "Translation"}
+                placeholder={
+                  isLoading ? "Translating..." : 
+                  mode === 'website' ? "Translated website content will appear here..." : 
+                  "Translation"
+                }
                 className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6 bg-gray-50"
                 style={{ fontSize: '16px', lineHeight: '1.5' }}
               />
               
+              {/* Loading indicator */}
+              {isLoading && (
+                <div className="absolute inset-0 bg-gray-50 bg-opacity-75 flex items-center justify-center">
+                  <div className="flex items-center space-x-2 text-blue-600">
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                    <span className="text-sm font-medium">
+                      {websiteScraper.isPending ? 'Scraping website...' : 'Translating...'}
+                    </span>
+                  </div>
+                </div>
+              )}
+              
               {/* Translation Controls */}
-              {translatedText && (
+              {translatedText && !isLoading && (
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <Button
@@ -391,6 +460,7 @@ export default function LingualaTranslator() {
                       variant="ghost"
                       size="sm"
                       className="p-2 hover:bg-gray-200 rounded-full"
+                      disabled
                     >
                       <Volume2 className="h-4 w-4" />
                     </Button>
@@ -398,6 +468,7 @@ export default function LingualaTranslator() {
                       variant="ghost"
                       size="sm"
                       className="p-2 hover:bg-gray-200 rounded-full"
+                      disabled
                     >
                       <Star className="h-4 w-4" />
                     </Button>
@@ -407,6 +478,7 @@ export default function LingualaTranslator() {
                     variant="ghost"
                     size="sm"
                     className="p-2 hover:bg-gray-200 rounded-full"
+                    disabled
                   >
                     <MoreHorizontal className="h-4 w-4" />
                   </Button>
@@ -422,10 +494,10 @@ export default function LingualaTranslator() {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  onClick={() => setMode('documents')}
+                  onClick={() => setMode('website')}
                 >
-                  <FileText className="h-4 w-4 mr-2" />
-                  Translate a document
+                  <Globe className="h-4 w-4 mr-2" />
+                  Translate a website
                 </Button>
               )}
               {mode === 'website' && (
@@ -440,37 +512,38 @@ export default function LingualaTranslator() {
             </div>
             
             <div className="flex items-center space-x-2 text-sm text-gray-500">
-              <span>Powered by Linguala Translate</span>
+              <span>Powered by Linguala Translate + Puppeteer + Readability</span>
             </div>
           </div>
         </div>
 
-        {/* Simple feature showcase */}
+        {/* Enhanced feature showcase */}
         <div className="mt-12">
           <div className="text-center">
-            <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8 max-w-4xl mx-auto">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
                 Professional Translation Platform
               </h2>
               <p className="text-gray-600 mb-6">
-                Fast, accurate translations powered by advanced AI. Support for 25+ languages including all major European languages.
+                Industry-standard web scraping with Puppeteer, intelligent content extraction with Mozilla Readability, 
+                and advanced AI translation powered by DashScope.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-gray-700">
                 <div className="text-center">
-                  <div className="font-semibold">25+</div>
+                  <div className="font-semibold text-blue-600">25+</div>
                   <div>Languages</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-semibold">Fast</div>
+                  <div className="font-semibold text-green-600">Smart</div>
+                  <div>Web Scraping</div>
+                </div>
+                <div className="text-center">
+                  <div className="font-semibold text-purple-600">Real-time</div>
                   <div>Translation</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-semibold">Free</div>
-                  <div>To Use</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-semibold">Accurate</div>
-                  <div>Results</div>
+                  <div className="font-semibold text-orange-600">Professional</div>
+                  <div>Quality</div>
                 </div>
               </div>
             </div>

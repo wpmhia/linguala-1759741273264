@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a8c43ecc001fg2fc4ZWKa2Tvx",
+  "messageID": "msg_9a8c42b43001K5XpGQRqJTMY0G",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01CDn9s1ELV7JmQZYznshMFN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 120,
+      "limit": 30
+    },
+    "output": "<file>\n00121|     <div className=\"min-h-screen bg-white\">\n00122|       {/* Google-style Header */}\n00123|       <header className=\"border-b border-gray-200\">\n00124|         <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n00125|           <div className=\"flex items-center justify-between\">\n00126|             <div className=\"flex items-center space-x-8\">\n00127|               <LingualaLogo size=\"md\" />\n00128|               <nav className=\"hidden md:flex items-center space-x-6\">\n00129|                 <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n00130|                   Text\n00131|                 </button>\n00132|                 <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n00133|                   Documents\n00134|                 </button>\n00135|                 <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n00136|                   Website\n00137|                 </button>\n00138|               </nav>\n00139|             </div>\n00140|             <div className=\"flex items-center space-x-4\">\n00141|               <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n00142|                 <History className=\"h-5 w-5\" />\n00143|               </button>\n00144|               <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n00145|                 <Settings className=\"h-5 w-5\" />\n00146|               </button>\n00147|             </div>\n00148|           </div>\n00149|         </div>\n00150|       </header>\n\n(File has more lines. Use 'offset' parameter to read beyond line 150)\n</file>",
+    "metadata": {
+      "preview": "    <div className=\"min-h-screen bg-white\">\n      {/* Google-style Header */}\n      <header className=\"border-b border-gray-200\">\n        <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-8\">\n              <LingualaLogo size=\"md\" />\n              <nav className=\"hidden md:flex items-center space-x-6\">\n                <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n                  Text\n                </button>\n                <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n                  Documents\n                </button>\n                <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n                  Website\n                </button>\n              </nav>\n            </div>\n            <div className=\"flex items-center space-x-4\">"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759473058555,
+      "end": 1759473058561
+    }
+  }
+}

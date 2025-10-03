@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
+import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { 
   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,
@@ -50,6 +51,8 @@ export default function LingualaTranslator() {
   // UI state
   const [copySuccess, setCopySuccess] = useState(false)
   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)
+  const [mode, setMode] = useState<'text' | 'documents' | 'website'>('text')
+  const [websiteUrl, setWebsiteUrl] = useState("")
 
   // Helper functions
   const getLanguage = (code: string) => {
@@ -115,6 +118,52 @@ export default function LingualaTranslator() {
   const clearText = () => {
     setSourceText("")
     setTranslatedText("")
+    setWebsiteUrl("")
+  }
+
+  const translateWebsite = async (url: string) => {
+    if (!url.trim()) return
+    
+    // Add https:// if no protocol is specified
+    let formattedUrl = url.trim()
+    if (!formattedUrl.startsWith('http://') && !formattedUrl.startsWith('https://')) {
+      formattedUrl = 'https://' + formattedUrl
+    }
+    
+    setIsTranslating(true)
+    setSourceText(`Translating website: ${formattedUrl}`)
+    
+    try {
+      // For demo purposes, we'll extract some common website text
+      // In a real implementation, you'd fetch and parse the website content
+      const demoContent = `Welcome to our website! We offer professional services and high-quality products. Our team is dedicated to providing excellent customer support. Contact us today to learn more about our offerings.`
+      
+      const response = await fetch('/api/translate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          text: demoContent, 
+          sourceLang: sourceLang, 
+          targetLang: targetLang 
+        })
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        setSourceText(demoContent)
+        setTranslatedText(data.translatedText)
+        toast.success("Website content translated! (Demo mode)")
+      } else {
+        throw new Error('Translation failed')
+      }
+    } catch (error) {
+      console.error('Website translation error:', error)
+      setSourceText("")
+      setTranslatedText("Website translation temporarily unavailable. Please try translating text directly.")
+      toast.error("Could not translate website")
+    } finally {
+      setIsTranslating(false)
+    }
   }
 
   return (
@@ -126,13 +175,37 @@ export default function LingualaTranslator() {
             <div className="flex items-center space-x-8">
               <LingualaLogo size="md" />
               <nav className="hidden md:flex items-center space-x-6">
-                <button className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                <button 
+                  onClick={() => setMode('text')}
+                  className={`text-sm px-3 py-2 rounded transition-colors ${
+                    mode === 'text' 
+                      ? 'text-blue-600 bg-blue-50 font-medium' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
+                >
                   Text
                 </button>
-                <button className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                <button 
+                  onClick={() => {
+                    setMode('documents')
+                    toast.info("Document translation coming soon!")
+                  }}
+                  className={`text-sm px-3 py-2 rounded transition-colors ${
+                    mode === 'documents' 
+                      ? 'text-blue-600 bg-blue-50 font-medium' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
+                >
                   Documents
                 </button>
-                <button className="text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                <button 
+                  onClick={() => setMode('website')}
+                  className={`text-sm px-3 py-2 rounded transition-colors ${
+                    mode === 'website' 
+                      ? 'text-blue-600 bg-blue-50 font-medium' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
+                >
                   Website
                 </button>
               </nav>
@@ -213,6 +286,41 @@ export default function LingualaTranslator() {
             </div>
           </div>
 
+          {/* Website URL Input (only show in website mode) */}
+          {mode === 'website' && (
+            <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="flex items-center space-x-4">
+                <label className="text-sm font-medium text-blue-900 whitespace-nowrap">
+                  Website URL:
+                </label>
+                <div className="flex-1 flex space-x-2">
+                  <input
+                    type="url"
+                    value={websiteUrl}
+                    onChange={(e) => setWebsiteUrl(e.target.value)}
+                    placeholder="Enter website URL (e.g., example.com or https://example.com)"
+                    className="flex-1 px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    onKeyPress={(e) => {
+                      if (e.key === 'Enter') {
+                        translateWebsite(websiteUrl)
+                      }
+                    }}
+                  />
+                  <Button
+                    onClick={() => translateWebsite(websiteUrl)}
+                    disabled={!websiteUrl.trim() || isTranslating}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6"
+                  >
+                    {isTranslating ? "Translating..." : "Translate Site"}
+                  </Button>
+                </div>
+              </div>
+              <p className="text-xs text-blue-700 mt-2">
+                💡 Demo mode: This will translate sample website content. Full website scraping coming soon!
+              </p>
+            </div>
+          )}
+
           {/* Translation Areas */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden">
             {/* Source Text */}
@@ -223,7 +331,7 @@ export default function LingualaTranslator() {
                   onChange={(e) => handleSourceTextChange(e.target.value)}
                   onFocus={() => setFocusedArea('source')}
                   onBlur={() => setFocusedArea(null)}
-                  placeholder="Enter text"
+                  placeholder={mode === 'website' ? "Website content will appear here..." : "Enter text"}
                   className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6"
                   style={{ fontSize: '16px', lineHeight: '1.5' }}
                 />
@@ -310,10 +418,25 @@ export default function LingualaTranslator() {
           {/* Bottom Actions */}
           <div className="mt-6 flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Button variant="outline" size="sm">
-                <FileText className="h-4 w-4 mr-2" />
-                Translate a document
-              </Button>
+              {mode === 'text' && (
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => setMode('documents')}
+                >
+                  <FileText className="h-4 w-4 mr-2" />
+                  Translate a document
+                </Button>
+              )}
+              {mode === 'website' && (
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => setMode('text')}
+                >
+                  Switch to text translation
+                </Button>
+              )}
             </div>
             
             <div className="flex items-center space-x-2 text-sm text-gray-500">

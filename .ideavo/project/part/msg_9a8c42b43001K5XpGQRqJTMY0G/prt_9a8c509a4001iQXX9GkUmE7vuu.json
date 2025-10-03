@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c509a4001iQXX9GkUmE7vuu",
+  "messageID": "msg_9a8c42b43001K5XpGQRqJTMY0G",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01YT2rAc8NbiZ4y7uLfnu58b",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "          {/* Bottom Actions */}\n          <div className=\"mt-6 flex items-center justify-between\">\n            <div className=\"flex items-center space-x-4\">\n              <Button variant=\"outline\" size=\"sm\">\n                <FileText className=\"h-4 w-4 mr-2\" />\n                Translate a document\n              </Button>\n            </div>",
+      "newString": "          {/* Bottom Actions */}\n          <div className=\"mt-6 flex items-center justify-between\">\n            <div className=\"flex items-center space-x-4\">\n              {mode === 'text' && (\n                <Button \n                  variant=\"outline\" \n                  size=\"sm\"\n                  onClick={() => setMode('documents')}\n                >\n                  <FileText className=\"h-4 w-4 mr-2\" />\n                  Translate a document\n                </Button>\n              )}\n              {mode === 'website' && (\n                <Button \n                  variant=\"outline\" \n                  size=\"sm\"\n                  onClick={() => setMode('text')}\n                >\n                  Switch to text translation\n                </Button>\n              )}\n            </div>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -417,12 +417,27 @@\n \n {/* Bottom Actions */}\n <div className=\"mt-6 flex items-center justify-between\">\n   <div className=\"flex items-center space-x-4\">\n-    <Button variant=\"outline\" size=\"sm\">\n-      <FileText className=\"h-4 w-4 mr-2\" />\n-      Translate a document\n-    </Button>\n+    {mode === 'text' && (\n+      <Button \n+        variant=\"outline\" \n+        size=\"sm\"\n+        onClick={() => setMode('documents')}\n+      >\n+        <FileText className=\"h-4 w-4 mr-2\" />\n+        Translate a document\n+      </Button>\n+    )}\n+    {mode === 'website' && (\n+      <Button \n+        variant=\"outline\" \n+        size=\"sm\"\n+        onClick={() => setMode('text')}\n+      >\n+        Switch to text translation\n+      </Button>\n+    )}\n   </div>\n   \n   <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n     <span>Powered by Linguala Translate</span>\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759473112956,
+      "end": 1759473112965
+    }
+  }
+}

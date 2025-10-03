@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c4e6ef001LAhe2SDUS6Aghf",
+  "messageID": "msg_9a8c42b43001K5XpGQRqJTMY0G",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01LZzQddQ7iTfr1s7AKkDdBA",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"",
+      "newString": "import { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Input } from \"@/components/ui/input\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -2,8 +2,9 @@\n \n import { useState } from \"react\"\n import { Button } from \"@/components/ui/button\"\n import { Textarea } from \"@/components/ui/textarea\"\n+import { Input } from \"@/components/ui/input\"\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n import { \n   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n   Check, X, Mic, Settings, History, FileText\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759473102356,
+      "end": 1759473102361
+    }
+  }
+}

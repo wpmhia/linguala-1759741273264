@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c49ac70011I2kHp1yiB4oTt",
+  "messageID": "msg_9a8c42b43001K5XpGQRqJTMY0G",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01LnRQDmixRvShwoifkoA6Lv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "              <nav className=\"hidden md:flex items-center space-x-6\">\n                <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n                  Text\n                </button>\n                <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n                  Documents\n                </button>\n                <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n                  Website\n                </button>\n              </nav>",
+      "newString": "              <nav className=\"hidden md:flex items-center space-x-6\">\n                <button \n                  onClick={() => setMode('text')}\n                  className={`text-sm px-3 py-2 rounded transition-colors ${\n                    mode === 'text' \n                      ? 'text-blue-600 bg-blue-50 font-medium' \n                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'\n                  }`}\n                >\n                  Text\n                </button>\n                <button \n                  onClick={() => {\n                    setMode('documents')\n                    toast.info(\"Document translation coming soon!\")\n                  }}\n                  className={`text-sm px-3 py-2 rounded transition-colors ${\n                    mode === 'documents' \n                      ? 'text-blue-600 bg-blue-50 font-medium' \n                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'\n                  }`}\n                >\n                  Documents\n                </button>\n                <button \n                  onClick={() => setMode('website')}\n                  className={`text-sm px-3 py-2 rounded transition-colors ${\n                    mode === 'website' \n                      ? 'text-blue-600 bg-blue-50 font-medium' \n                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'\n                  }`}\n                >\n                  Website\n                </button>\n              </nav>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -173,15 +173,39 @@\n <div className=\"flex items-center justify-between\">\n   <div className=\"flex items-center space-x-8\">\n     <LingualaLogo size=\"md\" />\n     <nav className=\"hidden md:flex items-center space-x-6\">\n-      <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n+      <button \n+        onClick={() => setMode('text')}\n+        className={`text-sm px-3 py-2 rounded transition-colors ${\n+          mode === 'text' \n+            ? 'text-blue-600 bg-blue-50 font-medium' \n+            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'\n+        }`}\n+      >\n         Text\n       </button>\n-      <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n+      <button \n+        onClick={() => {\n+          setMode('documents')\n+          toast.info(\"Document translation coming soon!\")\n+        }}\n+        className={`text-sm px-3 py-2 rounded transition-colors ${\n+          mode === 'documents' \n+            ? 'text-blue-600 bg-blue-50 font-medium' \n+            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'\n+        }`}\n+      >\n         Documents\n       </button>\n-      <button className=\"text-sm text-gray-600 hover:text-gray-900 px-3 py-2 rounded hover:bg-gray-100 transition-colors\">\n+      <button \n+        onClick={() => setMode('website')}\n+        className={`text-sm px-3 py-2 rounded transition-colors ${\n+          mode === 'website' \n+            ? 'text-blue-600 bg-blue-50 font-medium' \n+            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'\n+        }`}\n+      >\n         Website\n       </button>\n     </nav>\n   </div>\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759473086785,
+      "end": 1759473086796
+    }
+  }
+}

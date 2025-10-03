@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c46da1001xQNRD10Kdxt9G3",
+  "messageID": "msg_9a8c42b43001K5XpGQRqJTMY0G",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Nz1Vf6NoBNv8KEYbMa4q7M",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const clearText = () => {\n    setSourceText(\"\")\n    setTranslatedText(\"\")\n  }",
+      "newString": "  const clearText = () => {\n    setSourceText(\"\")\n    setTranslatedText(\"\")\n    setWebsiteUrl(\"\")\n  }\n\n  const translateWebsite = async (url: string) => {\n    if (!url.trim()) return\n    \n    // Add https:// if no protocol is specified\n    let formattedUrl = url.trim()\n    if (!formattedUrl.startsWith('http://') && !formattedUrl.startsWith('https://')) {\n      formattedUrl = 'https://' + formattedUrl\n    }\n    \n    setIsTranslating(true)\n    setSourceText(`Translating website: ${formattedUrl}`)\n    \n    try {\n      // For demo purposes, we'll extract some common website text\n      // In a real implementation, you'd fetch and parse the website content\n      const demoContent = `Welcome to our website! We offer professional services and high-quality products. Our team is dedicated to providing excellent customer support. Contact us today to learn more about our offerings.`\n      \n      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ \n          text: demoContent, \n          sourceLang: sourceLang, \n          targetLang: targetLang \n        })\n      })\n      \n      if (response.ok) {\n        const data = await response.json()\n        setSourceText(demoContent)\n        setTranslatedText(data.translatedText)\n        toast.success(\"Website content translated! (Demo mode)\")\n      } else {\n        throw new Error('Translation failed')\n      }\n    } catch (error) {\n      console.error('Website translation error:', error)\n      setSourceText(\"\")\n      setTranslatedText(\"Website translation temporarily unavailable. Please try translating text directly.\")\n      toast.error(\"Could not translate website\")\n    } finally {\n      setIsTranslating(false)\n    }\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -116,10 +116,56 @@\n \n const clearText = () => {\n   setSourceText(\"\")\n   setTranslatedText(\"\")\n+  setWebsiteUrl(\"\")\n }\n \n+const translateWebsite = async (url: string) => {\n+  if (!url.trim()) return\n+  \n+  // Add https:// if no protocol is specified\n+  let formattedUrl = url.trim()\n+  if (!formattedUrl.startsWith('http://') && !formattedUrl.startsWith('https://')) {\n+    formattedUrl = 'https://' + formattedUrl\n+  }\n+  \n+  setIsTranslating(true)\n+  setSourceText(`Translating website: ${formattedUrl}`)\n+  \n+  try {\n+    // For demo purposes, we'll extract some common website text\n+    // In a real implementation, you'd fetch and parse the website content\n+    const demoContent = `Welcome to our website! We offer professional services and high-quality products. Our team is dedicated to providing excellent customer support. Contact us today to learn more about our offerings.`\n+    \n+    const response = await fetch('/api/translate', {\n+      method: 'POST',\n+      headers: { 'Content-Type': 'application/json' },\n+      body: JSON.stringify({ \n+        text: demoContent, \n+        sourceLang: sourceLang, \n+        targetLang: targetLang \n+      })\n+    })\n+    \n+    if (response.ok) {\n+      const data = await response.json()\n+      setSourceText(demoContent)\n+      setTranslatedText(data.translatedText)\n+      toast.success(\"Website content translated! (Demo mode)\")\n+    } else {\n+      throw new Error('Translation failed')\n+    }\n+  } catch (error) {\n+    console.error('Website translation error:', error)\n+    setSourceText(\"\")\n+    setTranslatedText(\"Website translation temporarily unavailable. Please try translating text directly.\")\n+    toast.error(\"Could not translate website\")\n+  } finally {\n+    setIsTranslating(false)\n+  }\n+}\n+\n return (\n   <div className=\"min-h-screen bg-white\">\n     {/* Google-style Header */}\n     <header className=\"border-b border-gray-200\">\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759473077244,
+      "end": 1759473077251
+    }
+  }
+}

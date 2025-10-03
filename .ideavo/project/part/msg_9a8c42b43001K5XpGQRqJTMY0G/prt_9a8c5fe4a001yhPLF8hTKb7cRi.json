@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a8c5fe4a001yhPLF8hTKb7cRi",
+  "messageID": "msg_9a8c42b43001K5XpGQRqJTMY0G",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(ui): implement website translation mode with URL input",
+  "cost": 0.6173744999999998,
+  "tokens": {
+    "input": 5,
+    "output": 383,
+    "reasoning": 0,
+    "cache": {
+      "write": 192,
+      "read": 79660
+    }
+  }
+}

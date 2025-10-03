@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c59de3001OUwCMWEVI4REvY",
+  "messageID": "msg_9a8c42b43001K5XpGQRqJTMY0G",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014MCVhnTDVmogV6yKSbSWDt",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"next dev\" && npm run dev &",
+      "description": "Restart development server with website functionality"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart development server with website functionality"
+    },
+    "title": "cd /home/user/project && pkill -f \"next dev\" && npm run dev &",
+    "time": {
+      "start": 1759473148128,
+      "end": 1759473148150
+    }
+  }
+}

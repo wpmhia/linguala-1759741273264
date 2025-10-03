@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8c4bed5001tsPwXAEXk4Zu06",
+  "messageID": "msg_9a8c42b43001K5XpGQRqJTMY0G",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_015qLQ1t8QWVxtg44fA7FsXU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "          {/* Translation Areas */}\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">",
+      "newString": "          {/* Website URL Input (only show in website mode) */}\n          {mode === 'website' && (\n            <div className=\"mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4\">\n              <div className=\"flex items-center space-x-4\">\n                <label className=\"text-sm font-medium text-blue-900 whitespace-nowrap\">\n                  Website URL:\n                </label>\n                <div className=\"flex-1 flex space-x-2\">\n                  <input\n                    type=\"url\"\n                    value={websiteUrl}\n                    onChange={(e) => setWebsiteUrl(e.target.value)}\n                    placeholder=\"Enter website URL (e.g., example.com or https://example.com)\"\n                    className=\"flex-1 px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500\"\n                    onKeyPress={(e) => {\n                      if (e.key === 'Enter') {\n                        translateWebsite(websiteUrl)\n                      }\n                    }}\n                  />\n                  <Button\n                    onClick={() => translateWebsite(websiteUrl)}\n                    disabled={!websiteUrl.trim() || isTranslating}\n                    className=\"bg-blue-600 hover:bg-blue-700 text-white px-6\"\n                  >\n                    {isTranslating ? \"Translating...\" : \"Translate Site\"}\n                  </Button>\n                </div>\n              </div>\n              <p className=\"text-xs text-blue-700 mt-2\">\n                💡 Demo mode: This will translate sample website content. Full website scraping coming soon!\n              </p>\n            </div>\n          )}\n\n          {/* Translation Areas */}\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -284,8 +284,43 @@\n     </Select>\n   </div>\n </div>\n \n+{/* Website URL Input (only show in website mode) */}\n+{mode === 'website' && (\n+  <div className=\"mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4\">\n+    <div className=\"flex items-center space-x-4\">\n+      <label className=\"text-sm font-medium text-blue-900 whitespace-nowrap\">\n+        Website URL:\n+      </label>\n+      <div className=\"flex-1 flex space-x-2\">\n+        <input\n+          type=\"url\"\n+          value={websiteUrl}\n+          onChange={(e) => setWebsiteUrl(e.target.value)}\n+          placeholder=\"Enter website URL (e.g., example.com or https://example.com)\"\n+          className=\"flex-1 px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500\"\n+          onKeyPress={(e) => {\n+            if (e.key === 'Enter') {\n+              translateWebsite(websiteUrl)\n+            }\n+          }}\n+        />\n+        <Button\n+          onClick={() => translateWebsite(websiteUrl)}\n+          disabled={!websiteUrl.trim() || isTranslating}\n+          className=\"bg-blue-600 hover:bg-blue-700 text-white px-6\"\n+        >\n+          {isTranslating ? \"Translating...\" : \"Translate Site\"}\n+        </Button>\n+      </div>\n+    </div>\n+    <p className=\"text-xs text-blue-700 mt-2\">\n+      💡 Demo mode: This will translate sample website content. Full website scraping coming soon!\n+    </p>\n+  </div>\n+)}\n+\n {/* Translation Areas */}\n <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">\n   {/* Source Text */}\n   <div className=\"relative\">\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759473097417,
+      "end": 1759473097424
+    }
+  }
+}

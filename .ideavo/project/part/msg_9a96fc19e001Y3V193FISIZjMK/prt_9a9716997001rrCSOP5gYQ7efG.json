@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a9716997001rrCSOP5gYQ7efG",
+  "messageID": "msg_9a96fc19e001Y3V193FISIZjMK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Jja2k3iZW3PCLrRQV3UKff",
+  "state": {
+    "status": "running",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build the application to check for errors"
+    },
+    "time": {
+      "start": 1759484406849
+    }
+  }
+}

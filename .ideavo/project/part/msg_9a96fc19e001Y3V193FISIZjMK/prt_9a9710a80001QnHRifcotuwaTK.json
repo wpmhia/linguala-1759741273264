@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a9710a80001QnHRifcotuwaTK",
+  "messageID": "msg_9a96fc19e001Y3V193FISIZjMK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01DubgPBzha52XMbLtzTFHk5",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "useTranslation|useMutation",
+      "include": "*.tsx"
+    },
+    "output": "Found 2 matches\n/home/user/project/components/linguala-translator.tsx:\n  Line 13: import { useTranslation } from \"@/hooks/use-translation\"\n  Line 55:   const translation = useTranslation()",
+    "metadata": {
+      "matches": 2,
+      "truncated": false
+    },
+    "title": "useTranslation|useMutation",
+    "time": {
+      "start": 1759484382528,
+      "end": 1759484382543
+    }
+  }
+}

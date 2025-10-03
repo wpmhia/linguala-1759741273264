@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a9706698002tDx67sFzmtRptS",
+  "messageID": "msg_9a96fc19e001Y3V193FISIZjMK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01HNa869XsLK3YHYLaCtK8UG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "react-query|@tanstack",
+      "include": "*.tsx,*.ts"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "react-query|@tanstack",
+    "time": {
+      "start": 1759484340373,
+      "end": 1759484340384
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a97119810011fQZ3RfWRnDx2Q",
+  "messageID": "msg_9a96fc19e001Y3V193FISIZjMK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01JMB2HfvxAdpBFdDMWuTcTZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 50,
+      "limit": 30
+    },
+    "output": "<file>\n00051|   const [copySuccess, setCopySuccess] = useState(false)\n00052|   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n00053| \n00054|   // React Query hook\n00055|   const translation = useTranslation()\n00056| \n00057|   // Helper functions\n00058|   const getLanguage = (code: string) => {\n00059|     return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n00060|   }\n00061| \n00062|   const handleSourceTextChange = (text: string) => {\n00063|     setSourceText(text)\n00064|     if (text.trim()) {\n00065|       handleTranslation(text)\n00066|     } else {\n00067|       setTranslatedText(\"\")\n00068|     }\n00069|   }\n00070| \n00071|   const handleTranslation = (text: string) => {\n00072|     if (!text.trim()) return\n00073| \n00074|     translation.mutate({\n00075|       text,\n00076|       sourceLang,\n00077|       targetLang\n00078|     }, {\n00079|       onSuccess: (data) => {\n00080|         setTranslatedText(data.translatedText)\n\n(File has more lines. Use 'offset' parameter to read beyond line 80)\n</file>",
+    "metadata": {
+      "preview": "  const [copySuccess, setCopySuccess] = useState(false)\n  const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n\n  // React Query hook\n  const translation = useTranslation()\n\n  // Helper functions\n  const getLanguage = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n  }\n\n  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    if (text.trim()) {\n      handleTranslation(text)\n    } else {\n      setTranslatedText(\"\")\n    }\n  }\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759484386358,
+      "end": 1759484386360
+    }
+  }
+}

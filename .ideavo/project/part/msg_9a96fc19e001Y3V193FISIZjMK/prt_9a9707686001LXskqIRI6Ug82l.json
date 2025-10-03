@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a9707686001LXskqIRI6Ug82l",
+  "messageID": "msg_9a96fc19e001Y3V193FISIZjMK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_012xNobxdWQu7P588UgEk5Sk",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/providers/query-provider.tsx"
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { QueryClient, QueryClientProvider } from '@tanstack/react-query'\n00004| import { ReactQueryDevtools } from '@tanstack/react-query-devtools'\n00005| import { useState } from 'react'\n00006| \n00007| export function QueryProvider({ children }: { children: React.ReactNode }) {\n00008|   const [queryClient] = useState(() => \n00009|     new QueryClient({\n00010|       defaultOptions: {\n00011|         queries: {\n00012|           staleTime: 5 * 60 * 1000, // 5 minutes\n00013|           retry: (failureCount, error: any) => {\n00014|             // Don't retry on 4xx errors\n00015|             if (error?.status >= 400 && error?.status < 500) {\n00016|               return false\n00017|             }\n00018|             return failureCount < 2\n00019|           },\n00020|         },\n00021|         mutations: {\n00022|           retry: false,\n00023|         },\n00024|       },\n00025|     })\n00026|   )\n00027| \n00028|   return (\n00029|     <QueryClientProvider client={queryClient}>\n00030|       {children}\n00031|       <ReactQueryDevtools initialIsOpen={false} />\n00032|     </QueryClientProvider>\n00033|   )\n00034| }\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { QueryClient, QueryClientProvider } from '@tanstack/react-query'\nimport { ReactQueryDevtools } from '@tanstack/react-query-devtools'\nimport { useState } from 'react'\n\nexport function QueryProvider({ children }: { children: React.ReactNode }) {\n  const [queryClient] = useState(() => \n    new QueryClient({\n      defaultOptions: {\n        queries: {\n          staleTime: 5 * 60 * 1000, // 5 minutes\n          retry: (failureCount, error: any) => {\n            // Don't retry on 4xx errors\n            if (error?.status >= 400 && error?.status < 500) {\n              return false\n            }\n            return failureCount < 2\n          },\n        },"
+    },
+    "title": "components/providers/query-provider.tsx",
+    "time": {
+      "start": 1759484344632,
+      "end": 1759484344634
+    }
+  }
+}

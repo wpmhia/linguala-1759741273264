@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a96fe96c001ZyU370eYPIgqBY",
+  "messageID": "msg_9a96fc19e001Y3V193FISIZjMK",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see **TanStack Query** (React Query) is installed in your project:\n\n```json\n\"@tanstack/react-query\": \"^5.90.2\",\n\"@tanstack/react-query-devtools\": \"^5.90.2\",\n```\n\n## What is TanStack?\n\n**TanStack Query** (formerly React Query) is a powerful data fetching and state management library for React applications. It provides:\n\n1. **Server State Management**: Caching, synchronization, and updating server state\n2. **Automatic Background Refetching**: Keeps data fresh automatically\n3. **Optimistic Updates**: UI updates before server confirmation\n4. **Error Handling**: Built-in error boundaries and retry logic\n5. **Loading States**: Automatic loading, error, and success states\n6. **DevTools**: Excellent debugging experience\n\nLet me check how it's being used in your application:",
+  "time": {
+    "start": 1759484311553,
+    "end": 1759484311553
+  }
+}

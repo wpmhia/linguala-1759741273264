@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a90527ab001wEzhWY8bqnUt69",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01PJPRe1FCaKusG6iSqwAA9y",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "// Configure formidable for file uploads\nexport const config = {\n  api: {\n    bodyParser: false,\n  },\n}",
+      "newString": "// Note: Next.js 14 App Router handles multipart form data automatically"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -5,14 +5,9 @@\n import { fileTypeFromBuffer } from 'file-type'\n import { PDFProcessor } from '@/lib/document-processors/pdf-processor'\n import { DocxProcessor } from '@/lib/document-processors/docx-processor'\n \n-// Configure formidable for file uploads\n-export const config = {\n-  api: {\n-    bodyParser: false,\n-  },\n-}\n+// Note: Next.js 14 App Router handles multipart form data automatically\n \n const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB\n const ALLOWED_TYPES = [\n   'application/pdf',\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759477312930,
+      "end": 1759477312933
+    }
+  }
+}

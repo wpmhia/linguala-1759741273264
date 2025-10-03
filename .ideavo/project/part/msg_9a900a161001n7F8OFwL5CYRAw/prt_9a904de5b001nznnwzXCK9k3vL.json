@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a904de5b001nznnwzXCK9k3vL",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01KA2qnCHgfruLUbTkqYVLcy",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 320,
+      "limit": 20
+    },
+    "output": "<file>\n00321|                   >\n00322|                     <MoreHorizontal className=\"h-4 w-4\" />\n00323|                   </Button>\n00324|                 </div>\n00325|               )}\n00326|             </div>\n00327|           </div>\n00328| \n00329|           {/* Bottom Actions */}\n00330|           <div className=\"mt-6 flex items-center justify-between\">\n00331|             <div className=\"flex items-center space-x-4\">\n00332|               <Button \n00333|                 variant=\"outline\" \n00334|                 size=\"sm\"\n00335|                 onClick={() => toast.info(\"Document translation coming soon!\")}\n00336|               >\n00337|                 <FileText className=\"h-4 w-4 mr-2\" />\n00338|                 Translate a document\n00339|               </Button>\n00340|             </div>\n\n(File has more lines. Use 'offset' parameter to read beyond line 340)\n</file>",
+    "metadata": {
+      "preview": "                  >\n                    <MoreHorizontal className=\"h-4 w-4\" />\n                  </Button>\n                </div>\n              )}\n            </div>\n          </div>\n\n          {/* Bottom Actions */}\n          <div className=\"mt-6 flex items-center justify-between\">\n            <div className=\"flex items-center space-x-4\">\n              <Button \n                variant=\"outline\" \n                size=\"sm\"\n                onClick={() => toast.info(\"Document translation coming soon!\")}\n              >\n                <FileText className=\"h-4 w-4 mr-2\" />\n                Translate a document\n              </Button>\n            </div>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759477293223,
+      "end": 1759477293224
+    }
+  }
+}

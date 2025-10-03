@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a904b21d0014B0UmiB29UwYdH",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_0179FWo2wF6WzaV3A6vcvDCL",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 140,
+      "limit": 20
+    },
+    "output": "<file>\n00141|                   Text\n00142|                 </div>\n00143|                 <button \n00144|                   onClick={() => toast.info(\"Document translation coming soon!\")}\n00145|                   className=\"text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded transition-colors\"\n00146|                 >\n00147|                   Documents\n00148|                 </button>\n00149|               </nav>\n00150|             </div>\n00151|             <div className=\"flex items-center space-x-4\">\n00152|               <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n00153|                 <History className=\"h-5 w-5\" />\n00154|               </button>\n00155|               <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n00156|                 <Settings className=\"h-5 w-5\" />\n00157|               </button>\n00158|             </div>\n00159|           </div>\n00160|         </div>\n\n(File has more lines. Use 'offset' parameter to read beyond line 160)\n</file>",
+    "metadata": {
+      "preview": "                  Text\n                </div>\n                <button \n                  onClick={() => toast.info(\"Document translation coming soon!\")}\n                  className=\"text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded transition-colors\"\n                >\n                  Documents\n                </button>\n              </nav>\n            </div>\n            <div className=\"flex items-center space-x-4\">\n              <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n                <History className=\"h-5 w-5\" />\n              </button>\n              <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n                <Settings className=\"h-5 w-5\" />\n              </button>\n            </div>\n          </div>\n        </div>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759477281892,
+      "end": 1759477281894
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a907e517001mSXViCAtaE8saq",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01SkPVxG6Nk2Hhqw7XA9GZnu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/translate/route.ts",
+      "oldString": "    if (error instanceof z.ZodError) {\n      return NextResponse.json(\n        { error: 'Invalid input', details: error.errors },\n        { status: 400 }\n      )\n    }",
+      "newString": "    if (error instanceof z.ZodError) {\n      return NextResponse.json(\n        { error: 'Invalid input', details: error.issues },\n        { status: 400 }\n      )\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/translate/route.ts\n+++ /home/user/project/app/api/documents/translate/route.ts\n@@ -206,9 +206,9 @@\n console.error('Document translation error:', error)\n \n if (error instanceof z.ZodError) {\n   return NextResponse.json(\n-    { error: 'Invalid input', details: error.errors },\n+    { error: 'Invalid input', details: error.issues },\n     { status: 400 }\n   )\n }\n \n"
+    },
+    "title": "app/api/documents/translate/route.ts",
+    "time": {
+      "start": 1759477492735,
+      "end": 1759477492739
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "prt_9a9048c1a0018vZecPnVHne3ds",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01CNiPBoZ7zoTzRF2ggLjLZM",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                <button \n                  onClick={() => toast.info(\"Document translation coming soon!\")}\n                  className=\"text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded transition-colors\"\n                >\n                  Documents\n                </button>",
+      "newString": "                <button \n                  onClick={() => window.location.href = '/documents'}\n                  className=\"text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded transition-colors\"\n                >\n                  Documents\n                </button>"
+    },
+    "error": "Error: You must read the file /home/user/project/components/linguala-translator.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759477274617,
+      "end": 1759477274618
+    }
+  }
+}

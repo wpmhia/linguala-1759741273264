@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a907501a001dczPyVnA61QKyv",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01C3WNFNgzfKdLccsDG12cF3",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build app after simplifying PDF processor"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\nFailed to compile.\n\n./app/api/documents/translate/route.ts:210:50\nType error: Property 'errors' does not exist on type 'ZodError<unknown>'.\n\n\u001b[0m \u001b[90m 208 |\u001b[39m     \u001b[36mif\u001b[39m (error \u001b[36minstanceof\u001b[39m z\u001b[33m.\u001b[39m\u001b[33mZodError\u001b[39m) {\u001b[0m\n\u001b[0m \u001b[90m 209 |\u001b[39m       \u001b[36mreturn\u001b[39m \u001b[33mNextResponse\u001b[39m\u001b[33m.\u001b[39mjson(\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 210 |\u001b[39m         { error\u001b[33m:\u001b[39m \u001b[32m'Invalid input'\u001b[39m\u001b[33m,\u001b[39m details\u001b[33m:\u001b[39m error\u001b[33m.\u001b[39merrors }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 211 |\u001b[39m         { status\u001b[33m:\u001b[39m \u001b[35m400\u001b[39m }\u001b[0m\n\u001b[0m \u001b[90m 212 |\u001b[39m       )\u001b[0m\n\u001b[0m \u001b[90m 213 |\u001b[39m     }\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\nFailed to compile.\n\n./app/api/documents/translate/route.ts:210:50\nType error: Property 'errors' does not exist on type 'ZodError<unknown>'.\n\n\u001b[0m \u001b[90m 208 |\u001b[39m     \u001b[36mif\u001b[39m (error \u001b[36minstanceof\u001b[39m z\u001b[33m.\u001b[39m\u001b[33mZodError\u001b[39m) {\u001b[0m\n\u001b[0m \u001b[90m 209 |\u001b[39m       \u001b[36mreturn\u001b[39m \u001b[33mNextResponse\u001b[39m\u001b[33m.\u001b[39mjson(\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 210 |\u001b[39m         { error\u001b[33m:\u001b[39m \u001b[32m'Invalid input'\u001b[39m\u001b[33m,\u001b[39m details\u001b[33m:\u001b[39m error\u001b[33m.\u001b[39merrors }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 211 |\u001b[39m         { status\u001b[33m:\u001b[39m \u001b[35m400\u001b[39m }\u001b[0m\n\u001b[0m \u001b[90m 212 |\u001b[39m       )\u001b[0m\n\u001b[0m \u001b[90m 213 |\u001b[39m     }\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n",
+      "exit": 1,
+      "description": "Build app after simplifying PDF processor"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759477453549,
+      "end": 1759477488107
+    }
+  }
+}

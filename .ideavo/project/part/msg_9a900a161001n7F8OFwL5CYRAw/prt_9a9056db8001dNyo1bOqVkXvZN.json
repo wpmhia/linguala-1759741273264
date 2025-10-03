@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9056db8001dNyo1bOqVkXvZN",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01QmX3CQiktJWfYjnP5XKZws",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "    // Validate file type\n    const fileType = await fileTypeFromBuffer(fileBuffer)\n    if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {\n      // Clean up the uploaded file\n      await fs.unlink(uploadedFile.filepath)\n      return NextResponse.json(\n        { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },\n        { status: 400 }\n      )\n    }\n\n    // Validate file size\n    if (fileBuffer.length > MAX_FILE_SIZE) {\n      await fs.unlink(uploadedFile.filepath)\n      return NextResponse.json(\n        { error: 'File too large. Maximum size is 10MB.' },\n        { status: 400 }\n      )\n    }",
+      "newString": "    // Validate file type\n    const fileType = await fileTypeFromBuffer(fileBuffer)\n    if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {\n      return NextResponse.json(\n        { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },\n        { status: 400 }\n      )\n    }\n\n    // Validate file size (already checked in parseFormData, but double-check)\n    if (fileBuffer.length > MAX_FILE_SIZE) {\n      return NextResponse.json(\n        { error: 'File too large. Maximum size is 10MB.' },\n        { status: 400 }\n      )\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -66,19 +66,16 @@\n \n // Validate file type\n const fileType = await fileTypeFromBuffer(fileBuffer)\n if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {\n-  // Clean up the uploaded file\n-  await fs.unlink(uploadedFile.filepath)\n   return NextResponse.json(\n     { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },\n     { status: 400 }\n   )\n }\n \n-// Validate file size\n+// Validate file size (already checked in parseFormData, but double-check)\n if (fileBuffer.length > MAX_FILE_SIZE) {\n-  await fs.unlink(uploadedFile.filepath)\n   return NextResponse.json(\n     { error: 'File too large. Maximum size is 10MB.' },\n     { status: 400 }\n   )\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759477333480,
+      "end": 1759477333483
+    }
+  }
+}

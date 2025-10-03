@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a90555a3002GhG2O0FbjzAJ78",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01SH4n8n4mjyGDX38PQyegYR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "    // Parse the multipart form data\n    const { fields, files } = await parseFormData(request)\n\n    // Get the uploaded file\n    const fileArray = Array.isArray(files.file) ? files.file : [files.file]\n    const uploadedFile = fileArray[0]\n\n    if (!uploadedFile) {\n      return NextResponse.json(\n        { error: 'No file uploaded' },\n        { status: 400 }\n      )\n    }\n\n    // Read file buffer\n    const fileBuffer = await fs.readFile(uploadedFile.filepath)",
+      "newString": "    // Parse the multipart form data\n    const { file } = await parseFormData(request)\n\n    if (!file) {\n      return NextResponse.json(\n        { error: 'No file uploaded' },\n        { status: 400 }\n      )\n    }\n\n    // Convert File to Buffer\n    const arrayBuffer = await file.arrayBuffer()\n    const fileBuffer = Buffer.from(arrayBuffer)"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -50,23 +50,20 @@\n try {\n   await ensureUploadDir()\n \n   // Parse the multipart form data\n-  const { fields, files } = await parseFormData(request)\n+  const { file } = await parseFormData(request)\n \n-  // Get the uploaded file\n-  const fileArray = Array.isArray(files.file) ? files.file : [files.file]\n-  const uploadedFile = fileArray[0]\n-\n-  if (!uploadedFile) {\n+  if (!file) {\n     return NextResponse.json(\n       { error: 'No file uploaded' },\n       { status: 400 }\n     )\n   }\n \n-  // Read file buffer\n-  const fileBuffer = await fs.readFile(uploadedFile.filepath)\n+  // Convert File to Buffer\n+  const arrayBuffer = await file.arrayBuffer()\n+  const fileBuffer = Buffer.from(arrayBuffer)\n   \n   // Validate file type\n   const fileType = await fileTypeFromBuffer(fileBuffer)\n   if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759477326497,
+      "end": 1759477326500
+    }
+  }
+}

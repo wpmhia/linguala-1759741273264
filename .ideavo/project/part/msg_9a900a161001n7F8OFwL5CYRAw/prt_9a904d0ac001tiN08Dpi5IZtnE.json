@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a904d0ac001tiN08Dpi5IZtnE",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01QwVxULJNmpFqQ64UZvtjrw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 280,
+      "limit": 20
+    },
+    "output": "<file>\n00281|                     <span className=\"text-sm font-medium\">Translating...</span>\n00282|                   </div>\n00283|                 </div>\n00284|               )}\n00285|               \n00286|               {/* Translation Controls */}\n00287|               {translatedText && !isLoading && (\n00288|                 <div className=\"absolute bottom-4 left-4 right-4 flex items-center justify-between\">\n00289|                   <div className=\"flex items-center space-x-2\">\n00290|                     <Button\n00291|                       variant=\"ghost\"\n00292|                       size=\"sm\"\n00293|                       onClick={() => copyToClipboard(translatedText)}\n00294|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00295|                     >\n00296|                       {copySuccess ? <Check className=\"h-4 w-4 text-green-600\" /> : <Copy className=\"h-4 w-4\" />}\n00297|                     </Button>\n00298|                     <Button\n00299|                       variant=\"ghost\"\n00300|                       size=\"sm\"\n\n(File has more lines. Use 'offset' parameter to read beyond line 300)\n</file>",
+    "metadata": {
+      "preview": "                    <span className=\"text-sm font-medium\">Translating...</span>\n                  </div>\n                </div>\n              )}\n              \n              {/* Translation Controls */}\n              {translatedText && !isLoading && (\n                <div className=\"absolute bottom-4 left-4 right-4 flex items-center justify-between\">\n                  <div className=\"flex items-center space-x-2\">\n                    <Button\n                      variant=\"ghost\"\n                      size=\"sm\"\n                      onClick={() => copyToClipboard(translatedText)}\n                      className=\"p-2 hover:bg-gray-200 rounded-full\"\n                    >\n                      {copySuccess ? <Check className=\"h-4 w-4 text-green-600\" /> : <Copy className=\"h-4 w-4\" />}\n                    </Button>\n                    <Button\n                      variant=\"ghost\"\n                      size=\"sm\""
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759477289751,
+      "end": 1759477289753
+    }
+  }
+}

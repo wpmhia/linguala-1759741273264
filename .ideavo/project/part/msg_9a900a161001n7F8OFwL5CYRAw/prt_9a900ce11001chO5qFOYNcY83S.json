@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a900ce11001chO5qFOYNcY83S",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_018xqq8Fp17VaWxFjnr5WYqS",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm install pdf-parse pdf-lib mammoth docx react-dropzone formidable file-type @react-pdf-viewer/core @react-pdf-viewer/default-layout",
+      "description": "Install document processing and upload libraries"
+    },
+    "output": "npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported\nnpm warn deprecated are-we-there-yet@2.0.0: This package is no longer supported.\nnpm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported\nnpm warn deprecated npmlog@5.0.1: This package is no longer supported.\nnpm warn deprecated gauge@3.0.2: This package is no longer supported.\nnpm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 122 packages, removed 21 packages, changed 3 packages, and audited 549 packages in 18s\n\n82 packages are looking for funding\n  run `npm fund` for details\n\n24 vulnerabilities (3 moderate, 19 high, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nSome issues need review, and may require choosing\na different dependency.\n\nRun `npm audit` for details.\n",
+    "metadata": {
+      "output": "npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported\nnpm warn deprecated are-we-there-yet@2.0.0: This package is no longer supported.\nnpm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported\nnpm warn deprecated npmlog@5.0.1: This package is no longer supported.\nnpm warn deprecated gauge@3.0.2: This package is no longer supported.\nnpm warn deprecated jose@1.28.2: this version is no longer supported\n\nadded 122 packages, removed 21 packages, changed 3 packages, and audited 549 packages in 18s\n\n82 packages are looking for funding\n  run `npm fund` for details\n\n24 vulnerabilities (3 moderate, 19 high, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nSome issues need review, and may require choosing\na different dependency.\n\nRun `npm audit` for details.\n",
+      "exit": 0,
+      "description": "Install document processing and upload libraries"
+    },
+    "title": "cd /home/user/project && npm install pdf-parse pdf-lib mammoth docx react-dropzone formidable file-type @react-pdf-viewer/core @react-pdf-viewer/default-layout",
+    "time": {
+      "start": 1759477027923,
+      "end": 1759477045864
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a907f8c90019ALS3lsA3skfeM",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01HtGg7GHVcf7GaLhE5gXwQA",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build app after fixing Zod error handling"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/8) ...\n   Generating static pages (2/8) \r\n   Generating static pages (4/8) \r\n   Generating static pages (6/8) \r\n ✓ Generating static pages (8/8)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    28.2 kB         160 kB\n├ ○ /_not-found                          873 B            88 kB\n├ ƒ /api/documents/download/[fileId]     0 B                0 B\n├ ƒ /api/documents/translate             0 B                0 B\n├ ƒ /api/documents/upload                0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n└ ○ /documents                           23.8 kB         152 kB\n+ First Load JS shared by all            87.2 kB\n  ├ chunks/117-dfdeb63a26db7708.js       31.6 kB\n  ├ chunks/fd9d1056-fa8838e8d89f06d2.js  53.6 kB\n  └ other shared chunks (total)          1.92 kB\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/8) ...\n   Generating static pages (2/8) \r\n   Generating static pages (4/8) \r\n   Generating static pages (6/8) \r\n ✓ Generating static pages (8/8)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    28.2 kB         160 kB\n├ ○ /_not-found                          873 B            88 kB\n├ ƒ /api/documents/download/[fileId]     0 B                0 B\n├ ƒ /api/documents/translate             0 B                0 B\n├ ƒ /api/documents/upload                0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n└ ○ /documents                           23.8 kB         152 kB\n+ First Load JS shared by all            87.2 kB\n  ├ chunks/117-dfdeb63a26db7708.js       31.6 kB\n  ├ chunks/fd9d1056-fa8838e8d89f06d2.js  53.6 kB\n  └ other shared chunks (total)          1.92 kB\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+      "exit": 0,
+      "description": "Build app after fixing Zod error handling"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759477496458,
+      "end": 1759477526787
+    }
+  }
+}

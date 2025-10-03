@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a903086a001A5sbQ5JnPeeXAM",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01Nf18SZdPMLT83qJ5FLrgjE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/download/[fileId]/route.ts",
+      "content": "import { NextRequest, NextResponse } from 'next/server'\nimport { promises as fs } from 'fs'\nimport path from 'path'\n\nexport async function GET(\n  request: NextRequest,\n  { params }: { params: { fileId: string } }\n) {\n  try {\n    const { fileId } = params\n\n    if (!fileId) {\n      return NextResponse.json(\n        { error: 'File ID is required' },\n        { status: 400 }\n      )\n    }\n\n    // Construct file path - try different extensions\n    const uploadDir = path.join(process.cwd(), 'temp', 'uploads')\n    const possibleExtensions = ['pdf', 'docx', 'txt']\n    \n    let filePath: string | null = null\n    let fileExtension: string | null = null\n    \n    for (const ext of possibleExtensions) {\n      const testPath = path.join(uploadDir, `${fileId}.${ext}`)\n      try {\n        await fs.access(testPath)\n        filePath = testPath\n        fileExtension = ext\n        break\n      } catch {\n        // File doesn't exist with this extension, try next\n      }\n    }\n\n    if (!filePath || !fileExtension) {\n      return NextResponse.json(\n        { error: 'File not found' },\n        { status: 404 }\n      )\n    }\n\n    // Read file\n    const fileBuffer = await fs.readFile(filePath)\n    \n    // Determine content type\n    let contentType: string\n    let fileExtForHeader: string\n    \n    switch (fileExtension) {\n      case 'pdf':\n        contentType = 'application/pdf'\n        fileExtForHeader = 'pdf'\n        break\n      case 'docx':\n        contentType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'\n        fileExtForHeader = 'docx'\n        break\n      case 'txt':\n        contentType = 'text/plain'\n        fileExtForHeader = 'txt'\n        break\n      default:\n        contentType = 'application/octet-stream'\n        fileExtForHeader = 'bin'\n    }\n\n    // Create response with file\n    const response = new NextResponse(fileBuffer)\n    \n    // Set headers for file download\n    response.headers.set('Content-Type', contentType)\n    response.headers.set('Content-Disposition', `attachment; filename=\"translated_document.${fileExtForHeader}\"`)\n    response.headers.set('Content-Length', fileBuffer.length.toString())\n    \n    // Schedule file cleanup after download (optional)\n    // In production, you might want a separate cleanup job\n    setTimeout(async () => {\n      try {\n        await fs.unlink(filePath!)\n        console.log(`Cleaned up file: ${filePath}`)\n      } catch (error) {\n        console.warn(`Failed to cleanup file ${filePath}:`, error)\n      }\n    }, 5 * 60 * 1000) // Clean up after 5 minutes\n\n    return response\n\n  } catch (error) {\n    console.error('Download error:', error)\n    return NextResponse.json(\n      { error: 'Failed to download file' },\n      { status: 500 }\n    )\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/api/documents/download/[fileId]/route.ts",
+      "exists": false
+    },
+    "title": "app/api/documents/download/[fileId]/route.ts",
+    "time": {
+      "start": 1759477182278,
+      "end": 1759477182279
+    }
+  }
+}

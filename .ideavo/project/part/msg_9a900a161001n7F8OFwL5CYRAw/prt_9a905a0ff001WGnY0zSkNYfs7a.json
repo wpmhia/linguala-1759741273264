@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a905a0ff001WGnY0zSkNYfs7a",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01958BZMpHZiNtNfUR98i3gP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "    // Generate unique file ID\n    const fileId = `doc_${Date.now()}_${Math.random().toString(36).substring(2)}`\n    const storedFileName = `${fileId}.${fileType.ext}`\n    const storedFilePath = path.join(uploadDir, storedFileName)\n\n    // Move file to permanent storage location\n    await fs.rename(uploadedFile.filepath, storedFilePath)\n\n    // Return upload success with document info\n    return NextResponse.json({\n      success: true,\n      fileId,\n      fileName: uploadedFile.originalFilename || 'unnamed',\n      fileType: documentInfo.type,\n      fileSize: documentInfo.fileSize,\n      wordCount: documentInfo.wordCount || 0,\n      pageCount: documentInfo.pageCount || 0,\n      storedPath: storedFilePath\n    })",
+      "newString": "    // Generate unique file ID\n    const fileId = `doc_${Date.now()}_${Math.random().toString(36).substring(2)}`\n    const storedFileName = `${fileId}.${fileType.ext}`\n    const storedFilePath = path.join(uploadDir, storedFileName)\n\n    // Save file to permanent storage location\n    await fs.writeFile(storedFilePath, fileBuffer)\n\n    // Return upload success with document info\n    return NextResponse.json({\n      success: true,\n      fileId,\n      fileName: file.name || 'unnamed',\n      fileType: documentInfo.type,\n      fileSize: documentInfo.fileSize,\n      wordCount: documentInfo.wordCount || 0,\n      pageCount: documentInfo.pageCount || 0,\n      storedPath: storedFilePath\n    })"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -121,16 +121,16 @@\n const fileId = `doc_${Date.now()}_${Math.random().toString(36).substring(2)}`\n const storedFileName = `${fileId}.${fileType.ext}`\n const storedFilePath = path.join(uploadDir, storedFileName)\n \n-// Move file to permanent storage location\n-await fs.rename(uploadedFile.filepath, storedFilePath)\n+// Save file to permanent storage location\n+await fs.writeFile(storedFilePath, fileBuffer)\n \n // Return upload success with document info\n return NextResponse.json({\n   success: true,\n   fileId,\n-  fileName: uploadedFile.originalFilename || 'unnamed',\n+  fileName: file.name || 'unnamed',\n   fileType: documentInfo.type,\n   fileSize: documentInfo.fileSize,\n   wordCount: documentInfo.wordCount || 0,\n   pageCount: documentInfo.pageCount || 0,\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759477347679,
+      "end": 1759477347682
+    }
+  }
+}

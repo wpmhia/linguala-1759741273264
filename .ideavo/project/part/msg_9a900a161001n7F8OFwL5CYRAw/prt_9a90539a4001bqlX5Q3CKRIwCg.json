@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a90539a4001bqlX5Q3CKRIwCg",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_017ZtVpFA1UrE1AxTewGSpzb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "function parseFormData(req: NextRequest): Promise<{ fields: formidable.Fields; files: formidable.Files }> {\n  return new Promise((resolve, reject) => {\n    const form = formidable({\n      uploadDir: uploadDir,\n      keepExtensions: true,\n      maxFileSize: MAX_FILE_SIZE,\n      maxTotalFileSize: MAX_FILE_SIZE,\n      allowEmptyFiles: false,\n    })\n\n    // Convert NextRequest to Node.js request\n    const nodeReq = req as any\n\n    form.parse(nodeReq, (err, fields, files) => {\n      if (err) {\n        reject(err)\n      } else {\n        resolve({ fields, files })\n      }\n    })\n  })\n}",
+      "newString": "async function parseFormData(request: NextRequest): Promise<{ file: File | null }> {\n  try {\n    const formData = await request.formData()\n    const file = formData.get('file') as File | null\n    \n    if (!file) {\n      return { file: null }\n    }\n    \n    // Validate file size\n    if (file.size > MAX_FILE_SIZE) {\n      throw new Error('File too large')\n    }\n    \n    return { file }\n  } catch (error) {\n    throw error\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -25,29 +25,26 @@\n     await fs.mkdir(uploadDir, { recursive: true })\n   }\n }\n \n-function parseFormData(req: NextRequest): Promise<{ fields: formidable.Fields; files: formidable.Files }> {\n-  return new Promise((resolve, reject) => {\n-    const form = formidable({\n-      uploadDir: uploadDir,\n-      keepExtensions: true,\n-      maxFileSize: MAX_FILE_SIZE,\n-      maxTotalFileSize: MAX_FILE_SIZE,\n-      allowEmptyFiles: false,\n-    })\n-\n-    // Convert NextRequest to Node.js request\n-    const nodeReq = req as any\n-\n-    form.parse(nodeReq, (err, fields, files) => {\n-      if (err) {\n-        reject(err)\n-      } else {\n-        resolve({ fields, files })\n-      }\n-    })\n-  })\n+async function parseFormData(request: NextRequest): Promise<{ file: File | null }> {\n+  try {\n+    const formData = await request.formData()\n+    const file = formData.get('file') as File | null\n+    \n+    if (!file) {\n+      return { file: null }\n+    }\n+    \n+    // Validate file size\n+    if (file.size > MAX_FILE_SIZE) {\n+      throw new Error('File too large')\n+    }\n+    \n+    return { file }\n+  } catch (error) {\n+    throw error\n+  }\n }\n \n export async function POST(request: NextRequest) {\n   try {\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759477320680,
+      "end": 1759477320684
+    }
+  }
+}

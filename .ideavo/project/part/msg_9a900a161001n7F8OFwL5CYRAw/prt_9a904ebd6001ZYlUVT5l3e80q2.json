@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a904ebd6001ZYlUVT5l3e80q2",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_013MawciaqhjZzoHiT43GU2b",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "              <Button \n                variant=\"outline\" \n                size=\"sm\"\n                onClick={() => toast.info(\"Document translation coming soon!\")}\n              >\n                <FileText className=\"h-4 w-4 mr-2\" />\n                Translate a document\n              </Button>",
+      "newString": "              <Button \n                variant=\"outline\" \n                size=\"sm\"\n                onClick={() => window.location.href = '/documents'}\n              >\n                <FileText className=\"h-4 w-4 mr-2\" />\n                Translate a document\n              </Button>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -331,9 +331,9 @@\n <div className=\"flex items-center space-x-4\">\n   <Button \n     variant=\"outline\" \n     size=\"sm\"\n-    onClick={() => toast.info(\"Document translation coming soon!\")}\n+    onClick={() => window.location.href = '/documents'}\n   >\n     <FileText className=\"h-4 w-4 mr-2\" />\n     Translate a document\n   </Button>\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759477297748,
+      "end": 1759477297751
+    }
+  }
+}

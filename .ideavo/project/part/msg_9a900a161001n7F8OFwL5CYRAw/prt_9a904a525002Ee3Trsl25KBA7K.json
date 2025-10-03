@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a904a525002Ee3Trsl25KBA7K",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01YUsRpdtiEcsjEJKTnFuehU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 110,
+      "limit": 20
+    },
+    "output": "<file>\n00111|   }\n00112| \n00113|   const clearText = () => {\n00114|     setSourceText(\"\")\n00115|     setTranslatedText(\"\")\n00116|   }\n00117| \n00118|   // Auto-translate when languages change\n00119|   useEffect(() => {\n00120|     if (sourceText.trim()) {\n00121|       const timeoutId = setTimeout(() => {\n00122|         handleTranslation(sourceText)\n00123|       }, 300) // Debounce\n00124|       \n00125|       return () => clearTimeout(timeoutId)\n00126|     }\n00127|   }, [sourceLang, targetLang])\n00128| \n00129|   const isLoading = translation.isPending\n00130| \n\n(File has more lines. Use 'offset' parameter to read beyond line 130)\n</file>",
+    "metadata": {
+      "preview": "  }\n\n  const clearText = () => {\n    setSourceText(\"\")\n    setTranslatedText(\"\")\n  }\n\n  // Auto-translate when languages change\n  useEffect(() => {\n    if (sourceText.trim()) {\n      const timeoutId = setTimeout(() => {\n        handleTranslation(sourceText)\n      }, 300) // Debounce\n      \n      return () => clearTimeout(timeoutId)\n    }\n  }, [sourceLang, targetLang])\n\n  const isLoading = translation.isPending\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759477278676,
+      "end": 1759477278678
+    }
+  }
+}

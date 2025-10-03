@@ -141,7 +141,7 @@ export default function LingualaTranslator() {
                   Text
                 </div>
                 <button 
-                  onClick={() => toast.info("Document translation coming soon!")}
+                  onClick={() => window.location.href = '/documents'}
                   className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded transition-colors"
                 >
                   Documents
@@ -332,7 +332,7 @@ export default function LingualaTranslator() {
               <Button 
                 variant="outline" 
                 size="sm"
-                onClick={() => toast.info("Document translation coming soon!")}
+                onClick={() => window.location.href = '/documents'}
               >
                 <FileText className="h-4 w-4 mr-2" />
                 Translate a document

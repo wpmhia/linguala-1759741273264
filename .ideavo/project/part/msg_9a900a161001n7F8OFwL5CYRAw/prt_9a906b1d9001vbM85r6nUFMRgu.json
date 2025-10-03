@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a906b1d9001vbM85r6nUFMRgu",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LgusfT4Ct1bn1nPgy5mMwh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm uninstall pdf-parse && npm install pdf2json",
+      "description": "Replace pdf-parse with pdf2json for better compatibility"
+    },
+    "output": "\nremoved 5 packages, and audited 547 packages in 2s\n\n83 packages are looking for funding\n  run `npm fund` for details\n\n24 vulnerabilities (3 moderate, 19 high, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nSome issues need review, and may require choosing\na different dependency.\n\nRun `npm audit` for details.\n\nadded 1 package, and audited 548 packages in 2s\n\n83 packages are looking for funding\n  run `npm fund` for details\n\n24 vulnerabilities (3 moderate, 19 high, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nSome issues need review, and may require choosing\na different dependency.\n\nRun `npm audit` for details.\n",
+    "metadata": {
+      "output": "\nremoved 5 packages, and audited 547 packages in 2s\n\n83 packages are looking for funding\n  run `npm fund` for details\n\n24 vulnerabilities (3 moderate, 19 high, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nSome issues need review, and may require choosing\na different dependency.\n\nRun `npm audit` for details.\n\nadded 1 package, and audited 548 packages in 2s\n\n83 packages are looking for funding\n  run `npm fund` for details\n\n24 vulnerabilities (3 moderate, 19 high, 2 critical)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nSome issues need review, and may require choosing\na different dependency.\n\nRun `npm audit` for details.\n",
+      "exit": 0,
+      "description": "Replace pdf-parse with pdf2json for better compatibility"
+    },
+    "title": "cd /home/user/project && npm uninstall pdf-parse && npm install pdf2json",
+    "time": {
+      "start": 1759477412934,
+      "end": 1759477417652
+    }
+  }
+}

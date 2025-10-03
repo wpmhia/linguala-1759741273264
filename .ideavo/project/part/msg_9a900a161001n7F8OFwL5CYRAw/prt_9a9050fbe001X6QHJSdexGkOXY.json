@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9050fbe001X6QHJSdexGkOXY",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01F3kA3992K2ye43aBuzSZXb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build app with document translation features"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n\n> Build error occurred\nError: Page config in /home/user/project/app/api/documents/upload/route.ts is deprecated. Replace `export const config=…` with the following:\nVisit https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config for more information.\n    at getPageStaticInfo (/home/user/project/node_modules/next/dist/build/analysis/get-page-static-info.js:427:27)\n    at async getStaticInfoIncludingLayouts (/home/user/project/node_modules/next/dist/build/entries.js:108:28)\n    at async /home/user/project/node_modules/next/dist/build/entries.js:410:32\n    at async Promise.all (index 3)\n    at async Promise.all (index 0)\n    at async createEntrypoints (/home/user/project/node_modules/next/dist/build/entries.js:550:5)\n    at async Span.traceAsyncFn (/home/user/project/node_modules/next/dist/trace/trace.js:154:20)\n    at async webpackBuildImpl (/home/user/project/node_modules/next/dist/build/webpack-build/impl.js:104:25)\n    at async Object.workerMain (/home/user/project/node_modules/next/dist/build/webpack-build/impl.js:330:20) {\n  type: 'Error'\n}\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n\n> Build error occurred\nError: Page config in /home/user/project/app/api/documents/upload/route.ts is deprecated. Replace `export const config=…` with the following:\nVisit https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config for more information.\n    at getPageStaticInfo (/home/user/project/node_modules/next/dist/build/analysis/get-page-static-info.js:427:27)\n    at async getStaticInfoIncludingLayouts (/home/user/project/node_modules/next/dist/build/entries.js:108:28)\n    at async /home/user/project/node_modules/next/dist/build/entries.js:410:32\n    at async Promise.all (index 3)\n    at async Promise.all (index 0)\n    at async createEntrypoints (/home/user/project/node_modules/next/dist/build/entries.js:550:5)\n    at async Span.traceAsyncFn (/home/user/project/node_modules/next/dist/trace/trace.js:154:20)\n    at async webpackBuildImpl (/home/user/project/node_modules/next/dist/build/webpack-build/impl.js:104:25)\n    at async Object.workerMain (/home/user/project/node_modules/next/dist/build/webpack-build/impl.js:330:20) {\n  type: 'Error'\n}\n",
+      "exit": 1,
+      "description": "Build app with document translation features"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759477306004,
+      "end": 1759477307790
+    }
+  }
+}

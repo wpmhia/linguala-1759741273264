@@ -1,0 +1,121 @@
+{
+  "id": "prt_9a900b594001oneKNijV1puSkp",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01TSCY8PaeZCNq86D7rRYaHX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Install document processing libraries",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "impl-1"
+        },
+        {
+          "content": "Create document upload API endpoint",
+          "status": "pending",
+          "priority": "high",
+          "id": "impl-2"
+        },
+        {
+          "content": "Build document upload UI component",
+          "status": "pending",
+          "priority": "high",
+          "id": "impl-3"
+        },
+        {
+          "content": "Implement PDF text extraction",
+          "status": "pending",
+          "priority": "high",
+          "id": "impl-4"
+        },
+        {
+          "content": "Add Word document processing",
+          "status": "pending",
+          "priority": "medium",
+          "id": "impl-5"
+        },
+        {
+          "content": "Create document translation API",
+          "status": "pending",
+          "priority": "high",
+          "id": "impl-6"
+        },
+        {
+          "content": "Build document viewer component",
+          "status": "pending",
+          "priority": "medium",
+          "id": "impl-7"
+        },
+        {
+          "content": "Add download functionality",
+          "status": "pending",
+          "priority": "medium",
+          "id": "impl-8"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Install document processing libraries\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\",\n    \"id\": \"impl-1\"\n  },\n  {\n    \"content\": \"Create document upload API endpoint\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"impl-2\"\n  },\n  {\n    \"content\": \"Build document upload UI component\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"impl-3\"\n  },\n  {\n    \"content\": \"Implement PDF text extraction\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"impl-4\"\n  },\n  {\n    \"content\": \"Add Word document processing\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"impl-5\"\n  },\n  {\n    \"content\": \"Create document translation API\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"impl-6\"\n  },\n  {\n    \"content\": \"Build document viewer component\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"impl-7\"\n  },\n  {\n    \"content\": \"Add download functionality\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"impl-8\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Install document processing libraries",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "impl-1"
+        },
+        {
+          "content": "Create document upload API endpoint",
+          "status": "pending",
+          "priority": "high",
+          "id": "impl-2"
+        },
+        {
+          "content": "Build document upload UI component",
+          "status": "pending",
+          "priority": "high",
+          "id": "impl-3"
+        },
+        {
+          "content": "Implement PDF text extraction",
+          "status": "pending",
+          "priority": "high",
+          "id": "impl-4"
+        },
+        {
+          "content": "Add Word document processing",
+          "status": "pending",
+          "priority": "medium",
+          "id": "impl-5"
+        },
+        {
+          "content": "Create document translation API",
+          "status": "pending",
+          "priority": "high",
+          "id": "impl-6"
+        },
+        {
+          "content": "Build document viewer component",
+          "status": "pending",
+          "priority": "medium",
+          "id": "impl-7"
+        },
+        {
+          "content": "Add download functionality",
+          "status": "pending",
+          "priority": "medium",
+          "id": "impl-8"
+        }
+      ]
+    },
+    "title": "8 todos",
+    "time": {
+      "start": 1759477023488,
+      "end": 1759477023489
+    }
+  }
+}

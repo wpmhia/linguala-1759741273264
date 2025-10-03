@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a90587fc001jGC2BHNjVNWBzc",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01TgFCRFk8nxskLVoG52qTeQ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "      if (!documentInfo.isValid) {\n        await fs.unlink(uploadedFile.filepath)\n        return NextResponse.json(\n          { error: 'Invalid or corrupted document' },\n          { status: 400 }\n        )\n      }\n    } catch (error) {\n      console.error('Document processing error:', error)\n      await fs.unlink(uploadedFile.filepath)\n      return NextResponse.json(\n        { error: 'Failed to process document' },\n        { status: 500 }\n      )\n    }",
+      "newString": "      if (!documentInfo.isValid) {\n        return NextResponse.json(\n          { error: 'Invalid or corrupted document' },\n          { status: 400 }\n        )\n      }\n    } catch (error) {\n      console.error('Document processing error:', error)\n      return NextResponse.json(\n        { error: 'Failed to process document' },\n        { status: 500 }\n      )\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -103,17 +103,15 @@\n     }\n   }\n \n   if (!documentInfo.isValid) {\n-    await fs.unlink(uploadedFile.filepath)\n     return NextResponse.json(\n       { error: 'Invalid or corrupted document' },\n       { status: 400 }\n     )\n   }\n } catch (error) {\n   console.error('Document processing error:', error)\n-  await fs.unlink(uploadedFile.filepath)\n   return NextResponse.json(\n     { error: 'Failed to process document' },\n     { status: 500 }\n   )\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759477339188,
+      "end": 1759477339190
+    }
+  }
+}

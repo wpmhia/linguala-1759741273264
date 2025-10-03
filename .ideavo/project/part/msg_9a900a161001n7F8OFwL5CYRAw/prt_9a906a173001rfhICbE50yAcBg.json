@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a906a173001rfhICbE50yAcBg",
+  "messageID": "msg_9a900a161001n7F8OFwL5CYRAw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01VThnpLT8HrdAC4xNSrrJ3Y",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/document-processors/pdf-processor.ts",
+      "oldString": "import * as pdfParse from 'pdf-parse'",
+      "newString": "import pdfParse from 'pdf-parse'"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/document-processors/pdf-processor.ts\n===================================================================\n--- /home/user/project/lib/document-processors/pdf-processor.ts\n+++ /home/user/project/lib/document-processors/pdf-processor.ts\n@@ -1,5 +1,5 @@\n-import * as pdfParse from 'pdf-parse'\n+import pdfParse from 'pdf-parse'\n import { PDFDocument, rgb, StandardFonts } from 'pdf-lib'\n import { fileTypeFromBuffer } from 'file-type'\n \n export interface PDFProcessingResult {\n"
+    },
+    "title": "lib/document-processors/pdf-processor.ts",
+    "time": {
+      "start": 1759477409194,
+      "end": 1759477409199
+    }
+  }
+}

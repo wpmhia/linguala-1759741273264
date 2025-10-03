@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
         break
 
       case 'improve':
-        result = await improveWritingFallback(text)
+        result = await improveWritingWithQwen3Max(text)
         break
 
       case 'rephrase':

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab511ee40010DrXvyo7AcfBmX",
+  "messageID": "msg_9ab4f6609001mU11KgAmP4z8X0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "You're absolutely right that I need to fix the qwen-max integration. The issue is that the API calls are hanging, which means the qwen-max model isn't being used properly. Would you like me to:\n\n1. **Fix the DashScope API integration** to properly call qwen-max\n2. **Switch to a different qwen-max endpoint** that works reliably\n3. **Debug the specific API authentication/request format** for qwen-max\n\nWhich approach would you prefer for getting the actual qwen-max model working?",
+  "time": {
+    "start": 1759515846630,
+    "end": 1759515846630
+  }
+}

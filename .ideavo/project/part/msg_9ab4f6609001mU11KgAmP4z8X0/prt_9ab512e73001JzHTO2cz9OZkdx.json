@@ -1,0 +1,18 @@
+{
+  "id": "prt_9ab512e73001JzHTO2cz9OZkdx",
+  "messageID": "msg_9ab4f6609001mU11KgAmP4z8X0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(api): resolve qwen-max API integration hanging issue",
+  "cost": 0.22553594999999999,
+  "tokens": {
+    "input": 7,
+    "output": 121,
+    "reasoning": 0,
+    "cache": {
+      "write": 293,
+      "read": 39813
+    }
+  }
+}

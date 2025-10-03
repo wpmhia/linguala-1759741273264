@@ -1,0 +1,27 @@
+{
+  "id": "prt_9ab4fbab9001kV5YBA4d2dHD6B",
+  "messageID": "msg_9ab4f6609001mU11KgAmP4z8X0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_015uoPq6MMzuB2K52KLq2Qrs",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && cd /home/user/project && npm run dev &",
+      "timeout": 10000,
+      "description": "Restart server with qwen-max calls"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart server with qwen-max calls"
+    },
+    "title": "pkill -f \"next dev\" && cd /home/user/project && npm run dev &",
+    "time": {
+      "start": 1759515754314,
+      "end": 1759515754332
+    }
+  }
+}

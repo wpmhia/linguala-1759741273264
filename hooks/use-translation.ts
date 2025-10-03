@@ -1,38 +1,49 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 
-interface TranslationRequest {
+interface ProcessingRequest {
   text: string
-  sourceLang: string
-  targetLang: string
+  operation?: 'translate' | 'improve' | 'rephrase' | 'summarize'
+  sourceLang?: string
+  targetLang?: string
   domain?: string
   glossary?: Array<{ source: string; target: string }>
 }
 
-interface TranslationResponse {
-  translatedText: string
-  sourceLang: string
-  targetLang: string
+interface ProcessingResponse {
+  operation: string
+  translatedText?: string
+  improvedText?: string
+  rephrasedText?: string
+  summaryText?: string
+  originalText?: string
+  sourceLang?: string
+  targetLang?: string
   fallback?: boolean
 }
 
-export function useTranslation() {
+export function useTextProcessing() {
   const queryClient = useQueryClient()
 
-  return useMutation<TranslationResponse, Error, TranslationRequest>({
+  return useMutation<ProcessingResponse, Error, ProcessingRequest>({
     mutationFn: async (request) => {
       const response = await axios.post('/api/translate', request, {
-        timeout: 30000, // 30 second timeout for translation
+        timeout: 30000, // 30 second timeout for processing
       })
       return response.data
     },
     onSuccess: (data, variables) => {
-      // Cache the translation result
-      const cacheKey = `${variables.text}-${variables.sourceLang}-${variables.targetLang}`
-      queryClient.setQueryData(['translation', cacheKey], data)
+      // Cache the processing result
+      const cacheKey = `${variables.operation}-${variables.text}-${variables.sourceLang || ''}-${variables.targetLang || ''}`
+      queryClient.setQueryData(['processing', cacheKey], data)
     },
     onError: (error) => {
-      console.error('Translation failed:', error)
+      console.error('Text processing failed:', error)
     },
   })
+}
+
+// Keep the old hook for backward compatibility
+export function useTranslation() {
+  return useTextProcessing()
 }

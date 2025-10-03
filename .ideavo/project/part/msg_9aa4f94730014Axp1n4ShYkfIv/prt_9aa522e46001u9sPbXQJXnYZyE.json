@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa522e46001u9sPbXQJXnYZyE",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_0193kcG4F7ySnXyaj6w5UcGu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 180,
+      "limit": 15
+    },
+    "output": "<file>\n00181|       }, 300) // Debounce\n00182|       \n00183|       return () => clearTimeout(timeoutId)\n00184|     }\n00185|   }, [sourceLang, targetLang, operation])\n00186| \n00187|   const isLoading = processing.isPending\n00188| \n00189|   return (\n00190|     <div className=\"min-h-screen bg-white\">\n00191|       {/* Google-style Header */}\n00192|       <header className=\"border-b border-gray-200\">\n00193|         <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n00194|           <div className=\"flex items-center justify-between\">\n00195|             <div className=\"flex items-center space-x-8\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 195)\n</file>",
+    "metadata": {
+      "preview": "      }, 300) // Debounce\n      \n      return () => clearTimeout(timeoutId)\n    }\n  }, [sourceLang, targetLang, operation])\n\n  const isLoading = processing.isPending\n\n  return (\n    <div className=\"min-h-screen bg-white\">\n      {/* Google-style Header */}\n      <header className=\"border-b border-gray-200\">\n        <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-8\">"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499137343,
+      "end": 1759499137345
+    }
+  }
+}

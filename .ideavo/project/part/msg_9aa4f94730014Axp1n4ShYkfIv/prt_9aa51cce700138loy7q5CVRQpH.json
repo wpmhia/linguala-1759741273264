@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa51cce700138loy7q5CVRQpH",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01EbqGvDhSm3qwesSeHgwg26",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  // Helper functions\n  const getLanguage = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n  }",
+      "newString": "  // Helper functions\n  const getLanguage = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n  }\n\n  const getPlaceholderText = () => {\n    switch (operation) {\n      case 'translate':\n        return 'Enter text to translate'\n      case 'improve':\n        return 'Enter text to improve'\n      case 'rephrase':\n        return 'Enter text to rephrase'\n      case 'summarize':\n        return 'Enter text to summarize'\n      default:\n        return 'Enter text'\n    }\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -67,8 +67,23 @@\n const getLanguage = (code: string) => {\n   return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n }\n \n+const getPlaceholderText = () => {\n+  switch (operation) {\n+    case 'translate':\n+      return 'Enter text to translate'\n+    case 'improve':\n+      return 'Enter text to improve'\n+    case 'rephrase':\n+      return 'Enter text to rephrase'\n+    case 'summarize':\n+      return 'Enter text to summarize'\n+    default:\n+      return 'Enter text'\n+  }\n+}\n+\n const handleSourceTextChange = (text: string) => {\n   setSourceText(text)\n   if (text.trim()) {\n     handleProcessing(text)\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499114647,
+      "end": 1759499114651
+    }
+  }
+}

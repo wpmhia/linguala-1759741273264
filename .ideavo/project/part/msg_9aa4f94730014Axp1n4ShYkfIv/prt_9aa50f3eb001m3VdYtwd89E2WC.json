@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa50f3eb001m3VdYtwd89E2WC",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Ar5sqdnj615PbgDREuB5wL",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "        switch (data.operation) {\n          case 'translate':\n            setResultText(data.translatedText || '')\n            break\n          case 'improve':\n            setResultText(data.improvedText || '')\n            break\n          case 'rephrase':\n            setResultText(data.rephrasedText || '')\n            break\n          case 'summarize':\n            setResultText(data.summaryText || '')\n            break\n          default:\n            setResultText('')\n        if (data.fallback) {\n          toast.info(\"Using fallback translation\")\n        }\n      },\n      onError: (error) => {\n        console.error('Translation error:', error)\n        setTranslatedText(\"Translation service temporarily unavailable. Please try again later.\")\n        toast.error(\"Translation failed\")\n      }",
+      "newString": "        switch (data.operation) {\n          case 'translate':\n            setResultText(data.translatedText || '')\n            break\n          case 'improve':\n            setResultText(data.improvedText || '')\n            break\n          case 'rephrase':\n            setResultText(data.rephrasedText || '')\n            break\n          case 'summarize':\n            setResultText(data.summaryText || '')\n            break\n          default:\n            setResultText('')\n        }\n        \n        if (data.fallback) {\n          toast.info(\"Using fallback processing\")\n        }\n      },\n      onError: (error) => {\n        console.error('Processing error:', error)\n        setResultText(\"Service temporarily unavailable. Please try again later.\")\n        toast.error(\"Processing failed\")\n      }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -108,16 +108,18 @@\n           setResultText(data.summaryText || '')\n           break\n         default:\n           setResultText('')\n+      }\n+      \n       if (data.fallback) {\n-        toast.info(\"Using fallback translation\")\n+        toast.info(\"Using fallback processing\")\n       }\n     },\n     onError: (error) => {\n-      console.error('Translation error:', error)\n-      setTranslatedText(\"Translation service temporarily unavailable. Please try again later.\")\n-      toast.error(\"Translation failed\")\n+      console.error('Processing error:', error)\n+      setResultText(\"Service temporarily unavailable. Please try again later.\")\n+      toast.error(\"Processing failed\")\n     }\n   })\n }\n \n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499060172,
+      "end": 1759499060181
+    }
+  }
+}

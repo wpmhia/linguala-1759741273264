@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa5adbb4001Uj6rFJdy93cbHo",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01D1hQub2s86jAHigk9r6zP3",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3002/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"This is a long text that needs to be summarized into something shorter.\",\"operation\":\"summarize\"}' --max-time 5",
+      "description": "Test summarize feature"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   106    0     0  100   106      0     88  0:00:01  0:00:01 --:--:--    88\r100   106    0     0  100   106      0     48  0:00:02  0:00:02 --:--:--    48\r100   106    0     0  100   106      0     33  0:00:03  0:00:03 --:--:--    33\r100   106    0     0  100   106      0     25  0:00:04  0:00:04 --:--:--    25\r100   106    0     0  100   106      0     21  0:00:05  0:00:05 --:--:--    21\ncurl: (28) Operation timed out after 5001 milliseconds with 0 bytes received\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   106    0     0  100   106      0     88  0:00:01  0:00:01 --:--:--    88\r100   106    0     0  100   106      0     48  0:00:02  0:00:02 --:--:--    48\r100   106    0     0  100   106      0     33  0:00:03  0:00:03 --:--:--    33\r100   106    0     0  100   106      0     25  0:00:04  0:00:04 --:--:--    25\r100   106    0     0  100   106      0     21  0:00:05  0:00:05 --:--:--    21\ncurl: (28) Operation timed out after 5001 milliseconds with 0 bytes received\n",
+      "exit": 28,
+      "description": "Test summarize feature"
+    },
+    "title": "curl -X POST http://localhost:3002/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"This is a long text that needs to be summarized into something shorter.\",\"operation\":\"summarize\"}' --max-time 5",
+    "time": {
+      "start": 1759499706286,
+      "end": 1759499711302
+    }
+  }
+}

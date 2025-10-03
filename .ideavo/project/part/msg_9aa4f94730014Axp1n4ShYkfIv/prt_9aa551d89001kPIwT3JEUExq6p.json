@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa551d89001kPIwT3JEUExq6p",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01DbFFEsi1QbETgH8uXbFZDw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello world\",\"operation\":\"translate\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' --max-time 10",
+      "description": "Test translation feature"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    82    0     0  100    82      0    695 --:--:-- --:--:-- --:--:--   694\r100   159    0    77  100    82    640    682 --:--:-- --:--:-- --:--:--  1314\n{\"translatedText\":\"Hola\",\"sourceLang\":\"en\",\"targetLang\":\"es\",\"fallback\":true}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    82    0     0  100    82      0    695 --:--:-- --:--:-- --:--:--   694\r100   159    0    77  100    82    640    682 --:--:-- --:--:-- --:--:--  1314\n{\"translatedText\":\"Hola\",\"sourceLang\":\"en\",\"targetLang\":\"es\",\"fallback\":true}",
+      "exit": 0,
+      "description": "Test translation feature"
+    },
+    "title": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello world\",\"operation\":\"translate\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' --max-time 10",
+    "time": {
+      "start": 1759499330123,
+      "end": 1759499334137
+    }
+  }
+}

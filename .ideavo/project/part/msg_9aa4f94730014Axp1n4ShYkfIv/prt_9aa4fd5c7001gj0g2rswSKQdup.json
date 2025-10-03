@@ -1,0 +1,23 @@
+{
+  "id": "prt_9aa4fd5c7001gj0g2rswSKQdup",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01LERAhw3KRTuiz2wx3ovXdv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts"
+    },
+    "output": "<file>\n00001| /**\n00002|  * Translation API Route\n00003|  * \n00004|  * Handles text translation requests using DashScope API.\n00005|  * ENVIRONMENT: DASHSCOPE_API_KEY must be set (currently: sk-ad9404d1ced5426082b73e685a95ffa3)\n00006|  */\n00007| import { NextRequest, NextResponse } from 'next/server'\n00008| import { translateText } from '@/lib/translation-service'\n00009| \n00010| export async function POST(request: NextRequest) {\n00011|   try {\n00012|     const body = await request.json()\n00013|     console.log('Translation request body:', body)\n00014|     \n00015|     const { text, sourceLang, targetLang, domain, glossary } = body\n00016| \n00017|     if (!text || !targetLang) {\n00018|       console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n00019|       return NextResponse.json(\n00020|         { error: 'Text and target language are required' },\n00021|         { status: 400 }\n00022|       )\n00023|     }\n00024| \n00025|     // Use the shared translation service\n00026|     const result = await translateText(text, sourceLang, targetLang, {\n00027|       domain,\n00028|       glossary\n00029|     })\n00030| \n00031|     return NextResponse.json(result)\n00032| \n00033|   } catch (error) {\n00034|     console.error('Translation error:', error)\n00035|     return NextResponse.json(\n00036|       { error: 'Internal server error' },\n00037|       { status: 500 }\n00038|     )\n00039|   }\n00040| }\n</file>",
+    "metadata": {
+      "preview": "/**\n * Translation API Route\n * \n * Handles text translation requests using DashScope API.\n * ENVIRONMENT: DASHSCOPE_API_KEY must be set (currently: sk-ad9404d1ced5426082b73e685a95ffa3)\n */\nimport { NextRequest, NextResponse } from 'next/server'\nimport { translateText } from '@/lib/translation-service'\n\nexport async function POST(request: NextRequest) {\n  try {\n    const body = await request.json()\n    console.log('Translation request body:', body)\n    \n    const { text, sourceLang, targetLang, domain, glossary } = body\n\n    if (!text || !targetLang) {\n      console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n      return NextResponse.json(\n        { error: 'Text and target language are required' },"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759498983627,
+      "end": 1759498983632
+    }
+  }
+}

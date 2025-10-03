@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa524f7b001CXkH9Hqe6VXXBy",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01WUNAY9VeEo8vtzYN7vEJDP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 120,
+      "limit": 40
+    },
+    "output": "<file>\n00121|             break\n00122|           case 'summarize':\n00123|             setResultText(data.summaryText || '')\n00124|             break\n00125|           default:\n00126|             setResultText('')\n00127|         }\n00128|         \n00129|         if (data.fallback) {\n00130|           toast.info(\"Using fallback processing\")\n00131|         }\n00132|       },\n00133|       onError: (error) => {\n00134|         console.error('Processing error:', error)\n00135|         setResultText(\"Service temporarily unavailable. Please try again later.\")\n00136|         toast.error(\"Processing failed\")\n00137|       }\n00138|     })\n00139|   }\n00140| \n00141|   const handleOperationChange = (newOperation: string) => {\n00142|     setOperation(newOperation)\n00143|     setResultText(\"\")\n00144|     \n00145|     // Re-process if there's source text\n00146|     if (sourceText.trim()) {\n00147|       handleProcessing(sourceText)\n00148|     }\n00149|   }\n00150| \n00151|   const swapLanguages = () => {\n00152|     if (sourceLang === \"auto\" || operation !== 'translate') return\n00153|     \n00154|     setSourceLang(targetLang)\n00155|     setTargetLang(sourceLang)\n00156|     setSourceText(resultText)\n00157|     setResultText(sourceText)\n00158|   }\n00159| \n00160|   const copyToClipboard = async (text: string) => {\n\n(File has more lines. Use 'offset' parameter to read beyond line 160)\n</file>",
+    "metadata": {
+      "preview": "            break\n          case 'summarize':\n            setResultText(data.summaryText || '')\n            break\n          default:\n            setResultText('')\n        }\n        \n        if (data.fallback) {\n          toast.info(\"Using fallback processing\")\n        }\n      },\n      onError: (error) => {\n        console.error('Processing error:', error)\n        setResultText(\"Service temporarily unavailable. Please try again later.\")\n        toast.error(\"Processing failed\")\n      }\n    })\n  }\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499145724,
+      "end": 1759499145726
+    }
+  }
+}

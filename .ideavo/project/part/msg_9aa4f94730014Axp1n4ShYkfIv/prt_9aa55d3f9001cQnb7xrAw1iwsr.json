@@ -1,0 +1,11 @@
+{
+  "id": "prt_9aa55d3f9001cQnb7xrAw1iwsr",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API calls are hanging for all non-translation operations. This indicates there might be an issue with the DashScope API calls in the new functions. The translation feature is working because it uses the existing fallback system, but the new operations don't have proper fallback.\n\nLet me update the API to include better fallback handling for the new operations:",
+  "time": {
+    "start": 1759499377505,
+    "end": 1759499377505
+  }
+}

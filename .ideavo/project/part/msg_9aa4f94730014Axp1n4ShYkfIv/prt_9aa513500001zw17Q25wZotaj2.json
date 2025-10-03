@@ -1,0 +1,42 @@
+{
+  "id": "prt_9aa513500001zw17Q25wZotaj2",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01LxSsTpfcnzPhZg2qQ8RjaV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "  const clearText = () => {\n    setSourceText(\"\")\n    setTranslatedText(\"\")\n  }",
+          "newString": "  const clearText = () => {\n    setSourceText(\"\")\n    setResultText(\"\")\n  }"
+        },
+        {
+          "oldString": "  // Auto-translate when languages change\n  useEffect(() => {\n    if (sourceText.trim()) {\n      const timeoutId = setTimeout(() => {\n        handleTranslation(sourceText)\n      }, 300) // Debounce\n      \n      return () => clearTimeout(timeoutId)\n    }\n  }, [sourceLang, targetLang])",
+          "newString": "  // Auto-process when languages or operation change\n  useEffect(() => {\n    if (sourceText.trim()) {\n      const timeoutId = setTimeout(() => {\n        handleProcessing(sourceText)\n      }, 300) // Debounce\n      \n      return () => clearTimeout(timeoutId)\n    }\n  }, [sourceLang, targetLang, operation])"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -154,9 +154,9 @@\n }\n \n const clearText = () => {\n   setSourceText(\"\")\n-  setTranslatedText(\"\")\n+  setResultText(\"\")\n }\n \n // Auto-translate when languages change\n useEffect(() => {\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -157,18 +157,18 @@\n   setSourceText(\"\")\n   setResultText(\"\")\n }\n \n-// Auto-translate when languages change\n+// Auto-process when languages or operation change\n useEffect(() => {\n   if (sourceText.trim()) {\n     const timeoutId = setTimeout(() => {\n-      handleTranslation(sourceText)\n+      handleProcessing(sourceText)\n     }, 300) // Debounce\n     \n     return () => clearTimeout(timeoutId)\n   }\n-}, [sourceLang, targetLang])\n+}, [sourceLang, targetLang, operation])\n \n const isLoading = translation.isPending\n \n return (\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499075899,
+      "end": 1759499075908
+    }
+  }
+}

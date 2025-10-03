@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa5262ad001dDqjLjdjq5Cap1",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01LcG4kQ5W2bxq2XJLCNYRYB",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 80,
+      "limit": 40
+    },
+    "output": "<file>\n00081|       default:\n00082|         return 'Enter text'\n00083|     }\n00084|   }\n00085| \n00086|   const handleSourceTextChange = (text: string) => {\n00087|     setSourceText(text)\n00088|     if (text.trim()) {\n00089|       handleProcessing(text)\n00090|     } else {\n00091|       setResultText(\"\")\n00092|     }\n00093|   }\n00094| \n00095|   const handleProcessing = (text: string) => {\n00096|     if (!text.trim()) return\n00097| \n00098|     const request: any = {\n00099|       text,\n00100|       operation\n00101|     }\n00102| \n00103|     // Only add language fields for translation\n00104|     if (operation === 'translate') {\n00105|       request.sourceLang = sourceLang\n00106|       request.targetLang = targetLang\n00107|     }\n00108| \n00109|     processing.mutate(request, {\n00110|       onSuccess: (data) => {\n00111|         // Handle different operation results\n00112|         switch (data.operation) {\n00113|           case 'translate':\n00114|             setResultText(data.translatedText || '')\n00115|             break\n00116|           case 'improve':\n00117|             setResultText(data.improvedText || '')\n00118|             break\n00119|           case 'rephrase':\n00120|             setResultText(data.rephrasedText || '')\n\n(File has more lines. Use 'offset' parameter to read beyond line 120)\n</file>",
+    "metadata": {
+      "preview": "      default:\n        return 'Enter text'\n    }\n  }\n\n  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    if (text.trim()) {\n      handleProcessing(text)\n    } else {\n      setResultText(\"\")\n    }\n  }\n\n  const handleProcessing = (text: string) => {\n    if (!text.trim()) return\n\n    const request: any = {\n      text,\n      operation"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499150549,
+      "end": 1759499150551
+    }
+  }
+}

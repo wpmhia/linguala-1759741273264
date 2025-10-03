@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa5707b3001u5LEY6ngw5nV59",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01PnxrShkzJm6xCg5Pty9eZx",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run start &",
+      "description": "Start production server"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n ⨯ Failed to start server\nError: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1908:16)\n    at listenInCluster (node:net:1965:12)\n    at Server.listen (node:net:2067:7)\n    at /home/user/project/node_modules/next/dist/server/lib/start-server.js:280:16\n    at new Promise (<anonymous>)\n    at startServer (/home/user/project/node_modules/next/dist/server/lib/start-server.js:191:11)\n    at Module.nextStart (/home/user/project/node_modules/next/dist/cli/next-start.js:25:40)\n    at /home/user/project/node_modules/next/dist/bin/next:105:856 {\n  code: 'EADDRINUSE',\n  errno: -98,\n  syscall: 'listen',\n  address: '::',\n  port: 3000\n}\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n ⨯ Failed to start server\nError: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (node:net:1908:16)\n    at listenInCluster (node:net:1965:12)\n    at Server.listen (node:net:2067:7)\n    at /home/user/project/node_modules/next/dist/server/lib/start-server.js:280:16\n    at new Promise (<anonymous>)\n    at startServer (/home/user/project/node_modules/next/dist/server/lib/start-server.js:191:11)\n    at Module.nextStart (/home/user/project/node_modules/next/dist/cli/next-start.js:25:40)\n    at /home/user/project/node_modules/next/dist/bin/next:105:856 {\n  code: 'EADDRINUSE',\n  errno: -98,\n  syscall: 'listen',\n  address: '::',\n  port: 3000\n}\n",
+      "exit": 0,
+      "description": "Start production server"
+    },
+    "title": "cd /home/user/project && npm run start &",
+    "time": {
+      "start": 1759499454953,
+      "end": 1759499455528
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "id": "prt_9aa503b22001GPiB7TuvjK2AAi",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_015q5MDMZr58MbFt6JWEMLzF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Update translation API to support multiple operation types",
+          "status": "completed",
+          "priority": "high",
+          "id": "add-features-1"
+        },
+        {
+          "content": "Add operation type selector in UI",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "add-features-2"
+        },
+        {
+          "content": "Implement Improve Writing functionality",
+          "status": "completed",
+          "priority": "high",
+          "id": "add-features-3"
+        },
+        {
+          "content": "Implement Rephrase functionality",
+          "status": "completed",
+          "priority": "high",
+          "id": "add-features-4"
+        },
+        {
+          "content": "Implement Summarize functionality",
+          "status": "completed",
+          "priority": "high",
+          "id": "add-features-5"
+        },
+        {
+          "content": "Update UI to show operation-specific prompts",
+          "status": "pending",
+          "priority": "medium",
+          "id": "add-features-6"
+        },
+        {
+          "content": "Test all new features",
+          "status": "pending",
+          "priority": "medium",
+          "id": "add-features-7"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Update translation API to support multiple operation types\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"add-features-1\"\n  },\n  {\n    \"content\": \"Add operation type selector in UI\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\",\n    \"id\": \"add-features-2\"\n  },\n  {\n    \"content\": \"Implement Improve Writing functionality\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"add-features-3\"\n  },\n  {\n    \"content\": \"Implement Rephrase functionality\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"add-features-4\"\n  },\n  {\n    \"content\": \"Implement Summarize functionality\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"add-features-5\"\n  },\n  {\n    \"content\": \"Update UI to show operation-specific prompts\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"add-features-6\"\n  },\n  {\n    \"content\": \"Test all new features\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"add-features-7\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Update translation API to support multiple operation types",
+          "status": "completed",
+          "priority": "high",
+          "id": "add-features-1"
+        },
+        {
+          "content": "Add operation type selector in UI",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "add-features-2"
+        },
+        {
+          "content": "Implement Improve Writing functionality",
+          "status": "completed",
+          "priority": "high",
+          "id": "add-features-3"
+        },
+        {
+          "content": "Implement Rephrase functionality",
+          "status": "completed",
+          "priority": "high",
+          "id": "add-features-4"
+        },
+        {
+          "content": "Implement Summarize functionality",
+          "status": "completed",
+          "priority": "high",
+          "id": "add-features-5"
+        },
+        {
+          "content": "Update UI to show operation-specific prompts",
+          "status": "pending",
+          "priority": "medium",
+          "id": "add-features-6"
+        },
+        {
+          "content": "Test all new features",
+          "status": "pending",
+          "priority": "medium",
+          "id": "add-features-7"
+        }
+      ]
+    },
+    "title": "3 todos",
+    "time": {
+      "start": 1759499012958,
+      "end": 1759499012959
+    }
+  }
+}

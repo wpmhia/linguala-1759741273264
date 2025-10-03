@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa56f755001EfvuLuqE69yocG",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_018keEaqoQM6cJ8VoiQBVRWz",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"next start\" && npm run start &",
+      "description": "Restart server with new build"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart server with new build"
+    },
+    "title": "cd /home/user/project && pkill -f \"next start\" && npm run start &",
+    "time": {
+      "start": 1759499451151,
+      "end": 1759499451210
+    }
+  }
+}

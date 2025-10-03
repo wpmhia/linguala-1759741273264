@@ -1,0 +1,50 @@
+{
+  "id": "prt_9aa51aa32001P0ucE2OgL4WE3x",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01KqJnMiW2H5PLwYoqpVRQqb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "                value={translatedText}",
+          "newString": "                value={resultText}"
+        },
+        {
+          "oldString": "              {translatedText && !isLoading && (",
+          "newString": "              {resultText && !isLoading && ("
+        },
+        {
+          "oldString": "                      onClick={() => copyToClipboard(translatedText)}",
+          "newString": "                      onClick={() => copyToClipboard(resultText)}"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -334,9 +334,9 @@\n \n {/* Translated Text */}\n <div className=\"relative bg-gray-50\">\n   <Textarea\n-    value={translatedText}\n+    value={resultText}\n     readOnly\n     placeholder={isLoading ? \"Translating...\" : \"Translation\"}\n     className=\"min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6 bg-gray-50\"\n     style={{ fontSize: '16px', lineHeight: '1.5' }}\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -352,9 +352,9 @@\n   </div>\n )}\n \n {/* Translation Controls */}\n-{translatedText && !isLoading && (\n+{resultText && !isLoading && (\n   <div className=\"absolute bottom-4 left-4 right-4 flex items-center justify-between\">\n     <div className=\"flex items-center space-x-2\">\n       <Button\n         variant=\"ghost\"\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -358,9 +358,9 @@\n <div className=\"flex items-center space-x-2\">\n   <Button\n     variant=\"ghost\"\n     size=\"sm\"\n-    onClick={() => copyToClipboard(translatedText)}\n+    onClick={() => copyToClipboard(resultText)}\n     className=\"p-2 hover:bg-gray-200 rounded-full\"\n   >\n     {copySuccess ? <Check className=\"h-4 w-4 text-green-600\" /> : <Copy className=\"h-4 w-4\" />}\n   </Button>\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499104436,
+      "end": 1759499104449
+    }
+  }
+}

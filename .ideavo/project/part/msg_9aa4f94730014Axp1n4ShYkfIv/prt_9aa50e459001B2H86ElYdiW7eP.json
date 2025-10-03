@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa50e459001B2H86ElYdiW7eP",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_015RkzoZhtxgT7HVeFS2fBCc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 80,
+      "limit": 50
+    },
+    "output": "<file>\n00081|     if (!text.trim()) return\n00082| \n00083|     const request: any = {\n00084|       text,\n00085|       operation\n00086|     }\n00087| \n00088|     // Only add language fields for translation\n00089|     if (operation === 'translate') {\n00090|       request.sourceLang = sourceLang\n00091|       request.targetLang = targetLang\n00092|     }\n00093| \n00094|     processing.mutate(request, {\n00095|       onSuccess: (data) => {\n00096|         // Handle different operation results\n00097|         switch (data.operation) {\n00098|           case 'translate':\n00099|             setResultText(data.translatedText || '')\n00100|             break\n00101|           case 'improve':\n00102|             setResultText(data.improvedText || '')\n00103|             break\n00104|           case 'rephrase':\n00105|             setResultText(data.rephrasedText || '')\n00106|             break\n00107|           case 'summarize':\n00108|             setResultText(data.summaryText || '')\n00109|             break\n00110|           default:\n00111|             setResultText('')\n00112|         if (data.fallback) {\n00113|           toast.info(\"Using fallback translation\")\n00114|         }\n00115|       },\n00116|       onError: (error) => {\n00117|         console.error('Translation error:', error)\n00118|         setTranslatedText(\"Translation service temporarily unavailable. Please try again later.\")\n00119|         toast.error(\"Translation failed\")\n00120|       }\n00121|     })\n00122|   }\n00123| \n00124|   const swapLanguages = () => {\n00125|     if (sourceLang === \"auto\") return\n00126|     \n00127|     setSourceLang(targetLang)\n00128|     setTargetLang(sourceLang)\n00129|     setSourceText(translatedText)\n00130|     setTranslatedText(sourceText)\n\n(File has more lines. Use 'offset' parameter to read beyond line 130)\n</file>",
+    "metadata": {
+      "preview": "    if (!text.trim()) return\n\n    const request: any = {\n      text,\n      operation\n    }\n\n    // Only add language fields for translation\n    if (operation === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    }\n\n    processing.mutate(request, {\n      onSuccess: (data) => {\n        // Handle different operation results\n        switch (data.operation) {\n          case 'translate':\n            setResultText(data.translatedText || '')\n            break"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499052901,
+      "end": 1759499052903
+    }
+  }
+}

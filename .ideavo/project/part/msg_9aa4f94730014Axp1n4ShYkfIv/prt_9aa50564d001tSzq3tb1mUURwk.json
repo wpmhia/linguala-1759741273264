@@ -1,0 +1,23 @@
+{
+  "id": "prt_9aa50564d001tSzq3tb1mUURwk",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01SoWYswqjAgBLTJCeuQqKWo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/hooks/use-translation.ts"
+    },
+    "output": "<file>\n00001| import { useMutation, useQueryClient } from '@tanstack/react-query'\n00002| import axios from 'axios'\n00003| \n00004| interface TranslationRequest {\n00005|   text: string\n00006|   sourceLang: string\n00007|   targetLang: string\n00008|   domain?: string\n00009|   glossary?: Array<{ source: string; target: string }>\n00010| }\n00011| \n00012| interface TranslationResponse {\n00013|   translatedText: string\n00014|   sourceLang: string\n00015|   targetLang: string\n00016|   fallback?: boolean\n00017| }\n00018| \n00019| export function useTranslation() {\n00020|   const queryClient = useQueryClient()\n00021| \n00022|   return useMutation<TranslationResponse, Error, TranslationRequest>({\n00023|     mutationFn: async (request) => {\n00024|       const response = await axios.post('/api/translate', request, {\n00025|         timeout: 30000, // 30 second timeout for translation\n00026|       })\n00027|       return response.data\n00028|     },\n00029|     onSuccess: (data, variables) => {\n00030|       // Cache the translation result\n00031|       const cacheKey = `${variables.text}-${variables.sourceLang}-${variables.targetLang}`\n00032|       queryClient.setQueryData(['translation', cacheKey], data)\n00033|     },\n00034|     onError: (error) => {\n00035|       console.error('Translation failed:', error)\n00036|     },\n00037|   })\n00038| }\n</file>",
+    "metadata": {
+      "preview": "import { useMutation, useQueryClient } from '@tanstack/react-query'\nimport axios from 'axios'\n\ninterface TranslationRequest {\n  text: string\n  sourceLang: string\n  targetLang: string\n  domain?: string\n  glossary?: Array<{ source: string; target: string }>\n}\n\ninterface TranslationResponse {\n  translatedText: string\n  sourceLang: string\n  targetLang: string\n  fallback?: boolean\n}\n\nexport function useTranslation() {\n  const queryClient = useQueryClient()"
+    },
+    "title": "hooks/use-translation.ts",
+    "time": {
+      "start": 1759499016463,
+      "end": 1759499016464
+    }
+  }
+}

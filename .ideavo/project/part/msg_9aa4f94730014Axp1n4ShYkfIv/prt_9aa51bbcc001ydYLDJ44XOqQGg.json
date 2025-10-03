@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa51bbcc001ydYLDJ44XOqQGg",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01RaAk1vLG4kEyRaobHHcY3e",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 280,
+      "limit": 30
+    },
+    "output": "<file>\n00281|                         <span>{lang.name}</span>\n00282|                       </div>\n00283|                     </SelectItem>\n00284|                   ))}\n00285|                 </SelectContent>\n00286|               </Select>\n00287|             </div>\n00288|           </div>\n00289| \n00290|           {/* Processing Areas */}\n00291|           <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">\n00292|             {/* Source Text */}\n00293|             <div className=\"relative\">\n00294|               <div className=\"border-b border-gray-200 lg:border-b-0 lg:border-r\">\n00295|                 <Textarea\n00296|                   value={sourceText}\n00297|                   onChange={(e) => handleSourceTextChange(e.target.value)}\n00298|                   onFocus={() => setFocusedArea('source')}\n00299|                   onBlur={() => setFocusedArea(null)}\n00300|                   placeholder=\"Enter text\"\n00301|                   className=\"min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6\"\n00302|                   style={{ fontSize: '16px', lineHeight: '1.5' }}\n00303|                 />\n00304|                 \n00305|                 {/* Source Text Controls */}\n00306|                 <div className=\"absolute bottom-4 left-4 right-4 flex items-center justify-between\">\n00307|                   <div className=\"flex items-center space-x-2\">\n00308|                     {sourceText && (\n00309|                       <Button\n00310|                         variant=\"ghost\"\n\n(File has more lines. Use 'offset' parameter to read beyond line 310)\n</file>",
+    "metadata": {
+      "preview": "                        <span>{lang.name}</span>\n                      </div>\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            </div>\n          </div>\n\n          {/* Processing Areas */}\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">\n            {/* Source Text */}\n            <div className=\"relative\">\n              <div className=\"border-b border-gray-200 lg:border-b-0 lg:border-r\">\n                <Textarea\n                  value={sourceText}\n                  onChange={(e) => handleSourceTextChange(e.target.value)}\n                  onFocus={() => setFocusedArea('source')}\n                  onBlur={() => setFocusedArea(null)}\n                  placeholder=\"Enter text\""
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499107972,
+      "end": 1759499107974
+    }
+  }
+}

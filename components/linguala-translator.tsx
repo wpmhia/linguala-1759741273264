@@ -10,7 +10,7 @@ import {
 } from "lucide-react"
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
-import { useTranslation } from "@/hooks/use-translation"
+import { useTextProcessing } from "@/hooks/use-translation"
 
 // Common languages like Google Translate
 const LANGUAGES = [
@@ -40,10 +40,19 @@ const LANGUAGES = [
   { code: "vi", name: "Vietnamese", flag: "🇻🇳" }
 ]
 
+// Operation types
+const OPERATIONS = [
+  { id: 'translate', name: 'Translate', icon: '🌐' },
+  { id: 'improve', name: 'Improve Writing', icon: '✍️' },
+  { id: 'rephrase', name: 'Rephrase', icon: '🔄' },
+  { id: 'summarize', name: 'Summarize', icon: '📝' }
+]
+
 export default function LingualaTranslator() {
-  // Core translation state
+  // Core processing state
   const [sourceText, setSourceText] = useState("")
-  const [translatedText, setTranslatedText] = useState("")
+  const [resultText, setResultText] = useState("")
+  const [operation, setOperation] = useState("translate")
   const [sourceLang, setSourceLang] = useState("auto")
   const [targetLang, setTargetLang] = useState("en")
   
@@ -52,51 +61,100 @@ export default function LingualaTranslator() {
   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)
 
   // React Query hook
-  const translation = useTranslation()
+  const processing = useTextProcessing()
 
   // Helper functions
   const getLanguage = (code: string) => {
     return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]
   }
 
-  const handleSourceTextChange = (text: string) => {
-    setSourceText(text)
-    if (text.trim()) {
-      handleTranslation(text)
-    } else {
-      setTranslatedText("")
+  const getPlaceholderText = () => {
+    switch (operation) {
+      case 'translate':
+        return 'Enter text to translate'
+      case 'improve':
+        return 'Enter text to improve'
+      case 'rephrase':
+        return 'Enter text to rephrase'
+      case 'summarize':
+        return 'Enter text to summarize'
+      default:
+        return 'Enter text'
     }
   }
 
-  const handleTranslation = (text: string) => {
+  const handleSourceTextChange = (text: string) => {
+    setSourceText(text)
+    if (text.trim()) {
+      handleProcessing(text)
+    } else {
+      setResultText("")
+    }
+  }
+
+  const handleProcessing = (text: string) => {
     if (!text.trim()) return
 
-    translation.mutate({
+    const request: any = {
       text,
-      sourceLang,
-      targetLang
-    }, {
+      operation
+    }
+
+    // Only add language fields for translation
+    if (operation === 'translate') {
+      request.sourceLang = sourceLang
+      request.targetLang = targetLang
+    }
+
+    processing.mutate(request, {
       onSuccess: (data) => {
-        setTranslatedText(data.translatedText)
+        // Handle different operation results
+        switch (data.operation) {
+          case 'translate':
+            setResultText(data.translatedText || '')
+            break
+          case 'improve':
+            setResultText(data.improvedText || '')
+            break
+          case 'rephrase':
+            setResultText(data.rephrasedText || '')
+            break
+          case 'summarize':
+            setResultText(data.summaryText || '')
+            break
+          default:
+            setResultText('')
+        }
+        
         if (data.fallback) {
-          toast.info("Using fallback translation")
+          toast.info("Using fallback processing")
         }
       },
       onError: (error) => {
-        console.error('Translation error:', error)
-        setTranslatedText("Translation service temporarily unavailable. Please try again later.")
-        toast.error("Translation failed")
+        console.error('Processing error:', error)
+        setResultText("Service temporarily unavailable. Please try again later.")
+        toast.error("Processing failed")
       }
     })
   }
 
+  const handleOperationChange = (newOperation: string) => {
+    setOperation(newOperation)
+    setResultText("")
+    
+    // Re-process if there's source text
+    if (sourceText.trim()) {
+      handleProcessing(sourceText)
+    }
+  }
+
   const swapLanguages = () => {
-    if (sourceLang === "auto") return
+    if (sourceLang === "auto" || operation !== 'translate') return
     
     setSourceLang(targetLang)
     setTargetLang(sourceLang)
-    setSourceText(translatedText)
-    setTranslatedText(sourceText)
+    setSourceText(resultText)
+    setResultText(sourceText)
   }
 
   const copyToClipboard = async (text: string) => {
@@ -112,31 +170,30 @@ export default function LingualaTranslator() {
 
   const clearText = () => {
     setSourceText("")
-    setTranslatedText("")
+    setResultText("")
   }
 
-  // Auto-translate when languages change
+  // Auto-process when languages or operation change
   useEffect(() => {
     if (sourceText.trim()) {
       const timeoutId = setTimeout(() => {
-        handleTranslation(sourceText)
+        handleProcessing(sourceText)
       }, 300) // Debounce
       
       return () => clearTimeout(timeoutId)
     }
-  }, [sourceLang, targetLang])
+  }, [sourceLang, targetLang, operation])
 
-  const isLoading = translation.isPending
+  const isLoading = processing.isPending
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Google-style Header */}
+      {/* Header */}
       <header className="border-b border-gray-200">
         <div className="max-w-screen-xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <LingualaLogo size="md" />
-
             </div>
             <div className="flex items-center space-x-4">
               <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
@@ -151,64 +208,86 @@ export default function LingualaTranslator() {
       </header>
 
       <main className="max-w-screen-xl mx-auto px-6 py-8">
-        {/* Main Translation Interface */}
+        {/* Main Processing Interface */}
         <div className="bg-white">
-          {/* Language Selection Bar */}
-          <div className="flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4">
-            <div className="flex items-center space-x-4">
-              <Select value={sourceLang} onValueChange={setSourceLang}>
-                <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm">{getLanguage(sourceLang).flag}</span>
-                    <span className="font-medium text-sm">{getLanguage(sourceLang).name}</span>
-                  </div>
-                </SelectTrigger>
-                <SelectContent>
-                  {LANGUAGES.map(lang => (
-                    <SelectItem key={lang.code} value={lang.code}>
-                      <div className="flex items-center space-x-2">
-                        <span>{lang.flag}</span>
-                        <span>{lang.name}</span>
-                      </div>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={swapLanguages}
-              disabled={sourceLang === "auto"}
-              className="p-2 rounded-full hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ArrowUpDown className="h-4 w-4" />
-            </Button>
-
-            <div className="flex items-center space-x-4">
-              <Select value={targetLang} onValueChange={setTargetLang}>
-                <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm">{getLanguage(targetLang).flag}</span>
-                    <span className="font-medium text-sm">{getLanguage(targetLang).name}</span>
-                  </div>
-                </SelectTrigger>
-                <SelectContent>
-                  {LANGUAGES.filter(lang => lang.code !== "auto").map(lang => (
-                    <SelectItem key={lang.code} value={lang.code}>
-                      <div className="flex items-center space-x-2">
-                        <span>{lang.flag}</span>
-                        <span>{lang.name}</span>
-                      </div>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+          {/* Operation Selection */}
+          <div className="mb-6">
+            <div className="flex items-center space-x-2 mb-4">
+              {OPERATIONS.map((op) => (
+                <button
+                  key={op.id}
+                  onClick={() => handleOperationChange(op.id)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    operation === op.id
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  <span className="mr-2">{op.icon}</span>
+                  {op.name}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Translation Areas */}
+          {/* Language Selection Bar - Only show for translation */}
+          {operation === 'translate' && (
+            <div className="flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4">
+              <div className="flex items-center space-x-4">
+                <Select value={sourceLang} onValueChange={setSourceLang}>
+                  <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm">{getLanguage(sourceLang).flag}</span>
+                      <span className="font-medium text-sm">{getLanguage(sourceLang).name}</span>
+                    </div>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {LANGUAGES.map(lang => (
+                      <SelectItem key={lang.code} value={lang.code}>
+                        <div className="flex items-center space-x-2">
+                          <span>{lang.flag}</span>
+                          <span>{lang.name}</span>
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={swapLanguages}
+                className="p-2 hover:bg-gray-200 rounded-full"
+                disabled={sourceLang === "auto"}
+              >
+                <ArrowUpDown className="h-4 w-4" />
+              </Button>
+
+              <div className="flex items-center space-x-4">
+                <Select value={targetLang} onValueChange={setTargetLang}>
+                  <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm">{getLanguage(targetLang).flag}</span>
+                      <span className="font-medium text-sm">{getLanguage(targetLang).name}</span>
+                    </div>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {LANGUAGES.filter(lang => lang.code !== "auto").map(lang => (
+                      <SelectItem key={lang.code} value={lang.code}>
+                        <div className="flex items-center space-x-2">
+                          <span>{lang.flag}</span>
+                          <span>{lang.name}</span>
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          )}
+
+          {/* Processing Areas */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden">
             {/* Source Text */}
             <div className="relative">
@@ -218,7 +297,7 @@ export default function LingualaTranslator() {
                   onChange={(e) => handleSourceTextChange(e.target.value)}
                   onFocus={() => setFocusedArea('source')}
                   onBlur={() => setFocusedArea(null)}
-                  placeholder="Enter text"
+                  placeholder={getPlaceholderText()}
                   className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6"
                   style={{ fontSize: '16px', lineHeight: '1.5' }}
                 />
@@ -231,59 +310,57 @@ export default function LingualaTranslator() {
                         variant="ghost"
                         size="sm"
                         onClick={clearText}
-                        className="p-2 hover:bg-gray-100 rounded-full"
+                        className="p-2 hover:bg-gray-200 rounded-full"
                       >
                         <X className="h-4 w-4" />
                       </Button>
                     )}
+                  </div>
+                  
+                  <div className="flex items-center space-x-2">
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="p-2 hover:bg-gray-100 rounded-full"
+                      className="p-2 hover:bg-gray-200 rounded-full"
                       disabled
                     >
                       <Mic className="h-4 w-4" />
                     </Button>
                   </div>
-                  
-                  <div className="text-xs text-gray-600">
-                    {sourceText.length} / 5000
-                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Translated Text */}
-            <div className="relative bg-gray-50">
-              <Textarea
-                value={translatedText}
-                readOnly
-                placeholder={isLoading ? "Translating..." : "Translation"}
-                className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6 bg-gray-50"
-                style={{ fontSize: '16px', lineHeight: '1.5' }}
-              />
-              
-              {/* Loading indicator */}
-              {isLoading && (
-                <div className="absolute inset-0 bg-gray-50 bg-opacity-75 flex items-center justify-center">
-                  <div className="flex items-center space-x-2 text-blue-600">
-                    <Loader2 className="h-5 w-5 animate-spin" />
-                    <span className="text-sm font-medium">Translating...</span>
+            {/* Result Text */}
+            <div className="relative">
+              <div className="min-h-[300px] p-6 text-lg" style={{ fontSize: '16px', lineHeight: '1.5' }}>
+                {isLoading ? (
+                  <div className="flex items-center justify-center h-full">
+                    <Loader2 className="h-6 w-6 animate-spin text-blue-500" />
                   </div>
-                </div>
-              )}
-              
-              {/* Translation Controls */}
-              {translatedText && !isLoading && (
+                ) : (
+                  <div 
+                    className={`whitespace-pre-wrap ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}
+                    onFocus={() => setFocusedArea('target')}
+                    onBlur={() => setFocusedArea(null)}
+                    tabIndex={0}
+                  >
+                    {resultText || `${operation === 'translate' ? 'Translation' : operation === 'improve' ? 'Improved text' : operation === 'rephrase' ? 'Rephrased text' : 'Summary'} will appear here`}
+                  </div>
+                )}
+              </div>
+
+              {/* Result Text Controls */}
+              {resultText && !isLoading && (
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => copyToClipboard(translatedText)}
+                      onClick={() => copyToClipboard(resultText)}
                       className="p-2 hover:bg-gray-200 rounded-full"
                     >
-                      {copySuccess ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                      {copySuccess ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                     </Button>
                     <Button
                       variant="ghost"
@@ -319,20 +396,20 @@ export default function LingualaTranslator() {
           {/* Bottom Actions */}
           <div className="mt-6 flex items-center justify-end">
             <div className="flex items-center space-x-2 text-sm text-gray-500">
-              <span>Powered by Linguala Translate</span>
+              <span>Powered by Linguala</span>
             </div>
           </div>
         </div>
 
-        {/* Simple feature showcase */}
+        {/* Feature showcase */}
         <div className="mt-12">
           <div className="text-center">
             <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                Professional Translation Platform
+                AI-Powered Text Processing Platform
               </h2>
               <p className="text-gray-600 mb-6">
-                Fast, accurate translations powered by advanced AI. Support for 25+ languages including all major European languages.
+                Advanced AI tools for translation, writing improvement, rephrasing, and summarization. Professional quality results in seconds.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
                 <div className="text-center">
@@ -340,16 +417,16 @@ export default function LingualaTranslator() {
                   <div>Languages</div>
                 </div>
                 <div className="text-center">
+                  <div className="font-semibold">4</div>
+                  <div>AI Tools</div>
+                </div>
+                <div className="text-center">
                   <div className="font-semibold">Fast</div>
-                  <div>Translation</div>
+                  <div>Processing</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-semibold">Free</div>
-                  <div>To Use</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-semibold">Accurate</div>
-                  <div>Results</div>
+                  <div className="font-semibold">Secure</div>
+                  <div>& Private</div>
                 </div>
               </div>
             </div>

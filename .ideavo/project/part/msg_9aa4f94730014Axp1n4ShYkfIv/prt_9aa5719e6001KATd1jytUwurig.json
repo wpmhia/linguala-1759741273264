@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa5719e6001KATd1jytUwurig",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01QinSPkVWNVsemjUJQ6cV4j",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"next start\" && sleep 2 && npm run start &",
+      "description": "Kill all Next.js processes and restart"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Kill all Next.js processes and restart"
+    },
+    "title": "cd /home/user/project && pkill -f \"next start\" && sleep 2 && npm run start &",
+    "time": {
+      "start": 1759499459841,
+      "end": 1759499459867
+    }
+  }
+}

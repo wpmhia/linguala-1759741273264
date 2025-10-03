@@ -1,0 +1,50 @@
+{
+  "id": "prt_9aa50bf4b0016aj7iTvyvML400",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01PiS25oAMhxxYjEfzMRFd6h",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "  // React Query hook\n  const translation = useTranslation()",
+          "newString": "  // React Query hook\n  const processing = useTextProcessing()"
+        },
+        {
+          "oldString": "  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    if (text.trim()) {\n      handleTranslation(text)\n    } else {\n      setTranslatedText(\"\")\n    }\n  }",
+          "newString": "  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    if (text.trim()) {\n      handleProcessing(text)\n    } else {\n      setResultText(\"\")\n    }\n  }"
+        },
+        {
+          "oldString": "  const handleTranslation = (text: string) => {\n    if (!text.trim()) return\n\n    translation.mutate({\n      text,\n      sourceLang,\n      targetLang\n    }, {\n      onSuccess: (data) => {\n        setTranslatedText(data.translatedText)",
+          "newString": "  const handleProcessing = (text: string) => {\n    if (!text.trim()) return\n\n    const request: any = {\n      text,\n      operation\n    }\n\n    // Only add language fields for translation\n    if (operation === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    }\n\n    processing.mutate(request, {\n      onSuccess: (data) => {\n        // Handle different operation results\n        switch (data.operation) {\n          case 'translate':\n            setResultText(data.translatedText || '')\n            break\n          case 'improve':\n            setResultText(data.improvedText || '')\n            break\n          case 'rephrase':\n            setResultText(data.rephrasedText || '')\n            break\n          case 'summarize':\n            setResultText(data.summaryText || '')\n            break\n          default:\n            setResultText('')"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -60,9 +60,9 @@\n const [copySuccess, setCopySuccess] = useState(false)\n const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n \n // React Query hook\n-const translation = useTranslation()\n+const processing = useTextProcessing()\n \n // Helper functions\n const getLanguage = (code: string) => {\n   return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -70,11 +70,11 @@\n \n const handleSourceTextChange = (text: string) => {\n   setSourceText(text)\n   if (text.trim()) {\n-    handleTranslation(text)\n+    handleProcessing(text)\n   } else {\n-    setTranslatedText(\"\")\n+    setResultText(\"\")\n   }\n }\n \n const handleTranslation = (text: string) => {\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -76,18 +76,40 @@\n     setResultText(\"\")\n   }\n }\n \n-const handleTranslation = (text: string) => {\n+const handleProcessing = (text: string) => {\n   if (!text.trim()) return\n \n-  translation.mutate({\n+  const request: any = {\n     text,\n-    sourceLang,\n-    targetLang\n-  }, {\n+    operation\n+  }\n+\n+  // Only add language fields for translation\n+  if (operation === 'translate') {\n+    request.sourceLang = sourceLang\n+    request.targetLang = targetLang\n+  }\n+\n+  processing.mutate(request, {\n     onSuccess: (data) => {\n-      setTranslatedText(data.translatedText)\n+      // Handle different operation results\n+      switch (data.operation) {\n+        case 'translate':\n+          setResultText(data.translatedText || '')\n+          break\n+        case 'improve':\n+          setResultText(data.improvedText || '')\n+          break\n+        case 'rephrase':\n+          setResultText(data.rephrasedText || '')\n+          break\n+        case 'summarize':\n+          setResultText(data.summaryText || '')\n+          break\n+        default:\n+          setResultText('')\n       if (data.fallback) {\n         toast.info(\"Using fallback translation\")\n       }\n     },\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499049121,
+      "end": 1759499049140
+    }
+  }
+}

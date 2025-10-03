@@ -1,0 +1,42 @@
+{
+  "id": "prt_9aa5096c7001cD6e6DHBbC2I5R",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_019TUgX5t6zmcfR6P3YLw3a1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "import { useTranslation } from \"@/hooks/use-translation\"",
+          "newString": "import { useTextProcessing } from \"@/hooks/use-translation\""
+        },
+        {
+          "oldString": "export default function LingualaTranslator() {\n  // Core translation state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [translatedText, setTranslatedText] = useState(\"\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")",
+          "newString": "// Operation types\nconst OPERATIONS = [\n  { id: 'translate', name: 'Translate', icon: '🌐' },\n  { id: 'improve', name: 'Improve Writing', icon: '✍️' },\n  { id: 'rephrase', name: 'Rephrase', icon: '🔄' },\n  { id: 'summarize', name: 'Summarize', icon: '📝' }\n]\n\nexport default function LingualaTranslator() {\n  // Core processing state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [resultText, setResultText] = useState(\"\")\n  const [operation, setOperation] = useState(\"translate\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -9,9 +9,9 @@\n   Check, X, Mic, Settings, History, Loader2\n } from \"lucide-react\"\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n-import { useTranslation } from \"@/hooks/use-translation\"\n+import { useTextProcessing } from \"@/hooks/use-translation\"\n \n // Common languages like Google Translate\n const LANGUAGES = [\n   { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -39,12 +39,21 @@\n   { code: \"th\", name: \"Thai\", flag: \"🇹🇭\" },\n   { code: \"vi\", name: \"Vietnamese\", flag: \"🇻🇳\" }\n ]\n \n+// Operation types\n+const OPERATIONS = [\n+  { id: 'translate', name: 'Translate', icon: '🌐' },\n+  { id: 'improve', name: 'Improve Writing', icon: '✍️' },\n+  { id: 'rephrase', name: 'Rephrase', icon: '🔄' },\n+  { id: 'summarize', name: 'Summarize', icon: '📝' }\n+]\n+\n export default function LingualaTranslator() {\n-  // Core translation state\n+  // Core processing state\n   const [sourceText, setSourceText] = useState(\"\")\n-  const [translatedText, setTranslatedText] = useState(\"\")\n+  const [resultText, setResultText] = useState(\"\")\n+  const [operation, setOperation] = useState(\"translate\")\n   const [sourceLang, setSourceLang] = useState(\"auto\")\n   const [targetLang, setTargetLang] = useState(\"en\")\n   \n   // UI state\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499037071,
+      "end": 1759499037083
+    }
+  }
+}

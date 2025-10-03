@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa5aaa480017Ma0Uk5t14eBM2",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_016URLSzpkNGYq2goQCZxCod",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3002/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"The weather is very nice today.\",\"operation\":\"rephrase\"}' --max-time 8",
+      "description": "Test rephrase feature"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    65    0     0  100    65      0     54  0:00:01  0:00:01 --:--:--    54\r100    65    0     0  100    65      0     29  0:00:02  0:00:02 --:--:--    29\r100    65    0     0  100    65      0     20  0:00:03  0:00:03 --:--:--    20\r100    65    0     0  100    65      0     15  0:00:04  0:00:04 --:--:--    15\r100    65    0     0  100    65      0     12  0:00:05  0:00:05 --:--:--    12\r100    65    0     0  100    65      0     10  0:00:06  0:00:06 --:--:--     0\r100    65    0     0  100    65      0      9  0:00:07  0:00:07 --:--:--     0\r100    65    0     0  100    65      0      8  0:00:08  0:00:08 --:--:--     0\ncurl: (28) Operation timed out after 8000 milliseconds with 0 bytes received\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    65    0     0  100    65      0     54  0:00:01  0:00:01 --:--:--    54\r100    65    0     0  100    65      0     29  0:00:02  0:00:02 --:--:--    29\r100    65    0     0  100    65      0     20  0:00:03  0:00:03 --:--:--    20\r100    65    0     0  100    65      0     15  0:00:04  0:00:04 --:--:--    15\r100    65    0     0  100    65      0     12  0:00:05  0:00:05 --:--:--    12\r100    65    0     0  100    65      0     10  0:00:06  0:00:06 --:--:--     0\r100    65    0     0  100    65      0      9  0:00:07  0:00:07 --:--:--     0\r100    65    0     0  100    65      0      8  0:00:08  0:00:08 --:--:--     0\ncurl: (28) Operation timed out after 8000 milliseconds with 0 bytes received\n",
+      "exit": 28,
+      "description": "Test rephrase feature"
+    },
+    "title": "curl -X POST http://localhost:3002/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"The weather is very nice today.\",\"operation\":\"rephrase\"}' --max-time 8",
+    "time": {
+      "start": 1759499693491,
+      "end": 1759499701515
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa574ee5002QV4QBb0gizCH7y",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KDESA4CLdXZWGMzpiAALRZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && lsof -ti:3000 | xargs kill -9 && sleep 2 && npm run start &",
+      "description": "Kill process using port 3000 and restart"
+    },
+    "output": "\nUsage:\n kill [options] <pid> [...]\n\nOptions:\n <pid> [...]            send signal to every <pid> listed\n -<signal>, -s, --signal <signal>\n                        specify the <signal> to be sent\n -q, --queue <value>    integer value to be sent with the signal\n -l, --list=[<signal>]  list all signal names, or convert one to a name\n -L, --table            list all signal names in a nice table\n\n -h, --help     display this help and exit\n -V, --version  output version information and exit\n\nFor more details see kill(1).\n",
+    "metadata": {
+      "output": "\nUsage:\n kill [options] <pid> [...]\n\nOptions:\n <pid> [...]            send signal to every <pid> listed\n -<signal>, -s, --signal <signal>\n                        specify the <signal> to be sent\n -q, --queue <value>    integer value to be sent with the signal\n -l, --list=[<signal>]  list all signal names, or convert one to a name\n -L, --table            list all signal names in a nice table\n\n -h, --help     display this help and exit\n -V, --version  output version information and exit\n\nFor more details see kill(1).\n",
+      "exit": 0,
+      "description": "Kill process using port 3000 and restart"
+    },
+    "title": "cd /home/user/project && lsof -ti:3000 | xargs kill -9 && sleep 2 && npm run start &",
+    "time": {
+      "start": 1759499473428,
+      "end": 1759499473499
+    }
+  }
+}

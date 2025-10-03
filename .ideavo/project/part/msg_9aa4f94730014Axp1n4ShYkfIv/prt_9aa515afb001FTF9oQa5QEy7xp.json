@@ -1,0 +1,58 @@
+{
+  "id": "prt_9aa515afb001FTF9oQa5QEy7xp",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01QapP9yVWyiQVMqZfGbFnQg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "  const isLoading = translation.isPending",
+          "newString": "  const isLoading = processing.isPending"
+        },
+        {
+          "oldString": "        {/* Main Translation Interface */}\n        <div className=\"bg-white\">\n          {/* Language Selection Bar */}\n          <div className=\"flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4\">",
+          "newString": "        {/* Main Processing Interface */}\n        <div className=\"bg-white\">\n          {/* Operation Selection */}\n          <div className=\"mb-6\">\n            <div className=\"flex items-center space-x-2 mb-4\">\n              {OPERATIONS.map((op) => (\n                <button\n                  key={op.id}\n                  onClick={() => handleOperationChange(op.id)}\n                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${\n                    operation === op.id\n                      ? 'bg-blue-100 text-blue-700'\n                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'\n                  }`}\n                >\n                  <span className=\"mr-2\">{op.icon}</span>\n                  {op.name}\n                </button>\n              ))}\n            </div>\n          </div>\n\n          {/* Language Selection Bar - Only show for translation */}\n          {operation === 'translate' && (\n            <div className=\"flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4\">"
+        },
+        {
+          "oldString": "            </div>\n\n            <Button\n              variant=\"ghost\"\n              size=\"sm\"\n              onClick={swapLanguages}\n              className=\"p-2 hover:bg-gray-200 rounded-full\"\n              disabled={sourceLang === \"auto\"}\n            >\n              <ArrowUpDown className=\"h-4 w-4\" />\n            </Button>\n\n            <div className=\"flex items-center space-x-4\">\n              <Select value={targetLang} onValueChange={setTargetLang}>\n                <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">\n                  <div className=\"flex items-center space-x-2\">\n                    <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n                    <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n                  </div>\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n                    <SelectItem key={lang.code} value={lang.code}>\n                      <div className=\"flex items-center space-x-2\">\n                        <span>{lang.flag}</span>\n                        <span>{lang.name}</span>\n                      </div>\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            </div>\n          </div>",
+          "newString": "              </div>\n\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={swapLanguages}\n                className=\"p-2 hover:bg-gray-200 rounded-full\"\n                disabled={sourceLang === \"auto\"}\n              >\n                <ArrowUpDown className=\"h-4 w-4\" />\n              </Button>\n\n              <div className=\"flex items-center space-x-4\">\n                <Select value={targetLang} onValueChange={setTargetLang}>\n                  <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">\n                    <div className=\"flex items-center space-x-2\">\n                      <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n                      <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n                    </div>\n                  </SelectTrigger>\n                  <SelectContent>\n                    {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n                      <SelectItem key={lang.code} value={lang.code}>\n                        <div className=\"flex items-center space-x-2\">\n                          <span>{lang.flag}</span>\n                          <span>{lang.name}</span>\n                        </div>\n                      </SelectItem>\n                    ))}\n                  </SelectContent>\n                </Select>\n              </div>\n            </div>\n          )}"
+        },
+        {
+          "oldString": "          {/* Translation Areas */}",
+          "newString": "          {/* Processing Areas */}"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -168,9 +168,9 @@\n     return () => clearTimeout(timeoutId)\n   }\n }, [sourceLang, targetLang, operation])\n \n-const isLoading = translation.isPending\n+const isLoading = processing.isPending\n \n return (\n   <div className=\"min-h-screen bg-white\">\n     {/* Google-style Header */}\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -193,12 +193,33 @@\n   </div>\n </header>\n \n <main className=\"max-w-screen-xl mx-auto px-6 py-8\">\n-  {/* Main Translation Interface */}\n+  {/* Main Processing Interface */}\n   <div className=\"bg-white\">\n-    {/* Language Selection Bar */}\n-    <div className=\"flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4\">\n+    {/* Operation Selection */}\n+    <div className=\"mb-6\">\n+      <div className=\"flex items-center space-x-2 mb-4\">\n+        {OPERATIONS.map((op) => (\n+          <button\n+            key={op.id}\n+            onClick={() => handleOperationChange(op.id)}\n+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${\n+              operation === op.id\n+                ? 'bg-blue-100 text-blue-700'\n+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'\n+            }`}\n+          >\n+            <span className=\"mr-2\">{op.icon}</span>\n+            {op.name}\n+          </button>\n+        ))}\n+      </div>\n+    </div>\n+\n+    {/* Language Selection Bar - Only show for translation */}\n+    {operation === 'translate' && (\n+      <div className=\"flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4\">\n       <div className=\"flex items-center space-x-4\">\n         <Select value={sourceLang} onValueChange={setSourceLang}>\n           <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">\n             <div className=\"flex items-center space-x-2\">\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -237,27 +237,42 @@\n           </SelectItem>\n         ))}\n       </SelectContent>\n     </Select>\n-  </div>\n+    </div>\n \n-  <Button\n-    variant=\"ghost\"\n-    size=\"sm\"\n-    onClick={swapLanguages}\n-    disabled={sourceLang === \"auto\"}\n-    className=\"p-2 rounded-full hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed\"\n-  >\n-    <ArrowUpDown className=\"h-4 w-4\" />\n-  </Button>\n+    <Button\n+      variant=\"ghost\"\n+      size=\"sm\"\n+      onClick={swapLanguages}\n+      className=\"p-2 hover:bg-gray-200 rounded-full\"\n+      disabled={sourceLang === \"auto\"}\n+    >\n+      <ArrowUpDown className=\"h-4 w-4\" />\n+    </Button>\n \n-  <div className=\"flex items-center space-x-4\">\n-    <Select value={targetLang} onValueChange={setTargetLang}>\n-      <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">\n-        <div className=\"flex items-center space-x-2\">\n-          <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n-          <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n-        </div>\n+    <div className=\"flex items-center space-x-4\">\n+      <Select value={targetLang} onValueChange={setTargetLang}>\n+        <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">\n+          <div className=\"flex items-center space-x-2\">\n+            <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n+            <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n+          </div>\n+        </SelectTrigger>\n+        <SelectContent>\n+          {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n+            <SelectItem key={lang.code} value={lang.code}>\n+              <div className=\"flex items-center space-x-2\">\n+                <span>{lang.flag}</span>\n+                <span>{lang.name}</span>\n+              </div>\n+            </SelectItem>\n+          ))}\n+        </SelectContent>\n+      </Select>\n+    </div>\n+  </div>\n+)}\n       </SelectTrigger>\n       <SelectContent>\n         {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n           <SelectItem key={lang.code} value={lang.code}>\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -286,9 +286,9 @@\n     </Select>\n   </div>\n </div>\n \n-{/* Translation Areas */}\n+{/* Processing Areas */}\n <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">\n   {/* Source Text */}\n   <div className=\"relative\">\n     <div className=\"border-b border-gray-200 lg:border-b-0 lg:border-r\">\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499095161,
+      "end": 1759499095217
+    }
+  }
+}

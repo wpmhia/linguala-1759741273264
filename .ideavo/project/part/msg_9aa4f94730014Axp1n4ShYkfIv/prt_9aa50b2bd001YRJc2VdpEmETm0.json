@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa50b2bd001YRJc2VdpEmETm0",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01A2VZ1XovJi7k6vmotKE2vU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 50,
+      "limit": 30
+    },
+    "output": "<file>\n00051| export default function LingualaTranslator() {\n00052|   // Core processing state\n00053|   const [sourceText, setSourceText] = useState(\"\")\n00054|   const [resultText, setResultText] = useState(\"\")\n00055|   const [operation, setOperation] = useState(\"translate\")\n00056|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00057|   const [targetLang, setTargetLang] = useState(\"en\")\n00058|   \n00059|   // UI state\n00060|   const [copySuccess, setCopySuccess] = useState(false)\n00061|   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n00062| \n00063|   // React Query hook\n00064|   const translation = useTranslation()\n00065| \n00066|   // Helper functions\n00067|   const getLanguage = (code: string) => {\n00068|     return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n00069|   }\n00070| \n00071|   const handleSourceTextChange = (text: string) => {\n00072|     setSourceText(text)\n00073|     if (text.trim()) {\n00074|       handleTranslation(text)\n00075|     } else {\n00076|       setTranslatedText(\"\")\n00077|     }\n00078|   }\n00079| \n00080|   const handleTranslation = (text: string) => {\n\n(File has more lines. Use 'offset' parameter to read beyond line 80)\n</file>",
+    "metadata": {
+      "preview": "export default function LingualaTranslator() {\n  // Core processing state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [resultText, setResultText] = useState(\"\")\n  const [operation, setOperation] = useState(\"translate\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  \n  // UI state\n  const [copySuccess, setCopySuccess] = useState(false)\n  const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n\n  // React Query hook\n  const translation = useTranslation()\n\n  // Helper functions\n  const getLanguage = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n  }\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499040002,
+      "end": 1759499040003
+    }
+  }
+}

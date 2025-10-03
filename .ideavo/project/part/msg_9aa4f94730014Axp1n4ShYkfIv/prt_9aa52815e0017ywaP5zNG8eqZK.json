@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa52815e0017ywaP5zNG8eqZK",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01WdvKGypcVpSKLUAMY5Xhz1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npx tsc --noEmit --jsx preserve components/linguala-translator.tsx",
+      "description": "Check TypeScript syntax"
+    },
+    "output": "components/linguala-translator.tsx(290,19): error TS17002: Expected corresponding JSX closing tag for 'div'.\ncomponents/linguala-translator.tsx(301,17): error TS17002: Expected corresponding JSX closing tag for 'main'.\ncomponents/linguala-translator.tsx(303,11): error TS1005: ')' expected.\ncomponents/linguala-translator.tsx(306,16): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(308,18): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(348,13): error TS1128: Declaration or statement expected.\ncomponents/linguala-translator.tsx(351,18): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(410,13): error TS1128: Declaration or statement expected.\ncomponents/linguala-translator.tsx(411,11): error TS1109: Expression expected.\ncomponents/linguala-translator.tsx(414,16): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(418,11): error TS1128: Declaration or statement expected.\ncomponents/linguala-translator.tsx(419,9): error TS1109: Expression expected.\ncomponents/linguala-translator.tsx(422,14): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(451,9): error TS1128: Declaration or statement expected.\ncomponents/linguala-translator.tsx(452,7): error TS1109: Expression expected.\ncomponents/linguala-translator.tsx(453,5): error TS1109: Expression expected.\ncomponents/linguala-translator.tsx(454,3): error TS1109: Expression expected.\n",
+    "metadata": {
+      "output": "components/linguala-translator.tsx(290,19): error TS17002: Expected corresponding JSX closing tag for 'div'.\ncomponents/linguala-translator.tsx(301,17): error TS17002: Expected corresponding JSX closing tag for 'main'.\ncomponents/linguala-translator.tsx(303,11): error TS1005: ')' expected.\ncomponents/linguala-translator.tsx(306,16): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(308,18): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(348,13): error TS1128: Declaration or statement expected.\ncomponents/linguala-translator.tsx(351,18): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(410,13): error TS1128: Declaration or statement expected.\ncomponents/linguala-translator.tsx(411,11): error TS1109: Expression expected.\ncomponents/linguala-translator.tsx(414,16): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(418,11): error TS1128: Declaration or statement expected.\ncomponents/linguala-translator.tsx(419,9): error TS1109: Expression expected.\ncomponents/linguala-translator.tsx(422,14): error TS1005: ';' expected.\ncomponents/linguala-translator.tsx(451,9): error TS1128: Declaration or statement expected.\ncomponents/linguala-translator.tsx(452,7): error TS1109: Expression expected.\ncomponents/linguala-translator.tsx(453,5): error TS1109: Expression expected.\ncomponents/linguala-translator.tsx(454,3): error TS1109: Expression expected.\n",
+      "exit": 2,
+      "description": "Check TypeScript syntax"
+    },
+    "title": "cd /home/user/project && npx tsc --noEmit --jsx preserve components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499158706,
+      "end": 1759499165998
+    }
+  }
+}

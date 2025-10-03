@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa514cae001kwp6P4LqPhnn5n",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01XETteV9H544fKPFRsGWQs4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 170,
+      "limit": 50
+    },
+    "output": "<file>\n00171| \n00172|   const isLoading = translation.isPending\n00173| \n00174|   return (\n00175|     <div className=\"min-h-screen bg-white\">\n00176|       {/* Google-style Header */}\n00177|       <header className=\"border-b border-gray-200\">\n00178|         <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n00179|           <div className=\"flex items-center justify-between\">\n00180|             <div className=\"flex items-center space-x-8\">\n00181|               <LingualaLogo size=\"md\" />\n00182| \n00183|             </div>\n00184|             <div className=\"flex items-center space-x-4\">\n00185|               <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n00186|                 <History className=\"h-5 w-5\" />\n00187|               </button>\n00188|               <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n00189|                 <Settings className=\"h-5 w-5\" />\n00190|               </button>\n00191|             </div>\n00192|           </div>\n00193|         </div>\n00194|       </header>\n00195| \n00196|       <main className=\"max-w-screen-xl mx-auto px-6 py-8\">\n00197|         {/* Main Translation Interface */}\n00198|         <div className=\"bg-white\">\n00199|           {/* Language Selection Bar */}\n00200|           <div className=\"flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4\">\n00201|             <div className=\"flex items-center space-x-4\">\n00202|               <Select value={sourceLang} onValueChange={setSourceLang}>\n00203|                 <SelectTrigger className=\"min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2\">\n00204|                   <div className=\"flex items-center space-x-2\">\n00205|                     <span className=\"text-sm\">{getLanguage(sourceLang).flag}</span>\n00206|                     <span className=\"font-medium text-sm\">{getLanguage(sourceLang).name}</span>\n00207|                   </div>\n00208|                 </SelectTrigger>\n00209|                 <SelectContent>\n00210|                   {LANGUAGES.map(lang => (\n00211|                     <SelectItem key={lang.code} value={lang.code}>\n00212|                       <div className=\"flex items-center space-x-2\">\n00213|                         <span>{lang.flag}</span>\n00214|                         <span>{lang.name}</span>\n00215|                       </div>\n00216|                     </SelectItem>\n00217|                   ))}\n00218|                 </SelectContent>\n00219|               </Select>\n00220|             </div>\n\n(File has more lines. Use 'offset' parameter to read beyond line 220)\n</file>",
+    "metadata": {
+      "preview": "\n  const isLoading = translation.isPending\n\n  return (\n    <div className=\"min-h-screen bg-white\">\n      {/* Google-style Header */}\n      <header className=\"border-b border-gray-200\">\n        <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-8\">\n              <LingualaLogo size=\"md\" />\n\n            </div>\n            <div className=\"flex items-center space-x-4\">\n              <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n                <History className=\"h-5 w-5\" />\n              </button>\n              <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n                <Settings className=\"h-5 w-5\" />\n              </button>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499079542,
+      "end": 1759499079547
+    }
+  }
+}

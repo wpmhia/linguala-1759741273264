@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa519a41001NGuIFGd62VzILI",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01RuN6jQpoo2yEqbgiS7Wvuy",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && grep -n \"translatedText\" components/linguala-translator.tsx",
+      "description": "Find translatedText references to update"
+    },
+    "output": "99:            setResultText(data.translatedText || '')\n338:                value={translatedText}\n356:              {translatedText && !isLoading && (\n362:                      onClick={() => copyToClipboard(translatedText)}\n",
+    "metadata": {
+      "output": "99:            setResultText(data.translatedText || '')\n338:                value={translatedText}\n356:              {translatedText && !isLoading && (\n362:                      onClick={() => copyToClipboard(translatedText)}\n",
+      "exit": 0,
+      "description": "Find translatedText references to update"
+    },
+    "title": "cd /home/user/project && grep -n \"translatedText\" components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499099789,
+      "end": 1759499099811
+    }
+  }
+}

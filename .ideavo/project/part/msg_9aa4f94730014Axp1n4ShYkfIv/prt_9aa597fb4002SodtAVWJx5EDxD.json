@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa597fb4002SodtAVWJx5EDxD",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KJ144JFKapSmDVB7eshF3L",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && sleep 2 && PORT=3002 npm run start &",
+      "description": "Start server on port 3002"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3002\n\n ✓ Starting...\n ✓ Ready in 459ms\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3002\n\n ✓ Starting...\n ✓ Ready in 459ms\n",
+      "exit": 0,
+      "description": "Start server on port 3002"
+    },
+    "title": "cd /home/user/project && sleep 2 && PORT=3002 npm run start &",
+    "time": {
+      "start": 1759499616839,
+      "end": 1759499676885
+    }
+  }
+}

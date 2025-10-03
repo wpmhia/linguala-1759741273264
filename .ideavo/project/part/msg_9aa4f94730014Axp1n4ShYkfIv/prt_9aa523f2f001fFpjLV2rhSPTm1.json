@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa523f2f001fFpjLV2rhSPTm1",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_019D2maYoyemWG3mwYXngmW3",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && head -200 components/linguala-translator.tsx | tail -50",
+      "description": "Check lines around potential syntax error"
+    },
+    "output": "  const swapLanguages = () => {\n    if (sourceLang === \"auto\" || operation !== 'translate') return\n    \n    setSourceLang(targetLang)\n    setTargetLang(sourceLang)\n    setSourceText(resultText)\n    setResultText(sourceText)\n  }\n\n  const copyToClipboard = async (text: string) => {\n    try {\n      await navigator.clipboard.writeText(text)\n      setCopySuccess(true)\n      toast.success(\"Copied to clipboard!\")\n      setTimeout(() => setCopySuccess(false), 2000)\n    } catch (error) {\n      toast.error(\"Failed to copy to clipboard\")\n    }\n  }\n\n  const clearText = () => {\n    setSourceText(\"\")\n    setResultText(\"\")\n  }\n\n  // Auto-process when languages or operation change\n  useEffect(() => {\n    if (sourceText.trim()) {\n      const timeoutId = setTimeout(() => {\n        handleProcessing(sourceText)\n      }, 300) // Debounce\n      \n      return () => clearTimeout(timeoutId)\n    }\n  }, [sourceLang, targetLang, operation])\n\n  const isLoading = processing.isPending\n\n  return (\n    <div className=\"min-h-screen bg-white\">\n      {/* Google-style Header */}\n      <header className=\"border-b border-gray-200\">\n        <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-8\">\n              <LingualaLogo size=\"md\" />\n\n            </div>\n            <div className=\"flex items-center space-x-4\">\n              <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n",
+    "metadata": {
+      "output": "  const swapLanguages = () => {\n    if (sourceLang === \"auto\" || operation !== 'translate') return\n    \n    setSourceLang(targetLang)\n    setTargetLang(sourceLang)\n    setSourceText(resultText)\n    setResultText(sourceText)\n  }\n\n  const copyToClipboard = async (text: string) => {\n    try {\n      await navigator.clipboard.writeText(text)\n      setCopySuccess(true)\n      toast.success(\"Copied to clipboard!\")\n      setTimeout(() => setCopySuccess(false), 2000)\n    } catch (error) {\n      toast.error(\"Failed to copy to clipboard\")\n    }\n  }\n\n  const clearText = () => {\n    setSourceText(\"\")\n    setResultText(\"\")\n  }\n\n  // Auto-process when languages or operation change\n  useEffect(() => {\n    if (sourceText.trim()) {\n      const timeoutId = setTimeout(() => {\n        handleProcessing(sourceText)\n      }, 300) // Debounce\n      \n      return () => clearTimeout(timeoutId)\n    }\n  }, [sourceLang, targetLang, operation])\n\n  const isLoading = processing.isPending\n\n  return (\n    <div className=\"min-h-screen bg-white\">\n      {/* Google-style Header */}\n      <header className=\"border-b border-gray-200\">\n        <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-8\">\n              <LingualaLogo size=\"md\" />\n\n            </div>\n            <div className=\"flex items-center space-x-4\">\n              <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n",
+      "exit": 0,
+      "description": "Check lines around potential syntax error"
+    },
+    "title": "cd /home/user/project && head -200 components/linguala-translator.tsx | tail -50",
+    "time": {
+      "start": 1759499141940,
+      "end": 1759499141953
+    }
+  }
+}

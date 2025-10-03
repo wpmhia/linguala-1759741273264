@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa52af41001dKcsKuovtb12Ih",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01C2Bv1c14qks3ErWiYuV1ms",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 285,
+      "limit": 20
+    },
+    "output": "<file>\n00286|                 </Select>\n00287|               </div>\n00288|             </div>\n00289|           )}\n00290|                 </SelectTrigger>\n00291|                 <SelectContent>\n00292|                   {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n00293|                     <SelectItem key={lang.code} value={lang.code}>\n00294|                       <div className=\"flex items-center space-x-2\">\n00295|                         <span>{lang.flag}</span>\n00296|                         <span>{lang.name}</span>\n00297|                       </div>\n00298|                     </SelectItem>\n00299|                   ))}\n00300|                 </SelectContent>\n00301|               </Select>\n00302|             </div>\n00303|           </div>\n00304| \n00305|           {/* Processing Areas */}\n\n(File has more lines. Use 'offset' parameter to read beyond line 305)\n</file>",
+    "metadata": {
+      "preview": "                </Select>\n              </div>\n            </div>\n          )}\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n                    <SelectItem key={lang.code} value={lang.code}>\n                      <div className=\"flex items-center space-x-2\">\n                        <span>{lang.flag}</span>\n                        <span>{lang.name}</span>\n                      </div>\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            </div>\n          </div>\n\n          {/* Processing Areas */}"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499170240,
+      "end": 1759499170241
+    }
+  }
+}

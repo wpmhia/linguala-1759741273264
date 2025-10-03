@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa510db3001d4p173AbvlyHx2",
+  "messageID": "msg_9aa4f94730014Axp1n4ShYkfIv",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Vf7BdGXmBHoATQK9Co9MSj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const swapLanguages = () => {\n    if (sourceLang === \"auto\") return\n    \n    setSourceLang(targetLang)\n    setTargetLang(sourceLang)\n    setSourceText(translatedText)\n    setTranslatedText(sourceText)",
+      "newString": "  const handleOperationChange = (newOperation: string) => {\n    setOperation(newOperation)\n    setResultText(\"\")\n    \n    // Re-process if there's source text\n    if (sourceText.trim()) {\n      handleProcessing(sourceText)\n    }\n  }\n\n  const swapLanguages = () => {\n    if (sourceLang === \"auto\" || operation !== 'translate') return\n    \n    setSourceLang(targetLang)\n    setTargetLang(sourceLang)\n    setSourceText(resultText)\n    setResultText(sourceText)"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -122,15 +122,25 @@\n     }\n   })\n }\n \n+const handleOperationChange = (newOperation: string) => {\n+  setOperation(newOperation)\n+  setResultText(\"\")\n+  \n+  // Re-process if there's source text\n+  if (sourceText.trim()) {\n+    handleProcessing(sourceText)\n+  }\n+}\n+\n const swapLanguages = () => {\n-  if (sourceLang === \"auto\") return\n+  if (sourceLang === \"auto\" || operation !== 'translate') return\n   \n   setSourceLang(targetLang)\n   setTargetLang(sourceLang)\n-  setSourceText(translatedText)\n-  setTranslatedText(sourceText)\n+  setSourceText(resultText)\n+  setResultText(sourceText)\n }\n \n const copyToClipboard = async (text: string) => {\n   try {\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759499065783,
+      "end": 1759499065795
+    }
+  }
+}

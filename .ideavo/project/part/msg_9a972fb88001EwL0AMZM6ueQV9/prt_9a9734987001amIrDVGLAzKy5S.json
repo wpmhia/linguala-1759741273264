@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a9734987001amIrDVGLAzKy5S",
+  "messageID": "msg_9a972fb88001EwL0AMZM6ueQV9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "You're absolutely right, and I apologize for that oversight. Installing TanStack Query with devtools in a production application that users will access online is indeed a poor security and performance decision. Let me explain the issues and fix this immediately.\n\n## Problems with TanStack Query Devtools in Production:\n\n1. **Security Risk**: Exposes internal API calls, cache data, and application state to end users\n2. **Performance Impact**: Adds unnecessary bundle size and runtime overhead\n3. **Professional Appearance**: Shows development tools to end users\n4. **Data Exposure**: Users can inspect cached translations, API responses, and internal queries\n\nLet me check the current setup and fix this:",
+  "time": {
+    "start": 1759484532771,
+    "end": 1759484532771
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a973658b001lqWDDEO8R1lKbE",
+  "messageID": "msg_9a972fb88001EwL0AMZM6ueQV9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I need to fix this properly by:\n\n1. **Removing devtools in production** - Only show in development\n2. **Optimizing the bundle** - Don't include devtools in production builds\n3. **Securing the application** - Prevent data exposure\n\n**IMMEDIATE ACTION NEEDED**: The devtools should only be enabled in development mode and completely excluded from production builds.\n\nFor your translation application that users will access, we should:\n\n1. **Remove devtools from production completely**\n2. **Keep TanStack Query core** (it's actually beneficial for caching translations)\n3. **Ensure no development tools are exposed to users**\n\nWould you like me to fix this security issue by properly configuring the devtools to only appear in development mode and be completely excluded from production builds?",
+  "time": {
+    "start": 1759484540010,
+    "end": 1759484540010
+  }
+}

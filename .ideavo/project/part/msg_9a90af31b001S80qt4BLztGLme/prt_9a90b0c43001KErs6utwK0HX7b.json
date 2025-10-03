@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a90b0c43001KErs6utwK0HX7b",
+  "messageID": "msg_9a90af31b001S80qt4BLztGLme",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Ma9ni5Jy2UTw6FwTizCvzP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/translate/route.ts",
+      "offset": 20,
+      "limit": 30
+    },
+    "output": "<file>\n00021|       method: 'POST',\n00022|       headers: {\n00023|         'Content-Type': 'application/json',\n00024|       },\n00025|       body: JSON.stringify({\n00026|         text,\n00027|         sourceLang,\n00028|         targetLang\n00029|       })\n00030|     })\n00031| \n00032|     if (!response.ok) {\n00033|       throw new Error('Translation API request failed')\n00034|     }\n00035| \n00036|     const data = await response.json()\n00037|     return data.translatedText\n00038|   } catch (error) {\n00039|     console.error('Translation error:', error)\n00040|     throw new Error('Failed to translate text')\n00041|   }\n00042| }\n00043| \n00044| async function translateLongText(text: string, sourceLang: string, targetLang: string): Promise<string> {\n00045|   // Split long text into chunks to handle API limits\n00046|   const MAX_CHUNK_SIZE = 4000 // Conservative limit for translation API\n00047|   const chunks: string[] = []\n00048|   \n00049|   // Split by paragraphs first\n00050|   const paragraphs = text.split('\\n\\n').filter(p => p.trim())\n\n(File has more lines. Use 'offset' parameter to read beyond line 50)\n</file>",
+    "metadata": {
+      "preview": "      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        text,\n        sourceLang,\n        targetLang\n      })\n    })\n\n    if (!response.ok) {\n      throw new Error('Translation API request failed')\n    }\n\n    const data = await response.json()\n    return data.translatedText\n  } catch (error) {\n    console.error('Translation error:', error)\n    throw new Error('Failed to translate text')"
+    },
+    "title": "app/api/documents/translate/route.ts",
+    "time": {
+      "start": 1759477698636,
+      "end": 1759477698644
+    }
+  }
+}

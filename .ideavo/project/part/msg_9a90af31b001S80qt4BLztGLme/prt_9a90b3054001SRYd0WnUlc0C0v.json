@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a90b3054001SRYd0WnUlc0C0v",
+  "messageID": "msg_9a90af31b001S80qt4BLztGLme",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01VLNWUUw8x4RneckuCL5WLh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 50,
+      "limit": 100
+    },
+    "output": "<file>\n00051|       'Portuguese': 'O que vamos comer hoje à noite?',\n00052|       'Polish': 'Co będziemy jeść dziś wieczorem?'\n00053|     },\n00054|     'wat eten we': {\n00055|       'Danish': 'Hvad spiser vi?',\n00056|       'Swedish': 'Vad äter vi?',\n00057|       'Finnish': 'Mitä syömme?',\n00058|       'German': 'Was essen wir?',\n00059|       'French': 'Que mangeons-nous?',\n00060|       'Spanish': '¿Qué comemos?',\n00061|       'English': 'What are we eating?'\n00062|     },\n00063|     'kijk wat ik gemaakt heb het vertaalt gewoon': {\n00064|       'English': 'Look what I made, it just translates',\n00065|       'German': 'Schau was ich gemacht habe, es übersetzt einfach',\n00066|       'French': 'Regarde ce que j\\'ai fait, ça traduit simplement',\n00067|       'Spanish': 'Mira lo que hice, simplemente traduce',\n00068|       'Italian': 'Guarda cosa ho fatto, traduce semplicemente',\n00069|       'Portuguese': 'Olha o que eu fiz, simplesmente traduz',\n00070|       'Danish': 'Se hvad jeg har lavet, det oversætter bare',\n00071|       'Swedish': 'Titta vad jag har gjort, det översätter bara',\n00072|       'Norwegian': 'Se hva jeg har laget, det oversetter bare',\n00073|       'Finnish': 'Katso mitä tein, se vain kääntää'\n00074|     }\n00075|   }\n00076|   \n00077|   for (const [phrase, translations] of Object.entries(commonPhrases)) {\n00078|     if (lowerText.includes(phrase)) {\n00079|       return translations[targetLanguage] || null\n00080|     }\n00081|   }\n00082|   \n00083|   return null\n00084| }\n00085| \n00086| // Language mapping for translation API - includes all frontend languages\n00087| const LANGUAGE_MAP: Record<string, string> = {\n00088|   auto: 'auto',\n00089|   \n00090|   // Popular EU Languages\n00091|   en: 'English',\n00092|   de: 'German', \n00093|   fr: 'French',\n00094|   es: 'Spanish',\n00095|   it: 'Italian',\n00096|   pt: 'Portuguese',\n00097|   pl: 'Polish',\n00098|   nl: 'Dutch',\n00099|   \n00100|   // Nordic EU Languages\n00101|   da: 'Danish',\n00102|   sv: 'Swedish',\n00103|   fi: 'Finnish',\n00104|   no: 'Norwegian',\n00105|   \n00106|   // Major World Languages\n00107|   ru: 'Russian',\n00108|   zh: 'Chinese',\n00109|   ja: 'Japanese',\n00110|   ko: 'Korean',\n00111|   ar: 'Arabic',\n00112|   hi: 'Hindi',\n00113|   tr: 'Turkish',\n00114|   th: 'Thai',\n00115|   vi: 'Vietnamese',\n00116|   \n00117|   // Other EU Languages\n00118|   ga: 'Irish',\n00119|   mt: 'Maltese',\n00120|   cs: 'Czech',\n00121|   sk: 'Slovak',\n00122|   hu: 'Hungarian',\n00123|   sl: 'Slovenian',\n00124|   hr: 'Croatian',\n00125|   bg: 'Bulgarian',\n00126|   ro: 'Romanian',\n00127|   lt: 'Lithuanian',\n00128|   lv: 'Latvian',\n00129|   et: 'Estonian',\n00130|   el: 'Greek',\n00131| }\n00132| \n00133| export async function POST(request: NextRequest) {\n00134|   try {\n00135|     const body = await request.json()\n00136|     console.log('Translation request body:', body)\n00137|     \n00138|     const { text, sourceLang, targetLang, domain, glossary } = body\n00139| \n00140|     if (!text || !targetLang) {\n00141|       console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n00142|       return NextResponse.json(\n00143|         { error: 'Text and target language are required' },\n00144|         { status: 400 }\n00145|       )\n00146|     }\n00147| \n00148|     const apiKey = process.env.DASHSCOPE_API_KEY\n00149|     if (!apiKey) {\n00150|       return NextResponse.json(\n\n(File has more lines. Use 'offset' parameter to read beyond line 150)\n</file>",
+    "metadata": {
+      "preview": "      'Portuguese': 'O que vamos comer hoje à noite?',\n      'Polish': 'Co będziemy jeść dziś wieczorem?'\n    },\n    'wat eten we': {\n      'Danish': 'Hvad spiser vi?',\n      'Swedish': 'Vad äter vi?',\n      'Finnish': 'Mitä syömme?',\n      'German': 'Was essen wir?',\n      'French': 'Que mangeons-nous?',\n      'Spanish': '¿Qué comemos?',\n      'English': 'What are we eating?'\n    },\n    'kijk wat ik gemaakt heb het vertaalt gewoon': {\n      'English': 'Look what I made, it just translates',\n      'German': 'Schau was ich gemacht habe, es übersetzt einfach',\n      'French': 'Regarde ce que j\\'ai fait, ça traduit simplement',\n      'Spanish': 'Mira lo que hice, simplemente traduce',\n      'Italian': 'Guarda cosa ho fatto, traduce semplicemente',\n      'Portuguese': 'Olha o que eu fiz, simplesmente traduz',\n      'Danish': 'Se hvad jeg har lavet, det oversætter bare',"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759477707540,
+      "end": 1759477707542
+    }
+  }
+}

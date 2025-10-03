@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a90bc05b001oRU6UXE8DGS11q",
+  "messageID": "msg_9a90af31b001S80qt4BLztGLme",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_019oLEQdj19Km2vbhqfedFoX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/translate/route.ts",
+      "oldString": "import { NextRequest, NextResponse } from 'next/server'\nimport { promises as fs } from 'fs'\nimport path from 'path'\nimport { z } from 'zod'\nimport { PDFProcessor, PDFTranslationData } from '@/lib/document-processors/pdf-processor'\nimport { DocxProcessor, DocxTranslationData } from '@/lib/document-processors/docx-processor'",
+      "newString": "import { NextRequest, NextResponse } from 'next/server'\nimport { promises as fs } from 'fs'\nimport path from 'path'\nimport { z } from 'zod'\nimport { PDFProcessor, PDFTranslationData } from '@/lib/document-processors/pdf-processor'\nimport { DocxProcessor, DocxTranslationData } from '@/lib/document-processors/docx-processor'\nimport { translateLongText } from '@/lib/translation-service'"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/translate/route.ts\n+++ /home/user/project/app/api/documents/translate/route.ts\n@@ -3,8 +3,9 @@\n import path from 'path'\n import { z } from 'zod'\n import { PDFProcessor, PDFTranslationData } from '@/lib/document-processors/pdf-processor'\n import { DocxProcessor, DocxTranslationData } from '@/lib/document-processors/docx-processor'\n+import { translateLongText } from '@/lib/translation-service'\n \n // Request validation schema\n const TranslateDocumentSchema = z.object({\n   fileId: z.string(),\n"
+    },
+    "title": "app/api/documents/translate/route.ts",
+    "time": {
+      "start": 1759477747083,
+      "end": 1759477747090
+    }
+  }
+}

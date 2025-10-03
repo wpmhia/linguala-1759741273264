@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a90fb42d001ZzkUD5dKmn6uJ6",
+  "messageID": "msg_9a90af31b001S80qt4BLztGLme",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(translation): centralize translation logic with shared service",
+  "cost": 1.5394348500000001,
+  "tokens": {
+    "input": 8,
+    "output": 515,
+    "reasoning": 0,
+    "cache": {
+      "write": 57255,
+      "read": 0
+    }
+  }
+}

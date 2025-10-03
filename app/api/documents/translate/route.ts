@@ -4,6 +4,7 @@ import path from 'path'
 import { z } from 'zod'
 import { PDFProcessor, PDFTranslationData } from '@/lib/document-processors/pdf-processor'
 import { DocxProcessor, DocxTranslationData } from '@/lib/document-processors/docx-processor'
+import { translateLongText } from '@/lib/translation-service'
 
 // Request validation schema
 const TranslateDocumentSchema = z.object({
@@ -14,76 +15,7 @@ const TranslateDocumentSchema = z.object({
   fileType: z.enum(['pdf', 'docx', 'txt'])
 })
 
-async function translateText(text: string, sourceLang: string, targetLang: string): Promise<string> {
-  try {
-    // Use your existing translation API
-    const response = await fetch('http://localhost:3000/api/translate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        text,
-        sourceLang,
-        targetLang
-      })
-    })
-
-    if (!response.ok) {
-      throw new Error('Translation API request failed')
-    }
-
-    const data = await response.json()
-    return data.translatedText
-  } catch (error) {
-    console.error('Translation error:', error)
-    throw new Error('Failed to translate text')
-  }
-}
-
-async function translateLongText(text: string, sourceLang: string, targetLang: string): Promise<string> {
-  // Split long text into chunks to handle API limits
-  const MAX_CHUNK_SIZE = 4000 // Conservative limit for translation API
-  const chunks: string[] = []
-  
-  // Split by paragraphs first
-  const paragraphs = text.split('\n\n').filter(p => p.trim())
-  
-  let currentChunk = ''
-  for (const paragraph of paragraphs) {
-    if (currentChunk.length + paragraph.length > MAX_CHUNK_SIZE && currentChunk.length > 0) {
-      chunks.push(currentChunk.trim())
-      currentChunk = paragraph
-    } else {
-      currentChunk += (currentChunk ? '\n\n' : '') + paragraph
-    }
-  }
-  
-  if (currentChunk.trim()) {
-    chunks.push(currentChunk.trim())
-  }
-
-  // Translate each chunk
-  const translatedChunks: string[] = []
-  for (let i = 0; i < chunks.length; i++) {
-    console.log(`Translating chunk ${i + 1}/${chunks.length}`)
-    try {
-      const translatedChunk = await translateText(chunks[i], sourceLang, targetLang)
-      translatedChunks.push(translatedChunk)
-      
-      // Add small delay to avoid rate limiting
-      if (i < chunks.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 500))
-      }
-    } catch (error) {
-      console.error(`Error translating chunk ${i + 1}:`, error)
-      // Use original text as fallback
-      translatedChunks.push(chunks[i])
-    }
-  }
-
-  return translatedChunks.join('\n\n')
-}
+// Translation function is now imported from shared service
 
 export async function POST(request: NextRequest) {
   try {

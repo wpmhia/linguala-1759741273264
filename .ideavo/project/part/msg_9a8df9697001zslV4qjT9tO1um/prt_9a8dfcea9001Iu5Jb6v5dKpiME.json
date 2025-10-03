@@ -1,0 +1,20 @@
+{
+  "id": "prt_9a8dfcea9001Iu5Jb6v5dKpiME",
+  "messageID": "msg_9a8df9697001zslV4qjT9tO1um",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "webfetch",
+  "callID": "toolu_01DGJMtcBQjhP1K8Z7cFSoTg",
+  "state": {
+    "status": "error",
+    "input": {
+      "url": "https://www.npmjs.com/package/pdf-lib",
+      "format": "text"
+    },
+    "error": "Error: Request failed with status code: 403",
+    "time": {
+      "start": 1759474864439,
+      "end": 1759474864492
+    }
+  }
+}

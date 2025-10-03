@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a911a409001ohB0rcszVemIIT",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01TfKnC7FmCNKC3KWfi9Hmv7",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && nohup npm run dev > dev.log 2>&1 & sleep 3 && cat dev.log",
+      "description": "Start server in background and check output"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n",
+      "exit": 0,
+      "description": "Start server in background and check output"
+    },
+    "title": "cd /home/user/project && nohup npm run dev > dev.log 2>&1 & sleep 3 && cat dev.log",
+    "time": {
+      "start": 1759478130631,
+      "end": 1759478133774
+    }
+  }
+}

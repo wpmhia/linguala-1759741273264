@@ -1,0 +1,5 @@
+This is a comprehensive test document for the translation system. It contains multiple paragraphs and sentences to test the translation quality.
+
+This second paragraph demonstrates that the system can handle multi-paragraph content properly and maintain the structure during translation.
+
+The final paragraph ensures that longer documents are processed correctly and efficiently.

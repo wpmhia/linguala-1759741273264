@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9129368001Iv556PPUv3WPlj",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_0132trfEiR5GfTgpEh6QLNg5",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "    // Generate unique file ID\n    const fileId = `doc_${Date.now()}_${Math.random().toString(36).substring(2)}`\n    const storedFileName = `${fileId}.${fileType.ext}`\n    const storedFilePath = path.join(uploadDir, storedFileName)",
+      "newString": "    // Generate unique file ID\n    const fileId = `doc_${Date.now()}_${Math.random().toString(36).substring(2)}`\n    const fileExtension = detectedMimeType === 'text/plain' ? 'txt' : \n                         detectedMimeType === 'application/pdf' ? 'pdf' : \n                         detectedMimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ? 'docx' : 'bin'\n    const storedFileName = `${fileId}.${fileExtension}`\n    const storedFilePath = path.join(uploadDir, storedFileName)"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -130,9 +130,12 @@\n }\n \n // Generate unique file ID\n const fileId = `doc_${Date.now()}_${Math.random().toString(36).substring(2)}`\n-const storedFileName = `${fileId}.${fileType.ext}`\n+const fileExtension = detectedMimeType === 'text/plain' ? 'txt' : \n+                     detectedMimeType === 'application/pdf' ? 'pdf' : \n+                     detectedMimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ? 'docx' : 'bin'\n+const storedFileName = `${fileId}.${fileExtension}`\n const storedFilePath = path.join(uploadDir, storedFileName)\n \n // Save file to permanent storage location\n await fs.writeFile(storedFilePath, fileBuffer)\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759478194110,
+      "end": 1759478194113
+    }
+  }
+}

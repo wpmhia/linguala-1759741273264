@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9120116001c6rdBG4jxIWmEW",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Yc4dMMjGhtxHtM7Z1sqvZb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"This is a test document for translation. It contains multiple sentences.\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' && echo",
+      "description": "Test translation with longer text"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   119    0     0  100   119      0    108  0:00:01  0:00:01 --:--:--   108\r100   251    0   132  100   119    120    108  0:00:01  0:00:01 --:--:--   229\n{\"translatedText\":\"Este es un documento de prueba para traducción. Contiene varias oraciones.\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   119    0     0  100   119      0    108  0:00:01  0:00:01 --:--:--   108\r100   251    0   132  100   119    120    108  0:00:01  0:00:01 --:--:--   229\n{\"translatedText\":\"Este es un documento de prueba para traducción. Contiene varias oraciones.\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}\n",
+      "exit": 0,
+      "description": "Test translation with longer text"
+    },
+    "title": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"This is a test document for translation. It contains multiple sentences.\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' && echo",
+    "time": {
+      "start": 1759478154686,
+      "end": 1759478155797
+    }
+  }
+}

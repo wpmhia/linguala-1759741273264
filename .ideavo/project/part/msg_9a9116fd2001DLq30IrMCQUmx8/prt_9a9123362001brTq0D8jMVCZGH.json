@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a9123362001brTq0D8jMVCZGH",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01QMi5sWxUs5FD7g81ezbqn8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "offset": 40,
+      "limit": 20
+    },
+    "output": "<file>\n00041|     }\n00042|     \n00043|     return { file }\n00044|   } catch (error) {\n00045|     throw error\n00046|   }\n00047| }\n00048| \n00049| export async function POST(request: NextRequest) {\n00050|   try {\n00051|     await ensureUploadDir()\n00052| \n00053|     // Parse the multipart form data\n00054|     const { file } = await parseFormData(request)\n00055| \n00056|     if (!file) {\n00057|       return NextResponse.json(\n00058|         { error: 'No file uploaded' },\n00059|         { status: 400 }\n00060|       )\n\n(File has more lines. Use 'offset' parameter to read beyond line 60)\n</file>",
+    "metadata": {
+      "preview": "    }\n    \n    return { file }\n  } catch (error) {\n    throw error\n  }\n}\n\nexport async function POST(request: NextRequest) {\n  try {\n    await ensureUploadDir()\n\n    // Parse the multipart form data\n    const { file } = await parseFormData(request)\n\n    if (!file) {\n      return NextResponse.json(\n        { error: 'No file uploaded' },\n        { status: 400 }\n      )"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759478167246,
+      "end": 1759478167248
+    }
+  }
+}

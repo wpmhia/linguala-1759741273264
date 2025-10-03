@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a912a99700156ulaJwj2UjIEl",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_013etHMuGGoJetamLffVHbgY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && curl -X POST http://localhost:3000/api/documents/upload -F \"file=@temp/test.txt\" && echo",
+      "description": "Test document upload with fixed file type detection"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   212    0     0  100   212      0    706 --:--:-- --:--:-- --:--:--   706\r100   431    0   219  100   212    729    705 --:--:-- --:--:-- --:--:--  1431\n{\"success\":true,\"fileId\":\"doc_1759478198011_658ldaoit6e\",\"fileName\":\"test.txt\",\"fileType\":\"txt\",\"fileSize\":26,\"wordCount\":4,\"pageCount\":0,\"storedPath\":\"/home/user/project/temp/uploads/doc_1759478198011_658ldaoit6e.txt\"}\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   212    0     0  100   212      0    706 --:--:-- --:--:-- --:--:--   706\r100   431    0   219  100   212    729    705 --:--:-- --:--:-- --:--:--  1431\n{\"success\":true,\"fileId\":\"doc_1759478198011_658ldaoit6e\",\"fileName\":\"test.txt\",\"fileType\":\"txt\",\"fileSize\":26,\"wordCount\":4,\"pageCount\":0,\"storedPath\":\"/home/user/project/temp/uploads/doc_1759478198011_658ldaoit6e.txt\"}\n",
+      "exit": 0,
+      "description": "Test document upload with fixed file type detection"
+    },
+    "title": "cd /home/user/project && curl -X POST http://localhost:3000/api/documents/upload -F \"file=@temp/test.txt\" && echo",
+    "time": {
+      "start": 1759478197693,
+      "end": 1759478198018
+    }
+  }
+}

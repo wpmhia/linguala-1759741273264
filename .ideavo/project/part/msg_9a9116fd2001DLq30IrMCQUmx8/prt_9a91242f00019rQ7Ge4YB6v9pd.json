@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a91242f00019rQ7Ge4YB6v9pd",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01L149KdR5qwUVTH2jj7T3SD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "offset": 65,
+      "limit": 20
+    },
+    "output": "<file>\n00066|     \n00067|     // Validate file type\n00068|     const fileType = await fileTypeFromBuffer(fileBuffer)\n00069|     if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {\n00070|       return NextResponse.json(\n00071|         { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },\n00072|         { status: 400 }\n00073|       )\n00074|     }\n00075| \n00076|     // Validate file size (already checked in parseFormData, but double-check)\n00077|     if (fileBuffer.length > MAX_FILE_SIZE) {\n00078|       return NextResponse.json(\n00079|         { error: 'File too large. Maximum size is 10MB.' },\n00080|         { status: 400 }\n00081|       )\n00082|     }\n00083| \n00084|     // Process document based on type\n00085|     let documentInfo: any = {}\n\n(File has more lines. Use 'offset' parameter to read beyond line 85)\n</file>",
+    "metadata": {
+      "preview": "    \n    // Validate file type\n    const fileType = await fileTypeFromBuffer(fileBuffer)\n    if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {\n      return NextResponse.json(\n        { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },\n        { status: 400 }\n      )\n    }\n\n    // Validate file size (already checked in parseFormData, but double-check)\n    if (fileBuffer.length > MAX_FILE_SIZE) {\n      return NextResponse.json(\n        { error: 'File too large. Maximum size is 10MB.' },\n        { status: 400 }\n      )\n    }\n\n    // Process document based on type\n    let documentInfo: any = {}"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759478170952,
+      "end": 1759478170954
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a91273d3001c2LL8WDFyy9WME",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01ECWMxLV9BgxpUUCnSAQr7A",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "    // Process document based on type\n    let documentInfo: any = {}\n    \n    try {\n      if (fileType.mime === 'application/pdf') {\n        const pdfProcessor = new PDFProcessor()\n        documentInfo = await pdfProcessor.getDocumentInfo(fileBuffer)\n        documentInfo.type = 'pdf'\n      } else if (fileType.mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {\n        const docxProcessor = new DocxProcessor()\n        documentInfo = await docxProcessor.getDocumentInfo(fileBuffer)\n        documentInfo.type = 'docx'\n      } else if (fileType.mime === 'text/plain') {\n        const text = fileBuffer.toString('utf-8')\n        documentInfo = {\n          wordCount: text.split(/\\s+/).filter(word => word.length > 0).length,\n          fileSize: fileBuffer.length,\n          isValid: true,\n          type: 'txt'\n        }\n      }",
+      "newString": "    // Process document based on type\n    let documentInfo: any = {}\n    \n    try {\n      if (detectedMimeType === 'application/pdf') {\n        const pdfProcessor = new PDFProcessor()\n        documentInfo = await pdfProcessor.getDocumentInfo(fileBuffer)\n        documentInfo.type = 'pdf'\n      } else if (detectedMimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {\n        const docxProcessor = new DocxProcessor()\n        documentInfo = await docxProcessor.getDocumentInfo(fileBuffer)\n        documentInfo.type = 'docx'\n      } else if (detectedMimeType === 'text/plain') {\n        const text = fileBuffer.toString('utf-8')\n        documentInfo = {\n          wordCount: text.split(/\\s+/).filter(word => word.length > 0).length,\n          fileSize: fileBuffer.length,\n          isValid: true,\n          type: 'txt'\n        }\n      }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -96,17 +96,17 @@\n // Process document based on type\n let documentInfo: any = {}\n \n try {\n-  if (fileType.mime === 'application/pdf') {\n+  if (detectedMimeType === 'application/pdf') {\n     const pdfProcessor = new PDFProcessor()\n     documentInfo = await pdfProcessor.getDocumentInfo(fileBuffer)\n     documentInfo.type = 'pdf'\n-  } else if (fileType.mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {\n+  } else if (detectedMimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {\n     const docxProcessor = new DocxProcessor()\n     documentInfo = await docxProcessor.getDocumentInfo(fileBuffer)\n     documentInfo.type = 'docx'\n-  } else if (fileType.mime === 'text/plain') {\n+  } else if (detectedMimeType === 'text/plain') {\n     const text = fileBuffer.toString('utf-8')\n     documentInfo = {\n       wordCount: text.split(/\\s+/).filter(word => word.length > 0).length,\n       fileSize: fileBuffer.length,\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759478188428,
+      "end": 1759478188433
+    }
+  }
+}

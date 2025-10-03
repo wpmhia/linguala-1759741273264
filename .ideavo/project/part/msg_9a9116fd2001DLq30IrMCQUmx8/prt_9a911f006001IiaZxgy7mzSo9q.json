@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a911f006001IiaZxgy7mzSo9q",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Great! The translation API is working. The issue might be with the environment variable. Let me check if the DASHSCOPE_API_KEY is properly set:",
+  "time": {
+    "start": 1759478149914,
+    "end": 1759478149914
+  }
+}

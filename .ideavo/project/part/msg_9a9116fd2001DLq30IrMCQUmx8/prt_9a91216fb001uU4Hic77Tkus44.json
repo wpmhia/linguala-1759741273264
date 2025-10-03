@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a91216fb001uU4Hic77Tkus44",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_012sguw5Vz7tpZqDG7A8VkQE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && echo \"Hello world test document\" > temp/test.txt && curl -X POST http://localhost:3000/api/documents/upload -F \"file=@temp/test.txt\" && echo",
+      "description": "Test document upload API"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   212    0     0  100   212      0    176  0:00:01  0:00:01 --:--:--   176\r100   212    0     0  100   212      0     96  0:00:02  0:00:02 --:--:--    96\r100   285    0    73  100   212     28     82  0:00:02  0:00:02 --:--:--   111\n{\"error\":\"Unsupported file type. Please upload PDF, DOCX, or TXT files.\"}\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   212    0     0  100   212      0    176  0:00:01  0:00:01 --:--:--   176\r100   212    0     0  100   212      0     96  0:00:02  0:00:02 --:--:--    96\r100   285    0    73  100   212     28     82  0:00:02  0:00:02 --:--:--   111\n{\"error\":\"Unsupported file type. Please upload PDF, DOCX, or TXT files.\"}\n",
+      "exit": 0,
+      "description": "Test document upload API"
+    },
+    "title": "cd /home/user/project && echo \"Hello world test document\" > temp/test.txt && curl -X POST http://localhost:3000/api/documents/upload -F \"file=@temp/test.txt\" && echo",
+    "time": {
+      "start": 1759478160280,
+      "end": 1759478162867
+    }
+  }
+}

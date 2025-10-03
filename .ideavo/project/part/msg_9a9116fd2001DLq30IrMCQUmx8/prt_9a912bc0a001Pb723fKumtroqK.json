@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a912bc0a001Pb723fKumtroqK",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_018pv9WraLQLVZFzYDdjeZei",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3000/api/documents/translate -H \"Content-Type: application/json\" -d '{\"fileId\":\"doc_1759478198011_658ldaoit6e\",\"sourceLang\":\"en\",\"targetLang\":\"es\",\"fileName\":\"test.txt\",\"fileType\":\"txt\"}' && echo",
+      "description": "Test document translation API"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   117    0     0  100   117      0     97  0:00:01  0:00:01 --:--:--    97\r100   117    0     0  100   117      0     74  0:00:01  0:00:01 --:--:--    74\r100   368    0   251  100   117    160     74  0:00:01  0:00:01 --:--:--   234\n{\"success\":true,\"translatedFileId\":\"translated_doc_1759478198011_658ldaoit6e\",\"originalFileName\":\"test.txt\",\"translatedFileName\":\"test.txt_translated.txt\",\"fileSize\":30,\"downloadPath\":\"/api/documents/download/translated_doc_1759478198011_658ldaoit6e\"}\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   117    0     0  100   117      0     97  0:00:01  0:00:01 --:--:--    97\r100   117    0     0  100   117      0     74  0:00:01  0:00:01 --:--:--    74\r100   368    0   251  100   117    160     74  0:00:01  0:00:01 --:--:--   234\n{\"success\":true,\"translatedFileId\":\"translated_doc_1759478198011_658ldaoit6e\",\"originalFileName\":\"test.txt\",\"translatedFileName\":\"test.txt_translated.txt\",\"fileSize\":30,\"downloadPath\":\"/api/documents/download/translated_doc_1759478198011_658ldaoit6e\"}\n",
+      "exit": 0,
+      "description": "Test document translation API"
+    },
+    "title": "curl -X POST http://localhost:3000/api/documents/translate -H \"Content-Type: application/json\" -d '{\"fileId\":\"doc_1759478198011_658ldaoit6e\",\"sourceLang\":\"en\",\"targetLang\":\"es\",\"fileName\":\"test.txt\",\"fileType\":\"txt\"}' && echo",
+    "time": {
+      "start": 1759478202545,
+      "end": 1759478204127
+    }
+  }
+}

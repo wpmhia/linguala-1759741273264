@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a9133988001NF8azw9Cl2Mdkr",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(upload): improve file type detection for text documents",
+  "cost": 0.6300664500000001,
+  "tokens": {
+    "input": 5,
+    "output": 484,
+    "reasoning": 0,
+    "cache": {
+      "write": 298,
+      "read": 69818
+    }
+  }
+}

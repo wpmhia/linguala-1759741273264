@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a912d1a3001aJPUO66zJuiNfC",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_015gS2xC9Po4S7j2uiangj8P",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl http://localhost:3000/api/documents/download/translated_doc_1759478198011_658ldaoit6e",
+      "description": "Test downloading the translated document"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0    30    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    30  100    30    0     0     45      0 --:--:-- --:--:-- --:--:--    45\nHola mundo documento de prueba",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0    30    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    30  100    30    0     0     45      0 --:--:-- --:--:-- --:--:--    45\nHola mundo documento de prueba",
+      "exit": 0,
+      "description": "Test downloading the translated document"
+    },
+    "title": "curl http://localhost:3000/api/documents/download/translated_doc_1759478198011_658ldaoit6e",
+    "time": {
+      "start": 1759478207544,
+      "end": 1759478208215
+    }
+  }
+}

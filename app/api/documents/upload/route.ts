@@ -66,7 +66,19 @@ export async function POST(request: NextRequest) {
     
     // Validate file type
     const fileType = await fileTypeFromBuffer(fileBuffer)
-    if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {
+    let detectedMimeType = fileType?.mime
+    
+    // Handle text files - file-type library doesn't detect them reliably
+    if (!detectedMimeType && file.name.toLowerCase().endsWith('.txt')) {
+      // Check if file contains mostly text characters
+      const text = fileBuffer.toString('utf-8', 0, Math.min(1000, fileBuffer.length))
+      const nonTextChars = text.match(/[\x00-\x08\x0E-\x1F\x7F-\xFF]/g)
+      if (!nonTextChars || nonTextChars.length < text.length * 0.1) {
+        detectedMimeType = 'text/plain'
+      }
+    }
+    
+    if (!detectedMimeType || !ALLOWED_TYPES.includes(detectedMimeType)) {
       return NextResponse.json(
         { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },
         { status: 400 }
@@ -85,15 +97,15 @@ export async function POST(request: NextRequest) {
     let documentInfo: any = {}
     
     try {
-      if (fileType.mime === 'application/pdf') {
+      if (detectedMimeType === 'application/pdf') {
         const pdfProcessor = new PDFProcessor()
         documentInfo = await pdfProcessor.getDocumentInfo(fileBuffer)
         documentInfo.type = 'pdf'
-      } else if (fileType.mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+      } else if (detectedMimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
         const docxProcessor = new DocxProcessor()
         documentInfo = await docxProcessor.getDocumentInfo(fileBuffer)
         documentInfo.type = 'docx'
-      } else if (fileType.mime === 'text/plain') {
+      } else if (detectedMimeType === 'text/plain') {
         const text = fileBuffer.toString('utf-8')
         documentInfo = {
           wordCount: text.split(/\s+/).filter(word => word.length > 0).length,
@@ -119,7 +131,10 @@ export async function POST(request: NextRequest) {
 
     // Generate unique file ID
     const fileId = `doc_${Date.now()}_${Math.random().toString(36).substring(2)}`
-    const storedFileName = `${fileId}.${fileType.ext}`
+    const fileExtension = detectedMimeType === 'text/plain' ? 'txt' : 
+                         detectedMimeType === 'application/pdf' ? 'pdf' : 
+                         detectedMimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ? 'docx' : 'bin'
+    const storedFileName = `${fileId}.${fileExtension}`
     const storedFilePath = path.join(uploadDir, storedFileName)
 
     // Save file to permanent storage location

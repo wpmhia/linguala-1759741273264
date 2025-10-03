@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a912536a001t6y5G5nlRKZI3T",
+  "messageID": "msg_9a9116fd2001DLq30IrMCQUmx8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01YHgMBmKJWSFa6C78crFzDz",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/upload/route.ts",
+      "oldString": "    // Validate file type\n    const fileType = await fileTypeFromBuffer(fileBuffer)\n    if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {\n      return NextResponse.json(\n        { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },\n        { status: 400 }\n      )\n    }",
+      "newString": "    // Validate file type\n    const fileType = await fileTypeFromBuffer(fileBuffer)\n    let detectedMimeType = fileType?.mime\n    \n    // Handle text files - file-type library doesn't detect them reliably\n    if (!detectedMimeType && file.name.toLowerCase().endsWith('.txt')) {\n      // Check if file contains mostly text characters\n      const text = fileBuffer.toString('utf-8', 0, Math.min(1000, fileBuffer.length))\n      const nonTextChars = text.match(/[\\x00-\\x08\\x0E-\\x1F\\x7F-\\xFF]/g)\n      if (!nonTextChars || nonTextChars.length < text.length * 0.1) {\n        detectedMimeType = 'text/plain'\n      }\n    }\n    \n    if (!detectedMimeType || !ALLOWED_TYPES.includes(detectedMimeType)) {\n      return NextResponse.json(\n        { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },\n        { status: 400 }\n      )\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/documents/upload/route.ts\n===================================================================\n--- /home/user/project/app/api/documents/upload/route.ts\n+++ /home/user/project/app/api/documents/upload/route.ts\n@@ -65,9 +65,21 @@\n const fileBuffer = Buffer.from(arrayBuffer)\n \n // Validate file type\n const fileType = await fileTypeFromBuffer(fileBuffer)\n-if (!fileType || !ALLOWED_TYPES.includes(fileType.mime)) {\n+let detectedMimeType = fileType?.mime\n+\n+// Handle text files - file-type library doesn't detect them reliably\n+if (!detectedMimeType && file.name.toLowerCase().endsWith('.txt')) {\n+  // Check if file contains mostly text characters\n+  const text = fileBuffer.toString('utf-8', 0, Math.min(1000, fileBuffer.length))\n+  const nonTextChars = text.match(/[\\x00-\\x08\\x0E-\\x1F\\x7F-\\xFF]/g)\n+  if (!nonTextChars || nonTextChars.length < text.length * 0.1) {\n+    detectedMimeType = 'text/plain'\n+  }\n+}\n+\n+if (!detectedMimeType || !ALLOWED_TYPES.includes(detectedMimeType)) {\n   return NextResponse.json(\n     { error: 'Unsupported file type. Please upload PDF, DOCX, or TXT files.' },\n     { status: 400 }\n   )\n"
+    },
+    "title": "app/api/documents/upload/route.ts",
+    "time": {
+      "start": 1759478179820,
+      "end": 1759478179834
+    }
+  }
+}

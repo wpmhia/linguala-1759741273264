@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa4ae4e3001Adhuy9Z282CtG5",
+  "messageID": "msg_9aa4a601d0019jbtALWloR5GbA",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01HQD8MPMxBrQ2TQhEFKVzJc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "              <nav className=\"hidden md:flex items-center space-x-6\">\n                <div className=\"text-sm text-blue-600 bg-blue-50 font-medium px-3 py-2 rounded\">\n                  Text\n                </div>\n                <button \n                  onClick={() => window.location.href = '/documents'}\n                  className=\"text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded transition-colors\"\n                >\n                  Documents\n                </button>\n              </nav>",
+      "newString": ""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -135,19 +135,9 @@\n <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n   <div className=\"flex items-center justify-between\">\n     <div className=\"flex items-center space-x-8\">\n       <LingualaLogo size=\"md\" />\n-      <nav className=\"hidden md:flex items-center space-x-6\">\n-        <div className=\"text-sm text-blue-600 bg-blue-50 font-medium px-3 py-2 rounded\">\n-          Text\n-        </div>\n-        <button \n-          onClick={() => window.location.href = '/documents'}\n-          className=\"text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded transition-colors\"\n-        >\n-          Documents\n-        </button>\n-      </nav>\n+\n     </div>\n     <div className=\"flex items-center space-x-4\">\n       <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\">\n         <History className=\"h-5 w-5\" />\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759498660801,
+      "end": 1759498660817
+    }
+  }
+}

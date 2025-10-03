@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa4aa5fc001QpWh27QSHanVlJ",
+  "messageID": "msg_9aa4a601d0019jbtALWloR5GbA",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01DmmUE2cGzi9arA6GtniQbr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 330,
+      "limit": 20
+    },
+    "output": "<file>\n00331|             <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n00332|               <span>Powered by Linguala Translate</span>\n00333|             </div>\n00334|           </div>\n00335|         </div>\n00336| \n00337|         {/* Simple feature showcase */}\n00338|         <div className=\"mt-12\">\n00339|           <div className=\"text-center\">\n00340|             <div className=\"bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto\">\n00341|               <h2 className=\"text-xl font-semibold text-gray-900 mb-4\">\n00342|                 Professional Translation Platform\n00343|               </h2>\n00344|               <p className=\"text-gray-600 mb-6\">\n00345|                 Fast, accurate translations powered by advanced AI. Support for 25+ languages including all major European languages.\n00346|               </p>\n00347|               <div className=\"grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700\">\n00348|                 <div className=\"text-center\">\n00349|                   <div className=\"font-semibold\">25+</div>\n00350|                   <div>Languages</div>\n\n(File has more lines. Use 'offset' parameter to read beyond line 350)\n</file>",
+    "metadata": {
+      "preview": "            <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n              <span>Powered by Linguala Translate</span>\n            </div>\n          </div>\n        </div>\n\n        {/* Simple feature showcase */}\n        <div className=\"mt-12\">\n          <div className=\"text-center\">\n            <div className=\"bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto\">\n              <h2 className=\"text-xl font-semibold text-gray-900 mb-4\">\n                Professional Translation Platform\n              </h2>\n              <p className=\"text-gray-600 mb-6\">\n                Fast, accurate translations powered by advanced AI. Support for 25+ languages including all major European languages.\n              </p>\n              <div className=\"grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700\">\n                <div className=\"text-center\">\n                  <div className=\"font-semibold\">25+</div>\n                  <div>Languages</div>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759498644174,
+      "end": 1759498644178
+    }
+  }
+}

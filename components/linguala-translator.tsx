@@ -136,17 +136,7 @@ export default function LingualaTranslator() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <LingualaLogo size="md" />
-              <nav className="hidden md:flex items-center space-x-6">
-                <div className="text-sm text-blue-600 bg-blue-50 font-medium px-3 py-2 rounded">
-                  Text
-                </div>
-                <button 
-                  onClick={() => window.location.href = '/documents'}
-                  className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 px-3 py-2 rounded transition-colors"
-                >
-                  Documents
-                </button>
-              </nav>
+
             </div>
             <div className="flex items-center space-x-4">
               <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">

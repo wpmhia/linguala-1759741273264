@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa4ab8ef001J6mNtcaxNuwGtz",
+  "messageID": "msg_9aa4a601d0019jbtALWloR5GbA",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01DE4VDCczZsWdMB5jEDgM4G",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && grep -n \"documents\" components/linguala-translator.tsx",
+      "description": "Find exact line with documents reference"
+    },
+    "output": "144:                  onClick={() => window.location.href = '/documents'}\n",
+    "metadata": {
+      "output": "144:                  onClick={() => window.location.href = '/documents'}\n",
+      "exit": 0,
+      "description": "Find exact line with documents reference"
+    },
+    "title": "cd /home/user/project && grep -n \"documents\" components/linguala-translator.tsx",
+    "time": {
+      "start": 1759498648589,
+      "end": 1759498648601
+    }
+  }
+}

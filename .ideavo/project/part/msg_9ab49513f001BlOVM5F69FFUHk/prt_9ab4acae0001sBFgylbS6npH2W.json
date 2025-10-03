@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab4acae0001sBFgylbS6npH2W",
+  "messageID": "msg_9ab49513f001BlOVM5F69FFUHk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_015C7nXaY3scZqCsNRrBzunP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "    // Enhanced fallback - basic grammar and style improvements\n    const basicImprovement = text\n      // Fix common contractions\n      .replace(/\\bi\\b/gi, 'I')\n      .replace(/\\bim\\b/gi, \"I'm\")\n      .replace(/\\bits\\b/gi, \"it's\")\n      .replace(/\\byour\\b(?=\\s+(going|coming|feeling))/gi, \"you're\")\n      .replace(/\\bwont\\b/gi, \"won't\")\n      .replace(/\\bdont\\b/gi, \"don't\")\n      .replace(/\\bcant\\b/gi, \"can't\")\n      .replace(/\\bwere\\b(?=\\s+going)/gi, \"we're\")\n      .replace(/\\btheir\\b(?=\\s+(happy|sad|coming|going))/gi, \"they're\")\n      // Fix double spaces\n      .replace(/\\s+/g, ' ')\n      // Capitalize first letter\n      .replace(/^[a-z]/, match => match.toUpperCase())\n      // Fix sentence endings\n      .replace(/([a-z])\\s*$/i, '$1.')\n      .trim()",
+      "newString": "    // Enhanced fallback - basic grammar and style improvements\n    const basicImprovement = text\n      // Dutch grammar fixes\n      .replace(/\\bik leest\\b/gi, 'ik lees')\n      .replace(/\\bIk leest\\b/g, 'Ik lees')\n      .replace(/\\bjij heeft\\b/gi, 'jij hebt')\n      .replace(/\\bJij heeft\\b/g, 'Jij hebt')\n      .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n      .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n      .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n      .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n      // English grammar fixes\n      .replace(/\\bi\\b/gi, 'I')\n      .replace(/\\bim\\b/gi, \"I'm\")\n      .replace(/\\bits\\b/gi, \"it's\")\n      .replace(/\\byour\\b(?=\\s+(going|coming|feeling))/gi, \"you're\")\n      .replace(/\\bwont\\b/gi, \"won't\")\n      .replace(/\\bdont\\b/gi, \"don't\")\n      .replace(/\\bcant\\b/gi, \"can't\")\n      .replace(/\\bwere\\b(?=\\s+going)/gi, \"we're\")\n      .replace(/\\btheir\\b(?=\\s+(happy|sad|coming|going))/gi, \"they're\")\n      // Fix double spaces\n      .replace(/\\s+/g, ' ')\n      // Capitalize first letter\n      .replace(/^[a-z]/, match => match.toUpperCase())\n      // Fix sentence endings\n      .replace(/([a-z])\\s*$/i, '$1.')\n      .trim()"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -119,9 +119,18 @@\n } catch (error) {\n   console.error('Improve writing error:', error)\n   // Enhanced fallback - basic grammar and style improvements\n   const basicImprovement = text\n-    // Fix common contractions\n+    // Dutch grammar fixes\n+    .replace(/\\bik leest\\b/gi, 'ik lees')\n+    .replace(/\\bIk leest\\b/g, 'Ik lees')\n+    .replace(/\\bjij heeft\\b/gi, 'jij hebt')\n+    .replace(/\\bJij heeft\\b/g, 'Jij hebt')\n+    .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n+    .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n+    .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n+    .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n+    // English grammar fixes\n     .replace(/\\bi\\b/gi, 'I')\n     .replace(/\\bim\\b/gi, \"I'm\")\n     .replace(/\\bits\\b/gi, \"it's\")\n     .replace(/\\byour\\b(?=\\s+(going|coming|feeling))/gi, \"you're\")\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759515439163,
+      "end": 1759515439172
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab4aa112001LxxiU0Uf1kBm7O",
+  "messageID": "msg_9ab49513f001BlOVM5F69FFUHk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01QK8aTqRwxVqpdtKNiFC9fp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\"",
+      "description": "Kill hanging Next.js server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill hanging Next.js server"
+    },
+    "title": "pkill -f \"next dev\"",
+    "time": {
+      "start": 1759515419625,
+      "end": 1759515419651
+    }
+  }
+}

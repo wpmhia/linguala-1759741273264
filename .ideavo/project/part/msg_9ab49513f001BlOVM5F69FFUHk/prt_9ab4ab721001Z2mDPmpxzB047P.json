@@ -1,0 +1,25 @@
+{
+  "id": "prt_9ab4ab721001Z2mDPmpxzB047P",
+  "messageID": "msg_9ab49513f001BlOVM5F69FFUHk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01TUrVzM17PmMr2ma2mA8AYD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 135,
+      "limit": 25
+    },
+    "output": "<file>\n00136|       .replace(/^[a-z]/, match => match.toUpperCase())\n00137|       // Fix sentence endings\n00138|       .replace(/([a-z])\\s*$/i, '$1.')\n00139|       .trim()\n00140|     \n00141|     return {\n00142|       originalText: text,\n00143|       improvedText: basicImprovement,\n00144|       operation: 'improve',\n00145|       fallback: true\n00146|     }\n00147|   }\n00148| }\n00149| \n00150| // Text rephrasing function using qwen-max\n00151| async function rephraseTextWithQwen3Max(text: string) {\n00152|   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n00153|   \n00154|   try {\n00155|     const controller = new AbortController()\n00156|     const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout\n00157|     \n00158|     const response = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00159|       method: 'POST',\n00160|       headers: {\n\n(File has more lines. Use 'offset' parameter to read beyond line 160)\n</file>",
+    "metadata": {
+      "preview": "      .replace(/^[a-z]/, match => match.toUpperCase())\n      // Fix sentence endings\n      .replace(/([a-z])\\s*$/i, '$1.')\n      .trim()\n    \n    return {\n      originalText: text,\n      improvedText: basicImprovement,\n      operation: 'improve',\n      fallback: true\n    }\n  }\n}\n\n// Text rephrasing function using qwen-max\nasync function rephraseTextWithQwen3Max(text: string) {\n  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n  \n  try {\n    const controller = new AbortController()"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759515425591,
+      "end": 1759515425597
+    }
+  }
+}

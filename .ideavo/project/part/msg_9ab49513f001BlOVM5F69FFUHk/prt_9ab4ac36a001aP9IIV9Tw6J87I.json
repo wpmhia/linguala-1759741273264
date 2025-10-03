@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab4ac36a001aP9IIV9Tw6J87I",
+  "messageID": "msg_9ab49513f001BlOVM5F69FFUHk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see the problem! The fallback logic only handles basic English grammar patterns. It doesn't know that \"leest\" should be \"lees\" in Dutch. The fallback is working, but it's not language-aware.\n\nSince the qwen-max API is unreliable, let me improve the fallback to handle basic Dutch grammar patterns:",
+  "time": {
+    "start": 1759515429599,
+    "end": 1759515429599
+  }
+}

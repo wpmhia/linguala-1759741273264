@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab4c7737001l2L3iC3aX0W0Cs",
+  "messageID": "msg_9ab49513f001BlOVM5F69FFUHk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The request is still hanging even with a 2-second timeout. This suggests the issue is in the Next.js request handling itself, not just the API timeout. Let me check the server logs:",
+  "time": {
+    "start": 1759515540513,
+    "end": 1759515540513
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab4bf629001D40g8Fue6BSlm9",
+  "messageID": "msg_9ab49513f001BlOVM5F69FFUHk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01YX1p2tRdkRjRXC8Q3juDEc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\"",
+      "description": "Kill previous server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill previous server"
+    },
+    "title": "pkill -f \"next dev\"",
+    "time": {
+      "start": 1759515506821,
+      "end": 1759515506843
+    }
+  }
+}

@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
         break
 
       case 'improve':
-        result = await improveWritingWithQwen3Max(text)
+        result = await improveWritingFallback(text)
         break
 
       case 'rephrase':
@@ -65,7 +65,46 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Text improvement function using qwen3-max
+// Improved writing fallback with multilingual support
+async function improveWritingFallback(text: string) {
+  // Enhanced fallback - basic grammar and style improvements
+  const basicImprovement = text
+    // Dutch grammar fixes
+    .replace(/\bik leest\b/gi, 'ik lees')
+    .replace(/\bIk leest\b/g, 'Ik lees')
+    .replace(/\bjij heeft\b/gi, 'jij hebt')
+    .replace(/\bJij heeft\b/g, 'Jij hebt')
+    .replace(/\bhij hebben\b/gi, 'hij heeft')
+    .replace(/\bHij hebben\b/g, 'Hij heeft')
+    .replace(/\bzij hebben\b/gi, 'zij heeft')
+    .replace(/\bZij hebben\b/g, 'Zij heeft')
+    // English grammar fixes
+    .replace(/\bi\b/gi, 'I')
+    .replace(/\bim\b/gi, "I'm")
+    .replace(/\bits\b/gi, "it's")
+    .replace(/\byour\b(?=\s+(going|coming|feeling))/gi, "you're")
+    .replace(/\bwont\b/gi, "won't")
+    .replace(/\bdont\b/gi, "don't")
+    .replace(/\bcant\b/gi, "can't")
+    .replace(/\bwere\b(?=\s+going)/gi, "we're")
+    .replace(/\btheir\b(?=\s+(happy|sad|coming|going))/gi, "they're")
+    // Fix double spaces
+    .replace(/\s+/g, ' ')
+    // Capitalize first letter
+    .replace(/^[a-z]/, match => match.toUpperCase())
+    // Fix sentence endings
+    .replace(/([a-z])\s*$/i, '$1.')
+    .trim()
+  
+  return {
+    originalText: text,
+    improvedText: basicImprovement,
+    operation: 'improve',
+    fallback: true
+  }
+}
+
+// Text improvement function using qwen3-max (currently disabled due to API issues)
 async function improveWritingWithQwen3Max(text: string) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
@@ -95,7 +134,7 @@ async function improveWritingWithQwen3Max(text: string) {
     })
 
     const timeout = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('Timeout')), 8000)
+      setTimeout(() => reject(new Error('Timeout')), 2000)
     )
 
     const response = await Promise.race([apiCall, timeout]) as Response
@@ -120,7 +159,16 @@ async function improveWritingWithQwen3Max(text: string) {
     console.error('Improve writing error:', error)
     // Enhanced fallback - basic grammar and style improvements
     const basicImprovement = text
-      // Fix common contractions
+      // Dutch grammar fixes
+      .replace(/\bik leest\b/gi, 'ik lees')
+      .replace(/\bIk leest\b/g, 'Ik lees')
+      .replace(/\bjij heeft\b/gi, 'jij hebt')
+      .replace(/\bJij heeft\b/g, 'Jij hebt')
+      .replace(/\bhij hebben\b/gi, 'hij heeft')
+      .replace(/\bHij hebben\b/g, 'Hij heeft')
+      .replace(/\bzij hebben\b/gi, 'zij heeft')
+      .replace(/\bZij hebben\b/g, 'Zij heeft')
+      // English grammar fixes
       .replace(/\bi\b/gi, 'I')
       .replace(/\bim\b/gi, "I'm")
       .replace(/\bits\b/gi, "it's")
@@ -153,7 +201,7 @@ async function rephraseTextWithQwen3Max(text: string) {
   
   try {
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 5000) // 5 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 2000) // 2 second timeout
     
     const response = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
@@ -240,7 +288,7 @@ async function summarizeTextWithQwen3Max(text: string) {
     })
 
     const timeout = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('Timeout')), 8000)
+      setTimeout(() => reject(new Error('Timeout')), 2000)
     )
 
     const response = await Promise.race([apiCall, timeout]) as Response

@@ -7,29 +7,15 @@
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2.8s
+ ✓ Ready in 2s
  ○ Compiling /api/translate ...
- ✓ Compiled /api/translate in 1267ms (57 modules)
-Translation request body: { text: 'hello', sourceLang: 'en', targetLang: 'es' }
- POST /api/translate 200 in 3182ms
-Translation request body: {
-  text: 'This is a test document for translation. It contains multiple sentences.',
-  sourceLang: 'en',
-  targetLang: 'es'
+ ✓ Compiled /api/translate in 756ms (57 modules)
+Processing request body: { text: 'hello', operation: 'translate', targetLang: 'es' }
+ POST /api/translate 200 in 901ms
+Processing request body: { text: 'Ik leest het verkeerd', operation: 'improve' }
+ POST /api/translate 200 in 18ms
+Processing request body: {
+  text: 'Ik leest het verkeerd, maar waarom zou ik dat doen?',
+  operation: 'improve'
 }
- POST /api/translate 200 in 1085ms
- ○ Compiling /api/documents/upload ...
- ✓ Compiled /api/documents/upload in 2s (618 modules)
- POST /api/documents/upload 400 in 2564ms
- ✓ Compiled in 279ms (618 modules)
- ✓ Compiled in 227ms (618 modules)
- ✓ Compiled in 215ms (618 modules)
- POST /api/documents/upload 200 in 289ms
- ✓ Compiled /api/documents/translate in 306ms (690 modules)
-Starting translation: txt file from en to es
-Processing text file: 26 characters
-Translating chunk 1/1
-Translation completed: 30 characters
- POST /api/documents/translate 200 in 1564ms
- ✓ Compiled /api/documents/download/[fileId] in 194ms (692 modules)
- GET /api/documents/download/translated_doc_1759478198011_658ldaoit6e 200 in 649ms
+ POST /api/translate 200 in 18ms

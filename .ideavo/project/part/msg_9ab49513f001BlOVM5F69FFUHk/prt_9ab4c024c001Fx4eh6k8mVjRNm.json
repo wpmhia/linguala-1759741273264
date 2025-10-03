@@ -1,0 +1,27 @@
+{
+  "id": "prt_9ab4c024c001Fx4eh6k8mVjRNm",
+  "messageID": "msg_9ab49513f001BlOVM5F69FFUHk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Bb4L89hrxCpyECi6SrCJfs",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev &",
+      "timeout": 10000,
+      "description": "Start Next.js server with shorter timeouts"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2000ms\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2000ms\n",
+      "exit": 0,
+      "description": "Start Next.js server with shorter timeouts"
+    },
+    "title": "cd /home/user/project && npm run dev &",
+    "time": {
+      "start": 1759515509854,
+      "end": 1759515519862
+    }
+  }
+}

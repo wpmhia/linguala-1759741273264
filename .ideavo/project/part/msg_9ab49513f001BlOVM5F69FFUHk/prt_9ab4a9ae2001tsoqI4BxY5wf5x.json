@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab4a9ae2001tsoqI4BxY5wf5x",
+  "messageID": "msg_9ab49513f001BlOVM5F69FFUHk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API call is hanging again. This confirms the qwen-max API is still unreliable. Let me check what's actually being returned by testing with a shorter timeout and see if it falls back properly:",
+  "time": {
+    "start": 1759515418897,
+    "end": 1759515418897
+  }
+}

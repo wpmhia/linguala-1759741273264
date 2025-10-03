@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a9ff5534001jel21MHch2PAul",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01BJX5jQHYwh7WwVADtzdH5y",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && rm -rf components/documents",
+      "description": "Remove document uploader component"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Remove document uploader component"
+    },
+    "title": "cd /home/user/project && rm -rf components/documents",
+    "time": {
+      "start": 1759493707591,
+      "end": 1759493707642
+    }
+  }
+}

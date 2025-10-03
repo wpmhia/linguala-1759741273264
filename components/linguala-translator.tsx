@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { 
   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,
-  Check, X, Mic, Settings, History, FileText, Loader2
+  Check, X, Mic, Settings, History, Loader2
 } from "lucide-react"
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
@@ -327,18 +327,7 @@ export default function LingualaTranslator() {
           </div>
 
           {/* Bottom Actions */}
-          <div className="mt-6 flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => window.location.href = '/documents'}
-              >
-                <FileText className="h-4 w-4 mr-2" />
-                Translate a document
-              </Button>
-            </div>
-            
+          <div className="mt-6 flex items-center justify-end">
             <div className="flex items-center space-x-2 text-sm text-gray-500">
               <span>Powered by Linguala Translate</span>
             </div>

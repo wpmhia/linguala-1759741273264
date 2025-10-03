@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa0066df001W03ocxvWEY0RxZ",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01XEcCyLFj1TDfbMs2hB3MpB",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/package.json",
+      "offset": 80,
+      "limit": 15
+    },
+    "output": "<file>\n00081|     \"zod\": \"^4.1.11\"\n00082|   },\n00083|   \"devDependencies\": {\n00084| \n00085|     \"@types/jsonwebtoken\": \"9.0.10\",\n00086|     \"@types/node\": \"22.7.4\",\n00087|     \"@types/react\": \"18.3.11\",\n00088|     \"@types/react-dom\": \"18.3.1\",\n00089| \n00090|   }\n00091| }\n00092| \n</file>",
+    "metadata": {
+      "preview": "    \"zod\": \"^4.1.11\"\n  },\n  \"devDependencies\": {\n\n    \"@types/jsonwebtoken\": \"9.0.10\",\n    \"@types/node\": \"22.7.4\",\n    \"@types/react\": \"18.3.11\",\n    \"@types/react-dom\": \"18.3.1\",\n\n  }\n}\n"
+    },
+    "title": "package.json",
+    "time": {
+      "start": 1759493777747,
+      "end": 1759493777749
+    }
+  }
+}

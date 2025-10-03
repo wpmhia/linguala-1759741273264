@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa004700001UtMwduC9NTVXSD",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_016C25kbeqeiW7gdYaLX1PBU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, FileText, Loader2\n} from \"lucide-react\"",
+      "newString": "import { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, Loader2\n} from \"lucide-react\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -5,9 +5,9 @@\n import { Textarea } from \"@/components/ui/textarea\"\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n import { \n   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n-  Check, X, Mic, Settings, History, FileText, Loader2\n+  Check, X, Mic, Settings, History, Loader2\n } from \"lucide-react\"\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { useTranslation } from \"@/hooks/use-translation\"\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759493770365,
+      "end": 1759493770377
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9aa02a893001PBalX9VN5tMoqo",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(app): remove document translation functionality",
+  "cost": 0.5475984,
+  "tokens": {
+    "input": 0,
+    "output": 185,
+    "reasoning": 0,
+    "cache": {
+      "write": 275,
+      "read": 45672
+    }
+  }
+}

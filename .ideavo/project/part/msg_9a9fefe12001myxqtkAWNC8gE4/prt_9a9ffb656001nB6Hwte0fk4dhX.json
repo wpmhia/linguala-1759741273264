@@ -1,0 +1,109 @@
+{
+  "id": "prt_9a9ffb656001nB6Hwte0fk4dhX",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01R4zTPweVWVFYkfDrZB2ibK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Remove document translation API endpoint",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-1"
+        },
+        {
+          "content": "Remove document upload API endpoint",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-2"
+        },
+        {
+          "content": "Remove document download API endpoint",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-3"
+        },
+        {
+          "content": "Remove document uploader component",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-4"
+        },
+        {
+          "content": "Remove document processors",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-5"
+        },
+        {
+          "content": "Remove documents page",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-6"
+        },
+        {
+          "content": "Clean up temp upload directory",
+          "status": "completed",
+          "priority": "medium",
+          "id": "remove-doc-translate-7"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Remove document translation API endpoint\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"remove-doc-translate-1\"\n  },\n  {\n    \"content\": \"Remove document upload API endpoint\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"remove-doc-translate-2\"\n  },\n  {\n    \"content\": \"Remove document download API endpoint\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"remove-doc-translate-3\"\n  },\n  {\n    \"content\": \"Remove document uploader component\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"remove-doc-translate-4\"\n  },\n  {\n    \"content\": \"Remove document processors\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"remove-doc-translate-5\"\n  },\n  {\n    \"content\": \"Remove documents page\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"remove-doc-translate-6\"\n  },\n  {\n    \"content\": \"Clean up temp upload directory\",\n    \"status\": \"completed\",\n    \"priority\": \"medium\",\n    \"id\": \"remove-doc-translate-7\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Remove document translation API endpoint",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-1"
+        },
+        {
+          "content": "Remove document upload API endpoint",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-2"
+        },
+        {
+          "content": "Remove document download API endpoint",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-3"
+        },
+        {
+          "content": "Remove document uploader component",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-4"
+        },
+        {
+          "content": "Remove document processors",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-5"
+        },
+        {
+          "content": "Remove documents page",
+          "status": "completed",
+          "priority": "high",
+          "id": "remove-doc-translate-6"
+        },
+        {
+          "content": "Clean up temp upload directory",
+          "status": "completed",
+          "priority": "medium",
+          "id": "remove-doc-translate-7"
+        }
+      ]
+    },
+    "title": "0 todos",
+    "time": {
+      "start": 1759493733999,
+      "end": 1759493734001
+    }
+  }
+}

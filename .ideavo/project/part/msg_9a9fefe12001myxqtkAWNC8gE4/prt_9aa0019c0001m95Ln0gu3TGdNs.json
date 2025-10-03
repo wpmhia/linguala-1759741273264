@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa0019c0001m95Ln0gu3TGdNs",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01NngmXR8x3RCXu2J7nHEvC4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "          {/* Bottom Actions */}\n          <div className=\"mt-6 flex items-center justify-between\">\n            <div className=\"flex items-center space-x-4\">\n              <Button \n                variant=\"outline\" \n                size=\"sm\"\n                onClick={() => window.location.href = '/documents'}\n              >\n                <FileText className=\"h-4 w-4 mr-2\" />\n                Translate a document\n              </Button>\n            </div>\n            \n            <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n              <span>Powered by Linguala Translate</span>\n            </div>\n          </div>",
+      "newString": "          {/* Bottom Actions */}\n          <div className=\"mt-6 flex items-center justify-end\">\n            <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n              <span>Powered by Linguala Translate</span>\n            </div>\n          </div>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -326,20 +326,9 @@\n   </div>\n </div>\n \n {/* Bottom Actions */}\n-<div className=\"mt-6 flex items-center justify-between\">\n-  <div className=\"flex items-center space-x-4\">\n-    <Button \n-      variant=\"outline\" \n-      size=\"sm\"\n-      onClick={() => window.location.href = '/documents'}\n-    >\n-      <FileText className=\"h-4 w-4 mr-2\" />\n-      Translate a document\n-    </Button>\n-  </div>\n-  \n+<div className=\"mt-6 flex items-center justify-end\">\n   <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n     <span>Powered by Linguala Translate</span>\n   </div>\n </div>\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759493760057,
+      "end": 1759493760077
+    }
+  }
+}

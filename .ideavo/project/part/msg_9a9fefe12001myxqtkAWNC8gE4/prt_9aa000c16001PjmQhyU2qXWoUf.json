@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa000c16001PjmQhyU2qXWoUf",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_015Loo5baHMd5VfZoFvnXUnT",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 300,
+      "limit": 50
+    },
+    "output": "<file>\n00301|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00302|                       disabled\n00303|                     >\n00304|                       <Volume2 className=\"h-4 w-4\" />\n00305|                     </Button>\n00306|                     <Button\n00307|                       variant=\"ghost\"\n00308|                       size=\"sm\"\n00309|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00310|                       disabled\n00311|                     >\n00312|                       <Star className=\"h-4 w-4\" />\n00313|                     </Button>\n00314|                   </div>\n00315|                   \n00316|                   <Button\n00317|                     variant=\"ghost\"\n00318|                     size=\"sm\"\n00319|                     className=\"p-2 hover:bg-gray-200 rounded-full\"\n00320|                     disabled\n00321|                   >\n00322|                     <MoreHorizontal className=\"h-4 w-4\" />\n00323|                   </Button>\n00324|                 </div>\n00325|               )}\n00326|             </div>\n00327|           </div>\n00328| \n00329|           {/* Bottom Actions */}\n00330|           <div className=\"mt-6 flex items-center justify-between\">\n00331|             <div className=\"flex items-center space-x-4\">\n00332|               <Button \n00333|                 variant=\"outline\" \n00334|                 size=\"sm\"\n00335|                 onClick={() => window.location.href = '/documents'}\n00336|               >\n00337|                 <FileText className=\"h-4 w-4 mr-2\" />\n00338|                 Translate a document\n00339|               </Button>\n00340|             </div>\n00341|             \n00342|             <div className=\"flex items-center space-x-2 text-sm text-gray-500\">\n00343|               <span>Powered by Linguala Translate</span>\n00344|             </div>\n00345|           </div>\n00346|         </div>\n00347| \n00348|         {/* Simple feature showcase */}\n00349|         <div className=\"mt-12\">\n00350|           <div className=\"text-center\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 350)\n</file>",
+    "metadata": {
+      "preview": "                      className=\"p-2 hover:bg-gray-200 rounded-full\"\n                      disabled\n                    >\n                      <Volume2 className=\"h-4 w-4\" />\n                    </Button>\n                    <Button\n                      variant=\"ghost\"\n                      size=\"sm\"\n                      className=\"p-2 hover:bg-gray-200 rounded-full\"\n                      disabled\n                    >\n                      <Star className=\"h-4 w-4\" />\n                    </Button>\n                  </div>\n                  \n                  <Button\n                    variant=\"ghost\"\n                    size=\"sm\"\n                    className=\"p-2 hover:bg-gray-200 rounded-full\"\n                    disabled"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759493754662,
+      "end": 1759493754663
+    }
+  }
+}

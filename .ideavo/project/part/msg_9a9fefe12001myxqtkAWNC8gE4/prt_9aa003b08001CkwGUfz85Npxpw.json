@@ -1,0 +1,25 @@
+{
+  "id": "prt_9aa003b08001CkwGUfz85Npxpw",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_011zCdyuR6MwAr5PZrXvcF82",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 0,
+      "limit": 20
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { useState, useEffect } from \"react\"\n00004| import { Button } from \"@/components/ui/button\"\n00005| import { Textarea } from \"@/components/ui/textarea\"\n00006| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00007| import { \n00008|   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n00009|   Check, X, Mic, Settings, History, FileText, Loader2\n00010| } from \"lucide-react\"\n00011| import { toast } from \"sonner\"\n00012| import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n00013| import { useTranslation } from \"@/hooks/use-translation\"\n00014| \n00015| // Common languages like Google Translate\n00016| const LANGUAGES = [\n00017|   { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n00018|   { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n00019|   { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n00020|   { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },\n\n(File has more lines. Use 'offset' parameter to read beyond line 20)\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { useState, useEffect } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, FileText, Loader2\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTranslation } from \"@/hooks/use-translation\"\n\n// Common languages like Google Translate\nconst LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n  { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n  { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n  { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759493766614,
+      "end": 1759493766616
+    }
+  }
+}

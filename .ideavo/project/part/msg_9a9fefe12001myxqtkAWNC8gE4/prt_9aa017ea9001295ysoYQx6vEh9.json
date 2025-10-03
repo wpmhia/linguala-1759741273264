@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa017ea9001295ysoYQx6vEh9",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01B8C6mBfA5BrEV2K6sgp4Jg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run start &",
+      "description": "Start production server"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n\n ✓ Starting...\n ✓ Ready in 634ms\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n\n ✓ Starting...\n ✓ Ready in 634ms\n",
+      "exit": 0,
+      "description": "Start production server"
+    },
+    "title": "cd /home/user/project && npm run start &",
+    "time": {
+      "start": 1759493849356,
+      "end": 1759493909405
+    }
+  }
+}

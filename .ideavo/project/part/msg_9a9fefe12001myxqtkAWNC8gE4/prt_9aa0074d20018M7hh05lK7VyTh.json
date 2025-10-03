@@ -1,0 +1,26 @@
+{
+  "id": "prt_9aa0074d20018M7hh05lK7VyTh",
+  "messageID": "msg_9a9fefe12001myxqtkAWNC8gE4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Cf7Kvgo6gr2EGBa4qe9CnF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/package.json",
+      "oldString": "  \"devDependencies\": {\n\n    \"@types/jsonwebtoken\": \"9.0.10\",\n    \"@types/node\": \"22.7.4\",\n    \"@types/react\": \"18.3.11\",\n    \"@types/react-dom\": \"18.3.1\",\n\n  }",
+      "newString": "  \"devDependencies\": {\n    \"@types/jsonwebtoken\": \"9.0.10\",\n    \"@types/node\": \"22.7.4\",\n    \"@types/react\": \"18.3.11\",\n    \"@types/react-dom\": \"18.3.1\"\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/package.json\n===================================================================\n--- /home/user/project/package.json\n+++ /home/user/project/package.json\n@@ -80,12 +80,10 @@\n     \"vaul\": \"1.1.2\",\n     \"zod\": \"^4.1.11\"\n   },\n   \"devDependencies\": {\n-\n     \"@types/jsonwebtoken\": \"9.0.10\",\n     \"@types/node\": \"22.7.4\",\n     \"@types/react\": \"18.3.11\",\n-    \"@types/react-dom\": \"18.3.1\",\n-\n+    \"@types/react-dom\": \"18.3.1\"\n   }\n }\n"
+    },
+    "title": "package.json",
+    "time": {
+      "start": 1759493782516,
+      "end": 1759493782529
+    }
+  }
+}

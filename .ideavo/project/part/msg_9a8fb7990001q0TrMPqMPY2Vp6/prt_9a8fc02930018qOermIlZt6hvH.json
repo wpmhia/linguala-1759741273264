@@ -1,0 +1,17 @@
+{
+  "id": "prt_9a8fc02930018qOermIlZt6hvH",
+  "messageID": "msg_9a8fb7990001q0TrMPqMPY2Vp6",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "cost": 0.24162525,
+  "tokens": {
+    "input": 3,
+    "output": 1714,
+    "reasoning": 0,
+    "cache": {
+      "write": 57575,
+      "read": 0
+    }
+  }
+}

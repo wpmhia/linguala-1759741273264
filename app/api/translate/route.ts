@@ -40,25 +40,11 @@ export async function POST(request: NextRequest) {
         break
 
       case 'rephrase':
-        // Use fallback for now due to API reliability issues
-        result = {
-          originalText: text,
-          rephrasedText: text
-            .replace(/\bvery\b/g, 'extremely')
-            .replace(/\bgood\b/g, 'excellent')
-            .replace(/\bbad\b/g, 'poor')
-            .replace(/\bnice\b/g, 'pleasant')
-            .replace(/\bbig\b/g, 'large')
-            .replace(/\bsmall\b/g, 'tiny')
-            .replace(/\bfast\b/g, 'quick')
-            .replace(/\bslow\b/g, 'sluggish'),
-          operation: 'rephrase',
-          fallback: true
-        }
+        result = await rephraseTextWithQwen3Max(text)
         break
 
       case 'summarize':
-        result = await summarizeTextFast(text)
+        result = await summarizeTextWithQwen3Max(text)
         break
 
       default:
@@ -161,8 +147,8 @@ async function improveWritingWithQwen3Max(text: string) {
   }
 }
 
-// Text rephrasing function
-async function rephraseText(text: string) {
+// Text rephrasing function using qwen-max
+async function rephraseTextWithQwen3Max(text: string) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
   try {
@@ -176,7 +162,7 @@ async function rephraseText(text: string) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen-turbo',
+        model: 'qwen-max',
         messages: [
           {
             role: 'system',
@@ -224,30 +210,66 @@ async function rephraseText(text: string) {
   }
 }
 
-// Fast summarization function with immediate fallback
-async function summarizeTextFast(text: string) {
-  // For short texts, return as-is
-  if (text.length <= 100) {
-    return {
-      originalText: text,
-      summaryText: text,
-      operation: 'summarize'
-    }
-  }
-
+// Text summarization function using qwen-max
+async function summarizeTextWithQwen3Max(text: string) {
+  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
+  
   try {
-    // Smart sentence-based summarization
-    const sentences = text.match(/[^.!?]+[.!?]+/g) || []
+    // Create a race condition between the API call and timeout
+    const apiCall = fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'qwen-max',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a professional text summarizer. Create a concise summary of the given text that captures the main points and key information. Keep it clear and well-structured. Return only the summary without explanations or quotes.'
+          },
+          {
+            role: 'user',
+            content: text
+          }
+        ],
+        max_tokens: 500,
+        temperature: 0.3
+      })
+    })
+
+    const timeout = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Timeout')), 8000)
+    )
+
+    const response = await Promise.race([apiCall, timeout]) as Response
     
-    if (sentences.length === 0) {
-      // No proper sentences found, use word-based approach
-      const words = text.split(' ')
-      const targetWords = Math.max(Math.floor(words.length * 0.5), 10)
-      const summary = words.slice(0, targetWords).join(' ') + (words.length > targetWords ? '...' : '')
-      
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status}`)
+    }
+
+    const data = await response.json()
+    const summaryText = data.choices[0]?.message?.content?.trim()
+
+    if (summaryText && summaryText !== text) {
       return {
         originalText: text,
-        summaryText: summary,
+        summaryText,
+        operation: 'summarize'
+      }
+    } else {
+      throw new Error('No summary received')
+    }
+  } catch (error) {
+    console.error('Summarize text error:', error)
+    // Smart fallback summarization
+    const sentences = text.match(/[^.!?]+[.!?]+/g) || []
+    
+    if (sentences.length === 0 || text.length <= 100) {
+      return {
+        originalText: text,
+        summaryText: text,
         operation: 'summarize',
         fallback: true
       }
@@ -271,15 +293,6 @@ async function summarizeTextFast(text: string) {
     return {
       originalText: text,
       summaryText: summary || text.substring(0, Math.min(100, text.length)) + '...',
-      operation: 'summarize',
-      fallback: true
-    }
-  } catch (error) {
-    console.error('Summarize text error:', error)
-    
-    return {
-      originalText: text,
-      summaryText: text.substring(0, Math.min(100, text.length)) + '...',
       operation: 'summarize',
       fallback: true
     }

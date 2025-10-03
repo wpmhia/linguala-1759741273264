@@ -1,0 +1,66 @@
+{
+  "id": "prt_9ab4629f5001Vf5PRmsRVioH1y",
+  "messageID": "msg_9ab46025f001Fi9w1794Wbfs44",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_018mJ6uSGJ2Kdzj5ezMG8RX4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "edits": [
+        {
+          "oldString": "      case 'rephrase':\n        // Use fallback for now due to API reliability issues\n        result = {\n          originalText: text,\n          rephrasedText: text\n            .replace(/\\bvery\\b/g, 'extremely')\n            .replace(/\\bgood\\b/g, 'excellent')\n            .replace(/\\bbad\\b/g, 'poor')\n            .replace(/\\bnice\\b/g, 'pleasant')\n            .replace(/\\bbig\\b/g, 'large')\n            .replace(/\\bsmall\\b/g, 'tiny')\n            .replace(/\\bfast\\b/g, 'quick')\n            .replace(/\\bslow\\b/g, 'sluggish'),\n          operation: 'rephrase',\n          fallback: true\n        }\n        break",
+          "newString": "      case 'rephrase':\n        result = await rephraseTextWithQwen3Max(text)\n        break"
+        },
+        {
+          "oldString": "      case 'summarize':\n        result = await summarizeTextFast(text)\n        break",
+          "newString": "      case 'summarize':\n        result = await summarizeTextWithQwen3Max(text)\n        break"
+        },
+        {
+          "oldString": "        model: 'qwen-turbo',",
+          "newString": "        model: 'qwen-max',"
+        },
+        {
+          "oldString": "// Text rephrasing function\nasync function rephraseText(text: string) {",
+          "newString": "// Text rephrasing function using qwen-max\nasync function rephraseTextWithQwen3Max(text: string) {"
+        },
+        {
+          "oldString": "// Fast summarization function with immediate fallback\nasync function summarizeTextFast(text: string) {\n  // For short texts, return as-is\n  if (text.length <= 100) {\n    return {\n      originalText: text,\n      summaryText: text,\n      operation: 'summarize'\n    }\n  }\n\n  try {\n    // Smart sentence-based summarization\n    const sentences = text.match(/[^.!?]+[.!?]+/g) || []\n    \n    if (sentences.length === 0) {\n      // No proper sentences found, use word-based approach\n      const words = text.split(' ')\n      const targetWords = Math.max(Math.floor(words.length * 0.5), 10)\n      const summary = words.slice(0, targetWords).join(' ') + (words.length > targetWords ? '...' : '')\n      \n      return {\n        originalText: text,\n        summaryText: summary,\n        operation: 'summarize',\n        fallback: true\n      }\n    }\n\n    // Take first 1-2 sentences or up to 40% of original length\n    const targetLength = Math.max(Math.floor(text.length * 0.4), 80)\n    let summary = ''\n    let sentenceCount = 0\n    \n    for (const sentence of sentences) {\n      const trimmedSentence = sentence.trim()\n      if (summary.length + trimmedSentence.length <= targetLength && sentenceCount < 3) {\n        summary += (summary ? ' ' : '') + trimmedSentence\n        sentenceCount++\n      } else {\n        break\n      }\n    }\n    \n    return {\n      originalText: text,\n      summaryText: summary || text.substring(0, Math.min(100, text.length)) + '...',\n      operation: 'summarize',\n      fallback: true\n    }\n  } catch (error) {\n    console.error('Summarize text error:', error)\n    \n    return {\n      originalText: text,\n      summaryText: text.substring(0, Math.min(100, text.length)) + '...',\n      operation: 'summarize',\n      fallback: true\n    }\n  }\n}",
+          "newString": "// Text summarization function using qwen-max\nasync function summarizeTextWithQwen3Max(text: string) {\n  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n  \n  try {\n    // Create a race condition between the API call and timeout\n    const apiCall = fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-max',\n        messages: [\n          {\n            role: 'system',\n            content: 'You are a professional text summarizer. Create a concise summary of the given text that captures the main points and key information. Keep it clear and well-structured. Return only the summary without explanations or quotes.'\n          },\n          {\n            role: 'user',\n            content: text\n          }\n        ],\n        max_tokens: 500,\n        temperature: 0.3\n      })\n    })\n\n    const timeout = new Promise((_, reject) => \n      setTimeout(() => reject(new Error('Timeout')), 8000)\n    )\n\n    const response = await Promise.race([apiCall, timeout]) as Response\n    \n    if (!response.ok) {\n      throw new Error(`API request failed: ${response.status}`)\n    }\n\n    const data = await response.json()\n    const summaryText = data.choices[0]?.message?.content?.trim()\n\n    if (summaryText && summaryText !== text) {\n      return {\n        originalText: text,\n        summaryText,\n        operation: 'summarize'\n      }\n    } else {\n      throw new Error('No summary received')\n    }\n  } catch (error) {\n    console.error('Summarize text error:', error)\n    // Smart fallback summarization\n    const sentences = text.match(/[^.!?]+[.!?]+/g) || []\n    \n    if (sentences.length === 0 || text.length <= 100) {\n      return {\n        originalText: text,\n        summaryText: text,\n        operation: 'summarize',\n        fallback: true\n      }\n    }\n\n    // Take first 1-2 sentences or up to 40% of original length\n    const targetLength = Math.max(Math.floor(text.length * 0.4), 80)\n    let summary = ''\n    let sentenceCount = 0\n    \n    for (const sentence of sentences) {\n      const trimmedSentence = sentence.trim()\n      if (summary.length + trimmedSentence.length <= targetLength && sentenceCount < 3) {\n        summary += (summary ? ' ' : '') + trimmedSentence\n        sentenceCount++\n      } else {\n        break\n      }\n    }\n    \n    return {\n      originalText: text,\n      summaryText: summary || text.substring(0, Math.min(100, text.length)) + '...',\n      operation: 'summarize',\n      fallback: true\n    }\n  }\n}"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -39,23 +39,9 @@\n   result = await improveWritingWithQwen3Max(text)\n   break\n \n case 'rephrase':\n-  // Use fallback for now due to API reliability issues\n-  result = {\n-    originalText: text,\n-    rephrasedText: text\n-      .replace(/\\bvery\\b/g, 'extremely')\n-      .replace(/\\bgood\\b/g, 'excellent')\n-      .replace(/\\bbad\\b/g, 'poor')\n-      .replace(/\\bnice\\b/g, 'pleasant')\n-      .replace(/\\bbig\\b/g, 'large')\n-      .replace(/\\bsmall\\b/g, 'tiny')\n-      .replace(/\\bfast\\b/g, 'quick')\n-      .replace(/\\bslow\\b/g, 'sluggish'),\n-    operation: 'rephrase',\n-    fallback: true\n-  }\n+  result = await rephraseTextWithQwen3Max(text)\n   break\n \n case 'summarize':\n   result = await summarizeTextFast(text)\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -43,9 +43,9 @@\n   result = await rephraseTextWithQwen3Max(text)\n   break\n \n case 'summarize':\n-  result = await summarizeTextFast(text)\n+  result = await summarizeTextWithQwen3Max(text)\n   break\n \n default:\n   return NextResponse.json(\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -161,9 +161,9 @@\n   'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n   'Content-Type': 'application/json',\n },\n body: JSON.stringify({\n-  model: 'qwen-turbo',\n+  model: 'qwen-max',\n   messages: [\n     {\n       role: 'system',\n       content: 'You are a professional writing assistant. Rephrase the given text using different words and sentence structures while keeping the same meaning. Make it sound natural and engaging. Return only the rephrased text without explanations.'\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -146,10 +146,10 @@\n     }\n   }\n }\n \n-// Text rephrasing function\n-async function rephraseText(text: string) {\n+// Text rephrasing function using qwen-max\n+async function rephraseTextWithQwen3Max(text: string) {\n   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n   \n   try {\n     const controller = new AbortController()\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -209,32 +209,68 @@\n     }\n   }\n }\n \n-// Fast summarization function with immediate fallback\n-async function summarizeTextFast(text: string) {\n-  // For short texts, return as-is\n-  if (text.length <= 100) {\n-    return {\n-      originalText: text,\n-      summaryText: text,\n-      operation: 'summarize'\n+// Text summarization function using qwen-max\n+async function summarizeTextWithQwen3Max(text: string) {\n+  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n+  \n+  try {\n+    // Create a race condition between the API call and timeout\n+    const apiCall = fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {\n+      method: 'POST',\n+      headers: {\n+        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n+        'Content-Type': 'application/json',\n+      },\n+      body: JSON.stringify({\n+        model: 'qwen-max',\n+        messages: [\n+          {\n+            role: 'system',\n+            content: 'You are a professional text summarizer. Create a concise summary of the given text that captures the main points and key information. Keep it clear and well-structured. Return only the summary without explanations or quotes.'\n+          },\n+          {\n+            role: 'user',\n+            content: text\n+          }\n+        ],\n+        max_tokens: 500,\n+        temperature: 0.3\n+      })\n+    })\n+\n+    const timeout = new Promise((_, reject) => \n+      setTimeout(() => reject(new Error('Timeout')), 8000)\n+    )\n+\n+    const response = await Promise.race([apiCall, timeout]) as Response\n+    \n+    if (!response.ok) {\n+      throw new Error(`API request failed: ${response.status}`)\n     }\n-  }\n \n-  try {\n-    // Smart sentence-based summarization\n+    const data = await response.json()\n+    const summaryText = data.choices[0]?.message?.content?.trim()\n+\n+    if (summaryText && summaryText !== text) {\n+      return {\n+        originalText: text,\n+        summaryText,\n+        operation: 'summarize'\n+      }\n+    } else {\n+      throw new Error('No summary received')\n+    }\n+  } catch (error) {\n+    console.error('Summarize text error:', error)\n+    // Smart fallback summarization\n     const sentences = text.match(/[^.!?]+[.!?]+/g) || []\n     \n-    if (sentences.length === 0) {\n-      // No proper sentences found, use word-based approach\n-      const words = text.split(' ')\n-      const targetWords = Math.max(Math.floor(words.length * 0.5), 10)\n-      const summary = words.slice(0, targetWords).join(' ') + (words.length > targetWords ? '...' : '')\n-      \n+    if (sentences.length === 0 || text.length <= 100) {\n       return {\n         originalText: text,\n-        summaryText: summary,\n+        summaryText: text,\n         operation: 'summarize',\n         fallback: true\n       }\n     }\n@@ -259,15 +295,6 @@\n       summaryText: summary || text.substring(0, Math.min(100, text.length)) + '...',\n       operation: 'summarize',\n       fallback: true\n     }\n-  } catch (error) {\n-    console.error('Summarize text error:', error)\n-    \n-    return {\n-      originalText: text,\n-      summaryText: text.substring(0, Math.min(100, text.length)) + '...',\n-      operation: 'summarize',\n-      fallback: true\n-    }\n   }\n }\n\\ No newline at end of file\n"
+        }
+      ]
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759515146864,
+      "end": 1759515146891
+    }
+  }
+}

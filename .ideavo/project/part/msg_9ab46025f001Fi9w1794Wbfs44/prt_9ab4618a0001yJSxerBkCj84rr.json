@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab4618a0001yJSxerBkCj84rr",
+  "messageID": "msg_9ab46025f001Fi9w1794Wbfs44",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see the issue! Looking at the API configuration:\n\n1. **Improve Writing** - Uses `qwen-max` model ✅ (line 95)\n2. **Rephrase** - Uses `qwen-turbo` model instead of `qwen-max` ❌ (line 179) \n3. **Summarize** - Uses only fallback logic (no API call to qwen-max) ❌\n\nThe problem is:\n- **Rephrase** is hardcoded to use fallback responses (lines 44-58) instead of calling the API\n- **Summarize** only uses local fallback logic, never calls the API\n- Only **Improve Writing** actually uses qwen-max properly\n\nLet me fix this by updating all three operations to use `qwen-max`:",
+  "time": {
+    "start": 1759515126253,
+    "end": 1759515126253
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab468109001x9o9zz8oAlpNoy",
+  "messageID": "msg_9ab46025f001Fi9w1794Wbfs44",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! I've fixed the API configuration. Now all three operations (Improve, Rephrase, Summarize) will use **qwen-max** instead of fallback responses or qwen-turbo.\n\n## What I Changed:\n\n1. **Rephrase**: Now calls `rephraseTextWithQwen3Max()` using qwen-max model instead of hardcoded fallback\n2. **Summarize**: Now calls `summarizeTextWithQwen3Max()` using qwen-max model with proper AI summarization\n3. **Both functions**: Updated to use the same timeout and error handling pattern as the working Improve function\n\n## Current Model Configuration:\n- ✅ **Translate**: Uses translation model (existing)\n- ✅ **Improve Writing**: Uses qwen-max  \n- ✅ **Rephrase**: Now uses qwen-max\n- ✅ **Summarize**: Now uses qwen-max\n\nAll three writing assistance features should now work properly with the qwen-max model instead of basic fallbacks. The timeout issues should also be resolved since I'm using the same proven pattern from the working Improve function.",
+  "time": {
+    "start": 1759515153814,
+    "end": 1759515153814
+  }
+}

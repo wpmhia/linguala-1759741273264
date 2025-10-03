@@ -1,0 +1,7 @@
+{
+  "id": "prt_9a8ce79d5001m8gehOUzVUB04k",
+  "type": "text",
+  "text": "Failed to parse URL\ntrans_defs.js:2907 Imprivata CE >> Creating LogHelper_Content\ncontent.js:985 Imprivata CE >> setUp (content)\nconfirmid_content.js:286 Imprivata CE >> setUp (confirmid_content)\ntrans_defs.js:2850 Imprivata CE >> Disable Trace Logging\ncapture_page_info.js:1016 Imprivata CE >> Gather controls: 0.42822265625 ms\nindex-_0FP_8z0.js:2 Particles loaded dp\nserver.ideavo.ai/api/automation/reconnect/cmg99ssn50qkdpn0f05d6dyq4:1   Failed to load resource: the server responded with a status of 404 (Not Found)\nChat-D745q4N7.js:3 No active process to reconnect to\ntrans_defs.js:2907 Imprivata CE >> Creating LogHelper_Content\nconfirmid_content.js:286 Imprivata CE >> setUp (confirmid_content)\ntrans_defs.js:2850 Imprivata CE >> Disable Trace Logging\n\nWhen trying https://www.dr.dk/ on the website part",
+  "messageID": "msg_9a8ce79d4001LYcQVARLuDygzg",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

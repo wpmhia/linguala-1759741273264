@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a8ce96370010qeLgjI9T53jgI",
+  "messageID": "msg_9a8ce7cb0001pV3kAfhymJREti",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01JtMAgHXnjh3uv6zWhFSMjN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/url-utils.ts",
+      "offset": 30,
+      "limit": 30
+    },
+    "output": "<file>\n00031|   if (!trimmedInput.startsWith('http://') && !trimmedInput.startsWith('https://')) {\n00032|     urlToValidate = `https://${trimmedInput}`\n00033|   }\n00034| \n00035|   // Basic URL validation\n00036|   if (!validator.isURL(urlToValidate, {\n00037|     protocols: ['http', 'https'],\n00038|     require_protocol: true,\n00039|     require_host: true,\n00040|     require_valid_protocol: true,\n00041|     allow_underscores: true,\n00042|     allow_trailing_dot: false,\n00043|     allow_protocol_relative_urls: false,\n00044|   })) {\n00045|     return {\n00046|       isValid: false,\n00047|       error: 'Invalid URL format'\n00048|     }\n00049|   }\n00050| \n00051|   try {\n00052|     const parsed = parseUrl(urlToValidate)\n00053|     \n00054|     // Additional validation\n00055|     if (!parsed.hostname || parsed.hostname.length === 0) {\n00056|       return {\n00057|         isValid: false,\n00058|         error: 'Invalid hostname'\n00059|       }\n00060|     }\n\n(File has more lines. Use 'offset' parameter to read beyond line 60)\n</file>",
+    "metadata": {
+      "preview": "  if (!trimmedInput.startsWith('http://') && !trimmedInput.startsWith('https://')) {\n    urlToValidate = `https://${trimmedInput}`\n  }\n\n  // Basic URL validation\n  if (!validator.isURL(urlToValidate, {\n    protocols: ['http', 'https'],\n    require_protocol: true,\n    require_host: true,\n    require_valid_protocol: true,\n    allow_underscores: true,\n    allow_trailing_dot: false,\n    allow_protocol_relative_urls: false,\n  })) {\n    return {\n      isValid: false,\n      error: 'Invalid URL format'\n    }\n  }\n"
+    },
+    "title": "lib/url-utils.ts",
+    "time": {
+      "start": 1759473736313,
+      "end": 1759473736323
+    }
+  }
+}

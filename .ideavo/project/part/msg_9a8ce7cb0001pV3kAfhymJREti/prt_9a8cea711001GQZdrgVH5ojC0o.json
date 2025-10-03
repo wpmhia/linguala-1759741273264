@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a8cea711001GQZdrgVH5ojC0o",
+  "messageID": "msg_9a8ce7cb0001pV3kAfhymJREti",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me debug this by testing the specific URL that's failing. The issue might be with the validator.js library being too strict. Let me create a simple test to see what's happening:",
+  "time": {
+    "start": 1759473740854,
+    "end": 1759473740854
+  }
+}

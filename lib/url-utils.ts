@@ -1,5 +1,4 @@
 import validator from 'validator'
-import { parse as parseUrl } from 'url-parse'
 
 export interface URLValidationResult {
   isValid: boolean
@@ -7,6 +6,7 @@ export interface URLValidationResult {
   error?: string
   domain?: string
   protocol?: string
+  warning?: string
 }
 
 export function validateAndNormalizeUrl(input: string): URLValidationResult {
@@ -32,27 +32,12 @@ export function validateAndNormalizeUrl(input: string): URLValidationResult {
     urlToValidate = `https://${trimmedInput}`
   }
 
-  // Basic URL validation
-  if (!validator.isURL(urlToValidate, {
-    protocols: ['http', 'https'],
-    require_protocol: true,
-    require_host: true,
-    require_valid_protocol: true,
-    allow_underscores: true,
-    allow_trailing_dot: false,
-    allow_protocol_relative_urls: false,
-  })) {
-    return {
-      isValid: false,
-      error: 'Invalid URL format'
-    }
-  }
-
   try {
-    const parsed = parseUrl(urlToValidate)
+    // Use built-in URL constructor for validation
+    const parsedUrl = new URL(urlToValidate)
     
     // Additional validation
-    if (!parsed.hostname || parsed.hostname.length === 0) {
+    if (!parsedUrl.hostname || parsedUrl.hostname.length === 0) {
       return {
         isValid: false,
         error: 'Invalid hostname'
@@ -60,7 +45,7 @@ export function validateAndNormalizeUrl(input: string): URLValidationResult {
     }
 
     // Check for localhost/private IPs (security measure)
-    const hostname = parsed.hostname.toLowerCase()
+    const hostname = parsedUrl.hostname.toLowerCase()
     const privatePatterns = [
       /^localhost$/,
       /^127\./,
@@ -87,8 +72,8 @@ export function validateAndNormalizeUrl(input: string): URLValidationResult {
     return {
       isValid: true,
       normalizedUrl: urlToValidate,
-      domain: parsed.hostname,
-      protocol: parsed.protocol,
+      domain: parsedUrl.hostname,
+      protocol: parsedUrl.protocol,
       ...(hasSuspiciousTld && { 
         warning: 'This domain uses a TLD that may be associated with spam or malicious content' 
       })
@@ -97,7 +82,7 @@ export function validateAndNormalizeUrl(input: string): URLValidationResult {
   } catch (error) {
     return {
       isValid: false,
-      error: 'Failed to parse URL'
+      error: 'Invalid URL format'
     }
   }
 }

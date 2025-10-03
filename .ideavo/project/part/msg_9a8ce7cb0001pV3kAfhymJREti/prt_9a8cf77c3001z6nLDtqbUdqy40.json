@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a8cf77c3001z6nLDtqbUdqy40",
+  "messageID": "msg_9a8ce7cb0001pV3kAfhymJREti",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Qd7WbNppMwh2b3nX2iVwWV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"next dev\" && npm run dev &",
+      "description": "Restart development server with URL validation fix"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart development server with URL validation fix"
+    },
+    "title": "cd /home/user/project && pkill -f \"next dev\" && npm run dev &",
+    "time": {
+      "start": 1759473793729,
+      "end": 1759473793744
+    }
+  }
+}

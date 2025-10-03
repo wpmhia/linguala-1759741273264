@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab667ae0001qiUsM98XFzyMef",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API key itself is being rejected by DashScope. This might be because:\n1. The API key has expired or been revoked\n2. The API key doesn't have permission for qwen-max model\n3. There's a region mismatch\n\nLet me try with a different model like `qwen-plus` that might have different permissions:",
+  "time": {
+    "start": 1759517245757,
+    "end": 1759517245757
+  }
+}

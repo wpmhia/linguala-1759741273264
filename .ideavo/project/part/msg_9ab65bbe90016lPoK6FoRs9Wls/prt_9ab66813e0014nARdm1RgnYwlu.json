@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab66813e0014nARdm1RgnYwlu",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Efc5ibnnC7LJVxmuhEUwnZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" -H \"Content-Type: application/json\" -d '{\"model\": \"qwen-plus\", \"messages\": [{\"role\": \"user\", \"content\": \"Fix grammar: Ik leest het verkeerd\"}], \"max_tokens\": 100}'",
+      "description": "Test API call with qwen-plus model"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   122    0     0  100   122      0    143 --:--:-- --:--:-- --:--:--   143\r100   295  100   173  100   122    201    141 --:--:-- --:--:-- --:--:--   343\n{\"error\":{\"message\":\"Incorrect API key provided. \",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"},\"request_id\":\"7a786ecd-0063-4088-9610-5252e7ecbb91\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   122    0     0  100   122      0    143 --:--:-- --:--:-- --:--:--   143\r100   295  100   173  100   122    201    141 --:--:-- --:--:-- --:--:--   343\n{\"error\":{\"message\":\"Incorrect API key provided. \",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"},\"request_id\":\"7a786ecd-0063-4088-9610-5252e7ecbb91\"}",
+      "exit": 0,
+      "description": "Test API call with qwen-plus model"
+    },
+    "title": "cd /home/user/project && curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" -H \"Content-Type: application/json\" -d '{\"model\": \"qwen-plus\", \"messages\": [{\"role\": \"user\", \"content\": \"Fix grammar: Ik leest het verkeerd\"}], \"max_tokens\": 100}'",
+    "time": {
+      "start": 1759517247127,
+      "end": 1759517248006
+    }
+  }
+}

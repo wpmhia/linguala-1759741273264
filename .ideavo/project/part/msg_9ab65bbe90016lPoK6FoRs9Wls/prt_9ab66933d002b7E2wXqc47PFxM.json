@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab66933d002b7E2wXqc47PFxM",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API key is being consistently rejected. This means **the DashScope API key has expired, been revoked, or is invalid**. \n\nThe reason the translation feature works but the qwen-max calls don't is because:\n1. **Translation uses a different service** (likely the `translateText` function from `translation-service.ts`)\n2. **qwen-max calls use DashScope API** which requires a valid API key\n\nLet me check what the translation service actually uses:",
+  "time": {
+    "start": 1759517253343,
+    "end": 1759517253343
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab6616a3001eo33IyhF49LvJ1",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_015K9BDRdHEtHM8iFTi6BHwb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions -H \"Authorization: Bearer ${DASHSCOPE_API_KEY}\" -H \"Content-Type: application/json\" -d '{\"model\": \"qwen-max\", \"messages\": [{\"role\": \"user\", \"content\": \"Fix grammar: Ik leest het verkeerd\"}], \"max_tokens\": 100}'",
+      "description": "Test direct API call to qwen-max"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   294  100   173  100   121    187    131 --:--:-- --:--:-- --:--:--   318\n{\"error\":{\"message\":\"Incorrect API key provided. \",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"},\"request_id\":\"289c5775-d503-427f-b490-fce796885ea7\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   294  100   173  100   121    187    131 --:--:-- --:--:-- --:--:--   318\n{\"error\":{\"message\":\"Incorrect API key provided. \",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"invalid_api_key\"},\"request_id\":\"289c5775-d503-427f-b490-fce796885ea7\"}",
+      "exit": 0,
+      "description": "Test direct API call to qwen-max"
+    },
+    "title": "cd /home/user/project && curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions -H \"Authorization: Bearer ${DASHSCOPE_API_KEY}\" -H \"Content-Type: application/json\" -d '{\"model\": \"qwen-max\", \"messages\": [{\"role\": \"user\", \"content\": \"Fix grammar: Ik leest het verkeerd\"}], \"max_tokens\": 100}'",
+    "time": {
+      "start": 1759517220657,
+      "end": 1759517221600
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab660391001bnqXP5ufW1W4yQ",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! I found the issue. According to the DashScope documentation, the model names are correct. Let me check if there are any other issues with the API call format. The documentation shows that `qwen-max` is a valid model name.\n\nLet me test the API call directly to see what error we're getting:",
+  "time": {
+    "start": 1759517215442,
+    "end": 1759517215442
+  }
+}

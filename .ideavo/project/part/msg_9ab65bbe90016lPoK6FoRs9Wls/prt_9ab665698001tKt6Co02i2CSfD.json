@@ -1,0 +1,23 @@
+{
+  "id": "prt_9ab665698001tKt6Co02i2CSfD",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01EKiD7tncUBfQuDj3r9k3jN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/.env"
+    },
+    "output": "<file>\n00001| # Environment variables\n00002| # Add your environment variables here\n00003| \n00004| # Translation Service - Required for the DeepL clone\n00005| DASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n00006| \n00007| # Neon Database - Required for user authentication and data persistence\n00008| DATABASE_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\"\n00009| DIRECT_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\"\n00010| \n00011| # Auth.js - Required for user authentication\n00012| NEXTAUTH_SECRET=IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\n00013| NEXTAUTH_URL=http://localhost:3000\n00014| \n00015| # OAuth Providers (Optional - for social login)\n00016| GOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\n00017| GOOGLE_CLIENT_SECRET=\"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\"\n00018| # GITHUB_CLIENT_ID=\"your-github-client-id\"\n00019| # GITHUB_CLIENT_SECRET=\"your-github-client-secret\"\n</file>",
+    "metadata": {
+      "preview": "# Environment variables\n# Add your environment variables here\n\n# Translation Service - Required for the DeepL clone\nDASHSCOPE_API_KEY=sk-ad9404d1ced5426082b73e685a95ffa3\n\n# Neon Database - Required for user authentication and data persistence\nDATABASE_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\"\nDIRECT_URL=\"postgresql://neondb_owner:npg_6s2VMobPfUaZ@ep-patient-rain-ag0k2kh0-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require\"\n\n# Auth.js - Required for user authentication\nNEXTAUTH_SECRET=IjS/yEM+Bg3qChn8y5jiQ6X8QLLeVfd16UfD5PPd2NQ=\nNEXTAUTH_URL=http://localhost:3000\n\n# OAuth Providers (Optional - for social login)\nGOOGLE_CLIENT_ID=\"839821888524-0af2hi0plai6tdlocj3656r1432mpuqe.apps.googleusercontent.com\"\nGOOGLE_CLIENT_SECRET=\"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\"\n# GITHUB_CLIENT_ID=\"your-github-client-id\"\n# GITHUB_CLIENT_SECRET=\"your-github-client-secret\""
+    },
+    "title": ".env",
+    "time": {
+      "start": 1759517235230,
+      "end": 1759517235231
+    }
+  }
+}

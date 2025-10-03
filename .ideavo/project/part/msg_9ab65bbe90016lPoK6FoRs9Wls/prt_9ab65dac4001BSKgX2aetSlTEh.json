@@ -1,0 +1,25 @@
+{
+  "id": "prt_9ab65dac4001BSKgX2aetSlTEh",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01NuXqvPvZ5Wce8YfK3g7JCi",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 115,
+      "limit": 20
+    },
+    "output": "<file>\n00116|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00117|         'Content-Type': 'application/json',\n00118|       },\n00119|       body: JSON.stringify({\n00120|         model: 'qwen-max',\n00121|         messages: [\n00122|           {\n00123|             role: 'system',\n00124|             content: 'You are a professional writing assistant. Improve the given text by enhancing clarity, grammar, style, and readability while maintaining the original meaning and tone. Fix any grammatical errors, improve word choice, and enhance sentence structure. Return only the improved text without explanations or quotes.'\n00125|           },\n00126|           {\n00127|             role: 'user',\n00128|             content: text\n00129|           }\n00130|         ],\n00131|         max_tokens: 1000,\n00132|         temperature: 0.3\n00133|       })\n00134|     })\n00135| \n\n(File has more lines. Use 'offset' parameter to read beyond line 135)\n</file>",
+    "metadata": {
+      "preview": "        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-max',\n        messages: [\n          {\n            role: 'system',\n            content: 'You are a professional writing assistant. Improve the given text by enhancing clarity, grammar, style, and readability while maintaining the original meaning and tone. Fix any grammatical errors, improve word choice, and enhance sentence structure. Return only the improved text without explanations or quotes.'\n          },\n          {\n            role: 'user',\n            content: text\n          }\n        ],\n        max_tokens: 1000,\n        temperature: 0.3\n      })\n    })\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759517203679,
+      "end": 1759517203680
+    }
+  }
+}

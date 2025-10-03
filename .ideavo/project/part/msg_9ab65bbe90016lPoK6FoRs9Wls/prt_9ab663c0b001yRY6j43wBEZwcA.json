@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab663c0b001yRY6j43wBEZwcA",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014nGZsRiLsu8cx7ej52YHru",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"API Key starts with: ${DASHSCOPE_API_KEY:0:10}\"",
+      "description": "Check API key prefix"
+    },
+    "output": "/bin/sh: 1: Bad substitution\n",
+    "metadata": {
+      "output": "/bin/sh: 1: Bad substitution\n",
+      "exit": 2,
+      "description": "Check API key prefix"
+    },
+    "title": "echo \"API Key starts with: ${DASHSCOPE_API_KEY:0:10}\"",
+    "time": {
+      "start": 1759517228233,
+      "end": 1759517228235
+    }
+  }
+}

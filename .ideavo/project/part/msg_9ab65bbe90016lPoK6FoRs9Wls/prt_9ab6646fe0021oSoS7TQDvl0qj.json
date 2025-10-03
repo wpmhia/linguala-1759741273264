@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab6646fe0021oSoS7TQDvl0qj",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01GXutRKRDDZrsAyGUVdkqd2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"API Key starts with: $(echo $DASHSCOPE_API_KEY | cut -c1-10)\"",
+      "description": "Check API key prefix safely"
+    },
+    "output": "API Key starts with: sk-ad9404d\n",
+    "metadata": {
+      "output": "API Key starts with: sk-ad9404d\n",
+      "exit": 0,
+      "description": "Check API key prefix safely"
+    },
+    "title": "echo \"API Key starts with: $(echo $DASHSCOPE_API_KEY | cut -c1-10)\"",
+    "time": {
+      "start": 1759517231458,
+      "end": 1759517231464
+    }
+  }
+}

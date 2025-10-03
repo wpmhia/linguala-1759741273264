@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab662d0e001CIwd3V2RPm1LmF",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01SDgMTtiP3fBEKr2xyAcqbo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"API Key length: ${#DASHSCOPE_API_KEY}\"",
+      "description": "Check if API key is loaded"
+    },
+    "output": "API Key length: 35\n",
+    "metadata": {
+      "output": "API Key length: 35\n",
+      "exit": 0,
+      "description": "Check if API key is loaded"
+    },
+    "title": "echo \"API Key length: ${#DASHSCOPE_API_KEY}\"",
+    "time": {
+      "start": 1759517225019,
+      "end": 1759517225020
+    }
+  }
+}

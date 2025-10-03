@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab65e637001tHWPl96GoveKxK",
+  "messageID": "msg_9ab65bbe90016lPoK6FoRs9Wls",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see the issue! The model name might be incorrect. For DashScope, the correct model name for qwen-max should be `qwen-max-latest` or `qwen-max-0403`. Let me also check if there are any other API format issues:",
+  "time": {
+    "start": 1759517207424,
+    "end": 1759517207424
+  }
+}

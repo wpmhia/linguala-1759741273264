@@ -1,3 +1,10 @@
+/**
+ * Document Translation API Route
+ * 
+ * Processes and translates uploaded documents (PDF, DOCX, TXT) using DashScope API.
+ * ENVIRONMENT: DASHSCOPE_API_KEY must be set (currently: sk-ad9404d1ced5426082b73e685a95ffa3)
+ * Uses chunked translation for large documents to handle API limits.
+ */
 import { NextRequest, NextResponse } from 'next/server'
 import { promises as fs } from 'fs'
 import path from 'path'

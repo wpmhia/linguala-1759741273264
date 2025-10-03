@@ -1,0 +1,18 @@
+{
+  "id": "prt_9a9197568001AYlpdpWVwr0Ajk",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "docs(api-key): configure and document dashscope api key setup",
+  "cost": 1.0147548,
+  "tokens": {
+    "input": 0,
+    "output": 653,
+    "reasoning": 0,
+    "cache": {
+      "write": 174,
+      "read": 82155
+    }
+  }
+}

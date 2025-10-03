@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a915b611001ZE153kT1OAgEDa",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_016RT3aqHbcJVMeWPKHirDPv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl http://localhost:3000/api/translate/status",
+      "description": "Test status endpoint after server startup"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to localhost port 3000 after 0 ms: Couldn't connect to server\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (7) Failed to connect to localhost port 3000 after 0 ms: Couldn't connect to server\n",
+      "exit": 7,
+      "description": "Test status endpoint after server startup"
+    },
+    "title": "sleep 2 && curl http://localhost:3000/api/translate/status",
+    "time": {
+      "start": 1759478397141,
+      "end": 1759478399158
+    }
+  }
+}

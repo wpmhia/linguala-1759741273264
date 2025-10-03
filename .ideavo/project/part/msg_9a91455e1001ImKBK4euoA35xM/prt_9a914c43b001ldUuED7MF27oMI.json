@@ -1,0 +1,23 @@
+{
+  "id": "prt_9a914c43b001ldUuED7MF27oMI",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_018tpXDbvVeNTqqCUjWkKyDY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts"
+    },
+    "output": "<file>\n00001| import { NextRequest, NextResponse } from 'next/server'\n00002| import { translateText } from '@/lib/translation-service'\n00003| \n00004| export async function POST(request: NextRequest) {\n00005|   try {\n00006|     const body = await request.json()\n00007|     console.log('Translation request body:', body)\n00008|     \n00009|     const { text, sourceLang, targetLang, domain, glossary } = body\n00010| \n00011|     if (!text || !targetLang) {\n00012|       console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n00013|       return NextResponse.json(\n00014|         { error: 'Text and target language are required' },\n00015|         { status: 400 }\n00016|       )\n00017|     }\n00018| \n00019|     // Use the shared translation service\n00020|     const result = await translateText(text, sourceLang, targetLang, {\n00021|       domain,\n00022|       glossary\n00023|     })\n00024| \n00025|     return NextResponse.json(result)\n00026| \n00027|   } catch (error) {\n00028|     console.error('Translation error:', error)\n00029|     return NextResponse.json(\n00030|       { error: 'Internal server error' },\n00031|       { status: 500 }\n00032|     )\n00033|   }\n00034| }\n</file>",
+    "metadata": {
+      "preview": "import { NextRequest, NextResponse } from 'next/server'\nimport { translateText } from '@/lib/translation-service'\n\nexport async function POST(request: NextRequest) {\n  try {\n    const body = await request.json()\n    console.log('Translation request body:', body)\n    \n    const { text, sourceLang, targetLang, domain, glossary } = body\n\n    if (!text || !targetLang) {\n      console.log('Missing required fields:', { text: !!text, targetLang: !!targetLang })\n      return NextResponse.json(\n        { error: 'Text and target language are required' },\n        { status: 400 }\n      )\n    }\n\n    // Use the shared translation service\n    const result = await translateText(text, sourceLang, targetLang, {"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759478335007,
+      "end": 1759478335012
+    }
+  }
+}

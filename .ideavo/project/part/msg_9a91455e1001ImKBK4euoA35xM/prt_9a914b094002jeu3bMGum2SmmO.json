@@ -1,0 +1,26 @@
+{
+  "id": "prt_9a914b094002jeu3bMGum2SmmO",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Xqtm41GdUbmFhqJbRdgsyr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "// Shared translation service that can be used both in API routes and internally",
+      "newString": "/**\n * Shared Translation Service for Linguala Platform\n * \n * This service uses Alibaba Cloud DashScope's Qwen translation model for high-quality translations.\n * \n * REQUIRED ENVIRONMENT VARIABLE:\n * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)\n *   Get from: https://bailian.console.aliyun.com/ → Model Studio → Create API Key\n *   This key is already configured in .env file: sk-ad9404d1ced5426082b73e685a95ffa3\n * \n * USAGE:\n * - translateText(): For single text translation (used by main translator)\n * - translateLongText(): For document translation with chunking (used by document processor)\n * \n * FALLBACK: If API fails, falls back to dictionary-based translations for common phrases\n */"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -1,5 +1,20 @@\n-// Shared translation service that can be used both in API routes and internally\n+/**\n+ * Shared Translation Service for Linguala Platform\n+ * \n+ * This service uses Alibaba Cloud DashScope's Qwen translation model for high-quality translations.\n+ * \n+ * REQUIRED ENVIRONMENT VARIABLE:\n+ * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)\n+ *   Get from: https://bailian.console.aliyun.com/ → Model Studio → Create API Key\n+ *   This key is already configured in .env file: sk-ad9404d1ced5426082b73e685a95ffa3\n+ * \n+ * USAGE:\n+ * - translateText(): For single text translation (used by main translator)\n+ * - translateLongText(): For document translation with chunking (used by document processor)\n+ * \n+ * FALLBACK: If API fails, falls back to dictionary-based translations for common phrases\n+ */\n \n // Language mapping for translation API - includes all frontend languages\n const LANGUAGE_MAP: Record<string, string> = {\n   auto: 'auto',\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759478331903,
+      "end": 1759478331921
+    }
+  }
+}

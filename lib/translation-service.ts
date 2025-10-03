@@ -1,4 +1,19 @@
-// Shared translation service that can be used both in API routes and internally
+/**
+ * Shared Translation Service for Linguala Platform
+ * 
+ * This service uses Alibaba Cloud DashScope's Qwen translation model for high-quality translations.
+ * 
+ * REQUIRED ENVIRONMENT VARIABLE:
+ * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)
+ *   Get from: https://bailian.console.aliyun.com/ → Model Studio → Create API Key
+ *   This key is already configured in .env file: sk-ad9404d1ced5426082b73e685a95ffa3
+ * 
+ * USAGE:
+ * - translateText(): For single text translation (used by main translator)
+ * - translateLongText(): For document translation with chunking (used by document processor)
+ * 
+ * FALLBACK: If API fails, falls back to dictionary-based translations for common phrases
+ */
 
 // Language mapping for translation API - includes all frontend languages
 const LANGUAGE_MAP: Record<string, string> = {
@@ -120,8 +135,14 @@ export async function translateText(
 
     const apiKey = process.env.DASHSCOPE_API_KEY
     if (!apiKey) {
-      throw new Error('API key not configured')
+      console.error('DASHSCOPE_API_KEY not found in environment variables')
+      console.error('Please ensure DASHSCOPE_API_KEY is set in .env file')
+      console.error('Current value should be: sk-ad9404d1ced5426082b73e685a95ffa3')
+      throw new Error('API key not configured. Please set DASHSCOPE_API_KEY environment variable.')
     }
+    
+    // Log API key status (first 6 chars for security)
+    console.log(`Using DashScope API key: ${apiKey.substring(0, 6)}...`)
 
     // Prepare the translation options
     const sourceLanguage = LANGUAGE_MAP[sourceLang] || (sourceLang === 'auto' ? 'auto' : sourceLang)
@@ -194,6 +215,33 @@ export async function translateText(
       targetLang,
       fallback: true
     }
+  }
+}
+
+/**
+ * Verify DashScope API configuration
+ * Checks if API key is properly configured and accessible
+ */
+export function verifyApiConfiguration(): { configured: boolean; keyPreview?: string; error?: string } {
+  const apiKey = process.env.DASHSCOPE_API_KEY
+  
+  if (!apiKey) {
+    return {
+      configured: false,
+      error: 'DASHSCOPE_API_KEY not found in environment variables. Please set it in .env file.'
+    }
+  }
+  
+  if (!apiKey.startsWith('sk-')) {
+    return {
+      configured: false,
+      error: 'Invalid API key format. DashScope API keys should start with "sk-"'
+    }
+  }
+  
+  return {
+    configured: true,
+    keyPreview: `${apiKey.substring(0, 6)}...${apiKey.substring(apiKey.length - 4)}`
   }
 }
 

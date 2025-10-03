@@ -1,4 +1,5 @@
 {
+  "_comment": "DASHSCOPE_API_KEY is configured in .env: sk-ad9404d1ced5426082b73e685a95ffa3",
   "name": "ideavo-nextjs",
   "version": "0.1.0",
   "private": true,

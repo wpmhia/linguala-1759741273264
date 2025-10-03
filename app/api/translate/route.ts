@@ -1,3 +1,9 @@
+/**
+ * Translation API Route
+ * 
+ * Handles text translation requests using DashScope API.
+ * ENVIRONMENT: DASHSCOPE_API_KEY must be set (currently: sk-ad9404d1ced5426082b73e685a95ffa3)
+ */
 import { NextRequest, NextResponse } from 'next/server'
 import { translateText } from '@/lib/translation-service'
 

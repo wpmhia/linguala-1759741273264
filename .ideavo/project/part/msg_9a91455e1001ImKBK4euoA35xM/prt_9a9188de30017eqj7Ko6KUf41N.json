@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a9188de30017eqj7Ko6KUf41N",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_014PjwYj8uZxKCuv6yaoZzfq",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/package.json",
+      "limit": 10
+    },
+    "output": "<file>\n00001| {\n00002|   \"name\": \"ideavo-nextjs\",\n00003|   \"version\": \"0.1.0\",\n00004|   \"private\": true,\n00005|   \"scripts\": {\n00006|     \"dev\": \"next dev\",\n00007|     \"build\": \"next build\",\n00008|     \"start\": \"next start\",\n00009|     \"db:studio\": \"prisma studio\",\n00010|     \"db:seed\": \"prisma db seed\"\n\n(File has more lines. Use 'offset' parameter to read beyond line 10)\n</file>",
+    "metadata": {
+      "preview": "{\n  \"name\": \"ideavo-nextjs\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"db:studio\": \"prisma studio\",\n    \"db:seed\": \"prisma db seed\""
+    },
+    "title": "package.json",
+    "time": {
+      "start": 1759478583302,
+      "end": 1759478583304
+    }
+  }
+}

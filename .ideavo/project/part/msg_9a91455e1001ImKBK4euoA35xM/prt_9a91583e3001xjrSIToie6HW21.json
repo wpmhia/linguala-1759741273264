@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a91583e3001xjrSIToie6HW21",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me test this status endpoint to verify everything is configured correctly:",
+  "time": {
+    "start": 1759478384320,
+    "end": 1759478384320
+  }
+}

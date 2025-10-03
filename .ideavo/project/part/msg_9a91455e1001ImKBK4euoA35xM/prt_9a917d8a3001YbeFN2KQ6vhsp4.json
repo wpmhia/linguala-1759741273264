@@ -1,0 +1,11 @@
+{
+  "id": "prt_9a917d8a3001YbeFN2KQ6vhsp4",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "There seems to be an issue with the status endpoint. Let me cancel this and test the basic translation endpoint instead to verify the API key is working:",
+  "time": {
+    "start": 1759478537385,
+    "end": 1759478537385
+  }
+}

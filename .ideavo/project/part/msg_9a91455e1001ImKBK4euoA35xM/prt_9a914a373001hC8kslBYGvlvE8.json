@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a914a373001hC8kslBYGvlvE8",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01MqeMTjAPCymcesd5cquYxA",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "limit": 10
+    },
+    "output": "<file>\n00001| // Shared translation service that can be used both in API routes and internally\n00002| \n00003| // Language mapping for translation API - includes all frontend languages\n00004| const LANGUAGE_MAP: Record<string, string> = {\n00005|   auto: 'auto',\n00006|   \n00007|   // Popular EU Languages\n00008|   en: 'English',\n00009|   de: 'German', \n00010|   fr: 'French',\n\n(File has more lines. Use 'offset' parameter to read beyond line 10)\n</file>",
+    "metadata": {
+      "preview": "// Shared translation service that can be used both in API routes and internally\n\n// Language mapping for translation API - includes all frontend languages\nconst LANGUAGE_MAP: Record<string, string> = {\n  auto: 'auto',\n  \n  // Popular EU Languages\n  en: 'English',\n  de: 'German', \n  fr: 'French',"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759478326628,
+      "end": 1759478326629
+    }
+  }
+}

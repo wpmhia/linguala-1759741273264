@@ -1,0 +1,25 @@
+{
+  "id": "prt_9a9151b54001tCKGBENVsMnx2T",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017uxaMMYMLzCavzg2PUTc4k",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 130,
+      "limit": 20
+    },
+    "output": "<file>\n00131|   try {\n00132|     if (!text || !targetLang) {\n00133|       throw new Error('Text and target language are required')\n00134|     }\n00135| \n00136|     const apiKey = process.env.DASHSCOPE_API_KEY\n00137|     if (!apiKey) {\n00138|       throw new Error('API key not configured')\n00139|     }\n00140| \n00141|     // Prepare the translation options\n00142|     const sourceLanguage = LANGUAGE_MAP[sourceLang] || (sourceLang === 'auto' ? 'auto' : sourceLang)\n00143|     const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n00144| \n00145|     // Apply glossary preprocessing if provided\n00146|     let processedText = text\n00147|     if (options?.glossary && Array.isArray(options.glossary)) {\n00148|       options.glossary.forEach((entry: any) => {\n00149|         if (entry.source && entry.target) {\n00150|           // Simple case-insensitive replacement\n\n(File has more lines. Use 'offset' parameter to read beyond line 150)\n</file>",
+    "metadata": {
+      "preview": "  try {\n    if (!text || !targetLang) {\n      throw new Error('Text and target language are required')\n    }\n\n    const apiKey = process.env.DASHSCOPE_API_KEY\n    if (!apiKey) {\n      throw new Error('API key not configured')\n    }\n\n    // Prepare the translation options\n    const sourceLanguage = LANGUAGE_MAP[sourceLang] || (sourceLang === 'auto' ? 'auto' : sourceLang)\n    const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n\n    // Apply glossary preprocessing if provided\n    let processedText = text\n    if (options?.glossary && Array.isArray(options.glossary)) {\n      options.glossary.forEach((entry: any) => {\n        if (entry.source && entry.target) {\n          // Simple case-insensitive replacement"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759478357407,
+      "end": 1759478357409
+    }
+  }
+}

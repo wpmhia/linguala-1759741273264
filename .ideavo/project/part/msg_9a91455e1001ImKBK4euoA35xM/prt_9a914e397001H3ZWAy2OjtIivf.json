@@ -1,0 +1,24 @@
+{
+  "id": "prt_9a914e397001H3ZWAy2OjtIivf",
+  "messageID": "msg_9a91455e1001ImKBK4euoA35xM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Sqt9Ly7J7jWTefrgUAUrqJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/documents/translate/route.ts",
+      "limit": 10
+    },
+    "output": "<file>\n00001| import { NextRequest, NextResponse } from 'next/server'\n00002| import { promises as fs } from 'fs'\n00003| import path from 'path'\n00004| import { z } from 'zod'\n00005| import { PDFProcessor, PDFTranslationData } from '@/lib/document-processors/pdf-processor'\n00006| import { DocxProcessor, DocxTranslationData } from '@/lib/document-processors/docx-processor'\n00007| import { translateLongText } from '@/lib/translation-service'\n00008| \n00009| // Request validation schema\n00010| const TranslateDocumentSchema = z.object({\n\n(File has more lines. Use 'offset' parameter to read beyond line 10)\n</file>",
+    "metadata": {
+      "preview": "import { NextRequest, NextResponse } from 'next/server'\nimport { promises as fs } from 'fs'\nimport path from 'path'\nimport { z } from 'zod'\nimport { PDFProcessor, PDFTranslationData } from '@/lib/document-processors/pdf-processor'\nimport { DocxProcessor, DocxTranslationData } from '@/lib/document-processors/docx-processor'\nimport { translateLongText } from '@/lib/translation-service'\n\n// Request validation schema\nconst TranslateDocumentSchema = z.object({"
+    },
+    "title": "app/api/documents/translate/route.ts",
+    "time": {
+      "start": 1759478343093,
+      "end": 1759478343094
+    }
+  }
+}

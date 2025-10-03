@@ -1,0 +1,18 @@
+{
+  "id": "prt_9ab91d8840011pXjH4ld5Br3GG",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(api): update DashScope endpoint to international region",
+  "cost": 0.7643700000000001,
+  "tokens": {
+    "input": 2,
+    "output": 374,
+    "reasoning": 0,
+    "cache": {
+      "write": 202,
+      "read": 72032
+    }
+  }
+}

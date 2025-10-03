@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab8d071a001S1ryiElF9hnfV1",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Ah! That's the issue! The API key is for **international** region but I'm using the **China mainland endpoint**. For international DashScope API keys, I need to use the **Singapore endpoint**.\n\nLet me fix this by updating the API endpoint from:\n- ❌ `https://dashscope.aliyuncs.com/compatible-mode/v1` (China mainland)\n- ✅ `https://dashscope-intl.aliyuncs.com/compatible-mode/v1` (International/Singapore)",
+  "time": {
+    "start": 1759519773188,
+    "end": 1759519773188
+  }
+}

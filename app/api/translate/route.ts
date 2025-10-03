@@ -104,13 +104,12 @@ async function improveWritingFallback(text: string) {
   }
 }
 
-// Text improvement function using qwen3-max (currently disabled due to API issues)
+// Text improvement function using qwen-max
 async function improveWritingWithQwen3Max(text: string) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
   try {
-    // Create a race condition between the API call and timeout
-    const apiCall = fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
@@ -132,12 +131,6 @@ async function improveWritingWithQwen3Max(text: string) {
         temperature: 0.3
       })
     })
-
-    const timeout = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('Timeout')), 2000)
-    )
-
-    const response = await Promise.race([apiCall, timeout]) as Response
     
     if (!response.ok) {
       throw new Error(`API request failed: ${response.status}`)
@@ -203,7 +196,7 @@ async function rephraseTextWithQwen3Max(text: string) {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 2000) // 2 second timeout
     
-    const response = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
@@ -264,7 +257,7 @@ async function summarizeTextWithQwen3Max(text: string) {
   
   try {
     // Create a race condition between the API call and timeout
-    const apiCall = fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    const apiCall = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
@@ -288,7 +281,7 @@ async function summarizeTextWithQwen3Max(text: string) {
     })
 
     const timeout = new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('Timeout')), 2000)
+      setTimeout(() => reject(new Error('Timeout')), 10000)
     )
 
     const response = await Promise.race([apiCall, timeout]) as Response

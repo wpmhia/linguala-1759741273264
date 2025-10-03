@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab908cb8001mRzHiwGFbiPVWE",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The issue persists. Let me check if there's a fundamental problem with the Next.js API route or if the environment variable isn't being read correctly in the Next.js context. Let me create a simple test to see if the API route is working at all:",
+  "time": {
+    "start": 1759520002588,
+    "end": 1759520002588
+  }
+}

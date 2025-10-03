@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab8eca40001SOdf96DOf4JELI",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me check if there's a different issue by looking at the timeouts. Since the direct API call worked, but the Next.js API route is hanging, there might be an issue with the Promise.race timeout logic. Let me increase the timeout:",
+  "time": {
+    "start": 1759519887187,
+    "end": 1759519887187
+  }
+}

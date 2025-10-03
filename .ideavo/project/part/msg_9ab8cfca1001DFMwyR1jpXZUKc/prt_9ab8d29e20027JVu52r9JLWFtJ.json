@@ -1,0 +1,25 @@
+{
+  "id": "prt_9ab8d29e20027JVu52r9JLWFtJ",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Ug7KxjdvQ817uLQzLTjUah",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 110,
+      "limit": 10
+    },
+    "output": "<file>\n00111|   try {\n00112|     // Create a race condition between the API call and timeout\n00113|     const apiCall = fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00114|       method: 'POST',\n00115|       headers: {\n00116|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00117|         'Content-Type': 'application/json',\n00118|       },\n00119|       body: JSON.stringify({\n00120|         model: 'qwen-max',\n\n(File has more lines. Use 'offset' parameter to read beyond line 120)\n</file>",
+    "metadata": {
+      "preview": "  try {\n    // Create a race condition between the API call and timeout\n    const apiCall = fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-max',"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759519780017,
+      "end": 1759519780021
+    }
+  }
+}

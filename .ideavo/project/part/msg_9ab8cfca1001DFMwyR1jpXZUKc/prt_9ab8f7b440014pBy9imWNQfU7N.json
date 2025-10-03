@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab8f7b440014pBy9imWNQfU7N",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "There's still an issue with the Next.js API route hanging. Since the direct API call works perfectly, but the Next.js route doesn't, this suggests there might be an issue with how the async function is being handled or the Promise.race logic.\n\nLet me simplify the function to remove the Promise.race and just use a direct async/await with a simpler timeout:",
+  "time": {
+    "start": 1759519933338,
+    "end": 1759519933338
+  }
+}

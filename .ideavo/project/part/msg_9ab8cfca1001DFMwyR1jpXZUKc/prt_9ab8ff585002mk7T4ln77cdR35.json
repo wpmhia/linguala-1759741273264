@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab8ff585002mk7T4ln77cdR35",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01BxmTEvDmWvnTnuY73rjetN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\"",
+      "description": "Restart server with simplified API call"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart server with simplified API call"
+    },
+    "title": "pkill -f \"next dev\"",
+    "time": {
+      "start": 1759519963245,
+      "end": 1759519963261
+    }
+  }
+}

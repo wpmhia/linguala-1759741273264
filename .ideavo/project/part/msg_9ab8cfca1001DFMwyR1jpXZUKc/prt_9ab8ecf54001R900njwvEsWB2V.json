@@ -1,0 +1,27 @@
+{
+  "id": "prt_9ab8ecf54001R900njwvEsWB2V",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01UAPhEiM59yWspKeNrKvSLF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "    const timeout = new Promise((_, reject) => \n      setTimeout(() => reject(new Error('Timeout')), 2000)\n    )",
+      "newString": "    const timeout = new Promise((_, reject) => \n      setTimeout(() => reject(new Error('Timeout')), 10000)\n    )",
+      "replaceAll": true
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -133,9 +133,9 @@\n   })\n })\n \n const timeout = new Promise((_, reject) => \n-  setTimeout(() => reject(new Error('Timeout')), 2000)\n+  setTimeout(() => reject(new Error('Timeout')), 10000)\n )\n \n const response = await Promise.race([apiCall, timeout]) as Response\n \n@@ -287,9 +287,9 @@\n   })\n })\n \n const timeout = new Promise((_, reject) => \n-  setTimeout(() => reject(new Error('Timeout')), 2000)\n+  setTimeout(() => reject(new Error('Timeout')), 10000)\n )\n \n const response = await Promise.race([apiCall, timeout]) as Response\n \n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759519889040,
+      "end": 1759519889044
+    }
+  }
+}

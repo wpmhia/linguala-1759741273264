@@ -1,0 +1,26 @@
+{
+  "id": "prt_9ab8ee15d002eh4gBJjf08DIs4",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01RTHmwwfF66kyh828b6ouTE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\"",
+      "description": "Restart server with longer timeout"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart server with longer timeout"
+    },
+    "title": "pkill -f \"next dev\"",
+    "time": {
+      "start": 1759519892449,
+      "end": 1759519892464
+    }
+  }
+}

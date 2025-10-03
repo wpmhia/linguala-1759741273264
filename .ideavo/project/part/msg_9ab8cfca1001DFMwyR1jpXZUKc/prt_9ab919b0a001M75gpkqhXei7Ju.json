@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab919b0a001M75gpkqhXei7Ju",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Even the basic translate operation is hanging! This suggests there's a fundamental issue with the entire Next.js API route, not just the qwen-max calls. The problem is more systemic.\n\nLet me check if there's an infinite loop or blocking code in the API route. Since even the translation operation hangs, and that only uses fallback logic, there must be something blocking the entire route.\n\nLet me create a simple test endpoint to debug this:",
+  "time": {
+    "start": 1759520073138,
+    "end": 1759520073138
+  }
+}

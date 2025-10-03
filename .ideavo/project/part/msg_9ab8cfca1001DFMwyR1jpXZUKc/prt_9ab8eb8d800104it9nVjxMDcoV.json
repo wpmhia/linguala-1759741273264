@@ -1,0 +1,11 @@
+{
+  "id": "prt_9ab8eb8d800104it9nVjxMDcoV",
+  "messageID": "msg_9ab8cfca1001DFMwyR1jpXZUKc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The request is still hanging even with the correct international endpoint. This suggests there might be a Next.js-specific issue. Let me check if there's a timeout issue in the way I'm handling the async functions.",
+  "time": {
+    "start": 1759519882810,
+    "end": 1759519882810
+  }
+}

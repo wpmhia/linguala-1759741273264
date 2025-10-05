@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b59b27ee001CXjyZ46qUNgNXj",
+  "messageID": "msg_9b599dcac0013Ez7TnIDC4jb8A",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me test the API by making a direct curl request to verify the Qwen3 connection:",
+  "time": {
+    "start": 1759688469260,
+    "end": 1759688469260
+  }
+}

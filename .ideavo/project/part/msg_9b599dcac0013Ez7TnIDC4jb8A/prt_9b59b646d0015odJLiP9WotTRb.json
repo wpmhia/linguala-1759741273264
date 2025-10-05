@@ -1,0 +1,27 @@
+{
+  "id": "prt_9b59b646d0015odJLiP9WotTRb",
+  "messageID": "msg_9b599dcac0013Ez7TnIDC4jb8A",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01F4KcUCXn1rG3q7dd9LHaHH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev &\nNEXT_PID=$!\nsleep 5\ncurl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"improve\",\n    \"text\": \"This is a test sentence that need fixing.\",\n    \"correctionsOnly\": false,\n    \"writingStyle\": \"simple\",\n    \"tone\": \"friendly\"\n  }'\nsleep 2\nkill $NEXT_PID 2>/dev/null || true",
+      "timeout": 15000,
+      "description": "Test local API endpoint for writing improvement"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 1930ms\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   173    0     0  100   173      0    860 --:--:-- --:--:-- --:--:--   856 ✓ Compiled /api/translate in 431ms (57 modules)\nProcessing request body: {\n  operation: 'improve',\n  text: 'This is a test sentence that need fixing.',\n  correctionsOnly: false,\n  writingStyle: 'simple',\n  tone: 'friendly'\n}\nStarting qwen-max API call for text: This is a test sentence that need fixing.\nImprovement options: { correctionsOnly: false, writingStyle: 'simple', tone: 'friendly' }\nWaiting for API response...\n\r100   173    0     0  100   173      0    143  0:00:01  0:00:01 --:--:--   143API response received: 200\n\r100   315    0   142  100   173     75     91  0:00:01  0:00:01 --:--:--   167\n{\"originalText\":\"This is a test sentence that need fixing.\",\"improvedText\":\"This is a test sentence that needs fixing.\",\"operation\":\"improve\"} POST /api/translate 200 in 1873ms\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 1930ms\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   173    0     0  100   173      0    860 --:--:-- --:--:-- --:--:--   856 ✓ Compiled /api/translate in 431ms (57 modules)\nProcessing request body: {\n  operation: 'improve',\n  text: 'This is a test sentence that need fixing.',\n  correctionsOnly: false,\n  writingStyle: 'simple',\n  tone: 'friendly'\n}\nStarting qwen-max API call for text: This is a test sentence that need fixing.\nImprovement options: { correctionsOnly: false, writingStyle: 'simple', tone: 'friendly' }\nWaiting for API response...\n\r100   173    0     0  100   173      0    143  0:00:01  0:00:01 --:--:--   143API response received: 200\n\r100   315    0   142  100   173     75     91  0:00:01  0:00:01 --:--:--   167\n{\"originalText\":\"This is a test sentence that need fixing.\",\"improvedText\":\"This is a test sentence that needs fixing.\",\"operation\":\"improve\"} POST /api/translate 200 in 1873ms\n",
+      "exit": 0,
+      "description": "Test local API endpoint for writing improvement"
+    },
+    "title": "cd /home/user/project && npm run dev &\nNEXT_PID=$!\nsleep 5\ncurl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"improve\",\n    \"text\": \"This is a test sentence that need fixing.\",\n    \"correctionsOnly\": false,\n    \"writingStyle\": \"simple\",\n    \"tone\": \"friendly\"\n  }'\nsleep 2\nkill $NEXT_PID 2>/dev/null || true",
+    "time": {
+      "start": 1759688486870,
+      "end": 1759688501880
+    }
+  }
+}

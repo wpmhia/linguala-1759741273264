@@ -36,12 +36,8 @@ export async function POST(request: NextRequest) {
         break
 
       case 'improve':
-        result = {
-          originalText: text,
-          improvedText: text.replace(/\bIk leest\b/g, 'Ik lees').replace(/\bik leest\b/g, 'ik lees'),
-          operation: 'improve',
-          fallback: true
-        }
+        const { correctionsOnly, writingStyle, tone } = body
+        result = await improveWritingWithQwen3Max(text, { correctionsOnly, writingStyle, tone })
         break
 
       default:
@@ -102,13 +98,59 @@ async function improveWritingFallback(text: string) {
 }
 
 // Text improvement function using qwen-max
-async function improveWritingWithQwen3Max(text: string) {
+async function improveWritingWithQwen3Max(text: string, options: { correctionsOnly?: boolean, writingStyle?: string, tone?: string } = {}) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   console.log('Starting qwen-max API call for text:', text.substring(0, 50))
+  console.log('Improvement options:', options)
+  
+  // Build system prompt based on options
+  let systemPrompt = 'You are a professional writing assistant. '
+  
+  if (options.correctionsOnly) {
+    systemPrompt += 'Focus ONLY on correcting grammar, spelling, and punctuation errors. Do not change the style, tone, or word choice unless there are clear errors. '
+  } else {
+    systemPrompt += 'Improve the given text by enhancing clarity, grammar, style, and readability while maintaining the original meaning. '
+    
+    if (options.writingStyle) {
+      switch (options.writingStyle) {
+        case 'simple':
+          systemPrompt += 'Use simple, clear language that is easy to understand. '
+          break
+        case 'business':
+          systemPrompt += 'Use professional, formal business language. '
+          break
+        case 'casual':
+          systemPrompt += 'Use casual, conversational language. '
+          break
+        case 'academic':
+          systemPrompt += 'Use formal, academic language with precise terminology. '
+          break
+      }
+    }
+    
+    if (options.tone) {
+      switch (options.tone) {
+        case 'friendly':
+          systemPrompt += 'Maintain a warm, friendly tone. '
+          break
+        case 'professional':
+          systemPrompt += 'Maintain a professional, courteous tone. '
+          break
+        case 'enthusiastic':
+          systemPrompt += 'Maintain an enthusiastic, energetic tone. '
+          break
+        case 'diplomatic':
+          systemPrompt += 'Maintain a diplomatic, tactful tone. '
+          break
+      }
+    }
+  }
+  
+  systemPrompt += 'Return only the improved text without explanations, quotes, or additional commentary.'
   
   // Add timeout wrapper
   const timeoutPromise = new Promise((_, reject) => {
-    setTimeout(() => reject(new Error('API call timeout after 8 seconds')), 8000)
+    setTimeout(() => reject(new Error('API call timeout after 10 seconds')), 10000)
   })
   
   try {
@@ -123,7 +165,7 @@ async function improveWritingWithQwen3Max(text: string) {
         messages: [
           {
             role: 'system',
-            content: 'You are a professional writing assistant. Improve the given text by enhancing clarity, grammar, style, and readability while maintaining the original meaning and tone. Fix any grammatical errors, improve word choice, and enhance sentence structure. Return only the improved text without explanations or quotes.'
+            content: systemPrompt
           },
           {
             role: 'user',
@@ -131,7 +173,7 @@ async function improveWritingWithQwen3Max(text: string) {
           }
         ],
         max_tokens: 1000,
-        temperature: 0.3
+        temperature: options.correctionsOnly ? 0.1 : 0.3
       })
     })
     

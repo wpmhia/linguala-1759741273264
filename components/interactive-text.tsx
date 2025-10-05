@@ -46,7 +46,7 @@ export function InteractiveText({
   const getWordAlternatives = useCallback(async (word: string, context: string) => {
     setIsLoadingAlternatives(true)
     try {
-      const response = await fetch('/api/translate', {
+      const response = await fetch('/api/write', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -74,7 +74,7 @@ export function InteractiveText({
   const getRephrasedSentence = useCallback(async (sentence: string) => {
     setIsLoadingRephrase(true)
     try {
-      const response = await fetch('/api/translate', {
+      const response = await fetch('/api/write', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

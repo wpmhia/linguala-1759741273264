@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5d0055e0018kYD6PDUocpSNr",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The word alternatives and sentence rephrasing features are not working. This is because they're being handled by the Interactive Text component, which is calling the `/api/write` endpoint but with different parameters than expected. Let me check the Interactive Text component and fix the API calls:",
+  "time": {
+    "start": 1759691934735,
+    "end": 1759691934735
+  }
+}

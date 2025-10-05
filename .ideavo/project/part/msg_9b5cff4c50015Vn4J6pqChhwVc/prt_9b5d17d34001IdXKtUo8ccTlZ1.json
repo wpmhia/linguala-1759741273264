@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d17d34001IdXKtUo8ccTlZ1",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01BaYsBnaQTx4wRG7prQ3MQr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"improve\",\"text\":\"hello\"}' --max-time 15",
+      "description": "Test write API with 15 second timeout"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test write API with 15 second timeout"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"improve\",\"text\":\"hello\"}' --max-time 15",
+    "time": {
+      "start": 1759692030498,
+      "end": 1759692030511
+    }
+  }
+}

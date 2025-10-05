@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5d1796e0011divu8obbWlhyO",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "That's expected since it's TypeScript. Let me try to see if the write API route is accessible now:",
+  "time": {
+    "start": 1759692029236,
+    "end": 1759692029236
+  }
+}

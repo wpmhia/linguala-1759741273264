@@ -1,0 +1,42 @@
+{
+  "id": "prt_9b5d03b3f001SvaeXP5YM9phbW",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01GiUWSQmooDaVGdiiVxpGcW",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/interactive-text.tsx",
+      "edits": [
+        {
+          "oldString": "      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({\n          operation: 'alternatives',\n          word: word,\n          context: context,\n          mode: mode,\n          sourceLang: sourceLang,\n          targetLang: targetLang\n        })\n      })",
+          "newString": "      const response = await fetch('/api/write', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({\n          operation: 'alternatives',\n          word: word,\n          context: context,\n          mode: mode,\n          sourceLang: sourceLang,\n          targetLang: targetLang\n        })\n      })"
+        },
+        {
+          "oldString": "      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({\n          operation: 'rephrase',\n          text: sentence.trim(),\n          mode: mode,\n          sourceLang: sourceLang,\n          targetLang: targetLang\n        })\n      })",
+          "newString": "      const response = await fetch('/api/write', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({\n          operation: 'rephrase',\n          text: sentence.trim(),\n          mode: mode,\n          sourceLang: sourceLang,\n          targetLang: targetLang\n        })\n      })"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/interactive-text.tsx\n===================================================================\n--- /home/user/project/components/interactive-text.tsx\n+++ /home/user/project/components/interactive-text.tsx\n@@ -45,9 +45,9 @@\n \n const getWordAlternatives = useCallback(async (word: string, context: string) => {\n   setIsLoadingAlternatives(true)\n   try {\n-    const response = await fetch('/api/translate', {\n+    const response = await fetch('/api/write', {\n       method: 'POST',\n       headers: { 'Content-Type': 'application/json' },\n       body: JSON.stringify({\n         operation: 'alternatives',\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/interactive-text.tsx\n===================================================================\n--- /home/user/project/components/interactive-text.tsx\n+++ /home/user/project/components/interactive-text.tsx\n@@ -73,9 +73,9 @@\n \n const getRephrasedSentence = useCallback(async (sentence: string) => {\n   setIsLoadingRephrase(true)\n   try {\n-    const response = await fetch('/api/translate', {\n+    const response = await fetch('/api/write', {\n       method: 'POST',\n       headers: { 'Content-Type': 'application/json' },\n       body: JSON.stringify({\n         operation: 'rephrase',\n"
+        }
+      ]
+    },
+    "title": "components/interactive-text.tsx",
+    "time": {
+      "start": 1759691951149,
+      "end": 1759691951160
+    }
+  }
+}

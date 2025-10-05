@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d3330f001Xu49tvNbaUJK2R",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01MQW3uzgsb49qTtasF6LeQN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"rephrase\",\"text\":\"Hello world\"}'",
+      "description": "Test rephrase operation"
+    },
+    "output": "{\"originalText\":\"Hello world\",\"rephrasedText\":\"This is a rephrased version: Hello world\",\"rephraseOptions\":[\"Option 1: Hello world\",\"Option 2: Hello world\"],\"operation\":\"rephrase\",\"fallback\":true}",
+    "metadata": {
+      "output": "{\"originalText\":\"Hello world\",\"rephrasedText\":\"This is a rephrased version: Hello world\",\"rephraseOptions\":[\"Option 1: Hello world\",\"Option 2: Hello world\"],\"operation\":\"rephrase\",\"fallback\":true}",
+      "exit": 0,
+      "description": "Test rephrase operation"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"rephrase\",\"text\":\"Hello world\"}'",
+    "time": {
+      "start": 1759692142206,
+      "end": 1759692142244
+    }
+  }
+}

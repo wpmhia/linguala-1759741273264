@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5d00c11001dGbHHijwGaATs4",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01X228vvXk2i1L2dKeds8tRx",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/interactive-text.tsx",
+      "offset": 80,
+      "limit": 40
+    },
+    "output": "<file>\n00081|           operation: 'rephrase',\n00082|           text: sentence.trim(),\n00083|           mode: mode,\n00084|           sourceLang: sourceLang,\n00085|           targetLang: targetLang\n00086|         })\n00087|       })\n00088|       \n00089|       const data = await response.json()\n00090|       setRephraseOptions(data.rephraseOptions || [data.rephrasedText].filter(Boolean))\n00091|     } catch (error) {\n00092|       console.error('Error rephrasing sentence:', error)\n00093|       // Fallback rephrase\n00094|       const fallbackRephrase = getFallbackRephrase(sentence)\n00095|       setRephraseOptions([fallbackRephrase])\n00096|     } finally {\n00097|       setIsLoadingRephrase(false)\n00098|     }\n00099|   }, [mode, sourceLang, targetLang])\n00100| \n00101|   const handleWordClick = useCallback((word: string, wordIndex: number, sentence: string) => {\n00102|     // Clean word of punctuation\n00103|     const cleanWord = word.replace(/[^\\w\\s]/g, '').trim()\n00104|     if (!cleanWord) return\n00105| \n00106|     setSelectedWord({ word: cleanWord, index: wordIndex, sentence })\n00107|     setAlternatives([])\n00108|     setRephraseOptions([])\n00109|     setPopoverOpen(true)\n00110|     \n00111|     // Get alternatives and rephrase options\n00112|     getWordAlternatives(cleanWord, sentence)\n00113|     getRephrasedSentence(sentence)\n00114|   }, [getWordAlternatives, getRephrasedSentence])\n00115| \n00116|   const replaceWord = useCallback((newWord: string) => {\n00117|     if (!selectedWord) return\n00118|     \n00119|     const words = text.split(/(\\s+)/)\n00120|     let wordCount = 0\n\n(File has more lines. Use 'offset' parameter to read beyond line 120)\n</file>",
+    "metadata": {
+      "preview": "          operation: 'rephrase',\n          text: sentence.trim(),\n          mode: mode,\n          sourceLang: sourceLang,\n          targetLang: targetLang\n        })\n      })\n      \n      const data = await response.json()\n      setRephraseOptions(data.rephraseOptions || [data.rephrasedText].filter(Boolean))\n    } catch (error) {\n      console.error('Error rephrasing sentence:', error)\n      // Fallback rephrase\n      const fallbackRephrase = getFallbackRephrase(sentence)\n      setRephraseOptions([fallbackRephrase])\n    } finally {\n      setIsLoadingRephrase(false)\n    }\n  }, [mode, sourceLang, targetLang])\n"
+    },
+    "title": "components/interactive-text.tsx",
+    "time": {
+      "start": 1759691935646,
+      "end": 1759691935655
+    }
+  }
+}

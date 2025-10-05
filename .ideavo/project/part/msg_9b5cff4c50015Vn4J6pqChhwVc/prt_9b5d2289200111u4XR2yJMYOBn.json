@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d2289200111u4XR2yJMYOBn",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01X5Nv3d7BSV8vQEMQBXdLvi",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 5 && tail -15 debug.log",
+      "description": "Check debug logs"
+    },
+    "output": "tail: cannot open 'debug.log' for reading: No such file or directory\n",
+    "metadata": {
+      "output": "tail: cannot open 'debug.log' for reading: No such file or directory\n",
+      "exit": 1,
+      "description": "Check debug logs"
+    },
+    "title": "sleep 5 && tail -15 debug.log",
+    "time": {
+      "start": 1759692073819,
+      "end": 1759692078828
+    }
+  }
+}

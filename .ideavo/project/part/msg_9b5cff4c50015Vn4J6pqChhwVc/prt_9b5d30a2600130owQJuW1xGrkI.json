@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d30a2600130owQJuW1xGrkI",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01WUrc2rPr5hAPtFcuXcV7XM",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run dev > test.log 2>&1 & sleep 5 && echo \"Server started\" && curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"hello\",\"context\":\"hello world\"}'",
+      "description": "Test write API with fallback responses"
+    },
+    "output": "Server started\n{\"word\":\"hello\",\"alternatives\":[\"hello1\",\"hello2\",\"hello3\"],\"operation\":\"alternatives\",\"fallback\":true}",
+    "metadata": {
+      "output": "Server started\n{\"word\":\"hello\",\"alternatives\":[\"hello1\",\"hello2\",\"hello3\"],\"operation\":\"alternatives\",\"fallback\":true}",
+      "exit": 0,
+      "description": "Test write API with fallback responses"
+    },
+    "title": "npm run dev > test.log 2>&1 & sleep 5 && echo \"Server started\" && curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"hello\",\"context\":\"hello world\"}'",
+    "time": {
+      "start": 1759692132475,
+      "end": 1759692138026
+    }
+  }
+}

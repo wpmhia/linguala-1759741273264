@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d0585c001RJCAaPqcq3tuae",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Hpz4iMwwVAxU67HDyX7D9q",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"hello\",\"context\":\"Hello world\",\"mode\":\"translate\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}'",
+      "description": "Test word alternatives API"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test word alternatives API"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"hello\",\"context\":\"Hello world\",\"mode\":\"translate\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}'",
+    "time": {
+      "start": 1759691955363,
+      "end": 1759691955387
+    }
+  }
+}

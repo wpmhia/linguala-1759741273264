@@ -1,0 +1,15 @@
+
+> ideavo-nextjs@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.31
+  - Local:        http://localhost:3000
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 1993ms
+ ✓ Compiled /api/write in 389ms (56 modules)
+Processing writing request: { operation: 'alternatives', word: 'hello', context: 'hello world' }
+ POST /api/write 200 in 524ms
+Processing writing request: { operation: 'rephrase', text: 'Hello world' }
+ POST /api/write 200 in 20ms

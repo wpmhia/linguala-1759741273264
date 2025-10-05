@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5d01a56001P2s3DYQlXD3PLq",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01T8eWFYRG5gpVrXhAU9erX3",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/interactive-text.tsx",
+      "offset": 40,
+      "limit": 40
+    },
+    "output": "<file>\n00041|   const [popoverOpen, setPopoverOpen] = useState(false)\n00042| \n00043|   // Split text into sentences and words\n00044|   const sentences = text.match(/[^.!?]+[.!?]+/g) || [text]\n00045|   \n00046|   const getWordAlternatives = useCallback(async (word: string, context: string) => {\n00047|     setIsLoadingAlternatives(true)\n00048|     try {\n00049|       const response = await fetch('/api/translate', {\n00050|         method: 'POST',\n00051|         headers: { 'Content-Type': 'application/json' },\n00052|         body: JSON.stringify({\n00053|           operation: 'alternatives',\n00054|           word: word,\n00055|           context: context,\n00056|           mode: mode,\n00057|           sourceLang: sourceLang,\n00058|           targetLang: targetLang\n00059|         })\n00060|       })\n00061|       \n00062|       const data = await response.json()\n00063|       setAlternatives(data.alternatives || [])\n00064|     } catch (error) {\n00065|       console.error('Error getting word alternatives:', error)\n00066|       // Fallback alternatives based on common patterns\n00067|       const fallbackAlternatives = getFallbackAlternatives(word, mode)\n00068|       setAlternatives(fallbackAlternatives)\n00069|     } finally {\n00070|       setIsLoadingAlternatives(false)\n00071|     }\n00072|   }, [mode, sourceLang, targetLang])\n00073| \n00074|   const getRephrasedSentence = useCallback(async (sentence: string) => {\n00075|     setIsLoadingRephrase(true)\n00076|     try {\n00077|       const response = await fetch('/api/translate', {\n00078|         method: 'POST',\n00079|         headers: { 'Content-Type': 'application/json' },\n00080|         body: JSON.stringify({\n\n(File has more lines. Use 'offset' parameter to read beyond line 80)\n</file>",
+    "metadata": {
+      "preview": "  const [popoverOpen, setPopoverOpen] = useState(false)\n\n  // Split text into sentences and words\n  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text]\n  \n  const getWordAlternatives = useCallback(async (word: string, context: string) => {\n    setIsLoadingAlternatives(true)\n    try {\n      const response = await fetch('/api/translate', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({\n          operation: 'alternatives',\n          word: word,\n          context: context,\n          mode: mode,\n          sourceLang: sourceLang,\n          targetLang: targetLang\n        })\n      })"
+    },
+    "title": "components/interactive-text.tsx",
+    "time": {
+      "start": 1759691939026,
+      "end": 1759691939027
+    }
+  }
+}

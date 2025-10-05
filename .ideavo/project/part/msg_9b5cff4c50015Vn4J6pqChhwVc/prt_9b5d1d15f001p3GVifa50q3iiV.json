@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5d1d15f001p3GVifa50q3iiV",
+  "messageID": "msg_9b5cff4c50015Vn4J6pqChhwVc",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The import statement looks correct. Let me check if the writing service functions are exported properly. The issue might be that the writing service is hanging on API calls. Let me test by temporarily commenting out the external API calls and using only fallbacks. Let me create a minimal test to see if the route compiles:",
+  "time": {
+    "start": 1759692052626,
+    "end": 1759692052626
+  }
+}

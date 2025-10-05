@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b618eeaf001XRcqTvc0QMgYkS",
+  "messageID": "msg_9b618dd8d001fHa40TOnFb3qZ9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see that the browser console shows errors related to the ideavo development environment, but these are not related to the translation functionality itself. These errors are from the development interface, not your translation app.\n\nLet me check if the actual translation API is working by testing it directly:",
+  "time": {
+    "start": 1759696713223,
+    "end": 1759696713223
+  }
+}

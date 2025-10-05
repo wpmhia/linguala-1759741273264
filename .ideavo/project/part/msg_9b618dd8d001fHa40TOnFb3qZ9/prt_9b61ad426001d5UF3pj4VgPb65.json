@@ -1,0 +1,21 @@
+{
+  "id": "prt_9b61ad426001d5UF3pj4VgPb65",
+  "messageID": "msg_9b618dd8d001fHa40TOnFb3qZ9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01AAPVRtn2oxtFoSVSABhDwG",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "    }, 30000) // Increased timeout to 30 seconds",
+      "newString": "    }, 15000) // 15 second timeout - balance between speed and reliability"
+    },
+    "error": "Error: You must read the file /home/user/project/lib/translation-service.ts before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759696837305,
+      "end": 1759696837307
+    }
+  }
+}

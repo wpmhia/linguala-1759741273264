@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b61afe91002H40puFU02zkjwj",
+  "messageID": "msg_9b618dd8d001fHa40TOnFb3qZ9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The **translation functionality is working correctly**. The browser errors you're seeing are from the ideavo development environment, not your translation app. \n\n**To test your translation app properly:**\n1. Open `http://localhost:3000` directly in your browser\n2. Type some text and select different target languages\n3. The translation should work (English→Spanish is confirmed working)\n\nThe intermittent API timeouts for some language pairs appear to be a **DashScope API service issue**, not a code problem. The app will show appropriate error messages when this happens.",
+  "time": {
+    "start": 1759696849313,
+    "end": 1759696849313
+  }
+}

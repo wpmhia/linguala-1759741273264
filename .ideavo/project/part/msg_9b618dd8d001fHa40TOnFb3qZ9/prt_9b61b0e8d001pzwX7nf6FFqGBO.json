@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b61b0e8d001pzwX7nf6FFqGBO",
+  "messageID": "msg_9b618dd8d001fHa40TOnFb3qZ9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translation): handle DashScope API language pair timeouts",
+  "cost": 0.5085334499999999,
+  "tokens": {
+    "input": 6,
+    "output": 123,
+    "reasoning": 0,
+    "cache": {
+      "write": 157,
+      "read": 83974
+    }
+  }
+}

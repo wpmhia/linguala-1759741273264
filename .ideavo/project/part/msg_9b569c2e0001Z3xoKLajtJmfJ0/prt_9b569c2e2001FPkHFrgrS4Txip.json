@@ -1,0 +1,7 @@
+{
+  "id": "prt_9b569c2e2001FPkHFrgrS4Txip",
+  "type": "text",
+  "text": "Unhandled Runtime Error\nReferenceError: operation is not defined\n\nSource\ncomponents/linguala-translator.tsx (121:5) @ handleProcessing\n\n  119 |\n  120 |     // Only add language fields for translation\n> 121 |     if (operation === 'translate') {\n      |     ^\n  122 |       request.sourceLang = sourceLang\n  123 |       request.targetLang = targetLang\n  124 |     }\nCall Stack",
+  "messageID": "msg_9b569c2e0001Z3xoKLajtJmfJ0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

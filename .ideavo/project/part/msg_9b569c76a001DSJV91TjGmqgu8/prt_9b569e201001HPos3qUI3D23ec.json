@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b569e201001HPos3qUI3D23ec",
+  "messageID": "msg_9b569c76a001DSJV91TjGmqgu8",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_015Kx1vRgXrEaFeJcAwWR5zj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "    // Only add language fields for translation\n    if (activeTab === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    } else {\n      // Add write mode settings\n      request.correctionsOnly = correctionsOnly\n      request.writingStyle = writingStyle\n      request.tone = tone\n    }\n\n    // Only add language fields for translation\n    if (operation === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    }",
+      "newString": "    // Only add language fields for translation\n    if (activeTab === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    } else {\n      // Add write mode settings\n      request.correctionsOnly = correctionsOnly\n      request.writingStyle = writingStyle\n      request.tone = tone\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -116,14 +116,8 @@\n   request.writingStyle = writingStyle\n   request.tone = tone\n }\n \n-// Only add language fields for translation\n-if (operation === 'translate') {\n-  request.sourceLang = sourceLang\n-  request.targetLang = targetLang\n-}\n-\n processing.mutate(request, {\n   onSuccess: (data) => {\n     // Handle different operation results\n     if (data.operation === 'translate') {\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685243299,
+      "end": 1759685243310
+    }
+  }
+}

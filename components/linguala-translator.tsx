@@ -117,12 +117,6 @@ export default function LingualaTranslator() {
       request.tone = tone
     }
 
-    // Only add language fields for translation
-    if (operation === 'translate') {
-      request.sourceLang = sourceLang
-      request.targetLang = targetLang
-    }
-
     processing.mutate(request, {
       onSuccess: (data) => {
         // Handle different operation results

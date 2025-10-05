@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5af6f7b001UHemq679BoFvHl",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014bfQcJ4PSanZaoUpHyqoYK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"Translate the given text from English to Spanish.\"\n      },\n      {\n        \"role\": \"user\", \n        \"content\": \"Hello world\"\n      }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0.3\n  }' --timeout 10",
+      "description": "Test qwen-mt-turbo model directly"
+    },
+    "output": "curl: option --timeout: is unknown\ncurl: try 'curl --help' or 'curl --manual' for more information\n",
+    "metadata": {
+      "output": "curl: option --timeout: is unknown\ncurl: try 'curl --help' or 'curl --manual' for more information\n",
+      "exit": 2,
+      "description": "Test qwen-mt-turbo model directly"
+    },
+    "title": "cd /home/user/project && curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"Translate the given text from English to Spanish.\"\n      },\n      {\n        \"role\": \"user\", \n        \"content\": \"Hello world\"\n      }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0.3\n  }' --timeout 10",
+    "time": {
+      "start": 1759689801282,
+      "end": 1759689801303
+    }
+  }
+}

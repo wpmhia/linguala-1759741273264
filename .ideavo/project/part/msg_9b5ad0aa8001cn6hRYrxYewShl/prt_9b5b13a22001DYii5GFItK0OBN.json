@@ -1,0 +1,27 @@
+{
+  "id": "prt_9b5b13a22001DYii5GFItK0OBN",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_0113irhSU8mcMGrd9dKPvVFx",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev &\nNEXT_PID=$!\nsleep 5\necho \"Testing writing improvement with qwen-flash:\"\ntimeout 15 curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"improve\",\n    \"text\": \"This is test text that need some fixing.\",\n    \"correctionsOnly\": false,\n    \"writingStyle\": \"simple\",\n    \"tone\": \"friendly\"\n  }' || echo \"Request failed\"\nsleep 1\nkill $NEXT_PID 2>/dev/null || true",
+      "timeout": 20000,
+      "description": "Test writing improvement with qwen-flash"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n ⚠ Port 3000 is in use, trying 3001 instead.\n ⚠ Port 3001 is in use, trying 3002 instead.\n ⚠ Port 3002 is in use, trying 3003 instead.\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3003\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2.3s\nTesting writing improvement with qwen-flash:\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   172    0     0  100   172      0    143  0:00:01  0:00:01 --:--:--   143\r100   172    0     0  100   172      0     78  0:00:02  0:00:02 --:--:--    78\r100   172    0     0  100   172      0     53  0:00:03  0:00:03 --:--:--    53\r100   172    0     0  100   172      0     40  0:00:04  0:00:04 --:--:--    40\r100   172    0     0  100   172      0     33  0:00:05  0:00:05 --:--:--    33\r100   172    0     0  100   172      0     27  0:00:06  0:00:06 --:--:--     0\r100   172    0     0  100   172      0     23  0:00:07  0:00:07 --:--:--     0\r100   172    0     0  100   172      0     20  0:00:08  0:00:08 --:--:--     0\r100   172    0     0  100   172      0     18  0:00:09  0:00:09 --:--:--     0\r100   172    0     0  100   172      0     16  0:00:10  0:00:10 --:--:--     0\r100   172    0     0  100   172      0     15  0:00:11  0:00:11 --:--:--     0\r100   172    0     0  100   172      0     14  0:00:12  0:00:12 --:--:--     0\r100   172    0     0  100   172      0     13  0:00:13  0:00:13 --:--:--     0\r100   172    0     0  100   172      0     12  0:00:14  0:00:14 --:--:--     0",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n ⚠ Port 3000 is in use, trying 3001 instead.\n ⚠ Port 3001 is in use, trying 3002 instead.\n ⚠ Port 3002 is in use, trying 3003 instead.\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3003\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2.3s\nTesting writing improvement with qwen-flash:\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   172    0     0  100   172      0    143  0:00:01  0:00:01 --:--:--   143\r100   172    0     0  100   172      0     78  0:00:02  0:00:02 --:--:--    78\r100   172    0     0  100   172      0     53  0:00:03  0:00:03 --:--:--    53\r100   172    0     0  100   172      0     40  0:00:04  0:00:04 --:--:--    40\r100   172    0     0  100   172      0     33  0:00:05  0:00:05 --:--:--    33\r100   172    0     0  100   172      0     27  0:00:06  0:00:06 --:--:--     0\r100   172    0     0  100   172      0     23  0:00:07  0:00:07 --:--:--     0\r100   172    0     0  100   172      0     20  0:00:08  0:00:08 --:--:--     0\r100   172    0     0  100   172      0     18  0:00:09  0:00:09 --:--:--     0\r100   172    0     0  100   172      0     16  0:00:10  0:00:10 --:--:--     0\r100   172    0     0  100   172      0     15  0:00:11  0:00:11 --:--:--     0\r100   172    0     0  100   172      0     14  0:00:12  0:00:12 --:--:--     0\r100   172    0     0  100   172      0     13  0:00:13  0:00:13 --:--:--     0\r100   172    0     0  100   172      0     12  0:00:14  0:00:14 --:--:--     0",
+      "exit": null,
+      "description": "Test writing improvement with qwen-flash"
+    },
+    "title": "cd /home/user/project && npm run dev &\nNEXT_PID=$!\nsleep 5\necho \"Testing writing improvement with qwen-flash:\"\ntimeout 15 curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"improve\",\n    \"text\": \"This is test text that need some fixing.\",\n    \"correctionsOnly\": false,\n    \"writingStyle\": \"simple\",\n    \"tone\": \"friendly\"\n  }' || echo \"Request failed\"\nsleep 1\nkill $NEXT_PID 2>/dev/null || true",
+    "time": {
+      "start": 1759689918941,
+      "end": 1759689938950
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b5b1efbb001f48By3mwQIO3BB",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(models): update translation and writing models to qwen-mt-turbo and qwen-flash",
+  "cost": 1.2132839999999998,
+  "tokens": {
+    "input": 5,
+    "output": 571,
+    "reasoning": 0,
+    "cache": {
+      "write": 504,
+      "read": 86135
+    }
+  }
+}

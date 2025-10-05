@@ -113,10 +113,10 @@ async function improveWritingFallback(text: string) {
   }
 }
 
-// Text improvement function using qwen-max
+// Text improvement function using qwen-flash
 async function improveWritingWithQwen3Max(text: string, options: { correctionsOnly?: boolean, writingStyle?: string, tone?: string } = {}) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
-  console.log('Starting qwen-max API call for text:', text.substring(0, 50))
+  console.log('Starting qwen-flash API call for text:', text.substring(0, 50))
   console.log('Improvement options:', options)
   
   // Build system prompt based on options
@@ -177,7 +177,7 @@ async function improveWritingWithQwen3Max(text: string, options: { correctionsOn
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen-max',
+        model: 'qwen-flash',
         messages: [
           {
             role: 'system',
@@ -253,7 +253,7 @@ async function improveWritingWithQwen3Max(text: string, options: { correctionsOn
   }
 }
 
-// Text rephrasing function using qwen-max
+// Text rephrasing function using qwen-flash
 async function rephraseTextWithQwen3Max(text: string) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
@@ -268,7 +268,7 @@ async function rephraseTextWithQwen3Max(text: string) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen-max',
+        model: 'qwen-flash',
         messages: [
           {
             role: 'system',
@@ -341,7 +341,7 @@ async function rephraseTextWithQwen3Max(text: string) {
   }
 }
 
-// Word alternatives function using qwen-max
+// Word alternatives function using qwen-flash
 async function getWordAlternativesWithQwen3Max(word: string, context: string, options: { mode?: string, sourceLang?: string, targetLang?: string } = {}) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   console.log('Getting alternatives for word:', word)
@@ -371,7 +371,7 @@ async function getWordAlternativesWithQwen3Max(word: string, context: string, op
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen-max',
+        model: 'qwen-flash',
         messages: [
           {
             role: 'system',
@@ -454,7 +454,7 @@ function getFallbackAlternatives(word: string): string[] {
   return alternatives[word.toLowerCase()] || []
 }
 
-// Text summarization function using qwen-max
+// Text summarization function using qwen-flash
 async function summarizeTextWithQwen3Max(text: string) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
@@ -467,7 +467,7 @@ async function summarizeTextWithQwen3Max(text: string) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen-max',
+        model: 'qwen-flash',
         messages: [
           {
             role: 'system',

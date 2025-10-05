@@ -1,0 +1,21 @@
+{
+  "id": "prt_9b5ad9054001kz3CRrR14huaQ7",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01VpX9xF41eEFCVgsMZhGu5L",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "      body: JSON.stringify({\n        model: 'qwen-max',\n        messages: [\n          {\n            role: 'system',\n            content: systemPrompt\n          },\n          {\n            role: 'user',\n            content: text\n          }\n        ],\n        max_tokens: 200,\n        temperature: 0.3\n      }),",
+      "newString": "      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: [\n          {\n            role: 'system',\n            content: systemPrompt\n          },\n          {\n            role: 'user',\n            content: text\n          }\n        ],\n        max_tokens: 200,\n        temperature: 0.3\n      }),"
+    },
+    "error": "Error: You must read the file /home/user/project/lib/translation-service.ts before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759689677616,
+      "end": 1759689677617
+    }
+  }
+}

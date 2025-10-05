@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5afd859001q7hlFK1RKqBvLj",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01HE83zvS5dvDv8t565Do9pQ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && timeout 10 curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-flash\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a professional writing assistant.\"\n      },\n      {\n        \"role\": \"user\", \n        \"content\": \"Improve this text: This is test text that need some fixing.\"\n      }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0.3\n  }'",
+      "description": "Test qwen-flash model with system role"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100  1024  100   693  100   331    443    211  0:00:01  0:00:01 --:--:--   655\r100  1024  100   693  100   331    443    211  0:00:01  0:00:01 --:--:--   655\n{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"Certainly! Here's an improved version of your text:\\n\\n\\\"This is a test message that requires some refinement.\\\"\\n\\nAlternatively, for a more polished and professional tone:\\n\\n\\\"Please review this test content—it needs editing and improvement.\\\"\\n\\nLet me know the context (e.g., formal, casual, technical) if you'd like a version tailored to a specific audience.\"},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":34,\"completion_tokens\":70,\"total_tokens\":104},\"created\":1759689828,\"system_fingerprint\":null,\"model\":\"qwen-flash\",\"id\":\"chatcmpl-fbbdb2ce-b3e9-92c1-878e-9272bf2ed9ea\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100  1024  100   693  100   331    443    211  0:00:01  0:00:01 --:--:--   655\r100  1024  100   693  100   331    443    211  0:00:01  0:00:01 --:--:--   655\n{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"Certainly! Here's an improved version of your text:\\n\\n\\\"This is a test message that requires some refinement.\\\"\\n\\nAlternatively, for a more polished and professional tone:\\n\\n\\\"Please review this test content—it needs editing and improvement.\\\"\\n\\nLet me know the context (e.g., formal, casual, technical) if you'd like a version tailored to a specific audience.\"},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":34,\"completion_tokens\":70,\"total_tokens\":104},\"created\":1759689828,\"system_fingerprint\":null,\"model\":\"qwen-flash\",\"id\":\"chatcmpl-fbbdb2ce-b3e9-92c1-878e-9272bf2ed9ea\"}",
+      "exit": 0,
+      "description": "Test qwen-flash model with system role"
+    },
+    "title": "cd /home/user/project && timeout 10 curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-flash\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a professional writing assistant.\"\n      },\n      {\n        \"role\": \"user\", \n        \"content\": \"Improve this text: This is test text that need some fixing.\"\n      }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0.3\n  }'",
+    "time": {
+      "start": 1759689826832,
+      "end": 1759689828419
+    }
+  }
+}

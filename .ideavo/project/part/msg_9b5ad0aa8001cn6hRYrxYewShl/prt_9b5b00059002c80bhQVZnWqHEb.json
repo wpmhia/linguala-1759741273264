@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b00059002c80bhQVZnWqHEb",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Great! `qwen-flash` works with system role. Now I need to update the translation function to work with `qwen-mt-turbo`'s limitations (no system role):",
+  "time": {
+    "start": 1759689835675,
+    "end": 1759689835675
+  }
+}

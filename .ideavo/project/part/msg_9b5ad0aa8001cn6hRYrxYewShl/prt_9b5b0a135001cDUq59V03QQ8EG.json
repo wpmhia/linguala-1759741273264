@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b0a135001cDUq59V03QQ8EG",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_013pSuG2DS2VcJveB8ZJBXBF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "        messages: [\n          {\n            role: 'user',\n            content: `${systemPrompt}\\n\\nText to translate: ${text}`\n          }\n        ],",
+      "newString": "        messages: [\n          {\n            role: 'user',\n            content: userPrompt\n          }\n        ],"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -151,9 +151,9 @@\n model: 'qwen-mt-turbo',\n messages: [\n   {\n     role: 'user',\n-    content: `${systemPrompt}\\n\\nText to translate: ${text}`\n+    content: userPrompt\n   }\n ],\n max_tokens: 200,\n temperature: 0.3\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759689877378,
+      "end": 1759689877386
+    }
+  }
+}

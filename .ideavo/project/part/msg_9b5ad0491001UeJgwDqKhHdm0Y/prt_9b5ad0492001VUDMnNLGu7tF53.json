@@ -1,0 +1,7 @@
+{
+  "id": "prt_9b5ad0492001VUDMnNLGu7tF53",
+  "type": "text",
+  "text": "For translate use: qwen-mt-turbo\nFor write use: qwen-flash\nNothing else, both use the same API, nover use another model.",
+  "messageID": "msg_9b5ad0491001UeJgwDqKhHdm0Y",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

@@ -122,24 +122,17 @@ async function translateWithQwen3Max(text: string, sourceLang: string, targetLan
   
   console.log(`Translating with Qwen3: "${text.substring(0, 50)}" from ${sourceLang} to ${targetLang}`)
   
-  // Build system prompt
-  let systemPrompt = 'You are a professional translator. '
+  // Build prompt for qwen-mt-turbo (which doesn't support system role)
+  let userPrompt = ''
   
   if (sourceLang === 'auto') {
-    systemPrompt += `Translate the given text to ${targetLang}. `
+    userPrompt = `Translate to ${targetLang}: ${text}`
   } else {
-    systemPrompt += `Translate the given text from ${sourceLang} to ${targetLang}. `
+    userPrompt = `Translate from ${sourceLang} to ${targetLang}: ${text}`
   }
   
-  systemPrompt += 'Provide only the translated text without explanations, quotes, or additional commentary. Maintain the original meaning, tone, and style.'
-  
-  // Add timeout wrapper - shorter timeout for reliability
-  const timeoutPromise = new Promise((_, reject) => {
-    setTimeout(() => reject(new Error('Translation timeout after 5 seconds')), 5000)
-  })
-  
   try {
-    // Simple direct fetch without Promise.race to avoid complications
+    // Simple direct fetch with AbortController timeout
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 8000) // 8 second timeout
     
@@ -150,15 +143,11 @@ async function translateWithQwen3Max(text: string, sourceLang: string, targetLan
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'qwen-max',
+        model: 'qwen-mt-turbo',
         messages: [
           {
-            role: 'system',
-            content: systemPrompt
-          },
-          {
             role: 'user',
-            content: text
+            content: userPrompt
           }
         ],
         max_tokens: 200,

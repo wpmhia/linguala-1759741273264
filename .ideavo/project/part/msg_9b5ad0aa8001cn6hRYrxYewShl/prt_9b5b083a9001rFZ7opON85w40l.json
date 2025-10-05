@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b083a9001rFZ7opON85w40l",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01VJhHEsDCBvQXZeXJeKSXL6",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "  // Build system prompt\n  let systemPrompt = 'You are a professional translator. '\n  \n  if (sourceLang === 'auto') {\n    systemPrompt += `Translate the given text to ${targetLang}. `\n  } else {\n    systemPrompt += `Translate the given text from ${sourceLang} to ${targetLang}. `\n  }\n  \n  systemPrompt += 'Provide only the translated text without explanations, quotes, or additional commentary. Maintain the original meaning, tone, and style.'",
+      "newString": "  // Build prompt for qwen-mt-turbo (which doesn't support system role)\n  let userPrompt = ''\n  \n  if (sourceLang === 'auto') {\n    userPrompt = `Translate to ${targetLang}: ${text}`\n  } else {\n    userPrompt = `Translate from ${sourceLang} to ${targetLang}: ${text}`\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -121,19 +121,17 @@\n }\n \n console.log(`Translating with Qwen3: \"${text.substring(0, 50)}\" from ${sourceLang} to ${targetLang}`)\n \n-// Build system prompt\n-let systemPrompt = 'You are a professional translator. '\n+// Build prompt for qwen-mt-turbo (which doesn't support system role)\n+let userPrompt = ''\n \n if (sourceLang === 'auto') {\n-  systemPrompt += `Translate the given text to ${targetLang}. `\n+  userPrompt = `Translate to ${targetLang}: ${text}`\n } else {\n-  systemPrompt += `Translate the given text from ${sourceLang} to ${targetLang}. `\n+  userPrompt = `Translate from ${sourceLang} to ${targetLang}: ${text}`\n }\n \n-systemPrompt += 'Provide only the translated text without explanations, quotes, or additional commentary. Maintain the original meaning, tone, and style.'\n-\n // Add timeout wrapper - shorter timeout for reliability\n const timeoutPromise = new Promise((_, reject) => {\n   setTimeout(() => reject(new Error('Translation timeout after 5 seconds')), 5000)\n })\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759689872916,
+      "end": 1759689872921
+    }
+  }
+}

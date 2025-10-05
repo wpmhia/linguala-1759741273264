@@ -1,0 +1,85 @@
+{
+  "id": "prt_9b5ad5f2d001v4E9qzT7001FdY",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01JqhhxUwTBdQzp9eEHAVeNp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Update translation to use qwen-mt-turbo model",
+          "status": "pending",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Update writing improvement to use qwen-flash model",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Update word alternatives to use appropriate model",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Update sentence rephrasing to use appropriate model",
+          "status": "pending",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Test both translation and writing functionality",
+          "status": "pending",
+          "priority": "high",
+          "id": "5"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Update translation to use qwen-mt-turbo model\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Update writing improvement to use qwen-flash model\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Update word alternatives to use appropriate model\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"3\"\n  },\n  {\n    \"content\": \"Update sentence rephrasing to use appropriate model\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"4\"\n  },\n  {\n    \"content\": \"Test both translation and writing functionality\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"5\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Update translation to use qwen-mt-turbo model",
+          "status": "pending",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Update writing improvement to use qwen-flash model",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Update word alternatives to use appropriate model",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Update sentence rephrasing to use appropriate model",
+          "status": "pending",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Test both translation and writing functionality",
+          "status": "pending",
+          "priority": "high",
+          "id": "5"
+        }
+      ]
+    },
+    "title": "5 todos",
+    "time": {
+      "start": 1759689664869,
+      "end": 1759689664870
+    }
+  }
+}

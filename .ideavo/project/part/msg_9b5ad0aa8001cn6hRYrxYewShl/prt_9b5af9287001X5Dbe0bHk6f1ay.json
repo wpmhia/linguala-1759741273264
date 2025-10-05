@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5af9287001X5Dbe0bHk6f1ay",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01TeLMRgqUACU1zCaJFWm4aj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && timeout 10 curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"Translate the given text from English to Spanish.\"\n      },\n      {\n        \"role\": \"user\", \n        \"content\": \"Hello world\"\n      }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0.3\n  }'",
+      "description": "Test qwen-mt-turbo model directly with timeout"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   534  100   240  100   294    231    283  0:00:01  0:00:01 --:--:--   515\n{\"error\":{\"code\":\"invalid_parameter_error\",\"param\":null,\"message\":\"Role must be in [user, assistant].\",\"type\":\"invalid_request_error\"},\"id\":\"chatcmpl-1f491e79-6946-9ea3-99ca-21b64a449d89\",\"request_id\":\"1f491e79-6946-9ea3-99ca-21b64a449d89\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   534  100   240  100   294    231    283  0:00:01  0:00:01 --:--:--   515\n{\"error\":{\"code\":\"invalid_parameter_error\",\"param\":null,\"message\":\"Role must be in [user, assistant].\",\"type\":\"invalid_request_error\"},\"id\":\"chatcmpl-1f491e79-6946-9ea3-99ca-21b64a449d89\",\"request_id\":\"1f491e79-6946-9ea3-99ca-21b64a449d89\"}",
+      "exit": 0,
+      "description": "Test qwen-mt-turbo model directly with timeout"
+    },
+    "title": "cd /home/user/project && timeout 10 curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-mt-turbo\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"Translate the given text from English to Spanish.\"\n      },\n      {\n        \"role\": \"user\", \n        \"content\": \"Hello world\"\n      }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0.3\n  }'",
+    "time": {
+      "start": 1759689808506,
+      "end": 1759689809569
+    }
+  }
+}

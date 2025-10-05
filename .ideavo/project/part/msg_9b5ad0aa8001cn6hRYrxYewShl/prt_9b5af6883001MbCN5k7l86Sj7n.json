@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5af6883001MbCN5k7l86Sj7n",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see the issue. The `qwen-mt-turbo` model is returning a 400 error, which suggests it might not be available or the request format might be different. Let me test the model directly to see if it exists:",
+  "time": {
+    "start": 1759689797498,
+    "end": 1759689797498
+  }
+}

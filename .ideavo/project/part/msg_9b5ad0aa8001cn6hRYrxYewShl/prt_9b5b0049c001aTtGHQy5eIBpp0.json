@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b0049c001aTtGHQy5eIBpp0",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Kt5qJEqQNkcLMRRqD8UmXQ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: [\n          {\n            role: 'system',\n            content: systemPrompt\n          },\n          {\n            role: 'user',\n            content: text\n          }\n        ],\n        max_tokens: 200,\n        temperature: 0.3\n      }),",
+      "newString": "      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: [\n          {\n            role: 'user',\n            content: `${systemPrompt}\\n\\nText to translate: ${text}`\n          }\n        ],\n        max_tokens: 200,\n        temperature: 0.3\n      }),"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -152,14 +152,10 @@\n body: JSON.stringify({\n   model: 'qwen-mt-turbo',\n   messages: [\n     {\n-      role: 'system',\n-      content: systemPrompt\n-    },\n-    {\n       role: 'user',\n-      content: text\n+      content: `${systemPrompt}\\n\\nText to translate: ${text}`\n     }\n   ],\n   max_tokens: 200,\n   temperature: 0.3\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759689838504,
+      "end": 1759689838513
+    }
+  }
+}

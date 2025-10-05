@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5afd417001TVEK8kZTT8Zwfz",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! The `qwen-mt-turbo` model works but it only accepts \"user\" and \"assistant\" roles, not \"system\" role. Let me also test `qwen-flash`:",
+  "time": {
+    "start": 1759689824344,
+    "end": 1759689824344
+  }
+}

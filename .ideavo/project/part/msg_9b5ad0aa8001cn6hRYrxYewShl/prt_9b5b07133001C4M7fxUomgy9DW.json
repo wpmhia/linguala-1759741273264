@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b07133001C4M7fxUomgy9DW",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014QcqUrXyiAfnZsrRwBuY72",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"npm run dev\" 2>/dev/null || true",
+      "description": "Kill any existing dev processes"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill any existing dev processes"
+    },
+    "title": "cd /home/user/project && pkill -f \"npm run dev\" 2>/dev/null || true",
+    "time": {
+      "start": 1759689864233,
+      "end": 1759689864381
+    }
+  }
+}

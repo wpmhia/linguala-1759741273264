@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b11d7c001kXNgzbJ6szY6AP",
+  "messageID": "msg_9b5ad0aa8001cn6hRYrxYewShl",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01XUQRgSHmA5hBTVhxWyfuwY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "ps aux | grep \"next\\|npm\" | grep -v grep",
+      "description": "Check for running processes"
+    },
+    "output": "user       12621  0.4  1.6 11526924 67196 ?      Sl   18:42   0:00 node /home/user/project/node_modules/.bin/next dev\nuser       12632 57.6 43.1 67008504 1743432 ?    Rl   18:42   1:14 next-server (v14.2.31)\nuser       12693  0.8  1.6 11527264 67076 ?      Sl   18:44   0:00 node /home/user/project/node_modules/.bin/next dev\nuser       12704  5.1  5.3 33560664 214060 ?     Sl   18:44   0:03 next-server (v14.2.31)\nuser       12731  1.2  1.2 1091052 52052 ?       Sl   18:44   0:00 npm run dev\nuser       12743  0.0  0.0   2584   920 ?        S    18:44   0:00 sh -c next dev\nuser       12744  2.5  1.6 11526924 67088 ?      Sl   18:44   0:00 node /home/user/project/node_modules/.bin/next dev\nuser       12755 17.3  5.2 33560668 212444 ?     Sl   18:44   0:03 next-server (v14.2.31)\n",
+    "metadata": {
+      "output": "user       12621  0.4  1.6 11526924 67196 ?      Sl   18:42   0:00 node /home/user/project/node_modules/.bin/next dev\nuser       12632 57.6 43.1 67008504 1743432 ?    Rl   18:42   1:14 next-server (v14.2.31)\nuser       12693  0.8  1.6 11527264 67076 ?      Sl   18:44   0:00 node /home/user/project/node_modules/.bin/next dev\nuser       12704  5.1  5.3 33560664 214060 ?     Sl   18:44   0:03 next-server (v14.2.31)\nuser       12731  1.2  1.2 1091052 52052 ?       Sl   18:44   0:00 npm run dev\nuser       12743  0.0  0.0   2584   920 ?        S    18:44   0:00 sh -c next dev\nuser       12744  2.5  1.6 11526924 67088 ?      Sl   18:44   0:00 node /home/user/project/node_modules/.bin/next dev\nuser       12755 17.3  5.2 33560668 212444 ?     Sl   18:44   0:03 next-server (v14.2.31)\n",
+      "exit": 0,
+      "description": "Check for running processes"
+    },
+    "title": "ps aux | grep \"next\\|npm\" | grep -v grep",
+    "time": {
+      "start": 1759689908565,
+      "end": 1759689908583
+    }
+  }
+}

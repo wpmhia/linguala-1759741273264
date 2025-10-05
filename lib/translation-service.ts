@@ -112,7 +112,7 @@ function getFallbackTranslation(text: string, targetLanguage: string): string | 
   return null
 }
 
-// Main Qwen3 translation function
+// Main Qwen3 translation function using qwen-mt-turbo
 async function translateWithQwen3Max(text: string, sourceLang: string, targetLang: string): Promise<TranslationResult> {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
@@ -120,22 +120,9 @@ async function translateWithQwen3Max(text: string, sourceLang: string, targetLan
     throw new Error('DASHSCOPE_API_KEY not configured')
   }
   
-  console.log(`Translating with Qwen3: "${text.substring(0, 50)}" from ${sourceLang} to ${targetLang}`)
-  
-  // Build prompt for qwen-mt-turbo (which doesn't support system role)
-  let userPrompt = ''
-  
-  if (sourceLang === 'auto') {
-    userPrompt = `Translate to ${targetLang}: ${text}`
-  } else {
-    userPrompt = `Translate from ${sourceLang} to ${targetLang}: ${text}`
-  }
+  console.log(`Translating with qwen-mt-turbo: "${text.substring(0, 50)}" from ${sourceLang} to ${targetLang}`)
   
   try {
-    // Simple direct fetch with AbortController timeout
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 8000) // 8 second timeout
-    
     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -147,17 +134,15 @@ async function translateWithQwen3Max(text: string, sourceLang: string, targetLan
         messages: [
           {
             role: 'user',
-            content: userPrompt
+            content: `Translate from ${sourceLang === 'auto' ? 'English' : sourceLang} to ${targetLang}: ${text}`
           }
         ],
         max_tokens: 200,
-        temperature: 0.3
-      }),
-      signal: controller.signal
+        temperature: 0.1
+      })
     })
     
-    clearTimeout(timeoutId)
-    console.log('Qwen3 translation response received:', response.status)
+    console.log('qwen-mt-turbo response status:', response.status)
     
     if (!response.ok) {
       throw new Error(`API request failed: ${response.status}`)
@@ -167,6 +152,7 @@ async function translateWithQwen3Max(text: string, sourceLang: string, targetLan
     const translatedText = data.choices[0]?.message?.content?.trim()
 
     if (translatedText && translatedText !== text) {
+      console.log('Translation successful:', translatedText)
       return {
         translatedText,
         sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,
@@ -176,7 +162,7 @@ async function translateWithQwen3Max(text: string, sourceLang: string, targetLan
       throw new Error('No translation received or same as input')
     }
   } catch (error) {
-    console.error('Qwen3 translation error:', error)
+    console.error('qwen-mt-turbo translation error:', error)
     throw error
   }
 }

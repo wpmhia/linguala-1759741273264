@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b523ba002rz5ZjqiIp82A6V",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The Singapore endpoint hostname seems to be incorrect. Let me try a different approach - let me check what the correct qwen-mt-turbo endpoint should be. Since you mentioned it works like DeepL, let me try using the standard international endpoint but with the correct model name:",
+  "time": {
+    "start": 1759690173267,
+    "end": 1759690173267
+  }
+}

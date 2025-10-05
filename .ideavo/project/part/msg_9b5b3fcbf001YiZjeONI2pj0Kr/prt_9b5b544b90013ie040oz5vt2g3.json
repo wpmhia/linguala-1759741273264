@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b544b90013ie040oz5vt2g3",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! The `qwen-mt-turbo` model works perfectly with the international endpoint. The issue was the Singapore endpoint URL. Let me revert back to the working international endpoint with the simple user message format:",
+  "time": {
+    "start": 1759690180990,
+    "end": 1759690180990
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b44a22001RKg6IySRflI9Bq",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I need to update to use the Singapore region endpoint and the proper format for qwen-mt-turbo. Let me replace the URL and the request format:",
+  "time": {
+    "start": 1759690116701,
+    "end": 1759690116701
+  }
+}

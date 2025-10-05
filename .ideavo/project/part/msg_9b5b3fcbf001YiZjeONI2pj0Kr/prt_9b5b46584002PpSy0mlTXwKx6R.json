@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b46584002PpSy0mlTXwKx6R",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I need to update the response parsing to match the Singapore endpoint format:",
+  "time": {
+    "start": 1759690123107,
+    "end": 1759690123107
+  }
+}

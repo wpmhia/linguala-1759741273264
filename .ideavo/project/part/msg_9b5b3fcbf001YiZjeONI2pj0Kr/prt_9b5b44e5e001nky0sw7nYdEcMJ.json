@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b44e5e001nky0sw7nYdEcMJ",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_018gTeWrndC1BeWqSm8dF5jk",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: [\n          {\n            role: 'user',\n            content: userPrompt\n          }\n        ],\n        max_tokens: 200,\n        temperature: 0.3\n      }),\n      signal: controller.signal\n    })",
+      "newString": "    const response = await fetch('https://dashscope-sg.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        input: {\n          source_language: sourceLang === 'auto' ? 'auto' : sourceLang,\n          target_language: targetLang,\n          source_text: text\n        }\n      }),\n      signal: controller.signal\n    })"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -135,24 +135,21 @@\n // Simple direct fetch with AbortController timeout\n const controller = new AbortController()\n const timeoutId = setTimeout(() => controller.abort(), 8000) // 8 second timeout\n \n-const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n+const response = await fetch('https://dashscope-sg.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation', {\n   method: 'POST',\n   headers: {\n     'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n     'Content-Type': 'application/json',\n   },\n   body: JSON.stringify({\n     model: 'qwen-mt-turbo',\n-    messages: [\n-      {\n-        role: 'user',\n-        content: userPrompt\n-      }\n-    ],\n-    max_tokens: 200,\n-    temperature: 0.3\n+    input: {\n+      source_language: sourceLang === 'auto' ? 'auto' : sourceLang,\n+      target_language: targetLang,\n+      source_text: text\n+    }\n   }),\n   signal: controller.signal\n })\n \n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759690120601,
+      "end": 1759690120610
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b5e549001qCmkYIJ8spc2wB",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API is still hanging. Let me try a direct test with the exact working format we confirmed:",
+  "time": {
+    "start": 1759690221726,
+    "end": 1759690221726
+  }
+}

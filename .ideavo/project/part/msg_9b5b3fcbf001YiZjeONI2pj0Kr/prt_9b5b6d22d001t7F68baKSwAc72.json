@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b5b6d22d001t7F68baKSwAc72",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translation): update qwen-mt-turbo endpoint and API format",
+  "cost": 0.7443106499999999,
+  "tokens": {
+    "input": 5,
+    "output": 512,
+    "reasoning": 0,
+    "cache": {
+      "write": 325,
+      "read": 75869
+    }
+  }
+}

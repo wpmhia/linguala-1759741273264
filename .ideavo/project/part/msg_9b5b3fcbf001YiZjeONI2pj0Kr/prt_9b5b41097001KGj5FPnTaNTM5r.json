@@ -1,0 +1,61 @@
+{
+  "id": "prt_9b5b41097001KGj5FPnTaNTM5r",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_012FpEYyXtwowBKd1qJvgjYt",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Update translation to use qwen-mt-turbo Singapore endpoint",
+          "status": "pending",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Fix API format for direct translation like DeepL",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Test translation functionality with correct endpoint",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Update translation to use qwen-mt-turbo Singapore endpoint\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Fix API format for direct translation like DeepL\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Test translation functionality with correct endpoint\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"3\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Update translation to use qwen-mt-turbo Singapore endpoint",
+          "status": "pending",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Fix API format for direct translation like DeepL",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Test translation functionality with correct endpoint",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        }
+      ]
+    },
+    "title": "3 todos",
+    "time": {
+      "start": 1759690102328,
+      "end": 1759690102328
+    }
+  }
+}

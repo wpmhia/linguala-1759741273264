@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b4a283001i8DoGLZcd4a5wD",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_016sMa4oc32qMbz3Vg6Qx71S",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && pkill -f \"npm\\|next\" 2>/dev/null || true",
+      "description": "Kill any existing processes"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Kill any existing processes"
+    },
+    "title": "cd /home/user/project && pkill -f \"npm\\|next\" 2>/dev/null || true",
+    "time": {
+      "start": 1759690139347,
+      "end": 1759690139379
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "prt_9b5b3f61a001KWHWGEpCLpgrzy",
+  "type": "text",
+  "text": "Translation is not working because you dont use qwen-mt-turbo (singapore) which previously was configured that it like DeepL would directly start translating.",
+  "messageID": "msg_9b5b3f619001s8KMSdu1H3O9Wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

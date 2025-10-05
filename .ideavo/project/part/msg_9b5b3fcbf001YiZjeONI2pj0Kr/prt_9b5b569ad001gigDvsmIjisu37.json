@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b569ad001gigDvsmIjisu37",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01EDKYbFz93BxQ7eX5j2EaUN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "    const data = await response.json()\n    const translatedText = data.output?.translation || data.output?.text\n\n    if (translatedText && translatedText !== text) {\n      return {\n        translatedText,\n        sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,\n        targetLang\n      }\n    } else {\n      throw new Error('No translation received or same as input')\n    }",
+      "newString": "    const data = await response.json()\n    const translatedText = data.choices[0]?.message?.content?.trim()\n\n    if (translatedText && translatedText !== text) {\n      return {\n        translatedText,\n        sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,\n        targetLang\n      }\n    } else {\n      throw new Error('No translation received or same as input')\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -156,9 +156,9 @@\n   throw new Error(`API request failed: ${response.status}`)\n }\n \n const data = await response.json()\n-const translatedText = data.output?.translation || data.output?.text\n+const translatedText = data.choices[0]?.message?.content?.trim()\n \n if (translatedText && translatedText !== text) {\n   return {\n     translatedText,\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759690192621,
+      "end": 1759690192631
+    }
+  }
+}

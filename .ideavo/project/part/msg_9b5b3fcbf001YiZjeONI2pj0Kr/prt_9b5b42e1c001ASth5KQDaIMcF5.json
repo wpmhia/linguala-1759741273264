@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b42e1c001ASth5KQDaIMcF5",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me update the translation service to use the Singapore endpoint for `qwen-mt-turbo`:",
+  "time": {
+    "start": 1759690109007,
+    "end": 1759690109007
+  }
+}

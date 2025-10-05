@@ -1,0 +1,27 @@
+{
+  "id": "prt_9b5b638e60010GSYiOBR7AAywS",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014JxCVvp9mTjYhRGezpMqQX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev &\nNEXT_PID=$!\nsleep 5\necho \"Testing simplified qwen-mt-turbo:\"\ntimeout 10 curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"translate\",\n    \"text\": \"Hello world\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\"\n  }' 2>/dev/null && echo \"\"\nkill $NEXT_PID 2>/dev/null || true",
+      "timeout": 15000,
+      "description": "Test simplified qwen-mt-turbo implementation"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n ⚠ Port 3000 is in use, trying 3001 instead.\n ⚠ Port 3001 is in use, trying 3002 instead.\n ⚠ Port 3002 is in use, trying 3003 instead.\n ⚠ Port 3003 is in use, trying 3004 instead.\n ⚠ Port 3004 is in use, trying 3005 instead.\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3005\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 1985ms\nTesting simplified qwen-mt-turbo:\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n ⚠ Port 3000 is in use, trying 3001 instead.\n ⚠ Port 3001 is in use, trying 3002 instead.\n ⚠ Port 3002 is in use, trying 3003 instead.\n ⚠ Port 3003 is in use, trying 3004 instead.\n ⚠ Port 3004 is in use, trying 3005 instead.\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3005\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 1985ms\nTesting simplified qwen-mt-turbo:\n",
+      "exit": null,
+      "description": "Test simplified qwen-mt-turbo implementation"
+    },
+    "title": "cd /home/user/project && npm run dev &\nNEXT_PID=$!\nsleep 5\necho \"Testing simplified qwen-mt-turbo:\"\ntimeout 10 curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"translate\",\n    \"text\": \"Hello world\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\"\n  }' 2>/dev/null && echo \"\"\nkill $NEXT_PID 2>/dev/null || true",
+    "time": {
+      "start": 1759690245261,
+      "end": 1759690260271
+    }
+  }
+}

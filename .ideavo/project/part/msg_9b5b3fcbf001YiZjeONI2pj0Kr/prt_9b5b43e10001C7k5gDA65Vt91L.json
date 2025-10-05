@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5b43e10001C7k5gDA65Vt91L",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_015ghXvPmRGJhHcTjVBQdGb4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 135,
+      "limit": 10
+    },
+    "output": "<file>\n00136|     const controller = new AbortController()\n00137|     const timeoutId = setTimeout(() => controller.abort(), 8000) // 8 second timeout\n00138|     \n00139|     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00140|       method: 'POST',\n00141|       headers: {\n00142|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00143|         'Content-Type': 'application/json',\n00144|       },\n00145|       body: JSON.stringify({\n\n(File has more lines. Use 'offset' parameter to read beyond line 145)\n</file>",
+    "metadata": {
+      "preview": "    const controller = new AbortController()\n    const timeoutId = setTimeout(() => controller.abort(), 8000) // 8 second timeout\n    \n    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759690113115,
+      "end": 1759690113117
+    }
+  }
+}

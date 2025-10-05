@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b47b59002bpxyNkzM6Ftt32",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Also, I need to remove the userPrompt creation since we're using the direct translation API now:",
+  "time": {
+    "start": 1759690128900,
+    "end": 1759690128900
+  }
+}

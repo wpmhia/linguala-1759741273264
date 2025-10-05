@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5b40af3001Ma9S6Mi45dnysN",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "You're absolutely right! I need to use the Singapore region endpoint for `qwen-mt-turbo` which has a different API format that works like DeepL for direct translation. Let me fix this.",
+  "time": {
+    "start": 1759690100818,
+    "end": 1759690100818
+  }
+}

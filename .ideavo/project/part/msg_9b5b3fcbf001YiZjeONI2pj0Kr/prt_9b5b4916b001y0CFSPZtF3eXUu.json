@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5b4916b001y0CFSPZtF3eXUu",
+  "messageID": "msg_9b5b3fcbf001YiZjeONI2pj0Kr",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01LKHBjoJtaBDCVwBxWL7kNR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "        input: {\n          source_language: sourceLang === 'auto' ? 'auto' : sourceLang,\n          target_language: targetLang,\n          source_text: text\n        }",
+      "newString": "        input: {\n          source_language: sourceLang === 'auto' ? 'auto' : (LANGUAGE_MAP[sourceLang] || sourceLang),\n          target_language: LANGUAGE_MAP[targetLang] || targetLang,\n          source_text: text\n        }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -137,10 +137,10 @@\n },\n body: JSON.stringify({\n   model: 'qwen-mt-turbo',\n   input: {\n-    source_language: sourceLang === 'auto' ? 'auto' : sourceLang,\n-    target_language: targetLang,\n+    source_language: sourceLang === 'auto' ? 'auto' : (LANGUAGE_MAP[sourceLang] || sourceLang),\n+    target_language: LANGUAGE_MAP[targetLang] || targetLang,\n     source_text: text\n   }\n }),\n signal: controller.signal\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759690135595,
+      "end": 1759690135599
+    }
+  }
+}

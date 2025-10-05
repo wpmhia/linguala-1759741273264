@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c5b5a9001wfnxeZ3lDd51bo",
+  "messageID": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01N3sgdfvXd4fF5BUFVh9kvN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"operation\":\"translate\",\"text\":\"hello world\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}' --max-time 10",
+      "description": "Test translation API with operation parameter"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test translation API with operation parameter"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"operation\":\"translate\",\"text\":\"hello world\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}' --max-time 10",
+    "time": {
+      "start": 1759691258651,
+      "end": 1759691258665
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5ca4085001BqmDMsMhzEbswG",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Found the problem! The hook is **always** sending requests to `/api/translate` regardless of the operation. It should route different operations to different endpoints:\n\n- `translate` operations → `/api/translate`\n- `improve`, `alternatives`, `rephrase` operations → `/api/write`\n\nLet me fix this:",
+  "time": {
+    "start": 1759691557026,
+    "end": 1759691557027
+  }
+}

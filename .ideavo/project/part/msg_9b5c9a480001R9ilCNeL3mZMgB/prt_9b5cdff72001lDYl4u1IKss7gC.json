@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5cdff72001lDYl4u1IKss7gC",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01NtkeDUUUhWFRo2Mqjj3q5n",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello world\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}'",
+      "description": "Test translation after server is ready"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test translation after server is ready"
+    },
+    "title": "sleep 2 && curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello world\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}'",
+    "time": {
+      "start": 1759691801581,
+      "end": 1759691803599
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5cc7b5f001PCCmrfr23Eymun",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_011eqZYegXFEfSaGpN5XwJh3",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "ps aux | grep -E \"(next|node)\" | grep -v grep",
+      "description": "Check running processes"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 1,
+      "description": "Check running processes"
+    },
+    "title": "ps aux | grep -E \"(next|node)\" | grep -v grep",
+    "time": {
+      "start": 1759691701648,
+      "end": 1759691701664
+    }
+  }
+}

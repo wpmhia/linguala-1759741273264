@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5c4f3ff002PtazLqRrIkuJCa",
+  "messageID": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The API route doesn't handle the `operation` parameter that the frontend is sending. Let me check what the frontend is actually sending by looking at the translator component again:",
+  "time": {
+    "start": 1759691208528,
+    "end": 1759691208528
+  }
+}

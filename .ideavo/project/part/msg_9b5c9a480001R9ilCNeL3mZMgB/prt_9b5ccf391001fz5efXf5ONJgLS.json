@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ccf391001fz5efXf5ONJgLS",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01BgHCMW77LymUKav3g2BYcb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run dev > server.log 2>&1 & sleep 3 && echo \"Server started in background\"",
+      "description": "Start server in background"
+    },
+    "output": "Server started in background\n",
+    "metadata": {
+      "output": "Server started in background\n",
+      "exit": 0,
+      "description": "Start server in background"
+    },
+    "title": "npm run dev > server.log 2>&1 & sleep 3 && echo \"Server started in background\"",
+    "time": {
+      "start": 1759691732667,
+      "end": 1759691735674
+    }
+  }
+}

@@ -1,0 +1,17 @@
+
+> ideavo-nextjs@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.31
+  - Local:        http://localhost:3000
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2s
+ ✓ Compiled /api/translate in 301ms (57 modules)
+Processing translation request: { text: 'hello', sourceLang: 'auto', targetLang: 'es' }
+Translating with qwen-mt-turbo: "hello" from auto to Spanish
+Making API request to DashScope...
+qwen-mt-turbo response status: 200
+Translation successful: Hola
+ POST /api/translate 200 in 1404ms

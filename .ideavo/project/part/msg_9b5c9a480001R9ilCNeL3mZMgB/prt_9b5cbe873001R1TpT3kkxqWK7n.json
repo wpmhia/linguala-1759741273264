@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5cbe873001R1TpT3kkxqWK7n",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01SXaLV6yfVGhUs7FpBWbga2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}' --max-time 15 &\nCURL_PID=$!\nsleep 12\nkill $CURL_PID 2>/dev/null\necho \"Request completed or timed out\"\ntail -10 dev.log",
+      "description": "Test translation with timeout and check logs"
+    },
+    "output": "Request completed or timed out\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2s\n ○ Compiling / ...\n ✓ Compiled / in 4.3s (1056 modules)\n GET / 200 in 4765ms\n ✓ Compiled in 709ms (502 modules)\n",
+    "metadata": {
+      "output": "Request completed or timed out\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2s\n ○ Compiling / ...\n ✓ Compiled / in 4.3s (1056 modules)\n GET / 200 in 4765ms\n ✓ Compiled in 709ms (502 modules)\n",
+      "exit": 0,
+      "description": "Test translation with timeout and check logs"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}' --max-time 15 &\nCURL_PID=$!\nsleep 12\nkill $CURL_PID 2>/dev/null\necho \"Request completed or timed out\"\ntail -10 dev.log",
+    "time": {
+      "start": 1759691665649,
+      "end": 1759691677658
+    }
+  }
+}

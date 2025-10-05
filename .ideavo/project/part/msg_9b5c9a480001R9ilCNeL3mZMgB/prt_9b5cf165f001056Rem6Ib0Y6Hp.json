@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b5cf165f001056Rem6Ib0Y6Hp",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(api): restore correct routing for translation and writing endpoints",
+  "cost": 1.1336052,
+  "tokens": {
+    "input": 0,
+    "output": 387,
+    "reasoning": 0,
+    "cache": {
+      "write": 172,
+      "read": 73754
+    }
+  }
+}

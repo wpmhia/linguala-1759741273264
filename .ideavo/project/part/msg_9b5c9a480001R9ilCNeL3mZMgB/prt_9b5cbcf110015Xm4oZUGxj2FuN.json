@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5cbcf110015Xm4oZUGxj2FuN",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01BiRhebaY5Ncdd1kXEYE1mw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 2 && npm run dev > dev.log 2>&1 & sleep 3 && echo \"Server restarted with timeout fix\"",
+      "description": "Restart development server with timeout fix"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart development server with timeout fix"
+    },
+    "title": "pkill -f \"next dev\" && sleep 2 && npm run dev > dev.log 2>&1 & sleep 3 && echo \"Server restarted with timeout fix\"",
+    "time": {
+      "start": 1759691658364,
+      "end": 1759691661369
+    }
+  }
+}

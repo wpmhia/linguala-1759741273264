@@ -8,5 +8,27 @@
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 2.5s
+ ✓ Ready in 2.2s
+ ○ Compiling /api/translate ...
+ ✓ Compiled /api/translate in 525ms (57 modules)
+Processing translation request: { text: 'hello', sourceLang: 'auto', targetLang: 'es' }
+Translating with qwen-mt-turbo: "hello" from auto to Spanish
+Making API request to DashScope...
+qwen-mt-turbo response status: 200
+Translation successful: Hola
+ POST /api/translate 200 in 1812ms
+Processing translation request: {
+  text: 'Good morning! How are you today?',
+  sourceLang: 'auto',
+  targetLang: 'fr'
+}
+Translating with qwen-mt-turbo: "Good morning! How are you today?" from auto to French
+Making API request to DashScope...
+qwen-mt-turbo response status: 200
+Translation successful: Bonjour ! Comment allez-vous aujourd'hui ?
+ POST /api/translate 200 in 1030ms
+ ✓ Compiled /api/write in 300ms (60 modules)
+Processing writing request: { operation: 'improve', text: 'I thinks this are good' }
+Starting qwen-flash API call for text: I thinks this are good
+ POST /api/write 200 in 847ms
 [?25h

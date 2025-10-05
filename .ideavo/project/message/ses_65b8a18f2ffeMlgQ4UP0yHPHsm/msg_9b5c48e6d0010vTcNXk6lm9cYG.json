@@ -1,0 +1,29 @@
+{
+  "id": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "role": "assistant",
+  "mode": "build",
+  "path": {
+    "cwd": "/home/user/project",
+    "root": "/home/user/project"
+  },
+  "tokens": {
+    "input": 0,
+    "output": 120,
+    "reasoning": 0,
+    "cache": {
+      "write": 225,
+      "read": 60029
+    }
+  },
+  "time": {
+    "created": 1759691181677,
+    "completed": 1759691604360
+  },
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "error": {
+    "name": "UnknownError",
+    "data": {
+      "message": "TimeoutError: The operation timed out."
+    }
+  }
+}

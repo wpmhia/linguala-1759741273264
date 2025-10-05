@@ -1,0 +1,27 @@
+{
+  "id": "prt_9b5ce35b0001NX0JN6mFN8kXIp",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01EjJ8Xx87by4Y9E4HxMskoW",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" && sleep 2 && rm -rf .next && npm run dev",
+      "timeout": 15000,
+      "description": "Clean restart with cache clear"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Clean restart with cache clear"
+    },
+    "title": "pkill -f \"next\" && sleep 2 && rm -rf .next && npm run dev",
+    "time": {
+      "start": 1759691815431,
+      "end": 1759691815450
+    }
+  }
+}

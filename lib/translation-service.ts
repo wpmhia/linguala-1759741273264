@@ -80,6 +80,15 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
   console.log(`Translating with qwen-mt-turbo: "${text.substring(0, 50)}" from ${sourceLang} to ${targetLang}`)
   
   try {
+    console.log('Making API request to DashScope...')
+    
+    // Add timeout to fetch call
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => {
+      console.log('API request timeout, aborting...')
+      controller.abort()
+    }, 10000) // 10 second timeout
+    
     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -96,8 +105,11 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
         ],
         max_tokens: 500,
         temperature: 0.1
-      })
+      }),
+      signal: controller.signal
     })
+    
+    clearTimeout(timeoutId)
     
     console.log('qwen-mt-turbo response status:', response.status)
     

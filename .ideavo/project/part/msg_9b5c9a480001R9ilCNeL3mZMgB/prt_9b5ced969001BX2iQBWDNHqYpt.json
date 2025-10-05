@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ced969001BX2iQBWDNHqYpt",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01ERamZNv9g6LL6oKinY8EYs",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}' --max-time 20",
+      "description": "Test translation with extended timeout"
+    },
+    "output": "{\"operation\":\"translate\",\"translatedText\":\"Hola\",\"sourceLang\":\"auto\",\"targetLang\":\"Spanish\"}",
+    "metadata": {
+      "output": "{\"operation\":\"translate\",\"translatedText\":\"Hola\",\"sourceLang\":\"auto\",\"targetLang\":\"Spanish\"}",
+      "exit": 0,
+      "description": "Test translation with extended timeout"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}' --max-time 20",
+    "time": {
+      "start": 1759691857273,
+      "end": 1759691858705
+    }
+  }
+}

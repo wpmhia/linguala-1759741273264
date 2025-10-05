@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5cc3ae1001TQ2lvS4wtuUqYm",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01AZnFpH3v9r2JijpazejjRd",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s http://localhost:3000/api/write -X POST -H \"Content-Type: application/json\" -d '{}' --max-time 5",
+      "description": "Test write API route"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test write API route"
+    },
+    "title": "curl -s http://localhost:3000/api/write -X POST -H \"Content-Type: application/json\" -d '{}' --max-time 5",
+    "time": {
+      "start": 1759691685378,
+      "end": 1759691685391
+    }
+  }
+}

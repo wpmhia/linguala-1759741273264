@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c5e24c001BrMvtg1l2H7Zx2",
+  "messageID": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KB2NHz5Cqk8xUhaWySUED2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run build 2>&1 | head -50",
+      "description": "Check for build errors"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Check for build errors"
+    },
+    "title": "npm run build 2>&1 | head -50",
+    "time": {
+      "start": 1759691269233,
+      "end": 1759691341443
+    }
+  }
+}

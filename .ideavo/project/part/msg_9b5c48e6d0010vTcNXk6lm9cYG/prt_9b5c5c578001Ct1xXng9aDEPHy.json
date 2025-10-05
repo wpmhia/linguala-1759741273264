@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c5c578001Ct1xXng9aDEPHy",
+  "messageID": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_017gwawwjfJUb52ZyntVdU26",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo \"DASHSCOPE_API_KEY exists: $(test -n \"$DASHSCOPE_API_KEY\" && echo \"yes\" || echo \"no\")\"",
+      "description": "Check if API key is set"
+    },
+    "output": "DASHSCOPE_API_KEY exists: yes\n",
+    "metadata": {
+      "output": "DASHSCOPE_API_KEY exists: yes\n",
+      "exit": 0,
+      "description": "Check if API key is set"
+    },
+    "title": "echo \"DASHSCOPE_API_KEY exists: $(test -n \"$DASHSCOPE_API_KEY\" && echo \"yes\" || echo \"no\")\"",
+    "time": {
+      "start": 1759691262219,
+      "end": 1759691262222
+    }
+  }
+}

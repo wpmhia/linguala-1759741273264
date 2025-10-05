@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c4f751001urxdg1I2R9nQZl",
+  "messageID": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_016hETe4BNea8eZ1VA5nEZkB",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -A 10 -B 5 \"operation.*translate\" /home/user/project/components/linguala-translator.tsx",
+      "description": "Check how frontend sends operation parameter"
+    },
+    "output": "  )\n})\n\n// Types for request payload\ntype TranslateRequest = {\n  operation: 'translate'\n  text: string\n  sourceLang: string\n  targetLang: string\n}\n\ntype ImproveRequest = {\n  operation: 'improve'\n  text: string\n  correctionsOnly: boolean\n  writingStyle: string\n--\n    controllerRef.current = new AbortController()\n\n    // Build typed request\n    const request: ProcessingRequest = activeTab === 'translate' \n      ? {\n          operation: 'translate',\n          text,\n          sourceLang,\n          targetLang\n        }\n      : {\n          operation: 'improve',\n          text,\n          correctionsOnly,\n          writingStyle,\n          tone\n        }\n\n    processing.mutate(request, {\n      onSuccess: (data) => {\n        // Handle different operation results\n        if (data.operation === 'translate') {\n          setResultText(data.translatedText || '')\n        } else if (data.operation === 'improve') {\n          setResultText(data.improvedText || '')\n        } else {\n          setResultText('')\n        }\n        \n        if (data.fallback) {\n          toast.info(\"Using fallback processing\")\n        }\n",
+    "metadata": {
+      "output": "  )\n})\n\n// Types for request payload\ntype TranslateRequest = {\n  operation: 'translate'\n  text: string\n  sourceLang: string\n  targetLang: string\n}\n\ntype ImproveRequest = {\n  operation: 'improve'\n  text: string\n  correctionsOnly: boolean\n  writingStyle: string\n--\n    controllerRef.current = new AbortController()\n\n    // Build typed request\n    const request: ProcessingRequest = activeTab === 'translate' \n      ? {\n          operation: 'translate',\n          text,\n          sourceLang,\n          targetLang\n        }\n      : {\n          operation: 'improve',\n          text,\n          correctionsOnly,\n          writingStyle,\n          tone\n        }\n\n    processing.mutate(request, {\n      onSuccess: (data) => {\n        // Handle different operation results\n        if (data.operation === 'translate') {\n          setResultText(data.translatedText || '')\n        } else if (data.operation === 'improve') {\n          setResultText(data.improvedText || '')\n        } else {\n          setResultText('')\n        }\n        \n        if (data.fallback) {\n          toast.info(\"Using fallback processing\")\n        }\n",
+      "exit": 0,
+      "description": "Check how frontend sends operation parameter"
+    },
+    "title": "grep -A 10 -B 5 \"operation.*translate\" /home/user/project/components/linguala-translator.tsx",
+    "time": {
+      "start": 1759691209532,
+      "end": 1759691209536
+    }
+  }
+}

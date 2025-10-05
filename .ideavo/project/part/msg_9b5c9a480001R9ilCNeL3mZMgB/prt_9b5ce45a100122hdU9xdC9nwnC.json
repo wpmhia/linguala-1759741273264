@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ce45a100122hdU9xdC9nwnC",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01H5KeyYCU3CV7kvVmzNExUH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" && sleep 2 && rm -rf .next && npm run dev > fresh.log 2>&1 & echo \"Starting fresh server...\" && sleep 10 && tail -5 fresh.log",
+      "description": "Start fresh server and check status"
+    },
+    "output": "Starting fresh server...\n",
+    "metadata": {
+      "output": "Starting fresh server...\n",
+      "exit": null,
+      "description": "Start fresh server and check status"
+    },
+    "title": "pkill -f \"next\" && sleep 2 && rm -rf .next && npm run dev > fresh.log 2>&1 & echo \"Starting fresh server...\" && sleep 10 && tail -5 fresh.log",
+    "time": {
+      "start": 1759691819513,
+      "end": 1759691829522
+    }
+  }
+}

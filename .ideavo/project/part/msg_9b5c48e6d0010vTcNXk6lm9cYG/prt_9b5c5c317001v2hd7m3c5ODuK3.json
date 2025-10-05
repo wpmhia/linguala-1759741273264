@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5c5c317001v2hd7m3c5ODuK3",
+  "messageID": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "It's still hanging. Let me check if the environment variable is set:",
+  "time": {
+    "start": 1759691261304,
+    "end": 1759691261304
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ca652b001iQ6DxszM2qKd6u",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_011pNLaiDf2ShvyB1QLav85v",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "    // Perform translation\n    const result = await translateText(text, sourceLang, targetLang, { domain, glossary })\n    \n    return NextResponse.json(result)",
+      "newString": "    // Perform translation\n    const result = await translateText(text, sourceLang, targetLang, { domain, glossary })\n    \n    // Return result with operation field for frontend compatibility\n    return NextResponse.json({\n      operation: 'translate',\n      translatedText: result.translatedText,\n      sourceLang: result.sourceLang,\n      targetLang: result.targetLang,\n      fallback: result.fallback\n    })"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -32,9 +32,16 @@\n \n   // Perform translation\n   const result = await translateText(text, sourceLang, targetLang, { domain, glossary })\n   \n-  return NextResponse.json(result)\n+  // Return result with operation field for frontend compatibility\n+  return NextResponse.json({\n+    operation: 'translate',\n+    translatedText: result.translatedText,\n+    sourceLang: result.sourceLang,\n+    targetLang: result.targetLang,\n+    fallback: result.fallback\n+  })\n \n } catch (error) {\n   console.error('Translation processing error:', error)\n   return NextResponse.json(\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759691566953,
+      "end": 1759691566963
+    }
+  }
+}

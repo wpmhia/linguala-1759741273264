@@ -70,7 +70,10 @@ export function useTextProcessing() {
   return useMutation<ProcessingResponse, Error, ProcessingRequest>({
     mutationFn: async (request) => {
       return retryWithBackoff(async () => {
-        const response = await axios.post('/api/translate', request, {
+        // Route requests to correct API endpoint based on operation
+        const endpoint = request.operation === 'translate' ? '/api/translate' : '/api/write'
+        
+        const response = await axios.post(endpoint, request, {
           timeout: 30000, // 30 second timeout for processing
         })
         return response.data

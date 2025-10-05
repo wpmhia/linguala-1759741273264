@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ce17d9001ZHdGFSYXrTVky3",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_0194sAv8L6QJxHggRw4YYNKG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}' &\nsleep 3\ntail -10 current.log",
+      "description": "Test API and check logs immediately"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 3.5s\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 3.5s\n",
+      "exit": 0,
+      "description": "Test API and check logs immediately"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"hello\",\"sourceLang\":\"auto\",\"targetLang\":\"es\"}' &\nsleep 3\ntail -10 current.log",
+    "time": {
+      "start": 1759691807968,
+      "end": 1759691810975
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5c4c34a001QTajskwtj2W9ai",
+  "messageID": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The translation API request is not showing up in the logs, which means it's hanging before even processing. This confirms the earlier summary that **translation is broken**. Let me examine the translation service that's causing the issue:",
+  "time": {
+    "start": 1759691197010,
+    "end": 1759691197010
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ceaab6001naM7erL29qhb8a",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01CfVF2AZkiwcf2J7WT3xKsz",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev > server_output.log 2>&1 & echo \"Server starting...\" && sleep 8 && tail -10 server_output.log",
+      "description": "Start server and check output"
+    },
+    "output": "Server starting...\n\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2s\n",
+    "metadata": {
+      "output": "Server starting...\n\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2s\n",
+      "exit": 0,
+      "description": "Start server and check output"
+    },
+    "title": "cd /home/user/project && npm run dev > server_output.log 2>&1 & echo \"Server starting...\" && sleep 8 && tail -10 server_output.log",
+    "time": {
+      "start": 1759691844942,
+      "end": 1759691852953
+    }
+  }
+}

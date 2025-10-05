@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5cdbd87001PzXyZ7z8oxsGof",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_018LMhw4vmE9tTJqa7rmmBQU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "lsof -ti:3000 | xargs kill -9 2>/dev/null; echo \"Cleaned up port 3000\"",
+      "description": "Clean up port 3000"
+    },
+    "output": "Cleaned up port 3000\n",
+    "metadata": {
+      "output": "Cleaned up port 3000\n",
+      "exit": 0,
+      "description": "Clean up port 3000"
+    },
+    "title": "lsof -ti:3000 | xargs kill -9 2>/dev/null; echo \"Cleaned up port 3000\"",
+    "time": {
+      "start": 1759691784413,
+      "end": 1759691784455
+    }
+  }
+}

@@ -33,7 +33,14 @@ export async function POST(request: NextRequest) {
     // Perform translation
     const result = await translateText(text, sourceLang, targetLang, { domain, glossary })
     
-    return NextResponse.json(result)
+    // Return result with operation field for frontend compatibility
+    return NextResponse.json({
+      operation: 'translate',
+      translatedText: result.translatedText,
+      sourceLang: result.sourceLang,
+      targetLang: result.targetLang,
+      fallback: result.fallback
+    })
 
   } catch (error) {
     console.error('Translation processing error:', error)

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5cdcc3d001J1DF5ntgwQc8qn",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01GfzvSm3Cg2Wp2i4FFwA6Bc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 2 && npm run dev > current.log 2>&1 & sleep 3 && echo \"Server running on correct port\"",
+      "description": "Restart server on port 3000"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart server on port 3000"
+    },
+    "title": "pkill -f \"next dev\" && sleep 2 && npm run dev > current.log 2>&1 & sleep 3 && echo \"Server running on correct port\"",
+    "time": {
+      "start": 1759691788621,
+      "end": 1759691791634
+    }
+  }
+}

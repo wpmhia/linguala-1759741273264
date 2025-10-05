@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5c503a9001wL1yz8bf2Y23s7",
+  "messageID": "msg_9b5c48e6d0010vTcNXk6lm9cYG",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Perfect! I can see the issue now. The frontend is sending an `operation: 'translate'` parameter, but the `/api/translate` route doesn't handle this parameter - it assumes all requests are for translation. I need to update the API route to handle the operation parameter properly.",
+  "time": {
+    "start": 1759691212897,
+    "end": 1759691212897
+  }
+}

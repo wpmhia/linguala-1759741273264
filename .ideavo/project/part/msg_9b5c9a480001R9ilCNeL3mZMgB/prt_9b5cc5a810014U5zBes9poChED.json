@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5cc5a810014U5zBes9poChED",
+  "messageID": "msg_9b5c9a480001R9ilCNeL3mZMgB",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_019Xa9D6F73rXuuGNBWPMM8R",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next\" && pkill -f \"node\" && sleep 3 && npm run dev > dev.log 2>&1 & sleep 5 && curl -s http://localhost:3000/ | head -5",
+      "description": "Kill all processes and restart server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill all processes and restart server"
+    },
+    "title": "pkill -f \"next\" && pkill -f \"node\" && sleep 3 && npm run dev > dev.log 2>&1 & sleep 5 && curl -s http://localhost:3000/ | head -5",
+    "time": {
+      "start": 1759691693814,
+      "end": 1759691698811
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c075ad001pfEPDKrRGkAfOu",
+  "messageID": "msg_9b5bc17dc001nQdxSSC1u5tYv4",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01E1fawUfx1KDLQpP6Ev3Tq7",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "content": "/**\n * Translation API Route\n * \n * Handles language translation ONLY using qwen-mt-turbo model.\n * Clean, simple implementation focused on translation.\n */\nimport { NextRequest, NextResponse } from 'next/server'\nimport { translateText } from '@/lib/translation-service'\n\nexport async function POST(request: NextRequest) {\n  try {\n    const body = await request.json()\n    console.log('Processing translation request:', body)\n    \n    const { text, sourceLang, targetLang, domain, glossary } = body\n\n    // Validate required fields\n    if (!text) {\n      console.log('Missing required field: text')\n      return NextResponse.json(\n        { error: 'Text is required' },\n        { status: 400 }\n      )\n    }\n\n    if (!targetLang) {\n      return NextResponse.json(\n        { error: 'Target language is required for translation' },\n        { status: 400 }\n      )\n    }\n\n    // Perform translation\n    const result = await translateText(text, sourceLang, targetLang, { domain, glossary })\n    \n    return NextResponse.json(result)\n\n  } catch (error) {\n    console.error('Translation processing error:', error)\n    return NextResponse.json(\n      { error: 'Internal server error' },\n      { status: 500 }\n    )\n  }\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/app/api/translate/route.ts",
+      "exists": true
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759690916312,
+      "end": 1759690916314
+    }
+  }
+}

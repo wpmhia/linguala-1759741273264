@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5649d84001GSnknqRuejqO31",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01W1jPPBYZ6WoQCe11GqXZyh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 150,
+      "limit": 50
+    },
+    "output": "<file>\n00151|     setResultText(\"\")\n00152|     \n00153|     // Re-process if there's source text\n00154|     if (sourceText.trim()) {\n00155|       handleProcessing(sourceText)\n00156|     }\n00157|   }\n00158| \n00159|   const swapLanguages = () => {\n00160|     if (sourceLang === \"auto\" || operation !== 'translate') return\n00161|     \n00162|     setSourceLang(targetLang)\n00163|     setTargetLang(sourceLang)\n00164|     setSourceText(resultText)\n00165|     setResultText(sourceText)\n00166|   }\n00167| \n00168|   const copyToClipboard = async (text: string) => {\n00169|     try {\n00170|       await navigator.clipboard.writeText(text)\n00171|       setCopySuccess(true)\n00172|       toast.success(\"Copied to clipboard!\")\n00173|       setTimeout(() => setCopySuccess(false), 2000)\n00174|     } catch (error) {\n00175|       toast.error(\"Failed to copy to clipboard\")\n00176|     }\n00177|   }\n00178| \n00179|   const clearText = () => {\n00180|     setSourceText(\"\")\n00181|     setResultText(\"\")\n00182|   }\n00183| \n00184|   // Auto-process when languages or operation change\n00185|   useEffect(() => {\n00186|     if (sourceText.trim()) {\n00187|       const timeoutId = setTimeout(() => {\n00188|         handleProcessing(sourceText)\n00189|       }, 300) // Debounce\n00190|       \n00191|       return () => clearTimeout(timeoutId)\n00192|     }\n00193|   }, [sourceLang, targetLang, operation])\n00194| \n00195|   const isLoading = processing.isPending\n00196| \n00197|   return (\n00198|     <div className=\"min-h-screen bg-white\">\n00199|       {/* Header */}\n00200|       <header className=\"border-b border-gray-200\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 200)\n</file>",
+    "metadata": {
+      "preview": "    setResultText(\"\")\n    \n    // Re-process if there's source text\n    if (sourceText.trim()) {\n      handleProcessing(sourceText)\n    }\n  }\n\n  const swapLanguages = () => {\n    if (sourceLang === \"auto\" || operation !== 'translate') return\n    \n    setSourceLang(targetLang)\n    setTargetLang(sourceLang)\n    setSourceText(resultText)\n    setResultText(sourceText)\n  }\n\n  const copyToClipboard = async (text: string) => {\n    try {\n      await navigator.clipboard.writeText(text)"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759684894700,
+      "end": 1759684894701
+    }
+  }
+}

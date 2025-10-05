@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5640c74001kQ0GPtW2cLVazV",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_019xhxHo6gZrmbWiLRH3mVaD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 85,
+      "limit": 20
+    },
+    "output": "<file>\n00086|   const getPlaceholderText = () => {\n00087|     switch (operation) {\n00088|       case 'translate':\n00089|         return 'Enter text to translate'\n00090|       case 'improve':\n00091|         return 'Enter text to improve'\n00092|       case 'rephrase':\n00093|         return 'Enter text to rephrase'\n00094|       case 'summarize':\n00095|         return 'Enter text to summarize'\n00096|       default:\n00097|         return 'Enter text'\n00098|     }\n00099|   }\n00100| \n00101|   const handleSourceTextChange = (text: string) => {\n00102|     setSourceText(text)\n00103|     if (text.trim()) {\n00104|       handleProcessing(text)\n00105|     } else {\n\n(File has more lines. Use 'offset' parameter to read beyond line 105)\n</file>",
+    "metadata": {
+      "preview": "  const getPlaceholderText = () => {\n    switch (operation) {\n      case 'translate':\n        return 'Enter text to translate'\n      case 'improve':\n        return 'Enter text to improve'\n      case 'rephrase':\n        return 'Enter text to rephrase'\n      case 'summarize':\n        return 'Enter text to summarize'\n      default:\n        return 'Enter text'\n    }\n  }\n\n  const handleSourceTextChange = (text: string) => {\n    setSourceText(text)\n    if (text.trim()) {\n      handleProcessing(text)\n    } else {"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759684857583,
+      "end": 1759684857585
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5648656001G6N4GiBTfQhwOd",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01AQwN6gDeW1A2Lc6Dcc5khx",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "        // Handle different operation results\n        switch (data.operation) {\n          case 'translate':\n            setResultText(data.translatedText || '')\n            break\n          case 'improve':\n            setResultText(data.improvedText || '')\n            break\n          case 'rephrase':\n            setResultText(data.rephrasedText || '')\n            break\n          case 'summarize':\n            setResultText(data.summaryText || '')\n            break\n          default:\n            setResultText('')\n        }",
+      "newString": "        // Handle different operation results\n        if (data.operation === 'translate') {\n          setResultText(data.translatedText || '')\n        } else if (data.operation === 'improve') {\n          setResultText(data.improvedText || '')\n        } else {\n          setResultText('')\n        }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -125,23 +125,14 @@\n \n processing.mutate(request, {\n   onSuccess: (data) => {\n     // Handle different operation results\n-    switch (data.operation) {\n-      case 'translate':\n-        setResultText(data.translatedText || '')\n-        break\n-      case 'improve':\n-        setResultText(data.improvedText || '')\n-        break\n-      case 'rephrase':\n-        setResultText(data.rephrasedText || '')\n-        break\n-      case 'summarize':\n-        setResultText(data.summaryText || '')\n-        break\n-      default:\n-        setResultText('')\n+    if (data.operation === 'translate') {\n+      setResultText(data.translatedText || '')\n+    } else if (data.operation === 'improve') {\n+      setResultText(data.improvedText || '')\n+    } else {\n+      setResultText('')\n     }\n     \n     if (data.fallback) {\n       toast.info(\"Using fallback processing\")\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759684890463,
+      "end": 1759684890474
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b56813e1002AXskv4GSmBY0Sv",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_017gkNng6tBGzwq7rBCqxMt8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "      case 'rephrase':\n        // Enhanced rephrase with word variety improvements\n        const rephrasedText = text\n          .replace(/\\bvery\\b/gi, 'extremely')\n          .replace(/\\bgood\\b/gi, 'excellent') \n          .replace(/\\bbad\\b/gi, 'poor')\n          .replace(/\\bnice\\b/gi, 'pleasant')\n          .replace(/\\bbig\\b/gi, 'large')\n          .replace(/\\bsmall\\b/gi, 'tiny')\n          .replace(/\\bfast\\b/gi, 'rapid')\n          .replace(/\\bslow\\b/gi, 'gradual')\n          .replace(/\\bsaid\\b/gi, 'stated')\n          .replace(/\\bwent\\b/gi, 'traveled')\n          .replace(/\\bcame\\b/gi, 'arrived')\n          .replace(/\\bmade\\b/gi, 'created')\n          .replace(/\\bgot\\b/gi, 'obtained')\n          .replace(/\\bsaw\\b/gi, 'observed')\n        \n        result = {\n          originalText: text,\n          rephrasedText,\n          operation: 'rephrase',\n          fallback: true\n        }\n        break\n\n      case 'summarize':\n        // Smart summarization fallback\n        const sentences = text.match(/[^.!?]+[.!?]+/g) || []\n        let summaryText = text\n        \n        if (sentences.length > 2) {\n          // Take first 2 sentences for summary\n          summaryText = sentences.slice(0, 2).join(' ').trim()\n        } else if (text.length > 100) {\n          // Take first ~60% of text if no clear sentences\n          const cutPoint = Math.floor(text.length * 0.6)\n          summaryText = text.substring(0, cutPoint) + '...'\n        }\n        \n        result = {\n          originalText: text,\n          summaryText,\n          operation: 'summarize',\n          fallback: true\n        }\n        break\n\n      default:\n        return NextResponse.json(\n          { error: 'Invalid operation. Supported: translate, improve, rephrase, summarize' },\n          { status: 400 }\n        )",
+      "newString": "      default:\n        return NextResponse.json(\n          { error: 'Invalid operation. Supported: translate, improve' },\n          { status: 400 }\n        )"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -43,59 +43,11 @@\n       fallback: true\n     }\n     break\n \n-  case 'rephrase':\n-    // Enhanced rephrase with word variety improvements\n-    const rephrasedText = text\n-      .replace(/\\bvery\\b/gi, 'extremely')\n-      .replace(/\\bgood\\b/gi, 'excellent') \n-      .replace(/\\bbad\\b/gi, 'poor')\n-      .replace(/\\bnice\\b/gi, 'pleasant')\n-      .replace(/\\bbig\\b/gi, 'large')\n-      .replace(/\\bsmall\\b/gi, 'tiny')\n-      .replace(/\\bfast\\b/gi, 'rapid')\n-      .replace(/\\bslow\\b/gi, 'gradual')\n-      .replace(/\\bsaid\\b/gi, 'stated')\n-      .replace(/\\bwent\\b/gi, 'traveled')\n-      .replace(/\\bcame\\b/gi, 'arrived')\n-      .replace(/\\bmade\\b/gi, 'created')\n-      .replace(/\\bgot\\b/gi, 'obtained')\n-      .replace(/\\bsaw\\b/gi, 'observed')\n-    \n-    result = {\n-      originalText: text,\n-      rephrasedText,\n-      operation: 'rephrase',\n-      fallback: true\n-    }\n-    break\n-\n-  case 'summarize':\n-    // Smart summarization fallback\n-    const sentences = text.match(/[^.!?]+[.!?]+/g) || []\n-    let summaryText = text\n-    \n-    if (sentences.length > 2) {\n-      // Take first 2 sentences for summary\n-      summaryText = sentences.slice(0, 2).join(' ').trim()\n-    } else if (text.length > 100) {\n-      // Take first ~60% of text if no clear sentences\n-      const cutPoint = Math.floor(text.length * 0.6)\n-      summaryText = text.substring(0, cutPoint) + '...'\n-    }\n-    \n-    result = {\n-      originalText: text,\n-      summaryText,\n-      operation: 'summarize',\n-      fallback: true\n-    }\n-    break\n-\n   default:\n     return NextResponse.json(\n-      { error: 'Invalid operation. Supported: translate, improve, rephrase, summarize' },\n+      { error: 'Invalid operation. Supported: translate, improve' },\n       { status: 400 }\n     )\n }\n \n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759685129408,
+      "end": 1759685129425
+    }
+  }
+}

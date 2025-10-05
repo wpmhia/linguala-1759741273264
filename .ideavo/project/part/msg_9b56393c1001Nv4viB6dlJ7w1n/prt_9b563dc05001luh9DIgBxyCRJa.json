@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b563dc05001luh9DIgBxyCRJa",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01YLoGVD5JZtqAq2HxgNRVu6",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 51,
+      "limit": 30
+    },
+    "output": "<file>\n00052| ]\n00053| \n00054| const TONES = [\n00055|   { value: 'enthusiastic', label: 'Enthusiastic' },\n00056|   { value: 'friendly', label: 'Friendly' },\n00057|   { value: 'confident', label: 'Confident' },\n00058|   { value: 'diplomatic', label: 'Diplomatic' }\n00059| ]\n00060| \n00061| export default function LingualaTranslator() {\n00062|   // Core processing state\n00063|   const [sourceText, setSourceText] = useState(\"\")\n00064|   const [resultText, setResultText] = useState(\"\")\n00065|   const [operation, setOperation] = useState(\"translate\")\n00066|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00067|   const [targetLang, setTargetLang] = useState(\"en\")\n00068|   \n00069|   // UI state\n00070|   const [copySuccess, setCopySuccess] = useState(false)\n00071|   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n00072| \n00073|   // React Query hook\n00074|   const processing = useTextProcessing()\n00075| \n00076|   // Helper functions\n00077|   const getLanguage = (code: string) => {\n00078|     return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n00079|   }\n00080| \n00081|   const getPlaceholderText = () => {\n\n(File has more lines. Use 'offset' parameter to read beyond line 81)\n</file>",
+    "metadata": {
+      "preview": "]\n\nconst TONES = [\n  { value: 'enthusiastic', label: 'Enthusiastic' },\n  { value: 'friendly', label: 'Friendly' },\n  { value: 'confident', label: 'Confident' },\n  { value: 'diplomatic', label: 'Diplomatic' }\n]\n\nexport default function LingualaTranslator() {\n  // Core processing state\n  const [sourceText, setSourceText] = useState(\"\")\n  const [resultText, setResultText] = useState(\"\")\n  const [operation, setOperation] = useState(\"translate\")\n  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  \n  // UI state\n  const [copySuccess, setCopySuccess] = useState(false)\n  const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759684845305,
+      "end": 1759684845306
+    }
+  }
+}

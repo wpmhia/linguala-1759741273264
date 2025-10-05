@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b5677f2a001PYo5hBz6JOfCL2",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "glob",
+  "callID": "toolu_01KGiutkc6aoto8De4qS612g",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/label.tsx"
+    },
+    "output": "/home/user/project/components/ui/label.tsx",
+    "metadata": {
+      "count": 1,
+      "truncated": false
+    },
+    "title": "",
+    "time": {
+      "start": 1759685083160,
+      "end": 1759685083169
+    }
+  }
+}

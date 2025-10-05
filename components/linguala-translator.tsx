@@ -4,9 +4,12 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { 
   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,
-  Check, X, Mic, Settings, History, Loader2
+  Check, X, Mic, Settings, History, Loader2, Languages, FileText
 } from "lucide-react"
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
@@ -40,21 +43,33 @@ const LANGUAGES = [
   { code: "vi", name: "Vietnamese", flag: "🇻🇳" }
 ]
 
-// Operation types
-const OPERATIONS = [
-  { id: 'translate', name: 'Translate', icon: '🌐' },
-  { id: 'improve', name: 'Improve Writing', icon: '✍️' },
-  { id: 'rephrase', name: 'Rephrase', icon: '🔄' },
-  { id: 'summarize', name: 'Summarize', icon: '📝' }
+// Writing styles
+const WRITING_STYLES = [
+  { value: 'simple', label: 'Simple' },
+  { value: 'business', label: 'Business' },
+  { value: 'casual', label: 'Casual' },
+  { value: 'academic', label: 'Academic' }
+]
+
+const TONES = [
+  { value: 'enthusiastic', label: 'Enthusiastic' },
+  { value: 'friendly', label: 'Friendly' },
+  { value: 'confident', label: 'Confident' },
+  { value: 'diplomatic', label: 'Diplomatic' }
 ]
 
 export default function LingualaTranslator() {
   // Core processing state
   const [sourceText, setSourceText] = useState("")
   const [resultText, setResultText] = useState("")
-  const [operation, setOperation] = useState("translate")
+  const [activeTab, setActiveTab] = useState("translate")
   const [sourceLang, setSourceLang] = useState("auto")
   const [targetLang, setTargetLang] = useState("en")
+  
+  // Write mode settings
+  const [correctionsOnly, setCorrectionsOnly] = useState(false)
+  const [writingStyle, setWritingStyle] = useState("simple")
+  const [tone, setTone] = useState("friendly")
   
   // UI state
   const [copySuccess, setCopySuccess] = useState(false)
@@ -69,17 +84,10 @@ export default function LingualaTranslator() {
   }
 
   const getPlaceholderText = () => {
-    switch (operation) {
-      case 'translate':
-        return 'Enter text to translate'
-      case 'improve':
-        return 'Enter text to improve'
-      case 'rephrase':
-        return 'Enter text to rephrase'
-      case 'summarize':
-        return 'Enter text to summarize'
-      default:
-        return 'Enter text'
+    if (activeTab === 'translate') {
+      return 'Enter text to translate'
+    } else {
+      return 'Type or paste text to see ideas for improvement.\n\nClick any word for alternatives or to rephrase a sentence.'
     }
   }
 
@@ -93,11 +101,20 @@ export default function LingualaTranslator() {
   }
 
   const handleProcessing = (text: string) => {
-    if (!text.trim()) return
-
     const request: any = {
       text,
-      operation
+      operation: activeTab === 'translate' ? 'translate' : 'improve'
+    }
+
+    // Only add language fields for translation
+    if (activeTab === 'translate') {
+      request.sourceLang = sourceLang
+      request.targetLang = targetLang
+    } else {
+      // Add write mode settings
+      request.correctionsOnly = correctionsOnly
+      request.writingStyle = writingStyle
+      request.tone = tone
     }
 
     // Only add language fields for translation
@@ -109,21 +126,12 @@ export default function LingualaTranslator() {
     processing.mutate(request, {
       onSuccess: (data) => {
         // Handle different operation results
-        switch (data.operation) {
-          case 'translate':
-            setResultText(data.translatedText || '')
-            break
-          case 'improve':
-            setResultText(data.improvedText || '')
-            break
-          case 'rephrase':
-            setResultText(data.rephrasedText || '')
-            break
-          case 'summarize':
-            setResultText(data.summaryText || '')
-            break
-          default:
-            setResultText('')
+        if (data.operation === 'translate') {
+          setResultText(data.translatedText || '')
+        } else if (data.operation === 'improve') {
+          setResultText(data.improvedText || '')
+        } else {
+          setResultText('')
         }
         
         if (data.fallback) {
@@ -138,18 +146,10 @@ export default function LingualaTranslator() {
     })
   }
 
-  const handleOperationChange = (newOperation: string) => {
-    setOperation(newOperation)
-    setResultText("")
-    
-    // Re-process if there's source text
-    if (sourceText.trim()) {
-      handleProcessing(sourceText)
-    }
-  }
+
 
   const swapLanguages = () => {
-    if (sourceLang === "auto" || operation !== 'translate') return
+    if (sourceLang === "auto" || activeTab !== 'translate') return
     
     setSourceLang(targetLang)
     setTargetLang(sourceLang)
@@ -173,7 +173,7 @@ export default function LingualaTranslator() {
     setResultText("")
   }
 
-  // Auto-process when languages or operation change
+  // Auto-process when languages or tab change
   useEffect(() => {
     if (sourceText.trim()) {
       const timeoutId = setTimeout(() => {
@@ -182,7 +182,7 @@ export default function LingualaTranslator() {
       
       return () => clearTimeout(timeoutId)
     }
-  }, [sourceLang, targetLang, operation])
+  }, [sourceLang, targetLang, activeTab, correctionsOnly, writingStyle, tone])
 
   const isLoading = processing.isPending
 
@@ -208,51 +208,42 @@ export default function LingualaTranslator() {
       </header>
 
       <main className="max-w-screen-xl mx-auto px-6 py-8">
-        {/* Main Processing Interface */}
-        <div className="bg-white">
-          {/* Operation Selection */}
-          <div className="mb-6">
-            <div className="flex items-center space-x-2 mb-4">
-              {OPERATIONS.map((op) => (
-                <button
-                  key={op.id}
-                  onClick={() => handleOperationChange(op.id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    operation === op.id
-                      ? 'bg-blue-100 text-blue-700'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  <span className="mr-2">{op.icon}</span>
-                  {op.name}
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* Tab Navigation */}
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="grid w-full max-w-md grid-cols-2 mb-8">
+            <TabsTrigger value="translate" className="flex items-center gap-2">
+              <Languages className="h-4 w-4" />
+              Translate text
+              <div className="text-xs text-gray-500">35 languages</div>
+            </TabsTrigger>
+            <TabsTrigger value="write" className="flex items-center gap-2">
+              <FileText className="h-4 w-4" />
+              Write
+              <div className="text-xs text-gray-500">AI-powered edits</div>
+            </TabsTrigger>
+          </TabsList>
 
-          {/* Language Selection Bar - Only show for translation */}
-          {operation === 'translate' && (
-            <div className="flex items-center justify-between mb-6 bg-gray-50 rounded-lg p-4">
-              <div className="flex items-center space-x-4">
-                <Select value={sourceLang} onValueChange={setSourceLang}>
-                  <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm">{getLanguage(sourceLang).flag}</span>
-                      <span className="font-medium text-sm">{getLanguage(sourceLang).name}</span>
-                    </div>
-                  </SelectTrigger>
-                  <SelectContent>
-                    {LANGUAGES.map(lang => (
-                      <SelectItem key={lang.code} value={lang.code}>
-                        <div className="flex items-center space-x-2">
-                          <span>{lang.flag}</span>
-                          <span>{lang.name}</span>
-                        </div>
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+          <TabsContent value="translate" className="space-y-6">
+            {/* Language Selection Bar */}
+            <div className="flex items-center justify-between bg-gray-50 rounded-lg p-4">
+              <Select value={sourceLang} onValueChange={setSourceLang}>
+                <SelectTrigger className="min-w-[160px] border-0 bg-transparent hover:bg-gray-100">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm">{getLanguage(sourceLang).flag}</span>
+                    <span className="font-medium text-sm">{getLanguage(sourceLang).name}</span>
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  {LANGUAGES.map(lang => (
+                    <SelectItem key={lang.code} value={lang.code}>
+                      <div className="flex items-center space-x-2">
+                        <span>{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
               <Button
                 variant="ghost"
@@ -264,28 +255,78 @@ export default function LingualaTranslator() {
                 <ArrowUpDown className="h-4 w-4" />
               </Button>
 
-              <div className="flex items-center space-x-4">
-                <Select value={targetLang} onValueChange={setTargetLang}>
-                  <SelectTrigger className="min-w-[140px] border-0 bg-transparent hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm">{getLanguage(targetLang).flag}</span>
-                      <span className="font-medium text-sm">{getLanguage(targetLang).name}</span>
-                    </div>
-                  </SelectTrigger>
-                  <SelectContent>
-                    {LANGUAGES.filter(lang => lang.code !== "auto").map(lang => (
-                      <SelectItem key={lang.code} value={lang.code}>
-                        <div className="flex items-center space-x-2">
-                          <span>{lang.flag}</span>
-                          <span>{lang.name}</span>
-                        </div>
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              <Select value={targetLang} onValueChange={setTargetLang}>
+                <SelectTrigger className="min-w-[160px] border-0 bg-transparent hover:bg-gray-100">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm">{getLanguage(targetLang).flag}</span>
+                    <span className="font-medium text-sm">{getLanguage(targetLang).name}</span>
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  {LANGUAGES.filter(lang => lang.code !== "auto").map(lang => (
+                    <SelectItem key={lang.code} value={lang.code}>
+                      <div className="flex items-center space-x-2">
+                        <span>{lang.flag}</span>
+                        <span>{lang.name}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="write" className="space-y-6">
+            {/* Write Mode Settings */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="corrections-only" className="text-sm font-medium">Corrections only</Label>
+                  <Switch
+                    id="corrections-only"
+                    checked={correctionsOnly}
+                    onCheckedChange={setCorrectionsOnly}
+                  />
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label className="text-sm font-medium mb-2 block">Style</Label>
+                    <Select value={writingStyle} onValueChange={setWritingStyle}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {WRITING_STYLES.map(style => (
+                          <SelectItem key={style.value} value={style.value}>
+                            {style.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div>
+                    <Label className="text-sm font-medium mb-2 block">Tone</Label>
+                    <Select value={tone} onValueChange={setTone}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {TONES.map(toneOption => (
+                          <SelectItem key={toneOption.value} value={toneOption.value}>
+                            {toneOption.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
               </div>
             </div>
-          )}
+          </TabsContent>
 
           {/* Processing Areas */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden">
@@ -298,7 +339,7 @@ export default function LingualaTranslator() {
                   onFocus={() => setFocusedArea('source')}
                   onBlur={() => setFocusedArea(null)}
                   placeholder={getPlaceholderText()}
-                  className="min-h-[300px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6"
+                  className="min-h-[400px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6"
                   style={{ fontSize: '16px', lineHeight: '1.5' }}
                 />
                 
@@ -333,7 +374,61 @@ export default function LingualaTranslator() {
 
             {/* Result Text */}
             <div className="relative">
-              <div className="min-h-[300px] p-6 text-lg" style={{ fontSize: '16px', lineHeight: '1.5' }}>
+              {/* Editing Tools Sidebar */}
+              {activeTab === 'write' && (
+                <div className="absolute top-0 right-0 w-64 h-full bg-gray-50 border-l border-gray-200 p-4">
+                  <div className="text-sm font-medium text-gray-700 mb-4">Editing tools</div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        <span className="text-sm">Corrections only</span>
+                      </div>
+                      <Switch checked={correctionsOnly} onCheckedChange={setCorrectionsOnly} />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <FileText className="h-4 w-4" />
+                        <span className="text-sm font-medium">Styles</span>
+                      </div>
+                      <Select value={`${writingStyle}-${tone}`} onValueChange={(value) => {
+                        const [style, toneValue] = value.split('-')
+                        setWritingStyle(style)
+                        setTone(toneValue)
+                      }}>
+                        <SelectTrigger className="text-sm">
+                          <SelectValue placeholder="None set" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="simple-friendly">Simple & Friendly</SelectItem>
+                          <SelectItem value="business-confident">Business & Confident</SelectItem>
+                          <SelectItem value="casual-enthusiastic">Casual & Enthusiastic</SelectItem>
+                          <SelectItem value="academic-diplomatic">Academic & Diplomatic</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <Settings className="h-4 w-4" />
+                      <span>Show changes</span>
+                      <Switch disabled />
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8">
+                    <div className="text-sm font-medium text-gray-700 mb-2">Customizations</div>
+                    <Button variant="outline" className="w-full text-sm">
+                      <Settings className="h-4 w-4 mr-2" />
+                      Custom rules
+                      <span className="ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded">Pro</span>
+                    </Button>
+                  </div>
+                </div>
+              )}
+              
+              <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>
                 {isLoading ? (
                   <div className="flex items-center justify-center h-full">
                     <Loader2 className="h-6 w-6 animate-spin text-blue-500" />
@@ -345,7 +440,7 @@ export default function LingualaTranslator() {
                     onBlur={() => setFocusedArea(null)}
                     tabIndex={0}
                   >
-                    {resultText || `${operation === 'translate' ? 'Translation' : operation === 'improve' ? 'Improved text' : operation === 'rephrase' ? 'Rephrased text' : 'Summary'} will appear here`}
+                    {resultText || (activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here')}
                   </div>
                 )}
               </div>
@@ -392,46 +487,7 @@ export default function LingualaTranslator() {
               )}
             </div>
           </div>
-
-          {/* Bottom Actions */}
-          <div className="mt-6 flex items-center justify-end">
-            <div className="flex items-center space-x-2 text-sm text-gray-500">
-              <span>Powered by Linguala</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Feature showcase */}
-        <div className="mt-12">
-          <div className="text-center">
-            <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                AI-Powered Text Processing Platform
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Advanced AI tools for translation, writing improvement, rephrasing, and summarization. Professional quality results in seconds.
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
-                <div className="text-center">
-                  <div className="font-semibold">25+</div>
-                  <div>Languages</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-semibold">4</div>
-                  <div>AI Tools</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-semibold">Fast</div>
-                  <div>Processing</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-semibold">Secure</div>
-                  <div>& Private</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </Tabs>
       </main>
     </div>
   )

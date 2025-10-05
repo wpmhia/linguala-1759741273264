@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b566ce35001T5SF6Zk5V751fD",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01F1YvP15C6GwoXrWhHJ8wyE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const handleOperationChange = (newOperation: string) => {\n    setOperation(newOperation)\n    setResultText(\"\")\n    \n    // Re-process if there's source text\n    if (sourceText.trim()) {\n      handleProcessing(sourceText)\n    }\n  }",
+      "newString": ""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -145,18 +145,10 @@\n     }\n   })\n }\n \n-const handleOperationChange = (newOperation: string) => {\n-  setOperation(newOperation)\n-  setResultText(\"\")\n-  \n-  // Re-process if there's source text\n-  if (sourceText.trim()) {\n-    handleProcessing(sourceText)\n-  }\n-}\n \n+\n const swapLanguages = () => {\n   if (sourceLang === \"auto\" || activeTab !== 'translate') return\n   \n   setSourceLang(targetLang)\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685038443,
+      "end": 1759685038448
+    }
+  }
+}

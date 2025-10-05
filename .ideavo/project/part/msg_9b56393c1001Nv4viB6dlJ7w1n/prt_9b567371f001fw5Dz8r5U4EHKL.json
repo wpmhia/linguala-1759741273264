@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b567371f001fw5Dz8r5U4EHKL",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "glob",
+  "callID": "toolu_01CwyRFdkVoyYaNB9fXzDyPD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/tabs.tsx"
+    },
+    "output": "/home/user/project/components/ui/tabs.tsx",
+    "metadata": {
+      "count": 1,
+      "truncated": false
+    },
+    "title": "",
+    "time": {
+      "start": 1759685064719,
+      "end": 1759685064730
+    }
+  }
+}

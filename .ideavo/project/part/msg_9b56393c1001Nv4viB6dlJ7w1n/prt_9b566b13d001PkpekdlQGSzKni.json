@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b566b13d001PkpekdlQGSzKni",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01PAFqm4d1akyNwaD8RHmuuo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 145,
+      "limit": 15
+    },
+    "output": "<file>\n00146|     })\n00147|   }\n00148| \n00149|   const handleOperationChange = (newOperation: string) => {\n00150|     setOperation(newOperation)\n00151|     setResultText(\"\")\n00152|     \n00153|     // Re-process if there's source text\n00154|     if (sourceText.trim()) {\n00155|       handleProcessing(sourceText)\n00156|     }\n00157|   }\n00158| \n00159|   const swapLanguages = () => {\n00160|     if (sourceLang === \"auto\" || activeTab !== 'translate') return\n\n(File has more lines. Use 'offset' parameter to read beyond line 160)\n</file>",
+    "metadata": {
+      "preview": "    })\n  }\n\n  const handleOperationChange = (newOperation: string) => {\n    setOperation(newOperation)\n    setResultText(\"\")\n    \n    // Re-process if there's source text\n    if (sourceText.trim()) {\n      handleProcessing(sourceText)\n    }\n  }\n\n  const swapLanguages = () => {\n    if (sourceLang === \"auto\" || activeTab !== 'translate') return"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685031429,
+      "end": 1759685031431
+    }
+  }
+}

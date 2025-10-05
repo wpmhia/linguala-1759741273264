@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b56460ab0019lGsK132I9gAbo",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01UFhtuXuhsujZBsHzk1PwiT",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 105,
+      "limit": 25
+    },
+    "output": "<file>\n00106|     const request: any = {\n00107|       text,\n00108|       operation\n00109|     }\n00110| \n00111|     // Only add language fields for translation\n00112|     if (operation === 'translate') {\n00113|       request.sourceLang = sourceLang\n00114|       request.targetLang = targetLang\n00115|     }\n00116| \n00117|     processing.mutate(request, {\n00118|       onSuccess: (data) => {\n00119|         // Handle different operation results\n00120|         switch (data.operation) {\n00121|           case 'translate':\n00122|             setResultText(data.translatedText || '')\n00123|             break\n00124|           case 'improve':\n00125|             setResultText(data.improvedText || '')\n00126|             break\n00127|           case 'rephrase':\n00128|             setResultText(data.rephrasedText || '')\n00129|             break\n00130|           case 'summarize':\n\n(File has more lines. Use 'offset' parameter to read beyond line 130)\n</file>",
+    "metadata": {
+      "preview": "    const request: any = {\n      text,\n      operation\n    }\n\n    // Only add language fields for translation\n    if (operation === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    }\n\n    processing.mutate(request, {\n      onSuccess: (data) => {\n        // Handle different operation results\n        switch (data.operation) {\n          case 'translate':\n            setResultText(data.translatedText || '')\n            break\n          case 'improve':\n            setResultText(data.improvedText || '')"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759684879033,
+      "end": 1759684879040
+    }
+  }
+}

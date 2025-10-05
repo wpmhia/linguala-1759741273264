@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b5672963001ABupXb55tVHBYd",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "glob",
+  "callID": "toolu_018o3Q3MELcbZy1cGcwKrLNR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "**/switch.tsx"
+    },
+    "output": "/home/user/project/components/ui/switch.tsx",
+    "metadata": {
+      "count": 1,
+      "truncated": false
+    },
+    "title": "",
+    "time": {
+      "start": 1759685061418,
+      "end": 1759685061429
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "prt_9b563b72f001Xo8kKE49TsIvYU",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01LFC88StuL4Ay8Tc8bxsTzm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "import { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, Loader2\n} from \"lucide-react\"",
+          "newString": "import { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, Loader2, Languages, FileText\n} from \"lucide-react\""
+        },
+        {
+          "oldString": "import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"",
+          "newString": "import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { Label } from \"@/components/ui/label\"\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\""
+        },
+        {
+          "oldString": "// Operation types\nconst OPERATIONS = [\n  { id: 'translate', name: 'Translate', icon: '🌐' },\n  { id: 'improve', name: 'Improve Writing', icon: '✍️' },\n  { id: 'rephrase', name: 'Rephrase', icon: '🔄' },\n  { id: 'summarize', name: 'Summarize', icon: '📝' }\n]",
+          "newString": "// Writing styles\nconst WRITING_STYLES = [\n  { value: 'simple', label: 'Simple' },\n  { value: 'business', label: 'Business' },\n  { value: 'casual', label: 'Casual' },\n  { value: 'academic', label: 'Academic' }\n]\n\nconst TONES = [\n  { value: 'enthusiastic', label: 'Enthusiastic' },\n  { value: 'friendly', label: 'Friendly' },\n  { value: 'confident', label: 'Confident' },\n  { value: 'diplomatic', label: 'Diplomatic' }\n]"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -5,9 +5,9 @@\n import { Textarea } from \"@/components/ui/textarea\"\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n import { \n   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n-  Check, X, Mic, Settings, History, Loader2\n+  Check, X, Mic, Settings, History, Loader2, Languages, FileText\n } from \"lucide-react\"\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { useTextProcessing } from \"@/hooks/use-translation\"\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -3,8 +3,11 @@\n import { useState, useEffect } from \"react\"\n import { Button } from \"@/components/ui/button\"\n import { Textarea } from \"@/components/ui/textarea\"\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n+import { Switch } from \"@/components/ui/switch\"\n+import { Label } from \"@/components/ui/label\"\n+import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n import { \n   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n   Check, X, Mic, Settings, History, Loader2, Languages, FileText\n } from \"lucide-react\"\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -42,16 +42,23 @@\n   { code: \"th\", name: \"Thai\", flag: \"🇹🇭\" },\n   { code: \"vi\", name: \"Vietnamese\", flag: \"🇻🇳\" }\n ]\n \n-// Operation types\n-const OPERATIONS = [\n-  { id: 'translate', name: 'Translate', icon: '🌐' },\n-  { id: 'improve', name: 'Improve Writing', icon: '✍️' },\n-  { id: 'rephrase', name: 'Rephrase', icon: '🔄' },\n-  { id: 'summarize', name: 'Summarize', icon: '📝' }\n+// Writing styles\n+const WRITING_STYLES = [\n+  { value: 'simple', label: 'Simple' },\n+  { value: 'business', label: 'Business' },\n+  { value: 'casual', label: 'Casual' },\n+  { value: 'academic', label: 'Academic' }\n ]\n \n+const TONES = [\n+  { value: 'enthusiastic', label: 'Enthusiastic' },\n+  { value: 'friendly', label: 'Friendly' },\n+  { value: 'confident', label: 'Confident' },\n+  { value: 'diplomatic', label: 'Diplomatic' }\n+]\n+\n export default function LingualaTranslator() {\n   // Core processing state\n   const [sourceText, setSourceText] = useState(\"\")\n   const [resultText, setResultText] = useState(\"\")\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759684841625,
+      "end": 1759684841647
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5647041001FjxoG9VsMaw50t",
+  "messageID": "msg_9b56393c1001Nv4viB6dlJ7w1n",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Y118i1rNqzYZnC7cH3F953",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const handleProcessing = (text: string) => {\n    const request: any = {\n      text,\n      operation\n    }\n\n    // Only add language fields for translation\n    if (operation === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    }",
+      "newString": "  const handleProcessing = (text: string) => {\n    const request: any = {\n      text,\n      operation: activeTab === 'translate' ? 'translate' : 'improve'\n    }\n\n    // Only add language fields for translation\n    if (activeTab === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    } else {\n      // Add write mode settings\n      request.correctionsOnly = correctionsOnly\n      request.writingStyle = writingStyle\n      request.tone = tone\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -100,16 +100,25 @@\n   }\n }\n \n const handleProcessing = (text: string) => {\n-  if (!text.trim()) return\n-\n   const request: any = {\n     text,\n-    operation\n+    operation: activeTab === 'translate' ? 'translate' : 'improve'\n   }\n \n   // Only add language fields for translation\n+  if (activeTab === 'translate') {\n+    request.sourceLang = sourceLang\n+    request.targetLang = targetLang\n+  } else {\n+    // Add write mode settings\n+    request.correctionsOnly = correctionsOnly\n+    request.writingStyle = writingStyle\n+    request.tone = tone\n+  }\n+\n+  // Only add language fields for translation\n   if (operation === 'translate') {\n     request.sourceLang = sourceLang\n     request.targetLang = targetLang\n   }\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759684885412,
+      "end": 1759684885420
+    }
+  }
+}

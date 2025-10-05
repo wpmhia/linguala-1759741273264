@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5779fb9001TdbJ5LhXdJunbM",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01VGkjjgfecEzTeSPHNgasET",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 180,
+      "limit": 40
+    },
+    "output": "<file>\n00181|           text,\n00182|           sourceLang,\n00183|           targetLang\n00184|         }\n00185|       : {\n00186|           operation: 'improve',\n00187|           text,\n00188|           correctionsOnly,\n00189|           writingStyle,\n00190|           tone\n00191|         }\n00192| \n00193|     processing.mutate(request, {\n00194|       onSuccess: (data) => {\n00195|         // Handle different operation results\n00196|         if (data.operation === 'translate') {\n00197|           setResultText(data.translatedText || '')\n00198|         } else if (data.operation === 'improve') {\n00199|           setResultText(data.improvedText || '')\n00200|         } else {\n00201|           setResultText('')\n00202|         }\n00203|         \n00204|         if (data.fallback) {\n00205|           toast.info(\"Using fallback processing\")\n00206|         }\n00207|       },\n00208|       onError: (error: any) => {\n00209|         // Don't show error for aborted requests\n00210|         if (error?.name === 'AbortError') return\n00211|         \n00212|         console.error('Processing error:', error)\n00213|         setResultText(\"Service temporarily unavailable. Please try again later.\")\n00214|         toast.error(\"Processing failed\")\n00215|       }\n00216|     })\n00217|   }, [activeTab, sourceLang, targetLang, correctionsOnly, writingStyle, tone, processing])\n00218| \n00219| \n00220| \n\n(File has more lines. Use 'offset' parameter to read beyond line 220)\n</file>",
+    "metadata": {
+      "preview": "          text,\n          sourceLang,\n          targetLang\n        }\n      : {\n          operation: 'improve',\n          text,\n          correctionsOnly,\n          writingStyle,\n          tone\n        }\n\n    processing.mutate(request, {\n      onSuccess: (data) => {\n        // Handle different operation results\n        if (data.operation === 'translate') {\n          setResultText(data.translatedText || '')\n        } else if (data.operation === 'improve') {\n          setResultText(data.improvedText || '')\n        } else {"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686140546,
+      "end": 1759686140548
+    }
+  }
+}

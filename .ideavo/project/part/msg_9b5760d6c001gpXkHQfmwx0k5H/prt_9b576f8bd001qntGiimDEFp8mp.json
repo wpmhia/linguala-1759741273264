@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b576f8bd001qntGiimDEFp8mp",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01TNgk1dPFEghW6X4SQWqwDm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/globals.css",
+      "oldString": "  .linguala-blur-bg {\n    background: rgba(255, 255, 255, 0.95);\n    backdrop-filter: blur(20px);\n    -webkit-backdrop-filter: blur(20px);\n  }",
+      "newString": "  .linguala-blur-bg {\n    background: rgba(255, 255, 255, 0.95);\n    backdrop-filter: blur(20px);\n    -webkit-backdrop-filter: blur(20px);\n  }\n  \n  .dark .linguala-blur-bg {\n    background: rgba(13, 16, 23, 0.95);\n  }\n  \n  .linguala-glass {\n    background: rgba(255, 255, 255, 0.1);\n    backdrop-filter: blur(10px);\n    -webkit-backdrop-filter: blur(10px);\n    border: 1px solid rgba(255, 255, 255, 0.2);\n  }\n  \n  .dark .linguala-glass {\n    background: rgba(255, 255, 255, 0.05);\n    border: 1px solid rgba(255, 255, 255, 0.1);\n  }\n  \n  .linguala-rainbow-border {\n    background: linear-gradient(white, white) padding-box,\n                linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4, #10B981, #F59E0B) border-box;\n    border: 2px solid transparent;\n  }\n  \n  .dark .linguala-rainbow-border {\n    background: linear-gradient(hsl(224 71% 4%), hsl(224 71% 4%)) padding-box,\n                linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4, #10B981, #F59E0B) border-box;\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/globals.css\n===================================================================\n--- /home/user/project/app/globals.css\n+++ /home/user/project/app/globals.css\n@@ -116,8 +116,35 @@\n   backdrop-filter: blur(20px);\n   -webkit-backdrop-filter: blur(20px);\n }\n \n+.dark .linguala-blur-bg {\n+  background: rgba(13, 16, 23, 0.95);\n+}\n+\n+.linguala-glass {\n+  background: rgba(255, 255, 255, 0.1);\n+  backdrop-filter: blur(10px);\n+  -webkit-backdrop-filter: blur(10px);\n+  border: 1px solid rgba(255, 255, 255, 0.2);\n+}\n+\n+.dark .linguala-glass {\n+  background: rgba(255, 255, 255, 0.05);\n+  border: 1px solid rgba(255, 255, 255, 0.1);\n+}\n+\n+.linguala-rainbow-border {\n+  background: linear-gradient(white, white) padding-box,\n+              linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4, #10B981, #F59E0B) border-box;\n+  border: 2px solid transparent;\n+}\n+\n+.dark .linguala-rainbow-border {\n+  background: linear-gradient(hsl(224 71% 4%), hsl(224 71% 4%)) padding-box,\n+              linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4, #10B981, #F59E0B) border-box;\n+}\n+\n .linguala-card-hover {\n   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n }\n \n"
+    },
+    "title": "app/globals.css",
+    "time": {
+      "start": 1759686103316,
+      "end": 1759686103322
+    }
+  }
+}

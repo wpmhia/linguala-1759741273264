@@ -1,0 +1,109 @@
+{
+  "id": "prt_9b5761ff600121plIR8dfknq73",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_013576ewB25R3vcXdnMXFvB4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Create dark mode theme provider and context",
+          "status": "pending",
+          "priority": "high",
+          "id": "15"
+        },
+        {
+          "content": "Add dark mode toggle to header",
+          "status": "pending",
+          "priority": "high",
+          "id": "16"
+        },
+        {
+          "content": "Update all components with dark mode styles",
+          "status": "pending",
+          "priority": "high",
+          "id": "17"
+        },
+        {
+          "content": "Add colorful gradients and fun visual elements",
+          "status": "pending",
+          "priority": "medium",
+          "id": "18"
+        },
+        {
+          "content": "Enhance tab design with colors and icons",
+          "status": "pending",
+          "priority": "medium",
+          "id": "19"
+        },
+        {
+          "content": "Add animated background elements",
+          "status": "pending",
+          "priority": "low",
+          "id": "20"
+        },
+        {
+          "content": "Improve button hover states with colors",
+          "status": "pending",
+          "priority": "low",
+          "id": "21"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Create dark mode theme provider and context\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"15\"\n  },\n  {\n    \"content\": \"Add dark mode toggle to header\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"16\"\n  },\n  {\n    \"content\": \"Update all components with dark mode styles\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"17\"\n  },\n  {\n    \"content\": \"Add colorful gradients and fun visual elements\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"18\"\n  },\n  {\n    \"content\": \"Enhance tab design with colors and icons\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"19\"\n  },\n  {\n    \"content\": \"Add animated background elements\",\n    \"status\": \"pending\",\n    \"priority\": \"low\",\n    \"id\": \"20\"\n  },\n  {\n    \"content\": \"Improve button hover states with colors\",\n    \"status\": \"pending\",\n    \"priority\": \"low\",\n    \"id\": \"21\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Create dark mode theme provider and context",
+          "status": "pending",
+          "priority": "high",
+          "id": "15"
+        },
+        {
+          "content": "Add dark mode toggle to header",
+          "status": "pending",
+          "priority": "high",
+          "id": "16"
+        },
+        {
+          "content": "Update all components with dark mode styles",
+          "status": "pending",
+          "priority": "high",
+          "id": "17"
+        },
+        {
+          "content": "Add colorful gradients and fun visual elements",
+          "status": "pending",
+          "priority": "medium",
+          "id": "18"
+        },
+        {
+          "content": "Enhance tab design with colors and icons",
+          "status": "pending",
+          "priority": "medium",
+          "id": "19"
+        },
+        {
+          "content": "Add animated background elements",
+          "status": "pending",
+          "priority": "low",
+          "id": "20"
+        },
+        {
+          "content": "Improve button hover states with colors",
+          "status": "pending",
+          "priority": "low",
+          "id": "21"
+        }
+      ]
+    },
+    "title": "7 todos",
+    "time": {
+      "start": 1759686045194,
+      "end": 1759686045195
+    }
+  }
+}

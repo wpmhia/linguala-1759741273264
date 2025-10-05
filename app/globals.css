@@ -24,51 +24,68 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 220 9% 15%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 262 83% 58%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 188 95% 68%;
+    --chart-4: 280 100% 70%;
+    --chart-5: 340 82% 52%;
+    --radius: 0.75rem;
+    
+    /* Custom Linguala variables */
+    --linguala-primary: 217 91% 60%;
+    --linguala-secondary: 262 83% 58%;
+    --linguala-accent: 188 95% 68%;
+    --linguala-success: 142 71% 45%;
+    --linguala-warning: 43 96% 56%;
+    --linguala-error: 0 84% 60%;
+  }
+  
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 222 84% 5%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 213 31% 91%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 213 31% 91%;
+    --border: 223 47% 11%;
+    --input: 223 47% 11%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 188 95% 68%;
+    --chart-4: 280 100% 70%;
+    --chart-5: 340 82% 52%;
+    
+    /* Custom Linguala variables for dark mode */
+    --linguala-primary: 217 91% 60%;
+    --linguala-secondary: 262 83% 58%;
+    --linguala-accent: 188 95% 68%;
+    --linguala-success: 142 71% 45%;
+    --linguala-warning: 43 96% 56%;
+    --linguala-error: 0 84% 60%;
   }
 }
 
@@ -98,6 +115,33 @@
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .dark .linguala-blur-bg {
+    background: rgba(13, 16, 23, 0.95);
+  }
+  
+  .linguala-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .linguala-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .linguala-rainbow-border {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4, #10B981, #F59E0B) border-box;
+    border: 2px solid transparent;
+  }
+  
+  .dark .linguala-rainbow-border {
+    background: linear-gradient(hsl(224 71% 4%), hsl(224 71% 4%)) padding-box,
+                linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4, #10B981, #F59E0B) border-box;
   }
   
   .linguala-card-hover {

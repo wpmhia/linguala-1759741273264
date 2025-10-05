@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b5777d590011IKifZtOdZaRsl",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_015EowdDmeoDekzZEf2eV3yH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "limit": 25
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { useState, useEffect, useRef, useCallback } from \"react\"\n00004| import dynamic from \"next/dynamic\"\n00005| import { Button } from \"@/components/ui/button\"\n00006| import { Textarea } from \"@/components/ui/textarea\"\n00007| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00008| import { Switch } from \"@/components/ui/switch\"\n00009| import { Label } from \"@/components/ui/label\"\n00010| import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n00011| import { Drawer, DrawerContent, DrawerTrigger } from \"@/components/ui/drawer\"\n00012| import { \n00013|   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n00014|   Check, X, Mic, Settings, History, Loader2, Languages, FileText\n00015| } from \"lucide-react\"\n00016| import { toast } from \"sonner\"\n00017| import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n00018| import { useTextProcessing } from \"@/hooks/use-translation\"\n00019| \n00020| // Dynamic imports for code splitting\n00021| const TranslatePanel = dynamic(() => import('./translate-panel'), {\n00022|   loading: () => <div className=\"h-20 bg-gray-50 rounded-lg animate-pulse\" />\n00023| })\n00024| \n00025| const WritePanel = dynamic(() => import('./write-panel'), {\n\n(File has more lines. Use 'offset' parameter to read beyond line 25)\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { useState, useEffect, useRef, useCallback } from \"react\"\nimport dynamic from \"next/dynamic\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { Label } from \"@/components/ui/label\"\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\nimport { Drawer, DrawerContent, DrawerTrigger } from \"@/components/ui/drawer\"\nimport { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, Loader2, Languages, FileText\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTextProcessing } from \"@/hooks/use-translation\"\n\n// Dynamic imports for code splitting"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686131538,
+      "end": 1759686131540
+    }
+  }
+}

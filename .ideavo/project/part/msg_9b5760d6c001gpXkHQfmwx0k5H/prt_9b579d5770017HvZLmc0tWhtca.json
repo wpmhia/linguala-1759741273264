@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b579d5770017HvZLmc0tWhtca",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01EiVmfmxGzX7FM3NGtrBSM8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "        <ThemeProvider\n          attribute=\"class\"\n          defaultTheme=\"system\"\n          enableSystem\n          disableTransitionOnChange\n        >",
+      "newString": "        <ThemeProvider\n          defaultTheme=\"system\"\n        >"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/layout.tsx\n===================================================================\n--- /home/user/project/app/layout.tsx\n+++ /home/user/project/app/layout.tsx\n@@ -49,12 +49,9 @@\n return (\n   <html lang=\"en\" suppressHydrationWarning>\n     <body className={inter.className}>\n       <ThemeProvider\n-        attribute=\"class\"\n         defaultTheme=\"system\"\n-        enableSystem\n-        disableTransitionOnChange\n       >\n         <QueryProvider>\n           {children}\n         </QueryProvider>\n"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759686285733,
+      "end": 1759686285739
+    }
+  }
+}

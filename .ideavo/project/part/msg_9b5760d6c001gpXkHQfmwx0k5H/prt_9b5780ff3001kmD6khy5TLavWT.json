@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5780ff3001kmD6khy5TLavWT",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_011em2DsP6qNEy14NBV2hV7n",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 305,
+      "limit": 40
+    },
+    "output": "<file>\n00306|               <FileText className=\"h-4 w-4\" />\n00307|               <div className=\"flex flex-col items-start\">\n00308|                 <span className=\"font-medium\">Write</span>\n00309|                 <span className=\"text-xs opacity-70\">AI-powered</span>\n00310|               </div>\n00311|             </TabsTrigger>\n00312|           </TabsList>\n00313| \n00314|           <TabsContent value=\"translate\" className=\"space-y-6\">\n00315|             <TranslatePanel\n00316|               sourceLang={sourceLang}\n00317|               targetLang={targetLang}\n00318|               onSourceLangChange={setSourceLang}\n00319|               onTargetLangChange={setTargetLang}\n00320|               onSwapLanguages={swapLanguages}\n00321|             />\n00322|           </TabsContent>\n00323| \n00324|           <TabsContent value=\"write\" className=\"space-y-6\">\n00325|             <WritePanel\n00326|               correctionsOnly={correctionsOnly}\n00327|               writingStyle={writingStyle}\n00328|               tone={tone}\n00329|               onCorrectionsOnlyChange={setCorrectionsOnly}\n00330|               onWritingStyleChange={setWritingStyle}\n00331|               onToneChange={setTone}\n00332|             />\n00333|           </TabsContent>\n00334| \n00335|           {/* Processing Areas */}\n00336|           <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">\n00337|             {/* Source Text */}\n00338|             <div className=\"relative\">\n00339|               <div className=\"border-b border-gray-200 lg:border-b-0 lg:border-r\">\n00340|                 <Textarea\n00341|                   value={sourceText}\n00342|                   onChange={(e) => handleSourceTextChange(e.target.value)}\n00343|                   onFocus={() => setFocusedArea('source')}\n00344|                   onBlur={() => setFocusedArea(null)}\n00345|                   placeholder={getPlaceholderText()}\n\n(File has more lines. Use 'offset' parameter to read beyond line 345)\n</file>",
+    "metadata": {
+      "preview": "              <FileText className=\"h-4 w-4\" />\n              <div className=\"flex flex-col items-start\">\n                <span className=\"font-medium\">Write</span>\n                <span className=\"text-xs opacity-70\">AI-powered</span>\n              </div>\n            </TabsTrigger>\n          </TabsList>\n\n          <TabsContent value=\"translate\" className=\"space-y-6\">\n            <TranslatePanel\n              sourceLang={sourceLang}\n              targetLang={targetLang}\n              onSourceLangChange={setSourceLang}\n              onTargetLangChange={setTargetLang}\n              onSwapLanguages={swapLanguages}\n            />\n          </TabsContent>\n\n          <TabsContent value=\"write\" className=\"space-y-6\">\n            <WritePanel"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686169599,
+      "end": 1759686169601
+    }
+  }
+}

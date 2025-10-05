@@ -39,7 +39,7 @@ export default function WritePanel({
   return (
     <div className="space-y-6">
       {/* Write Mode Settings */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 linguala-glass rounded-2xl p-6 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300">
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <Label htmlFor="corrections-only" className="text-sm font-medium">Corrections only</Label>

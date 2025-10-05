@@ -54,9 +54,9 @@ export default function TranslatePanel({
   return (
     <div className="space-y-6">
       {/* Language Selection Bar */}
-      <div className="flex items-center justify-between bg-gray-50 rounded-lg p-4">
+      <div className="flex items-center justify-between linguala-glass rounded-2xl p-4 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300">
         <Select value={sourceLang} onValueChange={onSourceLangChange}>
-          <SelectTrigger className="min-w-[160px] border-0 bg-transparent hover:bg-gray-100">
+          <SelectTrigger className="min-w-[160px] border-0 bg-white/50 dark:bg-slate-800/50 hover:bg-white/70 dark:hover:bg-slate-700/70 rounded-xl transition-all duration-300 hover:scale-105">
             <div className="flex items-center space-x-2">
               <span className="text-sm">{getLanguage(sourceLang).flag}</span>
               <span className="font-medium text-sm">{getLanguage(sourceLang).name}</span>
@@ -78,15 +78,15 @@ export default function TranslatePanel({
           variant="ghost"
           size="sm"
           onClick={onSwapLanguages}
-          className="p-2 hover:bg-gray-200 rounded-full transition-transform hover:rotate-180"
+          className="p-3 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-cyan-500/20 rounded-full transition-all duration-500 hover:rotate-180 hover:scale-110 linguala-glass"
           disabled={sourceLang === "auto"}
           aria-label="Swap languages"
         >
-          <ArrowUpDown className="h-4 w-4" />
+          <ArrowUpDown className="h-5 w-5 text-blue-600 dark:text-blue-400" />
         </Button>
 
         <Select value={targetLang} onValueChange={onTargetLangChange}>
-          <SelectTrigger className="min-w-[160px] border-0 bg-transparent hover:bg-gray-100">
+          <SelectTrigger className="min-w-[160px] border-0 bg-white/50 dark:bg-slate-800/50 hover:bg-white/70 dark:hover:bg-slate-700/70 rounded-xl transition-all duration-300 hover:scale-105">
             <div className="flex items-center space-x-2">
               <span className="text-sm">{getLanguage(targetLang).flag}</span>
               <span className="font-medium text-sm">{getLanguage(targetLang).name}</span>

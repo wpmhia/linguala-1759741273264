@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b57a8bc2001hXb6gaklN8Azzj",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01RPLypsdPg47hkMwQqaHvsK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "function EditingToolsSidebar({ \n  correctionsOnly, \n  setCorrectionsOnly, \n  writingStyle, \n  setWritingStyle, \n  tone, \n  setTone \n}: {\n  correctionsOnly: boolean\n  setCorrectionsOnly: (value: boolean) => void\n  writingStyle: string\n  setWritingStyle: (value: string) => void\n  tone: string\n  setTone: (value: string) => void\n}) {\n  return (\n    <div className=\"p-4\">\n      <div className=\"text-sm font-medium text-gray-700 mb-4\">Editing tools</div>",
+      "newString": "function EditingToolsSidebar({ \n  correctionsOnly, \n  setCorrectionsOnly, \n  writingStyle, \n  setWritingStyle, \n  tone, \n  setTone \n}: {\n  correctionsOnly: boolean\n  setCorrectionsOnly: (value: boolean) => void\n  writingStyle: string\n  setWritingStyle: (value: string) => void\n  tone: string\n  setTone: (value: string) => void\n}) {\n  return (\n    <div className=\"p-4 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/20 dark:to-pink-950/20\">\n      <div className=\"text-sm font-medium text-purple-700 dark:text-purple-300 mb-4 flex items-center gap-2\">\n        ✨ Editing tools\n      </div>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -66,10 +66,12 @@\n   tone: string\n   setTone: (value: string) => void\n }) {\n   return (\n-    <div className=\"p-4\">\n-      <div className=\"text-sm font-medium text-gray-700 mb-4\">Editing tools</div>\n+    <div className=\"p-4 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/20 dark:to-pink-950/20\">\n+      <div className=\"text-sm font-medium text-purple-700 dark:text-purple-300 mb-4 flex items-center gap-2\">\n+        ✨ Editing tools\n+      </div>\n       \n       <div className=\"space-y-4\">\n         <div className=\"flex items-center justify-between\">\n           <div className=\"flex items-center gap-2\">\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686336210,
+      "end": 1759686336221
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b57a7bee0016NoZJofRkmWM39",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01331E4hQdQAVvj5aVipNgqn",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 95,
+      "limit": 50
+    },
+    "output": "<file>\n00096|               <SelectItem value=\"simple-friendly\">Simple & Friendly</SelectItem>\n00097|               <SelectItem value=\"business-confident\">Business & Confident</SelectItem>\n00098|               <SelectItem value=\"casual-enthusiastic\">Casual & Enthusiastic</SelectItem>\n00099|               <SelectItem value=\"academic-diplomatic\">Academic & Diplomatic</SelectItem>\n00100|             </SelectContent>\n00101|           </Select>\n00102|         </div>\n00103|         \n00104|         <div className=\"flex items-center gap-2 text-sm text-gray-500\">\n00105|           <Settings className=\"h-4 w-4\" />\n00106|           <span>Show changes</span>\n00107|           <Switch disabled />\n00108|         </div>\n00109|       </div>\n00110|       \n00111|       <div className=\"mt-8\">\n00112|         <div className=\"text-sm font-medium text-gray-700 mb-2\">Customizations</div>\n00113|         <Button variant=\"outline\" className=\"w-full text-sm\">\n00114|           <Settings className=\"h-4 w-4 mr-2\" />\n00115|           Custom rules\n00116|           <span className=\"ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded\">Pro</span>\n00117|         </Button>\n00118|       </div>\n00119|     </div>\n00120|   )\n00121| }\n00122| \n00123| export default function LingualaTranslator() {\n00124|   // Core processing state\n00125|   const [sourceText, setSourceText] = useState(\"\")\n00126|   const [resultText, setResultText] = useState(\"\")\n00127|   const [activeTab, setActiveTab] = useState(\"translate\")\n00128|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00129|   const [targetLang, setTargetLang] = useState(\"en\")\n00130|   \n00131|   // Write mode settings\n00132|   const [correctionsOnly, setCorrectionsOnly] = useState(false)\n00133|   const [writingStyle, setWritingStyle] = useState(\"simple\")\n00134|   const [tone, setTone] = useState(\"friendly\")\n00135|   \n00136|   // UI state\n00137|   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n00138|   const [justCopied, setJustCopied] = useState(false)\n00139|   const [isDrawerOpen, setIsDrawerOpen] = useState(false)\n00140| \n00141|   // Request management\n00142|   const controllerRef = useRef<AbortController>()\n00143| \n00144|   // React Query hook\n00145|   const processing = useTextProcessing()\n\n(File has more lines. Use 'offset' parameter to read beyond line 145)\n</file>",
+    "metadata": {
+      "preview": "              <SelectItem value=\"simple-friendly\">Simple & Friendly</SelectItem>\n              <SelectItem value=\"business-confident\">Business & Confident</SelectItem>\n              <SelectItem value=\"casual-enthusiastic\">Casual & Enthusiastic</SelectItem>\n              <SelectItem value=\"academic-diplomatic\">Academic & Diplomatic</SelectItem>\n            </SelectContent>\n          </Select>\n        </div>\n        \n        <div className=\"flex items-center gap-2 text-sm text-gray-500\">\n          <Settings className=\"h-4 w-4\" />\n          <span>Show changes</span>\n          <Switch disabled />\n        </div>\n      </div>\n      \n      <div className=\"mt-8\">\n        <div className=\"text-sm font-medium text-gray-700 mb-2\">Customizations</div>\n        <Button variant=\"outline\" className=\"w-full text-sm\">\n          <Settings className=\"h-4 w-4 mr-2\" />\n          Custom rules"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686328264,
+      "end": 1759686328265
+    }
+  }
+}

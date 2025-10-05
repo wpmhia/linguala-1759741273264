@@ -1,0 +1,21 @@
+{
+  "id": "prt_9b5766a72001qWX244oyfOlplf",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01TzcJf67mVMPXZvhsQAyPbP",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "import { QueryProvider } from '@/components/providers/query-provider';",
+      "newString": "import { QueryProvider } from '@/components/providers/query-provider';\nimport { ThemeProvider } from '@/components/providers/theme-provider';"
+    },
+    "error": "Error: You must read the file /home/user/project/app/layout.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759686062028,
+      "end": 1759686062030
+    }
+  }
+}

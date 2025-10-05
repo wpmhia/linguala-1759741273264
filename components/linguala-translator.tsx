@@ -16,14 +16,31 @@ import {
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { useTextProcessing } from "@/hooks/use-translation"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 // Dynamic imports for code splitting
 const TranslatePanel = dynamic(() => import('./translate-panel'), {
-  loading: () => <div className="h-20 bg-gray-50 rounded-lg animate-pulse" />
+  loading: () => (
+    <div className="h-20 linguala-glass rounded-2xl linguala-shimmer border border-white/20 dark:border-white/10 flex items-center justify-center">
+      <div className="flex items-center space-x-2">
+        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" />
+        <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}} />
+        <div className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}} />
+      </div>
+    </div>
+  )
 })
 
 const WritePanel = dynamic(() => import('./write-panel'), {
-  loading: () => <div className="h-20 bg-gray-50 rounded-lg animate-pulse" />
+  loading: () => (
+    <div className="h-20 linguala-glass rounded-2xl linguala-shimmer border border-white/20 dark:border-white/10 flex items-center justify-center">
+      <div className="flex items-center space-x-2">
+        <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" />
+        <div className="w-2 h-2 bg-pink-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}} />
+        <div className="w-2 h-2 bg-violet-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}} />
+      </div>
+    </div>
+  )
 })
 
 // Types for request payload
@@ -66,8 +83,10 @@ function EditingToolsSidebar({
   setTone: (value: string) => void
 }) {
   return (
-    <div className="p-4">
-      <div className="text-sm font-medium text-gray-700 mb-4">Editing tools</div>
+    <div className="p-4 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/20 dark:to-pink-950/20">
+      <div className="text-sm font-medium text-purple-700 dark:text-purple-300 mb-4 flex items-center gap-2">
+        ✨ Editing tools
+      </div>
       
       <div className="space-y-4">
         <div className="flex items-center justify-between">
@@ -100,7 +119,7 @@ function EditingToolsSidebar({
           </Select>
         </div>
         
-        <div className="flex items-center gap-2 text-sm text-gray-500">
+        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
           <Settings className="h-4 w-4" />
           <span>Show changes</span>
           <Switch disabled />
@@ -108,11 +127,11 @@ function EditingToolsSidebar({
       </div>
       
       <div className="mt-8">
-        <div className="text-sm font-medium text-gray-700 mb-2">Customizations</div>
-        <Button variant="outline" className="w-full text-sm">
+        <div className="text-sm font-medium text-purple-700 dark:text-purple-300 mb-2">🎨 Customizations</div>
+        <Button variant="outline" className="w-full text-sm bg-white/50 dark:bg-slate-800/50 border-purple-200 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-950/50 transition-all duration-300">
           <Settings className="h-4 w-4 mr-2" />
           Custom rules
-          <span className="ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded">Pro</span>
+          <span className="ml-auto bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full">Pro</span>
         </Button>
       </div>
     </div>
@@ -256,39 +275,57 @@ export default function LingualaTranslator() {
   const isLoading = processing.isPending
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950 transition-colors duration-300">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-400/10 to-pink-600/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+      </div>
+      
       {/* Header */}
-      <header className="border-b border-gray-200">
+      <header className="relative z-10 linguala-blur-bg border-b border-white/20 dark:border-white/10">
         <div className="max-w-screen-xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-8">
               <LingualaLogo size="md" />
             </div>
-            <div className="flex items-center space-x-4">
-              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors" aria-label="View history">
+            <div className="flex items-center space-x-2">
+              <button className="p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/50 rounded-full transition-all duration-300 hover:scale-110" aria-label="View history">
                 <History className="h-5 w-5" />
               </button>
-              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors" aria-label="Settings">
+              <button className="p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110" aria-label="Settings">
                 <Settings className="h-5 w-5" />
               </button>
+              <ThemeToggle />
             </div>
           </div>
         </div>
       </header>
 
-      <main className="max-w-screen-xl mx-auto px-6 py-8">
+      <main className="relative z-10 max-w-screen-xl mx-auto px-6 py-8">
         {/* Tab Navigation */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full max-w-md grid-cols-2 mb-8">
-            <TabsTrigger value="translate" className="flex items-center gap-2">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full linguala-animate-in">
+          <TabsList className="grid w-full max-w-md grid-cols-2 mb-8 bg-white/70 dark:bg-slate-800/70 linguala-glass p-1 h-14">
+            <TabsTrigger 
+              value="translate" 
+              className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:scale-105 rounded-lg h-12"
+            >
               <Languages className="h-4 w-4" />
-              Translate text
-              <div className="text-xs text-gray-500">35 languages</div>
+              <div className="flex flex-col items-start">
+                <span className="font-medium">Translate</span>
+                <span className="text-xs opacity-70">35 languages</span>
+              </div>
             </TabsTrigger>
-            <TabsTrigger value="write" className="flex items-center gap-2">
+            <TabsTrigger 
+              value="write" 
+              className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-300 hover:scale-105 rounded-lg h-12"
+            >
               <FileText className="h-4 w-4" />
-              Write
-              <div className="text-xs text-gray-500">AI-powered edits</div>
+              <div className="flex flex-col items-start">
+                <span className="font-medium">Write</span>
+                <span className="text-xs opacity-70">AI-powered</span>
+              </div>
             </TabsTrigger>
           </TabsList>
 
@@ -314,29 +351,34 @@ export default function LingualaTranslator() {
           </TabsContent>
 
           {/* Processing Areas */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 linguala-glass rounded-2xl overflow-hidden linguala-rainbow-border shadow-2xl hover:shadow-3xl transition-all duration-500 linguala-card-hover">
             {/* Source Text */}
-            <div className="relative">
-              <div className="border-b border-gray-200 lg:border-b-0 lg:border-r">
+            <div className="relative group">
+              <div className="border-b border-white/20 dark:border-white/10 lg:border-b-0 lg:border-r lg:border-r-white/20 dark:lg:border-r-white/10 bg-gradient-to-br from-white/50 to-white/30 dark:from-slate-800/50 dark:to-slate-900/30">
+                <div className={`absolute inset-0 bg-gradient-to-r transition-opacity duration-300 ${
+                  focusedArea === 'source' 
+                    ? 'from-blue-500/10 to-cyan-500/10 opacity-100' 
+                    : 'opacity-0'
+                }`} />
                 <Textarea
                   value={sourceText}
                   onChange={(e) => handleSourceTextChange(e.target.value)}
                   onFocus={() => setFocusedArea('source')}
                   onBlur={() => setFocusedArea(null)}
                   placeholder={getPlaceholderText()}
-                  className="min-h-[400px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6"
+                  className="min-h-[400px] text-lg border-0 rounded-none resize-none bg-transparent focus:ring-0 focus-visible:ring-0 p-6 relative z-10 linguala-scrollbar placeholder:text-slate-400 dark:placeholder:text-slate-500"
                   style={{ fontSize: '16px', lineHeight: '1.5' }}
                 />
                 
                 {/* Source Text Controls */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between z-20">
                   <div className="flex items-center space-x-2">
                     {sourceText && (
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={clearText}
-                        className="p-2 hover:bg-gray-200 rounded-full"
+                        className="p-2 hover:bg-red-500/20 dark:hover:bg-red-500/30 hover:text-red-600 dark:hover:text-red-400 rounded-full transition-all duration-300 hover:scale-110 linguala-glass"
                         aria-label="Clear text"
                       >
                         <X className="h-4 w-4" />
@@ -348,7 +390,7 @@ export default function LingualaTranslator() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="p-2 hover:bg-gray-200 rounded-full"
+                      className="p-2 hover:bg-blue-500/20 dark:hover:bg-blue-500/30 hover:text-blue-600 dark:hover:text-blue-400 rounded-full transition-all duration-300 hover:scale-110 linguala-glass"
                       disabled
                       aria-label="Voice input (coming soon)"
                     >
@@ -363,7 +405,7 @@ export default function LingualaTranslator() {
             <div className="relative">
               {/* Desktop Editing Tools Sidebar */}
               {activeTab === 'write' && (
-                <div className="hidden lg:block absolute top-0 right-0 w-64 h-full bg-gray-50 border-l border-gray-200">
+                <div className="hidden lg:block absolute top-0 right-0 w-64 h-full linguala-glass border-l border-white/20 dark:border-white/10">
                   <EditingToolsSidebar
                     correctionsOnly={correctionsOnly}
                     setCorrectionsOnly={setCorrectionsOnly}
@@ -398,19 +440,26 @@ export default function LingualaTranslator() {
                 </div>
               )}
               
-              <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'lg:mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>
+              <div className={`min-h-[400px] p-6 text-lg relative ${activeTab === 'write' ? 'lg:mr-64' : ''} bg-gradient-to-br from-white/50 to-white/30 dark:from-slate-800/50 dark:to-slate-900/30`} style={{ fontSize: '16px', lineHeight: '1.5' }}>
+                <div className={`absolute inset-0 bg-gradient-to-r transition-opacity duration-300 ${focusedArea === 'target' ? 'from-purple-500/10 to-pink-500/10 opacity-100' : 'opacity-0'}`} />
                 {isLoading ? (
-                  <div className="flex items-center justify-center h-full">
-                    <Loader2 className="h-6 w-6 animate-spin text-blue-500" />
+                  <div className="flex items-center justify-center h-full relative z-10">
+                    <div className="flex flex-col items-center space-y-4">
+                      <div className="relative">
+                        <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
+                        <div className="absolute inset-0 h-8 w-8 border-2 border-purple-500/30 rounded-full animate-ping" />
+                      </div>
+                      <span className="text-sm text-slate-600 dark:text-slate-400 animate-pulse">Processing your text...</span>
+                    </div>
                   </div>
                 ) : (
                   <Textarea
                     value={resultText || ''}
-                    placeholder={activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here'}
+                    placeholder={activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}
                     readOnly
                     onFocus={() => setFocusedArea('target')}
                     onBlur={() => setFocusedArea(null)}
-                    className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}
+                    className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 relative z-10 linguala-scrollbar ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}
                     style={{ fontSize: '16px', lineHeight: '1.5' }}
                     aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}
                   />
@@ -419,13 +468,17 @@ export default function LingualaTranslator() {
 
               {/* Result Text Controls */}
               {resultText && !isLoading && (
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between z-20">
                   <div className="flex items-center space-x-2">
                     <Button
                       variant="ghost"
                       size="sm"
                       onClick={() => copyToClipboard(resultText)}
-                      className="p-2 hover:bg-gray-200 rounded-full"
+                      className={`p-2 rounded-full transition-all duration-300 hover:scale-110 linguala-glass ${
+                        justCopied 
+                          ? 'bg-green-500/20 text-green-600 dark:text-green-400' 
+                          : 'hover:bg-blue-500/20 dark:hover:bg-blue-500/30 hover:text-blue-600 dark:hover:text-blue-400'
+                      }`}
                       aria-label="Copy to clipboard"
                     >
                       {justCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
@@ -433,7 +486,7 @@ export default function LingualaTranslator() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="p-2 hover:bg-gray-200 rounded-full"
+                      className="p-2 hover:bg-purple-500/20 dark:hover:bg-purple-500/30 hover:text-purple-600 dark:hover:text-purple-400 rounded-full transition-all duration-300 hover:scale-110 linguala-glass"
                       disabled
                       aria-label="Listen to translation (coming soon)"
                     >
@@ -442,7 +495,7 @@ export default function LingualaTranslator() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="p-2 hover:bg-gray-200 rounded-full"
+                      className="p-2 hover:bg-yellow-500/20 dark:hover:bg-yellow-500/30 hover:text-yellow-600 dark:hover:text-yellow-400 rounded-full transition-all duration-300 hover:scale-110 linguala-glass"
                       disabled
                       aria-label="Save translation (coming soon)"
                     >
@@ -453,7 +506,7 @@ export default function LingualaTranslator() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="p-2 hover:bg-gray-200 rounded-full"
+                    className="p-2 hover:bg-slate-500/20 dark:hover:bg-slate-500/30 hover:text-slate-600 dark:hover:text-slate-400 rounded-full transition-all duration-300 hover:scale-110 linguala-glass"
                     disabled
                     aria-label="More options (coming soon)"
                   >

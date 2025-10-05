@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5782aef001LysbNYjtMMbFSI",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01LW4hJs3NpFmxfseHvMLkPh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "          {/* Processing Areas */}\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">",
+      "newString": "          {/* Processing Areas */}\n          <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 linguala-glass rounded-2xl overflow-hidden linguala-rainbow-border shadow-2xl hover:shadow-3xl transition-all duration-500 linguala-card-hover\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -332,9 +332,9 @@\n   />\n </TabsContent>\n \n {/* Processing Areas */}\n-<div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">\n+<div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 linguala-glass rounded-2xl overflow-hidden linguala-rainbow-border shadow-2xl hover:shadow-3xl transition-all duration-500 linguala-card-hover\">\n   {/* Source Text */}\n   <div className=\"relative\">\n     <div className=\"border-b border-gray-200 lg:border-b-0 lg:border-r\">\n       <Textarea\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686177923,
+      "end": 1759686177927
+    }
+  }
+}

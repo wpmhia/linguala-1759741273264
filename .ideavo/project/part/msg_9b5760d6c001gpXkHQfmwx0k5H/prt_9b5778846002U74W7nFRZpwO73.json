@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5778846002U74W7nFRZpwO73",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01UQDjS5CrztJdXnpCvaGHLx",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTextProcessing } from \"@/hooks/use-translation\"",
+      "newString": "import { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTextProcessing } from \"@/hooks/use-translation\"\nimport { ThemeToggle } from \"@/components/theme-toggle\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -15,8 +15,9 @@\n } from \"lucide-react\"\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { useTextProcessing } from \"@/hooks/use-translation\"\n+import { ThemeToggle } from \"@/components/theme-toggle\"\n \n // Dynamic imports for code splitting\n const TranslatePanel = dynamic(() => import('./translate-panel'), {\n   loading: () => <div className=\"h-20 bg-gray-50 rounded-lg animate-pulse\" />\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686135132,
+      "end": 1759686135136
+    }
+  }
+}

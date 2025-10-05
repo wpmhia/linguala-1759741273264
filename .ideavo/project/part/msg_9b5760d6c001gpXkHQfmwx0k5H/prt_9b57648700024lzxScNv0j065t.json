@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b57648700024lzxScNv0j065t",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01WYDXe6LHPYpE8tWFS4JJF1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/providers/theme-provider.tsx",
+      "content": "\"use client\"\n\nimport { createContext, useContext, useEffect, useState } from \"react\"\n\ntype Theme = \"light\" | \"dark\" | \"system\"\n\ntype ThemeProviderProps = {\n  children: React.ReactNode\n  defaultTheme?: Theme\n  storageKey?: string\n}\n\ntype ThemeProviderState = {\n  theme: Theme\n  setTheme: (theme: Theme) => void\n  isDark: boolean\n}\n\nconst initialState: ThemeProviderState = {\n  theme: \"system\",\n  setTheme: () => null,\n  isDark: false,\n}\n\nconst ThemeProviderContext = createContext<ThemeProviderState>(initialState)\n\nexport function ThemeProvider({\n  children,\n  defaultTheme = \"system\",\n  storageKey = \"linguala-ui-theme\",\n  ...props\n}: ThemeProviderProps) {\n  const [theme, setTheme] = useState<Theme>(\n    () => (typeof window !== \"undefined\" && localStorage.getItem(storageKey)) as Theme || defaultTheme\n  )\n  const [isDark, setIsDark] = useState(false)\n\n  useEffect(() => {\n    const root = window.document.documentElement\n\n    root.classList.remove(\"light\", \"dark\")\n\n    if (theme === \"system\") {\n      const systemTheme = window.matchMedia(\"(prefers-color-scheme: dark)\").matches\n        ? \"dark\"\n        : \"light\"\n\n      root.classList.add(systemTheme)\n      setIsDark(systemTheme === \"dark\")\n      return\n    }\n\n    root.classList.add(theme)\n    setIsDark(theme === \"dark\")\n  }, [theme])\n\n  const value = {\n    theme,\n    setTheme: (theme: Theme) => {\n      localStorage.setItem(storageKey, theme)\n      setTheme(theme)\n    },\n    isDark,\n  }\n\n  return (\n    <ThemeProviderContext.Provider {...props} value={value}>\n      {children}\n    </ThemeProviderContext.Provider>\n  )\n}\n\nexport const useTheme = () => {\n  const context = useContext(ThemeProviderContext)\n\n  if (context === undefined)\n    throw new Error(\"useTheme must be used within a ThemeProvider\")\n\n  return context\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/components/providers/theme-provider.tsx",
+      "exists": false
+    },
+    "title": "components/providers/theme-provider.tsx",
+    "time": {
+      "start": 1759686058425,
+      "end": 1759686058429
+    }
+  }
+}

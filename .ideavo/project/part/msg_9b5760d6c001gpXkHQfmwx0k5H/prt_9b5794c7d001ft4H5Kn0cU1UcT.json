@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5794c7d001ft4H5Kn0cU1UcT",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_015GMS1cNZqEMoCT4CJpqHhJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translate-panel.tsx",
+      "oldString": "        <Select value={targetLang} onValueChange={onTargetLangChange}>\n          <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">",
+      "newString": "        <Select value={targetLang} onValueChange={onTargetLangChange}>\n          <SelectTrigger className=\"min-w-[160px] border-0 bg-white/50 dark:bg-slate-800/50 hover:bg-white/70 dark:hover:bg-slate-700/70 rounded-xl transition-all duration-300 hover:scale-105\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translate-panel.tsx\n===================================================================\n--- /home/user/project/components/translate-panel.tsx\n+++ /home/user/project/components/translate-panel.tsx\n@@ -85,9 +85,9 @@\n   <ArrowUpDown className=\"h-5 w-5 text-blue-600 dark:text-blue-400\" />\n </Button>\n \n <Select value={targetLang} onValueChange={onTargetLangChange}>\n-  <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n+  <SelectTrigger className=\"min-w-[160px] border-0 bg-white/50 dark:bg-slate-800/50 hover:bg-white/70 dark:hover:bg-slate-700/70 rounded-xl transition-all duration-300 hover:scale-105\">\n     <div className=\"flex items-center space-x-2\">\n       <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n       <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n     </div>\n"
+    },
+    "title": "components/translate-panel.tsx",
+    "time": {
+      "start": 1759686251204,
+      "end": 1759686251208
+    }
+  }
+}

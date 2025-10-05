@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b57968de001cPkPOcnqWVbpr4",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_0116pnBqGLTjER7UdtjsCqUp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/write-panel.tsx",
+      "oldString": "  return (\n    <div className=\"space-y-6\">\n      {/* Write Mode Settings */}\n      <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">",
+      "newString": "  return (\n    <div className=\"space-y-6\">\n      {/* Write Mode Settings */}\n      <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6 linguala-glass rounded-2xl p-6 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/write-panel.tsx\n===================================================================\n--- /home/user/project/components/write-panel.tsx\n+++ /home/user/project/components/write-panel.tsx\n@@ -38,9 +38,9 @@\n }: WritePanelProps) {\n   return (\n     <div className=\"space-y-6\">\n       {/* Write Mode Settings */}\n-      <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">\n+      <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6 linguala-glass rounded-2xl p-6 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300\">\n         <div className=\"space-y-4\">\n           <div className=\"flex items-center justify-between\">\n             <Label htmlFor=\"corrections-only\" className=\"text-sm font-medium\">Corrections only</Label>\n             <Switch\n"
+    },
+    "title": "components/write-panel.tsx",
+    "time": {
+      "start": 1759686259378,
+      "end": 1759686259382
+    }
+  }
+}

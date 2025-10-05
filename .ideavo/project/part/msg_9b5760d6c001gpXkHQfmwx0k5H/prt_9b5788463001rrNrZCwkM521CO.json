@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5788463001rrNrZCwkM521CO",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01DUm2rVKM1eo54sr4TM8zFU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 415,
+      "limit": 50
+    },
+    "output": "<file>\n00416|                         setWritingStyle={setWritingStyle}\n00417|                         tone={tone}\n00418|                         setTone={setTone}\n00419|                       />\n00420|                     </DrawerContent>\n00421|                   </Drawer>\n00422|                 </div>\n00423|               )}\n00424|               \n00425|               <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'lg:mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>\n00426|                 {isLoading ? (\n00427|                   <div className=\"flex items-center justify-center h-full\">\n00428|                     <Loader2 className=\"h-6 w-6 animate-spin text-blue-500\" />\n00429|                   </div>\n00430|                 ) : (\n00431|                   <Textarea\n00432|                     value={resultText || ''}\n00433|                     placeholder={activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here'}\n00434|                     readOnly\n00435|                     onFocus={() => setFocusedArea('target')}\n00436|                     onBlur={() => setFocusedArea(null)}\n00437|                     className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}\n00438|                     style={{ fontSize: '16px', lineHeight: '1.5' }}\n00439|                     aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}\n00440|                   />\n00441|                 )}\n00442|               </div>\n00443| \n00444|               {/* Result Text Controls */}\n00445|               {resultText && !isLoading && (\n00446|                 <div className=\"absolute bottom-4 left-4 right-4 flex items-center justify-between\">\n00447|                   <div className=\"flex items-center space-x-2\">\n00448|                     <Button\n00449|                       variant=\"ghost\"\n00450|                       size=\"sm\"\n00451|                       onClick={() => copyToClipboard(resultText)}\n00452|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00453|                       aria-label=\"Copy to clipboard\"\n00454|                     >\n00455|                       {justCopied ? <Check className=\"h-4 w-4\" /> : <Copy className=\"h-4 w-4\" />}\n00456|                     </Button>\n00457|                     <Button\n00458|                       variant=\"ghost\"\n00459|                       size=\"sm\"\n00460|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00461|                       disabled\n00462|                       aria-label=\"Listen to translation (coming soon)\"\n00463|                     >\n00464|                       <Volume2 className=\"h-4 w-4\" />\n00465|                     </Button>\n\n(File has more lines. Use 'offset' parameter to read beyond line 465)\n</file>",
+    "metadata": {
+      "preview": "                        setWritingStyle={setWritingStyle}\n                        tone={tone}\n                        setTone={setTone}\n                      />\n                    </DrawerContent>\n                  </Drawer>\n                </div>\n              )}\n              \n              <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'lg:mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>\n                {isLoading ? (\n                  <div className=\"flex items-center justify-center h-full\">\n                    <Loader2 className=\"h-6 w-6 animate-spin text-blue-500\" />\n                  </div>\n                ) : (\n                  <Textarea\n                    value={resultText || ''}\n                    placeholder={activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here'}\n                    readOnly\n                    onFocus={() => setFocusedArea('target')}"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686199034,
+      "end": 1759686199036
+    }
+  }
+}

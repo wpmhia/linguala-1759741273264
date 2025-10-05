@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b5795d9e0018hRfZLE8ROuZIX",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01EUXgPupuH9166WubsZU9zD",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/write-panel.tsx",
+      "limit": 40
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { Switch } from \"@/components/ui/switch\"\n00004| import { Label } from \"@/components/ui/label\"\n00005| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00006| \n00007| // Writing styles\n00008| const WRITING_STYLES = [\n00009|   { value: 'simple', label: 'Simple' },\n00010|   { value: 'business', label: 'Business' },\n00011|   { value: 'casual', label: 'Casual' },\n00012|   { value: 'academic', label: 'Academic' }\n00013| ]\n00014| \n00015| const TONES = [\n00016|   { value: 'enthusiastic', label: 'Enthusiastic' },\n00017|   { value: 'friendly', label: 'Friendly' },\n00018|   { value: 'confident', label: 'Confident' },\n00019|   { value: 'diplomatic', label: 'Diplomatic' }\n00020| ]\n00021| \n00022| interface WritePanelProps {\n00023|   correctionsOnly: boolean\n00024|   writingStyle: string\n00025|   tone: string\n00026|   onCorrectionsOnlyChange: (value: boolean) => void\n00027|   onWritingStyleChange: (value: string) => void\n00028|   onToneChange: (value: string) => void\n00029| }\n00030| \n00031| export default function WritePanel({\n00032|   correctionsOnly,\n00033|   writingStyle,\n00034|   tone,\n00035|   onCorrectionsOnlyChange,\n00036|   onWritingStyleChange,\n00037|   onToneChange\n00038| }: WritePanelProps) {\n00039|   return (\n00040|     <div className=\"space-y-6\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 40)\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { Switch } from \"@/components/ui/switch\"\nimport { Label } from \"@/components/ui/label\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n\n// Writing styles\nconst WRITING_STYLES = [\n  { value: 'simple', label: 'Simple' },\n  { value: 'business', label: 'Business' },\n  { value: 'casual', label: 'Casual' },\n  { value: 'academic', label: 'Academic' }\n]\n\nconst TONES = [\n  { value: 'enthusiastic', label: 'Enthusiastic' },\n  { value: 'friendly', label: 'Friendly' },\n  { value: 'confident', label: 'Confident' },\n  { value: 'diplomatic', label: 'Diplomatic' }\n]"
+    },
+    "title": "components/write-panel.tsx",
+    "time": {
+      "start": 1759686254504,
+      "end": 1759686254505
+    }
+  }
+}

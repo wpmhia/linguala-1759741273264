@@ -1,0 +1,21 @@
+{
+  "id": "prt_9b578edde001LFyxD70l5AGPPL",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_0161MTdayVVhwFGXr2bRETdL",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/translate-panel.tsx",
+      "oldString": "  return (\n    <div className=\"space-y-6\">\n      {/* Language Selection Bar */}\n      <div className=\"flex items-center justify-between bg-gray-50 rounded-lg p-4\">",
+      "newString": "  return (\n    <div className=\"space-y-6\">\n      {/* Language Selection Bar */}\n      <div className=\"flex items-center justify-between linguala-glass rounded-2xl p-4 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300\">"
+    },
+    "error": "Error: You must read the file /home/user/project/components/translate-panel.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759686228237,
+      "end": 1759686228239
+    }
+  }
+}

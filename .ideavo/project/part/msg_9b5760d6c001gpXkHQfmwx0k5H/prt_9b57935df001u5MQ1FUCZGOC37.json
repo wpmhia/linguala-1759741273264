@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b57935df001u5MQ1FUCZGOC37",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01T5RbiLyJqC2Z81Vta8KmBd",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translate-panel.tsx",
+      "oldString": "        <Button\n          variant=\"ghost\"\n          size=\"sm\"\n          onClick={onSwapLanguages}\n          className=\"p-2 hover:bg-gray-200 rounded-full transition-transform hover:rotate-180\"\n          disabled={sourceLang === \"auto\"}\n          aria-label=\"Swap languages\"\n        >\n          <ArrowUpDown className=\"h-4 w-4\" />\n        </Button>",
+      "newString": "        <Button\n          variant=\"ghost\"\n          size=\"sm\"\n          onClick={onSwapLanguages}\n          className=\"p-3 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-cyan-500/20 rounded-full transition-all duration-500 hover:rotate-180 hover:scale-110 linguala-glass\"\n          disabled={sourceLang === \"auto\"}\n          aria-label=\"Swap languages\"\n        >\n          <ArrowUpDown className=\"h-5 w-5 text-blue-600 dark:text-blue-400\" />\n        </Button>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translate-panel.tsx\n===================================================================\n--- /home/user/project/components/translate-panel.tsx\n+++ /home/user/project/components/translate-panel.tsx\n@@ -77,13 +77,13 @@\n <Button\n   variant=\"ghost\"\n   size=\"sm\"\n   onClick={onSwapLanguages}\n-  className=\"p-2 hover:bg-gray-200 rounded-full transition-transform hover:rotate-180\"\n+  className=\"p-3 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-cyan-500/20 rounded-full transition-all duration-500 hover:rotate-180 hover:scale-110 linguala-glass\"\n   disabled={sourceLang === \"auto\"}\n   aria-label=\"Swap languages\"\n >\n-  <ArrowUpDown className=\"h-4 w-4\" />\n+  <ArrowUpDown className=\"h-5 w-5 text-blue-600 dark:text-blue-400\" />\n </Button>\n \n <Select value={targetLang} onValueChange={onTargetLangChange}>\n   <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n"
+    },
+    "title": "components/translate-panel.tsx",
+    "time": {
+      "start": 1759686247448,
+      "end": 1759686247452
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5790d4a0019TvzyJSKuXMewJ",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_013kweT7FYF7W4xZUH5TpXuE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translate-panel.tsx",
+      "oldString": "  return (\n    <div className=\"space-y-6\">\n      {/* Language Selection Bar */}\n      <div className=\"flex items-center justify-between bg-gray-50 rounded-lg p-4\">",
+      "newString": "  return (\n    <div className=\"space-y-6\">\n      {/* Language Selection Bar */}\n      <div className=\"flex items-center justify-between linguala-glass rounded-2xl p-4 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300\">"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/translate-panel.tsx\n===================================================================\n--- /home/user/project/components/translate-panel.tsx\n+++ /home/user/project/components/translate-panel.tsx\n@@ -53,9 +53,9 @@\n \n return (\n   <div className=\"space-y-6\">\n     {/* Language Selection Bar */}\n-    <div className=\"flex items-center justify-between bg-gray-50 rounded-lg p-4\">\n+    <div className=\"flex items-center justify-between linguala-glass rounded-2xl p-4 border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300\">\n       <Select value={sourceLang} onValueChange={onSourceLangChange}>\n         <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n           <div className=\"flex items-center space-x-2\">\n             <span className=\"text-sm\">{getLanguage(sourceLang).flag}</span>\n"
+    },
+    "title": "components/translate-panel.tsx",
+    "time": {
+      "start": 1759686236269,
+      "end": 1759686236273
+    }
+  }
+}

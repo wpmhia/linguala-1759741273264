@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5797f6f001N9nOKaBc0eI3Nd",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01YSid2G3s54Y5FSLGavxQ7S",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build the app to test colorful design and dark mode"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\nFailed to compile.\n\n./app/layout.tsx:53:11\nType error: Type '{ children: Element[]; attribute: string; defaultTheme: \"system\"; enableSystem: true; disableTransitionOnChange: true; }' is not assignable to type 'IntrinsicAttributes & ThemeProviderProps'.\n  Property 'attribute' does not exist on type 'IntrinsicAttributes & ThemeProviderProps'.\n\n\u001b[0m \u001b[90m 51 |\u001b[39m       \u001b[33m<\u001b[39m\u001b[33mbody\u001b[39m className\u001b[33m=\u001b[39m{inter\u001b[33m.\u001b[39mclassName}\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33mThemeProvider\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m           attribute\u001b[33m=\u001b[39m\u001b[32m\"class\"\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 54 |\u001b[39m           defaultTheme\u001b[33m=\u001b[39m\u001b[32m\"system\"\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 55 |\u001b[39m           enableSystem\u001b[0m\n\u001b[0m \u001b[90m 56 |\u001b[39m           disableTransitionOnChange\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\nFailed to compile.\n\n./app/layout.tsx:53:11\nType error: Type '{ children: Element[]; attribute: string; defaultTheme: \"system\"; enableSystem: true; disableTransitionOnChange: true; }' is not assignable to type 'IntrinsicAttributes & ThemeProviderProps'.\n  Property 'attribute' does not exist on type 'IntrinsicAttributes & ThemeProviderProps'.\n\n\u001b[0m \u001b[90m 51 |\u001b[39m       \u001b[33m<\u001b[39m\u001b[33mbody\u001b[39m className\u001b[33m=\u001b[39m{inter\u001b[33m.\u001b[39mclassName}\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33mThemeProvider\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m           attribute\u001b[33m=\u001b[39m\u001b[32m\"class\"\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 54 |\u001b[39m           defaultTheme\u001b[33m=\u001b[39m\u001b[32m\"system\"\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 55 |\u001b[39m           enableSystem\u001b[0m\n\u001b[0m \u001b[90m 56 |\u001b[39m           disableTransitionOnChange\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n",
+      "exit": 1,
+      "description": "Build the app to test colorful design and dark mode"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759686263641,
+      "end": 1759686282252
+    }
+  }
+}

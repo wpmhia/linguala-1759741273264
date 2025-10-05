@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5783cec001nm37e6MkKsZZO5",
+  "messageID": "msg_9b5760d6c001gpXkHQfmwx0k5H",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01PU7AGhEZxkibXp2koATziY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "            {/* Source Text */}\n            <div className=\"relative\">\n              <div className=\"border-b border-gray-200 lg:border-b-0 lg:border-r\">\n                <Textarea\n                  value={sourceText}\n                  onChange={(e) => handleSourceTextChange(e.target.value)}\n                  onFocus={() => setFocusedArea('source')}\n                  onBlur={() => setFocusedArea(null)}\n                  placeholder={getPlaceholderText()}\n                  className=\"min-h-[400px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6\"\n                  style={{ fontSize: '16px', lineHeight: '1.5' }}\n                />",
+      "newString": "            {/* Source Text */}\n            <div className=\"relative group\">\n              <div className=\"border-b border-white/20 dark:border-white/10 lg:border-b-0 lg:border-r lg:border-r-white/20 dark:lg:border-r-white/10 bg-gradient-to-br from-white/50 to-white/30 dark:from-slate-800/50 dark:to-slate-900/30\">\n                <div className={`absolute inset-0 bg-gradient-to-r transition-opacity duration-300 ${\n                  focusedArea === 'source' \n                    ? 'from-blue-500/10 to-cyan-500/10 opacity-100' \n                    : 'opacity-0'\n                }`} />\n                <Textarea\n                  value={sourceText}\n                  onChange={(e) => handleSourceTextChange(e.target.value)}\n                  onFocus={() => setFocusedArea('source')}\n                  onBlur={() => setFocusedArea(null)}\n                  placeholder={getPlaceholderText()}\n                  className=\"min-h-[400px] text-lg border-0 rounded-none resize-none bg-transparent focus:ring-0 focus-visible:ring-0 p-6 relative z-10 linguala-scrollbar placeholder:text-slate-400 dark:placeholder:text-slate-500\"\n                  style={{ fontSize: '16px', lineHeight: '1.5' }}\n                />"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -334,17 +334,22 @@\n \n {/* Processing Areas */}\n <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 linguala-glass rounded-2xl overflow-hidden linguala-rainbow-border shadow-2xl hover:shadow-3xl transition-all duration-500 linguala-card-hover\">\n   {/* Source Text */}\n-  <div className=\"relative\">\n-    <div className=\"border-b border-gray-200 lg:border-b-0 lg:border-r\">\n+  <div className=\"relative group\">\n+    <div className=\"border-b border-white/20 dark:border-white/10 lg:border-b-0 lg:border-r lg:border-r-white/20 dark:lg:border-r-white/10 bg-gradient-to-br from-white/50 to-white/30 dark:from-slate-800/50 dark:to-slate-900/30\">\n+      <div className={`absolute inset-0 bg-gradient-to-r transition-opacity duration-300 ${\n+        focusedArea === 'source' \n+          ? 'from-blue-500/10 to-cyan-500/10 opacity-100' \n+          : 'opacity-0'\n+      }`} />\n       <Textarea\n         value={sourceText}\n         onChange={(e) => handleSourceTextChange(e.target.value)}\n         onFocus={() => setFocusedArea('source')}\n         onBlur={() => setFocusedArea(null)}\n         placeholder={getPlaceholderText()}\n-        className=\"min-h-[400px] text-lg border-0 rounded-none resize-none focus:ring-2 focus:ring-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 p-6\"\n+        className=\"min-h-[400px] text-lg border-0 rounded-none resize-none bg-transparent focus:ring-0 focus-visible:ring-0 p-6 relative z-10 linguala-scrollbar placeholder:text-slate-400 dark:placeholder:text-slate-500\"\n         style={{ fontSize: '16px', lineHeight: '1.5' }}\n       />\n       \n       {/* Source Text Controls */}\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759686186471,
+      "end": 1759686186475
+    }
+  }
+}

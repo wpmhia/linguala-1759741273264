@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5e17bbe001vafGlgvWgTXsvp",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01UoviCaJ5MvfnqSnJwmWc6U",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 50,
+      "limit": 40
+    },
+    "output": "<file>\n00051|           break\n00052|         case 'business':\n00053|           systemPrompt += 'Use professional, business-appropriate language. Be concise and direct. '\n00054|           break\n00055|         case 'casual':\n00056|           systemPrompt += 'Use a relaxed, conversational tone. Make it sound natural and friendly. '\n00057|           break\n00058|         case 'academic':\n00059|           systemPrompt += 'Use formal, academic language with precise terminology and structured arguments. '\n00060|           break\n00061|       }\n00062|     }\n00063|     \n00064|     // Add tone guidance\n00065|     if (options.tone) {\n00066|       switch (options.tone) {\n00067|         case 'friendly':\n00068|           systemPrompt += 'Maintain a warm and approachable tone. '\n00069|           break\n00070|         case 'professional':\n00071|           systemPrompt += 'Keep a professional and authoritative tone. '\n00072|           break\n00073|         case 'enthusiastic':\n00074|           systemPrompt += 'Add energy and enthusiasm to the text. '\n00075|           break\n00076|         case 'diplomatic':\n00077|           systemPrompt += 'Use diplomatic and tactful language. '\n00078|           break\n00079|       }\n00080|     }\n00081|   }\n00082|   \n00083|   systemPrompt += 'Return only the improved text without explanations, quotes, or additional commentary.'\n00084|   \n00085|   // Add timeout wrapper\n00086|   const timeoutPromise = new Promise((_, reject) => {\n00087|     setTimeout(() => reject(new Error('API call timeout after 10 seconds')), 10000)\n00088|   })\n00089|   \n00090|   try {\n\n(File has more lines. Use 'offset' parameter to read beyond line 90)\n</file>",
+    "metadata": {
+      "preview": "          break\n        case 'business':\n          systemPrompt += 'Use professional, business-appropriate language. Be concise and direct. '\n          break\n        case 'casual':\n          systemPrompt += 'Use a relaxed, conversational tone. Make it sound natural and friendly. '\n          break\n        case 'academic':\n          systemPrompt += 'Use formal, academic language with precise terminology and structured arguments. '\n          break\n      }\n    }\n    \n    // Add tone guidance\n    if (options.tone) {\n      switch (options.tone) {\n        case 'friendly':\n          systemPrompt += 'Maintain a warm and approachable tone. '\n          break\n        case 'professional':"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693078365,
+      "end": 1759693078370
+    }
+  }
+}

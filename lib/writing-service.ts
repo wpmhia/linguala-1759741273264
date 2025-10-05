@@ -80,11 +80,14 @@ export async function improveText(text: string, options: { correctionsOnly?: boo
     }
   }
   
-  systemPrompt += 'Return only the improved text without explanations, quotes, or additional commentary.'
+  systemPrompt += '\n\nIMPORTANT: Return ONLY the improved version of the input text. Do NOT add explanations, suggestions, greetings, or any additional content. Do NOT answer questions in the text. Simply return the corrected/improved text as-is.'
   
-  // Add timeout wrapper
+  // Add aggressive timeout wrapper
   const timeoutPromise = new Promise((_, reject) => {
-    setTimeout(() => reject(new Error('API call timeout after 10 seconds')), 10000)
+    setTimeout(() => {
+      console.log('🔥 TIMEOUT: qwen-flash API call timed out after 3 seconds')
+      reject(new Error('API call timeout after 3 seconds'))
+    }, 3000)
   })
   
   try {
@@ -152,10 +155,13 @@ export async function getWordAlternatives(word: string, context: string, options
       systemPrompt += `Provide 5 alternative words or synonyms for "${word}" in the context: "${context}". Focus on words that improve clarity, style, and readability. `
     }
     
-    systemPrompt += 'Return only a JSON array of alternative words, like: ["alternative1", "alternative2", "alternative3", "alternative4", "alternative5"]'
+    systemPrompt += '\n\nIMPORTANT: Return ONLY a valid JSON array of 5 alternative words. Nothing else. Format: ["word1", "word2", "word3", "word4", "word5"]'
     
     const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => reject(new Error('API call timeout after 5 seconds')), 5000)
+      setTimeout(() => {
+        console.log('🔥 TIMEOUT: word alternatives API call timed out after 3 seconds')
+        reject(new Error('API call timeout after 3 seconds'))
+      }, 3000)
     })
     
     const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
@@ -217,7 +223,10 @@ export async function rephraseText(text: string): Promise<RephraseResult> {
   
   try {
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 2000) // 2 second timeout
+    const timeoutId = setTimeout(() => {
+      console.log('🔥 TIMEOUT: rephrase API call timed out after 3 seconds')
+      controller.abort()
+    }, 3000) // 3 second timeout
     
     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
@@ -230,7 +239,7 @@ export async function rephraseText(text: string): Promise<RephraseResult> {
         messages: [
           {
             role: 'system',
-            content: 'You are a professional writing assistant. Provide 3 different ways to rephrase the given text using different words and sentence structures while keeping the same meaning. Make them sound natural and engaging. Return only a JSON array of rephrased options, like: ["option1", "option2", "option3"]'
+            content: 'You are a professional writing assistant. Provide 3 different ways to rephrase the given text using different words and sentence structures while keeping the same meaning.\n\nIMPORTANT: Return ONLY a valid JSON array of 3 rephrased options. Nothing else. Format: ["option1", "option2", "option3"]'
           },
           {
             role: 'user',

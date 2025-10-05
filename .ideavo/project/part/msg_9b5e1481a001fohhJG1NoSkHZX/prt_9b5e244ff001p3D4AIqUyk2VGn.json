@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e244ff001p3D4AIqUyk2VGn",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01JdsNnW6QZSkLEVoGeTVsgH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "            content: 'You are a professional writing assistant. Provide 3 different ways to rephrase the given text using different words and sentence structures while keeping the same meaning. Make them sound natural and engaging. Return only a JSON array of rephrased options, like: [\"option1\", \"option2\", \"option3\"]'",
+      "newString": "            content: 'You are a professional writing assistant. Provide 3 different ways to rephrase the given text using different words and sentence structures while keeping the same meaning.\\n\\nIMPORTANT: Return ONLY a valid JSON array of 3 rephrased options. Nothing else. Format: [\"option1\", \"option2\", \"option3\"]'"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -229,9 +229,9 @@\n model: 'qwen-flash',\n messages: [\n   {\n     role: 'system',\n-    content: 'You are a professional writing assistant. Provide 3 different ways to rephrase the given text using different words and sentence structures while keeping the same meaning. Make them sound natural and engaging. Return only a JSON array of rephrased options, like: [\"option1\", \"option2\", \"option3\"]'\n+    content: 'You are a professional writing assistant. Provide 3 different ways to rephrase the given text using different words and sentence structures while keeping the same meaning.\\n\\nIMPORTANT: Return ONLY a valid JSON array of 3 rephrased options. Nothing else. Format: [\"option1\", \"option2\", \"option3\"]'\n   },\n   {\n     role: 'user',\n     content: text\n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693131125,
+      "end": 1759693131130
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b5e4336a001sVv62Mm7FMA8Of",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "refactor(prompts): improve AI service error handling and debugging",
+  "cost": 0.96073035,
+  "tokens": {
+    "input": 1,
+    "output": 21,
+    "reasoning": 0,
+    "cache": {
+      "write": 10178,
+      "read": 0
+    }
+  }
+}

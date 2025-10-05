@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e2e48b0013lChJ49xgCBdda",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01LPjvjwTPwmtGofDvS5nmcK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "  // Add timeout wrapper\n  const timeoutPromise = new Promise((_, reject) => {\n    setTimeout(() => reject(new Error('API call timeout after 10 seconds')), 10000)\n  })",
+      "newString": "  // Add aggressive timeout wrapper\n  const timeoutPromise = new Promise((_, reject) => {\n    setTimeout(() => {\n      console.log('🔥 TIMEOUT: qwen-flash API call timed out after 3 seconds')\n      reject(new Error('API call timeout after 3 seconds'))\n    }, 3000)\n  })"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -81,11 +81,14 @@\n }\n \n systemPrompt += '\\n\\nIMPORTANT: Return ONLY the improved version of the input text. Do NOT add explanations, suggestions, greetings, or any additional content. Do NOT answer questions in the text. Simply return the corrected/improved text as-is.'\n \n-// Add timeout wrapper\n+// Add aggressive timeout wrapper\n const timeoutPromise = new Promise((_, reject) => {\n-  setTimeout(() => reject(new Error('API call timeout after 10 seconds')), 10000)\n+  setTimeout(() => {\n+    console.log('🔥 TIMEOUT: qwen-flash API call timed out after 3 seconds')\n+    reject(new Error('API call timeout after 3 seconds'))\n+  }, 3000)\n })\n \n try {\n   const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693172213,
+      "end": 1759693172221
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5e189bf001TpB4v9dJcx3bkg",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The prompt already says \"Return only the improved text without explanations, quotes, or additional commentary\" but it's not working. I need to make the prompt much more explicit and strict. Let me update the prompts:",
+  "time": {
+    "start": 1759693082346,
+    "end": 1759693082346
+  }
+}

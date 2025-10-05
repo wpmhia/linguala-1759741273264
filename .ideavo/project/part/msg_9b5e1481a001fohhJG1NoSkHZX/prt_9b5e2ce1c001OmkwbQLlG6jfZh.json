@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e2ce1c001OmkwbQLlG6jfZh",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KJ8KwJNXuj1uWZ9uNRfr4o",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"improve\",\"text\":\"This is test sentence with error.\",\"correctionsOnly\":true}' --connect-timeout 5 --max-time 10",
+      "description": "Test improved prompts with corrections only"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test improved prompts with corrections only"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"improve\",\"text\":\"This is test sentence with error.\",\"correctionsOnly\":true}' --connect-timeout 5 --max-time 10",
+    "time": {
+      "start": 1759693165992,
+      "end": 1759693166008
+    }
+  }
+}

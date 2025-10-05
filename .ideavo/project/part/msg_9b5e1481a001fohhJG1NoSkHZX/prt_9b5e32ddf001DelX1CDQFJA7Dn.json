@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e32ddf001DelX1CDQFJA7Dn",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_012ep8n3sQFY5gXsGmY7YmXC",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "    const timeoutPromise = new Promise((_, reject) => {\n      setTimeout(() => reject(new Error('API call timeout after 5 seconds')), 5000)\n    })",
+      "newString": "    const timeoutPromise = new Promise((_, reject) => {\n      setTimeout(() => {\n        console.log('🔥 TIMEOUT: word alternatives API call timed out after 3 seconds')\n        reject(new Error('API call timeout after 3 seconds'))\n      }, 3000)\n    })"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -157,9 +157,12 @@\n \n systemPrompt += '\\n\\nIMPORTANT: Return ONLY a valid JSON array of 5 alternative words. Nothing else. Format: [\"word1\", \"word2\", \"word3\", \"word4\", \"word5\"]'\n \n const timeoutPromise = new Promise((_, reject) => {\n-  setTimeout(() => reject(new Error('API call timeout after 5 seconds')), 5000)\n+  setTimeout(() => {\n+    console.log('🔥 TIMEOUT: word alternatives API call timed out after 3 seconds')\n+    reject(new Error('API call timeout after 3 seconds'))\n+  }, 3000)\n })\n \n const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n   method: 'POST',\n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693190162,
+      "end": 1759693190167
+    }
+  }
+}

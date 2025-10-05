@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5e1ba28001uzT8jFjJmVu3hX",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_019G1AsZJuCtEKrAVZuLxBnM",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 140,
+      "limit": 30
+    },
+    "output": "<file>\n00141|   console.log('Getting alternatives for word:', word)\n00142|   \n00143|   try {\n00144|     let systemPrompt = 'You are a professional writing assistant. '\n00145|     \n00146|     if (options.mode === 'translate') {\n00147|       systemPrompt += `Provide 5 alternative translations or synonyms for the word \"${word}\" in the context: \"${context}\". `\n00148|       if (options.targetLang) {\n00149|         systemPrompt += `Focus on translations that work well in ${options.targetLang}. `\n00150|       }\n00151|     } else {\n00152|       systemPrompt += `Provide 5 alternative words or synonyms for \"${word}\" in the context: \"${context}\". Focus on words that improve clarity, style, and readability. `\n00153|     }\n00154|     \n00155|     systemPrompt += 'Return only a JSON array of alternative words, like: [\"alternative1\", \"alternative2\", \"alternative3\", \"alternative4\", \"alternative5\"]'\n00156|     \n00157|     const timeoutPromise = new Promise((_, reject) => {\n00158|       setTimeout(() => reject(new Error('API call timeout after 5 seconds')), 5000)\n00159|     })\n00160|     \n00161|     const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00162|       method: 'POST',\n00163|       headers: {\n00164|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00165|         'Content-Type': 'application/json',\n00166|       },\n00167|       body: JSON.stringify({\n00168|         model: 'qwen-flash',\n00169|         messages: [\n00170|           {\n\n(File has more lines. Use 'offset' parameter to read beyond line 170)\n</file>",
+    "metadata": {
+      "preview": "  console.log('Getting alternatives for word:', word)\n  \n  try {\n    let systemPrompt = 'You are a professional writing assistant. '\n    \n    if (options.mode === 'translate') {\n      systemPrompt += `Provide 5 alternative translations or synonyms for the word \"${word}\" in the context: \"${context}\". `\n      if (options.targetLang) {\n        systemPrompt += `Focus on translations that work well in ${options.targetLang}. `\n      }\n    } else {\n      systemPrompt += `Provide 5 alternative words or synonyms for \"${word}\" in the context: \"${context}\". Focus on words that improve clarity, style, and readability. `\n    }\n    \n    systemPrompt += 'Return only a JSON array of alternative words, like: [\"alternative1\", \"alternative2\", \"alternative3\", \"alternative4\", \"alternative5\"]'\n    \n    const timeoutPromise = new Promise((_, reject) => {\n      setTimeout(() => reject(new Error('API call timeout after 5 seconds')), 5000)\n    })\n    "
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693094056,
+      "end": 1759693094057
+    }
+  }
+}

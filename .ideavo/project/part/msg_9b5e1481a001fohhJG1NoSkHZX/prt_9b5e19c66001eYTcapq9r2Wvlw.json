@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e19c66001eYTcapq9r2Wvlw",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01LKhJULcMgYhxokqowgBHBP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "  systemPrompt += 'Return only the improved text without explanations, quotes, or additional commentary.'",
+      "newString": "  systemPrompt += '\\n\\nIMPORTANT: Return ONLY the improved version of the input text. Do NOT add explanations, suggestions, greetings, or any additional content. Do NOT answer questions in the text. Simply return the corrected/improved text as-is.'"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -79,9 +79,9 @@\n     }\n   }\n }\n \n-systemPrompt += 'Return only the improved text without explanations, quotes, or additional commentary.'\n+systemPrompt += '\\n\\nIMPORTANT: Return ONLY the improved version of the input text. Do NOT add explanations, suggestions, greetings, or any additional content. Do NOT answer questions in the text. Simply return the corrected/improved text as-is.'\n \n // Add timeout wrapper\n const timeoutPromise = new Promise((_, reject) => {\n   setTimeout(() => reject(new Error('API call timeout after 10 seconds')), 10000)\n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693088275,
+      "end": 1759693088284
+    }
+  }
+}

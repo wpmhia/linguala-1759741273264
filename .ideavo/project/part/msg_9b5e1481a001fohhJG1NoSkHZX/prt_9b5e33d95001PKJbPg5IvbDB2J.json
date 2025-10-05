@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e33d95001PKJbPg5IvbDB2J",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01CPZqF2kBUMWdEwb3rEVsEr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "    const timeoutId = setTimeout(() => controller.abort(), 2000) // 2 second timeout",
+      "newString": "    const timeoutId = setTimeout(() => {\n      console.log('🔥 TIMEOUT: rephrase API call timed out after 3 seconds')\n      controller.abort()\n    }, 3000) // 3 second timeout"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -222,9 +222,12 @@\n const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n \n try {\n   const controller = new AbortController()\n-  const timeoutId = setTimeout(() => controller.abort(), 2000) // 2 second timeout\n+  const timeoutId = setTimeout(() => {\n+    console.log('🔥 TIMEOUT: rephrase API call timed out after 3 seconds')\n+    controller.abort()\n+  }, 3000) // 3 second timeout\n   \n   const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n     method: 'POST',\n     headers: {\n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693193970,
+      "end": 1759693193974
+    }
+  }
+}

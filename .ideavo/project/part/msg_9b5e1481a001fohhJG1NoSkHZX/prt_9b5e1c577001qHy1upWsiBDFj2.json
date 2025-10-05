@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e1c577001qHy1upWsiBDFj2",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01KxM7Xk1G2Cmbr2wopXAHHJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "    systemPrompt += 'Return only a JSON array of alternative words, like: [\"alternative1\", \"alternative2\", \"alternative3\", \"alternative4\", \"alternative5\"]'",
+      "newString": "    systemPrompt += '\\n\\nIMPORTANT: Return ONLY a valid JSON array of 5 alternative words. Nothing else. Format: [\"word1\", \"word2\", \"word3\", \"word4\", \"word5\"]'"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -151,9 +151,9 @@\n } else {\n   systemPrompt += `Provide 5 alternative words or synonyms for \"${word}\" in the context: \"${context}\". Focus on words that improve clarity, style, and readability. `\n }\n \n-systemPrompt += 'Return only a JSON array of alternative words, like: [\"alternative1\", \"alternative2\", \"alternative3\", \"alternative4\", \"alternative5\"]'\n+systemPrompt += '\\n\\nIMPORTANT: Return ONLY a valid JSON array of 5 alternative words. Nothing else. Format: [\"word1\", \"word2\", \"word3\", \"word4\", \"word5\"]'\n \n const timeoutPromise = new Promise((_, reject) => {\n   setTimeout(() => reject(new Error('API call timeout after 5 seconds')), 5000)\n })\n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693097899,
+      "end": 1759693097903
+    }
+  }
+}

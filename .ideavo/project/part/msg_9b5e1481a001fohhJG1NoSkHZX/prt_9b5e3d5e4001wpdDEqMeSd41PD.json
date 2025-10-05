@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e3d5e4001wpdDEqMeSd41PD",
+  "messageID": "msg_9b5e1481a001fohhJG1NoSkHZX",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_015Z1pJEEm6o49q471o5c2pA",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 2 && npm run dev > debug_test.log 2>&1 & sleep 5 && echo \"Server with debug endpoint started\"",
+      "description": "Restart server with debug endpoint"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart server with debug endpoint"
+    },
+    "title": "pkill -f \"next dev\" && sleep 2 && npm run dev > debug_test.log 2>&1 & sleep 5 && echo \"Server with debug endpoint started\"",
+    "time": {
+      "start": 1759693232982,
+      "end": 1759693237988
+    }
+  }
+}

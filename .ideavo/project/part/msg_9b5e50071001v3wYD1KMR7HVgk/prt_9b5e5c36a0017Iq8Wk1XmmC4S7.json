@@ -1,0 +1,23 @@
+{
+  "id": "prt_9b5e5c36a0017Iq8Wk1XmmC4S7",
+  "messageID": "msg_9b5e50071001v3wYD1KMR7HVgk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01WAzg8TaZPbYdCewF4Vmtca",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/next.config.js"
+    },
+    "output": "<file>\n00001| /** @type {import('next').NextConfig} */\n00002| const nextConfig = {\n00003|   images: { unoptimized: true }\n00004| };\n00005| \n00006| module.exports = nextConfig;\n00007| \n</file>",
+    "metadata": {
+      "preview": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  images: { unoptimized: true }\n};\n\nmodule.exports = nextConfig;\n"
+    },
+    "title": "next.config.js",
+    "time": {
+      "start": 1759693358457,
+      "end": 1759693358461
+    }
+  }
+}

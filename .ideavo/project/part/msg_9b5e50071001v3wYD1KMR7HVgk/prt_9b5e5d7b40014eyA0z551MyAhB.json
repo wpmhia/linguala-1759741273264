@@ -1,0 +1,85 @@
+{
+  "id": "prt_9b5e5d7b40014eyA0z551MyAhB",
+  "messageID": "msg_9b5e50071001v3wYD1KMR7HVgk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01MPxLXh1XVD7sGtk9cTbxwB",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Run build to check for errors",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Fix any TypeScript or build errors",
+          "status": "completed",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Run lint to check code quality",
+          "status": "completed",
+          "priority": "medium",
+          "id": "3"
+        },
+        {
+          "content": "Check environment configuration",
+          "status": "in_progress",
+          "priority": "medium",
+          "id": "4"
+        },
+        {
+          "content": "Verify production optimizations",
+          "status": "pending",
+          "priority": "medium",
+          "id": "5"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Run build to check for errors\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Fix any TypeScript or build errors\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Run lint to check code quality\",\n    \"status\": \"completed\",\n    \"priority\": \"medium\",\n    \"id\": \"3\"\n  },\n  {\n    \"content\": \"Check environment configuration\",\n    \"status\": \"in_progress\",\n    \"priority\": \"medium\",\n    \"id\": \"4\"\n  },\n  {\n    \"content\": \"Verify production optimizations\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"5\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Run build to check for errors",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Fix any TypeScript or build errors",
+          "status": "completed",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Run lint to check code quality",
+          "status": "completed",
+          "priority": "medium",
+          "id": "3"
+        },
+        {
+          "content": "Check environment configuration",
+          "status": "in_progress",
+          "priority": "medium",
+          "id": "4"
+        },
+        {
+          "content": "Verify production optimizations",
+          "status": "pending",
+          "priority": "medium",
+          "id": "5"
+        }
+      ]
+    },
+    "title": "2 todos",
+    "time": {
+      "start": 1759693366013,
+      "end": 1759693366013
+    }
+  }
+}

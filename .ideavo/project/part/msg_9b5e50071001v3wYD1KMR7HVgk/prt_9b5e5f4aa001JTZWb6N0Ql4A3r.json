@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e5f4aa001JTZWb6N0Ql4A3r",
+  "messageID": "msg_9b5e50071001v3wYD1KMR7HVgk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01E7u8sxjhDCiiWBGZ4CSvXE",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm start -- --help 2>/dev/null || echo \"Production server can be started with: npm start\"",
+      "description": "Check production server options"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 start\n> next start --help\n\nUsage: next start [directory] [options]\n\nStarts Next.js in production mode. The application should be compiled with\n`next build` first.\n\nArguments:\n  [directory]                            A directory on which to start the application. If no directory is provided, the current directory will be used.\n\nOptions:\n  -p, --port <port>                      Specify a port number on which to start the application. (default: 3000, env: PORT)\n  -H, --hostname <hostname>              Specify a hostname on which to start the application (default: 0.0.0.0).\n  --keepAliveTimeout <keepAliveTimeout>  Specify the maximum amount of milliseconds to wait before closing inactive connections.\n  -h, --help                             Displays this message.\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 start\n> next start --help\n\nUsage: next start [directory] [options]\n\nStarts Next.js in production mode. The application should be compiled with\n`next build` first.\n\nArguments:\n  [directory]                            A directory on which to start the application. If no directory is provided, the current directory will be used.\n\nOptions:\n  -p, --port <port>                      Specify a port number on which to start the application. (default: 3000, env: PORT)\n  -H, --hostname <hostname>              Specify a hostname on which to start the application (default: 0.0.0.0).\n  --keepAliveTimeout <keepAliveTimeout>  Specify the maximum amount of milliseconds to wait before closing inactive connections.\n  -h, --help                             Displays this message.\n",
+      "exit": 0,
+      "description": "Check production server options"
+    },
+    "title": "npm start -- --help 2>/dev/null || echo \"Production server can be started with: npm start\"",
+    "time": {
+      "start": 1759693371426,
+      "end": 1759693371699
+    }
+  }
+}

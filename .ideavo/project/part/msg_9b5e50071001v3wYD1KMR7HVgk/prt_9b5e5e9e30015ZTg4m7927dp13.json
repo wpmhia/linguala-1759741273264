@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e5e9e30015ZTg4m7927dp13",
+  "messageID": "msg_9b5e50071001v3wYD1KMR7HVgk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01C21HKy7J4MnqqyTFETGFiy",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "echo $DASHSCOPE_API_KEY | head -c 10",
+      "description": "Check if DASHSCOPE_API_KEY is configured"
+    },
+    "output": "sk-ad9404d",
+    "metadata": {
+      "output": "sk-ad9404d",
+      "exit": 0,
+      "description": "Check if DASHSCOPE_API_KEY is configured"
+    },
+    "title": "echo $DASHSCOPE_API_KEY | head -c 10",
+    "time": {
+      "start": 1759693368685,
+      "end": 1759693368690
+    }
+  }
+}

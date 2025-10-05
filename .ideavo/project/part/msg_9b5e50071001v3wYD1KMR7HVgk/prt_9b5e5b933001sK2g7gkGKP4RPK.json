@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5e5b933001sK2g7gkGKP4RPK",
+  "messageID": "msg_9b5e50071001v3wYD1KMR7HVgk",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01HaWErXziUUJJ1WUrHuYY4T",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run",
+      "description": "Check available npm scripts"
+    },
+    "output": "Lifecycle scripts included in ideavo-nextjs@0.1.0:\n  start\n    next start\navailable via `npm run-script`:\n  dev\n    next dev\n  build\n    next build\n  db:studio\n    prisma studio\n  db:seed\n    prisma db seed\n",
+    "metadata": {
+      "output": "Lifecycle scripts included in ideavo-nextjs@0.1.0:\n  start\n    next start\navailable via `npm run-script`:\n  dev\n    next dev\n  build\n    next build\n  db:studio\n    prisma studio\n  db:seed\n    prisma db seed\n",
+      "exit": 0,
+      "description": "Check available npm scripts"
+    },
+    "title": "npm run",
+    "time": {
+      "start": 1759693355890,
+      "end": 1759693356068
+    }
+  }
+}

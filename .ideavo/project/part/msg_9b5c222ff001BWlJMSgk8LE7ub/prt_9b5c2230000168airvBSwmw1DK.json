@@ -1,0 +1,7 @@
+{
+  "id": "prt_9b5c2230000168airvBSwmw1DK",
+  "type": "text",
+  "text": "fix errors:\nError: TypeError: undefined is not an object (evaluating 'toSummarize.at(-1).info')\nError: TypeError: undefined is not an object (evaluating 'toSummarize.at(-1).info')",
+  "messageID": "msg_9b5c222ff001BWlJMSgk8LE7ub",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

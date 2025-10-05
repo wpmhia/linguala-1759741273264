@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5c38f8a001Mg9vcaQY83OVjR",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The search shows that `.at(-1)` is used in various node_modules but not in our source code. The error message about `toSummarize.at(-1).info` suggests this might be coming from a browser runtime error or a different context. \n\nLet me check if there are any browser console errors by starting the development server and looking for runtime errors:",
+  "time": {
+    "start": 1759691119030,
+    "end": 1759691119030
+  }
+}

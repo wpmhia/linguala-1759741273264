@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5c3158e001kBv4sfa0VF6ZtL",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The build is successful, so there are no TypeScript errors. The error you're seeing might be a runtime error in the browser. Let me search for any files that might contain this pattern. Sometimes the error could be in a different format:",
+  "time": {
+    "start": 1759691086653,
+    "end": 1759691086653
+  }
+}

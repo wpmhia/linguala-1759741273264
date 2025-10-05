@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c3d921001iP8WYHkjfACZZK",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01RfxpiE7d9xv3Yn5ZiM5Sc8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "find /home/user/project -name \"*.json\" -o -name \"*.md\" -o -name \"*.txt\" | xargs grep -l \"toSummarize\" 2>/dev/null || echo \"No matches found in config files\"",
+      "description": "Search for toSummarize in config files"
+    },
+    "output": "/home/user/project/.ideavo/project/message/ses_65b8a18f2ffeMlgQ4UP0yHPHsm/msg_9b5bc17dc001nQdxSSC1u5tYv4.json\n/home/user/project/.ideavo/project/part/msg_9b5c222ff001BWlJMSgk8LE7ub/prt_9b5c2230000168airvBSwmw1DK.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c23268001iYejpqB9vEzh0o.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c235b5001xhhXwS2IOLxWNB.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c23eb1001VfA2RRtjtmEv3M.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c31b3e001B2Rrtemb7X5k72.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c351e6001cWcNup1eDU2P24.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c38f8a001Mg9vcaQY83OVjR.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c3cf93002nj9kAUyTuOk4we.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c3d921001iP8WYHkjfACZZK.json\nNo matches found in config files\n",
+    "metadata": {
+      "output": "/home/user/project/.ideavo/project/message/ses_65b8a18f2ffeMlgQ4UP0yHPHsm/msg_9b5bc17dc001nQdxSSC1u5tYv4.json\n/home/user/project/.ideavo/project/part/msg_9b5c222ff001BWlJMSgk8LE7ub/prt_9b5c2230000168airvBSwmw1DK.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c23268001iYejpqB9vEzh0o.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c235b5001xhhXwS2IOLxWNB.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c23eb1001VfA2RRtjtmEv3M.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c31b3e001B2Rrtemb7X5k72.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c351e6001cWcNup1eDU2P24.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c38f8a001Mg9vcaQY83OVjR.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c3cf93002nj9kAUyTuOk4we.json\n/home/user/project/.ideavo/project/part/msg_9b5c227f6001cmmaWqnAHI5mLI/prt_9b5c3d921001iP8WYHkjfACZZK.json\nNo matches found in config files\n",
+      "exit": 0,
+      "description": "Search for toSummarize in config files"
+    },
+    "title": "find /home/user/project -name \"*.json\" -o -name \"*.md\" -o -name \"*.txt\" | xargs grep -l \"toSummarize\" 2>/dev/null || echo \"No matches found in config files\"",
+    "time": {
+      "start": 1759691136564,
+      "end": 1759691137011
+    }
+  }
+}

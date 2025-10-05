@@ -8,14 +8,7 @@
 
  ✓ Starting...
  ✓ Ready in 2s
- ○ Compiling /api/translate ...
- ✓ Compiled /api/translate in 756ms (57 modules)
-Processing request body: { text: 'hello', operation: 'translate', targetLang: 'es' }
- POST /api/translate 200 in 901ms
-Processing request body: { text: 'Ik leest het verkeerd', operation: 'improve' }
- POST /api/translate 200 in 18ms
-Processing request body: {
-  text: 'Ik leest het verkeerd, maar waarom zou ik dat doen?',
-  operation: 'improve'
-}
- POST /api/translate 200 in 18ms
+ ○ Compiling / ...
+ ✓ Compiled / in 4.3s (1056 modules)
+ GET / 200 in 4765ms
+ ✓ Compiled in 709ms (502 modules)

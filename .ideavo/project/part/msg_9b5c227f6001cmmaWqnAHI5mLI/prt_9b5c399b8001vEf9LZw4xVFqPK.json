@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c399b8001vEf9LZw4xVFqPK",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_016uaZMQg9BuKWBnu1utBLfP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run dev > dev.log 2>&1 & sleep 2 && curl -s http://localhost:3000 > /dev/null && echo \"Server started successfully\" || echo \"Server failed to start\"",
+      "description": "Start dev server and test if it's running"
+    },
+    "output": "Server started successfully\n",
+    "metadata": {
+      "output": "Server started successfully\n",
+      "exit": 0,
+      "description": "Start dev server and test if it's running"
+    },
+    "title": "npm run dev > dev.log 2>&1 & sleep 2 && curl -s http://localhost:3000 > /dev/null && echo \"Server started successfully\" || echo \"Server failed to start\"",
+    "time": {
+      "start": 1759691120390,
+      "end": 1759691128032
+    }
+  }
+}

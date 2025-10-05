@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b5c265ca001gMT1h4Ndv4LPN7",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01RX5M4yqH6pY9RV4oSyyXxZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "\\.info"
+    },
+    "output": "Found 1 matches\n/home/user/project/components/linguala-translator.tsx:\n  Line 238:           toast.info(\"Using fallback processing\")",
+    "metadata": {
+      "matches": 1,
+      "truncated": false
+    },
+    "title": "\\.info",
+    "time": {
+      "start": 1759691040445,
+      "end": 1759691040533
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5c23268001iYejpqB9vEzh0o",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I need to find and fix the error where `toSummarize.at(-1).info` is failing. Let me search for this code pattern first.",
+  "time": {
+    "start": 1759691027821,
+    "end": 1759691027821
+  }
+}

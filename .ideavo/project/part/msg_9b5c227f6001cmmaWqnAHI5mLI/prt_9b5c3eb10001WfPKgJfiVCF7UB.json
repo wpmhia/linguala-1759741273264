@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c3eb10001WfPKgJfiVCF7UB",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_012SsPywUPNEBSJRCVnzSPk1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -A 5 -B 5 \"toSummarize\" /home/user/project/.ideavo/project/message/ses_65b8a18f2ffeMlgQ4UP0yHPHsm/msg_9b5bc17dc001nQdxSSC1u5tYv4.json 2>/dev/null | head -20",
+      "description": "Check context around toSummarize in IDE files"
+    },
+    "output": "  },\n  \"sessionID\": \"ses_65b8a18f2ffeMlgQ4UP0yHPHsm\",\n  \"error\": {\n    \"name\": \"UnknownError\",\n    \"data\": {\n      \"message\": \"TypeError: undefined is not an object (evaluating 'toSummarize.at(-1).info')\"\n    }\n  }\n}\n",
+    "metadata": {
+      "output": "  },\n  \"sessionID\": \"ses_65b8a18f2ffeMlgQ4UP0yHPHsm\",\n  \"error\": {\n    \"name\": \"UnknownError\",\n    \"data\": {\n      \"message\": \"TypeError: undefined is not an object (evaluating 'toSummarize.at(-1).info')\"\n    }\n  }\n}\n",
+      "exit": 0,
+      "description": "Check context around toSummarize in IDE files"
+    },
+    "title": "grep -A 5 -B 5 \"toSummarize\" /home/user/project/.ideavo/project/message/ses_65b8a18f2ffeMlgQ4UP0yHPHsm/msg_9b5bc17dc001nQdxSSC1u5tYv4.json 2>/dev/null | head -20",
+    "time": {
+      "start": 1759691141404,
+      "end": 1759691141412
+    }
+  }
+}

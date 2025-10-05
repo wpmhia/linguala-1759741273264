@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5c26fe1001H72tGM2NArRc8f",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014U9yB4mySSoUfAhqi6xwSi",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "tail -50 current.log",
+      "description": "Check current application logs for errors"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 3.5s\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 3.5s\n",
+      "exit": 0,
+      "description": "Check current application logs for errors"
+    },
+    "title": "tail -50 current.log",
+    "time": {
+      "start": 1759691043499,
+      "end": 1759691043517
+    }
+  }
+}

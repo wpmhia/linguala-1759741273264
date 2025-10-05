@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b5c253d7001ELA8gjl28dJsSd",
+  "messageID": "msg_9b5c227f6001cmmaWqnAHI5mLI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01U4H9gvjTvowsejTqDQH1tX",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "\\.at\\(-1\\)\\.info"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "\\.at\\(-1\\)\\.info",
+    "time": {
+      "start": 1759691035922,
+      "end": 1759691035934
+    }
+  }
+}

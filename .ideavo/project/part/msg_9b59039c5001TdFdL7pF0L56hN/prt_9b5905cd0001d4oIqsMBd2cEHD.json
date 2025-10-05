@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5905cd0001d4oIqsMBd2cEHD",
+  "messageID": "msg_9b59039c5001TdFdL7pF0L56hN",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_011CZ6LJckbqaTmDmuA7Jv2Q",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "(select|option|dropdown)",
+      "include": "*.ts,*.tsx,*.js,*.jsx"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "(select|option|dropdown)",
+    "time": {
+      "start": 1759687761693,
+      "end": 1759687761705
+    }
+  }
+}

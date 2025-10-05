@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b590bc60001fnrsXYx4jE2Zuy",
+  "messageID": "msg_9b59039c5001TdFdL7pF0L56hN",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(ui): reorder language list alphabetically in translate panel",
+  "cost": 0.171372,
+  "tokens": {
+    "input": 8,
+    "output": 175,
+    "reasoning": 0,
+    "cache": {
+      "write": 1356,
+      "read": 29298
+    }
+  }
+}

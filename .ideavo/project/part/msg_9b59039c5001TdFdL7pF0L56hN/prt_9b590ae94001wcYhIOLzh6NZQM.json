@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b590ae94001wcYhIOLzh6NZQM",
+  "messageID": "msg_9b59039c5001TdFdL7pF0L56hN",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Languages are now organized alphabetically! The language dropdown menus in your translation app will now display:\n\n1. **Detect language** (stays at top)\n2. **Arabic**\n3. **Chinese** \n4. **Czech**\n5. **Danish**\n6. **Dutch**\n7. **English**\n8. **Finnish**\n9. **French**\n10. **German**\n11. **Hindi**\n12. **Hungarian**\n13. **Italian**\n14. **Japanese**\n15. **Korean**\n16. **Norwegian**\n17. **Polish**\n18. **Portuguese**\n19. **Russian**\n20. **Spanish**\n21. **Swedish**\n22. **Thai**\n23. **Turkish**\n24. **Vietnamese**",
+  "time": {
+    "start": 1759687784329,
+    "end": 1759687784329
+  }
+}

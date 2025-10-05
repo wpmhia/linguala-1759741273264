@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b55dcacf002CQai1Ikq8Ng28j",
+  "messageID": "msg_9b55b43800015CoHgBTFyz7nD9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_019M2krH6AhY6B31xRPN9ToS",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Ik leest het verkeerd\", \"operation\": \"improve\"}' --max-time 5",
+      "description": "Test improve with timeout"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    57    0     0  100    57      0     92 --:--:-- --:--:-- --:--:--    91\r100   173    0   116  100    57    186     91 --:--:-- --:--:-- --:--:--   278\n{\"originalText\":\"Ik leest het verkeerd\",\"improvedText\":\"Ik lees het verkeerd\",\"operation\":\"improve\",\"fallback\":true}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    57    0     0  100    57      0     92 --:--:-- --:--:-- --:--:--    91\r100   173    0   116  100    57    186     91 --:--:-- --:--:-- --:--:--   278\n{\"originalText\":\"Ik leest het verkeerd\",\"improvedText\":\"Ik lees het verkeerd\",\"operation\":\"improve\",\"fallback\":true}",
+      "exit": 0,
+      "description": "Test improve with timeout"
+    },
+    "title": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Ik leest het verkeerd\", \"operation\": \"improve\"}' --max-time 5",
+    "time": {
+      "start": 1759684448328,
+      "end": 1759684451964
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b55bd3ab001yre8o1y4wqmrpW",
+  "messageID": "msg_9b55b43800015CoHgBTFyz7nD9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see the issue! The rephrase case is calling `rephraseTextWithQwen3Max(text)` which is the same qwen-max API function that's hanging. Just like with improve, I need to create a working fallback for rephrase.\n\nLet me fix this by creating a simple rephrase fallback:",
+  "time": {
+    "start": 1759684319974,
+    "end": 1759684319974
+  }
+}

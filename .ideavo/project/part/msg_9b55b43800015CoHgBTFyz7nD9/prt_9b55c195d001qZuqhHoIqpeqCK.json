@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b55c195d001qZuqhHoIqpeqCK",
+  "messageID": "msg_9b55b43800015CoHgBTFyz7nD9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01LZ6xvRokMa1cmPEm3SSxLN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\"",
+      "description": "Restart server with working fallbacks"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart server with working fallbacks"
+    },
+    "title": "pkill -f \"next dev\"",
+    "time": {
+      "start": 1759684336534,
+      "end": 1759684336552
+    }
+  }
+}

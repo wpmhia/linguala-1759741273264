@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b55d9c8d001OYKbyQH2Ox0tBf",
+  "messageID": "msg_9b55b43800015CoHgBTFyz7nD9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_017ih8h2Dr2uuamuQUh8mxML",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 3",
+      "description": "Kill server and wait"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill server and wait"
+    },
+    "title": "pkill -f \"next dev\" && sleep 3",
+    "time": {
+      "start": 1759684436043,
+      "end": 1759684436060
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b55c45aa002AdkZYhI6ErjXWH",
+  "messageID": "msg_9b55b43800015CoHgBTFyz7nD9",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01R2n9PGqFpUmDiYTJNvkSfJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"This is a very good example\", \"operation\": \"rephrase\"}'",
+      "description": "Test rephrase operation"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    64    0     0  100    64      0    110 --:--:-- --:--:-- --:--:--   110\r100   205    0   141  100    64    242    109 --:--:-- --:--:-- --:--:--   352\n{\"originalText\":\"This is a very good example\",\"rephrasedText\":\"This is a extremely excellent example\",\"operation\":\"rephrase\",\"fallback\":true}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    64    0     0  100    64      0    110 --:--:-- --:--:-- --:--:--   110\r100   205    0   141  100    64    242    109 --:--:-- --:--:-- --:--:--   352\n{\"originalText\":\"This is a very good example\",\"rephrasedText\":\"This is a extremely excellent example\",\"operation\":\"rephrase\",\"fallback\":true}",
+      "exit": 0,
+      "description": "Test rephrase operation"
+    },
+    "title": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"This is a very good example\", \"operation\": \"rephrase\"}'",
+    "time": {
+      "start": 1759684348550,
+      "end": 1759684352150
+    }
+  }
+}

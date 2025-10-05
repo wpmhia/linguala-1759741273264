@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b559654a00161j3cs7NxxmIKV",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01WVnp4gNR7pXZT95yZnSS1D",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill curl && pkill -f \"next dev\"",
+      "description": "Kill everything"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill everything"
+    },
+    "title": "pkill curl && pkill -f \"next dev\"",
+    "time": {
+      "start": 1759684159798,
+      "end": 1759684159881
+    }
+  }
+}

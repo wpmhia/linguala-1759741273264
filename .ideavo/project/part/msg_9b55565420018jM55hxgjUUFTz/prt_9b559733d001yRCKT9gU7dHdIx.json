@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b559733d001yRCKT9gU7dHdIx",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_017JrAeXPtcGLQds6w8zELDa",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "      case 'improve':\n        // Enhanced fallback with multilingual grammar fixes\n        const improvedText = text\n          // Dutch grammar fixes\n          .replace(/\\bik leest\\b/gi, 'ik lees')\n          .replace(/\\bIk leest\\b/g, 'Ik lees')\n          .replace(/\\bjij heeft\\b/gi, 'jij hebt')\n          .replace(/\\bJij heeft\\b/g, 'Jij hebt')\n          .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n          .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n          .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n          .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n          // English grammar fixes\n          .replace(/\\bi\\b/gi, 'I')\n          .replace(/\\bim\\b/gi, \"I'm\")\n          .replace(/\\bits\\b/gi, \"it's\")\n          .replace(/\\byour\\b(?=\\s+(going|coming|feeling))/gi, \"you're\")\n          .replace(/\\bwont\\b/gi, \"won't\")\n          .replace(/\\bdont\\b/gi, \"don't\")\n          .replace(/\\bcant\\b/gi, \"can't\")\n          .replace(/\\bwere\\b(?=\\s+going)/gi, \"we're\")\n          .replace(/\\btheir\\b(?=\\s+(happy|sad|coming|going))/gi, \"they're\")\n          // Fix double spaces and punctuation\n          .replace(/\\s+/g, ' ')\n          .replace(/^[a-z]/, match => match.toUpperCase())\n          .replace(/([a-z])\\s*$/i, '$1.')\n          .trim()\n        \n        result = {\n          originalText: text,\n          improvedText,\n          operation: 'improve',\n          fallback: true\n        }\n        break",
+      "newString": "      case 'improve':\n        result = {\n          originalText: text,\n          improvedText: text.replace(/\\bIk leest\\b/g, 'Ik lees').replace(/\\bik leest\\b/g, 'ik lees'),\n          operation: 'improve',\n          fallback: true\n        }\n        break"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -35,38 +35,11 @@\n   result = await translateText(text, sourceLang, targetLang, { domain, glossary })\n   break\n \n case 'improve':\n-  // Enhanced fallback with multilingual grammar fixes\n-  const improvedText = text\n-    // Dutch grammar fixes\n-    .replace(/\\bik leest\\b/gi, 'ik lees')\n-    .replace(/\\bIk leest\\b/g, 'Ik lees')\n-    .replace(/\\bjij heeft\\b/gi, 'jij hebt')\n-    .replace(/\\bJij heeft\\b/g, 'Jij hebt')\n-    .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n-    .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n-    .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n-    .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n-    // English grammar fixes\n-    .replace(/\\bi\\b/gi, 'I')\n-    .replace(/\\bim\\b/gi, \"I'm\")\n-    .replace(/\\bits\\b/gi, \"it's\")\n-    .replace(/\\byour\\b(?=\\s+(going|coming|feeling))/gi, \"you're\")\n-    .replace(/\\bwont\\b/gi, \"won't\")\n-    .replace(/\\bdont\\b/gi, \"don't\")\n-    .replace(/\\bcant\\b/gi, \"can't\")\n-    .replace(/\\bwere\\b(?=\\s+going)/gi, \"we're\")\n-    .replace(/\\btheir\\b(?=\\s+(happy|sad|coming|going))/gi, \"they're\")\n-    // Fix double spaces and punctuation\n-    .replace(/\\s+/g, ' ')\n-    .replace(/^[a-z]/, match => match.toUpperCase())\n-    .replace(/([a-z])\\s*$/i, '$1.')\n-    .trim()\n-  \n   result = {\n     originalText: text,\n-    improvedText,\n+    improvedText: text.replace(/\\bIk leest\\b/g, 'Ik lees').replace(/\\bik leest\\b/g, 'ik lees'),\n     operation: 'improve',\n     fallback: true\n   }\n   break\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759684172702,
+      "end": 1759684172711
+    }
+  }
+}

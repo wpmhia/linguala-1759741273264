@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b556cf06002z9cO7J1uqnL0JD",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me also add a timeout wrapper to the qwen-max function:",
+  "time": {
+    "start": 1759683989980,
+    "end": 1759683989980
+  }
+}

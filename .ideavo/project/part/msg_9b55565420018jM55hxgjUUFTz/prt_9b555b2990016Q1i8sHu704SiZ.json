@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b555b2990016Q1i8sHu704SiZ",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_014oE2zJ9rJKFruND88reFpK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"test\"}' --max-time 5",
+      "description": "Quick test API with timeout"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    16    0     0  100    16      0     13  0:00:01  0:00:01 --:--:--    13\r100    16    0     0  100    16      0      7  0:00:02  0:00:02 --:--:--     7\r100    16    0     0  100    16      0      4  0:00:04  0:00:03  0:00:01     4\r100    16    0     0  100    16      0      3  0:00:05  0:00:04  0:00:01     3\r100    16    0     0  100    16      0      3  0:00:05  0:00:05 --:--:--     3\ncurl: (28) Operation timed out after 5001 milliseconds with 0 bytes received\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    16    0     0  100    16      0     13  0:00:01  0:00:01 --:--:--    13\r100    16    0     0  100    16      0      7  0:00:02  0:00:02 --:--:--     7\r100    16    0     0  100    16      0      4  0:00:04  0:00:03  0:00:01     4\r100    16    0     0  100    16      0      3  0:00:05  0:00:04  0:00:01     3\r100    16    0     0  100    16      0      3  0:00:05  0:00:05 --:--:--     3\ncurl: (28) Operation timed out after 5001 milliseconds with 0 bytes received\n",
+      "exit": 28,
+      "description": "Quick test API with timeout"
+    },
+    "title": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"test\"}' --max-time 5",
+    "time": {
+      "start": 1759683917578,
+      "end": 1759683922598
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5579138001F99EX2yz1ur2ET",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Still hanging. The console logs would help, but I can't see them. The issue is that the function is hanging before even the first console.log appears, which suggests the problem might be earlier in the async execution chain.\n\nLet me check if the issue is with environment variable access in the Next.js context. Let me create a much simpler test that just tries to access the environment variable:",
+  "time": {
+    "start": 1759684041458,
+    "end": 1759684041458
+  }
+}

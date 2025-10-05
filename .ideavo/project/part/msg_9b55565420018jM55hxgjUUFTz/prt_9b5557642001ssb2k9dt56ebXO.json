@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5557642001ssb2k9dt56ebXO",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see several issues in these browser console errors that explain why the app isn't working properly:\n\n## 🔍 **Root Causes Identified:**\n\n### 1. **Wrong Server Domain**\nThe app is trying to connect to `server.ideavo.ai` but you're running on `localhost:3000`. These 404 errors show it's looking for automation/reconnect endpoints that don't exist:\n```\nserver.ideavo.ai/api/automation/reconnect/... Failed to load resource: 404\n```\n\n### 2. **Hydration Mismatch** \n```\nWarning: Extra attributes from the server: class at html\n```\nThis indicates server/client rendering differences that can cause React to hang.\n\n### 3. **Wrong Port Configuration**\nThe preload error shows it's trying to load resources from `4000-...e2b.app` but your app is on `localhost:3000`.\n\n## 🛠️ **Let me fix these issues:**",
+  "time": {
+    "start": 1759683906222,
+    "end": 1759683906222
+  }
+}

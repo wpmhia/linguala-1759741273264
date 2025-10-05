@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5580c05001J3sf09JESkx8oc",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01KDNnANNq1Uc7RnuWb5v8eG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Ik leest het verkeerd\", \"operation\": \"improve\"}' --max-time 5",
+      "description": "Test environment variable access"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    57    0     0  100    57      0    100 --:--:-- --:--:-- --:--:--   100\r100   185    0   128  100    57    224    100 --:--:-- --:--:-- --:--:--   324\n{\"originalText\":\"Ik leest het verkeerd\",\"improvedText\":\"Ik lees het verkeerd\",\"operation\":\"improve\",\"debug\":{\"apiKeyLength\":35}}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    57    0     0  100    57      0    100 --:--:-- --:--:-- --:--:--   100\r100   185    0   128  100    57    224    100 --:--:-- --:--:-- --:--:--   324\n{\"originalText\":\"Ik leest het verkeerd\",\"improvedText\":\"Ik lees het verkeerd\",\"operation\":\"improve\",\"debug\":{\"apiKeyLength\":35}}",
+      "exit": 0,
+      "description": "Test environment variable access"
+    },
+    "title": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Ik leest het verkeerd\", \"operation\": \"improve\"}' --max-time 5",
+    "time": {
+      "start": 1759684071529,
+      "end": 1759684075117
+    }
+  }
+}

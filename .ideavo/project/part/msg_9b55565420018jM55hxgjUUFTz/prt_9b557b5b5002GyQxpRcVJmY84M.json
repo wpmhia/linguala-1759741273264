@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b557b5b5002GyQxpRcVJmY84M",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01XjLddvPrr5WKvFj32CDmuu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 2",
+      "description": "Kill and wait"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill and wait"
+    },
+    "title": "pkill -f \"next dev\" && sleep 2",
+    "time": {
+      "start": 1759684049030,
+      "end": 1759684049052
+    }
+  }
+}

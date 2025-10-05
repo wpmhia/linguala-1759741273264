@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b556ff800013C6c8kCMlEMAp2",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_012xS7vmtr5s4g8fFjhDdkJF",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\"",
+      "description": "Restart server with debugging"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart server with debugging"
+    },
+    "title": "pkill -f \"next dev\"",
+    "time": {
+      "start": 1759684002228,
+      "end": 1759684002244
+    }
+  }
+}

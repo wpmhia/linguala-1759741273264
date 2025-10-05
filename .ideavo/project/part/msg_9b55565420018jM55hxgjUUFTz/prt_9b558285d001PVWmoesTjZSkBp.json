@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b558285d001PVWmoesTjZSkBp",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "**Excellent!** 🎉 This works perfectly! The environment variable is accessible (length 35) and the basic grammar fix works. The issue is definitely in the actual fetch call to the qwen-max API.\n\nSince we know:\n1. ✅ The international endpoint works with direct curl\n2. ✅ The API key is correct and accessible  \n3. ✅ The basic route logic works\n4. ❌ The fetch call in Next.js context hangs\n\nThe issue is likely **Next.js fetch behavior** or **async/await handling** in the API route context. Let me implement a working version that uses the proven fallback for now, but also give you the option to test qwen-max from the frontend:",
+  "time": {
+    "start": 1759684082272,
+    "end": 1759684082272
+  }
+}

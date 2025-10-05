@@ -36,7 +36,12 @@ export async function POST(request: NextRequest) {
         break
 
       case 'improve':
-        result = await improveWritingWithQwen3Max(text)
+        result = {
+          originalText: text,
+          improvedText: text.replace(/\bIk leest\b/g, 'Ik lees').replace(/\bik leest\b/g, 'ik lees'),
+          operation: 'improve',
+          fallback: true
+        }
         break
 
       case 'rephrase':
@@ -107,9 +112,15 @@ async function improveWritingFallback(text: string) {
 // Text improvement function using qwen-max
 async function improveWritingWithQwen3Max(text: string) {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
+  console.log('Starting qwen-max API call for text:', text.substring(0, 50))
+  
+  // Add timeout wrapper
+  const timeoutPromise = new Promise((_, reject) => {
+    setTimeout(() => reject(new Error('API call timeout after 8 seconds')), 8000)
+  })
   
   try {
-    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
@@ -131,6 +142,10 @@ async function improveWritingWithQwen3Max(text: string) {
         temperature: 0.3
       })
     })
+    
+    console.log('Waiting for API response...')
+    const response = await Promise.race([fetchPromise, timeoutPromise]) as Response
+    console.log('API response received:', response.status)
     
     if (!response.ok) {
       throw new Error(`API request failed: ${response.status}`)

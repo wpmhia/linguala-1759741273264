@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5573f77001H9VCyY9S1omuxU",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01VkXCqJyem8CjKmC7S6DJbH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Ik leest het verkeerd\", \"operation\": \"improve\"}' --max-time 15",
+      "description": "Test with debugging and proper timeout"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    57    0     0  100    57      0     47  0:00:01  0:00:01 --:--:--    47\r100    57    0     0  100    57      0     25  0:00:02  0:00:02 --:--:--    25\r100    57    0     0  100    57      0     17  0:00:03  0:00:03 --:--:--    17\r100    57    0     0  100    57      0     13  0:00:04  0:00:04 --:--:--    13\r100    57    0     0  100    57      0     10  0:00:05  0:00:05 --:--:--    10\r100    57    0     0  100    57      0      9  0:00:06  0:00:06 --:--:--     0\r100    57    0     0  100    57      0      7  0:00:08  0:00:07  0:00:01     0\r100    57    0     0  100    57      0      6  0:00:09  0:00:08  0:00:01     0\r100    57    0     0  100    57      0      6  0:00:09  0:00:09 --:--:--     0\r100    57    0     0  100    57      0      5  0:00:11  0:00:10  0:00:01     0\r100    57    0     0  100    57      0      5  0:00:11  0:00:11 --:--:--     0\r100    57    0     0  100    57      0      4  0:00:14  0:00:12  0:00:02     0\r100    57    0     0  100    57      0      4  0:00:14  0:00:13  0:00:01     0\r100    57    0     0  100    57      0      4  0:00:14  0:00:14 --:--:--     0\r100    57    0     0  100    57      0      3  0:00:19  0:00:15  0:00:04     0\ncurl: (28) Operation timed out after 15001 milliseconds with 0 bytes received\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    57    0     0  100    57      0     47  0:00:01  0:00:01 --:--:--    47\r100    57    0     0  100    57      0     25  0:00:02  0:00:02 --:--:--    25\r100    57    0     0  100    57      0     17  0:00:03  0:00:03 --:--:--    17\r100    57    0     0  100    57      0     13  0:00:04  0:00:04 --:--:--    13\r100    57    0     0  100    57      0     10  0:00:05  0:00:05 --:--:--    10\r100    57    0     0  100    57      0      9  0:00:06  0:00:06 --:--:--     0\r100    57    0     0  100    57      0      7  0:00:08  0:00:07  0:00:01     0\r100    57    0     0  100    57      0      6  0:00:09  0:00:08  0:00:01     0\r100    57    0     0  100    57      0      6  0:00:09  0:00:09 --:--:--     0\r100    57    0     0  100    57      0      5  0:00:11  0:00:10  0:00:01     0\r100    57    0     0  100    57      0      5  0:00:11  0:00:11 --:--:--     0\r100    57    0     0  100    57      0      4  0:00:14  0:00:12  0:00:02     0\r100    57    0     0  100    57      0      4  0:00:14  0:00:13  0:00:01     0\r100    57    0     0  100    57      0      4  0:00:14  0:00:14 --:--:--     0\r100    57    0     0  100    57      0      3  0:00:19  0:00:15  0:00:04     0\ncurl: (28) Operation timed out after 15001 milliseconds with 0 bytes received\n",
+      "exit": 28,
+      "description": "Test with debugging and proper timeout"
+    },
+    "title": "sleep 3 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\": \"Ik leest het verkeerd\", \"operation\": \"improve\"}' --max-time 15",
+    "time": {
+      "start": 1759684018406,
+      "end": 1759684036472
+    }
+  }
+}

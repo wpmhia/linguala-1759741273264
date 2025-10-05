@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5562915001nRjOWX5GMLysZX",
+  "messageID": "msg_9b55565420018jM55hxgjUUFTz",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Gm5d5CTYxZpgunGBcdASg8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\"",
+      "description": "Kill hanging server"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Kill hanging server"
+    },
+    "title": "pkill -f \"next dev\"",
+    "time": {
+      "start": 1759683947523,
+      "end": 1759683947538
+    }
+  }
+}

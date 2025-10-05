@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b58716820021EFnP6vG12XI7q",
+  "messageID": "msg_9b586d630001ijGTxBshq2qJlu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01N2Nae841cLNiTYCQkG6A66",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/providers/settings-provider.tsx",
+      "content": "\"use client\"\n\nimport { createContext, useContext, useEffect, useState } from \"react\"\n\n// Settings interface\ninterface AppSettings {\n  // Appearance\n  fontSize: 'small' | 'medium' | 'large'\n  compactMode: boolean\n  showAnimations: boolean\n  \n  // Translation defaults\n  defaultSourceLang: string\n  defaultTargetLang: string\n  autoDetectLanguage: boolean\n  showConfidenceScore: boolean\n  \n  // Writing preferences\n  defaultWritingStyle: string\n  defaultTone: string\n  autoCorrectionsOnly: boolean\n  \n  // Performance\n  autoSaveInterval: number // in seconds\n  processingTimeout: number // in seconds\n  maxHistoryItems: number\n  \n  // Notifications\n  enableSoundNotifications: boolean\n  showProcessingToasts: boolean\n  showSuccessToasts: boolean\n  showErrorToasts: boolean\n  \n  // Data & Privacy\n  saveTranslationHistory: boolean\n  dataRetentionDays: number\n  analyticsEnabled: boolean\n}\n\nconst defaultSettings: AppSettings = {\n  // Appearance\n  fontSize: 'medium',\n  compactMode: false,\n  showAnimations: true,\n  \n  // Translation defaults\n  defaultSourceLang: 'auto',\n  defaultTargetLang: 'en',\n  autoDetectLanguage: true,\n  showConfidenceScore: false,\n  \n  // Writing preferences\n  defaultWritingStyle: 'simple',\n  defaultTone: 'friendly',\n  autoCorrectionsOnly: false,\n  \n  // Performance\n  autoSaveInterval: 30,\n  processingTimeout: 30,\n  maxHistoryItems: 100,\n  \n  // Notifications\n  enableSoundNotifications: false,\n  showProcessingToasts: true,\n  showSuccessToasts: true,\n  showErrorToasts: true,\n  \n  // Data & Privacy\n  saveTranslationHistory: true,\n  dataRetentionDays: 30,\n  analyticsEnabled: false,\n}\n\ntype SettingsContextType = {\n  settings: AppSettings\n  updateSetting: <K extends keyof AppSettings>(key: K, value: AppSettings[K]) => void\n  resetSettings: () => void\n  exportSettings: () => string\n  importSettings: (data: string) => boolean\n  clearAllData: () => void\n}\n\nconst SettingsContext = createContext<SettingsContextType | undefined>(undefined)\n\nconst STORAGE_KEY = 'linguala-settings'\n\nexport function SettingsProvider({ children }: { children: React.ReactNode }) {\n  const [settings, setSettings] = useState<AppSettings>(defaultSettings)\n\n  // Load settings from localStorage on mount\n  useEffect(() => {\n    try {\n      const stored = localStorage.getItem(STORAGE_KEY)\n      if (stored) {\n        const parsedSettings = JSON.parse(stored)\n        setSettings({ ...defaultSettings, ...parsedSettings })\n      }\n    } catch (error) {\n      console.warn('Failed to load settings from localStorage:', error)\n    }\n  }, [])\n\n  // Save settings to localStorage whenever they change\n  useEffect(() => {\n    try {\n      localStorage.setItem(STORAGE_KEY, JSON.stringify(settings))\n    } catch (error) {\n      console.warn('Failed to save settings to localStorage:', error)\n    }\n  }, [settings])\n\n  const updateSetting = <K extends keyof AppSettings>(key: K, value: AppSettings[K]) => {\n    setSettings(prev => ({ ...prev, [key]: value }))\n  }\n\n  const resetSettings = () => {\n    setSettings(defaultSettings)\n    localStorage.removeItem(STORAGE_KEY)\n  }\n\n  const exportSettings = () => {\n    return JSON.stringify(settings, null, 2)\n  }\n\n  const importSettings = (data: string): boolean => {\n    try {\n      const importedSettings = JSON.parse(data)\n      const validatedSettings = { ...defaultSettings, ...importedSettings }\n      setSettings(validatedSettings)\n      return true\n    } catch (error) {\n      console.error('Failed to import settings:', error)\n      return false\n    }\n  }\n\n  const clearAllData = () => {\n    // Clear settings\n    resetSettings()\n    \n    // Clear other localStorage data (translation history, etc.)\n    const keysToRemove = []\n    for (let i = 0; i < localStorage.length; i++) {\n      const key = localStorage.key(i)\n      if (key && key.startsWith('linguala-')) {\n        keysToRemove.push(key)\n      }\n    }\n    keysToRemove.forEach(key => localStorage.removeItem(key))\n  }\n\n  const value: SettingsContextType = {\n    settings,\n    updateSetting,\n    resetSettings,\n    exportSettings,\n    importSettings,\n    clearAllData,\n  }\n\n  return (\n    <SettingsContext.Provider value={value}>\n      {children}\n    </SettingsContext.Provider>\n  )\n}\n\nexport function useSettings() {\n  const context = useContext(SettingsContext)\n  if (!context) {\n    throw new Error('useSettings must be used within a SettingsProvider')\n  }\n  return context\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/components/providers/settings-provider.tsx",
+      "exists": false
+    },
+    "title": "components/providers/settings-provider.tsx",
+    "time": {
+      "start": 1759687168537,
+      "end": 1759687168540
+    }
+  }
+}

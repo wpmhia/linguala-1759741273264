@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b58a62c2001LhsUEh6f4IDLTI",
+  "messageID": "msg_9b586d630001ijGTxBshq2qJlu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(settings): implement settings modal and provider",
+  "cost": 1.0265019,
+  "tokens": {
+    "input": 1,
+    "output": 191,
+    "reasoning": 0,
+    "cache": {
+      "write": 9767,
+      "read": 0
+    }
+  }
+}

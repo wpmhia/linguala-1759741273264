@@ -1,0 +1,20 @@
+{
+  "id": "prt_9b589bce3001cjYJzRyUru5HQZ",
+  "messageID": "msg_9b586d630001ijGTxBshq2qJlu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_019Nj6xUGSXzrXrxBaBxch13",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/translator.tsx",
+      "limit": 50
+    },
+    "error": "Error: File not found: /home/user/project/components/translator.tsx\n\nDid you mean one of these?\n/home/user/project/components/linguala-translator.tsx",
+    "time": {
+      "start": 1759687327553,
+      "end": 1759687327554
+    }
+  }
+}

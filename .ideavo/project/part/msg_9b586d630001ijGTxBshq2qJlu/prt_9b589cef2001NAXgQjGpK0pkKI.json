@@ -1,0 +1,21 @@
+{
+  "id": "prt_9b589cef2001NAXgQjGpK0pkKI",
+  "messageID": "msg_9b586d630001ijGTxBshq2qJlu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01DoS2Xs8Mz1HyFUzJGtUDV5",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTextProcessing } from \"@/hooks/use-translation\"\nimport { ThemeToggle } from \"@/components/theme-toggle\"",
+      "newString": "import { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTextProcessing } from \"@/hooks/use-translation\"\nimport { ThemeToggle } from \"@/components/theme-toggle\"\nimport { SettingsModal } from \"@/components/settings-modal\"\nimport { useSettings } from \"@/components/providers/settings-provider\""
+    },
+    "error": "Error: You must read the file /home/user/project/components/linguala-translator.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759687334078,
+      "end": 1759687334079
+    }
+  }
+}

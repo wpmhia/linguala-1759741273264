@@ -1,0 +1,109 @@
+{
+  "id": "prt_9b586e816001XrF5NxHELix5xZ",
+  "messageID": "msg_9b586d630001ijGTxBshq2qJlu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01GX1WZdggtR5HXo676L4DSy",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Create settings context for managing user preferences",
+          "status": "pending",
+          "priority": "high",
+          "id": "22"
+        },
+        {
+          "content": "Design and implement settings modal/panel UI",
+          "status": "pending",
+          "priority": "high",
+          "id": "23"
+        },
+        {
+          "content": "Add settings functionality to gear button",
+          "status": "pending",
+          "priority": "high",
+          "id": "24"
+        },
+        {
+          "content": "Implement theme and appearance settings",
+          "status": "pending",
+          "priority": "medium",
+          "id": "25"
+        },
+        {
+          "content": "Add translation and writing preferences",
+          "status": "pending",
+          "priority": "medium",
+          "id": "26"
+        },
+        {
+          "content": "Create data management and privacy controls",
+          "status": "pending",
+          "priority": "medium",
+          "id": "27"
+        },
+        {
+          "content": "Add performance and notification settings",
+          "status": "pending",
+          "priority": "low",
+          "id": "28"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Create settings context for managing user preferences\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"22\"\n  },\n  {\n    \"content\": \"Design and implement settings modal/panel UI\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"23\"\n  },\n  {\n    \"content\": \"Add settings functionality to gear button\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"24\"\n  },\n  {\n    \"content\": \"Implement theme and appearance settings\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"25\"\n  },\n  {\n    \"content\": \"Add translation and writing preferences\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"26\"\n  },\n  {\n    \"content\": \"Create data management and privacy controls\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"27\"\n  },\n  {\n    \"content\": \"Add performance and notification settings\",\n    \"status\": \"pending\",\n    \"priority\": \"low\",\n    \"id\": \"28\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Create settings context for managing user preferences",
+          "status": "pending",
+          "priority": "high",
+          "id": "22"
+        },
+        {
+          "content": "Design and implement settings modal/panel UI",
+          "status": "pending",
+          "priority": "high",
+          "id": "23"
+        },
+        {
+          "content": "Add settings functionality to gear button",
+          "status": "pending",
+          "priority": "high",
+          "id": "24"
+        },
+        {
+          "content": "Implement theme and appearance settings",
+          "status": "pending",
+          "priority": "medium",
+          "id": "25"
+        },
+        {
+          "content": "Add translation and writing preferences",
+          "status": "pending",
+          "priority": "medium",
+          "id": "26"
+        },
+        {
+          "content": "Create data management and privacy controls",
+          "status": "pending",
+          "priority": "medium",
+          "id": "27"
+        },
+        {
+          "content": "Add performance and notification settings",
+          "status": "pending",
+          "priority": "low",
+          "id": "28"
+        }
+      ]
+    },
+    "title": "7 todos",
+    "time": {
+      "start": 1759687144757,
+      "end": 1759687144758
+    }
+  }
+}

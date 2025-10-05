@@ -1,0 +1,23 @@
+{
+  "id": "prt_9b5896ce8001uwjUa1WDDtvsyz",
+  "messageID": "msg_9b586d630001ijGTxBshq2qJlu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_018x2tbsDSDWQqXeKU934ha4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx"
+    },
+    "output": "<file>\n00001| import './globals.css';\n00002| import type { Metadata } from 'next';\n00003| import { Inter } from 'next/font/google';\n00004| import { Toaster } from '@/components/ui/sonner';\n00005| import { QueryProvider } from '@/components/providers/query-provider';\n00006| import { ThemeProvider } from '@/components/providers/theme-provider';\n00007| \n00008| const inter = Inter({ \n00009|   subsets: ['latin'],\n00010|   variable: '--font-inter',\n00011|   display: 'swap',\n00012| });\n00013| \n00014| export const metadata: Metadata = {\n00015|   title: 'Linguala - European AI Translation Platform',\n00016|   description: 'The European translation platform built for European languages and culture. Professional domain expertise, custom glossaries, and intelligent AI. Based in Europe, for Europe.',\n00017|   keywords: 'european translation, EU languages, european translator, linguala, multilingual europe, professional translation, domain expertise',\n00018|   authors: [{ name: 'Linguala Europe' }],\n00019|   creator: 'Linguala',\n00020|   publisher: 'Linguala Europe',\n00021|   robots: 'index, follow',\n00022|   openGraph: {\n00023|     type: 'website',\n00024|     locale: 'en_EU',\n00025|     url: 'https://linguala.eu',\n00026|     title: 'Linguala - European AI Translation Platform',\n00027|     description: 'The European translation platform built for European languages and culture',\n00028|     siteName: 'Linguala',\n00029|   },\n00030|   twitter: {\n00031|     card: 'summary_large_image',\n00032|     title: 'Linguala - European AI Translation Platform',\n00033|     description: 'European translation platform built for European languages and culture',\n00034|     creator: '@linguala',\n00035|   },\n00036| };\n00037| \n00038| export const viewport = {\n00039|   width: 'device-width',\n00040|   initialScale: 1,\n00041|   themeColor: '#3B82F6',\n00042| };\n00043| \n00044| export default function RootLayout({\n00045|   children,\n00046| }: {\n00047|   children: React.ReactNode;\n00048| }) {\n00049|   return (\n00050|     <html lang=\"en\" suppressHydrationWarning>\n00051|       <body className={inter.className}>\n00052|         <ThemeProvider\n00053|           defaultTheme=\"system\"\n00054|         >\n00055|           <QueryProvider>\n00056|             {children}\n00057|           </QueryProvider>\n00058|           <Toaster />\n00059|         </ThemeProvider>\n00060|         {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}\n00061|         <script src=\"/scripts/iframe-navigation.js\"></script>\n00062|       </body>\n00063|     </html>\n00064|   );\n00065| }\n00066| \n</file>",
+    "metadata": {
+      "preview": "import './globals.css';\nimport type { Metadata } from 'next';\nimport { Inter } from 'next/font/google';\nimport { Toaster } from '@/components/ui/sonner';\nimport { QueryProvider } from '@/components/providers/query-provider';\nimport { ThemeProvider } from '@/components/providers/theme-provider';\n\nconst inter = Inter({ \n  subsets: ['latin'],\n  variable: '--font-inter',\n  display: 'swap',\n});\n\nexport const metadata: Metadata = {\n  title: 'Linguala - European AI Translation Platform',\n  description: 'The European translation platform built for European languages and culture. Professional domain expertise, custom glossaries, and intelligent AI. Based in Europe, for Europe.',\n  keywords: 'european translation, EU languages, european translator, linguala, multilingual europe, professional translation, domain expertise',\n  authors: [{ name: 'Linguala Europe' }],\n  creator: 'Linguala',\n  publisher: 'Linguala Europe',"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759687306502,
+      "end": 1759687306504
+    }
+  }
+}

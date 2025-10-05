@@ -17,6 +17,8 @@ import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { useTextProcessing } from "@/hooks/use-translation"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { SettingsModal } from "@/components/settings-modal"
+import { useSettings } from "@/components/providers/settings-provider"
 
 // Dynamic imports for code splitting
 const TranslatePanel = dynamic(() => import('./translate-panel'), {

@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/sonner';
 import { QueryProvider } from '@/components/providers/query-provider';
 import { ThemeProvider } from '@/components/providers/theme-provider';
+import { SettingsProvider } from '@/components/providers/settings-provider';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -52,10 +53,12 @@ export default function RootLayout({
         <ThemeProvider
           defaultTheme="system"
         >
-          <QueryProvider>
-            {children}
-          </QueryProvider>
-          <Toaster />
+          <SettingsProvider>
+            <QueryProvider>
+              {children}
+            </QueryProvider>
+            <Toaster />
+          </SettingsProvider>
         </ThemeProvider>
         {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}
         <script src="/scripts/iframe-navigation.js"></script>

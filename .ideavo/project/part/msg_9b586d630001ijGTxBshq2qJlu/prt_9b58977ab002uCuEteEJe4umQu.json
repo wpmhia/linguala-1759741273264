@@ -1,0 +1,42 @@
+{
+  "id": "prt_9b58977ab002uCuEteEJe4umQu",
+  "messageID": "msg_9b586d630001ijGTxBshq2qJlu",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01YQozCy9YqWUKk1LgWge9Rv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "edits": [
+        {
+          "oldString": "import { QueryProvider } from '@/components/providers/query-provider';\nimport { ThemeProvider } from '@/components/providers/theme-provider';",
+          "newString": "import { QueryProvider } from '@/components/providers/query-provider';\nimport { ThemeProvider } from '@/components/providers/theme-provider';\nimport { SettingsProvider } from '@/components/providers/settings-provider';"
+        },
+        {
+          "oldString": "        <ThemeProvider\n          defaultTheme=\"system\"\n        >\n          <QueryProvider>\n            {children}\n          </QueryProvider>\n          <Toaster />\n        </ThemeProvider>",
+          "newString": "        <ThemeProvider\n          defaultTheme=\"system\"\n        >\n          <SettingsProvider>\n            <QueryProvider>\n              {children}\n            </QueryProvider>\n            <Toaster />\n          </SettingsProvider>\n        </ThemeProvider>"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/layout.tsx\n===================================================================\n--- /home/user/project/app/layout.tsx\n+++ /home/user/project/app/layout.tsx\n@@ -3,8 +3,9 @@\n import { Inter } from 'next/font/google';\n import { Toaster } from '@/components/ui/sonner';\n import { QueryProvider } from '@/components/providers/query-provider';\n import { ThemeProvider } from '@/components/providers/theme-provider';\n+import { SettingsProvider } from '@/components/providers/settings-provider';\n \n const inter = Inter({ \n   subsets: ['latin'],\n   variable: '--font-inter',\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/layout.tsx\n===================================================================\n--- /home/user/project/app/layout.tsx\n+++ /home/user/project/app/layout.tsx\n@@ -52,12 +52,14 @@\n <body className={inter.className}>\n   <ThemeProvider\n     defaultTheme=\"system\"\n   >\n-    <QueryProvider>\n-      {children}\n-    </QueryProvider>\n-    <Toaster />\n+    <SettingsProvider>\n+      <QueryProvider>\n+        {children}\n+      </QueryProvider>\n+      <Toaster />\n+    </SettingsProvider>\n   </ThemeProvider>\n   {/* TODO: Remove iframe-navigation.js in production, should never be removed by AI */}\n   <script src=\"/scripts/iframe-navigation.js\"></script>\n </body>\n"
+        }
+      ]
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759687311964,
+      "end": 1759687311972
+    }
+  }
+}

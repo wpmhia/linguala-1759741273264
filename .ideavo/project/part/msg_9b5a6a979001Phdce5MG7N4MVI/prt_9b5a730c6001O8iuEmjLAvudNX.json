@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5a730c6001O8iuEmjLAvudNX",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see the issue! The translation is working but it's only returning \"Hola\" instead of \"Hola mundo\" (Hello world). The translation service is using a very basic fallback instead of calling the actual Qwen3 API for translation. Let me check the translation service:",
+  "time": {
+    "start": 1759689258606,
+    "end": 1759689258606
+  }
+}

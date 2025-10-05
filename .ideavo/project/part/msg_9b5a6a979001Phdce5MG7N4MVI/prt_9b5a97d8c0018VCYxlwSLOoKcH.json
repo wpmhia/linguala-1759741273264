@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5a97d8c0018VCYxlwSLOoKcH",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01ADXeP95Eb5S9yHmZ4A5mm4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "export async function translateText",
+      "include": "*.ts"
+    },
+    "output": "Found 1 matches\n/home/user/project/lib/translation-service.ts:\n  Line 253: export async function translateText(",
+    "metadata": {
+      "matches": 1,
+      "truncated": false
+    },
+    "title": "export async function translateText",
+    "time": {
+      "start": 1759689408361,
+      "end": 1759689408389
+    }
+  }
+}

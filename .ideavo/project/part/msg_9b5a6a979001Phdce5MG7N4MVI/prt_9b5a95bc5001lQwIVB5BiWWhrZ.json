@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5a95bc5001lQwIVB5BiWWhrZ",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01EXHUX2VtYhZndknDYpYHrx",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 138,
+      "limit": 15
+    },
+    "output": "<file>\n00139|   })\n00140|   \n00141|   try {\n00142|     const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00143|       method: 'POST',\n00144|       headers: {\n00145|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00146|         'Content-Type': 'application/json',\n00147|       },\n00148|       body: JSON.stringify({\n00149|         model: 'qwen-max',\n00150|         messages: [\n00151|           {\n00152|             role: 'system',\n00153|             content: systemPrompt\n\n(File has more lines. Use 'offset' parameter to read beyond line 153)\n</file>",
+    "metadata": {
+      "preview": "  })\n  \n  try {\n    const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-max',\n        messages: [\n          {\n            role: 'system',\n            content: systemPrompt"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759689400198,
+      "end": 1759689400547
+    }
+  }
+}

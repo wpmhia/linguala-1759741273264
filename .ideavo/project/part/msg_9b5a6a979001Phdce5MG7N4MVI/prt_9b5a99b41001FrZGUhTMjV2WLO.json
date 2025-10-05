@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5a99b41001FrZGUhTMjV2WLO",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see that the translateText function properly awaits translateWithQwen3Max. The issue might be that the targetLang parameter is being passed incorrectly to the API. Let me test by using a simpler approach and debugging the actual function call. Let me make a test API call but with much shorter timeout and better error handling:",
+  "time": {
+    "start": 1759689416977,
+    "end": 1759689416977
+  }
+}

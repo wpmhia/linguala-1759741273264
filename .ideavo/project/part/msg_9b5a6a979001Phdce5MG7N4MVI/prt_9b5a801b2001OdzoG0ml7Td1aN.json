@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5a801b2001OdzoG0ml7Td1aN",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me test the translation API to see if it works with the new Qwen3 integration:",
+  "time": {
+    "start": 1759689311557,
+    "end": 1759689311557
+  }
+}

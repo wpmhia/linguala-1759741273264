@@ -112,6 +112,141 @@ function getFallbackTranslation(text: string, targetLanguage: string): string | 
   return null
 }
 
+// Main Qwen3 translation function
+async function translateWithQwen3Max(text: string, sourceLang: string, targetLang: string): Promise<TranslationResult> {
+  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
+  
+  if (!DASHSCOPE_API_KEY) {
+    throw new Error('DASHSCOPE_API_KEY not configured')
+  }
+  
+  console.log(`Translating with Qwen3: "${text.substring(0, 50)}" from ${sourceLang} to ${targetLang}`)
+  
+  // Build system prompt
+  let systemPrompt = 'You are a professional translator. '
+  
+  if (sourceLang === 'auto') {
+    systemPrompt += `Translate the given text to ${targetLang}. `
+  } else {
+    systemPrompt += `Translate the given text from ${sourceLang} to ${targetLang}. `
+  }
+  
+  systemPrompt += 'Provide only the translated text without explanations, quotes, or additional commentary. Maintain the original meaning, tone, and style.'
+  
+  // Add timeout wrapper - shorter timeout for reliability
+  const timeoutPromise = new Promise((_, reject) => {
+    setTimeout(() => reject(new Error('Translation timeout after 5 seconds')), 5000)
+  })
+  
+  try {
+    // Simple direct fetch without Promise.race to avoid complications
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 8000) // 8 second timeout
+    
+    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'qwen-max',
+        messages: [
+          {
+            role: 'system',
+            content: systemPrompt
+          },
+          {
+            role: 'user',
+            content: text
+          }
+        ],
+        max_tokens: 200,
+        temperature: 0.3
+      }),
+      signal: controller.signal
+    })
+    
+    clearTimeout(timeoutId)
+    console.log('Qwen3 translation response received:', response.status)
+    
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status}`)
+    }
+
+    const data = await response.json()
+    const translatedText = data.choices[0]?.message?.content?.trim()
+
+    if (translatedText && translatedText !== text) {
+      return {
+        translatedText,
+        sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,
+        targetLang
+      }
+    } else {
+      throw new Error('No translation received or same as input')
+    }
+  } catch (error) {
+    console.error('Qwen3 translation error:', error)
+    throw error
+  }
+}
+
+// Enhanced pattern-based translation for common text
+function getPatternBasedTranslation(text: string, targetLanguage: string): string {
+  const lowerText = text.toLowerCase().trim()
+  
+  // Common words and phrases
+  const translations: Record<string, Record<string, string>> = {
+    // Greetings
+    'hello': { 'Spanish': 'hola', 'French': 'bonjour', 'German': 'hallo', 'Italian': 'ciao', 'Portuguese': 'olá' },
+    'hello world': { 'Spanish': 'hola mundo', 'French': 'bonjour le monde', 'German': 'hallo welt', 'Italian': 'ciao mondo', 'Portuguese': 'olá mundo' },
+    'good morning': { 'Spanish': 'buenos días', 'French': 'bonjour', 'German': 'guten morgen', 'Italian': 'buongiorno', 'Portuguese': 'bom dia' },
+    'good evening': { 'Spanish': 'buenas tardes', 'French': 'bonsoir', 'German': 'guten abend', 'Italian': 'buonasera', 'Portuguese': 'boa tarde' },
+    'good night': { 'Spanish': 'buenas noches', 'French': 'bonne nuit', 'German': 'gute nacht', 'Italian': 'buonanotte', 'Portuguese': 'boa noite' },
+    
+    // Common phrases
+    'thank you': { 'Spanish': 'gracias', 'French': 'merci', 'German': 'danke', 'Italian': 'grazie', 'Portuguese': 'obrigado' },
+    'please': { 'Spanish': 'por favor', 'French': 's\'il vous plaît', 'German': 'bitte', 'Italian': 'per favore', 'Portuguese': 'por favor' },
+    'excuse me': { 'Spanish': 'disculpe', 'French': 'excusez-moi', 'German': 'entschuldigung', 'Italian': 'scusi', 'Portuguese': 'com licença' },
+    'yes': { 'Spanish': 'sí', 'French': 'oui', 'German': 'ja', 'Italian': 'sì', 'Portuguese': 'sim' },
+    'no': { 'Spanish': 'no', 'French': 'non', 'German': 'nein', 'Italian': 'no', 'Portuguese': 'não' },
+    
+    // Common words
+    'cat': { 'Spanish': 'gato', 'French': 'chat', 'German': 'katze', 'Italian': 'gatto', 'Portuguese': 'gato' },
+    'dog': { 'Spanish': 'perro', 'French': 'chien', 'German': 'hund', 'Italian': 'cane', 'Portuguese': 'cão' },
+    'water': { 'Spanish': 'agua', 'French': 'eau', 'German': 'wasser', 'Italian': 'acqua', 'Portuguese': 'água' },
+    'food': { 'Spanish': 'comida', 'French': 'nourriture', 'German': 'essen', 'Italian': 'cibo', 'Portuguese': 'comida' },
+    'house': { 'Spanish': 'casa', 'French': 'maison', 'German': 'haus', 'Italian': 'casa', 'Portuguese': 'casa' },
+    'love': { 'Spanish': 'amor', 'French': 'amour', 'German': 'liebe', 'Italian': 'amore', 'Portuguese': 'amor' },
+    'world': { 'Spanish': 'mundo', 'French': 'monde', 'German': 'welt', 'Italian': 'mondo', 'Portuguese': 'mundo' },
+    'time': { 'Spanish': 'tiempo', 'French': 'temps', 'German': 'zeit', 'Italian': 'tempo', 'Portuguese': 'tempo' },
+    'book': { 'Spanish': 'libro', 'French': 'livre', 'German': 'buch', 'Italian': 'libro', 'Portuguese': 'livro' },
+    'car': { 'Spanish': 'coche', 'French': 'voiture', 'German': 'auto', 'Italian': 'macchina', 'Portuguese': 'carro' }
+  }
+  
+  // Try exact phrase match first
+  if (translations[lowerText] && translations[lowerText][targetLanguage]) {
+    return translations[lowerText][targetLanguage]
+  }
+  
+  // Try word-by-word translation for simple sentences
+  const words = lowerText.split(' ')
+  const translatedWords = words.map(word => {
+    const cleanWord = word.replace(/[.,!?;:]/, '')
+    return translations[cleanWord]?.[targetLanguage] || word
+  })
+  
+  const result = translatedWords.join(' ')
+  
+  // If we got some translations, return result; otherwise indicate it needs proper translation
+  if (result !== text) {
+    return result
+  }
+  
+  return `[Translated to ${targetLanguage}] ${text}`
+}
+
 export interface TranslationResult {
   translatedText: string
   sourceLang: string
@@ -135,46 +270,34 @@ export async function translateText(
 
     // Prepare the translation options
     const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang
+    const sourceLanguage = sourceLang && sourceLang !== 'auto' ? LANGUAGE_MAP[sourceLang] || sourceLang : 'auto'
     
-    // Try fallback first for better reliability
-    const fallbackTranslation = getFallbackTranslation(text, targetLanguage)
-    if (fallbackTranslation) {
-      return {
-        translatedText: fallbackTranslation,
-        sourceLang,
-        targetLang,
-        fallback: true
-      }
-    }
-
-    // For now, use a simple pattern-based translation to avoid API hanging issues
-    // This is a temporary solution until the network issue is resolved
-    const simpleTranslations: Record<string, Record<string, string>> = {
-      'test': { 'Spanish': 'prueba', 'French': 'test', 'German': 'Test' },
-      'hello': { 'Spanish': 'hola', 'French': 'bonjour', 'German': 'hallo' },
-      'world': { 'Spanish': 'mundo', 'French': 'monde', 'German': 'Welt' },
-      'document': { 'Spanish': 'documento', 'French': 'document', 'German': 'Dokument' },
-      'translation': { 'Spanish': 'traducción', 'French': 'traduction', 'German': 'Übersetzung' }
-    }
-
-    const lowerText = text.toLowerCase().trim()
-    for (const [key, translations] of Object.entries(simpleTranslations)) {
-      if (lowerText.includes(key)) {
+    // Try Qwen3 translation first
+    try {
+      const result = await translateWithQwen3Max(text, sourceLanguage, targetLanguage)
+      return result
+    } catch (error) {
+      console.error('Qwen3 translation failed, using fallback:', error)
+      
+      // Try fallback translation for common phrases
+      const fallbackTranslation = getFallbackTranslation(text, targetLanguage)
+      if (fallbackTranslation) {
         return {
-          translatedText: translations[targetLanguage] || text,
+          translatedText: fallbackTranslation,
           sourceLang,
           targetLang,
           fallback: true
         }
       }
-    }
 
-    // If no pattern matches, provide a basic response
-    return {
-      translatedText: `[Translated to ${targetLanguage}] ${text}`,
-      sourceLang,
-      targetLang,
-      fallback: true
+      // Enhanced pattern-based translation fallback
+      const result = getPatternBasedTranslation(text, targetLanguage)
+      return {
+        translatedText: result,
+        sourceLang,
+        targetLang,
+        fallback: true
+      }
     }
     
   } catch (error) {

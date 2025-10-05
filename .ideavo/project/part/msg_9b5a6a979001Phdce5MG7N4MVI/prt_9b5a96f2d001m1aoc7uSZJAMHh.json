@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5a96f2d001m1aoc7uSZJAMHh",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01M1cuisFbynQjZrZ2Drm2EZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 180,
+      "limit": 20
+    },
+    "output": "<file>\n00181|       }\n00182|     } else {\n00183|       throw new Error('No translation received or same as input')\n00184|     }\n00185|   } catch (error) {\n00186|     console.error('Qwen3 translation error:', error)\n00187|     throw error\n00188|   }\n00189| }\n00190| \n00191| // Enhanced pattern-based translation for common text\n00192| function getPatternBasedTranslation(text: string, targetLanguage: string): string {\n00193|   const lowerText = text.toLowerCase().trim()\n00194|   \n00195|   // Common words and phrases\n00196|   const translations: Record<string, Record<string, string>> = {\n00197|     // Greetings\n00198|     'hello': { 'Spanish': 'hola', 'French': 'bonjour', 'German': 'hallo', 'Italian': 'ciao', 'Portuguese': 'olá' },\n00199|     'hello world': { 'Spanish': 'hola mundo', 'French': 'bonjour le monde', 'German': 'hallo welt', 'Italian': 'ciao mondo', 'Portuguese': 'olá mundo' },\n00200|     'good morning': { 'Spanish': 'buenos días', 'French': 'bonjour', 'German': 'guten morgen', 'Italian': 'buongiorno', 'Portuguese': 'bom dia' },\n\n(File has more lines. Use 'offset' parameter to read beyond line 200)\n</file>",
+    "metadata": {
+      "preview": "      }\n    } else {\n      throw new Error('No translation received or same as input')\n    }\n  } catch (error) {\n    console.error('Qwen3 translation error:', error)\n    throw error\n  }\n}\n\n// Enhanced pattern-based translation for common text\nfunction getPatternBasedTranslation(text: string, targetLanguage: string): string {\n  const lowerText = text.toLowerCase().trim()\n  \n  // Common words and phrases\n  const translations: Record<string, Record<string, string>> = {\n    // Greetings\n    'hello': { 'Spanish': 'hola', 'French': 'bonjour', 'German': 'hallo', 'Italian': 'ciao', 'Portuguese': 'olá' },\n    'hello world': { 'Spanish': 'hola mundo', 'French': 'bonjour le monde', 'German': 'hallo welt', 'Italian': 'ciao mondo', 'Portuguese': 'olá mundo' },\n    'good morning': { 'Spanish': 'buenos días', 'French': 'bonjour', 'German': 'guten morgen', 'Italian': 'buongiorno', 'Portuguese': 'bom dia' },"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759689404866,
+      "end": 1759689404895
+    }
+  }
+}

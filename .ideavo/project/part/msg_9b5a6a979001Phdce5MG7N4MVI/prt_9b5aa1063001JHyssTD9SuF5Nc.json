@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5aa1063001JHyssTD9SuF5Nc",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01TfmKdq1WhA61jM7A5SgVQm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && timeout 15 npm run dev &\nNEXT_PID=$!\nsleep 8\ntimeout 10 curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"translate\",\n    \"text\": \"Hello world\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\"\n  }' || echo \"Request failed\"\nkill $NEXT_PID 2>/dev/null || true",
+      "description": "Test translation with shorter timeout and proper cleanup"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   109    0     0  100   109      0    106  0:00:01  0:00:01 --:--:--   108\r100   109    0     0  100   109      0     50  0:00:02  0:00:02 --:--:--    51\r100   109    0     0  100   109      0     34  0:00:03  0:00:03 --:--:--    34\u001b[?25h\n\r100   109    0     0  100   109      0     26  0:00:04  0:00:04 --:--:--    26\r100   109    0     0  100   109      0     21  0:00:05  0:00:05 --:--:--    21\r100   109    0     0  100   109      0     17  0:00:06  0:00:06 --:--:--     0Request failed\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   109    0     0  100   109      0    106  0:00:01  0:00:01 --:--:--   108\r100   109    0     0  100   109      0     50  0:00:02  0:00:02 --:--:--    51\r100   109    0     0  100   109      0     34  0:00:03  0:00:03 --:--:--    34\u001b[?25h\n\r100   109    0     0  100   109      0     26  0:00:04  0:00:04 --:--:--    26\r100   109    0     0  100   109      0     21  0:00:05  0:00:05 --:--:--    21\r100   109    0     0  100   109      0     17  0:00:06  0:00:06 --:--:--     0Request failed\n",
+      "exit": 0,
+      "description": "Test translation with shorter timeout and proper cleanup"
+    },
+    "title": "cd /home/user/project && timeout 15 npm run dev &\nNEXT_PID=$!\nsleep 8\ntimeout 10 curl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"translate\",\n    \"text\": \"Hello world\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\"\n  }' || echo \"Request failed\"\nkill $NEXT_PID 2>/dev/null || true",
+    "time": {
+      "start": 1759689447941,
+      "end": 1759689471927
+    }
+  }
+}

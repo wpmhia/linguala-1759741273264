@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5a746b100104s37bWzGMrFp8",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01X25J98mkrUqdJZWKfeAgTg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 130,
+      "limit": 50
+    },
+    "output": "<file>\n00131|   try {\n00132|     if (!text || !targetLang) {\n00133|       throw new Error('Text and target language are required')\n00134|     }\n00135| \n00136|     // Prepare the translation options\n00137|     const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n00138|     \n00139|     // Try fallback first for better reliability\n00140|     const fallbackTranslation = getFallbackTranslation(text, targetLanguage)\n00141|     if (fallbackTranslation) {\n00142|       return {\n00143|         translatedText: fallbackTranslation,\n00144|         sourceLang,\n00145|         targetLang,\n00146|         fallback: true\n00147|       }\n00148|     }\n00149| \n00150|     // For now, use a simple pattern-based translation to avoid API hanging issues\n00151|     // This is a temporary solution until the network issue is resolved\n00152|     const simpleTranslations: Record<string, Record<string, string>> = {\n00153|       'test': { 'Spanish': 'prueba', 'French': 'test', 'German': 'Test' },\n00154|       'hello': { 'Spanish': 'hola', 'French': 'bonjour', 'German': 'hallo' },\n00155|       'world': { 'Spanish': 'mundo', 'French': 'monde', 'German': 'Welt' },\n00156|       'document': { 'Spanish': 'documento', 'French': 'document', 'German': 'Dokument' },\n00157|       'translation': { 'Spanish': 'traducción', 'French': 'traduction', 'German': 'Übersetzung' }\n00158|     }\n00159| \n00160|     const lowerText = text.toLowerCase().trim()\n00161|     for (const [key, translations] of Object.entries(simpleTranslations)) {\n00162|       if (lowerText.includes(key)) {\n00163|         return {\n00164|           translatedText: translations[targetLanguage] || text,\n00165|           sourceLang,\n00166|           targetLang,\n00167|           fallback: true\n00168|         }\n00169|       }\n00170|     }\n00171| \n00172|     // If no pattern matches, provide a basic response\n00173|     return {\n00174|       translatedText: `[Translated to ${targetLanguage}] ${text}`,\n00175|       sourceLang,\n00176|       targetLang,\n00177|       fallback: true\n00178|     }\n00179|     \n00180|   } catch (error) {\n\n(File has more lines. Use 'offset' parameter to read beyond line 180)\n</file>",
+    "metadata": {
+      "preview": "  try {\n    if (!text || !targetLang) {\n      throw new Error('Text and target language are required')\n    }\n\n    // Prepare the translation options\n    const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n    \n    // Try fallback first for better reliability\n    const fallbackTranslation = getFallbackTranslation(text, targetLanguage)\n    if (fallbackTranslation) {\n      return {\n        translatedText: fallbackTranslation,\n        sourceLang,\n        targetLang,\n        fallback: true\n      }\n    }\n\n    // For now, use a simple pattern-based translation to avoid API hanging issues"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759689263630,
+      "end": 1759689263634
+    }
+  }
+}

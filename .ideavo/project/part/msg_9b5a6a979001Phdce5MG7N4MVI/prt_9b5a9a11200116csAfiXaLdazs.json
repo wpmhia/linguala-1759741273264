@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5a9a11200116csAfiXaLdazs",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_014KgjfaFX1iikXkj5hoWkxv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "  // Add timeout wrapper\n  const timeoutPromise = new Promise((_, reject) => {\n    setTimeout(() => reject(new Error('Translation timeout after 10 seconds')), 10000)\n  })",
+      "newString": "  // Add timeout wrapper - shorter timeout for reliability\n  const timeoutPromise = new Promise((_, reject) => {\n    setTimeout(() => reject(new Error('Translation timeout after 5 seconds')), 5000)\n  })"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -132,11 +132,11 @@\n }\n \n systemPrompt += 'Provide only the translated text without explanations, quotes, or additional commentary. Maintain the original meaning, tone, and style.'\n \n-// Add timeout wrapper\n+// Add timeout wrapper - shorter timeout for reliability\n const timeoutPromise = new Promise((_, reject) => {\n-  setTimeout(() => reject(new Error('Translation timeout after 10 seconds')), 10000)\n+  setTimeout(() => reject(new Error('Translation timeout after 5 seconds')), 5000)\n })\n \n try {\n   const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759689419205,
+      "end": 1759689419582
+    }
+  }
+}

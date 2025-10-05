@@ -1,0 +1,27 @@
+{
+  "id": "prt_9b5a87d8f001jHiSpDFdNa6ZmV",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Xa5cXn5XioY1ZAA7wZ3MQf",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run dev &\nNEXT_PID=$!\nsleep 5\ncurl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"translate\",\n    \"text\": \"Hello world, how are you?\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\"\n  }'\nsleep 2\nkill $NEXT_PID 2>/dev/null || true",
+      "timeout": 15000,
+      "description": "Test the improved translation API with Qwen3"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n ⚠ Port 3000 is in use, trying 3001 instead.\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3001\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2.3s\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   123    0     0  100   123      0    102  0:00:01  0:00:01 --:--:--   102\r100   123    0     0  100   123      0     55  0:00:02  0:00:02 --:--:--    55\r100   123    0     0  100   123      0     38  0:00:03  0:00:03 --:--:--    38\r100   123    0     0  100   123      0     29  0:00:04  0:00:04 --:--:--    29\r100   123    0     0  100   123      0     23  0:00:05  0:00:05 --:--:--    23\r100   123    0     0  100   123      0     19  0:00:06  0:00:06 --:--:--     0\r100   123    0     0  100   123      0     17  0:00:07  0:00:07 --:--:--     0\r100   123    0     0  100   123      0     14  0:00:08  0:00:08 --:--:--     0\r100   123    0     0  100   123      0     13  0:00:09  0:00:09 --:--:--     0",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 dev\n> next dev\n\n ⚠ Port 3000 is in use, trying 3001 instead.\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3001\n  - Environments: .env\n\n ✓ Starting...\n ✓ Ready in 2.3s\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   123    0     0  100   123      0    102  0:00:01  0:00:01 --:--:--   102\r100   123    0     0  100   123      0     55  0:00:02  0:00:02 --:--:--    55\r100   123    0     0  100   123      0     38  0:00:03  0:00:03 --:--:--    38\r100   123    0     0  100   123      0     29  0:00:04  0:00:04 --:--:--    29\r100   123    0     0  100   123      0     23  0:00:05  0:00:05 --:--:--    23\r100   123    0     0  100   123      0     19  0:00:06  0:00:06 --:--:--     0\r100   123    0     0  100   123      0     17  0:00:07  0:00:07 --:--:--     0\r100   123    0     0  100   123      0     14  0:00:08  0:00:08 --:--:--     0\r100   123    0     0  100   123      0     13  0:00:09  0:00:09 --:--:--     0",
+      "exit": null,
+      "description": "Test the improved translation API with Qwen3"
+    },
+    "title": "cd /home/user/project && npm run dev &\nNEXT_PID=$!\nsleep 5\ncurl -X POST \"http://localhost:3000/api/translate\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"operation\": \"translate\",\n    \"text\": \"Hello world, how are you?\",\n    \"sourceLang\": \"en\",\n    \"targetLang\": \"es\"\n  }'\nsleep 2\nkill $NEXT_PID 2>/dev/null || true",
+    "time": {
+      "start": 1759689344679,
+      "end": 1759689359690
+    }
+  }
+}

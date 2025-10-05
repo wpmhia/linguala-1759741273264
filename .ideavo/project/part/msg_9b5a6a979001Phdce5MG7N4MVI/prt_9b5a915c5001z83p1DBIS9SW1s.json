@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5a915c5001z83p1DBIS9SW1s",
+  "messageID": "msg_9b5a6a979001Phdce5MG7N4MVI",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01CWxnchd82F13ynuv83tFqN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && timeout 10 curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-max\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a professional translator. Translate the given text from English to Spanish. Provide only the translated text without explanations.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello world\"\n      }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0.3\n  }'",
+      "description": "Test Qwen3 API directly for translation"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   378    0     0  100   378      0    354  0:00:01  0:00:01 --:--:--   354\r100   755  100   377  100   378    278    279  0:00:01  0:00:01 --:--:--   558\n{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"Hola mundo\"},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":38,\"completion_tokens\":2,\"total_tokens\":40,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"created\":1759689387,\"system_fingerprint\":null,\"model\":\"qwen-max\",\"id\":\"chatcmpl-98cf8f8e-a805-94c8-8443-135130e20e37\"}",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   378    0     0  100   378      0    354  0:00:01  0:00:01 --:--:--   354\r100   755  100   377  100   378    278    279  0:00:01  0:00:01 --:--:--   558\n{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"Hola mundo\"},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":38,\"completion_tokens\":2,\"total_tokens\":40,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"created\":1759689387,\"system_fingerprint\":null,\"model\":\"qwen-max\",\"id\":\"chatcmpl-98cf8f8e-a805-94c8-8443-135130e20e37\"}",
+      "exit": 0,
+      "description": "Test Qwen3 API directly for translation"
+    },
+    "title": "cd /home/user/project && timeout 10 curl -X POST \"https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions\" \\\n  -H \"Authorization: Bearer sk-ad9404d1ced5426082b73e685a95ffa3\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"qwen-max\",\n    \"messages\": [\n      {\n        \"role\": \"system\",\n        \"content\": \"You are a professional translator. Translate the given text from English to Spanish. Provide only the translated text without explanations.\"\n      },\n      {\n        \"role\": \"user\",\n        \"content\": \"Hello world\"\n      }\n    ],\n    \"max_tokens\": 100,\n    \"temperature\": 0.3\n  }'",
+    "time": {
+      "start": 1759689385677,
+      "end": 1759689387302
+    }
+  }
+}

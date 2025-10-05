@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b6113bf00012FnO74a6b2sAYd",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I can see the issue! The problem is in the token optimization we just implemented. When we removed the language mapping, we're now sending ISO codes like `\"en\"` and `\"es\"` directly to the AI model, but the model needs more context to understand what these codes mean. Let me check the current translation service implementation:",
+  "time": {
+    "start": 1759696208586,
+    "end": 1759696208586
+  }
+}

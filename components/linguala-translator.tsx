@@ -285,7 +285,7 @@ export default function LingualaTranslator() {
       
       return () => clearTimeout(timeoutId)
     }
-  }, [sourceLang, targetLang, activeTab, correctionsOnly, writingStyle, tone])
+  }, [sourceLang, targetLang, activeTab, correctionsOnly, writingStyle, tone, handleProcessing])
 
   const isLoading = processing.isPending
 

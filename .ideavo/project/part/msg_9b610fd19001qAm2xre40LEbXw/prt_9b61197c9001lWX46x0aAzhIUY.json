@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b61197c9001lWX46x0aAzhIUY",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01HySwpMV635CM5UUzWp8eDo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "function getAdaptiveMaxTokens(inputText: string): number {\n  const inputTokens = estimateTokens(inputText)\n  return Math.ceil(inputTokens * 1.5) + 20\n}",
+      "newString": "function getAdaptiveMaxTokens(inputText: string): number {\n  const inputTokens = estimateTokens(inputText)\n  return Math.ceil(inputTokens * 1.5) + 20\n}\n\n// Minimal language mapping for AI model understanding\nconst LANGUAGE_NAMES: Record<string, string> = {\n  auto: 'auto',\n  en: 'English', de: 'German', fr: 'French', es: 'Spanish', it: 'Italian',\n  pt: 'Portuguese', ru: 'Russian', zh: 'Chinese', ja: 'Japanese', ko: 'Korean',\n  ar: 'Arabic', hi: 'Hindi', tr: 'Turkish', pl: 'Polish', nl: 'Dutch',\n  sv: 'Swedish', da: 'Danish', no: 'Norwegian', fi: 'Finnish', cs: 'Czech',\n  hu: 'Hungarian'\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -26,8 +26,18 @@\n   const inputTokens = estimateTokens(inputText)\n   return Math.ceil(inputTokens * 1.5) + 20\n }\n \n+// Minimal language mapping for AI model understanding\n+const LANGUAGE_NAMES: Record<string, string> = {\n+  auto: 'auto',\n+  en: 'English', de: 'German', fr: 'French', es: 'Spanish', it: 'Italian',\n+  pt: 'Portuguese', ru: 'Russian', zh: 'Chinese', ja: 'Japanese', ko: 'Korean',\n+  ar: 'Arabic', hi: 'Hindi', tr: 'Turkish', pl: 'Polish', nl: 'Dutch',\n+  sv: 'Swedish', da: 'Danish', no: 'Norwegian', fi: 'Finnish', cs: 'Czech',\n+  hu: 'Hungarian'\n+}\n+\n // Language mapping for translation API - includes all frontend languages\n const LANGUAGE_MAP: Record<string, string> = {\n   auto: 'auto',\n   \n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759696234535,
+      "end": 1759696234549
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b6175c6d001e51uT0qrAX5xda",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translation): restore language context and improve token processing",
+  "cost": 1.0836898500000005,
+  "tokens": {
+    "input": 0,
+    "output": 439,
+    "reasoning": 0,
+    "cache": {
+      "write": 287,
+      "read": 76469
+    }
+  }
+}

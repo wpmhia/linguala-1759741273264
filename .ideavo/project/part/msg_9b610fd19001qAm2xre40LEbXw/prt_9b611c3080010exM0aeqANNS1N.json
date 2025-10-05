@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b611c3080010exM0aeqANNS1N",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017q1cUiXFMGiGnSZkTZSnii",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 158,
+      "limit": 10
+    },
+    "output": "<file>\n00159|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00160|   const [targetLang, setTargetLang] = useState(\"en\")\n00161|   \n00162|   // Write mode settings\n00163|   const [correctionsOnly, setCorrectionsOnly] = useState(false)\n00164|   const [writingStyle, setWritingStyle] = useState(\"simple\")\n00165|   const [tone, setTone] = useState(\"friendly\")\n00166|   const [showChanges, setShowChanges] = useState(false)\n00167|   \n00168|   // UI state\n\n(File has more lines. Use 'offset' parameter to read beyond line 168)\n</file>",
+    "metadata": {
+      "preview": "  const [sourceLang, setSourceLang] = useState(\"auto\")\n  const [targetLang, setTargetLang] = useState(\"en\")\n  \n  // Write mode settings\n  const [correctionsOnly, setCorrectionsOnly] = useState(false)\n  const [writingStyle, setWritingStyle] = useState(\"simple\")\n  const [tone, setTone] = useState(\"friendly\")\n  const [showChanges, setShowChanges] = useState(false)\n  \n  // UI state"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759696242492,
+      "end": 1759696242494
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b61175ca0012rU2DF7VjIsXje",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_018ncgrGJxQ8SR3SUMFUtbf8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 117,
+      "limit": 15
+    },
+    "output": "<file>\n00118|         model: 'qwen-mt-turbo',\n00119|         messages: [\n00120|           {\n00121|             role: 'user',\n00122|             content: `${sourceLang === 'auto' ? 'auto' : sourceLang}→${targetLang}:\\n${cleanText(text)}`\n00123|           }\n00124|         ],\n00125|         max_tokens: getAdaptiveMaxTokens(text),\n00126|         temperature: 0.1\n00127|       }),\n00128|       signal: controller.signal\n00129|     })\n00130|     \n00131|     clearTimeout(timeoutId)\n00132|     \n\n(File has more lines. Use 'offset' parameter to read beyond line 132)\n</file>",
+    "metadata": {
+      "preview": "        model: 'qwen-mt-turbo',\n        messages: [\n          {\n            role: 'user',\n            content: `${sourceLang === 'auto' ? 'auto' : sourceLang}→${targetLang}:\\n${cleanText(text)}`\n          }\n        ],\n        max_tokens: getAdaptiveMaxTokens(text),\n        temperature: 0.1\n      }),\n      signal: controller.signal\n    })\n    \n    clearTimeout(timeoutId)\n    "
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759696222271,
+      "end": 1759696222272
+    }
+  }
+}

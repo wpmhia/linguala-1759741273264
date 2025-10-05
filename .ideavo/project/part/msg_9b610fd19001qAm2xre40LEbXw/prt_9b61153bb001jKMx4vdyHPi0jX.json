@@ -1,0 +1,21 @@
+{
+  "id": "prt_9b61153bb001jKMx4vdyHPi0jX",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01GPfRfEQkgAWTYN9dnX6Uu9",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "    // Optimized prompt: single message, no pleasantries, ISO codes\n    const srcCode = sourceLang === 'auto' ? 'auto' : sourceLang\n    const prompt = `${srcCode}→${targetLang}:\\n${cleanedText}`",
+      "newString": "    // Optimized prompt: single message, minimal but clear instruction\n    const srcCode = sourceLang === 'auto' ? 'auto' : sourceLang\n    const prompt = `Translate from ${srcCode} to ${targetLang}:\\n${cleanedText}`"
+    },
+    "error": "Error: oldString not found in content",
+    "time": {
+      "start": 1759696215542,
+      "end": 1759696215551
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "prt_9b6110bbe001t8s8Vbk3RnQRCA",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01Txbq3BkTTP2uQhELe7G8LG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Investigate language selection not working",
+          "status": "pending",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Fix everything translating to English only",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Test multi-language translation flow",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Investigate language selection not working\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Fix everything translating to English only\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Test multi-language translation flow\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"3\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Investigate language selection not working",
+          "status": "pending",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Fix everything translating to English only",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Test multi-language translation flow",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        }
+      ]
+    },
+    "title": "3 todos",
+    "time": {
+      "start": 1759696195879,
+      "end": 1759696195880
+    }
+  }
+}

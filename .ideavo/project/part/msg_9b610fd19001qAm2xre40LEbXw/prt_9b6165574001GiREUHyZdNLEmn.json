@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b6165574001GiREUHyZdNLEmn",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me test with a simple API call to ensure the language selection works. But first, let me address a potential issue I noticed. Let me also check if there's any issue with the timeout in the translation service. The 10-second timeout might be too short for some requests:",
+  "time": {
+    "start": 1759696542720,
+    "end": 1759696542720
+  }
+}

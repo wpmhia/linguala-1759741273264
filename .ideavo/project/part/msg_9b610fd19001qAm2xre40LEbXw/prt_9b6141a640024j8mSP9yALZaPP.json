@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b6141a640024j8mSP9yALZaPP",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "This looks correct - it should retrigger translation when languages change. The issue might have been the inconsistent text cleaning. Let me test again:",
+  "time": {
+    "start": 1759696395942,
+    "end": 1759696395942
+  }
+}

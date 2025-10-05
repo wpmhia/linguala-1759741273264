@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b611d1180016Qq9y7i0hCwlkK",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see one issue! The target language is defaulting to `\"en\"` (English) every time. This might be why everything is translating to English. Let me check if there's a language change issue. But first, let me test the current implementation:",
+  "time": {
+    "start": 1759696246524,
+    "end": 1759696246524
+  }
+}

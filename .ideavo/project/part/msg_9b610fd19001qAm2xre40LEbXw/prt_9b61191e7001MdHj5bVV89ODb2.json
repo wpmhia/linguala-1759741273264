@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b61191e7001MdHj5bVV89ODb2",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I need to restore the language mapping but keep it more efficient. The issue is that the AI model needs to understand what the language codes mean. Let me add back a simple language mapping:",
+  "time": {
+    "start": 1759696230345,
+    "end": 1759696230345
+  }
+}

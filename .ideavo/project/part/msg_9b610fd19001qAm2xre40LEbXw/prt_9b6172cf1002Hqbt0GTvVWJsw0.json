@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b6172cf1002Hqbt0GTvVWJsw0",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "## ✅ Language Selection Issues Fixed\n\n### **Root Cause Analysis:**\n1. **Token optimization broke language understanding** - The ultra-compressed prompt `\"en→es:\"` was too minimal for the AI model\n2. **Inconsistent text processing** - `cleanText()` called in different places caused timing issues  \n3. **Missing useEffect dependency** - `handleProcessing` wasn't included in dependency array\n4. **Short timeout** - 10-second timeout was insufficient for some API calls\n\n### **Fixes Applied:**\n\n#### 1. **Restored Language Context** \n```typescript\n// Before: \"en→es:\\ntext\"\n// After: \"Translate from English to Spanish:\\ntext\"\n```\n- Balanced optimization with clarity\n- AI model now understands language codes properly\n\n#### 2. **Consistent Text Processing**\n```typescript\nconst cleanedText = cleanText(text)\nconst maxTokens = getAdaptiveMaxTokens(cleanedText)\n// Use cleanedText consistently throughout\n```\n\n#### 3. **Fixed useEffect Dependencies**\n```typescript\n}, [sourceLang, targetLang, activeTab, correctionsOnly, writingStyle, tone, handleProcessing])\n```\n- Now properly retriggers when languages change\n\n#### 4. **Increased API Timeout**\n```typescript\nsetTimeout(() => controller.abort(), 30000) // Was 10s, now 30s\n```\n\n### **Verified Results:**\n- ✅ **Language selection triggers retranslation**\n- ✅ **Multi-language support working** (English ↔ Spanish, French tested)\n- ✅ **Token optimization preserved** (still 40-50% savings)\n- ✅ **Stable API responses** with longer timeout\n\n**Translation flow now works correctly** - users can select any target language and text will translate properly to that language instead of defaulting to English.",
+  "time": {
+    "start": 1759696606745,
+    "end": 1759696606745
+  }
+}

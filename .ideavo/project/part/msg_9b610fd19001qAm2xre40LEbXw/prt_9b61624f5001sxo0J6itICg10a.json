@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b61624f5001sxo0J6itICg10a",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_019ZC3hmZXMksp9mEzweyct2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const [targetLang, setTargetLang] = useState(\"es\") // Changed default to Spanish to avoid always English",
+      "newString": "  const [targetLang, setTargetLang] = useState(\"en\")"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -156,9 +156,9 @@\n const [sourceText, setSourceText] = useState(\"\")\n const [resultText, setResultText] = useState(\"\")\n const [activeTab, setActiveTab] = useState(\"translate\")\n const [sourceLang, setSourceLang] = useState(\"auto\")\n-const [targetLang, setTargetLang] = useState(\"es\") // Changed default to Spanish to avoid always English\n+const [targetLang, setTargetLang] = useState(\"en\")\n \n // Write mode settings\n const [correctionsOnly, setCorrectionsOnly] = useState(false)\n const [writingStyle, setWritingStyle] = useState(\"simple\")\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759696529742,
+      "end": 1759696529747
+    }
+  }
+}

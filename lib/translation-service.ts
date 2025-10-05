@@ -27,6 +27,16 @@ function getAdaptiveMaxTokens(inputText: string): number {
   return Math.ceil(inputTokens * 1.5) + 20
 }
 
+// Minimal language mapping for AI model understanding
+const LANGUAGE_NAMES: Record<string, string> = {
+  auto: 'auto',
+  en: 'English', de: 'German', fr: 'French', es: 'Spanish', it: 'Italian',
+  pt: 'Portuguese', ru: 'Russian', zh: 'Chinese', ja: 'Japanese', ko: 'Korean',
+  ar: 'Arabic', hi: 'Hindi', tr: 'Turkish', pl: 'Polish', nl: 'Dutch',
+  sv: 'Swedish', da: 'Danish', no: 'Norwegian', fi: 'Finnish', cs: 'Czech',
+  hu: 'Hungarian'
+}
+
 // Language mapping for translation API - includes all frontend languages
 const LANGUAGE_MAP: Record<string, string> = {
   auto: 'auto',
@@ -96,17 +106,18 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
     throw new Error('DASHSCOPE_API_KEY not configured')
   }
   
-  console.log(`Translating with qwen-mt-turbo: "${text.substring(0, 50)}" from ${sourceLang} to ${targetLang}`)
+  // Clean text before processing
+  const cleanedText = cleanText(text)
+  const maxTokens = getAdaptiveMaxTokens(cleanedText)
+  
+  console.log(`Translating: "${cleanedText.substring(0, 50)}" ${sourceLang}→${targetLang} (max_tokens: ${maxTokens})`)
   
   try {
-    console.log('Making API request to DashScope...')
-    
-    // Add timeout to fetch call
     const controller = new AbortController()
     const timeoutId = setTimeout(() => {
       console.log('API request timeout, aborting...')
       controller.abort()
-    }, 10000) // 10 second timeout
+    }, 30000) // Increased timeout to 30 seconds
     
     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
@@ -119,10 +130,10 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
         messages: [
           {
             role: 'user',
-            content: `${sourceLang === 'auto' ? 'auto' : sourceLang}→${targetLang}:\n${cleanText(text)}`
+            content: `Translate from ${LANGUAGE_NAMES[sourceLang] || sourceLang} to ${LANGUAGE_NAMES[targetLang] || targetLang}:\n${cleanedText}`
           }
         ],
-        max_tokens: getAdaptiveMaxTokens(text),
+        max_tokens: maxTokens,
         temperature: 0.1
       }),
       signal: controller.signal
@@ -139,7 +150,7 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
     const data = await response.json()
     const translatedText = data.choices[0]?.message?.content?.trim()
 
-    if (translatedText && translatedText !== text) {
+    if (translatedText && translatedText !== cleanedText) {
       console.log('Translation successful:', translatedText)
       return {
         translatedText,

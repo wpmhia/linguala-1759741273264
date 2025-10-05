@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b613faf2001lpSJWSqRuaNRwD",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01R41qMSKiMKSN6Uay2Hz2C1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 180,
+      "limit": 20
+    },
+    "output": "<file>\n00181|       throw new Error('Text and target language are required')\n00182|     }\n00183| \n00184|     // Use ISO codes directly for optimization\n00185|     const targetLanguage = targetLang\n00186|     const sourceLanguage = sourceLang || 'auto'\n00187|     \n00188|     // Try qwen-mt-turbo translation first\n00189|     try {\n00190|       const result = await translateWithQwenMT(text, sourceLanguage, targetLanguage)\n00191|       return result\n00192|     } catch (error) {\n00193|       console.error('qwen-mt-turbo translation failed, using fallback:', error)\n00194|       \n00195|       // Try fallback translation for common phrases\n00196|       const fallbackTranslation = getFallbackTranslation(text, targetLanguage)\n00197|       if (fallbackTranslation) {\n00198|         return {\n00199|           translatedText: fallbackTranslation,\n00200|           sourceLang,\n\n(File has more lines. Use 'offset' parameter to read beyond line 200)\n</file>",
+    "metadata": {
+      "preview": "      throw new Error('Text and target language are required')\n    }\n\n    // Use ISO codes directly for optimization\n    const targetLanguage = targetLang\n    const sourceLanguage = sourceLang || 'auto'\n    \n    // Try qwen-mt-turbo translation first\n    try {\n      const result = await translateWithQwenMT(text, sourceLanguage, targetLanguage)\n      return result\n    } catch (error) {\n      console.error('qwen-mt-turbo translation failed, using fallback:', error)\n      \n      // Try fallback translation for common phrases\n      const fallbackTranslation = getFallbackTranslation(text, targetLanguage)\n      if (fallbackTranslation) {\n        return {\n          translatedText: fallbackTranslation,\n          sourceLang,"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759696387508,
+      "end": 1759696387509
+    }
+  }
+}

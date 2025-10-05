@@ -1,0 +1,27 @@
+{
+  "id": "prt_9b614b143001RE4WM8bpOtfBKF",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01AGK6fhaGAQA1fgVveYDJVP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm start &",
+      "timeout": 5000,
+      "description": "Start server for multi-language testing"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n\n ✓ Starting...\n ✓ Ready in 777ms\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 start\n> next start\n\n  ▲ Next.js 14.2.31\n  - Local:        http://localhost:3000\n\n ✓ Starting...\n ✓ Ready in 777ms\n",
+      "exit": 0,
+      "description": "Start server for multi-language testing"
+    },
+    "title": "npm start &",
+    "time": {
+      "start": 1759696434421,
+      "end": 1759696439427
+    }
+  }
+}

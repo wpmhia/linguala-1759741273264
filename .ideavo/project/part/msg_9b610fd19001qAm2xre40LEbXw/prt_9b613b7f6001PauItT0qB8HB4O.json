@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b613b7f6001PauItT0qB8HB4O",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_013e2fe8yXG3Uc8mxyd5cfAa",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 128,
+      "limit": 10
+    },
+    "output": "<file>\n00129|         messages: [\n00130|           {\n00131|             role: 'user',\n00132|             content: `Translate from ${LANGUAGE_NAMES[sourceLang] || sourceLang} to ${LANGUAGE_NAMES[targetLang] || targetLang}:\\n${cleanText(text)}`\n00133|           }\n00134|         ],\n00135|         max_tokens: getAdaptiveMaxTokens(text),\n00136|         temperature: 0.1\n00137|       }),\n00138|       signal: controller.signal\n\n(File has more lines. Use 'offset' parameter to read beyond line 138)\n</file>",
+    "metadata": {
+      "preview": "        messages: [\n          {\n            role: 'user',\n            content: `Translate from ${LANGUAGE_NAMES[sourceLang] || sourceLang} to ${LANGUAGE_NAMES[targetLang] || targetLang}:\\n${cleanText(text)}`\n          }\n        ],\n        max_tokens: getAdaptiveMaxTokens(text),\n        temperature: 0.1\n      }),\n      signal: controller.signal"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759696370283,
+      "end": 1759696370284
+    }
+  }
+}

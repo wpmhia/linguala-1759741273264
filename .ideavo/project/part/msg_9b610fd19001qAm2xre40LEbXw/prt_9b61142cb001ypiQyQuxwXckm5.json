@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b61142cb001ypiQyQuxwXckm5",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017k31BnxvQ2SNUZqVZpWZXg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 140,
+      "limit": 20
+    },
+    "output": "<file>\n00141| \n00142|     if (translatedText && translatedText !== text) {\n00143|       console.log('Translation successful:', translatedText)\n00144|       return {\n00145|         translatedText,\n00146|         sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,\n00147|         targetLang\n00148|       }\n00149|     } else {\n00150|       throw new Error('No translation received or same as input')\n00151|     }\n00152|   } catch (error) {\n00153|     console.error('qwen-mt-turbo translation error:', error)\n00154|     throw error\n00155|   }\n00156| }\n00157| \n00158| // Main translation function\n00159| export async function translateText(\n00160|   text: string, \n\n(File has more lines. Use 'offset' parameter to read beyond line 160)\n</file>",
+    "metadata": {
+      "preview": "\n    if (translatedText && translatedText !== text) {\n      console.log('Translation successful:', translatedText)\n      return {\n        translatedText,\n        sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,\n        targetLang\n      }\n    } else {\n      throw new Error('No translation received or same as input')\n    }\n  } catch (error) {\n    console.error('qwen-mt-turbo translation error:', error)\n    throw error\n  }\n}\n\n// Main translation function\nexport async function translateText(\n  text: string, "
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759696209543,
+      "end": 1759696209545
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b613c2fe001z6NyhQk67eBElt",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I see the issue! On line 132, we're calling `cleanText(text)` but on line 135, we're calling `getAdaptiveMaxTokens(text)` with the original text, not the cleaned text. This inconsistency might be causing issues. Let me fix this:",
+  "time": {
+    "start": 1759696373693,
+    "end": 1759696373693
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b614d7c7001oZEiAmODchgYGt",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01B4QRwgTQD4zPZAkbh1oySo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "sleep 2 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"Hello world\",\"sourceLang\":\"en\",\"targetLang\":\"fr\"}' && echo \"\"",
+      "description": "Test English to French translation"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    58    0     0  100    58      0    287 --:--:-- --:--:-- --:--:--   287\r100    58    0     0  100    58      0     48  0:00:01  0:00:01 --:--:--    48\r100   155    0    97  100    58     77     46  0:00:01  0:00:01 --:--:--   124\n{\"operation\":\"translate\",\"translatedText\":\"Bonjour le monde\",\"sourceLang\":\"en\",\"targetLang\":\"fr\"}\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    58    0     0  100    58      0    287 --:--:-- --:--:-- --:--:--   287\r100    58    0     0  100    58      0     48  0:00:01  0:00:01 --:--:--    48\r100   155    0    97  100    58     77     46  0:00:01  0:00:01 --:--:--   124\n{\"operation\":\"translate\",\"translatedText\":\"Bonjour le monde\",\"sourceLang\":\"en\",\"targetLang\":\"fr\"}\n",
+      "exit": 0,
+      "description": "Test English to French translation"
+    },
+    "title": "sleep 2 && curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"Hello world\",\"sourceLang\":\"en\",\"targetLang\":\"fr\"}' && echo \"\"",
+    "time": {
+      "start": 1759696444766,
+      "end": 1759696448144
+    }
+  }
+}

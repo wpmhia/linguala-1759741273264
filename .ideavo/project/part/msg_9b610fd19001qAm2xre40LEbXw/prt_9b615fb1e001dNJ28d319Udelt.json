@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b615fb1e001dNJ28d319Udelt",
+  "messageID": "msg_9b610fd19001qAm2xre40LEbXw",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The issue seems to be that some translations are hanging. This could be because the DashScope API is having intermittent issues, or there's a specific issue with certain language combinations. Since the English to Spanish and English to French translations worked, but Spanish to English and English to German hung, let me address the core user complaint.\n\nThe user mentioned two specific issues:\n1. **\"When I write something and it is translated, I can choose another language after which it is directly translated to that language. This is not working.\"** - This suggests the language selection UI is not triggering retranslation properly.\n2. **\"Everything is translated to English and no other language.\"** - This suggests the default target language is stuck on English.\n\nLet me address the default language issue first. The problem might be that the frontend default is hardcoded to English:",
+  "time": {
+    "start": 1759696523003,
+    "end": 1759696523003
+  }
+}

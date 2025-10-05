@@ -1,12 +1,14 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
+import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer"
 import { 
   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,
   Check, X, Mic, Settings, History, Loader2, Languages, FileText
@@ -14,6 +16,15 @@ import {
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { useTextProcessing } from "@/hooks/use-translation"
+
+// Dynamic imports for code splitting
+const TranslatePanel = dynamic(() => import('./translate-panel'), {
+  loading: () => <div className="h-20 bg-gray-50 rounded-lg animate-pulse" />
+})
+
+const WritePanel = dynamic(() => import('./write-panel'), {
+  loading: () => <div className="h-20 bg-gray-50 rounded-lg animate-pulse" />
+})
 
 // Types for request payload
 type TranslateRequest = {
@@ -36,48 +47,77 @@ type ProcessingRequest = TranslateRequest | ImproveRequest
 // Constants
 const MAX_INPUT_LENGTH = 10000 // 10KB limit
 
-// Common languages like Google Translate
-const LANGUAGES = [
-  { code: "auto", name: "Detect language", flag: "🌐" },
-  { code: "en", name: "English", flag: "🇬🇧" },
-  { code: "es", name: "Spanish", flag: "🇪🇸" },
-  { code: "fr", name: "French", flag: "🇫🇷" },
-  { code: "de", name: "German", flag: "🇩🇪" },
-  { code: "it", name: "Italian", flag: "🇮🇹" },
-  { code: "pt", name: "Portuguese", flag: "🇵🇹" },
-  { code: "ru", name: "Russian", flag: "🇷🇺" },
-  { code: "ja", name: "Japanese", flag: "🇯🇵" },
-  { code: "ko", name: "Korean", flag: "🇰🇷" },
-  { code: "zh", name: "Chinese", flag: "🇨🇳" },
-  { code: "ar", name: "Arabic", flag: "🇸🇦" },
-  { code: "hi", name: "Hindi", flag: "🇮🇳" },
-  { code: "nl", name: "Dutch", flag: "🇳🇱" },
-  { code: "sv", name: "Swedish", flag: "🇸🇪" },
-  { code: "da", name: "Danish", flag: "🇩🇰" },
-  { code: "no", name: "Norwegian", flag: "🇳🇴" },
-  { code: "fi", name: "Finnish", flag: "🇫🇮" },
-  { code: "pl", name: "Polish", flag: "🇵🇱" },
-  { code: "cs", name: "Czech", flag: "🇨🇿" },
-  { code: "hu", name: "Hungarian", flag: "🇭🇺" },
-  { code: "tr", name: "Turkish", flag: "🇹🇷" },
-  { code: "th", name: "Thai", flag: "🇹🇭" },
-  { code: "vi", name: "Vietnamese", flag: "🇻🇳" }
-]
 
-// Writing styles
-const WRITING_STYLES = [
-  { value: 'simple', label: 'Simple' },
-  { value: 'business', label: 'Business' },
-  { value: 'casual', label: 'Casual' },
-  { value: 'academic', label: 'Academic' }
-]
 
-const TONES = [
-  { value: 'enthusiastic', label: 'Enthusiastic' },
-  { value: 'friendly', label: 'Friendly' },
-  { value: 'confident', label: 'Confident' },
-  { value: 'diplomatic', label: 'Diplomatic' }
-]
+// Editing tools sidebar component for reuse
+function EditingToolsSidebar({ 
+  correctionsOnly, 
+  setCorrectionsOnly, 
+  writingStyle, 
+  setWritingStyle, 
+  tone, 
+  setTone 
+}: {
+  correctionsOnly: boolean
+  setCorrectionsOnly: (value: boolean) => void
+  writingStyle: string
+  setWritingStyle: (value: string) => void
+  tone: string
+  setTone: (value: string) => void
+}) {
+  return (
+    <div className="p-4">
+      <div className="text-sm font-medium text-gray-700 mb-4">Editing tools</div>
+      
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Check className="h-4 w-4 text-green-500" />
+            <span className="text-sm">Corrections only</span>
+          </div>
+          <Switch checked={correctionsOnly} onCheckedChange={setCorrectionsOnly} />
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <FileText className="h-4 w-4" />
+            <span className="text-sm font-medium">Styles</span>
+          </div>
+          <Select value={`${writingStyle}-${tone}`} onValueChange={(value) => {
+            const [style, toneValue] = value.split('-')
+            setWritingStyle(style)
+            setTone(toneValue)
+          }}>
+            <SelectTrigger className="text-sm">
+              <SelectValue placeholder="None set" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="simple-friendly">Simple & Friendly</SelectItem>
+              <SelectItem value="business-confident">Business & Confident</SelectItem>
+              <SelectItem value="casual-enthusiastic">Casual & Enthusiastic</SelectItem>
+              <SelectItem value="academic-diplomatic">Academic & Diplomatic</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        
+        <div className="flex items-center gap-2 text-sm text-gray-500">
+          <Settings className="h-4 w-4" />
+          <span>Show changes</span>
+          <Switch disabled />
+        </div>
+      </div>
+      
+      <div className="mt-8">
+        <div className="text-sm font-medium text-gray-700 mb-2">Customizations</div>
+        <Button variant="outline" className="w-full text-sm">
+          <Settings className="h-4 w-4 mr-2" />
+          Custom rules
+          <span className="ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded">Pro</span>
+        </Button>
+      </div>
+    </div>
+  )
+}
 
 export default function LingualaTranslator() {
   // Core processing state
@@ -95,6 +135,7 @@ export default function LingualaTranslator() {
   // UI state
   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)
   const [justCopied, setJustCopied] = useState(false)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   // Request management
   const controllerRef = useRef<AbortController>()
@@ -102,10 +143,7 @@ export default function LingualaTranslator() {
   // React Query hook
   const processing = useTextProcessing()
 
-  // Helper functions
-  const getLanguage = (code: string) => {
-    return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]
-  }
+
 
   const getPlaceholderText = () => {
     if (activeTab === 'translate') {
@@ -255,109 +293,24 @@ export default function LingualaTranslator() {
           </TabsList>
 
           <TabsContent value="translate" className="space-y-6">
-            {/* Language Selection Bar */}
-            <div className="flex items-center justify-between bg-gray-50 rounded-lg p-4">
-              <Select value={sourceLang} onValueChange={setSourceLang}>
-                <SelectTrigger className="min-w-[160px] border-0 bg-transparent hover:bg-gray-100">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm">{getLanguage(sourceLang).flag}</span>
-                    <span className="font-medium text-sm">{getLanguage(sourceLang).name}</span>
-                  </div>
-                </SelectTrigger>
-                <SelectContent>
-                  {LANGUAGES.map(lang => (
-                    <SelectItem key={lang.code} value={lang.code}>
-                      <div className="flex items-center space-x-2">
-                        <span>{lang.flag}</span>
-                        <span>{lang.name}</span>
-                      </div>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={swapLanguages}
-                className="p-2 hover:bg-gray-200 rounded-full transition-transform hover:rotate-180"
-                disabled={sourceLang === "auto"}
-                aria-label="Swap languages"
-              >
-                <ArrowUpDown className="h-4 w-4" />
-              </Button>
-
-              <Select value={targetLang} onValueChange={setTargetLang}>
-                <SelectTrigger className="min-w-[160px] border-0 bg-transparent hover:bg-gray-100">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm">{getLanguage(targetLang).flag}</span>
-                    <span className="font-medium text-sm">{getLanguage(targetLang).name}</span>
-                  </div>
-                </SelectTrigger>
-                <SelectContent>
-                  {LANGUAGES.filter(lang => lang.code !== "auto").map(lang => (
-                    <SelectItem key={lang.code} value={lang.code}>
-                      <div className="flex items-center space-x-2">
-                        <span>{lang.flag}</span>
-                        <span>{lang.name}</span>
-                      </div>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            <TranslatePanel
+              sourceLang={sourceLang}
+              targetLang={targetLang}
+              onSourceLangChange={setSourceLang}
+              onTargetLangChange={setTargetLang}
+              onSwapLanguages={swapLanguages}
+            />
           </TabsContent>
 
           <TabsContent value="write" className="space-y-6">
-            {/* Write Mode Settings */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="corrections-only" className="text-sm font-medium">Corrections only</Label>
-                  <Switch
-                    id="corrections-only"
-                    checked={correctionsOnly}
-                    onCheckedChange={setCorrectionsOnly}
-                  />
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label className="text-sm font-medium mb-2 block">Style</Label>
-                    <Select value={writingStyle} onValueChange={setWritingStyle}>
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {WRITING_STYLES.map(style => (
-                          <SelectItem key={style.value} value={style.value}>
-                            {style.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div>
-                    <Label className="text-sm font-medium mb-2 block">Tone</Label>
-                    <Select value={tone} onValueChange={setTone}>
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {TONES.map(toneOption => (
-                          <SelectItem key={toneOption.value} value={toneOption.value}>
-                            {toneOption.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <WritePanel
+              correctionsOnly={correctionsOnly}
+              writingStyle={writingStyle}
+              tone={tone}
+              onCorrectionsOnlyChange={setCorrectionsOnly}
+              onWritingStyleChange={setWritingStyle}
+              onToneChange={setTone}
+            />
           </TabsContent>
 
           {/* Processing Areas */}
@@ -408,74 +361,59 @@ export default function LingualaTranslator() {
 
             {/* Result Text */}
             <div className="relative">
-              {/* Editing Tools Sidebar */}
+              {/* Desktop Editing Tools Sidebar */}
               {activeTab === 'write' && (
-                <div className="absolute top-0 right-0 w-64 h-full bg-gray-50 border-l border-gray-200 p-4">
-                  <div className="text-sm font-medium text-gray-700 mb-4">Editing tools</div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <Check className="h-4 w-4 text-green-500" />
-                        <span className="text-sm">Corrections only</span>
-                      </div>
-                      <Switch checked={correctionsOnly} onCheckedChange={setCorrectionsOnly} />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <FileText className="h-4 w-4" />
-                        <span className="text-sm font-medium">Styles</span>
-                      </div>
-                      <Select value={`${writingStyle}-${tone}`} onValueChange={(value) => {
-                        const [style, toneValue] = value.split('-')
-                        setWritingStyle(style)
-                        setTone(toneValue)
-                      }}>
-                        <SelectTrigger className="text-sm">
-                          <SelectValue placeholder="None set" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="simple-friendly">Simple & Friendly</SelectItem>
-                          <SelectItem value="business-confident">Business & Confident</SelectItem>
-                          <SelectItem value="casual-enthusiastic">Casual & Enthusiastic</SelectItem>
-                          <SelectItem value="academic-diplomatic">Academic & Diplomatic</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <Settings className="h-4 w-4" />
-                      <span>Show changes</span>
-                      <Switch disabled />
-                    </div>
-                  </div>
-                  
-                  <div className="mt-8">
-                    <div className="text-sm font-medium text-gray-700 mb-2">Customizations</div>
-                    <Button variant="outline" className="w-full text-sm">
-                      <Settings className="h-4 w-4 mr-2" />
-                      Custom rules
-                      <span className="ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded">Pro</span>
-                    </Button>
-                  </div>
+                <div className="hidden lg:block absolute top-0 right-0 w-64 h-full bg-gray-50 border-l border-gray-200">
+                  <EditingToolsSidebar
+                    correctionsOnly={correctionsOnly}
+                    setCorrectionsOnly={setCorrectionsOnly}
+                    writingStyle={writingStyle}
+                    setWritingStyle={setWritingStyle}
+                    tone={tone}
+                    setTone={setTone}
+                  />
+                </div>
+              )}
+
+              {/* Mobile Editing Tools Drawer */}
+              {activeTab === 'write' && (
+                <div className="lg:hidden absolute top-4 right-4 z-10">
+                  <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
+                    <DrawerTrigger asChild>
+                      <Button variant="outline" size="sm" aria-label="Edit settings">
+                        <Settings className="h-4 w-4" />
+                      </Button>
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <EditingToolsSidebar
+                        correctionsOnly={correctionsOnly}
+                        setCorrectionsOnly={setCorrectionsOnly}
+                        writingStyle={writingStyle}
+                        setWritingStyle={setWritingStyle}
+                        tone={tone}
+                        setTone={setTone}
+                      />
+                    </DrawerContent>
+                  </Drawer>
                 </div>
               )}
               
-              <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>
+              <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'lg:mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>
                 {isLoading ? (
                   <div className="flex items-center justify-center h-full">
                     <Loader2 className="h-6 w-6 animate-spin text-blue-500" />
                   </div>
                 ) : (
-                  <div 
-                    className={`whitespace-pre-wrap ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}
+                  <Textarea
+                    value={resultText || ''}
+                    placeholder={activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here'}
+                    readOnly
                     onFocus={() => setFocusedArea('target')}
                     onBlur={() => setFocusedArea(null)}
-                    tabIndex={0}
-                  >
-                    {resultText || (activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here')}
-                  </div>
+                    className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}
+                    style={{ fontSize: '16px', lineHeight: '1.5' }}
+                    aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}
+                  />
                 )}
               </div>
 

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5728e75001Y7WAKBZ0rRtGxf",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01PkcmwZKj37crrAxqLPnqnu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "// Common languages like Google Translate\nconst LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n  { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n  { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n  { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },\n  { code: \"de\", name: \"German\", flag: \"🇩🇪\" },\n  { code: \"it\", name: \"Italian\", flag: \"🇮🇹\" },\n  { code: \"pt\", name: \"Portuguese\", flag: \"🇵🇹\" },\n  { code: \"ru\", name: \"Russian\", flag: \"🇷🇺\" },\n  { code: \"ja\", name: \"Japanese\", flag: \"🇯🇵\" },\n  { code: \"ko\", name: \"Korean\", flag: \"🇰🇷\" },\n  { code: \"zh\", name: \"Chinese\", flag: \"🇨🇳\" },\n  { code: \"ar\", name: \"Arabic\", flag: \"🇸🇦\" },\n  { code: \"hi\", name: \"Hindi\", flag: \"🇮🇳\" },\n  { code: \"nl\", name: \"Dutch\", flag: \"🇳🇱\" },\n  { code: \"sv\", name: \"Swedish\", flag: \"🇸🇪\" },\n  { code: \"da\", name: \"Danish\", flag: \"🇩🇰\" },\n  { code: \"no\", name: \"Norwegian\", flag: \"🇳🇴\" },\n  { code: \"fi\", name: \"Finnish\", flag: \"🇫🇮\" },\n  { code: \"pl\", name: \"Polish\", flag: \"🇵🇱\" },\n  { code: \"cs\", name: \"Czech\", flag: \"🇨🇿\" },\n  { code: \"hu\", name: \"Hungarian\", flag: \"🇭🇺\" },\n  { code: \"tr\", name: \"Turkish\", flag: \"🇹🇷\" },\n  { code: \"th\", name: \"Thai\", flag: \"🇹🇭\" },\n  { code: \"vi\", name: \"Vietnamese\", flag: \"🇻🇳\" }\n]\n\n// Writing styles\nconst WRITING_STYLES = [\n  { value: 'simple', label: 'Simple' },\n  { value: 'business', label: 'Business' },\n  { value: 'casual', label: 'Casual' },\n  { value: 'academic', label: 'Academic' }\n]\n\nconst TONES = [\n  { value: 'enthusiastic', label: 'Enthusiastic' },\n  { value: 'friendly', label: 'Friendly' },\n  { value: 'confident', label: 'Confident' },\n  { value: 'diplomatic', label: 'Diplomatic' }\n]",
+      "newString": ""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -46,51 +46,10 @@\n \n // Constants\n const MAX_INPUT_LENGTH = 10000 // 10KB limit\n \n-// Common languages like Google Translate\n-const LANGUAGES = [\n-  { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n-  { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n-  { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n-  { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },\n-  { code: \"de\", name: \"German\", flag: \"🇩🇪\" },\n-  { code: \"it\", name: \"Italian\", flag: \"🇮🇹\" },\n-  { code: \"pt\", name: \"Portuguese\", flag: \"🇵🇹\" },\n-  { code: \"ru\", name: \"Russian\", flag: \"🇷🇺\" },\n-  { code: \"ja\", name: \"Japanese\", flag: \"🇯🇵\" },\n-  { code: \"ko\", name: \"Korean\", flag: \"🇰🇷\" },\n-  { code: \"zh\", name: \"Chinese\", flag: \"🇨🇳\" },\n-  { code: \"ar\", name: \"Arabic\", flag: \"🇸🇦\" },\n-  { code: \"hi\", name: \"Hindi\", flag: \"🇮🇳\" },\n-  { code: \"nl\", name: \"Dutch\", flag: \"🇳🇱\" },\n-  { code: \"sv\", name: \"Swedish\", flag: \"🇸🇪\" },\n-  { code: \"da\", name: \"Danish\", flag: \"🇩🇰\" },\n-  { code: \"no\", name: \"Norwegian\", flag: \"🇳🇴\" },\n-  { code: \"fi\", name: \"Finnish\", flag: \"🇫🇮\" },\n-  { code: \"pl\", name: \"Polish\", flag: \"🇵🇱\" },\n-  { code: \"cs\", name: \"Czech\", flag: \"🇨🇿\" },\n-  { code: \"hu\", name: \"Hungarian\", flag: \"🇭🇺\" },\n-  { code: \"tr\", name: \"Turkish\", flag: \"🇹🇷\" },\n-  { code: \"th\", name: \"Thai\", flag: \"🇹🇭\" },\n-  { code: \"vi\", name: \"Vietnamese\", flag: \"🇻🇳\" }\n-]\n \n-// Writing styles\n-const WRITING_STYLES = [\n-  { value: 'simple', label: 'Simple' },\n-  { value: 'business', label: 'Business' },\n-  { value: 'casual', label: 'Casual' },\n-  { value: 'academic', label: 'Academic' }\n-]\n \n-const TONES = [\n-  { value: 'enthusiastic', label: 'Enthusiastic' },\n-  { value: 'friendly', label: 'Friendly' },\n-  { value: 'confident', label: 'Confident' },\n-  { value: 'diplomatic', label: 'Diplomatic' }\n-]\n-\n // Editing tools sidebar component for reuse\n function EditingToolsSidebar({ \n   correctionsOnly, \n   setCorrectionsOnly, \n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685815148,
+      "end": 1759685815153
+    }
+  }
+}

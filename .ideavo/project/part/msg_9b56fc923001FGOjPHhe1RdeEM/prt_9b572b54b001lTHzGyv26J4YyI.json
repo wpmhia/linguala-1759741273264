@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b572b54b001lTHzGyv26J4YyI",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01295yS3QL93FEQY1yBW8hpJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  // Helper functions\n  const getLanguage = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n  }",
+      "newString": ""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -142,13 +142,10 @@\n \n // React Query hook\n const processing = useTextProcessing()\n \n-// Helper functions\n-const getLanguage = (code: string) => {\n-  return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n-}\n \n+\n const getPlaceholderText = () => {\n   if (activeTab === 'translate') {\n     return 'Enter text to translate'\n   } else {\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685818828,
+      "end": 1759685818831
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b571c58c002GL6b453UU9XCZB",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01RaoZoxuWfesYFkojcYKiPB",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/write-panel.tsx",
+      "content": "\"use client\"\n\nimport { Switch } from \"@/components/ui/switch\"\nimport { Label } from \"@/components/ui/label\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n\n// Writing styles\nconst WRITING_STYLES = [\n  { value: 'simple', label: 'Simple' },\n  { value: 'business', label: 'Business' },\n  { value: 'casual', label: 'Casual' },\n  { value: 'academic', label: 'Academic' }\n]\n\nconst TONES = [\n  { value: 'enthusiastic', label: 'Enthusiastic' },\n  { value: 'friendly', label: 'Friendly' },\n  { value: 'confident', label: 'Confident' },\n  { value: 'diplomatic', label: 'Diplomatic' }\n]\n\ninterface WritePanelProps {\n  correctionsOnly: boolean\n  writingStyle: string\n  tone: string\n  onCorrectionsOnlyChange: (value: boolean) => void\n  onWritingStyleChange: (value: string) => void\n  onToneChange: (value: string) => void\n}\n\nexport default function WritePanel({\n  correctionsOnly,\n  writingStyle,\n  tone,\n  onCorrectionsOnlyChange,\n  onWritingStyleChange,\n  onToneChange\n}: WritePanelProps) {\n  return (\n    <div className=\"space-y-6\">\n      {/* Write Mode Settings */}\n      <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">\n        <div className=\"space-y-4\">\n          <div className=\"flex items-center justify-between\">\n            <Label htmlFor=\"corrections-only\" className=\"text-sm font-medium\">Corrections only</Label>\n            <Switch\n              id=\"corrections-only\"\n              checked={correctionsOnly}\n              onCheckedChange={onCorrectionsOnlyChange}\n            />\n          </div>\n        </div>\n        \n        <div className=\"space-y-4\">\n          <div className=\"grid grid-cols-2 gap-4\">\n            <div>\n              <Label className=\"text-sm font-medium mb-2 block\">Style</Label>\n              <Select value={writingStyle} onValueChange={onWritingStyleChange}>\n                <SelectTrigger>\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectContent>\n                  {WRITING_STYLES.map(style => (\n                    <SelectItem key={style.value} value={style.value}>\n                      {style.label}\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            </div>\n            \n            <div>\n              <Label className=\"text-sm font-medium mb-2 block\">Tone</Label>\n              <Select value={tone} onValueChange={onToneChange}>\n                <SelectTrigger>\n                  <SelectValue />\n                </SelectTrigger>\n                <SelectContent>\n                  {TONES.map(toneOption => (\n                    <SelectItem key={toneOption.value} value={toneOption.value}>\n                      {toneOption.label}\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  )\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/components/write-panel.tsx",
+      "exists": false
+    },
+    "title": "components/write-panel.tsx",
+    "time": {
+      "start": 1759685765574,
+      "end": 1759685765575
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5720323002SYD6BglnbLNLEj",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_013TG7DZE7MDttSxenT4zJXc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { useTextProcessing } from \"@/hooks/use-translation\"",
+      "newString": "import { useTextProcessing } from \"@/hooks/use-translation\"\n\n// Dynamic imports for code splitting\nconst TranslatePanel = dynamic(() => import('./translate-panel'), {\n  loading: () => <div className=\"h-20 bg-gray-50 rounded-lg animate-pulse\" />\n})\n\nconst WritePanel = dynamic(() => import('./write-panel'), {\n  loading: () => <div className=\"h-20 bg-gray-50 rounded-lg animate-pulse\" />\n})"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -16,8 +16,17 @@\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { useTextProcessing } from \"@/hooks/use-translation\"\n \n+// Dynamic imports for code splitting\n+const TranslatePanel = dynamic(() => import('./translate-panel'), {\n+  loading: () => <div className=\"h-20 bg-gray-50 rounded-lg animate-pulse\" />\n+})\n+\n+const WritePanel = dynamic(() => import('./write-panel'), {\n+  loading: () => <div className=\"h-20 bg-gray-50 rounded-lg animate-pulse\" />\n+})\n+\n // Types for request payload\n type TranslateRequest = {\n   operation: 'translate'\n   text: string\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685774455,
+      "end": 1759685774463
+    }
+  }
+}

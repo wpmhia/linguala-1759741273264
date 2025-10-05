@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5728a4d002mAeOc72lUznVqY",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I can remove the duplicate arrays and getLanguage function from the main component since they're now in the child components:",
+  "time": {
+    "start": 1759685807732,
+    "end": 1759685807732
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b57054560011ZSkZLAa71zL0u",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me add retry logic with exponential backoff to the hook:",
+  "time": {
+    "start": 1759685662271,
+    "end": 1759685662272
+  }
+}

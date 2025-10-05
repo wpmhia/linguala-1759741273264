@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b570c246001HODONfu9rrHzsz",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01CuxeXFx4kQwWttnBvRfdah",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 440,
+      "limit": 30
+    },
+    "output": "<file>\n00441|                           <SelectItem value=\"simple-friendly\">Simple & Friendly</SelectItem>\n00442|                           <SelectItem value=\"business-confident\">Business & Confident</SelectItem>\n00443|                           <SelectItem value=\"casual-enthusiastic\">Casual & Enthusiastic</SelectItem>\n00444|                           <SelectItem value=\"academic-diplomatic\">Academic & Diplomatic</SelectItem>\n00445|                         </SelectContent>\n00446|                       </Select>\n00447|                     </div>\n00448|                     \n00449|                     <div className=\"flex items-center gap-2 text-sm text-gray-500\">\n00450|                       <Settings className=\"h-4 w-4\" />\n00451|                       <span>Show changes</span>\n00452|                       <Switch disabled />\n00453|                     </div>\n00454|                   </div>\n00455|                   \n00456|                   <div className=\"mt-8\">\n00457|                     <div className=\"text-sm font-medium text-gray-700 mb-2\">Customizations</div>\n00458|                     <Button variant=\"outline\" className=\"w-full text-sm\">\n00459|                       <Settings className=\"h-4 w-4 mr-2\" />\n00460|                       Custom rules\n00461|                       <span className=\"ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded\">Pro</span>\n00462|                     </Button>\n00463|                   </div>\n00464|                 </div>\n00465|               )}\n00466|               \n00467|               <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>\n00468|                 {isLoading ? (\n00469|                   <div className=\"flex items-center justify-center h-full\">\n00470|                     <Loader2 className=\"h-6 w-6 animate-spin text-blue-500\" />\n\n(File has more lines. Use 'offset' parameter to read beyond line 470)\n</file>",
+    "metadata": {
+      "preview": "                          <SelectItem value=\"simple-friendly\">Simple & Friendly</SelectItem>\n                          <SelectItem value=\"business-confident\">Business & Confident</SelectItem>\n                          <SelectItem value=\"casual-enthusiastic\">Casual & Enthusiastic</SelectItem>\n                          <SelectItem value=\"academic-diplomatic\">Academic & Diplomatic</SelectItem>\n                        </SelectContent>\n                      </Select>\n                    </div>\n                    \n                    <div className=\"flex items-center gap-2 text-sm text-gray-500\">\n                      <Settings className=\"h-4 w-4\" />\n                      <span>Show changes</span>\n                      <Switch disabled />\n                    </div>\n                  </div>\n                  \n                  <div className=\"mt-8\">\n                    <div className=\"text-sm font-medium text-gray-700 mb-2\">Customizations</div>\n                    <Button variant=\"outline\" className=\"w-full text-sm\">\n                      <Settings className=\"h-4 w-4 mr-2\" />\n                      Custom rules"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685690623,
+      "end": 1759685690628
+    }
+  }
+}

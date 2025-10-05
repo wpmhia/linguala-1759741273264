@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5709edb001Oz53UHm27uKru5",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01RGQGzengNYeSzfrKogj2vN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"",
+      "newString": "import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\nimport { Drawer, DrawerContent, DrawerTrigger } from \"@/components/ui/drawer\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -6,8 +6,9 @@\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n import { Switch } from \"@/components/ui/switch\"\n import { Label } from \"@/components/ui/label\"\n import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n+import { Drawer, DrawerContent, DrawerTrigger } from \"@/components/ui/drawer\"\n import { \n   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n   Check, X, Mic, Settings, History, Loader2, Languages, FileText\n } from \"lucide-react\"\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685682574,
+      "end": 1759685682583
+    }
+  }
+}

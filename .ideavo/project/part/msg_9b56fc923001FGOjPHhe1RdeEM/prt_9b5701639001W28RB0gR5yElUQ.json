@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5701639001W28RB0gR5yElUQ",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01N9NhkgobqWozwtDqM5EVyo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                  <div \n                    className={`whitespace-pre-wrap ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}\n                    onFocus={() => setFocusedArea('target')}\n                    onBlur={() => setFocusedArea(null)}\n                    tabIndex={0}\n                  >\n                    {resultText || (activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here')}\n                  </div>",
+      "newString": "                  <Textarea\n                    value={resultText || ''}\n                    placeholder={activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here'}\n                    readOnly\n                    onFocus={() => setFocusedArea('target')}\n                    onBlur={() => setFocusedArea(null)}\n                    className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}\n                    style={{ fontSize: '16px', lineHeight: '1.5' }}\n                    aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}\n                  />"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -467,16 +467,18 @@\n     <div className=\"flex items-center justify-center h-full\">\n       <Loader2 className=\"h-6 w-6 animate-spin text-blue-500\" />\n     </div>\n   ) : (\n-    <div \n-      className={`whitespace-pre-wrap ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}\n+    <Textarea\n+      value={resultText || ''}\n+      placeholder={activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here'}\n+      readOnly\n       onFocus={() => setFocusedArea('target')}\n       onBlur={() => setFocusedArea(null)}\n-      tabIndex={0}\n-    >\n-      {resultText || (activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here')}\n-    </div>\n+      className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}\n+      style={{ fontSize: '16px', lineHeight: '1.5' }}\n+      aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}\n+    />\n   )}\n </div>\n \n {/* Result Text Controls */}\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685649847,
+      "end": 1759685649858
+    }
+  }
+}

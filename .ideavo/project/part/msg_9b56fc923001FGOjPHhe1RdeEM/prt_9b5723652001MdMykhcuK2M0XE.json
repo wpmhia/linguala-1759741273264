@@ -1,0 +1,34 @@
+{
+  "id": "prt_9b5723652001MdMykhcuK2M0XE",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_015YrSpkYuDYnAp9i2nHkoNw",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "          <TabsContent value=\"translate\" className=\"space-y-6\">\n            {/* Language Selection Bar */}\n            <div className=\"flex items-center justify-between bg-gray-50 rounded-lg p-4\">\n              <Select value={sourceLang} onValueChange={setSourceLang}>\n                <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n                  <div className=\"flex items-center space-x-2\">\n                    <span className=\"text-sm\">{getLanguage(sourceLang).flag}</span>\n                    <span className=\"font-medium text-sm\">{getLanguage(sourceLang).name}</span>\n                  </div>\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.map(lang => (\n                    <SelectItem key={lang.code} value={lang.code}>\n                      <div className=\"flex items-center space-x-2\">\n                        <span>{lang.flag}</span>\n                        <span>{lang.name}</span>\n                      </div>\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={swapLanguages}\n                className=\"p-2 hover:bg-gray-200 rounded-full transition-transform hover:rotate-180\"\n                disabled={sourceLang === \"auto\"}\n                aria-label=\"Swap languages\"\n              >\n                <ArrowUpDown className=\"h-4 w-4\" />\n              </Button>\n\n              <Select value={targetLang} onValueChange={setTargetLang}>\n                <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n                  <div className=\"flex items-center space-x-2\">\n                    <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n                    <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n                  </div>\n                </SelectTrigger>\n                <SelectContent>\n                  {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n                    <SelectItem key={lang.code} value={lang.code}>\n                      <div className=\"flex items-center space-x-2\">\n                        <span>{lang.flag}</span>\n                        <span>{lang.name}</span>\n                      </div>\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n            </div>\n          </TabsContent>",
+          "newString": "          <TabsContent value=\"translate\" className=\"space-y-6\">\n            <TranslatePanel\n              sourceLang={sourceLang}\n              targetLang={targetLang}\n              onSourceLangChange={setSourceLang}\n              onTargetLangChange={setTargetLang}\n              onSwapLanguages={swapLanguages}\n            />\n          </TabsContent>"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -336,59 +336,15 @@\n   </TabsTrigger>\n </TabsList>\n \n <TabsContent value=\"translate\" className=\"space-y-6\">\n-  {/* Language Selection Bar */}\n-  <div className=\"flex items-center justify-between bg-gray-50 rounded-lg p-4\">\n-    <Select value={sourceLang} onValueChange={setSourceLang}>\n-      <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n-        <div className=\"flex items-center space-x-2\">\n-          <span className=\"text-sm\">{getLanguage(sourceLang).flag}</span>\n-          <span className=\"font-medium text-sm\">{getLanguage(sourceLang).name}</span>\n-        </div>\n-      </SelectTrigger>\n-      <SelectContent>\n-        {LANGUAGES.map(lang => (\n-          <SelectItem key={lang.code} value={lang.code}>\n-            <div className=\"flex items-center space-x-2\">\n-              <span>{lang.flag}</span>\n-              <span>{lang.name}</span>\n-            </div>\n-          </SelectItem>\n-        ))}\n-      </SelectContent>\n-    </Select>\n-\n-    <Button\n-      variant=\"ghost\"\n-      size=\"sm\"\n-      onClick={swapLanguages}\n-      className=\"p-2 hover:bg-gray-200 rounded-full transition-transform hover:rotate-180\"\n-      disabled={sourceLang === \"auto\"}\n-      aria-label=\"Swap languages\"\n-    >\n-      <ArrowUpDown className=\"h-4 w-4\" />\n-    </Button>\n-\n-    <Select value={targetLang} onValueChange={setTargetLang}>\n-      <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n-        <div className=\"flex items-center space-x-2\">\n-          <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n-          <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n-        </div>\n-      </SelectTrigger>\n-      <SelectContent>\n-        {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n-          <SelectItem key={lang.code} value={lang.code}>\n-            <div className=\"flex items-center space-x-2\">\n-              <span>{lang.flag}</span>\n-              <span>{lang.name}</span>\n-            </div>\n-          </SelectItem>\n-        ))}\n-      </SelectContent>\n-    </Select>\n-  </div>\n+  <TranslatePanel\n+    sourceLang={sourceLang}\n+    targetLang={targetLang}\n+    onSourceLangChange={setSourceLang}\n+    onTargetLangChange={setTargetLang}\n+    onSwapLanguages={swapLanguages}\n+  />\n </TabsContent>\n \n <TabsContent value=\"write\" className=\"space-y-6\">\n   {/* Write Mode Settings */}\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685793048,
+      "end": 1759685793058
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b57159c1001IsmdWwxUzwm9MS",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_0166StvbnBkTpWwZ6aEDjHQU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/layout.tsx",
+      "oldString": "const inter = Inter({ subsets: ['latin'] });",
+      "newString": "const inter = Inter({ \n  subsets: ['latin'],\n  variable: '--font-inter',\n  display: 'swap',\n});"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/layout.tsx\n===================================================================\n--- /home/user/project/app/layout.tsx\n+++ /home/user/project/app/layout.tsx\n@@ -3,9 +3,13 @@\n import { Inter } from 'next/font/google';\n import { Toaster } from '@/components/ui/sonner';\n import { QueryProvider } from '@/components/providers/query-provider';\n \n-const inter = Inter({ subsets: ['latin'] });\n+const inter = Inter({ \n+  subsets: ['latin'],\n+  variable: '--font-inter',\n+  display: 'swap',\n+});\n \n export const metadata: Metadata = {\n   title: 'Linguala - European AI Translation Platform',\n   description: 'The European translation platform built for European languages and culture. Professional domain expertise, custom glossaries, and intelligent AI. Based in Europe, for Europe.',\n"
+    },
+    "title": "app/layout.tsx",
+    "time": {
+      "start": 1759685730026,
+      "end": 1759685730029
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5734f82001wlfxxTv24tg3mu",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_016fbx5t8kKcKJBa79nfmj39",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/hooks/use-translation.ts",
+      "oldString": "// Retry helper with exponential backoff\nasync function retryWithBackoff<T>(\n  fn: () => Promise<T>,\n  maxRetries: number = 3,\n  baseDelay: number = 1000\n): Promise<T> {\n  let lastError: Error\n\n  for (let attempt = 0; attempt <= maxRetries; attempt++) {\n    try {\n      return await fn()\n    } catch (error: any) {\n      lastError = error\n      \n      // Don't retry on client errors (400-499) or abort errors\n      if (error.response?.status >= 400 && error.response?.status < 500) {\n        throw error\n      }\n      if (error.name === 'AbortError') {\n        throw error\n      }\n      \n      // Don't retry on last attempt\n      if (attempt === maxRetries) {\n        break\n      }\n      \n      // Only retry on 5xx errors or network failures\n      if (error.response?.status >= 500 || error.code === 'NETWORK_ERROR' || error.code === 'ECONNABORTED') {\n        const delay = baseDelay * Math.pow(2, attempt)\n        await new Promise(resolve => setTimeout(resolve, delay))\n        continue\n      }\n      \n      // Don't retry on other errors\n      throw error\n    }\n  }\n  \n  throw lastError\n}",
+      "newString": "// Retry helper with exponential backoff\nasync function retryWithBackoff<T>(\n  fn: () => Promise<T>,\n  maxRetries: number = 3,\n  baseDelay: number = 1000\n): Promise<T> {\n  let lastError: Error | undefined\n\n  for (let attempt = 0; attempt <= maxRetries; attempt++) {\n    try {\n      return await fn()\n    } catch (error: any) {\n      lastError = error\n      \n      // Don't retry on client errors (400-499) or abort errors\n      if (error.response?.status >= 400 && error.response?.status < 500) {\n        throw error\n      }\n      if (error.name === 'AbortError') {\n        throw error\n      }\n      \n      // Don't retry on last attempt\n      if (attempt === maxRetries) {\n        break\n      }\n      \n      // Only retry on 5xx errors or network failures\n      if (error.response?.status >= 500 || error.code === 'NETWORK_ERROR' || error.code === 'ECONNABORTED') {\n        const delay = baseDelay * Math.pow(2, attempt)\n        await new Promise(resolve => setTimeout(resolve, delay))\n        continue\n      }\n      \n      // Don't retry on other errors\n      throw error\n    }\n  }\n  \n  throw lastError || new Error('Retry attempts exhausted')\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/hooks/use-translation.ts\n===================================================================\n--- /home/user/project/hooks/use-translation.ts\n+++ /home/user/project/hooks/use-translation.ts\n@@ -27,9 +27,9 @@\n   fn: () => Promise<T>,\n   maxRetries: number = 3,\n   baseDelay: number = 1000\n ): Promise<T> {\n-  let lastError: Error\n+  let lastError: Error | undefined\n \n   for (let attempt = 0; attempt <= maxRetries; attempt++) {\n     try {\n       return await fn()\n@@ -60,9 +60,9 @@\n       throw error\n     }\n   }\n   \n-  throw lastError\n+  throw lastError || new Error('Retry attempts exhausted')\n }\n \n export function useTextProcessing() {\n   const queryClient = useQueryClient()\n"
+    },
+    "title": "hooks/use-translation.ts",
+    "time": {
+      "start": 1759685864685,
+      "end": 1759685864694
+    }
+  }
+}

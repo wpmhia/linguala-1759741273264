@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5725e32001V5TtPEoLdtq346",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01SweApNVLHfDqKb6kX2mAG9",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 345,
+      "limit": 60
+    },
+    "output": "<file>\n00346|             />\n00347|           </TabsContent>\n00348| \n00349|           <TabsContent value=\"write\" className=\"space-y-6\">\n00350|             {/* Write Mode Settings */}\n00351|             <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">\n00352|               <div className=\"space-y-4\">\n00353|                 <div className=\"flex items-center justify-between\">\n00354|                   <Label htmlFor=\"corrections-only\" className=\"text-sm font-medium\">Corrections only</Label>\n00355|                   <Switch\n00356|                     id=\"corrections-only\"\n00357|                     checked={correctionsOnly}\n00358|                     onCheckedChange={setCorrectionsOnly}\n00359|                   />\n00360|                 </div>\n00361|               </div>\n00362|               \n00363|               <div className=\"space-y-4\">\n00364|                 <div className=\"grid grid-cols-2 gap-4\">\n00365|                   <div>\n00366|                     <Label className=\"text-sm font-medium mb-2 block\">Style</Label>\n00367|                     <Select value={writingStyle} onValueChange={setWritingStyle}>\n00368|                       <SelectTrigger>\n00369|                         <SelectValue />\n00370|                       </SelectTrigger>\n00371|                       <SelectContent>\n00372|                         {WRITING_STYLES.map(style => (\n00373|                           <SelectItem key={style.value} value={style.value}>\n00374|                             {style.label}\n00375|                           </SelectItem>\n00376|                         ))}\n00377|                       </SelectContent>\n00378|                     </Select>\n00379|                   </div>\n00380|                   \n00381|                   <div>\n00382|                     <Label className=\"text-sm font-medium mb-2 block\">Tone</Label>\n00383|                     <Select value={tone} onValueChange={setTone}>\n00384|                       <SelectTrigger>\n00385|                         <SelectValue />\n00386|                       </SelectTrigger>\n00387|                       <SelectContent>\n00388|                         {TONES.map(toneOption => (\n00389|                           <SelectItem key={toneOption.value} value={toneOption.value}>\n00390|                             {toneOption.label}\n00391|                           </SelectItem>\n00392|                         ))}\n00393|                       </SelectContent>\n00394|                     </Select>\n00395|                   </div>\n00396|                 </div>\n00397|               </div>\n00398|             </div>\n00399|           </TabsContent>\n00400| \n00401|           {/* Processing Areas */}\n00402|           <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden\">\n00403|             {/* Source Text */}\n00404|             <div className=\"relative\">\n00405|               <div className=\"border-b border-gray-200 lg:border-b-0 lg:border-r\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 405)\n</file>",
+    "metadata": {
+      "preview": "            />\n          </TabsContent>\n\n          <TabsContent value=\"write\" className=\"space-y-6\">\n            {/* Write Mode Settings */}\n            <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">\n              <div className=\"space-y-4\">\n                <div className=\"flex items-center justify-between\">\n                  <Label htmlFor=\"corrections-only\" className=\"text-sm font-medium\">Corrections only</Label>\n                  <Switch\n                    id=\"corrections-only\"\n                    checked={correctionsOnly}\n                    onCheckedChange={setCorrectionsOnly}\n                  />\n                </div>\n              </div>\n              \n              <div className=\"space-y-4\">\n                <div className=\"grid grid-cols-2 gap-4\">\n                  <div>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685796147,
+      "end": 1759685796149
+    }
+  }
+}

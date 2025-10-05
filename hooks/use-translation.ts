@@ -22,15 +22,59 @@ interface ProcessingResponse {
   fallback?: boolean
 }
 
+// Retry helper with exponential backoff
+async function retryWithBackoff<T>(
+  fn: () => Promise<T>,
+  maxRetries: number = 3,
+  baseDelay: number = 1000
+): Promise<T> {
+  let lastError: Error | undefined
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await fn()
+    } catch (error: any) {
+      lastError = error
+      
+      // Don't retry on client errors (400-499) or abort errors
+      if (error.response?.status >= 400 && error.response?.status < 500) {
+        throw error
+      }
+      if (error.name === 'AbortError') {
+        throw error
+      }
+      
+      // Don't retry on last attempt
+      if (attempt === maxRetries) {
+        break
+      }
+      
+      // Only retry on 5xx errors or network failures
+      if (error.response?.status >= 500 || error.code === 'NETWORK_ERROR' || error.code === 'ECONNABORTED') {
+        const delay = baseDelay * Math.pow(2, attempt)
+        await new Promise(resolve => setTimeout(resolve, delay))
+        continue
+      }
+      
+      // Don't retry on other errors
+      throw error
+    }
+  }
+  
+  throw lastError || new Error('Retry attempts exhausted')
+}
+
 export function useTextProcessing() {
   const queryClient = useQueryClient()
 
   return useMutation<ProcessingResponse, Error, ProcessingRequest>({
     mutationFn: async (request) => {
-      const response = await axios.post('/api/translate', request, {
-        timeout: 30000, // 30 second timeout for processing
+      return retryWithBackoff(async () => {
+        const response = await axios.post('/api/translate', request, {
+          timeout: 30000, // 30 second timeout for processing
+        })
+        return response.data
       })
-      return response.data
     },
     onSuccess: (data, variables) => {
       // Cache the processing result

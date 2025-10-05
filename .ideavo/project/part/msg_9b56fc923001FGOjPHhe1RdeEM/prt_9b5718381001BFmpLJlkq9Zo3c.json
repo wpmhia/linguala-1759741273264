@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5718381001BFmpLJlkq9Zo3c",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "write",
+  "callID": "toolu_01SEVsrJMXGGSAJCSAFt7CUf",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/translate-panel.tsx",
+      "content": "\"use client\"\n\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Button } from \"@/components/ui/button\"\nimport ArrowUpDown from \"lucide-react/icons/arrow-up-down\"\n\n// Common languages like Google Translate\nconst LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n  { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n  { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n  { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },\n  { code: \"de\", name: \"German\", flag: \"🇩🇪\" },\n  { code: \"it\", name: \"Italian\", flag: \"🇮🇹\" },\n  { code: \"pt\", name: \"Portuguese\", flag: \"🇵🇹\" },\n  { code: \"ru\", name: \"Russian\", flag: \"🇷🇺\" },\n  { code: \"ja\", name: \"Japanese\", flag: \"🇯🇵\" },\n  { code: \"ko\", name: \"Korean\", flag: \"🇰🇷\" },\n  { code: \"zh\", name: \"Chinese\", flag: \"🇨🇳\" },\n  { code: \"ar\", name: \"Arabic\", flag: \"🇸🇦\" },\n  { code: \"hi\", name: \"Hindi\", flag: \"🇮🇳\" },\n  { code: \"nl\", name: \"Dutch\", flag: \"🇳🇱\" },\n  { code: \"sv\", name: \"Swedish\", flag: \"🇸🇪\" },\n  { code: \"da\", name: \"Danish\", flag: \"🇩🇰\" },\n  { code: \"no\", name: \"Norwegian\", flag: \"🇳🇴\" },\n  { code: \"fi\", name: \"Finnish\", flag: \"🇫🇮\" },\n  { code: \"pl\", name: \"Polish\", flag: \"🇵🇱\" },\n  { code: \"cs\", name: \"Czech\", flag: \"🇨🇿\" },\n  { code: \"hu\", name: \"Hungarian\", flag: \"🇭🇺\" },\n  { code: \"tr\", name: \"Turkish\", flag: \"🇹🇷\" },\n  { code: \"th\", name: \"Thai\", flag: \"🇹🇭\" },\n  { code: \"vi\", name: \"Vietnamese\", flag: \"🇻🇳\" }\n]\n\ninterface TranslatePanelProps {\n  sourceLang: string\n  targetLang: string\n  onSourceLangChange: (lang: string) => void\n  onTargetLangChange: (lang: string) => void\n  onSwapLanguages: () => void\n}\n\nexport default function TranslatePanel({\n  sourceLang,\n  targetLang,\n  onSourceLangChange,\n  onTargetLangChange,\n  onSwapLanguages\n}: TranslatePanelProps) {\n  const getLanguage = (code: string) => {\n    return LANGUAGES.find(lang => lang.code === code) || LANGUAGES[1]\n  }\n\n  return (\n    <div className=\"space-y-6\">\n      {/* Language Selection Bar */}\n      <div className=\"flex items-center justify-between bg-gray-50 rounded-lg p-4\">\n        <Select value={sourceLang} onValueChange={onSourceLangChange}>\n          <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n            <div className=\"flex items-center space-x-2\">\n              <span className=\"text-sm\">{getLanguage(sourceLang).flag}</span>\n              <span className=\"font-medium text-sm\">{getLanguage(sourceLang).name}</span>\n            </div>\n          </SelectTrigger>\n          <SelectContent>\n            {LANGUAGES.map(lang => (\n              <SelectItem key={lang.code} value={lang.code}>\n                <div className=\"flex items-center space-x-2\">\n                  <span>{lang.flag}</span>\n                  <span>{lang.name}</span>\n                </div>\n              </SelectItem>\n            ))}\n          </SelectContent>\n        </Select>\n\n        <Button\n          variant=\"ghost\"\n          size=\"sm\"\n          onClick={onSwapLanguages}\n          className=\"p-2 hover:bg-gray-200 rounded-full transition-transform hover:rotate-180\"\n          disabled={sourceLang === \"auto\"}\n          aria-label=\"Swap languages\"\n        >\n          <ArrowUpDown className=\"h-4 w-4\" />\n        </Button>\n\n        <Select value={targetLang} onValueChange={onTargetLangChange}>\n          <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n            <div className=\"flex items-center space-x-2\">\n              <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n              <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n            </div>\n          </SelectTrigger>\n          <SelectContent>\n            {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n              <SelectItem key={lang.code} value={lang.code}>\n                <div className=\"flex items-center space-x-2\">\n                  <span>{lang.flag}</span>\n                  <span>{lang.name}</span>\n                </div>\n              </SelectItem>\n            ))}\n          </SelectContent>\n        </Select>\n      </div>\n    </div>\n  )\n}"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "filepath": "/home/user/project/components/translate-panel.tsx",
+      "exists": false
+    },
+    "title": "components/translate-panel.tsx",
+    "time": {
+      "start": 1759685754081,
+      "end": 1759685754083
+    }
+  }
+}

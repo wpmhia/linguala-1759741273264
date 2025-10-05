@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5700884001oY3DEMLqAyXNBr",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01BHCozGfuMwB4DF55RiUgta",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 460,
+      "limit": 25
+    },
+    "output": "<file>\n00461|                   </div>\n00462|                 </div>\n00463|               )}\n00464|               \n00465|               <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>\n00466|                 {isLoading ? (\n00467|                   <div className=\"flex items-center justify-center h-full\">\n00468|                     <Loader2 className=\"h-6 w-6 animate-spin text-blue-500\" />\n00469|                   </div>\n00470|                 ) : (\n00471|                   <div \n00472|                     className={`whitespace-pre-wrap ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}\n00473|                     onFocus={() => setFocusedArea('target')}\n00474|                     onBlur={() => setFocusedArea(null)}\n00475|                     tabIndex={0}\n00476|                   >\n00477|                     {resultText || (activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here')}\n00478|                   </div>\n00479|                 )}\n00480|               </div>\n00481| \n00482|               {/* Result Text Controls */}\n00483|               {resultText && !isLoading && (\n00484|                 <div className=\"absolute bottom-4 left-4 right-4 flex items-center justify-between\">\n00485|                   <div className=\"flex items-center space-x-2\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 485)\n</file>",
+    "metadata": {
+      "preview": "                  </div>\n                </div>\n              )}\n              \n              <div className={`min-h-[400px] p-6 text-lg ${activeTab === 'write' ? 'mr-64' : ''}`} style={{ fontSize: '16px', lineHeight: '1.5' }}>\n                {isLoading ? (\n                  <div className=\"flex items-center justify-center h-full\">\n                    <Loader2 className=\"h-6 w-6 animate-spin text-blue-500\" />\n                  </div>\n                ) : (\n                  <div \n                    className={`whitespace-pre-wrap ${!resultText ? 'text-gray-400' : 'text-gray-900'}`}\n                    onFocus={() => setFocusedArea('target')}\n                    onBlur={() => setFocusedArea(null)}\n                    tabIndex={0}\n                  >\n                    {resultText || (activeTab === 'translate' ? 'Translation will appear here' : 'Improved text will appear here')}\n                  </div>\n                )}\n              </div>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685643325,
+      "end": 1759685643328
+    }
+  }
+}

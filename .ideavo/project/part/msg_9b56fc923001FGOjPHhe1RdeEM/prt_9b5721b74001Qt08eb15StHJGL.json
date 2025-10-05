@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5721b74001Qt08eb15StHJGL",
+  "messageID": "msg_9b56fc923001FGOjPHhe1RdeEM",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01RY6P2cS44mXaN3cAS9w6wh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 290,
+      "limit": 50
+    },
+    "output": "<file>\n00291|     if (sourceText.trim()) {\n00292|       const timeoutId = setTimeout(() => {\n00293|         handleProcessing(sourceText)\n00294|       }, 300) // Debounce\n00295|       \n00296|       return () => clearTimeout(timeoutId)\n00297|     }\n00298|   }, [sourceLang, targetLang, activeTab, correctionsOnly, writingStyle, tone])\n00299| \n00300|   const isLoading = processing.isPending\n00301| \n00302|   return (\n00303|     <div className=\"min-h-screen bg-white\">\n00304|       {/* Header */}\n00305|       <header className=\"border-b border-gray-200\">\n00306|         <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n00307|           <div className=\"flex items-center justify-between\">\n00308|             <div className=\"flex items-center space-x-8\">\n00309|               <LingualaLogo size=\"md\" />\n00310|             </div>\n00311|             <div className=\"flex items-center space-x-4\">\n00312|               <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\" aria-label=\"View history\">\n00313|                 <History className=\"h-5 w-5\" />\n00314|               </button>\n00315|               <button className=\"p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors\" aria-label=\"Settings\">\n00316|                 <Settings className=\"h-5 w-5\" />\n00317|               </button>\n00318|             </div>\n00319|           </div>\n00320|         </div>\n00321|       </header>\n00322| \n00323|       <main className=\"max-w-screen-xl mx-auto px-6 py-8\">\n00324|         {/* Tab Navigation */}\n00325|         <Tabs value={activeTab} onValueChange={setActiveTab} className=\"w-full\">\n00326|           <TabsList className=\"grid w-full max-w-md grid-cols-2 mb-8\">\n00327|             <TabsTrigger value=\"translate\" className=\"flex items-center gap-2\">\n00328|               <Languages className=\"h-4 w-4\" />\n00329|               Translate text\n00330|               <div className=\"text-xs text-gray-500\">35 languages</div>\n00331|             </TabsTrigger>\n00332|             <TabsTrigger value=\"write\" className=\"flex items-center gap-2\">\n00333|               <FileText className=\"h-4 w-4\" />\n00334|               Write\n00335|               <div className=\"text-xs text-gray-500\">AI-powered edits</div>\n00336|             </TabsTrigger>\n00337|           </TabsList>\n00338| \n00339|           <TabsContent value=\"translate\" className=\"space-y-6\">\n00340|             {/* Language Selection Bar */}\n\n(File has more lines. Use 'offset' parameter to read beyond line 340)\n</file>",
+    "metadata": {
+      "preview": "    if (sourceText.trim()) {\n      const timeoutId = setTimeout(() => {\n        handleProcessing(sourceText)\n      }, 300) // Debounce\n      \n      return () => clearTimeout(timeoutId)\n    }\n  }, [sourceLang, targetLang, activeTab, correctionsOnly, writingStyle, tone])\n\n  const isLoading = processing.isPending\n\n  return (\n    <div className=\"min-h-screen bg-white\">\n      {/* Header */}\n      <header className=\"border-b border-gray-200\">\n        <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-8\">\n              <LingualaLogo size=\"md\" />\n            </div>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685778994,
+      "end": 1759685778997
+    }
+  }
+}

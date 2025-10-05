@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5bb1f35001eKgjnk2AxCrCZd",
+  "messageID": "msg_9b5ba38270014UY1fUO9QKGGw3",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "### **🔧 Detailed Implementation Plan:**\n\n#### **Phase 1: Create Writing Service**\n1. **Create `/lib/writing-service.ts`**:\n   - Move all `qwen-flash` functions from `/app/api/translate/route.ts`\n   - `improveWritingWithQwen3Max()` → `improveText()`\n   - `getWordAlternativesWithQwen3Max()` → `getWordAlternatives()`  \n   - `rephraseTextWithQwen3Max()` → `rephraseText()`\n\n#### **Phase 2: Create Write API Route**\n2. **Create `/app/api/write/route.ts`**:\n   - Handle operations: `improve`, `alternatives`, `rephrase`\n   - Import from `/lib/writing-service.ts`\n   - Use `qwen-flash` model exclusively\n\n#### **Phase 3: Clean Translation Service**\n3. **Simplify `/lib/translation-service.ts`**:\n   - Remove all complex timeout/AbortController code\n   - Keep ONLY translation functions using `qwen-mt-turbo`\n   - Restore original simple, working implementation\n\n#### **Phase 4: Clean Translation API Route**\n4. **Simplify `/app/api/translate/route.ts`**:\n   - Handle ONLY `translate` operation\n   - Remove all writing-related functions\n   - Remove all `qwen-flash` code\n   - Simple, focused translation only\n\n#### **Phase 5: Update Frontend**\n5. **Update Components**:\n   - `/components/linguala-translator.tsx`: Call appropriate endpoints\n   - `/components/interactive-text.tsx`: Call `/api/write` for alternatives/rephrase\n   - Translation tab → `/api/translate`\n   - Write tab → `/api/write`",
+  "time": {
+    "start": 1759690571601,
+    "end": 1759690571601
+  }
+}

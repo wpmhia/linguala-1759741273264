@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5ba8aac001AZhP6fneqdUVC4",
+  "messageID": "msg_9b5ba38270014UY1fUO9QKGGw3",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01LgUvmg5LhoEAFE5peV3hJt",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 1,
+      "limit": 30
+    },
+    "output": "<file>\n00002|  * Shared Translation Service for Linguala Platform\n00003|  * \n00004|  * This service uses Alibaba Cloud DashScope's Qwen translation model for high-quality translations.\n00005|  * \n00006|  * REQUIRED ENVIRONMENT VARIABLE:\n00007|  * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)\n00008|  *   Get from: https://bailian.console.aliyun.com/ → Model Studio → Create API Key\n00009|  *   This key is already configured in .env file: sk-ad9404d1ced5426082b73e685a95ffa3\n00010|  * \n00011|  * USAGE:\n00012|  * - translateText(): For single text translation (used by main translator)\n00013|  * - translateLongText(): For document translation with chunking (used by document processor)\n00014|  * \n00015|  * FALLBACK: If API fails, falls back to dictionary-based translations for common phrases\n00016|  */\n00017| \n00018| // Language mapping for translation API - includes all frontend languages\n00019| const LANGUAGE_MAP: Record<string, string> = {\n00020|   auto: 'auto',\n00021|   \n00022|   // Popular EU Languages\n00023|   en: 'English',\n00024|   de: 'German', \n00025|   fr: 'French',\n00026|   es: 'Spanish',\n00027|   it: 'Italian',\n00028|   pt: 'Portuguese',\n00029|   pl: 'Polish',\n00030|   nl: 'Dutch',\n00031|   \n\n(File has more lines. Use 'offset' parameter to read beyond line 31)\n</file>",
+    "metadata": {
+      "preview": " * Shared Translation Service for Linguala Platform\n * \n * This service uses Alibaba Cloud DashScope's Qwen translation model for high-quality translations.\n * \n * REQUIRED ENVIRONMENT VARIABLE:\n * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)\n *   Get from: https://bailian.console.aliyun.com/ → Model Studio → Create API Key\n *   This key is already configured in .env file: sk-ad9404d1ced5426082b73e685a95ffa3\n * \n * USAGE:\n * - translateText(): For single text translation (used by main translator)\n * - translateLongText(): For document translation with chunking (used by document processor)\n * \n * FALLBACK: If API fails, falls back to dictionary-based translations for common phrases\n */\n\n// Language mapping for translation API - includes all frontend languages\nconst LANGUAGE_MAP: Record<string, string> = {\n  auto: 'auto',\n  "
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759690525832,
+      "end": 1759690525834
+    }
+  }
+}

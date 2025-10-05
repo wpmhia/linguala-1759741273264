@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5bb0340001avx4goyiitRu0o",
+  "messageID": "msg_9b5ba38270014UY1fUO9QKGGw3",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "## 📋 **Complete Separation Architecture Plan:**\n\n### **🏗️ Proposed Clean Architecture:**\n\n#### **1. Separate API Routes:**\n```\n/app/api/translate/route.ts     → ONLY qwen-mt-turbo translation\n/app/api/write/route.ts         → ONLY qwen-flash writing features\n```\n\n#### **2. Separate Service Files:**\n```\n/lib/translation-service.ts    → ONLY qwen-mt-turbo functions\n/lib/writing-service.ts         → ONLY qwen-flash functions  \n```\n\n#### **3. Clear Separation:**\n- **Translation Service**: Only handles language translation using `qwen-mt-turbo`\n- **Writing Service**: Only handles writing improvement, alternatives, rephrasing using `qwen-flash`",
+  "time": {
+    "start": 1759690559388,
+    "end": 1759690559388
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "prt_9b5bab511002J4k7s3sGiwM8GC",
+  "messageID": "msg_9b5ba38270014UY1fUO9QKGGw3",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "list",
+  "callID": "toolu_01QhedNyG2M66MwSdZFTM7sr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "path": "/home/user/project",
+      "ignore": [
+        "node_modules",
+        ".next",
+        ".git"
+      ]
+    },
+    "output": "/home/user/project/\n  app/\n    api/\n      translate/\n        route.ts\n    globals.css\n    layout.tsx\n    page.tsx\n  components/\n    providers/\n      query-provider.tsx\n      settings-provider.tsx\n      theme-provider.tsx\n    ui/\n      accordion.tsx\n      alert-dialog.tsx\n      alert.tsx\n      aspect-ratio.tsx\n      avatar.tsx\n      badge.tsx\n      breadcrumb.tsx\n      button.tsx\n      calendar.tsx\n      card.tsx\n      carousel.tsx\n      chart.tsx\n      checkbox.tsx\n      collapsible.tsx\n      command.tsx\n      context-menu.tsx\n      dialog.tsx\n      drawer.tsx\n      dropdown-menu.tsx\n      form.tsx\n      hover-card.tsx\n      input-otp.tsx\n      input.tsx\n      label.tsx\n      linguala-logo.tsx\n      menubar.tsx\n      navigation-menu.tsx\n      pagination.tsx\n      popover.tsx\n      progress.tsx\n      radio-group.tsx\n      resizable.tsx\n      scroll-area.tsx\n      select.tsx\n      separator.tsx\n      sheet.tsx\n      skeleton.tsx\n      slider.tsx\n      sonner.tsx\n      switch.tsx\n      table.tsx\n      tabs.tsx\n      textarea.tsx\n      toast.tsx\n      toaster.tsx\n      toggle-group.tsx\n      toggle.tsx\n      tooltip.tsx\n    interactive-text.tsx\n    linguala-translator.tsx\n    settings-modal.tsx\n    text-diff.tsx\n    theme-toggle.tsx\n    translate-panel.tsx\n    write-panel.tsx\n  hooks/\n    use-toast.ts\n    use-translation.ts\n  lib/\n    env-config.ts\n    translation-service.ts\n    utils.ts\n  public/\n    scripts/\n      iframe-navigation.js\n  .gitignore\n  API_KEY_INFO.txt\n  TRANSLATION_API_CONFIG.md\n  bun.lock\n  components.json\n  current.log\n  dev.log\n  ideavo-server.info\n  next.config.js\n  package-lock.json\n  package.json\n  postcss.config.js\n  server.log\n  tailwind.config.ts\n  tsconfig.json\n",
+    "metadata": {
+      "count": 83,
+      "truncated": false
+    },
+    "title": "",
+    "time": {
+      "start": 1759690537073,
+      "end": 1759690537085
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5a3aca1001Sv22AITQ2gQp7S",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01NCeNUwo5CzuTACGjGPCdBK",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "    // Simple fallback - basic rephrasing\n    const basicRephrase = text\n      .replace(/\\bvery\\b/g, 'extremely')\n      .replace(/\\bgood\\b/g, 'excellent')\n      .replace(/\\bbad\\b/g, 'poor')\n      .replace(/\\bnice\\b/g, 'pleasant')\n      .replace(/\\bbig\\b/g, 'large')\n    \n    return {\n      originalText: text,\n      rephrasedText: basicRephrase,\n      operation: 'rephrase',\n      fallback: true\n    }",
+      "newString": "    // Enhanced fallback - multiple rephrase options\n    const option1 = text\n      .replace(/\\bvery\\b/g, 'extremely')\n      .replace(/\\bgood\\b/g, 'excellent')\n      .replace(/\\bbad\\b/g, 'poor')\n      .replace(/\\bnice\\b/g, 'pleasant')\n      .replace(/\\bbig\\b/g, 'large')\n    \n    const option2 = text\n      .replace(/I think/g, 'I believe')\n      .replace(/It is important/g, 'It is essential')\n      .replace(/In my opinion/g, 'From my perspective')\n      .replace(/very important/g, 'crucial')\n      \n    const option3 = text\n      .replace(/\\breally\\b/g, 'truly')\n      .replace(/\\bshould\\b/g, 'ought to')\n      .replace(/\\bwant to\\b/g, 'wish to')\n      .replace(/\\bneed to\\b/g, 'must')\n    \n    const rephraseOptions = [option1, option2, option3].filter(option => option !== text)\n    \n    return {\n      originalText: text,\n      rephrasedText: rephraseOptions[0] || text,\n      rephraseOptions: rephraseOptions,\n      operation: 'rephrase',\n      fallback: true\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -308,19 +308,34 @@\n     operation: 'rephrase'\n   }\n } catch (error) {\n   console.error('Rephrase text error:', error)\n-  // Simple fallback - basic rephrasing\n-  const basicRephrase = text\n+  // Enhanced fallback - multiple rephrase options\n+  const option1 = text\n     .replace(/\\bvery\\b/g, 'extremely')\n     .replace(/\\bgood\\b/g, 'excellent')\n     .replace(/\\bbad\\b/g, 'poor')\n     .replace(/\\bnice\\b/g, 'pleasant')\n     .replace(/\\bbig\\b/g, 'large')\n   \n+  const option2 = text\n+    .replace(/I think/g, 'I believe')\n+    .replace(/It is important/g, 'It is essential')\n+    .replace(/In my opinion/g, 'From my perspective')\n+    .replace(/very important/g, 'crucial')\n+    \n+  const option3 = text\n+    .replace(/\\breally\\b/g, 'truly')\n+    .replace(/\\bshould\\b/g, 'ought to')\n+    .replace(/\\bwant to\\b/g, 'wish to')\n+    .replace(/\\bneed to\\b/g, 'must')\n+  \n+  const rephraseOptions = [option1, option2, option3].filter(option => option !== text)\n+  \n   return {\n     originalText: text,\n-    rephrasedText: basicRephrase,\n+    rephrasedText: rephraseOptions[0] || text,\n+    rephraseOptions: rephraseOptions,\n     operation: 'rephrase',\n     fallback: true\n   }\n }\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759689032260,
+      "end": 1759689032275
+    }
+  }
+}

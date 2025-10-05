@@ -12,9 +12,17 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     console.log('Processing request body:', body)
     
-    const { text, operation = 'translate', sourceLang, targetLang, domain, glossary } = body
+    const { text, word, context, operation = 'translate', sourceLang, targetLang, domain, glossary, mode } = body
 
-    if (!text) {
+    // Validate required fields based on operation
+    if (operation === 'alternatives' && !word) {
+      return NextResponse.json(
+        { error: 'Word is required for alternatives operation' },
+        { status: 400 }
+      )
+    }
+
+    if ((operation === 'translate' || operation === 'improve' || operation === 'rephrase') && !text) {
       console.log('Missing required field: text')
       return NextResponse.json(
         { error: 'Text is required' },
@@ -40,9 +48,17 @@ export async function POST(request: NextRequest) {
         result = await improveWritingWithQwen3Max(text, { correctionsOnly, writingStyle, tone })
         break
 
+      case 'alternatives':
+        result = await getWordAlternativesWithQwen3Max(word, context, { mode, sourceLang, targetLang })
+        break
+
+      case 'rephrase':
+        result = await rephraseTextWithQwen3Max(text)
+        break
+
       default:
         return NextResponse.json(
-          { error: 'Invalid operation. Supported: translate, improve' },
+          { error: 'Invalid operation. Supported: translate, improve, alternatives, rephrase' },
           { status: 400 }
         )
     }
@@ -256,7 +272,7 @@ async function rephraseTextWithQwen3Max(text: string) {
         messages: [
           {
             role: 'system',
-            content: 'You are a professional writing assistant. Rephrase the given text using different words and sentence structures while keeping the same meaning. Make it sound natural and engaging. Return only the rephrased text without explanations.'
+            content: 'You are a professional writing assistant. Provide 3 different ways to rephrase the given text using different words and sentence structures while keeping the same meaning. Make them sound natural and engaging. Return only a JSON array of rephrased options, like: ["option1", "option2", "option3"]'
           },
           {
             role: 'user',
@@ -274,30 +290,168 @@ async function rephraseTextWithQwen3Max(text: string) {
     }
 
     const data = await response.json()
-    const rephrasedText = data.choices[0]?.message?.content?.trim()
+    const content = data.choices[0]?.message?.content?.trim()
+    
+    // Try to parse JSON response
+    let rephraseOptions: string[] = []
+    try {
+      rephraseOptions = JSON.parse(content)
+    } catch {
+      // Fallback: treat as single option
+      rephraseOptions = [content]
+    }
 
     return {
       originalText: text,
-      rephrasedText: rephrasedText || text,
+      rephrasedText: rephraseOptions[0] || text,
+      rephraseOptions: rephraseOptions.filter(option => option && option !== text),
       operation: 'rephrase'
     }
   } catch (error) {
     console.error('Rephrase text error:', error)
-    // Simple fallback - basic rephrasing
-    const basicRephrase = text
+    // Enhanced fallback - multiple rephrase options
+    const option1 = text
       .replace(/\bvery\b/g, 'extremely')
       .replace(/\bgood\b/g, 'excellent')
       .replace(/\bbad\b/g, 'poor')
       .replace(/\bnice\b/g, 'pleasant')
       .replace(/\bbig\b/g, 'large')
     
+    const option2 = text
+      .replace(/I think/g, 'I believe')
+      .replace(/It is important/g, 'It is essential')
+      .replace(/In my opinion/g, 'From my perspective')
+      .replace(/very important/g, 'crucial')
+      
+    const option3 = text
+      .replace(/\breally\b/g, 'truly')
+      .replace(/\bshould\b/g, 'ought to')
+      .replace(/\bwant to\b/g, 'wish to')
+      .replace(/\bneed to\b/g, 'must')
+    
+    const rephraseOptions = [option1, option2, option3].filter(option => option !== text)
+    
     return {
       originalText: text,
-      rephrasedText: basicRephrase,
+      rephrasedText: rephraseOptions[0] || text,
+      rephraseOptions: rephraseOptions,
       operation: 'rephrase',
       fallback: true
     }
   }
+}
+
+// Word alternatives function using qwen-max
+async function getWordAlternativesWithQwen3Max(word: string, context: string, options: { mode?: string, sourceLang?: string, targetLang?: string } = {}) {
+  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
+  console.log('Getting alternatives for word:', word)
+  
+  try {
+    let systemPrompt = 'You are a professional writing assistant. '
+    
+    if (options.mode === 'translate') {
+      systemPrompt += `Provide 5 alternative translations or synonyms for the word "${word}" in the context: "${context}". `
+      if (options.targetLang) {
+        systemPrompt += `Focus on translations that work well in ${options.targetLang}. `
+      }
+    } else {
+      systemPrompt += `Provide 5 alternative words or synonyms for "${word}" in the context: "${context}". Focus on words that improve clarity, style, and readability. `
+    }
+    
+    systemPrompt += 'Return only a JSON array of alternative words, like: ["alternative1", "alternative2", "alternative3", "alternative4", "alternative5"]'
+    
+    const timeoutPromise = new Promise((_, reject) => {
+      setTimeout(() => reject(new Error('API call timeout after 8 seconds')), 8000)
+    })
+    
+    const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'qwen-max',
+        messages: [
+          {
+            role: 'system',
+            content: systemPrompt
+          },
+          {
+            role: 'user',
+            content: `Word: "${word}"\nContext: "${context}"`
+          }
+        ],
+        max_tokens: 200,
+        temperature: 0.7
+      })
+    })
+    
+    const response = await Promise.race([fetchPromise, timeoutPromise]) as Response
+    
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status}`)
+    }
+
+    const data = await response.json()
+    const content = data.choices[0]?.message?.content?.trim()
+    
+    // Try to parse JSON response
+    let alternatives: string[] = []
+    try {
+      alternatives = JSON.parse(content)
+    } catch {
+      // Fallback: extract words from text response
+      const words = content.match(/[\w']+/g) || []
+      alternatives = words.slice(0, 5)
+    }
+    
+    return {
+      word,
+      alternatives: alternatives.filter(alt => alt.toLowerCase() !== word.toLowerCase()).slice(0, 5),
+      operation: 'alternatives'
+    }
+  } catch (error) {
+    console.error('Get alternatives error:', error)
+    
+    // Enhanced fallback alternatives
+    const fallbackAlternatives = getFallbackAlternatives(word)
+    
+    return {
+      word,
+      alternatives: fallbackAlternatives,
+      operation: 'alternatives',
+      fallback: true
+    }
+  }
+}
+
+// Enhanced fallback alternatives
+function getFallbackAlternatives(word: string): string[] {
+  const alternatives: Record<string, string[]> = {
+    'good': ['great', 'excellent', 'wonderful', 'fantastic', 'superb'],
+    'bad': ['poor', 'terrible', 'awful', 'horrible', 'dreadful'],
+    'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],
+    'small': ['tiny', 'little', 'compact', 'miniature', 'petite'],
+    'fast': ['quick', 'rapid', 'swift', 'speedy', 'brisk'],
+    'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried', 'steady'],
+    'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],
+    'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'magnificent'],
+    'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'elated'],
+    'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],
+    'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally', 'tremendously'],
+    'really': ['truly', 'genuinely', 'actually', 'indeed', 'certainly'],
+    'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],
+    'make': ['create', 'produce', 'build', 'construct', 'generate'],
+    'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],
+    'know': ['understand', 'realize', 'recognize', 'comprehend', 'grasp'],
+    'help': ['assist', 'support', 'aid', 'guide', 'facilitate'],
+    'work': ['function', 'operate', 'perform', 'labor', 'serve'],
+    'easy': ['simple', 'effortless', 'straightforward', 'uncomplicated', 'manageable'],
+    'hard': ['difficult', 'challenging', 'tough', 'demanding', 'complex']
+  }
+  
+  return alternatives[word.toLowerCase()] || []
 }
 
 // Text summarization function using qwen-max

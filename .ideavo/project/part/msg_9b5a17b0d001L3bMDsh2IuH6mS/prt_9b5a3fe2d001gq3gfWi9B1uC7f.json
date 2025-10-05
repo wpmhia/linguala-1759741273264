@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5a3fe2d001gq3gfWi9B1uC7f",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_015jhpMYorXMP4yeUkL6De3Z",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 15,
+      "limit": 10
+    },
+    "output": "<file>\n00016| import { toast } from \"sonner\"\n00017| import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n00018| import { useTextProcessing } from \"@/hooks/use-translation\"\n00019| import { ThemeToggle } from \"@/components/theme-toggle\"\n00020| import { SettingsModal } from \"@/components/settings-modal\"\n00021| import { useSettings } from \"@/components/providers/settings-provider\"\n00022| import { TextDiff } from \"@/components/text-diff\"\n00023| \n00024| // Dynamic imports for code splitting\n00025| const TranslatePanel = dynamic(() => import('./translate-panel'), {\n\n(File has more lines. Use 'offset' parameter to read beyond line 25)\n</file>",
+    "metadata": {
+      "preview": "import { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTextProcessing } from \"@/hooks/use-translation\"\nimport { ThemeToggle } from \"@/components/theme-toggle\"\nimport { SettingsModal } from \"@/components/settings-modal\"\nimport { useSettings } from \"@/components/providers/settings-provider\"\nimport { TextDiff } from \"@/components/text-diff\"\n\n// Dynamic imports for code splitting\nconst TranslatePanel = dynamic(() => import('./translate-panel'), {"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759689048281,
+      "end": 1759689048283
+    }
+  }
+}

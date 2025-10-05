@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5a40bee001d91WW1r06Y87V0",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Md9yFxcgNdVPdpSnRh5mp2",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { ThemeToggle } from \\\"@/components/theme-toggle\\\"\\nimport { SettingsModal } from \\\"@/components/settings-modal\\\"\\nimport { useSettings } from \\\"@/components/providers/settings-provider\\\"\\nimport { TextDiff } from \\\"@/components/text-diff\\\"",
+      "newString": "import { ThemeToggle } from \\\"@/components/theme-toggle\\\"\\nimport { SettingsModal } from \\\"@/components/settings-modal\\\"\\nimport { useSettings } from \\\"@/components/providers/settings-provider\\\"\\nimport { TextDiff } from \\\"@/components/text-diff\\\"\\nimport { InteractiveText } from \\\"@/components/interactive-text\\\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -15,12 +15,9 @@\n } from \"lucide-react\"\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { useTextProcessing } from \"@/hooks/use-translation\"\n-import { ThemeToggle } from \"@/components/theme-toggle\"\n-import { SettingsModal } from \"@/components/settings-modal\"\n-import { useSettings } from \"@/components/providers/settings-provider\"\n-import { TextDiff } from \"@/components/text-diff\"\n+import { ThemeToggle } from \\\"@/components/theme-toggle\\\"\\nimport { SettingsModal } from \\\"@/components/settings-modal\\\"\\nimport { useSettings } from \\\"@/components/providers/settings-provider\\\"\\nimport { TextDiff } from \\\"@/components/text-diff\\\"\\nimport { InteractiveText } from \\\"@/components/interactive-text\\\"\n \n // Dynamic imports for code splitting\n const TranslatePanel = dynamic(() => import('./translate-panel'), {\n   loading: () => (\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759689053031,
+      "end": 1759689053043
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "prt_9b5a1a1450013R7dJL1vGJ3JZF",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01JTMtQoRLm41sqA4s2RSsGY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Create interactive word component with click handlers",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Implement word alternatives API functionality",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Add sentence rephrasing functionality",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Integrate interactive words into translate mode",
+          "status": "pending",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Integrate interactive words into write mode",
+          "status": "pending",
+          "priority": "high",
+          "id": "5"
+        },
+        {
+          "content": "Create popover/tooltip UI for word alternatives",
+          "status": "pending",
+          "priority": "medium",
+          "id": "6"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Create interactive word component with click handlers\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Implement word alternatives API functionality\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Add sentence rephrasing functionality\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"3\"\n  },\n  {\n    \"content\": \"Integrate interactive words into translate mode\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"4\"\n  },\n  {\n    \"content\": \"Integrate interactive words into write mode\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"5\"\n  },\n  {\n    \"content\": \"Create popover/tooltip UI for word alternatives\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"6\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Create interactive word component with click handlers",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Implement word alternatives API functionality",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Add sentence rephrasing functionality",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Integrate interactive words into translate mode",
+          "status": "pending",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Integrate interactive words into write mode",
+          "status": "pending",
+          "priority": "high",
+          "id": "5"
+        },
+        {
+          "content": "Create popover/tooltip UI for word alternatives",
+          "status": "pending",
+          "priority": "medium",
+          "id": "6"
+        }
+      ]
+    },
+    "title": "6 todos",
+    "time": {
+      "start": 1759688894500,
+      "end": 1759688894500
+    }
+  }
+}

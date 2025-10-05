@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5a374ad001ZfRlAA7TCpK4LR",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01YVLJu5KE6cjYZnnBCjWvHT",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 287,
+      "limit": 30
+    },
+    "output": "<file>\n00288|     if (!response.ok) {\n00289|       throw new Error(`API request failed: ${response.status}`)\n00290|     }\n00291| \n00292|     const data = await response.json()\n00293|     const rephrasedText = data.choices[0]?.message?.content?.trim()\n00294| \n00295|     return {\n00296|       originalText: text,\n00297|       rephrasedText: rephrasedText || text,\n00298|       operation: 'rephrase'\n00299|     }\n00300|   } catch (error) {\n00301|     console.error('Rephrase text error:', error)\n00302|     // Simple fallback - basic rephrasing\n00303|     const basicRephrase = text\n00304|       .replace(/\\bvery\\b/g, 'extremely')\n00305|       .replace(/\\bgood\\b/g, 'excellent')\n00306|       .replace(/\\bbad\\b/g, 'poor')\n00307|       .replace(/\\bnice\\b/g, 'pleasant')\n00308|       .replace(/\\bbig\\b/g, 'large')\n00309|     \n00310|     return {\n00311|       originalText: text,\n00312|       rephrasedText: basicRephrase,\n00313|       operation: 'rephrase',\n00314|       fallback: true\n00315|     }\n00316|   }\n00317| }\n\n(File has more lines. Use 'offset' parameter to read beyond line 317)\n</file>",
+    "metadata": {
+      "preview": "    if (!response.ok) {\n      throw new Error(`API request failed: ${response.status}`)\n    }\n\n    const data = await response.json()\n    const rephrasedText = data.choices[0]?.message?.content?.trim()\n\n    return {\n      originalText: text,\n      rephrasedText: rephrasedText || text,\n      operation: 'rephrase'\n    }\n  } catch (error) {\n    console.error('Rephrase text error:', error)\n    // Simple fallback - basic rephrasing\n    const basicRephrase = text\n      .replace(/\\bvery\\b/g, 'extremely')\n      .replace(/\\bgood\\b/g, 'excellent')\n      .replace(/\\bbad\\b/g, 'poor')\n      .replace(/\\bnice\\b/g, 'pleasant')"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759689012960,
+      "end": 1759689012963
+    }
+  }
+}

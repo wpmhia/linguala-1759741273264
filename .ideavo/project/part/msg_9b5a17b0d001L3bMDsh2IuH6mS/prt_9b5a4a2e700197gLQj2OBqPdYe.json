@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5a4a2e700197gLQj2OBqPdYe",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01UGXcRMNvdbcaNdvU5tqGiy",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "cd /home/user/project && npm run build",
+      "description": "Build project to check for compilation errors"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\nFailed to compile.\n\n./components/linguala-translator.tsx\nError: \n  \u001b[31mx\u001b[0m Expected unicode escape\n    ,-[\u001b[36;1;4m/home/user/project/components/linguala-translator.tsx\u001b[0m:16:1]\n \u001b[2m16\u001b[0m | import { toast } from \"sonner\"\n \u001b[2m17\u001b[0m | import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n \u001b[2m18\u001b[0m | import { useTextProcessing } from \"@/hooks/use-translation\"\n \u001b[2m19\u001b[0m | import { ThemeToggle } from \\\"@/components/theme-toggle\\\"\\nimport { SettingsModal } from \\\"@/components/settings-modal\\\"\\nimport { useSettings } from \\\"@/components/providers/settings-provider\\\"\\nimport { TextDiff } from \\\"@/components/text-diff\\\"\\nimport { InteractiveText } from \\\"@/components/interactive-text\\\"\n    : \u001b[31;1m                            ^\u001b[0m\n \u001b[2m20\u001b[0m | \n \u001b[2m21\u001b[0m | // Dynamic imports for code splitting\n \u001b[2m22\u001b[0m | const TranslatePanel = dynamic(() => import('./translate-panel'), {\n    `----\n\nCaused by:\n    Syntax Error\n\nImport trace for requested module:\n./components/linguala-translator.tsx\n./app/page.tsx\n\n\n> Build failed because of webpack errors\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\nFailed to compile.\n\n./components/linguala-translator.tsx\nError: \n  \u001b[31mx\u001b[0m Expected unicode escape\n    ,-[\u001b[36;1;4m/home/user/project/components/linguala-translator.tsx\u001b[0m:16:1]\n \u001b[2m16\u001b[0m | import { toast } from \"sonner\"\n \u001b[2m17\u001b[0m | import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n \u001b[2m18\u001b[0m | import { useTextProcessing } from \"@/hooks/use-translation\"\n \u001b[2m19\u001b[0m | import { ThemeToggle } from \\\"@/components/theme-toggle\\\"\\nimport { SettingsModal } from \\\"@/components/settings-modal\\\"\\nimport { useSettings } from \\\"@/components/providers/settings-provider\\\"\\nimport { TextDiff } from \\\"@/components/text-diff\\\"\\nimport { InteractiveText } from \\\"@/components/interactive-text\\\"\n    : \u001b[31;1m                            ^\u001b[0m\n \u001b[2m20\u001b[0m | \n \u001b[2m21\u001b[0m | // Dynamic imports for code splitting\n \u001b[2m22\u001b[0m | const TranslatePanel = dynamic(() => import('./translate-panel'), {\n    `----\n\nCaused by:\n    Syntax Error\n\nImport trace for requested module:\n./components/linguala-translator.tsx\n./app/page.tsx\n\n\n> Build failed because of webpack errors\n",
+      "exit": 1,
+      "description": "Build project to check for compilation errors"
+    },
+    "title": "cd /home/user/project && npm run build",
+    "time": {
+      "start": 1759689090382,
+      "end": 1759689094855
+    }
+  }
+}

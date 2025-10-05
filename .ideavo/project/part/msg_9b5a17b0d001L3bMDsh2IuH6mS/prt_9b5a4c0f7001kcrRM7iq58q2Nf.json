@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5a4c0f7001kcrRM7iq58q2Nf",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01RAVeSDrwuynwBqMkmcVHMe",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 15,
+      "limit": 10
+    },
+    "output": "<file>\n00016| import { toast } from \"sonner\"\n00017| import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n00018| import { useTextProcessing } from \"@/hooks/use-translation\"\n00019| import { ThemeToggle } from \\\"@/components/theme-toggle\\\"\\nimport { SettingsModal } from \\\"@/components/settings-modal\\\"\\nimport { useSettings } from \\\"@/components/providers/settings-provider\\\"\\nimport { TextDiff } from \\\"@/components/text-diff\\\"\\nimport { InteractiveText } from \\\"@/components/interactive-text\\\"\n00020| \n00021| // Dynamic imports for code splitting\n00022| const TranslatePanel = dynamic(() => import('./translate-panel'), {\n00023|   loading: () => (\n00024|     <div className=\"h-20 linguala-glass rounded-2xl linguala-shimmer border border-white/20 dark:border-white/10 flex items-center justify-center\">\n00025|       <div className=\"flex items-center space-x-2\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 25)\n</file>",
+    "metadata": {
+      "preview": "import { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTextProcessing } from \"@/hooks/use-translation\"\nimport { ThemeToggle } from \\\"@/components/theme-toggle\\\"\\nimport { SettingsModal } from \\\"@/components/settings-modal\\\"\\nimport { useSettings } from \\\"@/components/providers/settings-provider\\\"\\nimport { TextDiff } from \\\"@/components/text-diff\\\"\\nimport { InteractiveText } from \\\"@/components/interactive-text\\\"\n\n// Dynamic imports for code splitting\nconst TranslatePanel = dynamic(() => import('./translate-panel'), {\n  loading: () => (\n    <div className=\"h-20 linguala-glass rounded-2xl linguala-shimmer border border-white/20 dark:border-white/10 flex items-center justify-center\">\n      <div className=\"flex items-center space-x-2\">"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759689098225,
+      "end": 1759689098231
+    }
+  }
+}

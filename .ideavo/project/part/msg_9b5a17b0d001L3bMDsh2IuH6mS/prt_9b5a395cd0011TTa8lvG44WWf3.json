@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5a395cd0011TTa8lvG44WWf3",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01A9vxpvUztUyKPzuwfgAGxP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "oldString": "    const data = await response.json()\n    const rephrasedText = data.choices[0]?.message?.content?.trim()\n\n    return {\n      originalText: text,\n      rephrasedText: rephrasedText || text,\n      operation: 'rephrase'\n    }",
+      "newString": "    const data = await response.json()\n    const content = data.choices[0]?.message?.content?.trim()\n    \n    // Try to parse JSON response\n    let rephraseOptions: string[] = []\n    try {\n      rephraseOptions = JSON.parse(content)\n    } catch {\n      // Fallback: treat as single option\n      rephraseOptions = [content]\n    }\n\n    return {\n      originalText: text,\n      rephrasedText: rephraseOptions[0] || text,\n      rephraseOptions: rephraseOptions.filter(option => option && option !== text),\n      operation: 'rephrase'\n    }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/app/api/translate/route.ts\n===================================================================\n--- /home/user/project/app/api/translate/route.ts\n+++ /home/user/project/app/api/translate/route.ts\n@@ -289,13 +289,23 @@\n     throw new Error(`API request failed: ${response.status}`)\n   }\n \n   const data = await response.json()\n-  const rephrasedText = data.choices[0]?.message?.content?.trim()\n+  const content = data.choices[0]?.message?.content?.trim()\n+  \n+  // Try to parse JSON response\n+  let rephraseOptions: string[] = []\n+  try {\n+    rephraseOptions = JSON.parse(content)\n+  } catch {\n+    // Fallback: treat as single option\n+    rephraseOptions = [content]\n+  }\n \n   return {\n     originalText: text,\n-    rephrasedText: rephrasedText || text,\n+    rephrasedText: rephraseOptions[0] || text,\n+    rephraseOptions: rephraseOptions.filter(option => option && option !== text),\n     operation: 'rephrase'\n   }\n } catch (error) {\n   console.error('Rephrase text error:', error)\n"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759689024253,
+      "end": 1759689024260
+    }
+  }
+}

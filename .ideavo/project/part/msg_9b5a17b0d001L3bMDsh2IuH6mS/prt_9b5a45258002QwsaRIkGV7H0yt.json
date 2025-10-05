@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5a45258002QwsaRIkGV7H0yt",
+  "messageID": "msg_9b5a17b0d001L3bMDsh2IuH6mS",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01HXMFidFXQyfBkUJcB6cDi6",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                      <Textarea\n                        value={resultText || ''}\n                        placeholder={activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}\n                        readOnly\n                        onFocus={() => setFocusedArea('target')}\n                        onBlur={() => setFocusedArea(null)}\n                        className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 linguala-scrollbar ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}\n                        style={{ fontSize: '16px', lineHeight: '1.5' }}\n                        aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}\n                      />",
+      "newString": "                      <div \n                        className={`min-h-[300px] p-3 rounded-lg ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}\n                        style={{ fontSize: '16px', lineHeight: '1.5' }}\n                        onFocus={() => setFocusedArea('target')}\n                        onBlur={() => setFocusedArea(null)}\n                      >\n                        {resultText ? (\n                          <InteractiveText\n                            text={resultText}\n                            mode={activeTab as 'translate' | 'write'}\n                            sourceLang={sourceLang}\n                            targetLang={targetLang}\n                            onTextUpdate={setResultText}\n                            className=\"min-h-[280px]\"\n                          />\n                        ) : (\n                          <p className=\"text-slate-400 dark:text-slate-500\">\n                            {activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}\n                          </p>\n                        )}\n                      </div>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -502,18 +502,29 @@\n             </div>\n           </div>\n         </div>\n       ) : (\n-        <Textarea\n-          value={resultText || ''}\n-          placeholder={activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}\n-          readOnly\n+        <div \n+          className={`min-h-[300px] p-3 rounded-lg ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}\n+          style={{ fontSize: '16px', lineHeight: '1.5' }}\n           onFocus={() => setFocusedArea('target')}\n           onBlur={() => setFocusedArea(null)}\n-          className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 linguala-scrollbar ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}\n-          style={{ fontSize: '16px', lineHeight: '1.5' }}\n-          aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}\n-        />\n+        >\n+          {resultText ? (\n+            <InteractiveText\n+              text={resultText}\n+              mode={activeTab as 'translate' | 'write'}\n+              sourceLang={sourceLang}\n+              targetLang={targetLang}\n+              onTextUpdate={setResultText}\n+              className=\"min-h-[280px]\"\n+            />\n+          ) : (\n+            <p className=\"text-slate-400 dark:text-slate-500\">\n+              {activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}\n+            </p>\n+          )}\n+        </div>\n       )}\n     </div>\n   )}\n </div>\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759689073941,
+      "end": 1759689073947
+    }
+  }
+}

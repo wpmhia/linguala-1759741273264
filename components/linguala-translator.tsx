@@ -20,6 +20,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { SettingsModal } from "@/components/settings-modal"
 import { useSettings } from "@/components/providers/settings-provider"
 import { TextDiff } from "@/components/text-diff"
+import { InteractiveText } from "@/components/interactive-text"
 
 // Dynamic imports for code splitting
 const TranslatePanel = dynamic(() => import('./translate-panel'), {
@@ -180,7 +181,7 @@ export default function LingualaTranslator() {
 
   const getPlaceholderText = () => {
     if (activeTab === 'translate') {
-      return 'Enter text to translate'
+      return 'Enter text to translate.\n\nClick any word in the result for alternatives or to rephrase a sentence.'
     } else {
       return 'Type or paste text to see ideas for improvement.\n\nClick any word for alternatives or to rephrase a sentence.'
     }
@@ -484,29 +485,49 @@ export default function LingualaTranslator() {
                         />
                         <div className="border-t border-slate-200 dark:border-slate-600 pt-4">
                           <h4 className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Final result:</h4>
-                          <Textarea
-                            value={resultText || ''}
-                            placeholder="✨ Improved text will appear here"
-                            readOnly
+                          <div 
+                            className={`min-h-[200px] p-3 rounded-lg ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}
+                            style={{ fontSize: '16px', lineHeight: '1.5' }}
                             onFocus={() => setFocusedArea('target')}
                             onBlur={() => setFocusedArea(null)}
-                            className={`min-h-[200px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 linguala-scrollbar ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}
-                            style={{ fontSize: '16px', lineHeight: '1.5' }}
-                            aria-label="Improved text result"
-                          />
+                          >
+                            {resultText ? (
+                              <InteractiveText
+                                text={resultText}
+                                mode={activeTab as 'translate' | 'write'}
+                                sourceLang={sourceLang}
+                                targetLang={targetLang}
+                                onTextUpdate={setResultText}
+                                className="min-h-[180px]"
+                              />
+                            ) : (
+                              <p className="text-slate-400 dark:text-slate-500">✨ Improved text will appear here</p>
+                            )}
+                          </div>
                         </div>
                       </div>
                     ) : (
-                      <Textarea
-                        value={resultText || ''}
-                        placeholder={activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}
-                        readOnly
+                      <div 
+                        className={`min-h-[300px] p-3 rounded-lg ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}
+                        style={{ fontSize: '16px', lineHeight: '1.5' }}
                         onFocus={() => setFocusedArea('target')}
                         onBlur={() => setFocusedArea(null)}
-                        className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 linguala-scrollbar ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}
-                        style={{ fontSize: '16px', lineHeight: '1.5' }}
-                        aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}
-                      />
+                      >
+                        {resultText ? (
+                          <InteractiveText
+                            text={resultText}
+                            mode={activeTab as 'translate' | 'write'}
+                            sourceLang={sourceLang}
+                            targetLang={targetLang}
+                            onTextUpdate={setResultText}
+                            className="min-h-[280px]"
+                          />
+                        ) : (
+                          <p className="text-slate-400 dark:text-slate-500">
+                            {activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}
+                          </p>
+                        )}
+                      </div>
                     )}
                   </div>
                 )}

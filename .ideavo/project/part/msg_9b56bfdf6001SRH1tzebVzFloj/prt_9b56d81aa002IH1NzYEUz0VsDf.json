@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b56d81aa002IH1NzYEUz0VsDf",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01QvQUfyHnvh3dz9WEBT7JAG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 270,
+      "limit": 30
+    },
+    "output": "<file>\n00271|                       <div className=\"flex items-center space-x-2\">\n00272|                         <span>{lang.flag}</span>\n00273|                         <span>{lang.name}</span>\n00274|                       </div>\n00275|                     </SelectItem>\n00276|                   ))}\n00277|                 </SelectContent>\n00278|               </Select>\n00279| \n00280|               <Button\n00281|                 variant=\"ghost\"\n00282|                 size=\"sm\"\n00283|                 onClick={swapLanguages}\n00284|                 className=\"p-2 hover:bg-gray-200 rounded-full\"\n00285|                 disabled={sourceLang === \"auto\"}\n00286|               >\n00287|                 <ArrowUpDown className=\"h-4 w-4\" />\n00288|               </Button>\n00289| \n00290|               <Select value={targetLang} onValueChange={setTargetLang}>\n00291|                 <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n00292|                   <div className=\"flex items-center space-x-2\">\n00293|                     <span className=\"text-sm\">{getLanguage(targetLang).flag}</span>\n00294|                     <span className=\"font-medium text-sm\">{getLanguage(targetLang).name}</span>\n00295|                   </div>\n00296|                 </SelectTrigger>\n00297|                 <SelectContent>\n00298|                   {LANGUAGES.filter(lang => lang.code !== \"auto\").map(lang => (\n00299|                     <SelectItem key={lang.code} value={lang.code}>\n00300|                       <div className=\"flex items-center space-x-2\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 300)\n</file>",
+    "metadata": {
+      "preview": "                      <div className=\"flex items-center space-x-2\">\n                        <span>{lang.flag}</span>\n                        <span>{lang.name}</span>\n                      </div>\n                    </SelectItem>\n                  ))}\n                </SelectContent>\n              </Select>\n\n              <Button\n                variant=\"ghost\"\n                size=\"sm\"\n                onClick={swapLanguages}\n                className=\"p-2 hover:bg-gray-200 rounded-full\"\n                disabled={sourceLang === \"auto\"}\n              >\n                <ArrowUpDown className=\"h-4 w-4\" />\n              </Button>\n\n              <Select value={targetLang} onValueChange={setTargetLang}>"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685477341,
+      "end": 1759685477342
+    }
+  }
+}

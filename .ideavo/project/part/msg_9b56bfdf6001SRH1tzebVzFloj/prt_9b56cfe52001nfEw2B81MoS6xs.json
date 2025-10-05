@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b56cfe52001nfEw2B81MoS6xs",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01M8kTZw1Zo4ay4SKotaS8uY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { useTextProcessing } from \"@/hooks/use-translation\"\n\n// Common languages like Google Translate",
+      "newString": "import { useTextProcessing } from \"@/hooks/use-translation\"\n\n// Types for request payload\ntype TranslateRequest = {\n  operation: 'translate'\n  text: string\n  sourceLang: string\n  targetLang: string\n}\n\ntype ImproveRequest = {\n  operation: 'improve'\n  text: string\n  correctionsOnly: boolean\n  writingStyle: string\n  tone: string\n}\n\ntype ProcessingRequest = TranslateRequest | ImproveRequest\n\n// Constants\nconst MAX_INPUT_LENGTH = 10000 // 10KB limit\n\n// Common languages like Google Translate"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -14,8 +14,29 @@\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { useTextProcessing } from \"@/hooks/use-translation\"\n \n+// Types for request payload\n+type TranslateRequest = {\n+  operation: 'translate'\n+  text: string\n+  sourceLang: string\n+  targetLang: string\n+}\n+\n+type ImproveRequest = {\n+  operation: 'improve'\n+  text: string\n+  correctionsOnly: boolean\n+  writingStyle: string\n+  tone: string\n+}\n+\n+type ProcessingRequest = TranslateRequest | ImproveRequest\n+\n+// Constants\n+const MAX_INPUT_LENGTH = 10000 // 10KB limit\n+\n // Common languages like Google Translate\n const LANGUAGES = [\n   { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n   { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685446753,
+      "end": 1759685446758
+    }
+  }
+}

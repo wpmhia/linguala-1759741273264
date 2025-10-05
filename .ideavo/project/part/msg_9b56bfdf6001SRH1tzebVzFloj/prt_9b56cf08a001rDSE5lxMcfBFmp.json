@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b56cf08a001rDSE5lxMcfBFmp",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01JDCQ8eMwsBBxRA67qBzqiH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import { useState, useEffect } from \"react\"",
+      "newString": "import { useState, useEffect, useRef, useCallback } from \"react\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -1,7 +1,7 @@\n \"use client\"\n \n-import { useState, useEffect } from \"react\"\n+import { useState, useEffect, useRef, useCallback } from \"react\"\n import { Button } from \"@/components/ui/button\"\n import { Textarea } from \"@/components/ui/textarea\"\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n import { Switch } from \"@/components/ui/switch\"\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685440700,
+      "end": 1759685440707
+    }
+  }
+}

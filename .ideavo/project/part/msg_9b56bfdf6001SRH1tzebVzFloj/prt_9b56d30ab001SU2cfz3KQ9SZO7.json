@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b56d30ab001SU2cfz3KQ9SZO7",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me update the handleProcessing function with proper types and AbortController:",
+  "time": {
+    "start": 1759685456577,
+    "end": 1759685456577
+  }
+}

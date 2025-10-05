@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b56cdeae001IPux32CbzKr1wS",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me add AbortController support and proper types. Let me find the handleProcessing function:",
+  "time": {
+    "start": 1759685435961,
+    "end": 1759685435961
+  }
+}

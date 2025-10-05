@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b56d745b001QzvXKunZ8qQXTU",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01D8SoTpmUcqdytCwFivkgxd",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 240,
+      "limit": 30
+    },
+    "output": "<file>\n00241| \n00242|       <main className=\"max-w-screen-xl mx-auto px-6 py-8\">\n00243|         {/* Tab Navigation */}\n00244|         <Tabs value={activeTab} onValueChange={setActiveTab} className=\"w-full\">\n00245|           <TabsList className=\"grid w-full max-w-md grid-cols-2 mb-8\">\n00246|             <TabsTrigger value=\"translate\" className=\"flex items-center gap-2\">\n00247|               <Languages className=\"h-4 w-4\" />\n00248|               Translate text\n00249|               <div className=\"text-xs text-gray-500\">35 languages</div>\n00250|             </TabsTrigger>\n00251|             <TabsTrigger value=\"write\" className=\"flex items-center gap-2\">\n00252|               <FileText className=\"h-4 w-4\" />\n00253|               Write\n00254|               <div className=\"text-xs text-gray-500\">AI-powered edits</div>\n00255|             </TabsTrigger>\n00256|           </TabsList>\n00257| \n00258|           <TabsContent value=\"translate\" className=\"space-y-6\">\n00259|             {/* Language Selection Bar */}\n00260|             <div className=\"flex items-center justify-between bg-gray-50 rounded-lg p-4\">\n00261|               <Select value={sourceLang} onValueChange={setSourceLang}>\n00262|                 <SelectTrigger className=\"min-w-[160px] border-0 bg-transparent hover:bg-gray-100\">\n00263|                   <div className=\"flex items-center space-x-2\">\n00264|                     <span className=\"text-sm\">{getLanguage(sourceLang).flag}</span>\n00265|                     <span className=\"font-medium text-sm\">{getLanguage(sourceLang).name}</span>\n00266|                   </div>\n00267|                 </SelectTrigger>\n00268|                 <SelectContent>\n00269|                   {LANGUAGES.map(lang => (\n00270|                     <SelectItem key={lang.code} value={lang.code}>\n\n(File has more lines. Use 'offset' parameter to read beyond line 270)\n</file>",
+    "metadata": {
+      "preview": "\n      <main className=\"max-w-screen-xl mx-auto px-6 py-8\">\n        {/* Tab Navigation */}\n        <Tabs value={activeTab} onValueChange={setActiveTab} className=\"w-full\">\n          <TabsList className=\"grid w-full max-w-md grid-cols-2 mb-8\">\n            <TabsTrigger value=\"translate\" className=\"flex items-center gap-2\">\n              <Languages className=\"h-4 w-4\" />\n              Translate text\n              <div className=\"text-xs text-gray-500\">35 languages</div>\n            </TabsTrigger>\n            <TabsTrigger value=\"write\" className=\"flex items-center gap-2\">\n              <FileText className=\"h-4 w-4\" />\n              Write\n              <div className=\"text-xs text-gray-500\">AI-powered edits</div>\n            </TabsTrigger>\n          </TabsList>\n\n          <TabsContent value=\"translate\" className=\"space-y-6\">\n            {/* Language Selection Bar */}\n            <div className=\"flex items-center justify-between bg-gray-50 rounded-lg p-4\">"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685474064,
+      "end": 1759685474066
+    }
+  }
+}

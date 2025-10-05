@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b56c405e0017O81w39ZSwLVH3",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01UaBHCXUypCgDAJYnRawNrR",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "import { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, Loader2, Languages, FileText\n} from \"lucide-react\"",
+          "newString": "import ArrowUpDown from \"lucide-react/icons/arrow-up-down\"\nimport Copy from \"lucide-react/icons/copy\"\nimport Volume2 from \"lucide-react/icons/volume-2\"\nimport Star from \"lucide-react/icons/star\"\nimport MoreHorizontal from \"lucide-react/icons/more-horizontal\"\nimport Check from \"lucide-react/icons/check\"\nimport X from \"lucide-react/icons/x\"\nimport Mic from \"lucide-react/icons/mic\"\nimport Settings from \"lucide-react/icons/settings\"\nimport History from \"lucide-react/icons/history\"\nimport Loader2 from \"lucide-react/icons/loader-2\"\nimport Languages from \"lucide-react/icons/languages\"\nimport FileText from \"lucide-react/icons/file-text\""
+        }
+      ]
+    },
+    "error": "Error: You must read the file /home/user/project/components/linguala-translator.tsx before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759685397968,
+      "end": 1759685397970
+    }
+  }
+}

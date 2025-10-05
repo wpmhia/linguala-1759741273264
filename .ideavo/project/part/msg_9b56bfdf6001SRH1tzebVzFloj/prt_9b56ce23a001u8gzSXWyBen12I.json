@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b56ce23a001u8gzSXWyBen12I",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Vfz426c1phPeZG7SjrCE5Z",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 95,
+      "limit": 60
+    },
+    "output": "<file>\n00096|     if (text.trim()) {\n00097|       handleProcessing(text)\n00098|     } else {\n00099|       setResultText(\"\")\n00100|     }\n00101|   }\n00102| \n00103|   const handleProcessing = (text: string) => {\n00104|     const request: any = {\n00105|       text,\n00106|       operation: activeTab === 'translate' ? 'translate' : 'improve'\n00107|     }\n00108| \n00109|     // Only add language fields for translation\n00110|     if (activeTab === 'translate') {\n00111|       request.sourceLang = sourceLang\n00112|       request.targetLang = targetLang\n00113|     } else {\n00114|       // Add write mode settings\n00115|       request.correctionsOnly = correctionsOnly\n00116|       request.writingStyle = writingStyle\n00117|       request.tone = tone\n00118|     }\n00119| \n00120|     processing.mutate(request, {\n00121|       onSuccess: (data) => {\n00122|         // Handle different operation results\n00123|         if (data.operation === 'translate') {\n00124|           setResultText(data.translatedText || '')\n00125|         } else if (data.operation === 'improve') {\n00126|           setResultText(data.improvedText || '')\n00127|         } else {\n00128|           setResultText('')\n00129|         }\n00130|         \n00131|         if (data.fallback) {\n00132|           toast.info(\"Using fallback processing\")\n00133|         }\n00134|       },\n00135|       onError: (error) => {\n00136|         console.error('Processing error:', error)\n00137|         setResultText(\"Service temporarily unavailable. Please try again later.\")\n00138|         toast.error(\"Processing failed\")\n00139|       }\n00140|     })\n00141|   }\n00142| \n00143| \n00144| \n00145|   const swapLanguages = () => {\n00146|     if (sourceLang === \"auto\" || activeTab !== 'translate') return\n00147|     \n00148|     setSourceLang(targetLang)\n00149|     setTargetLang(sourceLang)\n00150|     setSourceText(resultText)\n00151|     setResultText(sourceText)\n00152|   }\n00153| \n00154|   const copyToClipboard = async (text: string) => {\n00155|     try {\n\n(File has more lines. Use 'offset' parameter to read beyond line 155)\n</file>",
+    "metadata": {
+      "preview": "    if (text.trim()) {\n      handleProcessing(text)\n    } else {\n      setResultText(\"\")\n    }\n  }\n\n  const handleProcessing = (text: string) => {\n    const request: any = {\n      text,\n      operation: activeTab === 'translate' ? 'translate' : 'improve'\n    }\n\n    // Only add language fields for translation\n    if (activeTab === 'translate') {\n      request.sourceLang = sourceLang\n      request.targetLang = targetLang\n    } else {\n      // Add write mode settings\n      request.correctionsOnly = correctionsOnly"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685437007,
+      "end": 1759685437009
+    }
+  }
+}

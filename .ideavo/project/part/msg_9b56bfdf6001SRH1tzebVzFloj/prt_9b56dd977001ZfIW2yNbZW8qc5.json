@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b56dd977001ZfIW2yNbZW8qc5",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01LrU9bh4cqxKeQM9QryXfK1",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "                    <Button\n                      variant=\"ghost\"\n                      size=\"sm\"\n                      className=\"p-2 hover:bg-gray-200 rounded-full\"\n                      disabled\n                    >\n                      <Mic className=\"h-4 w-4\" />\n                    </Button>",
+      "newString": "                    <Button\n                      variant=\"ghost\"\n                      size=\"sm\"\n                      className=\"p-2 hover:bg-gray-200 rounded-full\"\n                      disabled\n                      aria-label=\"Voice input (coming soon)\"\n                    >\n                      <Mic className=\"h-4 w-4\" />\n                    </Button>"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -397,8 +397,9 @@\n     variant=\"ghost\"\n     size=\"sm\"\n     className=\"p-2 hover:bg-gray-200 rounded-full\"\n     disabled\n+    aria-label=\"Voice input (coming soon)\"\n   >\n     <Mic className=\"h-4 w-4\" />\n   </Button>\n </div>\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685501244,
+      "end": 1759685501248
+    }
+  }
+}

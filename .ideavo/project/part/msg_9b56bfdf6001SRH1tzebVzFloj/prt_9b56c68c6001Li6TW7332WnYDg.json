@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b56c68c6001Li6TW7332WnYDg",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_015owNSrvwdjh257QqbivMjj",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "limit": 25
+    },
+    "output": "<file>\n00001| \"use client\"\n00002| \n00003| import { useState, useEffect } from \"react\"\n00004| import { Button } from \"@/components/ui/button\"\n00005| import { Textarea } from \"@/components/ui/textarea\"\n00006| import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n00007| import { Switch } from \"@/components/ui/switch\"\n00008| import { Label } from \"@/components/ui/label\"\n00009| import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n00010| import { \n00011|   ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n00012|   Check, X, Mic, Settings, History, Loader2, Languages, FileText\n00013| } from \"lucide-react\"\n00014| import { toast } from \"sonner\"\n00015| import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n00016| import { useTextProcessing } from \"@/hooks/use-translation\"\n00017| \n00018| // Common languages like Google Translate\n00019| const LANGUAGES = [\n00020|   { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n00021|   { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n00022|   { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n00023|   { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },\n00024|   { code: \"de\", name: \"German\", flag: \"🇩🇪\" },\n00025|   { code: \"it\", name: \"Italian\", flag: \"🇮🇹\" },\n\n(File has more lines. Use 'offset' parameter to read beyond line 25)\n</file>",
+    "metadata": {
+      "preview": "\"use client\"\n\nimport { useState, useEffect } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\nimport { Switch } from \"@/components/ui/switch\"\nimport { Label } from \"@/components/ui/label\"\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\nimport { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, Loader2, Languages, FileText\n} from \"lucide-react\"\nimport { toast } from \"sonner\"\nimport { LingualaLogo } from \"@/components/ui/linguala-logo\"\nimport { useTextProcessing } from \"@/hooks/use-translation\"\n\n// Common languages like Google Translate\nconst LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685405338,
+      "end": 1759685405345
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b56dbf21001jAADUUP9Cl7Jcy",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_018N8whnxDY1bjYKTKXCtGeJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 380,
+      "limit": 40
+    },
+    "output": "<file>\n00381|                   <div className=\"flex items-center space-x-2\">\n00382|                     {sourceText && (\n00383|                       <Button\n00384|                         variant=\"ghost\"\n00385|                         size=\"sm\"\n00386|                         onClick={clearText}\n00387|                         className=\"p-2 hover:bg-gray-200 rounded-full\"\n00388|                       >\n00389|                         <X className=\"h-4 w-4\" />\n00390|                       </Button>\n00391|                     )}\n00392|                   </div>\n00393|                   \n00394|                   <div className=\"flex items-center space-x-2\">\n00395|                     <Button\n00396|                       variant=\"ghost\"\n00397|                       size=\"sm\"\n00398|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00399|                       disabled\n00400|                     >\n00401|                       <Mic className=\"h-4 w-4\" />\n00402|                     </Button>\n00403|                   </div>\n00404|                 </div>\n00405|               </div>\n00406|             </div>\n00407| \n00408|             {/* Result Text */}\n00409|             <div className=\"relative\">\n00410|               {/* Editing Tools Sidebar */}\n00411|               {activeTab === 'write' && (\n00412|                 <div className=\"absolute top-0 right-0 w-64 h-full bg-gray-50 border-l border-gray-200 p-4\">\n00413|                   <div className=\"text-sm font-medium text-gray-700 mb-4\">Editing tools</div>\n00414|                   \n00415|                   <div className=\"space-y-4\">\n00416|                     <div className=\"flex items-center justify-between\">\n00417|                       <div className=\"flex items-center gap-2\">\n00418|                         <Check className=\"h-4 w-4 text-green-500\" />\n00419|                         <span className=\"text-sm\">Corrections only</span>\n00420|                       </div>\n\n(File has more lines. Use 'offset' parameter to read beyond line 420)\n</file>",
+    "metadata": {
+      "preview": "                  <div className=\"flex items-center space-x-2\">\n                    {sourceText && (\n                      <Button\n                        variant=\"ghost\"\n                        size=\"sm\"\n                        onClick={clearText}\n                        className=\"p-2 hover:bg-gray-200 rounded-full\"\n                      >\n                        <X className=\"h-4 w-4\" />\n                      </Button>\n                    )}\n                  </div>\n                  \n                  <div className=\"flex items-center space-x-2\">\n                    <Button\n                      variant=\"ghost\"\n                      size=\"sm\"\n                      className=\"p-2 hover:bg-gray-200 rounded-full\"\n                      disabled\n                    >"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685493166,
+      "end": 1759685493168
+    }
+  }
+}

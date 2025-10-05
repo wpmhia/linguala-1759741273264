@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b56c9fcb001954hRgSn0oI9Z0",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01GjJ8wJZpsPnhY1eftdpVZL",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "import ArrowUpDown from \"lucide-react/icons/arrow-up-down\"\nimport Copy from \"lucide-react/icons/copy\"\nimport Volume2 from \"lucide-react/icons/volume-2\"\nimport Star from \"lucide-react/icons/star\"\nimport MoreHorizontal from \"lucide-react/icons/more-horizontal\"\nimport Check from \"lucide-react/icons/check\"\nimport X from \"lucide-react/icons/x\"\nimport Mic from \"lucide-react/icons/mic\"\nimport Settings from \"lucide-react/icons/settings\"\nimport History from \"lucide-react/icons/history\"\nimport Loader2 from \"lucide-react/icons/loader-2\"\nimport Languages from \"lucide-react/icons/languages\"\nimport FileText from \"lucide-react/icons/file-text\"",
+      "newString": "import { \n  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n  Check, X, Mic, Settings, History, Loader2, Languages, FileText\n} from \"lucide-react\""
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -6,21 +6,12 @@\n import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from \"@/components/ui/select\"\n import { Switch } from \"@/components/ui/switch\"\n import { Label } from \"@/components/ui/label\"\n import { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\"\n-import ArrowUpDown from \"lucide-react/icons/arrow-up-down\"\n-import Copy from \"lucide-react/icons/copy\"\n-import Volume2 from \"lucide-react/icons/volume-2\"\n-import Star from \"lucide-react/icons/star\"\n-import MoreHorizontal from \"lucide-react/icons/more-horizontal\"\n-import Check from \"lucide-react/icons/check\"\n-import X from \"lucide-react/icons/x\"\n-import Mic from \"lucide-react/icons/mic\"\n-import Settings from \"lucide-react/icons/settings\"\n-import History from \"lucide-react/icons/history\"\n-import Loader2 from \"lucide-react/icons/loader-2\"\n-import Languages from \"lucide-react/icons/languages\"\n-import FileText from \"lucide-react/icons/file-text\"\n+import { \n+  ArrowUpDown, Copy, Volume2, Star, MoreHorizontal,\n+  Check, X, Mic, Settings, History, Loader2, Languages, FileText\n+} from \"lucide-react\"\n import { toast } from \"sonner\"\n import { LingualaLogo } from \"@/components/ui/linguala-logo\"\n import { useTextProcessing } from \"@/hooks/use-translation\"\n \n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685421642,
+      "end": 1759685421647
+    }
+  }
+}

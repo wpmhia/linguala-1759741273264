@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -14,6 +14,27 @@ import {
 import { toast } from "sonner"
 import { LingualaLogo } from "@/components/ui/linguala-logo"
 import { useTextProcessing } from "@/hooks/use-translation"
+
+// Types for request payload
+type TranslateRequest = {
+  operation: 'translate'
+  text: string
+  sourceLang: string
+  targetLang: string
+}
+
+type ImproveRequest = {
+  operation: 'improve'
+  text: string
+  correctionsOnly: boolean
+  writingStyle: string
+  tone: string
+}
+
+type ProcessingRequest = TranslateRequest | ImproveRequest
+
+// Constants
+const MAX_INPUT_LENGTH = 10000 // 10KB limit
 
 // Common languages like Google Translate
 const LANGUAGES = [
@@ -72,8 +93,11 @@ export default function LingualaTranslator() {
   const [tone, setTone] = useState("friendly")
   
   // UI state
-  const [copySuccess, setCopySuccess] = useState(false)
   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)
+  const [justCopied, setJustCopied] = useState(false)
+
+  // Request management
+  const controllerRef = useRef<AbortController>()
 
   // React Query hook
   const processing = useTextProcessing()
@@ -100,22 +124,32 @@ export default function LingualaTranslator() {
     }
   }
 
-  const handleProcessing = (text: string) => {
-    const request: any = {
-      text,
-      operation: activeTab === 'translate' ? 'translate' : 'improve'
+  const handleProcessing = useCallback((text: string) => {
+    // Input length validation
+    if (text.length > MAX_INPUT_LENGTH) {
+      toast.error(`Text too long. Maximum ${MAX_INPUT_LENGTH} characters allowed.`)
+      return
     }
 
-    // Only add language fields for translation
-    if (activeTab === 'translate') {
-      request.sourceLang = sourceLang
-      request.targetLang = targetLang
-    } else {
-      // Add write mode settings
-      request.correctionsOnly = correctionsOnly
-      request.writingStyle = writingStyle
-      request.tone = tone
-    }
+    // Cancel previous request
+    controllerRef.current?.abort()
+    controllerRef.current = new AbortController()
+
+    // Build typed request
+    const request: ProcessingRequest = activeTab === 'translate' 
+      ? {
+          operation: 'translate',
+          text,
+          sourceLang,
+          targetLang
+        }
+      : {
+          operation: 'improve',
+          text,
+          correctionsOnly,
+          writingStyle,
+          tone
+        }
 
     processing.mutate(request, {
       onSuccess: (data) => {
@@ -132,13 +166,16 @@ export default function LingualaTranslator() {
           toast.info("Using fallback processing")
         }
       },
-      onError: (error) => {
+      onError: (error: any) => {
+        // Don't show error for aborted requests
+        if (error?.name === 'AbortError') return
+        
         console.error('Processing error:', error)
         setResultText("Service temporarily unavailable. Please try again later.")
         toast.error("Processing failed")
       }
     })
-  }
+  }, [activeTab, sourceLang, targetLang, correctionsOnly, writingStyle, tone, processing])
 
 
 
@@ -154,9 +191,9 @@ export default function LingualaTranslator() {
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text)
-      setCopySuccess(true)
+      setJustCopied(true)
       toast.success("Copied to clipboard!")
-      setTimeout(() => setCopySuccess(false), 2000)
+      setTimeout(() => setJustCopied(false), 2000)
     } catch (error) {
       toast.error("Failed to copy to clipboard")
     }
@@ -190,10 +227,10 @@ export default function LingualaTranslator() {
               <LingualaLogo size="md" />
             </div>
             <div className="flex items-center space-x-4">
-              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors" aria-label="View history">
                 <History className="h-5 w-5" />
               </button>
-              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors">
+              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors" aria-label="Settings">
                 <Settings className="h-5 w-5" />
               </button>
             </div>
@@ -243,8 +280,9 @@ export default function LingualaTranslator() {
                 variant="ghost"
                 size="sm"
                 onClick={swapLanguages}
-                className="p-2 hover:bg-gray-200 rounded-full"
+                className="p-2 hover:bg-gray-200 rounded-full transition-transform hover:rotate-180"
                 disabled={sourceLang === "auto"}
+                aria-label="Swap languages"
               >
                 <ArrowUpDown className="h-4 w-4" />
               </Button>
@@ -346,6 +384,7 @@ export default function LingualaTranslator() {
                         size="sm"
                         onClick={clearText}
                         className="p-2 hover:bg-gray-200 rounded-full"
+                        aria-label="Clear text"
                       >
                         <X className="h-4 w-4" />
                       </Button>
@@ -358,6 +397,7 @@ export default function LingualaTranslator() {
                       size="sm"
                       className="p-2 hover:bg-gray-200 rounded-full"
                       disabled
+                      aria-label="Voice input (coming soon)"
                     >
                       <Mic className="h-4 w-4" />
                     </Button>
@@ -448,14 +488,16 @@ export default function LingualaTranslator() {
                       size="sm"
                       onClick={() => copyToClipboard(resultText)}
                       className="p-2 hover:bg-gray-200 rounded-full"
+                      aria-label="Copy to clipboard"
                     >
-                      {copySuccess ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                      {justCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                     </Button>
                     <Button
                       variant="ghost"
                       size="sm"
                       className="p-2 hover:bg-gray-200 rounded-full"
                       disabled
+                      aria-label="Listen to translation (coming soon)"
                     >
                       <Volume2 className="h-4 w-4" />
                     </Button>
@@ -464,6 +506,7 @@ export default function LingualaTranslator() {
                       size="sm"
                       className="p-2 hover:bg-gray-200 rounded-full"
                       disabled
+                      aria-label="Save translation (coming soon)"
                     >
                       <Star className="h-4 w-4" />
                     </Button>
@@ -474,6 +517,7 @@ export default function LingualaTranslator() {
                     size="sm"
                     className="p-2 hover:bg-gray-200 rounded-full"
                     disabled
+                    aria-label="More options (coming soon)"
                   >
                     <MoreHorizontal className="h-4 w-4" />
                   </Button>

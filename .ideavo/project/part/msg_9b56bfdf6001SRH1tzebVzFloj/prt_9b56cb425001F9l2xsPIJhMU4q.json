@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b56cb425001F9l2xsPIJhMU4q",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01BRsgGafGcxL9fTeKRWjXDY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 15,
+      "limit": 50
+    },
+    "output": "<file>\n00016| import { useTextProcessing } from \"@/hooks/use-translation\"\n00017| \n00018| // Common languages like Google Translate\n00019| const LANGUAGES = [\n00020|   { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n00021|   { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n00022|   { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n00023|   { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },\n00024|   { code: \"de\", name: \"German\", flag: \"🇩🇪\" },\n00025|   { code: \"it\", name: \"Italian\", flag: \"🇮🇹\" },\n00026|   { code: \"pt\", name: \"Portuguese\", flag: \"🇵🇹\" },\n00027|   { code: \"ru\", name: \"Russian\", flag: \"🇷🇺\" },\n00028|   { code: \"ja\", name: \"Japanese\", flag: \"🇯🇵\" },\n00029|   { code: \"ko\", name: \"Korean\", flag: \"🇰🇷\" },\n00030|   { code: \"zh\", name: \"Chinese\", flag: \"🇨🇳\" },\n00031|   { code: \"ar\", name: \"Arabic\", flag: \"🇸🇦\" },\n00032|   { code: \"hi\", name: \"Hindi\", flag: \"🇮🇳\" },\n00033|   { code: \"nl\", name: \"Dutch\", flag: \"🇳🇱\" },\n00034|   { code: \"sv\", name: \"Swedish\", flag: \"🇸🇪\" },\n00035|   { code: \"da\", name: \"Danish\", flag: \"🇩🇰\" },\n00036|   { code: \"no\", name: \"Norwegian\", flag: \"🇳🇴\" },\n00037|   { code: \"fi\", name: \"Finnish\", flag: \"🇫🇮\" },\n00038|   { code: \"pl\", name: \"Polish\", flag: \"🇵🇱\" },\n00039|   { code: \"cs\", name: \"Czech\", flag: \"🇨🇿\" },\n00040|   { code: \"hu\", name: \"Hungarian\", flag: \"🇭🇺\" },\n00041|   { code: \"tr\", name: \"Turkish\", flag: \"🇹🇷\" },\n00042|   { code: \"th\", name: \"Thai\", flag: \"🇹🇭\" },\n00043|   { code: \"vi\", name: \"Vietnamese\", flag: \"🇻🇳\" }\n00044| ]\n00045| \n00046| // Writing styles\n00047| const WRITING_STYLES = [\n00048|   { value: 'simple', label: 'Simple' },\n00049|   { value: 'business', label: 'Business' },\n00050|   { value: 'casual', label: 'Casual' },\n00051|   { value: 'academic', label: 'Academic' }\n00052| ]\n00053| \n00054| const TONES = [\n00055|   { value: 'enthusiastic', label: 'Enthusiastic' },\n00056|   { value: 'friendly', label: 'Friendly' },\n00057|   { value: 'confident', label: 'Confident' },\n00058|   { value: 'diplomatic', label: 'Diplomatic' }\n00059| ]\n00060| \n00061| export default function LingualaTranslator() {\n00062|   // Core processing state\n00063|   const [sourceText, setSourceText] = useState(\"\")\n00064|   const [resultText, setResultText] = useState(\"\")\n00065|   const [activeTab, setActiveTab] = useState(\"translate\")\n\n(File has more lines. Use 'offset' parameter to read beyond line 65)\n</file>",
+    "metadata": {
+      "preview": "import { useTextProcessing } from \"@/hooks/use-translation\"\n\n// Common languages like Google Translate\nconst LANGUAGES = [\n  { code: \"auto\", name: \"Detect language\", flag: \"🌐\" },\n  { code: \"en\", name: \"English\", flag: \"🇬🇧\" },\n  { code: \"es\", name: \"Spanish\", flag: \"🇪🇸\" },\n  { code: \"fr\", name: \"French\", flag: \"🇫🇷\" },\n  { code: \"de\", name: \"German\", flag: \"🇩🇪\" },\n  { code: \"it\", name: \"Italian\", flag: \"🇮🇹\" },\n  { code: \"pt\", name: \"Portuguese\", flag: \"🇵🇹\" },\n  { code: \"ru\", name: \"Russian\", flag: \"🇷🇺\" },\n  { code: \"ja\", name: \"Japanese\", flag: \"🇯🇵\" },\n  { code: \"ko\", name: \"Korean\", flag: \"🇰🇷\" },\n  { code: \"zh\", name: \"Chinese\", flag: \"🇨🇳\" },\n  { code: \"ar\", name: \"Arabic\", flag: \"🇸🇦\" },\n  { code: \"hi\", name: \"Hindi\", flag: \"🇮🇳\" },\n  { code: \"nl\", name: \"Dutch\", flag: \"🇳🇱\" },\n  { code: \"sv\", name: \"Swedish\", flag: \"🇸🇪\" },\n  { code: \"da\", name: \"Danish\", flag: \"🇩🇰\" },"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685424926,
+      "end": 1759685424929
+    }
+  }
+}

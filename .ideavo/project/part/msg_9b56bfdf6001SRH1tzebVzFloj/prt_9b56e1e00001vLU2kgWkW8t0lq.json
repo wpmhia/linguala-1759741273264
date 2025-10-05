@@ -1,0 +1,121 @@
+{
+  "id": "prt_9b56e1e00001vLU2kgWkW8t0lq",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01HmDL9rPpDWMoGqn1bsde7B",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Replace barrel Lucide imports with per-icon imports for tree-shaking",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Move static arrays outside component to prevent re-creation",
+          "status": "completed",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Add AbortController to debounce and cancel in-flight requests",
+          "status": "completed",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Replace any type with proper union types for type safety",
+          "status": "completed",
+          "priority": "medium",
+          "id": "4"
+        },
+        {
+          "content": "Add aria-labels to icon-only buttons for accessibility",
+          "status": "completed",
+          "priority": "medium",
+          "id": "5"
+        },
+        {
+          "content": "Add input length sanitization on client side",
+          "status": "completed",
+          "priority": "medium",
+          "id": "6"
+        },
+        {
+          "content": "Improve copy button UX with instant feedback",
+          "status": "completed",
+          "priority": "low",
+          "id": "7"
+        },
+        {
+          "content": "Add swap languages button rotation animation",
+          "status": "completed",
+          "priority": "low",
+          "id": "8"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Replace barrel Lucide imports with per-icon imports for tree-shaking\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Move static arrays outside component to prevent re-creation\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Add AbortController to debounce and cancel in-flight requests\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"3\"\n  },\n  {\n    \"content\": \"Replace any type with proper union types for type safety\",\n    \"status\": \"completed\",\n    \"priority\": \"medium\",\n    \"id\": \"4\"\n  },\n  {\n    \"content\": \"Add aria-labels to icon-only buttons for accessibility\",\n    \"status\": \"completed\",\n    \"priority\": \"medium\",\n    \"id\": \"5\"\n  },\n  {\n    \"content\": \"Add input length sanitization on client side\",\n    \"status\": \"completed\",\n    \"priority\": \"medium\",\n    \"id\": \"6\"\n  },\n  {\n    \"content\": \"Improve copy button UX with instant feedback\",\n    \"status\": \"completed\",\n    \"priority\": \"low\",\n    \"id\": \"7\"\n  },\n  {\n    \"content\": \"Add swap languages button rotation animation\",\n    \"status\": \"completed\",\n    \"priority\": \"low\",\n    \"id\": \"8\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Replace barrel Lucide imports with per-icon imports for tree-shaking",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Move static arrays outside component to prevent re-creation",
+          "status": "completed",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Add AbortController to debounce and cancel in-flight requests",
+          "status": "completed",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Replace any type with proper union types for type safety",
+          "status": "completed",
+          "priority": "medium",
+          "id": "4"
+        },
+        {
+          "content": "Add aria-labels to icon-only buttons for accessibility",
+          "status": "completed",
+          "priority": "medium",
+          "id": "5"
+        },
+        {
+          "content": "Add input length sanitization on client side",
+          "status": "completed",
+          "priority": "medium",
+          "id": "6"
+        },
+        {
+          "content": "Improve copy button UX with instant feedback",
+          "status": "completed",
+          "priority": "low",
+          "id": "7"
+        },
+        {
+          "content": "Add swap languages button rotation animation",
+          "status": "completed",
+          "priority": "low",
+          "id": "8"
+        }
+      ]
+    },
+    "title": "0 todos",
+    "time": {
+      "start": 1759685522800,
+      "end": 1759685522800
+    }
+  }
+}

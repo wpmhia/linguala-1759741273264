@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b56dea77001P94qRo1bIxI3fR",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01VyawMauzsmHeqLtLxTogEP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 480,
+      "limit": 40
+    },
+    "output": "<file>\n00481|               </div>\n00482| \n00483|               {/* Result Text Controls */}\n00484|               {resultText && !isLoading && (\n00485|                 <div className=\"absolute bottom-4 left-4 right-4 flex items-center justify-between\">\n00486|                   <div className=\"flex items-center space-x-2\">\n00487|                     <Button\n00488|                       variant=\"ghost\"\n00489|                       size=\"sm\"\n00490|                       onClick={() => copyToClipboard(resultText)}\n00491|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00492|                     >\n00493|                       {copySuccess ? <Check className=\"h-4 w-4\" /> : <Copy className=\"h-4 w-4\" />}\n00494|                     </Button>\n00495|                     <Button\n00496|                       variant=\"ghost\"\n00497|                       size=\"sm\"\n00498|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00499|                       disabled\n00500|                     >\n00501|                       <Volume2 className=\"h-4 w-4\" />\n00502|                     </Button>\n00503|                     <Button\n00504|                       variant=\"ghost\"\n00505|                       size=\"sm\"\n00506|                       className=\"p-2 hover:bg-gray-200 rounded-full\"\n00507|                       disabled\n00508|                     >\n00509|                       <Star className=\"h-4 w-4\" />\n00510|                     </Button>\n00511|                   </div>\n00512|                   \n00513|                   <Button\n00514|                     variant=\"ghost\"\n00515|                     size=\"sm\"\n00516|                     className=\"p-2 hover:bg-gray-200 rounded-full\"\n00517|                     disabled\n00518|                   >\n00519|                     <MoreHorizontal className=\"h-4 w-4\" />\n00520|                   </Button>\n\n(File has more lines. Use 'offset' parameter to read beyond line 520)\n</file>",
+    "metadata": {
+      "preview": "              </div>\n\n              {/* Result Text Controls */}\n              {resultText && !isLoading && (\n                <div className=\"absolute bottom-4 left-4 right-4 flex items-center justify-between\">\n                  <div className=\"flex items-center space-x-2\">\n                    <Button\n                      variant=\"ghost\"\n                      size=\"sm\"\n                      onClick={() => copyToClipboard(resultText)}\n                      className=\"p-2 hover:bg-gray-200 rounded-full\"\n                    >\n                      {copySuccess ? <Check className=\"h-4 w-4\" /> : <Copy className=\"h-4 w-4\" />}\n                    </Button>\n                    <Button\n                      variant=\"ghost\"\n                      size=\"sm\"\n                      className=\"p-2 hover:bg-gray-200 rounded-full\"\n                      disabled\n                    >"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685504361,
+      "end": 1759685504362
+    }
+  }
+}

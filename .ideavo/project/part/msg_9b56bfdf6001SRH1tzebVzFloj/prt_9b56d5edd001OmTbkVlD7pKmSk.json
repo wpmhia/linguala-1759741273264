@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b56d5edd001OmTbkVlD7pKmSk",
+  "messageID": "msg_9b56bfdf6001SRH1tzebVzFloj",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01GdRqFfY94TAGtc9anYmUUG",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "oldString": "  const copyToClipboard = async (text: string) => {\n    try {\n      await navigator.clipboard.writeText(text)\n      setCopySuccess(true)\n      toast.success(\"Copied to clipboard!\")\n      setTimeout(() => setCopySuccess(false), 2000)\n    } catch (error) {\n      toast.error(\"Failed to copy to clipboard\")\n    }\n  }",
+      "newString": "  const copyToClipboard = async (text: string) => {\n    try {\n      await navigator.clipboard.writeText(text)\n      setJustCopied(true)\n      toast.success(\"Copied to clipboard!\")\n      setTimeout(() => setJustCopied(false), 2000)\n    } catch (error) {\n      toast.error(\"Failed to copy to clipboard\")\n    }\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -191,11 +191,11 @@\n \n const copyToClipboard = async (text: string) => {\n   try {\n     await navigator.clipboard.writeText(text)\n-    setCopySuccess(true)\n+    setJustCopied(true)\n     toast.success(\"Copied to clipboard!\")\n-    setTimeout(() => setCopySuccess(false), 2000)\n+    setTimeout(() => setJustCopied(false), 2000)\n   } catch (error) {\n     toast.error(\"Failed to copy to clipboard\")\n   }\n }\n"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759685470282,
+      "end": 1759685470288
+    }
+  }
+}

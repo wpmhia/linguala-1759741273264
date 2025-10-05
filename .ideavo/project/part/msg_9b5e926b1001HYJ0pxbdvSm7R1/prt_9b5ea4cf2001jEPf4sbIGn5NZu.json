@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ea4cf2001jEPf4sbIGn5NZu",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_016Wc5UPWwuPKGDZdAR4NKc8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "        messages: [\n          {\n            role: 'user',\n            content: `Translate from ${sourceLang === 'auto' ? 'auto-detected language' : sourceLang} to ${targetLang}: ${text}`\n          }\n        ],\n        max_tokens: 500,",
+      "newString": "        messages: [\n          {\n            role: 'user',\n            content: `${sourceLang === 'auto' ? 'auto' : sourceLang}→${targetLang}:\\n${cleanText(text)}`\n          }\n        ],\n        max_tokens: getAdaptiveMaxTokens(text),"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -118,12 +118,12 @@\n     model: 'qwen-mt-turbo',\n     messages: [\n       {\n         role: 'user',\n-        content: `Translate from ${sourceLang === 'auto' ? 'auto-detected language' : sourceLang} to ${targetLang}: ${text}`\n+        content: `${sourceLang === 'auto' ? 'auto' : sourceLang}→${targetLang}:\\n${cleanText(text)}`\n       }\n     ],\n-    max_tokens: 500,\n+    max_tokens: getAdaptiveMaxTokens(text),\n     temperature: 0.1\n   }),\n   signal: controller.signal\n })\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759693657972,
+      "end": 1759693657978
+    }
+  }
+}

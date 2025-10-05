@@ -1,0 +1,21 @@
+{
+  "id": "prt_9b5e9fed4001Jp4e1nxyD348pG",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01MPTDfjFqgCabZef4pgrA1j",
+  "state": {
+    "status": "error",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "        messages: [\n          {\n            role: 'user',\n            content: `Translate from ${sourceLang === 'auto' ? 'auto-detected language' : sourceLang} to ${targetLang}: ${text}`\n          }\n        ],\n        max_tokens: 500,",
+      "newString": "        messages: [\n          {\n            role: 'user',\n            content: `${sourceLang === 'auto' ? 'auto' : sourceLang}→${targetLang}:\\n${cleanText(text)}`\n          }\n        ],\n        max_tokens: getAdaptiveMaxTokens(text),"
+    },
+    "error": "Error: You must read the file /home/user/project/lib/translation-service.ts before overwriting it. Use the Read tool first",
+    "time": {
+      "start": 1759693637824,
+      "end": 1759693637826
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5eaff91001s1nBKKsxEjLib2",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01KhJpVkrPG8cuNgjTLxxKth",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 100,
+      "limit": 40
+    },
+    "output": "<file>\n00101|           }\n00102|         ],\n00103|         max_tokens: 1000,\n00104|         temperature: options.correctionsOnly ? 0.1 : 0.3\n00105|       })\n00106|     })\n00107|     \n00108|     const response = await Promise.race([fetchPromise, timeoutPromise]) as Response\n00109|     \n00110|     if (!response.ok) {\n00111|       throw new Error(`API request failed: ${response.status}`)\n00112|     }\n00113| \n00114|     const data = await response.json()\n00115|     const improvedText = data.choices[0]?.message?.content?.trim()\n00116| \n00117|     if (improvedText && improvedText !== text) {\n00118|       return {\n00119|         originalText: text,\n00120|         improvedText,\n00121|         operation: 'improve'\n00122|       }\n00123|     } else {\n00124|       throw new Error('No improvement received')\n00125|     }\n00126|   } catch (error) {\n00127|     console.error('Improve writing error:', error)\n00128|     throw new Error('Text improvement service unavailable')\n00129|   }\n00130| }\n00131| \n00132| // Get word alternatives using qwen-flash\n00133| export async function getWordAlternatives(word: string, context: string, options: { mode?: string, sourceLang?: string, targetLang?: string } = {}): Promise<AlternativesResult> {\n00134|   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n00135|   console.log('Getting alternatives for word:', word)\n00136|   \n00137|   try {\n00138|     let systemPrompt = 'You are a professional writing assistant. '\n00139|     \n00140|     if (options.mode === 'translate') {\n\n(File has more lines. Use 'offset' parameter to read beyond line 140)\n</file>",
+    "metadata": {
+      "preview": "          }\n        ],\n        max_tokens: 1000,\n        temperature: options.correctionsOnly ? 0.1 : 0.3\n      })\n    })\n    \n    const response = await Promise.race([fetchPromise, timeoutPromise]) as Response\n    \n    if (!response.ok) {\n      throw new Error(`API request failed: ${response.status}`)\n    }\n\n    const data = await response.json()\n    const improvedText = data.choices[0]?.message?.content?.trim()\n\n    if (improvedText && improvedText !== text) {\n      return {\n        originalText: text,\n        improvedText,"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693701698,
+      "end": 1759693701702
+    }
+  }
+}

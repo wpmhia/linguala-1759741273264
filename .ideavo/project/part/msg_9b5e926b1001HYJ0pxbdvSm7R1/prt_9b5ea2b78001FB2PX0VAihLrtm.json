@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b5ea2b78001FB2PX0VAihLrtm",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01546Aa5jEVv5mPcBhCwGfrt",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "limit": 20
+    },
+    "output": "<file>\n00001| /**\n00002|  * Translation Service for Linguala Platform\n00003|  * \n00004|  * This service uses Alibaba Cloud DashScope's qwen-mt-turbo model for translation only.\n00005|  * Simple, clean implementation focused on language translation.\n00006|  * \n00007|  * REQUIRED ENVIRONMENT VARIABLE:\n00008|  * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)\n00009|  */\n00010| \n00011| // Language mapping for translation API - includes all frontend languages\n00012| const LANGUAGE_MAP: Record<string, string> = {\n00013|   auto: 'auto',\n00014|   \n00015|   // Popular EU Languages\n00016|   en: 'English',\n00017|   de: 'German', \n00018|   fr: 'French',\n00019|   es: 'Spanish',\n00020|   it: 'Italian',\n\n(File has more lines. Use 'offset' parameter to read beyond line 20)\n</file>",
+    "metadata": {
+      "preview": "/**\n * Translation Service for Linguala Platform\n * \n * This service uses Alibaba Cloud DashScope's qwen-mt-turbo model for translation only.\n * Simple, clean implementation focused on language translation.\n * \n * REQUIRED ENVIRONMENT VARIABLE:\n * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)\n */\n\n// Language mapping for translation API - includes all frontend languages\nconst LANGUAGE_MAP: Record<string, string> = {\n  auto: 'auto',\n  \n  // Popular EU Languages\n  en: 'English',\n  de: 'German', \n  fr: 'French',\n  es: 'Spanish',\n  it: 'Italian',"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759693646845,
+      "end": 1759693646849
+    }
+  }
+}

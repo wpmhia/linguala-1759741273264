@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5eac561001fuAGVH11aCXkND",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01PmKqfAVNZArunardZsQL4f",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 34,
+      "limit": 50
+    },
+    "output": "<file>\n00035| }\n00036| \n00037| export interface AlternativesResult {\n00038|   word: string\n00039|   alternatives: string[]\n00040|   operation: string\n00041|   fallback?: boolean\n00042| }\n00043| \n00044| export interface RephraseResult {\n00045|   originalText: string\n00046|   rephrasedText: string\n00047|   rephraseOptions: string[]\n00048|   operation: string\n00049|   fallback?: boolean\n00050| }\n00051| \n00052| // Text improvement function using qwen-flash\n00053| export async function improveText(text: string, options: { correctionsOnly?: boolean, writingStyle?: string, tone?: string } = {}): Promise<WritingResult> {\n00054|   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n00055|   console.log('Starting qwen-flash API call for text:', text.substring(0, 50))\n00056|   \n00057|   // Build dynamic system prompt based on options\n00058|   let systemPrompt = 'You are a professional writing assistant. '\n00059|   \n00060|   if (options.correctionsOnly) {\n00061|     systemPrompt += 'Focus ONLY on correcting grammar, spelling, and punctuation errors. Do not change the style, tone, or meaning of the text. '\n00062|   } else {\n00063|     systemPrompt += 'Improve the text for clarity, readability, and engagement while maintaining the original meaning. '\n00064|     \n00065|     // Add writing style guidance\n00066|     if (options.writingStyle) {\n00067|       switch (options.writingStyle) {\n00068|         case 'simple':\n00069|           systemPrompt += 'Use simple, clear language that is easy to understand. Avoid complex words and long sentences. '\n00070|           break\n00071|         case 'business':\n00072|           systemPrompt += 'Use professional, business-appropriate language. Be concise and direct. '\n00073|           break\n00074|         case 'casual':\n00075|           systemPrompt += 'Use a relaxed, conversational tone. Make it sound natural and friendly. '\n00076|           break\n00077|         case 'academic':\n00078|           systemPrompt += 'Use formal, academic language with precise terminology and structured arguments. '\n00079|           break\n00080|       }\n00081|     }\n00082|     \n00083|     // Add tone guidance\n00084|     if (options.tone) {\n\n(File has more lines. Use 'offset' parameter to read beyond line 84)\n</file>",
+    "metadata": {
+      "preview": "}\n\nexport interface AlternativesResult {\n  word: string\n  alternatives: string[]\n  operation: string\n  fallback?: boolean\n}\n\nexport interface RephraseResult {\n  originalText: string\n  rephrasedText: string\n  rephraseOptions: string[]\n  operation: string\n  fallback?: boolean\n}\n\n// Text improvement function using qwen-flash\nexport async function improveText(text: string, options: { correctionsOnly?: boolean, writingStyle?: string, tone?: string } = {}): Promise<WritingResult> {\n  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693686807,
+      "end": 1759693686808
+    }
+  }
+}

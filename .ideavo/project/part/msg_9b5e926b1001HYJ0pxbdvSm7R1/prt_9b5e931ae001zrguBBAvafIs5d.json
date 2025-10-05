@@ -1,0 +1,97 @@
+{
+  "id": "prt_9b5e931ae001zrguBBAvafIs5d",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01UJzjQVwEUzhT9GJgx4WUt7",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Collapse system + user messages into single prompt",
+          "status": "pending",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Drop pleasantries from prompts",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Use ISO-639-1 language codes instead of full names",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Implement adaptive maxTokens based on input length",
+          "status": "pending",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Strip HTML/markup before sending to API",
+          "status": "pending",
+          "priority": "medium",
+          "id": "5"
+        },
+        {
+          "content": "Test optimized implementation",
+          "status": "pending",
+          "priority": "high",
+          "id": "6"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Collapse system + user messages into single prompt\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Drop pleasantries from prompts\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Use ISO-639-1 language codes instead of full names\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"3\"\n  },\n  {\n    \"content\": \"Implement adaptive maxTokens based on input length\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"4\"\n  },\n  {\n    \"content\": \"Strip HTML/markup before sending to API\",\n    \"status\": \"pending\",\n    \"priority\": \"medium\",\n    \"id\": \"5\"\n  },\n  {\n    \"content\": \"Test optimized implementation\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"6\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Collapse system + user messages into single prompt",
+          "status": "pending",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Drop pleasantries from prompts",
+          "status": "pending",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Use ISO-639-1 language codes instead of full names",
+          "status": "pending",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Implement adaptive maxTokens based on input length",
+          "status": "pending",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Strip HTML/markup before sending to API",
+          "status": "pending",
+          "priority": "medium",
+          "id": "5"
+        },
+        {
+          "content": "Test optimized implementation",
+          "status": "pending",
+          "priority": "high",
+          "id": "6"
+        }
+      ]
+    },
+    "title": "6 todos",
+    "time": {
+      "start": 1759693586068,
+      "end": 1759693586069
+    }
+  }
+}

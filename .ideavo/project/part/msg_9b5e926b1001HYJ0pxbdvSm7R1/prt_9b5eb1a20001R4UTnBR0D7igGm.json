@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5eb1a20001R4UTnBR0D7igGm",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01GhjmK3eKYUCMtw4Ymo7R4n",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "    let systemPrompt = 'You are a professional writing assistant. '\n    \n    if (options.mode === 'translate') {\n      systemPrompt += `Provide 5 alternative translations or synonyms for the word \"${word}\" in the context: \"${context}\". `\n      if (options.targetLang) {\n        systemPrompt += `Focus on translations that work well in ${options.targetLang}. `\n      }\n    } else {\n      systemPrompt += `Provide 5 alternative words or synonyms for \"${word}\" in the context: \"${context}\". Focus on words that improve clarity, style, and readability. `\n    }\n    \n    systemPrompt += '\\n\\nIMPORTANT: Return ONLY a valid JSON array of 5 alternative words. Nothing else. Format: [\"word1\", \"word2\", \"word3\", \"word4\", \"word5\"]'",
+      "newString": "    // Clean context text\n    const cleanedContext = cleanText(context)\n    const maxTokens = Math.min(getAdaptiveMaxTokens(`${word} ${cleanedContext}`), 200)\n    \n    // Optimized prompt: direct instruction, no pleasantries\n    const prompt = options.mode === 'translate' \n      ? `5 translations for \"${word}\" in \"${cleanedContext}\":\\n[\"` \n      : `5 alternatives for \"${word}\" in \"${cleanedContext}\":\\n[\"`"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -130,21 +130,17 @@\n const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n console.log('Getting alternatives for word:', word)\n \n try {\n-  let systemPrompt = 'You are a professional writing assistant. '\n+  // Clean context text\n+  const cleanedContext = cleanText(context)\n+  const maxTokens = Math.min(getAdaptiveMaxTokens(`${word} ${cleanedContext}`), 200)\n   \n-  if (options.mode === 'translate') {\n-    systemPrompt += `Provide 5 alternative translations or synonyms for the word \"${word}\" in the context: \"${context}\". `\n-    if (options.targetLang) {\n-      systemPrompt += `Focus on translations that work well in ${options.targetLang}. `\n-    }\n-  } else {\n-    systemPrompt += `Provide 5 alternative words or synonyms for \"${word}\" in the context: \"${context}\". Focus on words that improve clarity, style, and readability. `\n-  }\n+  // Optimized prompt: direct instruction, no pleasantries\n+  const prompt = options.mode === 'translate' \n+    ? `5 translations for \"${word}\" in \"${cleanedContext}\":\\n[\"` \n+    : `5 alternatives for \"${word}\" in \"${cleanedContext}\":\\n[\"`\n   \n-  systemPrompt += '\\n\\nIMPORTANT: Return ONLY a valid JSON array of 5 alternative words. Nothing else. Format: [\"word1\", \"word2\", \"word3\", \"word4\", \"word5\"]'\n-  \n   const timeoutPromise = new Promise((_, reject) => {\n     setTimeout(() => {\n       console.log('🔥 TIMEOUT: word alternatives API call timed out after 3 seconds')\n       reject(new Error('API call timeout after 3 seconds'))\n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693714251,
+      "end": 1759693714258
+    }
+  }
+}

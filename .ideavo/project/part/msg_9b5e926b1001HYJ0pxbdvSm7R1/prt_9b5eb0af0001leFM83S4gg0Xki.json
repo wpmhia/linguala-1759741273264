@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5eb0af0001leFM83S4gg0Xki",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01Nopdft2wxHeHVuUTczD5TH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "        messages: [\n          {\n            role: 'system',\n            content: systemPrompt\n          },\n          {\n            role: 'user',\n            content: text\n          }\n        ],\n        max_tokens: 1000,",
+      "newString": "        messages: [\n          {\n            role: 'user',\n            content: prompt\n          }\n        ],\n        max_tokens: maxTokens,"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -91,17 +91,13 @@\n   body: JSON.stringify({\n     model: 'qwen-flash',\n     messages: [\n       {\n-        role: 'system',\n-        content: systemPrompt\n-      },\n-      {\n         role: 'user',\n-        content: text\n+        content: prompt\n       }\n     ],\n-    max_tokens: 1000,\n+    max_tokens: maxTokens,\n     temperature: options.correctionsOnly ? 0.1 : 0.3\n   })\n })\n \n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759693705517,
+      "end": 1759693705521
+    }
+  }
+}

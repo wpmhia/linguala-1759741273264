@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ea5ffb001S1dSpNMbAZr14p",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_016vqPh5HmDChTfzrm2DXCRp",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": "    // Map language codes to full names\n    const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n    const sourceLanguage = sourceLang && sourceLang !== 'auto' ? LANGUAGE_MAP[sourceLang] || sourceLang : 'auto'",
+      "newString": "    // Use ISO codes directly for optimization\n    const targetLanguage = targetLang\n    const sourceLanguage = sourceLang || 'auto'"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -169,11 +169,11 @@\n if (!text || !targetLang) {\n   throw new Error('Text and target language are required')\n }\n \n-// Map language codes to full names\n-const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n-const sourceLanguage = sourceLang && sourceLang !== 'auto' ? LANGUAGE_MAP[sourceLang] || sourceLang : 'auto'\n+// Use ISO codes directly for optimization\n+const targetLanguage = targetLang\n+const sourceLanguage = sourceLang || 'auto'\n \n // Try qwen-mt-turbo translation first\n try {\n   const result = await translateWithQwenMT(text, sourceLanguage, targetLanguage)\n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759693662294,
+      "end": 1759693662297
+    }
+  }
+}

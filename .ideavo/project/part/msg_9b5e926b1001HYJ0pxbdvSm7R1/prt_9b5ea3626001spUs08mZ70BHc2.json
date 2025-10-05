@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5ea3626001spUs08mZ70BHc2",
+  "messageID": "msg_9b5e926b1001HYJ0pxbdvSm7R1",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01PtTjKhNQhrEo5Awz86bieR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "oldString": " */\n\n// Language mapping for translation API - includes all frontend languages",
+      "newString": " */\n\n// Helper function to strip HTML/markup and normalize text\nfunction cleanText(text: string): string {\n  return text\n    .replace(/<[^>]+>/g, ' ')     // Remove HTML tags\n    .replace(/\\s+/g, ' ')         // Collapse whitespace\n    .trim()                       // Remove leading/trailing space\n}\n\n// Helper function to estimate token count (rough approximation: 1 token ≈ 4 chars)\nfunction estimateTokens(text: string): number {\n  return Math.ceil(text.length / 4)\n}\n\n// Helper function to calculate adaptive max tokens\nfunction getAdaptiveMaxTokens(inputText: string): number {\n  const inputTokens = estimateTokens(inputText)\n  return Math.ceil(inputTokens * 1.5) + 20\n}\n\n// Language mapping for translation API - includes all frontend languages"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/translation-service.ts\n===================================================================\n--- /home/user/project/lib/translation-service.ts\n+++ /home/user/project/lib/translation-service.ts\n@@ -7,8 +7,27 @@\n  * REQUIRED ENVIRONMENT VARIABLE:\n  * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)\n  */\n \n+// Helper function to strip HTML/markup and normalize text\n+function cleanText(text: string): string {\n+  return text\n+    .replace(/<[^>]+>/g, ' ')     // Remove HTML tags\n+    .replace(/\\s+/g, ' ')         // Collapse whitespace\n+    .trim()                       // Remove leading/trailing space\n+}\n+\n+// Helper function to estimate token count (rough approximation: 1 token ≈ 4 chars)\n+function estimateTokens(text: string): number {\n+  return Math.ceil(text.length / 4)\n+}\n+\n+// Helper function to calculate adaptive max tokens\n+function getAdaptiveMaxTokens(inputText: string): number {\n+  const inputTokens = estimateTokens(inputText)\n+  return Math.ceil(inputTokens * 1.5) + 20\n+}\n+\n // Language mapping for translation API - includes all frontend languages\n const LANGUAGE_MAP: Record<string, string> = {\n   auto: 'auto',\n   \n"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759693652022,
+      "end": 1759693652031
+    }
+  }
+}

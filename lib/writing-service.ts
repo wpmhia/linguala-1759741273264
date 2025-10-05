@@ -8,6 +8,25 @@
  * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)
  */
 
+// Helper function to strip HTML/markup and normalize text
+function cleanText(text: string): string {
+  return text
+    .replace(/<[^>]+>/g, ' ')     // Remove HTML tags
+    .replace(/\s+/g, ' ')         // Collapse whitespace
+    .trim()                       // Remove leading/trailing space
+}
+
+// Helper function to estimate token count (rough approximation: 1 token ≈ 4 chars)
+function estimateTokens(text: string): number {
+  return Math.ceil(text.length / 4)
+}
+
+// Helper function to calculate adaptive max tokens
+function getAdaptiveMaxTokens(inputText: string): number {
+  const inputTokens = estimateTokens(inputText)
+  return Math.ceil(inputTokens * 1.5) + 20
+}
+
 export interface WritingResult {
   originalText: string
   improvedText: string
@@ -35,52 +54,24 @@ export async function improveText(text: string, options: { correctionsOnly?: boo
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   console.log('Starting qwen-flash API call for text:', text.substring(0, 50))
   
-  // Build dynamic system prompt based on options
-  let systemPrompt = 'You are a professional writing assistant. '
+  // Clean text before processing
+  const cleanedText = cleanText(text)
+  const maxTokens = getAdaptiveMaxTokens(cleanedText)
   
-  if (options.correctionsOnly) {
-    systemPrompt += 'Focus ONLY on correcting grammar, spelling, and punctuation errors. Do not change the style, tone, or meaning of the text. '
-  } else {
-    systemPrompt += 'Improve the text for clarity, readability, and engagement while maintaining the original meaning. '
-    
-    // Add writing style guidance
-    if (options.writingStyle) {
-      switch (options.writingStyle) {
-        case 'simple':
-          systemPrompt += 'Use simple, clear language that is easy to understand. Avoid complex words and long sentences. '
-          break
-        case 'business':
-          systemPrompt += 'Use professional, business-appropriate language. Be concise and direct. '
-          break
-        case 'casual':
-          systemPrompt += 'Use a relaxed, conversational tone. Make it sound natural and friendly. '
-          break
-        case 'academic':
-          systemPrompt += 'Use formal, academic language with precise terminology and structured arguments. '
-          break
-      }
-    }
-    
-    // Add tone guidance
-    if (options.tone) {
-      switch (options.tone) {
-        case 'friendly':
-          systemPrompt += 'Maintain a warm and approachable tone. '
-          break
-        case 'professional':
-          systemPrompt += 'Keep a professional and authoritative tone. '
-          break
-        case 'enthusiastic':
-          systemPrompt += 'Add energy and enthusiasm to the text. '
-          break
-        case 'diplomatic':
-          systemPrompt += 'Use diplomatic and tactful language. '
-          break
-      }
-    }
+  // Optimized prompt: collapsed into single message, minimal instructions
+  let prompt = options.correctionsOnly ? 'Fix:\n' : 'Improve:\n'
+  
+  // Add style/tone modifiers if specified
+  if (options.writingStyle) {
+    const styleMap = { simple: 'simple', business: 'business', casual: 'casual', academic: 'formal' }
+    prompt += `(${styleMap[options.writingStyle] || options.writingStyle}) `
   }
   
-  systemPrompt += '\n\nIMPORTANT: Return ONLY the improved version of the input text. Do NOT add explanations, suggestions, greetings, or any additional content. Do NOT answer questions in the text. Simply return the corrected/improved text as-is.'
+  if (options.tone) {
+    prompt += `(${options.tone}) `
+  }
+  
+  prompt += cleanedText
   
   // Add aggressive timeout wrapper
   const timeoutPromise = new Promise((_, reject) => {
@@ -101,15 +92,11 @@ export async function improveText(text: string, options: { correctionsOnly?: boo
         model: 'qwen-flash',
         messages: [
           {
-            role: 'system',
-            content: systemPrompt
-          },
-          {
             role: 'user',
-            content: text
+            content: prompt
           }
         ],
-        max_tokens: 1000,
+        max_tokens: maxTokens,
         temperature: options.correctionsOnly ? 0.1 : 0.3
       })
     })
@@ -144,18 +131,14 @@ export async function getWordAlternatives(word: string, context: string, options
   console.log('Getting alternatives for word:', word)
   
   try {
-    let systemPrompt = 'You are a professional writing assistant. '
+    // Clean context text
+    const cleanedContext = cleanText(context)
+    const maxTokens = Math.min(getAdaptiveMaxTokens(`${word} ${cleanedContext}`), 200)
     
-    if (options.mode === 'translate') {
-      systemPrompt += `Provide 5 alternative translations or synonyms for the word "${word}" in the context: "${context}". `
-      if (options.targetLang) {
-        systemPrompt += `Focus on translations that work well in ${options.targetLang}. `
-      }
-    } else {
-      systemPrompt += `Provide 5 alternative words or synonyms for "${word}" in the context: "${context}". Focus on words that improve clarity, style, and readability. `
-    }
-    
-    systemPrompt += '\n\nIMPORTANT: Return ONLY a valid JSON array of 5 alternative words. Nothing else. Format: ["word1", "word2", "word3", "word4", "word5"]'
+    // Optimized prompt: direct instruction, no pleasantries
+    const prompt = options.mode === 'translate' 
+      ? `5 translations for "${word}" in "${cleanedContext}":\n["` 
+      : `5 alternatives for "${word}" in "${cleanedContext}":\n["`
     
     const timeoutPromise = new Promise((_, reject) => {
       setTimeout(() => {
@@ -174,15 +157,11 @@ export async function getWordAlternatives(word: string, context: string, options
         model: 'qwen-flash',
         messages: [
           {
-            role: 'system',
-            content: systemPrompt
-          },
-          {
             role: 'user',
-            content: `Word: "${word}"\nContext: "${context}"`
+            content: prompt
           }
         ],
-        max_tokens: 200,
+        max_tokens: maxTokens,
         temperature: 0.7
       })
     })
@@ -221,6 +200,9 @@ export async function getWordAlternatives(word: string, context: string, options
 export async function rephraseText(text: string): Promise<RephraseResult> {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
+  const cleanedText = cleanText(text)
+  const maxTokens = getAdaptiveMaxTokens(cleanedText)
+  
   try {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => {
@@ -238,14 +220,11 @@ export async function rephraseText(text: string): Promise<RephraseResult> {
         model: 'qwen-flash',
         messages: [
           {
-            role: 'system',
-            content: 'You are a professional writing assistant. Provide 3 different ways to rephrase the given text using different words and sentence structures while keeping the same meaning.\n\nIMPORTANT: Return ONLY a valid JSON array of 3 rephrased options. Nothing else. Format: ["option1", "option2", "option3"]'
-          },
-          {
             role: 'user',
-            content: text
+            content: `3 rephrase options:\n${cleanedText}\n["`
           }
-        ]
+        ],
+        max_tokens: maxTokens
       }),
       signal: controller.signal
     })

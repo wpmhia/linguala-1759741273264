@@ -8,6 +8,25 @@
  * - DASHSCOPE_API_KEY: Alibaba Cloud API key (format: sk-xxxxxxxxxxxxxxxxx)
  */
 
+// Helper function to strip HTML/markup and normalize text
+function cleanText(text: string): string {
+  return text
+    .replace(/<[^>]+>/g, ' ')     // Remove HTML tags
+    .replace(/\s+/g, ' ')         // Collapse whitespace
+    .trim()                       // Remove leading/trailing space
+}
+
+// Helper function to estimate token count (rough approximation: 1 token ≈ 4 chars)
+function estimateTokens(text: string): number {
+  return Math.ceil(text.length / 4)
+}
+
+// Helper function to calculate adaptive max tokens
+function getAdaptiveMaxTokens(inputText: string): number {
+  const inputTokens = estimateTokens(inputText)
+  return Math.ceil(inputTokens * 1.5) + 20
+}
+
 // Language mapping for translation API - includes all frontend languages
 const LANGUAGE_MAP: Record<string, string> = {
   auto: 'auto',
@@ -100,10 +119,10 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
         messages: [
           {
             role: 'user',
-            content: `Translate from ${sourceLang === 'auto' ? 'auto-detected language' : sourceLang} to ${targetLang}: ${text}`
+            content: `${sourceLang === 'auto' ? 'auto' : sourceLang}→${targetLang}:\n${cleanText(text)}`
           }
         ],
-        max_tokens: 500,
+        max_tokens: getAdaptiveMaxTokens(text),
         temperature: 0.1
       }),
       signal: controller.signal
@@ -151,9 +170,9 @@ export async function translateText(
       throw new Error('Text and target language are required')
     }
 
-    // Map language codes to full names
-    const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang
-    const sourceLanguage = sourceLang && sourceLang !== 'auto' ? LANGUAGE_MAP[sourceLang] || sourceLang : 'auto'
+    // Use ISO codes directly for optimization
+    const targetLanguage = targetLang
+    const sourceLanguage = sourceLang || 'auto'
     
     // Try qwen-mt-turbo translation first
     try {

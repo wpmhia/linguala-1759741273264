@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5980881001h3aWGxa82ccGNg",
+  "messageID": "msg_9b5980036001dJVj9HT4XzTpHV",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Yes, exactly! The settings are **automatically saved to your browser's localStorage** and will persist every time you visit the website from the same device and browser.\n\nHere's how it works:\n\n## 🔄 **Automatic Persistence**\n- **All settings are saved instantly** when you change them (no \"Save\" button needed)\n- **Automatically loaded** when you return to the website\n- **Stored locally** in your browser's localStorage\n\n## 📱 **Device & Browser Specific**\n- Settings are **tied to each browser on each device**\n- Chrome on your laptop = separate settings from Safari on your phone\n- Different user profiles in the same browser = separate settings\n\n## 💾 **What Gets Remembered**\n- Theme preferences (light/dark/system)\n- Font size and display options\n- Default translation languages\n- Writing assistant preferences\n- Notification settings\n- All performance and privacy configurations\n\n## 🔄 **Backup & Sync Options**\nSince localStorage is device-specific, the settings modal includes:\n- **Export Settings**: Download your preferences as a JSON file\n- **Import Settings**: Upload settings file to sync across devices\n- **Reset to Defaults**: Start fresh if needed\n\n## ⚠️ **Important Notes**\n- Settings persist **unless you clear browser data** or use incognito/private mode\n- **No account required** - everything stays on your device\n- **Privacy-focused** - your preferences never leave your browser\n\nSo yes, once you customize your translation experience, it'll be exactly the same every time you return to the website on that device! 🎯",
+  "time": {
+    "start": 1759688271703,
+    "end": 1759688271703
+  }
+}

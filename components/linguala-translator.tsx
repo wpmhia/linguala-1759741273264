@@ -591,6 +591,17 @@ export default function LingualaTranslator() {
         open={isSettingsOpen} 
         onOpenChange={setIsSettingsOpen} 
       />
+
+      {/* Footer */}
+      <footer className="relative z-10 mt-16 pb-8">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <div className="text-center">
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
+              Made with ❤️ in Europe
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

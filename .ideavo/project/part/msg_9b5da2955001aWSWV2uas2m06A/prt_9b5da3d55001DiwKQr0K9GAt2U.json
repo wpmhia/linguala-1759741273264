@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5da3d55001DiwKQr0K9GAt2U",
+  "messageID": "msg_9b5da2955001aWSWV2uas2m06A",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01HWuP7B3zssjKE6WzQQoeFJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 580,
+      "limit": 20
+    },
+    "output": "<file>\n00581|                   </Button>\n00582|                 </div>\n00583|               )}\n00584|             </div>\n00585|           </div>\n00586|         </Tabs>\n00587|       </main>\n00588| \n00589|       {/* Settings Modal */}\n00590|       <SettingsModal \n00591|         open={isSettingsOpen} \n00592|         onOpenChange={setIsSettingsOpen} \n00593|       />\n00594|     </div>\n00595|   )\n00596| }\n</file>",
+    "metadata": {
+      "preview": "                  </Button>\n                </div>\n              )}\n            </div>\n          </div>\n        </Tabs>\n      </main>\n\n      {/* Settings Modal */}\n      <SettingsModal \n        open={isSettingsOpen} \n        onOpenChange={setIsSettingsOpen} \n      />\n    </div>\n  )\n}"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759692603717,
+      "end": 1759692603721
+    }
+  }
+}

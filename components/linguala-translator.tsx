@@ -157,6 +157,7 @@ export default function LingualaTranslator() {
   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)
   const [justCopied, setJustCopied] = useState(false)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false)
 
   // Request management
   const controllerRef = useRef<AbortController>()
@@ -296,7 +297,11 @@ export default function LingualaTranslator() {
               <button className="p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/50 rounded-full transition-all duration-300 hover:scale-110" aria-label="View history">
                 <History className="h-5 w-5" />
               </button>
-              <button className="p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110" aria-label="Settings">
+              <button 
+                onClick={() => setIsSettingsOpen(true)}
+                className="p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110" 
+                aria-label="Settings"
+              >
                 <Settings className="h-5 w-5" />
               </button>
               <ThemeToggle />
@@ -520,6 +525,12 @@ export default function LingualaTranslator() {
           </div>
         </Tabs>
       </main>
+
+      {/* Settings Modal */}
+      <SettingsModal 
+        open={isSettingsOpen} 
+        onOpenChange={setIsSettingsOpen} 
+      />
     </div>
   )
 }

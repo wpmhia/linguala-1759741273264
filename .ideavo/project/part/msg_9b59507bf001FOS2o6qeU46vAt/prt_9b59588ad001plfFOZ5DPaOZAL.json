@@ -1,0 +1,50 @@
+{
+  "id": "prt_9b59588ad001plfFOZ5DPaOZAL",
+  "messageID": "msg_9b59507bf001FOS2o6qeU46vAt",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01FicvAdWcAaZwFJappZy1wy",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "  // UI state\n  const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n  const [justCopied, setJustCopied] = useState(false)\n  const [isDrawerOpen, setIsDrawerOpen] = useState(false)",
+          "newString": "  // UI state\n  const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n  const [justCopied, setJustCopied] = useState(false)\n  const [isDrawerOpen, setIsDrawerOpen] = useState(false)\n  const [isSettingsOpen, setIsSettingsOpen] = useState(false)"
+        },
+        {
+          "oldString": "              <button className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110\" aria-label=\"Settings\">\n                <Settings className=\"h-5 w-5\" />\n              </button>",
+          "newString": "              <button \n                onClick={() => setIsSettingsOpen(true)}\n                className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110\" \n                aria-label=\"Settings\"\n              >\n                <Settings className=\"h-5 w-5\" />\n              </button>"
+        },
+        {
+          "oldString": "          </div>\n        </Tabs>\n      </main>\n    </div>\n  )\n}",
+          "newString": "          </div>\n        </Tabs>\n      </main>\n\n      {/* Settings Modal */}\n      <SettingsModal \n        open={isSettingsOpen} \n        onOpenChange={setIsSettingsOpen} \n      />\n    </div>\n  )\n}"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -156,8 +156,9 @@\n // UI state\n const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)\n const [justCopied, setJustCopied] = useState(false)\n const [isDrawerOpen, setIsDrawerOpen] = useState(false)\n+const [isSettingsOpen, setIsSettingsOpen] = useState(false)\n \n // Request management\n const controllerRef = useRef<AbortController>()\n \n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -296,9 +296,13 @@\n <div className=\"flex items-center space-x-2\">\n   <button className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/50 rounded-full transition-all duration-300 hover:scale-110\" aria-label=\"View history\">\n     <History className=\"h-5 w-5\" />\n   </button>\n-  <button className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110\" aria-label=\"Settings\">\n+  <button \n+    onClick={() => setIsSettingsOpen(true)}\n+    className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110\" \n+    aria-label=\"Settings\"\n+  >\n     <Settings className=\"h-5 w-5\" />\n   </button>\n   <ThemeToggle />\n </div>\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -524,7 +524,13 @@\n             </div>\n           </div>\n         </Tabs>\n       </main>\n+\n+      {/* Settings Modal */}\n+      <SettingsModal \n+        open={isSettingsOpen} \n+        onOpenChange={setIsSettingsOpen} \n+      />\n     </div>\n   )\n }\n\\ No newline at end of file\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759688107079,
+      "end": 1759688107094
+    }
+  }
+}

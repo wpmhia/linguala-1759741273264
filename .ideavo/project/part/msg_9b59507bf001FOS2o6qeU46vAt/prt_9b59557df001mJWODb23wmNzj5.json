@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b59557df001mJWODb23wmNzj5",
+  "messageID": "msg_9b59507bf001FOS2o6qeU46vAt",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01NMr1aKexGpRosqD9KeXQsZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 288,
+      "limit": 20
+    },
+    "output": "<file>\n00289|       <header className=\"relative z-10 linguala-blur-bg border-b border-white/20 dark:border-white/10\">\n00290|         <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n00291|           <div className=\"flex items-center justify-between\">\n00292|             <div className=\"flex items-center space-x-8\">\n00293|               <LingualaLogo size=\"md\" />\n00294|             </div>\n00295|             <div className=\"flex items-center space-x-2\">\n00296|               <button className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/50 rounded-full transition-all duration-300 hover:scale-110\" aria-label=\"View history\">\n00297|                 <History className=\"h-5 w-5\" />\n00298|               </button>\n00299|               <button className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110\" aria-label=\"Settings\">\n00300|                 <Settings className=\"h-5 w-5\" />\n00301|               </button>\n00302|               <ThemeToggle />\n00303|             </div>\n00304|           </div>\n00305|         </div>\n00306|       </header>\n00307| \n00308|       <main className=\"relative z-10 max-w-screen-xl mx-auto px-6 py-8\">\n\n(File has more lines. Use 'offset' parameter to read beyond line 308)\n</file>",
+    "metadata": {
+      "preview": "      <header className=\"relative z-10 linguala-blur-bg border-b border-white/20 dark:border-white/10\">\n        <div className=\"max-w-screen-xl mx-auto px-6 py-4\">\n          <div className=\"flex items-center justify-between\">\n            <div className=\"flex items-center space-x-8\">\n              <LingualaLogo size=\"md\" />\n            </div>\n            <div className=\"flex items-center space-x-2\">\n              <button className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/50 rounded-full transition-all duration-300 hover:scale-110\" aria-label=\"View history\">\n                <History className=\"h-5 w-5\" />\n              </button>\n              <button className=\"p-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/50 rounded-full transition-all duration-300 hover:scale-110\" aria-label=\"Settings\">\n                <Settings className=\"h-5 w-5\" />\n              </button>\n              <ThemeToggle />\n            </div>\n          </div>\n        </div>\n      </header>\n\n      <main className=\"relative z-10 max-w-screen-xl mx-auto px-6 py-8\">"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759688088548,
+      "end": 1759688088550
+    }
+  }
+}

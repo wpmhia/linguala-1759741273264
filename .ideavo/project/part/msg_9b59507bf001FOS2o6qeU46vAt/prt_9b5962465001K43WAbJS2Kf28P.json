@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5962465001K43WAbJS2Kf28P",
+  "messageID": "msg_9b59507bf001FOS2o6qeU46vAt",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01GRoJMKNmmnShzwH9boSPNu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/providers/settings-provider.tsx",
+      "oldString": "  const clearAllData = () => {\n    // Clear settings\n    resetSettings()\n    \n    // Clear other localStorage data (translation history, etc.)\n    const keysToRemove = []\n    for (let i = 0; i < localStorage.length; i++) {\n      const key = localStorage.key(i)\n      if (key && key.startsWith('linguala-')) {\n        keysToRemove.push(key)\n      }\n    }\n    keysToRemove.forEach(key => localStorage.removeItem(key))\n  }",
+      "newString": "  const clearAllData = () => {\n    // Clear settings\n    resetSettings()\n    \n    // Clear other localStorage data (translation history, etc.)\n    const keysToRemove: string[] = []\n    for (let i = 0; i < localStorage.length; i++) {\n      const key = localStorage.key(i)\n      if (key && key.startsWith('linguala-')) {\n        keysToRemove.push(key)\n      }\n    }\n    keysToRemove.forEach(key => localStorage.removeItem(key))\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/components/providers/settings-provider.tsx\n===================================================================\n--- /home/user/project/components/providers/settings-provider.tsx\n+++ /home/user/project/components/providers/settings-provider.tsx\n@@ -138,9 +138,9 @@\n // Clear settings\n resetSettings()\n \n // Clear other localStorage data (translation history, etc.)\n-const keysToRemove = []\n+const keysToRemove: string[] = []\n for (let i = 0; i < localStorage.length; i++) {\n   const key = localStorage.key(i)\n   if (key && key.startsWith('linguala-')) {\n     keysToRemove.push(key)\n"
+    },
+    "title": "components/providers/settings-provider.tsx",
+    "time": {
+      "start": 1759688143271,
+      "end": 1759688143275
+    }
+  }
+}

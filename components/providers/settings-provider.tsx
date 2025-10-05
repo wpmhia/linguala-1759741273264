@@ -139,7 +139,7 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
     resetSettings()
     
     // Clear other localStorage data (translation history, etc.)
-    const keysToRemove = []
+    const keysToRemove: string[] = []
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i)
       if (key && key.startsWith('linguala-')) {

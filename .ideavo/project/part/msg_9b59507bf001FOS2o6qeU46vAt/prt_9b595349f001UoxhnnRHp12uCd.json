@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b595349f001UoxhnnRHp12uCd",
+  "messageID": "msg_9b59507bf001FOS2o6qeU46vAt",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01TrXWzbt6aKhiZ8DnERMkm7",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "Settings.*button",
+      "include": "*.tsx,*.ts"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "Settings.*button",
+    "time": {
+      "start": 1759688078940,
+      "end": 1759688078949
+    }
+  }
+}

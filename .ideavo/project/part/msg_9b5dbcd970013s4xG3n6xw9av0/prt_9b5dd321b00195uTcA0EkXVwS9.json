@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5dd321b00195uTcA0EkXVwS9",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_012JYsE4dp6MszEDT67Gugzd",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n \"function getFallbackRephrase\" /home/user/project/components/interactive-text.tsx",
+      "description": "Find getFallbackRephrase function"
+    },
+    "output": "295:function getFallbackRephrase(sentence: string): string {\n",
+    "metadata": {
+      "output": "295:function getFallbackRephrase(sentence: string): string {\n",
+      "exit": 0,
+      "description": "Find getFallbackRephrase function"
+    },
+    "title": "grep -n \"function getFallbackRephrase\" /home/user/project/components/interactive-text.tsx",
+    "time": {
+      "start": 1759692797137,
+      "end": 1759692797144
+    }
+  }
+}

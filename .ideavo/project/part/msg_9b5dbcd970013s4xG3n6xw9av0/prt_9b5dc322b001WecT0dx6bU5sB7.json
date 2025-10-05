@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5dc322b001WecT0dx6bU5sB7",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01HSprrTD1eHKqPFUgYM23Dv",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n -A 15 \"Get alternatives error\" /home/user/project/lib/writing-service.ts",
+      "description": "Find getWordAlternatives error handling"
+    },
+    "output": "209:    console.error('Get alternatives error:', error)\n210-    \n211-    // Enhanced fallback alternatives\n212-    const fallbackAlternatives = getFallbackAlternatives(word)\n213-    \n214-    return {\n215-      word,\n216-      alternatives: fallbackAlternatives,\n217-      operation: 'alternatives',\n218-      fallback: true\n219-    }\n220-  }\n221-}\n222-\n223-// Rephrase text using qwen-flash\n224-export async function rephraseText(text: string): Promise<RephraseResult> {\n",
+    "metadata": {
+      "output": "209:    console.error('Get alternatives error:', error)\n210-    \n211-    // Enhanced fallback alternatives\n212-    const fallbackAlternatives = getFallbackAlternatives(word)\n213-    \n214-    return {\n215-      word,\n216-      alternatives: fallbackAlternatives,\n217-      operation: 'alternatives',\n218-      fallback: true\n219-    }\n220-  }\n221-}\n222-\n223-// Rephrase text using qwen-flash\n224-export async function rephraseText(text: string): Promise<RephraseResult> {\n",
+      "exit": 0,
+      "description": "Find getWordAlternatives error handling"
+    },
+    "title": "grep -n -A 15 \"Get alternatives error\" /home/user/project/lib/writing-service.ts",
+    "time": {
+      "start": 1759692731756,
+      "end": 1759692731779
+    }
+  }
+}

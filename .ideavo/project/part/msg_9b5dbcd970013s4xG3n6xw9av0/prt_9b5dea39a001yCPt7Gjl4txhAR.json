@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5dea39a001yCPt7Gjl4txhAR",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Even translation is hanging now. This suggests that there might be an issue with the DashScope API service or the API key. Let me check if we can at least get a proper error response by adding better error handling. The current implementation throws errors when AI fails, but the API route should catch those and return proper HTTP responses.\n\nLet me update the API route to handle AI service failures gracefully:",
+  "time": {
+    "start": 1759692893699,
+    "end": 1759692893699
+  }
+}

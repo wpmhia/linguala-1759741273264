@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5de6dc5001d8AUTuCVYM5ed7",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Let me test the translation API to see if it works (since it was working before):",
+  "time": {
+    "start": 1759692877849,
+    "end": 1759692877849
+  }
+}

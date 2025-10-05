@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5dd24160019LKhvS2YWpMt2C",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01RNrKKsHqC8QQQfEuCMqWjo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n -A 20 \"function getFallbackAlternatives\" /home/user/project/components/interactive-text.tsx",
+      "description": "Find fallback functions in component"
+    },
+    "output": "261:function getFallbackAlternatives(word: string, mode: 'translate' | 'write'): string[] {\n262-  const alternatives: Record<string, string[]> = {\n263-    // Common words\n264-    'good': ['great', 'excellent', 'nice', 'fine', 'wonderful'],\n265-    'bad': ['poor', 'terrible', 'awful', 'horrible', 'unpleasant'],\n266-    'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],\n267-    'small': ['tiny', 'little', 'minor', 'compact', 'miniature'],\n268-    'fast': ['quick', 'rapid', 'swift', 'speedy', 'hasty'],\n269-    'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried'],\n270-    'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],\n271-    'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'pretty'],\n272-    'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'content'],\n273-    'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],\n274-    'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally'],\n275-    'really': ['truly', 'genuinely', 'actually', 'indeed'],\n276-    'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],\n277-    'went': ['traveled', 'proceeded', 'headed', 'journeyed'],\n278-    'got': ['obtained', 'acquired', 'received', 'gained'],\n279-    'make': ['create', 'produce', 'generate', 'build', 'construct'],\n280-    'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],\n281-    'know': ['understand', 'realize', 'recognize', 'comprehend'],\n",
+    "metadata": {
+      "output": "261:function getFallbackAlternatives(word: string, mode: 'translate' | 'write'): string[] {\n262-  const alternatives: Record<string, string[]> = {\n263-    // Common words\n264-    'good': ['great', 'excellent', 'nice', 'fine', 'wonderful'],\n265-    'bad': ['poor', 'terrible', 'awful', 'horrible', 'unpleasant'],\n266-    'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],\n267-    'small': ['tiny', 'little', 'minor', 'compact', 'miniature'],\n268-    'fast': ['quick', 'rapid', 'swift', 'speedy', 'hasty'],\n269-    'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried'],\n270-    'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],\n271-    'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'pretty'],\n272-    'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'content'],\n273-    'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],\n274-    'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally'],\n275-    'really': ['truly', 'genuinely', 'actually', 'indeed'],\n276-    'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],\n277-    'went': ['traveled', 'proceeded', 'headed', 'journeyed'],\n278-    'got': ['obtained', 'acquired', 'received', 'gained'],\n279-    'make': ['create', 'produce', 'generate', 'build', 'construct'],\n280-    'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],\n281-    'know': ['understand', 'realize', 'recognize', 'comprehend'],\n",
+      "exit": 0,
+      "description": "Find fallback functions in component"
+    },
+    "title": "grep -n -A 20 \"function getFallbackAlternatives\" /home/user/project/components/interactive-text.tsx",
+    "time": {
+      "start": 1759692793691,
+      "end": 1759692793695
+    }
+  }
+}

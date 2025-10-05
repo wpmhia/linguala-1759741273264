@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5def4430018dsrAq1gZzQRn2",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01QTn7A7ScNnjFz7vgjiA91F",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 2 && npm run dev > error_test.log 2>&1 & sleep 5 && echo \"Server with error handling started\"",
+      "description": "Restart server with better error handling"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart server with better error handling"
+    },
+    "title": "pkill -f \"next dev\" && sleep 2 && npm run dev > error_test.log 2>&1 & sleep 5 && echo \"Server with error handling started\"",
+    "time": {
+      "start": 1759692913006,
+      "end": 1759692918011
+    }
+  }
+}

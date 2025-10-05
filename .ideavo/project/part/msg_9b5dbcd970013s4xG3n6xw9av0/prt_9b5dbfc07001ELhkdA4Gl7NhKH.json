@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5dbfc07001ELhkdA4Gl7NhKH",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_019LWUujivFn4XQHKBkD25uc",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "oldString": "  } catch (error) {\n    console.error('Improve writing error:', error)\n    // Enhanced fallback - basic grammar and style improvements\n    const basicImprovement = text\n      // Dutch grammar fixes\n      .replace(/\\bik leest\\b/gi, 'ik lees')\n      .replace(/\\bIk leest\\b/g, 'Ik lees')\n      .replace(/\\bjij heeft\\b/gi, 'jij hebt')\n      .replace(/\\bJij heeft\\b/g, 'Jij hebt')\n      .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n      .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n      .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n      .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n      // English grammar fixes\n      .replace(/\\bi\\b/gi, 'I')\n      .replace(/\\bI\\s+am\\s+going\\s+to\\s+went\\b/gi, 'I am going to go')\n      .replace(/\\bYou\\s+was\\b/gi, 'You were')\n      .replace(/\\bHe\\s+don't\\b/gi, 'He doesn\\'t')\n      .replace(/\\bShe\\s+don't\\b/gi, 'She doesn\\'t')\n      .replace(/\\bthere\\s+house\\b/gi, 'their house')\n      .replace(/\\byour\\s+welcome\\b/gi, 'you\\'re welcome')\n      .replace(/\\bits\\s+a\\s+beautiful\\s+day\\b/gi, 'it\\'s a beautiful day')\n      // German basic improvements\n      .replace(/\\bich\\s+sind\\b/gi, 'ich bin')\n      .replace(/\\bdu\\s+sind\\b/gi, 'du bist')\n      .replace(/\\ber\\s+sind\\b/gi, 'er ist')\n      // French basic improvements\n      .replace(/\\bje\\s+suis\\s+aller\\b/gi, 'je suis allé')\n      .replace(/\\btu\\s+es\\s+aller\\b/gi, 'tu es allé')\n      // Spanish basic improvements\n      .replace(/\\byo\\s+son\\b/gi, 'yo soy')\n      .replace(/\\btú\\s+son\\b/gi, 'tú eres')\n      // Capitalization\n      .replace(/^[a-z]/, match => match.toUpperCase())\n      .replace(/\\.\\s+[a-z]/g, match => match.toUpperCase())\n      // Double spaces\n      .replace(/\\s{2,}/g, ' ')\n      .trim()\n\n    return {\n      originalText: text,\n      improvedText: basicImprovement || text,\n      operation: 'improve',\n      fallback: true\n    }\n  }",
+      "newString": "  } catch (error) {\n    console.error('Improve writing error:', error)\n    throw new Error('Text improvement service unavailable')\n  }"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/lib/writing-service.ts\n===================================================================\n--- /home/user/project/lib/writing-service.ts\n+++ /home/user/project/lib/writing-service.ts\n@@ -130,51 +130,9 @@\n       throw new Error('No improvement received')\n     }\n   } catch (error) {\n     console.error('Improve writing error:', error)\n-    // Enhanced fallback - basic grammar and style improvements\n-    const basicImprovement = text\n-      // Dutch grammar fixes\n-      .replace(/\\bik leest\\b/gi, 'ik lees')\n-      .replace(/\\bIk leest\\b/g, 'Ik lees')\n-      .replace(/\\bjij heeft\\b/gi, 'jij hebt')\n-      .replace(/\\bJij heeft\\b/g, 'Jij hebt')\n-      .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n-      .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n-      .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n-      .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n-      // English grammar fixes\n-      .replace(/\\bi\\b/gi, 'I')\n-      .replace(/\\bI\\s+am\\s+going\\s+to\\s+went\\b/gi, 'I am going to go')\n-      .replace(/\\bYou\\s+was\\b/gi, 'You were')\n-      .replace(/\\bHe\\s+don't\\b/gi, 'He doesn\\'t')\n-      .replace(/\\bShe\\s+don't\\b/gi, 'She doesn\\'t')\n-      .replace(/\\bthere\\s+house\\b/gi, 'their house')\n-      .replace(/\\byour\\s+welcome\\b/gi, 'you\\'re welcome')\n-      .replace(/\\bits\\s+a\\s+beautiful\\s+day\\b/gi, 'it\\'s a beautiful day')\n-      // German basic improvements\n-      .replace(/\\bich\\s+sind\\b/gi, 'ich bin')\n-      .replace(/\\bdu\\s+sind\\b/gi, 'du bist')\n-      .replace(/\\ber\\s+sind\\b/gi, 'er ist')\n-      // French basic improvements\n-      .replace(/\\bje\\s+suis\\s+aller\\b/gi, 'je suis allé')\n-      .replace(/\\btu\\s+es\\s+aller\\b/gi, 'tu es allé')\n-      // Spanish basic improvements\n-      .replace(/\\byo\\s+son\\b/gi, 'yo soy')\n-      .replace(/\\btú\\s+son\\b/gi, 'tú eres')\n-      // Capitalization\n-      .replace(/^[a-z]/, match => match.toUpperCase())\n-      .replace(/\\.\\s+[a-z]/g, match => match.toUpperCase())\n-      // Double spaces\n-      .replace(/\\s{2,}/g, ' ')\n-      .trim()\n-\n-    return {\n-      originalText: text,\n-      improvedText: basicImprovement || text,\n-      operation: 'improve',\n-      fallback: true\n-    }\n+    throw new Error('Text improvement service unavailable')\n   }\n }\n \n // Get word alternatives using qwen-flash\n"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759692724172,
+      "end": 1759692724204
+    }
+  }
+}

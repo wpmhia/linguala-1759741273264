@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5dcb3d20011BzED8Dvlw9Vr1",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01KZk5Ykut4NZ6AS3TLCGPuJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 275,
+      "limit": 50
+    },
+    "output": "<file>\n00276|   const alternatives: Record<string, string[]> = {\n00277|     'good': ['great', 'excellent', 'wonderful', 'fantastic', 'superb'],\n00278|     'bad': ['poor', 'terrible', 'awful', 'horrible', 'dreadful'],\n00279|     'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],\n00280|     'small': ['tiny', 'little', 'compact', 'miniature', 'petite'],\n00281|     'fast': ['quick', 'rapid', 'swift', 'speedy', 'brisk'],\n00282|     'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried', 'steady'],\n00283|     'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],\n00284|     'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'magnificent'],\n00285|     'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'elated'],\n00286|     'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],\n00287|     'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally', 'tremendously'],\n00288|     'really': ['truly', 'genuinely', 'actually', 'indeed', 'certainly'],\n00289|     'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],\n00290|     'make': ['create', 'produce', 'build', 'construct', 'generate'],\n00291|     'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],\n00292|     'know': ['understand', 'realize', 'recognize', 'comprehend', 'grasp'],\n00293|     'help': ['assist', 'support', 'aid', 'guide', 'facilitate'],\n00294|     'work': ['function', 'operate', 'perform', 'labor', 'serve'],\n00295|     'easy': ['simple', 'effortless', 'straightforward', 'uncomplicated', 'manageable'],\n00296|     'hard': ['difficult', 'challenging', 'tough', 'demanding', 'complex'],\n00297|     // Clothing and accessories\n00298|     'shoes': ['footwear', 'sneakers', 'boots', 'sandals', 'loafers'],\n00299|     'clothes': ['clothing', 'garments', 'attire', 'apparel', 'outfit'],\n00300|     'shirt': ['blouse', 'top', 'jersey', 'tee', 'garment'],\n00301|     'pants': ['trousers', 'slacks', 'jeans', 'bottoms', 'legwear'],\n00302|     // Common verbs\n00303|     'go': ['travel', 'move', 'proceed', 'head', 'journey'],\n00304|     'come': ['arrive', 'approach', 'reach', 'appear', 'return'],\n00305|     'see': ['observe', 'notice', 'view', 'spot', 'witness'],\n00306|     'get': ['obtain', 'acquire', 'receive', 'gain', 'fetch'],\n00307|     'take': ['grab', 'seize', 'pick', 'collect', 'carry'],\n00308|     'give': ['provide', 'offer', 'present', 'deliver', 'grant'],\n00309|     // Common nouns\n00310|     'house': ['home', 'residence', 'dwelling', 'property', 'abode'],\n00311|     'car': ['vehicle', 'automobile', 'auto', 'transport', 'ride'],\n00312|     'food': ['meal', 'cuisine', 'dish', 'nourishment', 'sustenance'],\n00313|     'book': ['novel', 'volume', 'publication', 'text', 'manuscript'],\n00314|     'time': ['period', 'moment', 'duration', 'interval', 'era'],\n00315|     'place': ['location', 'spot', 'area', 'site', 'venue']\n00316|   }\n00317|   \n00318|   return alternatives[word.toLowerCase()] || []\n00319| }\n</file>",
+    "metadata": {
+      "preview": "  const alternatives: Record<string, string[]> = {\n    'good': ['great', 'excellent', 'wonderful', 'fantastic', 'superb'],\n    'bad': ['poor', 'terrible', 'awful', 'horrible', 'dreadful'],\n    'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],\n    'small': ['tiny', 'little', 'compact', 'miniature', 'petite'],\n    'fast': ['quick', 'rapid', 'swift', 'speedy', 'brisk'],\n    'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried', 'steady'],\n    'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],\n    'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'magnificent'],\n    'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'elated'],\n    'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],\n    'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally', 'tremendously'],\n    'really': ['truly', 'genuinely', 'actually', 'indeed', 'certainly'],\n    'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],\n    'make': ['create', 'produce', 'build', 'construct', 'generate'],\n    'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],\n    'know': ['understand', 'realize', 'recognize', 'comprehend', 'grasp'],\n    'help': ['assist', 'support', 'aid', 'guide', 'facilitate'],\n    'work': ['function', 'operate', 'perform', 'labor', 'serve'],\n    'easy': ['simple', 'effortless', 'straightforward', 'uncomplicated', 'manageable'],"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759692764796,
+      "end": 1759692764798
+    }
+  }
+}

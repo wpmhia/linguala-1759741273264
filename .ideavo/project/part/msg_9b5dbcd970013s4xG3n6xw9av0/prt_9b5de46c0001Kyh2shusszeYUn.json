@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5de46c0001Kyh2shusszeYUn",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01HSxwnpuWJxwhcmESMTfwPi",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"test\",\"context\":\"test\"}' &\nsleep 6\necho \"Checking recent logs...\"\nps aux | grep curl | grep -v grep | awk '{print $2}' | xargs kill 2>/dev/null",
+      "description": "Test API with timeout and check logs"
+    },
+    "output": "Checking recent logs...\n",
+    "metadata": {
+      "output": "Checking recent logs...\n",
+      "exit": 0,
+      "description": "Test API with timeout and check logs"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"test\",\"context\":\"test\"}' &\nsleep 6\necho \"Checking recent logs...\"\nps aux | grep curl | grep -v grep | awk '{print $2}' | xargs kill 2>/dev/null",
+    "time": {
+      "start": 1759692868834,
+      "end": 1759692874854
+    }
+  }
+}

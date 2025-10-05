@@ -131,49 +131,7 @@ export async function improveText(text: string, options: { correctionsOnly?: boo
     }
   } catch (error) {
     console.error('Improve writing error:', error)
-    // Enhanced fallback - basic grammar and style improvements
-    const basicImprovement = text
-      // Dutch grammar fixes
-      .replace(/\bik leest\b/gi, 'ik lees')
-      .replace(/\bIk leest\b/g, 'Ik lees')
-      .replace(/\bjij heeft\b/gi, 'jij hebt')
-      .replace(/\bJij heeft\b/g, 'Jij hebt')
-      .replace(/\bhij hebben\b/gi, 'hij heeft')
-      .replace(/\bHij hebben\b/g, 'Hij heeft')
-      .replace(/\bzij hebben\b/gi, 'zij heeft')
-      .replace(/\bZij hebben\b/g, 'Zij heeft')
-      // English grammar fixes
-      .replace(/\bi\b/gi, 'I')
-      .replace(/\bI\s+am\s+going\s+to\s+went\b/gi, 'I am going to go')
-      .replace(/\bYou\s+was\b/gi, 'You were')
-      .replace(/\bHe\s+don't\b/gi, 'He doesn\'t')
-      .replace(/\bShe\s+don't\b/gi, 'She doesn\'t')
-      .replace(/\bthere\s+house\b/gi, 'their house')
-      .replace(/\byour\s+welcome\b/gi, 'you\'re welcome')
-      .replace(/\bits\s+a\s+beautiful\s+day\b/gi, 'it\'s a beautiful day')
-      // German basic improvements
-      .replace(/\bich\s+sind\b/gi, 'ich bin')
-      .replace(/\bdu\s+sind\b/gi, 'du bist')
-      .replace(/\ber\s+sind\b/gi, 'er ist')
-      // French basic improvements
-      .replace(/\bje\s+suis\s+aller\b/gi, 'je suis allé')
-      .replace(/\btu\s+es\s+aller\b/gi, 'tu es allé')
-      // Spanish basic improvements
-      .replace(/\byo\s+son\b/gi, 'yo soy')
-      .replace(/\btú\s+son\b/gi, 'tú eres')
-      // Capitalization
-      .replace(/^[a-z]/, match => match.toUpperCase())
-      .replace(/\.\s+[a-z]/g, match => match.toUpperCase())
-      // Double spaces
-      .replace(/\s{2,}/g, ' ')
-      .trim()
-
-    return {
-      originalText: text,
-      improvedText: basicImprovement || text,
-      operation: 'improve',
-      fallback: true
-    }
+    throw new Error('Text improvement service unavailable')
   }
 }
 
@@ -249,16 +207,7 @@ export async function getWordAlternatives(word: string, context: string, options
     }
   } catch (error) {
     console.error('Get alternatives error:', error)
-    
-    // Enhanced fallback alternatives
-    const fallbackAlternatives = getFallbackAlternatives(word)
-    
-    return {
-      word,
-      alternatives: fallbackAlternatives,
-      operation: 'alternatives',
-      fallback: true
-    }
+    throw new Error('Word alternatives service unavailable')
   }
 }
 
@@ -318,81 +267,7 @@ export async function rephraseText(text: string): Promise<RephraseResult> {
     }
   } catch (error) {
     console.error('Rephrase text error:', error)
-    // Enhanced fallback - multiple rephrase options
-    const option1 = text
-      .replace(/\bvery\b/g, 'extremely')
-      .replace(/\bgood\b/g, 'excellent')
-      .replace(/\bbad\b/g, 'poor')
-      .replace(/\bnice\b/g, 'pleasant')
-      .replace(/\bbig\b/g, 'large')
-    
-    const option2 = text
-      .replace(/I think/g, 'I believe')
-      .replace(/It is important/g, 'It is essential')
-      .replace(/In my opinion/g, 'From my perspective')
-      .replace(/very important/g, 'crucial')
-      
-    const option3 = text
-      .replace(/\breally\b/g, 'truly')
-      .replace(/\bshould\b/g, 'ought to')
-      .replace(/\bwant to\b/g, 'wish to')
-      .replace(/\bneed to\b/g, 'must')
-    
-    const rephraseOptions = [option1, option2, option3].filter(option => option !== text)
-    
-    return {
-      originalText: text,
-      rephrasedText: rephraseOptions[0] || text,
-      rephraseOptions: rephraseOptions,
-      operation: 'rephrase',
-      fallback: true
-    }
+    throw new Error('Text rephrasing service unavailable')
   }
 }
 
-// Enhanced fallback alternatives
-function getFallbackAlternatives(word: string): string[] {
-  const alternatives: Record<string, string[]> = {
-    'good': ['great', 'excellent', 'wonderful', 'fantastic', 'superb'],
-    'bad': ['poor', 'terrible', 'awful', 'horrible', 'dreadful'],
-    'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],
-    'small': ['tiny', 'little', 'compact', 'miniature', 'petite'],
-    'fast': ['quick', 'rapid', 'swift', 'speedy', 'brisk'],
-    'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried', 'steady'],
-    'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],
-    'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'magnificent'],
-    'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'elated'],
-    'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],
-    'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally', 'tremendously'],
-    'really': ['truly', 'genuinely', 'actually', 'indeed', 'certainly'],
-    'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],
-    'make': ['create', 'produce', 'build', 'construct', 'generate'],
-    'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],
-    'know': ['understand', 'realize', 'recognize', 'comprehend', 'grasp'],
-    'help': ['assist', 'support', 'aid', 'guide', 'facilitate'],
-    'work': ['function', 'operate', 'perform', 'labor', 'serve'],
-    'easy': ['simple', 'effortless', 'straightforward', 'uncomplicated', 'manageable'],
-    'hard': ['difficult', 'challenging', 'tough', 'demanding', 'complex'],
-    // Clothing and accessories
-    'shoes': ['footwear', 'sneakers', 'boots', 'sandals', 'loafers'],
-    'clothes': ['clothing', 'garments', 'attire', 'apparel', 'outfit'],
-    'shirt': ['blouse', 'top', 'jersey', 'tee', 'garment'],
-    'pants': ['trousers', 'slacks', 'jeans', 'bottoms', 'legwear'],
-    // Common verbs
-    'go': ['travel', 'move', 'proceed', 'head', 'journey'],
-    'come': ['arrive', 'approach', 'reach', 'appear', 'return'],
-    'see': ['observe', 'notice', 'view', 'spot', 'witness'],
-    'get': ['obtain', 'acquire', 'receive', 'gain', 'fetch'],
-    'take': ['grab', 'seize', 'pick', 'collect', 'carry'],
-    'give': ['provide', 'offer', 'present', 'deliver', 'grant'],
-    // Common nouns
-    'house': ['home', 'residence', 'dwelling', 'property', 'abode'],
-    'car': ['vehicle', 'automobile', 'auto', 'transport', 'ride'],
-    'food': ['meal', 'cuisine', 'dish', 'nourishment', 'sustenance'],
-    'book': ['novel', 'volume', 'publication', 'text', 'manuscript'],
-    'time': ['period', 'moment', 'duration', 'interval', 'era'],
-    'place': ['location', 'spot', 'area', 'site', 'venue']
-  }
-  
-  return alternatives[word.toLowerCase()] || []
-}

@@ -36,15 +36,39 @@ export async function POST(request: NextRequest) {
 
     switch (operation) {
       case 'improve':
-        result = await improveText(text, { correctionsOnly, writingStyle, tone })
+        try {
+          result = await improveText(text, { correctionsOnly, writingStyle, tone })
+        } catch (error) {
+          console.error('AI improve service failed:', error)
+          return NextResponse.json(
+            { error: 'Text improvement service temporarily unavailable' },
+            { status: 503 }
+          )
+        }
         break
 
       case 'alternatives':
-        result = await getWordAlternatives(word, context, { mode, sourceLang, targetLang })
+        try {
+          result = await getWordAlternatives(word, context, { mode, sourceLang, targetLang })
+        } catch (error) {
+          console.error('AI alternatives service failed:', error)
+          return NextResponse.json(
+            { error: 'Word alternatives service temporarily unavailable' },
+            { status: 503 }
+          )
+        }
         break
 
       case 'rephrase':
-        result = await rephraseText(text)
+        try {
+          result = await rephraseText(text)
+        } catch (error) {
+          console.error('AI rephrase service failed:', error)
+          return NextResponse.json(
+            { error: 'Text rephrasing service temporarily unavailable' },
+            { status: 503 }
+          )
+        }
         break
 
       default:

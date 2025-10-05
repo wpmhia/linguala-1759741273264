@@ -63,9 +63,7 @@ export function InteractiveText({
       setAlternatives(data.alternatives || [])
     } catch (error) {
       console.error('Error getting word alternatives:', error)
-      // Fallback alternatives based on common patterns
-      const fallbackAlternatives = getFallbackAlternatives(word, mode)
-      setAlternatives(fallbackAlternatives)
+      setAlternatives([])
     } finally {
       setIsLoadingAlternatives(false)
     }
@@ -90,9 +88,7 @@ export function InteractiveText({
       setRephraseOptions(data.rephraseOptions || [data.rephrasedText].filter(Boolean))
     } catch (error) {
       console.error('Error rephrasing sentence:', error)
-      // Fallback rephrase
-      const fallbackRephrase = getFallbackRephrase(sentence)
-      setRephraseOptions([fallbackRephrase])
+      setRephraseOptions([])
     } finally {
       setIsLoadingRephrase(false)
     }
@@ -262,51 +258,3 @@ export function InteractiveText({
 }
 
 // Fallback alternatives for common words
-function getFallbackAlternatives(word: string, mode: 'translate' | 'write'): string[] {
-  const alternatives: Record<string, string[]> = {
-    // Common words
-    'good': ['great', 'excellent', 'nice', 'fine', 'wonderful'],
-    'bad': ['poor', 'terrible', 'awful', 'horrible', 'unpleasant'],
-    'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],
-    'small': ['tiny', 'little', 'minor', 'compact', 'miniature'],
-    'fast': ['quick', 'rapid', 'swift', 'speedy', 'hasty'],
-    'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried'],
-    'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],
-    'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'pretty'],
-    'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'content'],
-    'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],
-    'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally'],
-    'really': ['truly', 'genuinely', 'actually', 'indeed'],
-    'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],
-    'went': ['traveled', 'proceeded', 'headed', 'journeyed'],
-    'got': ['obtained', 'acquired', 'received', 'gained'],
-    'make': ['create', 'produce', 'generate', 'build', 'construct'],
-    'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],
-    'know': ['understand', 'realize', 'recognize', 'comprehend'],
-    'want': ['desire', 'wish', 'need', 'require', 'seek'],
-    'like': ['enjoy', 'appreciate', 'prefer', 'favor', 'admire'],
-    'help': ['assist', 'support', 'aid', 'guide', 'facilitate'],
-    'work': ['function', 'operate', 'perform', 'labor', 'toil'],
-    'easy': ['simple', 'effortless', 'straightforward', 'uncomplicated'],
-    'hard': ['difficult', 'challenging', 'tough', 'demanding', 'complex']
-  }
-
-  const lowerWord = word.toLowerCase()
-  return alternatives[lowerWord] || []
-}
-
-// Fallback sentence rephrasing
-function getFallbackRephrase(sentence: string): string {
-  let rephrased = sentence
-    .replace(/\bvery\b/g, 'extremely')
-    .replace(/\breally\b/g, 'truly')
-    .replace(/\bgood\b/g, 'excellent')
-    .replace(/\bbad\b/g, 'poor')
-    .replace(/\bbig\b/g, 'large')
-    .replace(/\bsmall\b/g, 'compact')
-    .replace(/I think that/g, 'I believe')
-    .replace(/It is important to/g, 'It is crucial to')
-    .replace(/In my opinion/g, 'From my perspective')
-  
-  return rephrased === sentence ? `Consider rephrasing: ${sentence}` : rephrased
-}

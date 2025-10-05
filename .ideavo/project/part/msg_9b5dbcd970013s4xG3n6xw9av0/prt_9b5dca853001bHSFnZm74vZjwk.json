@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5dca853001bHSFnZm74vZjwk",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01CVx4ZzkreCLHd8AHpPpnee",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n \"function getFallbackAlternatives\" /home/user/project/lib/writing-service.ts",
+      "description": "Find getFallbackAlternatives function"
+    },
+    "output": "275:function getFallbackAlternatives(word: string): string[] {\n",
+    "metadata": {
+      "output": "275:function getFallbackAlternatives(word: string): string[] {\n",
+      "exit": 0,
+      "description": "Find getFallbackAlternatives function"
+    },
+    "title": "grep -n \"function getFallbackAlternatives\" /home/user/project/lib/writing-service.ts",
+    "time": {
+      "start": 1759692761877,
+      "end": 1759692761884
+    }
+  }
+}

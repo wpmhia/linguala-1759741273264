@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5dc795100177w9faKqkIecGH",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_018dR19uSGf2DVipYmpxJDh4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 265,
+      "limit": 35
+    },
+    "output": "<file>\n00266|       operation: 'rephrase'\n00267|     }\n00268|   } catch (error) {\n00269|     console.error('Rephrase text error:', error)\n00270|     // Enhanced fallback - multiple rephrase options\n00271|     const option1 = text\n00272|       .replace(/\\bvery\\b/g, 'extremely')\n00273|       .replace(/\\bgood\\b/g, 'excellent')\n00274|       .replace(/\\bbad\\b/g, 'poor')\n00275|       .replace(/\\bnice\\b/g, 'pleasant')\n00276|       .replace(/\\bbig\\b/g, 'large')\n00277|     \n00278|     const option2 = text\n00279|       .replace(/I think/g, 'I believe')\n00280|       .replace(/It is important/g, 'It is essential')\n00281|       .replace(/In my opinion/g, 'From my perspective')\n00282|       .replace(/very important/g, 'crucial')\n00283|       \n00284|     const option3 = text\n00285|       .replace(/\\breally\\b/g, 'truly')\n00286|       .replace(/\\bshould\\b/g, 'ought to')\n00287|       .replace(/\\bwant to\\b/g, 'wish to')\n00288|       .replace(/\\bneed to\\b/g, 'must')\n00289|     \n00290|     const rephraseOptions = [option1, option2, option3].filter(option => option !== text)\n00291|     \n00292|     return {\n00293|       originalText: text,\n00294|       rephrasedText: rephraseOptions[0] || text,\n00295|       rephraseOptions: rephraseOptions,\n00296|       operation: 'rephrase',\n00297|       fallback: true\n00298|     }\n00299|   }\n00300| }\n\n(File has more lines. Use 'offset' parameter to read beyond line 300)\n</file>",
+    "metadata": {
+      "preview": "      operation: 'rephrase'\n    }\n  } catch (error) {\n    console.error('Rephrase text error:', error)\n    // Enhanced fallback - multiple rephrase options\n    const option1 = text\n      .replace(/\\bvery\\b/g, 'extremely')\n      .replace(/\\bgood\\b/g, 'excellent')\n      .replace(/\\bbad\\b/g, 'poor')\n      .replace(/\\bnice\\b/g, 'pleasant')\n      .replace(/\\bbig\\b/g, 'large')\n    \n    const option2 = text\n      .replace(/I think/g, 'I believe')\n      .replace(/It is important/g, 'It is essential')\n      .replace(/In my opinion/g, 'From my perspective')\n      .replace(/very important/g, 'crucial')\n      \n    const option3 = text\n      .replace(/\\breally\\b/g, 'truly')"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759692749909,
+      "end": 1759692749911
+    }
+  }
+}

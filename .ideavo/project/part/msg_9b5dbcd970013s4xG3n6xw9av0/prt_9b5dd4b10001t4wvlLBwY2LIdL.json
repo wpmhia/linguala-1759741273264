@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5dd4b10001t4wvlLBwY2LIdL",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01HkePoxQPZ6Tw7uHzhj7E4m",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/interactive-text.tsx",
+      "offset": 260,
+      "limit": 60
+    },
+    "output": "<file>\n00261| function getFallbackAlternatives(word: string, mode: 'translate' | 'write'): string[] {\n00262|   const alternatives: Record<string, string[]> = {\n00263|     // Common words\n00264|     'good': ['great', 'excellent', 'nice', 'fine', 'wonderful'],\n00265|     'bad': ['poor', 'terrible', 'awful', 'horrible', 'unpleasant'],\n00266|     'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],\n00267|     'small': ['tiny', 'little', 'minor', 'compact', 'miniature'],\n00268|     'fast': ['quick', 'rapid', 'swift', 'speedy', 'hasty'],\n00269|     'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried'],\n00270|     'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],\n00271|     'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'pretty'],\n00272|     'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'content'],\n00273|     'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],\n00274|     'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally'],\n00275|     'really': ['truly', 'genuinely', 'actually', 'indeed'],\n00276|     'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],\n00277|     'went': ['traveled', 'proceeded', 'headed', 'journeyed'],\n00278|     'got': ['obtained', 'acquired', 'received', 'gained'],\n00279|     'make': ['create', 'produce', 'generate', 'build', 'construct'],\n00280|     'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],\n00281|     'know': ['understand', 'realize', 'recognize', 'comprehend'],\n00282|     'want': ['desire', 'wish', 'need', 'require', 'seek'],\n00283|     'like': ['enjoy', 'appreciate', 'prefer', 'favor', 'admire'],\n00284|     'help': ['assist', 'support', 'aid', 'guide', 'facilitate'],\n00285|     'work': ['function', 'operate', 'perform', 'labor', 'toil'],\n00286|     'easy': ['simple', 'effortless', 'straightforward', 'uncomplicated'],\n00287|     'hard': ['difficult', 'challenging', 'tough', 'demanding', 'complex']\n00288|   }\n00289| \n00290|   const lowerWord = word.toLowerCase()\n00291|   return alternatives[lowerWord] || []\n00292| }\n00293| \n00294| // Fallback sentence rephrasing\n00295| function getFallbackRephrase(sentence: string): string {\n00296|   let rephrased = sentence\n00297|     .replace(/\\bvery\\b/g, 'extremely')\n00298|     .replace(/\\breally\\b/g, 'truly')\n00299|     .replace(/\\bgood\\b/g, 'excellent')\n00300|     .replace(/\\bbad\\b/g, 'poor')\n00301|     .replace(/\\bbig\\b/g, 'large')\n00302|     .replace(/\\bsmall\\b/g, 'compact')\n00303|     .replace(/I think that/g, 'I believe')\n00304|     .replace(/It is important to/g, 'It is crucial to')\n00305|     .replace(/In my opinion/g, 'From my perspective')\n00306|   \n00307|   return rephrased === sentence ? `Consider rephrasing: ${sentence}` : rephrased\n00308| }\n</file>",
+    "metadata": {
+      "preview": "function getFallbackAlternatives(word: string, mode: 'translate' | 'write'): string[] {\n  const alternatives: Record<string, string[]> = {\n    // Common words\n    'good': ['great', 'excellent', 'nice', 'fine', 'wonderful'],\n    'bad': ['poor', 'terrible', 'awful', 'horrible', 'unpleasant'],\n    'big': ['large', 'huge', 'massive', 'enormous', 'gigantic'],\n    'small': ['tiny', 'little', 'minor', 'compact', 'miniature'],\n    'fast': ['quick', 'rapid', 'swift', 'speedy', 'hasty'],\n    'slow': ['gradual', 'leisurely', 'sluggish', 'unhurried'],\n    'important': ['crucial', 'vital', 'essential', 'significant', 'critical'],\n    'beautiful': ['gorgeous', 'stunning', 'lovely', 'attractive', 'pretty'],\n    'happy': ['joyful', 'cheerful', 'delighted', 'pleased', 'content'],\n    'sad': ['unhappy', 'sorrowful', 'melancholy', 'dejected', 'gloomy'],\n    'very': ['extremely', 'incredibly', 'remarkably', 'exceptionally'],\n    'really': ['truly', 'genuinely', 'actually', 'indeed'],\n    'said': ['stated', 'mentioned', 'declared', 'expressed', 'remarked'],\n    'went': ['traveled', 'proceeded', 'headed', 'journeyed'],\n    'got': ['obtained', 'acquired', 'received', 'gained'],\n    'make': ['create', 'produce', 'generate', 'build', 'construct'],\n    'think': ['believe', 'consider', 'suppose', 'assume', 'reckon'],"
+    },
+    "title": "components/interactive-text.tsx",
+    "time": {
+      "start": 1759692803602,
+      "end": 1759692803604
+    }
+  }
+}

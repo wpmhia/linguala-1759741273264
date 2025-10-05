@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5dc5dba001buL1vAGyjtR4hP",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Q8SVLLzaqBWwa2Zuyxkyib",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n -A 25 \"Rephrase.*error\" /home/user/project/lib/writing-service.ts",
+      "description": "Find full rephraseText error handling"
+    },
+    "output": "269:    console.error('Rephrase text error:', error)\n270-    // Enhanced fallback - multiple rephrase options\n271-    const option1 = text\n272-      .replace(/\\bvery\\b/g, 'extremely')\n273-      .replace(/\\bgood\\b/g, 'excellent')\n274-      .replace(/\\bbad\\b/g, 'poor')\n275-      .replace(/\\bnice\\b/g, 'pleasant')\n276-      .replace(/\\bbig\\b/g, 'large')\n277-    \n278-    const option2 = text\n279-      .replace(/I think/g, 'I believe')\n280-      .replace(/It is important/g, 'It is essential')\n281-      .replace(/In my opinion/g, 'From my perspective')\n282-      .replace(/very important/g, 'crucial')\n283-      \n284-    const option3 = text\n285-      .replace(/\\breally\\b/g, 'truly')\n286-      .replace(/\\bshould\\b/g, 'ought to')\n287-      .replace(/\\bwant to\\b/g, 'wish to')\n288-      .replace(/\\bneed to\\b/g, 'must')\n289-    \n290-    const rephraseOptions = [option1, option2, option3].filter(option => option !== text)\n291-    \n292-    return {\n293-      originalText: text,\n294-      rephrasedText: rephraseOptions[0] || text,\n",
+    "metadata": {
+      "output": "269:    console.error('Rephrase text error:', error)\n270-    // Enhanced fallback - multiple rephrase options\n271-    const option1 = text\n272-      .replace(/\\bvery\\b/g, 'extremely')\n273-      .replace(/\\bgood\\b/g, 'excellent')\n274-      .replace(/\\bbad\\b/g, 'poor')\n275-      .replace(/\\bnice\\b/g, 'pleasant')\n276-      .replace(/\\bbig\\b/g, 'large')\n277-    \n278-    const option2 = text\n279-      .replace(/I think/g, 'I believe')\n280-      .replace(/It is important/g, 'It is essential')\n281-      .replace(/In my opinion/g, 'From my perspective')\n282-      .replace(/very important/g, 'crucial')\n283-      \n284-    const option3 = text\n285-      .replace(/\\breally\\b/g, 'truly')\n286-      .replace(/\\bshould\\b/g, 'ought to')\n287-      .replace(/\\bwant to\\b/g, 'wish to')\n288-      .replace(/\\bneed to\\b/g, 'must')\n289-    \n290-    const rephraseOptions = [option1, option2, option3].filter(option => option !== text)\n291-    \n292-    return {\n293-      originalText: text,\n294-      rephrasedText: rephraseOptions[0] || text,\n",
+      "exit": 0,
+      "description": "Find full rephraseText error handling"
+    },
+    "title": "grep -n -A 25 \"Rephrase.*error\" /home/user/project/lib/writing-service.ts",
+    "time": {
+      "start": 1759692742776,
+      "end": 1759692742780
+    }
+  }
+}

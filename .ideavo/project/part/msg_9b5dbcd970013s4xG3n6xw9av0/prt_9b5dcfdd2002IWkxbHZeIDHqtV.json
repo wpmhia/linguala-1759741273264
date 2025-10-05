@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5dcfdd2002IWkxbHZeIDHqtV",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "I need to update the interactive text component to handle AI service failures properly. Let me check if there's a `getFallbackAlternatives` function in the component:",
+  "time": {
+    "start": 1759692783796,
+    "end": 1759692783796
+  }
+}

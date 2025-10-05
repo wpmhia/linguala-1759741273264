@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5dd00b40011NzSqPSi725mEb",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_017RCkx2ixAf6c8DitD1J2YH",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n \"getFallbackAlternatives\" /home/user/project/components/interactive-text.tsx",
+      "description": "Check if component has fallback function"
+    },
+    "output": "67:      const fallbackAlternatives = getFallbackAlternatives(word, mode)\n265:function getFallbackAlternatives(word: string, mode: 'translate' | 'write'): string[] {\n",
+    "metadata": {
+      "output": "67:      const fallbackAlternatives = getFallbackAlternatives(word, mode)\n265:function getFallbackAlternatives(word: string, mode: 'translate' | 'write'): string[] {\n",
+      "exit": 0,
+      "description": "Check if component has fallback function"
+    },
+    "title": "grep -n \"getFallbackAlternatives\" /home/user/project/components/interactive-text.tsx",
+    "time": {
+      "start": 1759692784495,
+      "end": 1759692784503
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5dc4f17001WetT3HJQLXGBOF",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_018vjdccaAawbTUBotKX2RVV",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "grep -n -A 10 \"Rephrase.*error\" /home/user/project/lib/writing-service.ts",
+      "description": "Find rephraseText error handling"
+    },
+    "output": "269:    console.error('Rephrase text error:', error)\n270-    // Enhanced fallback - multiple rephrase options\n271-    const option1 = text\n272-      .replace(/\\bvery\\b/g, 'extremely')\n273-      .replace(/\\bgood\\b/g, 'excellent')\n274-      .replace(/\\bbad\\b/g, 'poor')\n275-      .replace(/\\bnice\\b/g, 'pleasant')\n276-      .replace(/\\bbig\\b/g, 'large')\n277-    \n278-    const option2 = text\n279-      .replace(/I think/g, 'I believe')\n",
+    "metadata": {
+      "output": "269:    console.error('Rephrase text error:', error)\n270-    // Enhanced fallback - multiple rephrase options\n271-    const option1 = text\n272-      .replace(/\\bvery\\b/g, 'extremely')\n273-      .replace(/\\bgood\\b/g, 'excellent')\n274-      .replace(/\\bbad\\b/g, 'poor')\n275-      .replace(/\\bnice\\b/g, 'pleasant')\n276-      .replace(/\\bbig\\b/g, 'large')\n277-    \n278-    const option2 = text\n279-      .replace(/I think/g, 'I believe')\n",
+      "exit": 0,
+      "description": "Find rephraseText error handling"
+    },
+    "title": "grep -n -A 10 \"Rephrase.*error\" /home/user/project/lib/writing-service.ts",
+    "time": {
+      "start": 1759692739090,
+      "end": 1759692739096
+    }
+  }
+}

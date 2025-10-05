@@ -1,0 +1,34 @@
+{
+  "id": "prt_9b5ded82a0023cmGk0OEqaY1Uo",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_01MwhNv3jL6kVTVGyYyUnw7p",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/write/route.ts",
+      "edits": [
+        {
+          "oldString": "    switch (operation) {\n      case 'improve':\n        result = await improveText(text, { correctionsOnly, writingStyle, tone })\n        break\n\n      case 'alternatives':\n        result = await getWordAlternatives(word, context, { mode, sourceLang, targetLang })\n        break\n\n      case 'rephrase':\n        result = await rephraseText(text)\n        break",
+          "newString": "    switch (operation) {\n      case 'improve':\n        try {\n          result = await improveText(text, { correctionsOnly, writingStyle, tone })\n        } catch (error) {\n          console.error('AI improve service failed:', error)\n          return NextResponse.json(\n            { error: 'Text improvement service temporarily unavailable' },\n            { status: 503 }\n          )\n        }\n        break\n\n      case 'alternatives':\n        try {\n          result = await getWordAlternatives(word, context, { mode, sourceLang, targetLang })\n        } catch (error) {\n          console.error('AI alternatives service failed:', error)\n          return NextResponse.json(\n            { error: 'Word alternatives service temporarily unavailable' },\n            { status: 503 }\n          )\n        }\n        break\n\n      case 'rephrase':\n        try {\n          result = await rephraseText(text)\n        } catch (error) {\n          console.error('AI rephrase service failed:', error)\n          return NextResponse.json(\n            { error: 'Text rephrasing service temporarily unavailable' },\n            { status: 503 }\n          )\n        }\n        break"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/app/api/write/route.ts\n===================================================================\n--- /home/user/project/app/api/write/route.ts\n+++ /home/user/project/app/api/write/route.ts\n@@ -35,17 +35,41 @@\n let result\n \n switch (operation) {\n   case 'improve':\n-    result = await improveText(text, { correctionsOnly, writingStyle, tone })\n+    try {\n+      result = await improveText(text, { correctionsOnly, writingStyle, tone })\n+    } catch (error) {\n+      console.error('AI improve service failed:', error)\n+      return NextResponse.json(\n+        { error: 'Text improvement service temporarily unavailable' },\n+        { status: 503 }\n+      )\n+    }\n     break\n \n   case 'alternatives':\n-    result = await getWordAlternatives(word, context, { mode, sourceLang, targetLang })\n+    try {\n+      result = await getWordAlternatives(word, context, { mode, sourceLang, targetLang })\n+    } catch (error) {\n+      console.error('AI alternatives service failed:', error)\n+      return NextResponse.json(\n+        { error: 'Word alternatives service temporarily unavailable' },\n+        { status: 503 }\n+      )\n+    }\n     break\n \n   case 'rephrase':\n-    result = await rephraseText(text)\n+    try {\n+      result = await rephraseText(text)\n+    } catch (error) {\n+      console.error('AI rephrase service failed:', error)\n+      return NextResponse.json(\n+        { error: 'Text rephrasing service temporarily unavailable' },\n+        { status: 503 }\n+      )\n+    }\n     break\n \n   default:\n     return NextResponse.json(\n"
+        }
+      ]
+    },
+    "title": "app/api/write/route.ts",
+    "time": {
+      "start": 1759692908937,
+      "end": 1759692908941
+    }
+  }
+}

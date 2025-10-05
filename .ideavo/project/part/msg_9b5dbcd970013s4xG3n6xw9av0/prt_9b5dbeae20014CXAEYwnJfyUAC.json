@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5dbeae20014CXAEYwnJfyUAC",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01XVJe8Djpv7g4nmQg4Ys12P",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 120,
+      "limit": 60
+    },
+    "output": "<file>\n00121|     const improvedText = data.choices[0]?.message?.content?.trim()\n00122| \n00123|     if (improvedText && improvedText !== text) {\n00124|       return {\n00125|         originalText: text,\n00126|         improvedText,\n00127|         operation: 'improve'\n00128|       }\n00129|     } else {\n00130|       throw new Error('No improvement received')\n00131|     }\n00132|   } catch (error) {\n00133|     console.error('Improve writing error:', error)\n00134|     // Enhanced fallback - basic grammar and style improvements\n00135|     const basicImprovement = text\n00136|       // Dutch grammar fixes\n00137|       .replace(/\\bik leest\\b/gi, 'ik lees')\n00138|       .replace(/\\bIk leest\\b/g, 'Ik lees')\n00139|       .replace(/\\bjij heeft\\b/gi, 'jij hebt')\n00140|       .replace(/\\bJij heeft\\b/g, 'Jij hebt')\n00141|       .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n00142|       .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n00143|       .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n00144|       .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n00145|       // English grammar fixes\n00146|       .replace(/\\bi\\b/gi, 'I')\n00147|       .replace(/\\bI\\s+am\\s+going\\s+to\\s+went\\b/gi, 'I am going to go')\n00148|       .replace(/\\bYou\\s+was\\b/gi, 'You were')\n00149|       .replace(/\\bHe\\s+don't\\b/gi, 'He doesn\\'t')\n00150|       .replace(/\\bShe\\s+don't\\b/gi, 'She doesn\\'t')\n00151|       .replace(/\\bthere\\s+house\\b/gi, 'their house')\n00152|       .replace(/\\byour\\s+welcome\\b/gi, 'you\\'re welcome')\n00153|       .replace(/\\bits\\s+a\\s+beautiful\\s+day\\b/gi, 'it\\'s a beautiful day')\n00154|       // German basic improvements\n00155|       .replace(/\\bich\\s+sind\\b/gi, 'ich bin')\n00156|       .replace(/\\bdu\\s+sind\\b/gi, 'du bist')\n00157|       .replace(/\\ber\\s+sind\\b/gi, 'er ist')\n00158|       // French basic improvements\n00159|       .replace(/\\bje\\s+suis\\s+aller\\b/gi, 'je suis allé')\n00160|       .replace(/\\btu\\s+es\\s+aller\\b/gi, 'tu es allé')\n00161|       // Spanish basic improvements\n00162|       .replace(/\\byo\\s+son\\b/gi, 'yo soy')\n00163|       .replace(/\\btú\\s+son\\b/gi, 'tú eres')\n00164|       // Capitalization\n00165|       .replace(/^[a-z]/, match => match.toUpperCase())\n00166|       .replace(/\\.\\s+[a-z]/g, match => match.toUpperCase())\n00167|       // Double spaces\n00168|       .replace(/\\s{2,}/g, ' ')\n00169|       .trim()\n00170| \n00171|     return {\n00172|       originalText: text,\n00173|       improvedText: basicImprovement || text,\n00174|       operation: 'improve',\n00175|       fallback: true\n00176|     }\n00177|   }\n00178| }\n00179| \n00180| // Get word alternatives using qwen-flash\n\n(File has more lines. Use 'offset' parameter to read beyond line 180)\n</file>",
+    "metadata": {
+      "preview": "    const improvedText = data.choices[0]?.message?.content?.trim()\n\n    if (improvedText && improvedText !== text) {\n      return {\n        originalText: text,\n        improvedText,\n        operation: 'improve'\n      }\n    } else {\n      throw new Error('No improvement received')\n    }\n  } catch (error) {\n    console.error('Improve writing error:', error)\n    // Enhanced fallback - basic grammar and style improvements\n    const basicImprovement = text\n      // Dutch grammar fixes\n      .replace(/\\bik leest\\b/gi, 'ik lees')\n      .replace(/\\bIk leest\\b/g, 'Ik lees')\n      .replace(/\\bjij heeft\\b/gi, 'jij hebt')\n      .replace(/\\bJij heeft\\b/g, 'Jij hebt')"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759692713348,
+      "end": 1759692713356
+    }
+  }
+}

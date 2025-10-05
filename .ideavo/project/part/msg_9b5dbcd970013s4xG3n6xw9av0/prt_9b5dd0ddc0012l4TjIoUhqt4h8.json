@@ -1,0 +1,42 @@
+{
+  "id": "prt_9b5dd0ddc0012l4TjIoUhqt4h8",
+  "messageID": "msg_9b5dbcd970013s4xG3n6xw9av0",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_015E1UEEoGXd6dVSSgCnC5cg",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/interactive-text.tsx",
+      "edits": [
+        {
+          "oldString": "    } catch (error) {\n      console.error('Error getting word alternatives:', error)\n      // Fallback alternatives based on common patterns\n      const fallbackAlternatives = getFallbackAlternatives(word, mode)\n      setAlternatives(fallbackAlternatives)",
+          "newString": "    } catch (error) {\n      console.error('Error getting word alternatives:', error)\n      setAlternatives([])"
+        },
+        {
+          "oldString": "    } catch (error) {\n      console.error('Error rephrasing sentence:', error)\n      // Fallback rephrase\n      const fallbackRephrase = getFallbackRephrase(sentence)\n      setRephraseOptions([fallbackRephrase])",
+          "newString": "    } catch (error) {\n      console.error('Error rephrasing sentence:', error)\n      setRephraseOptions([])"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/interactive-text.tsx\n===================================================================\n--- /home/user/project/components/interactive-text.tsx\n+++ /home/user/project/components/interactive-text.tsx\n@@ -62,11 +62,9 @@\n     const data = await response.json()\n     setAlternatives(data.alternatives || [])\n   } catch (error) {\n     console.error('Error getting word alternatives:', error)\n-    // Fallback alternatives based on common patterns\n-    const fallbackAlternatives = getFallbackAlternatives(word, mode)\n-    setAlternatives(fallbackAlternatives)\n+    setAlternatives([])\n   } finally {\n     setIsLoadingAlternatives(false)\n   }\n }, [mode, sourceLang, targetLang])\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/interactive-text.tsx\n===================================================================\n--- /home/user/project/components/interactive-text.tsx\n+++ /home/user/project/components/interactive-text.tsx\n@@ -87,11 +87,9 @@\n     const data = await response.json()\n     setRephraseOptions(data.rephraseOptions || [data.rephrasedText].filter(Boolean))\n   } catch (error) {\n     console.error('Error rephrasing sentence:', error)\n-    // Fallback rephrase\n-    const fallbackRephrase = getFallbackRephrase(sentence)\n-    setRephraseOptions([fallbackRephrase])\n+    setRephraseOptions([])\n   } finally {\n     setIsLoadingRephrase(false)\n   }\n }, [mode, sourceLang, targetLang])\n"
+        }
+      ]
+    },
+    "title": "components/interactive-text.tsx",
+    "time": {
+      "start": 1759692790262,
+      "end": 1759692790274
+    }
+  }
+}

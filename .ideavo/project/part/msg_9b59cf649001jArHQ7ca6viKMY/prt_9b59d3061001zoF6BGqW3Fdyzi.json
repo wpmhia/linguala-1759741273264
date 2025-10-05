@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b59d3061001zoF6BGqW3Fdyzi",
+  "messageID": "msg_9b59cf649001jArHQ7ca6viKMY",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_019CeQDgJzpQK15CXwfdDr38",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "show.*changes",
+      "include": "*.tsx,*.ts"
+    },
+    "output": "No files found",
+    "metadata": {
+      "matches": 0,
+      "truncated": false
+    },
+    "title": "show.*changes",
+    "time": {
+      "start": 1759688602167,
+      "end": 1759688602176
+    }
+  }
+}

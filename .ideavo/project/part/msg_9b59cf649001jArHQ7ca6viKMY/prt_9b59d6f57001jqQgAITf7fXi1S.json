@@ -1,0 +1,58 @@
+{
+  "id": "prt_9b59d6f57001jqQgAITf7fXi1S",
+  "messageID": "msg_9b59cf649001jArHQ7ca6viKMY",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "multiedit",
+  "callID": "toolu_019tT2Np33j1LG9hhDHYo5wN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "edits": [
+        {
+          "oldString": "// Editing tools sidebar component for reuse\nfunction EditingToolsSidebar({ \n  correctionsOnly, \n  setCorrectionsOnly, \n  writingStyle, \n  setWritingStyle, \n  tone, \n  setTone \n}: {\n  correctionsOnly: boolean\n  setCorrectionsOnly: (value: boolean) => void\n  writingStyle: string\n  setWritingStyle: (value: string) => void\n  tone: string\n  setTone: (value: string) => void\n})",
+          "newString": "// Editing tools sidebar component for reuse\nfunction EditingToolsSidebar({ \n  correctionsOnly, \n  setCorrectionsOnly, \n  writingStyle, \n  setWritingStyle, \n  tone, \n  setTone,\n  showChanges,\n  setShowChanges\n}: {\n  correctionsOnly: boolean\n  setCorrectionsOnly: (value: boolean) => void\n  writingStyle: string\n  setWritingStyle: (value: string) => void\n  tone: string\n  setTone: (value: string) => void\n  showChanges: boolean\n  setShowChanges: (value: boolean) => void\n})"
+        },
+        {
+          "oldString": "        <div className=\"flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400\">\n          <Settings className=\"h-4 w-4\" />\n          <span>Show changes</span>\n          <Switch disabled />\n        </div>",
+          "newString": "        <div className=\"flex items-center justify-between\">\n          <div className=\"flex items-center gap-2\">\n            <Settings className=\"h-4 w-4\" />\n            <span className=\"text-sm\">Show changes</span>\n          </div>\n          <Switch \n            checked={showChanges}\n            onCheckedChange={setShowChanges}\n          />\n        </div>"
+        },
+        {
+          "oldString": "                  <EditingToolsSidebar\n                    correctionsOnly={correctionsOnly}\n                    setCorrectionsOnly={setCorrectionsOnly}\n                    writingStyle={writingStyle}\n                    setWritingStyle={setWritingStyle}\n                    tone={tone}\n                    setTone={setTone}\n                  />",
+          "newString": "                  <EditingToolsSidebar\n                    correctionsOnly={correctionsOnly}\n                    setCorrectionsOnly={setCorrectionsOnly}\n                    writingStyle={writingStyle}\n                    setWritingStyle={setWritingStyle}\n                    tone={tone}\n                    setTone={setTone}\n                    showChanges={showChanges}\n                    setShowChanges={setShowChanges}\n                  />"
+        },
+        {
+          "oldString": "                    <DrawerContent>\n                      <EditingToolsSidebar\n                        correctionsOnly={correctionsOnly}\n                        setCorrectionsOnly={setCorrectionsOnly}\n                        writingStyle={writingStyle}\n                        setWritingStyle={setWritingStyle}\n                        tone={tone}\n                        setTone={setTone}\n                      />\n                    </DrawerContent>",
+          "newString": "                    <DrawerContent>\n                      <EditingToolsSidebar\n                        correctionsOnly={correctionsOnly}\n                        setCorrectionsOnly={setCorrectionsOnly}\n                        writingStyle={writingStyle}\n                        setWritingStyle={setWritingStyle}\n                        tone={tone}\n                        setTone={setTone}\n                        showChanges={showChanges}\n                        setShowChanges={setShowChanges}\n                      />\n                    </DrawerContent>"
+        }
+      ]
+    },
+    "output": "",
+    "metadata": {
+      "results": [
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -74,16 +74,20 @@\n   setCorrectionsOnly, \n   writingStyle, \n   setWritingStyle, \n   tone, \n-  setTone \n+  setTone,\n+  showChanges,\n+  setShowChanges\n }: {\n   correctionsOnly: boolean\n   setCorrectionsOnly: (value: boolean) => void\n   writingStyle: string\n   setWritingStyle: (value: string) => void\n   tone: string\n   setTone: (value: string) => void\n+  showChanges: boolean\n+  setShowChanges: (value: boolean) => void\n }) {\n   return (\n     <div className=\"p-4 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/20 dark:to-pink-950/20\">\n       <div className=\"text-sm font-medium text-purple-700 dark:text-purple-300 mb-4 flex items-center gap-2\">\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -124,12 +124,17 @@\n       </SelectContent>\n     </Select>\n   </div>\n   \n-  <div className=\"flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400\">\n-    <Settings className=\"h-4 w-4\" />\n-    <span>Show changes</span>\n-    <Switch disabled />\n+  <div className=\"flex items-center justify-between\">\n+    <div className=\"flex items-center gap-2\">\n+      <Settings className=\"h-4 w-4\" />\n+      <span className=\"text-sm\">Show changes</span>\n+    </div>\n+    <Switch \n+      checked={showChanges}\n+      onCheckedChange={setShowChanges}\n+    />\n   </div>\n </div>\n \n <div className=\"mt-8\">\n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -429,8 +429,10 @@\n       writingStyle={writingStyle}\n       setWritingStyle={setWritingStyle}\n       tone={tone}\n       setTone={setTone}\n+      showChanges={showChanges}\n+      setShowChanges={setShowChanges}\n     />\n   </div>\n )}\n \n"
+        },
+        {
+          "diagnostics": {},
+          "diff": "Index: /home/user/project/components/linguala-translator.tsx\n===================================================================\n--- /home/user/project/components/linguala-translator.tsx\n+++ /home/user/project/components/linguala-translator.tsx\n@@ -452,8 +452,10 @@\n         writingStyle={writingStyle}\n         setWritingStyle={setWritingStyle}\n         tone={tone}\n         setTone={setTone}\n+        showChanges={showChanges}\n+        setShowChanges={setShowChanges}\n       />\n     </DrawerContent>\n   </Drawer>\n </div>\n"
+        }
+      ]
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759688627283,
+      "end": 1759688627299
+    }
+  }
+}

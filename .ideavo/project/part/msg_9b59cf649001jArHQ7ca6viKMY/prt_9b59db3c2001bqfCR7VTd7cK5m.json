@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b59db3c2001bqfCR7VTd7cK5m",
+  "messageID": "msg_9b59cf649001jArHQ7ca6viKMY",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now I need to implement the diff functionality to show changes. I'll create a simple diff component that highlights differences:",
+  "time": {
+    "start": 1759688636123,
+    "end": 1759688636123
+  }
+}

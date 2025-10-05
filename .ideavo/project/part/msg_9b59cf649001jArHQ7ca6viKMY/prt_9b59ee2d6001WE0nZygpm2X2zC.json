@@ -1,0 +1,73 @@
+{
+  "id": "prt_9b59ee2d6001WE0nZygpm2X2zC",
+  "messageID": "msg_9b59cf649001jArHQ7ca6viKMY",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01LATA6ooUzdri6iAC6dJS9h",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Investigate show changes option in writing assistant",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Implement diff/highlighting functionality for text changes",
+          "status": "completed",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Add UI components to display before/after comparisons",
+          "status": "completed",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Enable the show changes toggle functionality",
+          "status": "completed",
+          "priority": "high",
+          "id": "4"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Investigate show changes option in writing assistant\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"1\"\n  },\n  {\n    \"content\": \"Implement diff/highlighting functionality for text changes\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"2\"\n  },\n  {\n    \"content\": \"Add UI components to display before/after comparisons\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"3\"\n  },\n  {\n    \"content\": \"Enable the show changes toggle functionality\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"4\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Investigate show changes option in writing assistant",
+          "status": "completed",
+          "priority": "high",
+          "id": "1"
+        },
+        {
+          "content": "Implement diff/highlighting functionality for text changes",
+          "status": "completed",
+          "priority": "high",
+          "id": "2"
+        },
+        {
+          "content": "Add UI components to display before/after comparisons",
+          "status": "completed",
+          "priority": "high",
+          "id": "3"
+        },
+        {
+          "content": "Enable the show changes toggle functionality",
+          "status": "completed",
+          "priority": "high",
+          "id": "4"
+        }
+      ]
+    },
+    "title": "0 todos",
+    "time": {
+      "start": 1759688715922,
+      "end": 1759688715922
+    }
+  }
+}

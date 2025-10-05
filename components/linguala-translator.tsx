@@ -19,6 +19,7 @@ import { useTextProcessing } from "@/hooks/use-translation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { SettingsModal } from "@/components/settings-modal"
 import { useSettings } from "@/components/providers/settings-provider"
+import { TextDiff } from "@/components/text-diff"
 
 // Dynamic imports for code splitting
 const TranslatePanel = dynamic(() => import('./translate-panel'), {
@@ -75,7 +76,9 @@ function EditingToolsSidebar({
   writingStyle, 
   setWritingStyle, 
   tone, 
-  setTone 
+  setTone,
+  showChanges,
+  setShowChanges
 }: {
   correctionsOnly: boolean
   setCorrectionsOnly: (value: boolean) => void
@@ -83,6 +86,8 @@ function EditingToolsSidebar({
   setWritingStyle: (value: string) => void
   tone: string
   setTone: (value: string) => void
+  showChanges: boolean
+  setShowChanges: (value: boolean) => void
 }) {
   return (
     <div className="p-4 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/20 dark:to-pink-950/20">
@@ -121,10 +126,15 @@ function EditingToolsSidebar({
           </Select>
         </div>
         
-        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-          <Settings className="h-4 w-4" />
-          <span>Show changes</span>
-          <Switch disabled />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Settings className="h-4 w-4" />
+            <span className="text-sm">Show changes</span>
+          </div>
+          <Switch 
+            checked={showChanges}
+            onCheckedChange={setShowChanges}
+          />
         </div>
       </div>
       
@@ -152,6 +162,7 @@ export default function LingualaTranslator() {
   const [correctionsOnly, setCorrectionsOnly] = useState(false)
   const [writingStyle, setWritingStyle] = useState("simple")
   const [tone, setTone] = useState("friendly")
+  const [showChanges, setShowChanges] = useState(false)
   
   // UI state
   const [focusedArea, setFocusedArea] = useState<'source' | 'target' | null>(null)
@@ -420,6 +431,8 @@ export default function LingualaTranslator() {
                     setWritingStyle={setWritingStyle}
                     tone={tone}
                     setTone={setTone}
+                    showChanges={showChanges}
+                    setShowChanges={setShowChanges}
                   />
                 </div>
               )}
@@ -441,6 +454,8 @@ export default function LingualaTranslator() {
                         setWritingStyle={setWritingStyle}
                         tone={tone}
                         setTone={setTone}
+                        showChanges={showChanges}
+                        setShowChanges={setShowChanges}
                       />
                     </DrawerContent>
                   </Drawer>
@@ -460,16 +475,40 @@ export default function LingualaTranslator() {
                     </div>
                   </div>
                 ) : (
-                  <Textarea
-                    value={resultText || ''}
-                    placeholder={activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}
-                    readOnly
-                    onFocus={() => setFocusedArea('target')}
-                    onBlur={() => setFocusedArea(null)}
-                    className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 relative z-10 linguala-scrollbar ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}
-                    style={{ fontSize: '16px', lineHeight: '1.5' }}
-                    aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}
-                  />
+                  <div className="relative z-10">
+                    {activeTab === 'write' && showChanges && sourceText && resultText ? (
+                      <div className="space-y-4">
+                        <TextDiff 
+                          originalText={sourceText}
+                          improvedText={resultText}
+                        />
+                        <div className="border-t border-slate-200 dark:border-slate-600 pt-4">
+                          <h4 className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Final result:</h4>
+                          <Textarea
+                            value={resultText || ''}
+                            placeholder="✨ Improved text will appear here"
+                            readOnly
+                            onFocus={() => setFocusedArea('target')}
+                            onBlur={() => setFocusedArea(null)}
+                            className={`min-h-[200px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 linguala-scrollbar ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}
+                            style={{ fontSize: '16px', lineHeight: '1.5' }}
+                            aria-label="Improved text result"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <Textarea
+                        value={resultText || ''}
+                        placeholder={activeTab === 'translate' ? '✨ Translation will appear here' : '✨ Improved text will appear here'}
+                        readOnly
+                        onFocus={() => setFocusedArea('target')}
+                        onBlur={() => setFocusedArea(null)}
+                        className={`min-h-[300px] border-0 resize-none bg-transparent focus:ring-0 focus-visible:ring-0 linguala-scrollbar ${!resultText ? 'text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-slate-100'}`}
+                        style={{ fontSize: '16px', lineHeight: '1.5' }}
+                        aria-label={activeTab === 'translate' ? 'Translation result' : 'Improved text result'}
+                      />
+                    )}
+                  </div>
                 )}
               </div>
 

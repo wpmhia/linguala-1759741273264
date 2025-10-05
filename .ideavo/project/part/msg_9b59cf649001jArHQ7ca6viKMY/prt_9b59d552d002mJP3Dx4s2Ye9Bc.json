@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b59d552d002mJP3Dx4s2Ye9Bc",
+  "messageID": "msg_9b59cf649001jArHQ7ca6viKMY",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Found it! The \"Show changes\" option is on line 126-127 and it's currently disabled. I need to implement the functionality to enable it. Let me first add state management for show changes:",
+  "time": {
+    "start": 1759688612460,
+    "end": 1759688612460
+  }
+}

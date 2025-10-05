@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b59d47fa0014g2bmrPWjnr2nT",
+  "messageID": "msg_9b59cf649001jArHQ7ca6viKMY",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_0118td3K1tR3WsKiVYKZnntn",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/components/linguala-translator.tsx",
+      "offset": 120,
+      "limit": 30
+    },
+    "output": "<file>\n00121|           </Select>\n00122|         </div>\n00123|         \n00124|         <div className=\"flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400\">\n00125|           <Settings className=\"h-4 w-4\" />\n00126|           <span>Show changes</span>\n00127|           <Switch disabled />\n00128|         </div>\n00129|       </div>\n00130|       \n00131|       <div className=\"mt-8\">\n00132|         <div className=\"text-sm font-medium text-purple-700 dark:text-purple-300 mb-2\">🎨 Customizations</div>\n00133|         <Button variant=\"outline\" className=\"w-full text-sm bg-white/50 dark:bg-slate-800/50 border-purple-200 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-950/50 transition-all duration-300\">\n00134|           <Settings className=\"h-4 w-4 mr-2\" />\n00135|           Custom rules\n00136|           <span className=\"ml-auto bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full\">Pro</span>\n00137|         </Button>\n00138|       </div>\n00139|     </div>\n00140|   )\n00141| }\n00142| \n00143| export default function LingualaTranslator() {\n00144|   // Core processing state\n00145|   const [sourceText, setSourceText] = useState(\"\")\n00146|   const [resultText, setResultText] = useState(\"\")\n00147|   const [activeTab, setActiveTab] = useState(\"translate\")\n00148|   const [sourceLang, setSourceLang] = useState(\"auto\")\n00149|   const [targetLang, setTargetLang] = useState(\"en\")\n00150|   \n\n(File has more lines. Use 'offset' parameter to read beyond line 150)\n</file>",
+    "metadata": {
+      "preview": "          </Select>\n        </div>\n        \n        <div className=\"flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400\">\n          <Settings className=\"h-4 w-4\" />\n          <span>Show changes</span>\n          <Switch disabled />\n        </div>\n      </div>\n      \n      <div className=\"mt-8\">\n        <div className=\"text-sm font-medium text-purple-700 dark:text-purple-300 mb-2\">🎨 Customizations</div>\n        <Button variant=\"outline\" className=\"w-full text-sm bg-white/50 dark:bg-slate-800/50 border-purple-200 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-950/50 transition-all duration-300\">\n          <Settings className=\"h-4 w-4 mr-2\" />\n          Custom rules\n          <span className=\"ml-auto bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full\">Pro</span>\n        </Button>\n      </div>\n    </div>\n  )"
+    },
+    "title": "components/linguala-translator.tsx",
+    "time": {
+      "start": 1759688608832,
+      "end": 1759688608836
+    }
+  }
+}

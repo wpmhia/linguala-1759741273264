@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b59f2ad9001T2oVyoAmArlpv0",
+  "messageID": "msg_9b59cf649001jArHQ7ca6viKMY",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(translator): implement \"show changes\" diff component",
+  "cost": 0.3958394999999999,
+  "tokens": {
+    "input": 3,
+    "output": 529,
+    "reasoning": 0,
+    "cache": {
+      "write": 386,
+      "read": 68118
+    }
+  }
+}

@@ -197,7 +197,7 @@ export async function getWordAlternatives(word: string, context: string, options
     systemPrompt += 'Return only a JSON array of alternative words, like: ["alternative1", "alternative2", "alternative3", "alternative4", "alternative5"]'
     
     const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => reject(new Error('API call timeout after 8 seconds')), 8000)
+      setTimeout(() => reject(new Error('API call timeout after 5 seconds')), 5000)
     })
     
     const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
@@ -372,7 +372,26 @@ function getFallbackAlternatives(word: string): string[] {
     'help': ['assist', 'support', 'aid', 'guide', 'facilitate'],
     'work': ['function', 'operate', 'perform', 'labor', 'serve'],
     'easy': ['simple', 'effortless', 'straightforward', 'uncomplicated', 'manageable'],
-    'hard': ['difficult', 'challenging', 'tough', 'demanding', 'complex']
+    'hard': ['difficult', 'challenging', 'tough', 'demanding', 'complex'],
+    // Clothing and accessories
+    'shoes': ['footwear', 'sneakers', 'boots', 'sandals', 'loafers'],
+    'clothes': ['clothing', 'garments', 'attire', 'apparel', 'outfit'],
+    'shirt': ['blouse', 'top', 'jersey', 'tee', 'garment'],
+    'pants': ['trousers', 'slacks', 'jeans', 'bottoms', 'legwear'],
+    // Common verbs
+    'go': ['travel', 'move', 'proceed', 'head', 'journey'],
+    'come': ['arrive', 'approach', 'reach', 'appear', 'return'],
+    'see': ['observe', 'notice', 'view', 'spot', 'witness'],
+    'get': ['obtain', 'acquire', 'receive', 'gain', 'fetch'],
+    'take': ['grab', 'seize', 'pick', 'collect', 'carry'],
+    'give': ['provide', 'offer', 'present', 'deliver', 'grant'],
+    // Common nouns
+    'house': ['home', 'residence', 'dwelling', 'property', 'abode'],
+    'car': ['vehicle', 'automobile', 'auto', 'transport', 'ride'],
+    'food': ['meal', 'cuisine', 'dish', 'nourishment', 'sustenance'],
+    'book': ['novel', 'volume', 'publication', 'text', 'manuscript'],
+    'time': ['period', 'moment', 'duration', 'interval', 'era'],
+    'place': ['location', 'spot', 'area', 'site', 'venue']
   }
   
   return alternatives[word.toLowerCase()] || []

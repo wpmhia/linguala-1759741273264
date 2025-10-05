@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d69801001yOE2fYKkpYy1f0",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_016kEUn8gLkktjFzcwXewiEQ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run dev > enhanced_test.log 2>&1 & sleep 6 && echo \"Server started with enhanced fallbacks\"",
+      "description": "Start server with enhanced fallbacks"
+    },
+    "output": "Server started with enhanced fallbacks\n",
+    "metadata": {
+      "output": "Server started with enhanced fallbacks\n",
+      "exit": 0,
+      "description": "Start server with enhanced fallbacks"
+    },
+    "title": "npm run dev > enhanced_test.log 2>&1 & sleep 6 && echo \"Server started with enhanced fallbacks\"",
+    "time": {
+      "start": 1759692365024,
+      "end": 1759692371030
+    }
+  }
+}

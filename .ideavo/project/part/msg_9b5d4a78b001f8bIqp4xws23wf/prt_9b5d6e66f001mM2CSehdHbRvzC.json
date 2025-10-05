@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d6e66f001mM2CSehdHbRvzC",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01YLb2Fmr2gucrm5jJEh4WwZ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"rephrase\",\"text\":\"I love this book\"}'",
+      "description": "Test sentence rephrasing"
+    },
+    "output": "{\"originalText\":\"I love this book\",\"rephrasedText\":\"I love this book\",\"rephraseOptions\":[],\"operation\":\"rephrase\",\"fallback\":true}",
+    "metadata": {
+      "output": "{\"originalText\":\"I love this book\",\"rephrasedText\":\"I love this book\",\"rephraseOptions\":[],\"operation\":\"rephrase\",\"fallback\":true}",
+      "exit": 0,
+      "description": "Test sentence rephrasing"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"rephrase\",\"text\":\"I love this book\"}'",
+    "time": {
+      "start": 1759692384753,
+      "end": 1759692385586
+    }
+  }
+}

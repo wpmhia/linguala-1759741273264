@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5d5d64a001K5gHza02JJaJZ3",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Good, the functions have fallback handling. Let me check what the `getFallbackAlternatives` function provides:",
+  "time": {
+    "start": 1759692314983,
+    "end": 1759692314983
+  }
+}

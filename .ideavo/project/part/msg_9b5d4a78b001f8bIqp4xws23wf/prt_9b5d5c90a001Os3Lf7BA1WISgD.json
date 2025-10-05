@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5d5c90a001Os3Lf7BA1WISgD",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_015nhBSiQgtY4U3HoCcN3ePS",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 240,
+      "limit": 30
+    },
+    "output": "<file>\n00241|       const words = content.match(/[\\w']+/g) || []\n00242|       alternatives = words.slice(0, 5)\n00243|     }\n00244|     \n00245|     return {\n00246|       word,\n00247|       alternatives: alternatives.filter(alt => alt.toLowerCase() !== word.toLowerCase()).slice(0, 5),\n00248|       operation: 'alternatives'\n00249|     }\n00250|   } catch (error) {\n00251|     console.error('Get alternatives error:', error)\n00252|     \n00253|     // Enhanced fallback alternatives\n00254|     const fallbackAlternatives = getFallbackAlternatives(word)\n00255|     \n00256|     return {\n00257|       word,\n00258|       alternatives: fallbackAlternatives,\n00259|       operation: 'alternatives',\n00260|       fallback: true\n00261|     }\n00262|   }\n00263| }\n00264| \n00265| // Rephrase text using qwen-flash\n00266| export async function rephraseText(text: string): Promise<RephraseResult> {\n00267|   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n00268|   \n00269|   try {\n00270|     const controller = new AbortController()\n\n(File has more lines. Use 'offset' parameter to read beyond line 270)\n</file>",
+    "metadata": {
+      "preview": "      const words = content.match(/[\\w']+/g) || []\n      alternatives = words.slice(0, 5)\n    }\n    \n    return {\n      word,\n      alternatives: alternatives.filter(alt => alt.toLowerCase() !== word.toLowerCase()).slice(0, 5),\n      operation: 'alternatives'\n    }\n  } catch (error) {\n    console.error('Get alternatives error:', error)\n    \n    // Enhanced fallback alternatives\n    const fallbackAlternatives = getFallbackAlternatives(word)\n    \n    return {\n      word,\n      alternatives: fallbackAlternatives,\n      operation: 'alternatives',\n      fallback: true"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759692311694,
+      "end": 1759692311695
+    }
+  }
+}

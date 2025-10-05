@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5d5ff210028e6K6QVkMkoT6M",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Great! The fallback function has a decent set of synonyms, but it doesn't include \"shoes\". Let me add more common words to the fallback alternatives, including \"shoes\". But first, let me check if the server is actually running:",
+  "time": {
+    "start": 1759692326333,
+    "end": 1759692326333
+  }
+}

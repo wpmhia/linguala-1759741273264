@@ -1,0 +1,23 @@
+{
+  "id": "prt_9b5d4f659001xYmu0qVwwFZjiH",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01XGmT89tqt7TeeJEUEGLzsY",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/write/route.ts"
+    },
+    "output": "<file>\n00001| /**\n00002|  * Writing API Route\n00003|  * \n00004|  * Handles writing assistance using qwen-flash model:\n00005|  * - Text improvement\n00006|  * - Word alternatives \n00007|  * - Sentence rephrasing\n00008|  */\n00009| import { NextRequest, NextResponse } from 'next/server'\n00010| \n00011| export async function POST(request: NextRequest) {\n00012|   try {\n00013|     const body = await request.json()\n00014|     console.log('Processing writing request:', body)\n00015|     \n00016|     const { text, word, context, operation, correctionsOnly, writingStyle, tone, mode, sourceLang, targetLang } = body\n00017| \n00018|     // Validate required fields based on operation\n00019|     if (operation === 'alternatives' && !word) {\n00020|       return NextResponse.json(\n00021|         { error: 'Word is required for alternatives operation' },\n00022|         { status: 400 }\n00023|       )\n00024|     }\n00025| \n00026|     if ((operation === 'improve' || operation === 'rephrase') && !text) {\n00027|       console.log('Missing required field: text')\n00028|       return NextResponse.json(\n00029|         { error: 'Text is required' },\n00030|         { status: 400 }\n00031|       )\n00032|     }\n00033| \n00034|     let result\n00035| \n00036|     switch (operation) {\n00037|       case 'improve':\n00038|         // Temporary fallback response for testing\n00039|         result = {\n00040|           originalText: text,\n00041|           improvedText: text + \" (improved)\",\n00042|           operation: 'improve',\n00043|           fallback: true\n00044|         }\n00045|         break\n00046| \n00047|       case 'alternatives':\n00048|         // Temporary fallback response for testing\n00049|         result = {\n00050|           word: word,\n00051|           alternatives: [word + \"1\", word + \"2\", word + \"3\"],\n00052|           operation: 'alternatives',\n00053|           fallback: true\n00054|         }\n00055|         break\n00056| \n00057|       case 'rephrase':\n00058|         // Temporary fallback response for testing\n00059|         result = {\n00060|           originalText: text,\n00061|           rephrasedText: \"This is a rephrased version: \" + text,\n00062|           rephraseOptions: [\"Option 1: \" + text, \"Option 2: \" + text],\n00063|           operation: 'rephrase',\n00064|           fallback: true\n00065|         }\n00066|         break\n00067| \n00068|       default:\n00069|         return NextResponse.json(\n00070|           { error: 'Invalid operation. Supported: improve, alternatives, rephrase' },\n00071|           { status: 400 }\n00072|         )\n00073|     }\n00074| \n00075|     return NextResponse.json(result)\n00076| \n00077|   } catch (error) {\n00078|     console.error('Writing processing error:', error)\n00079|     return NextResponse.json(\n00080|       { error: 'Internal server error' },\n00081|       { status: 500 }\n00082|     )\n00083|   }\n00084| }\n</file>",
+    "metadata": {
+      "preview": "/**\n * Writing API Route\n * \n * Handles writing assistance using qwen-flash model:\n * - Text improvement\n * - Word alternatives \n * - Sentence rephrasing\n */\nimport { NextRequest, NextResponse } from 'next/server'\n\nexport async function POST(request: NextRequest) {\n  try {\n    const body = await request.json()\n    console.log('Processing writing request:', body)\n    \n    const { text, word, context, operation, correctionsOnly, writingStyle, tone, mode, sourceLang, targetLang } = body\n\n    // Validate required fields based on operation\n    if (operation === 'alternatives' && !word) {\n      return NextResponse.json("
+    },
+    "title": "app/api/write/route.ts",
+    "time": {
+      "start": 1759692257272,
+      "end": 1759692257275
+    }
+  }
+}

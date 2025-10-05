@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5d52171001NSfs7Oy0Vaw9V4",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01YSd6yfEE4UZFLcFCXcgPaP",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 180,
+      "limit": 50
+    },
+    "output": "<file>\n00181| export async function getWordAlternatives(word: string, context: string, options: { mode?: string, sourceLang?: string, targetLang?: string } = {}): Promise<AlternativesResult> {\n00182|   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n00183|   console.log('Getting alternatives for word:', word)\n00184|   \n00185|   try {\n00186|     let systemPrompt = 'You are a professional writing assistant. '\n00187|     \n00188|     if (options.mode === 'translate') {\n00189|       systemPrompt += `Provide 5 alternative translations or synonyms for the word \"${word}\" in the context: \"${context}\". `\n00190|       if (options.targetLang) {\n00191|         systemPrompt += `Focus on translations that work well in ${options.targetLang}. `\n00192|       }\n00193|     } else {\n00194|       systemPrompt += `Provide 5 alternative words or synonyms for \"${word}\" in the context: \"${context}\". Focus on words that improve clarity, style, and readability. `\n00195|     }\n00196|     \n00197|     systemPrompt += 'Return only a JSON array of alternative words, like: [\"alternative1\", \"alternative2\", \"alternative3\", \"alternative4\", \"alternative5\"]'\n00198|     \n00199|     const timeoutPromise = new Promise((_, reject) => {\n00200|       setTimeout(() => reject(new Error('API call timeout after 8 seconds')), 8000)\n00201|     })\n00202|     \n00203|     const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00204|       method: 'POST',\n00205|       headers: {\n00206|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00207|         'Content-Type': 'application/json',\n00208|       },\n00209|       body: JSON.stringify({\n00210|         model: 'qwen-flash',\n00211|         messages: [\n00212|           {\n00213|             role: 'system',\n00214|             content: systemPrompt\n00215|           },\n00216|           {\n00217|             role: 'user',\n00218|             content: `Word: \"${word}\"\\nContext: \"${context}\"`\n00219|           }\n00220|         ],\n00221|         max_tokens: 200,\n00222|         temperature: 0.7\n00223|       })\n00224|     })\n00225|     \n00226|     const response = await Promise.race([fetchPromise, timeoutPromise]) as Response\n00227|     \n00228|     if (!response.ok) {\n00229|       throw new Error(`API request failed: ${response.status}`)\n00230|     }\n\n(File has more lines. Use 'offset' parameter to read beyond line 230)\n</file>",
+    "metadata": {
+      "preview": "export async function getWordAlternatives(word: string, context: string, options: { mode?: string, sourceLang?: string, targetLang?: string } = {}): Promise<AlternativesResult> {\n  const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY\n  console.log('Getting alternatives for word:', word)\n  \n  try {\n    let systemPrompt = 'You are a professional writing assistant. '\n    \n    if (options.mode === 'translate') {\n      systemPrompt += `Provide 5 alternative translations or synonyms for the word \"${word}\" in the context: \"${context}\". `\n      if (options.targetLang) {\n        systemPrompt += `Focus on translations that work well in ${options.targetLang}. `\n      }\n    } else {\n      systemPrompt += `Provide 5 alternative words or synonyms for \"${word}\" in the context: \"${context}\". Focus on words that improve clarity, style, and readability. `\n    }\n    \n    systemPrompt += 'Return only a JSON array of alternative words, like: [\"alternative1\", \"alternative2\", \"alternative3\", \"alternative4\", \"alternative5\"]'\n    \n    const timeoutPromise = new Promise((_, reject) => {\n      setTimeout(() => reject(new Error('API call timeout after 8 seconds')), 8000)"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759692268433,
+      "end": 1759692268434
+    }
+  }
+}

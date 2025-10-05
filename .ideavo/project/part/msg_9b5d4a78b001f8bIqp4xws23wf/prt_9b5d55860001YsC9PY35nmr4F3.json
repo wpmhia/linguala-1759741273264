@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d55860001YsC9PY35nmr4F3",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01AnTF96BsDR4tNHebMnBUSe",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next dev\" && sleep 2 && npm run dev > ai_test.log 2>&1 & sleep 5 && echo \"Server restarted with AI functions\"",
+      "description": "Restart server with AI-powered functions"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": null,
+      "description": "Restart server with AI-powered functions"
+    },
+    "title": "pkill -f \"next dev\" && sleep 2 && npm run dev > ai_test.log 2>&1 & sleep 5 && echo \"Server restarted with AI functions\"",
+    "time": {
+      "start": 1759692283647,
+      "end": 1759692288659
+    }
+  }
+}

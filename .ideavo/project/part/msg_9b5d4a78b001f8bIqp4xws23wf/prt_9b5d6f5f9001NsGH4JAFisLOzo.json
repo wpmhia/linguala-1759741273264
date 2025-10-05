@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b5d6f5f9001NsGH4JAFisLOzo",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "The rephrasing is falling back. Let me test a word that's not in our fallback list to see if the AI is working:",
+  "time": {
+    "start": 1759692388925,
+    "end": 1759692388925
+  }
+}

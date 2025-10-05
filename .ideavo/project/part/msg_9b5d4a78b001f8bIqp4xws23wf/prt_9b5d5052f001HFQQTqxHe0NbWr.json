@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5d5052f001HFQQTqxHe0NbWr",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01NSQyTi6owqfz9JpmhmjBA9",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 80,
+      "limit": 40
+    },
+    "output": "<file>\n00081|   }\n00082|   \n00083|   systemPrompt += 'Return only the improved text without explanations, quotes, or additional commentary.'\n00084|   \n00085|   // Add timeout wrapper\n00086|   const timeoutPromise = new Promise((_, reject) => {\n00087|     setTimeout(() => reject(new Error('API call timeout after 10 seconds')), 10000)\n00088|   })\n00089|   \n00090|   try {\n00091|     const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00092|       method: 'POST',\n00093|       headers: {\n00094|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00095|         'Content-Type': 'application/json',\n00096|       },\n00097|       body: JSON.stringify({\n00098|         model: 'qwen-flash',\n00099|         messages: [\n00100|           {\n00101|             role: 'system',\n00102|             content: systemPrompt\n00103|           },\n00104|           {\n00105|             role: 'user',\n00106|             content: text\n00107|           }\n00108|         ],\n00109|         max_tokens: 1000,\n00110|         temperature: options.correctionsOnly ? 0.1 : 0.3\n00111|       })\n00112|     })\n00113|     \n00114|     const response = await Promise.race([fetchPromise, timeoutPromise]) as Response\n00115|     \n00116|     if (!response.ok) {\n00117|       throw new Error(`API request failed: ${response.status}`)\n00118|     }\n00119| \n00120|     const data = await response.json()\n\n(File has more lines. Use 'offset' parameter to read beyond line 120)\n</file>",
+    "metadata": {
+      "preview": "  }\n  \n  systemPrompt += 'Return only the improved text without explanations, quotes, or additional commentary.'\n  \n  // Add timeout wrapper\n  const timeoutPromise = new Promise((_, reject) => {\n    setTimeout(() => reject(new Error('API call timeout after 10 seconds')), 10000)\n  })\n  \n  try {\n    const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-flash',\n        messages: [\n          {"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759692261336,
+      "end": 1759692261337
+    }
+  }
+}

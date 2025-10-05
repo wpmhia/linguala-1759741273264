@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d57b7c001QnM3QWlrvQHZg5",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Ps8S1dHBGebMveVXsqqFU8",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"shoes\",\"context\":\"I love my new shoes\",\"mode\":\"write\"}' --max-time 15",
+      "description": "Test real AI word alternatives for 'shoes'"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 7,
+      "description": "Test real AI word alternatives for 'shoes'"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"shoes\",\"context\":\"I love my new shoes\",\"mode\":\"write\"}' --max-time 15",
+    "time": {
+      "start": 1759692292769,
+      "end": 1759692292785
+    }
+  }
+}

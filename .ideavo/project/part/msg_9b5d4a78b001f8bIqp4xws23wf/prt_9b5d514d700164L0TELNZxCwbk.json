@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5d514d700164L0TELNZxCwbk",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Nv3uT279VGWg3MDaCSECKm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 140,
+      "limit": 40
+    },
+    "output": "<file>\n00141|       .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n00142|       .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n00143|       .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n00144|       .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n00145|       // English grammar fixes\n00146|       .replace(/\\bi\\b/gi, 'I')\n00147|       .replace(/\\bI\\s+am\\s+going\\s+to\\s+went\\b/gi, 'I am going to go')\n00148|       .replace(/\\bYou\\s+was\\b/gi, 'You were')\n00149|       .replace(/\\bHe\\s+don't\\b/gi, 'He doesn\\'t')\n00150|       .replace(/\\bShe\\s+don't\\b/gi, 'She doesn\\'t')\n00151|       .replace(/\\bthere\\s+house\\b/gi, 'their house')\n00152|       .replace(/\\byour\\s+welcome\\b/gi, 'you\\'re welcome')\n00153|       .replace(/\\bits\\s+a\\s+beautiful\\s+day\\b/gi, 'it\\'s a beautiful day')\n00154|       // German basic improvements\n00155|       .replace(/\\bich\\s+sind\\b/gi, 'ich bin')\n00156|       .replace(/\\bdu\\s+sind\\b/gi, 'du bist')\n00157|       .replace(/\\ber\\s+sind\\b/gi, 'er ist')\n00158|       // French basic improvements\n00159|       .replace(/\\bje\\s+suis\\s+aller\\b/gi, 'je suis allé')\n00160|       .replace(/\\btu\\s+es\\s+aller\\b/gi, 'tu es allé')\n00161|       // Spanish basic improvements\n00162|       .replace(/\\byo\\s+son\\b/gi, 'yo soy')\n00163|       .replace(/\\btú\\s+son\\b/gi, 'tú eres')\n00164|       // Capitalization\n00165|       .replace(/^[a-z]/, match => match.toUpperCase())\n00166|       .replace(/\\.\\s+[a-z]/g, match => match.toUpperCase())\n00167|       // Double spaces\n00168|       .replace(/\\s{2,}/g, ' ')\n00169|       .trim()\n00170| \n00171|     return {\n00172|       originalText: text,\n00173|       improvedText: basicImprovement || text,\n00174|       operation: 'improve',\n00175|       fallback: true\n00176|     }\n00177|   }\n00178| }\n00179| \n00180| // Get word alternatives using qwen-flash\n\n(File has more lines. Use 'offset' parameter to read beyond line 180)\n</file>",
+    "metadata": {
+      "preview": "      .replace(/\\bhij hebben\\b/gi, 'hij heeft')\n      .replace(/\\bHij hebben\\b/g, 'Hij heeft')\n      .replace(/\\bzij hebben\\b/gi, 'zij heeft')\n      .replace(/\\bZij hebben\\b/g, 'Zij heeft')\n      // English grammar fixes\n      .replace(/\\bi\\b/gi, 'I')\n      .replace(/\\bI\\s+am\\s+going\\s+to\\s+went\\b/gi, 'I am going to go')\n      .replace(/\\bYou\\s+was\\b/gi, 'You were')\n      .replace(/\\bHe\\s+don't\\b/gi, 'He doesn\\'t')\n      .replace(/\\bShe\\s+don't\\b/gi, 'She doesn\\'t')\n      .replace(/\\bthere\\s+house\\b/gi, 'their house')\n      .replace(/\\byour\\s+welcome\\b/gi, 'you\\'re welcome')\n      .replace(/\\bits\\s+a\\s+beautiful\\s+day\\b/gi, 'it\\'s a beautiful day')\n      // German basic improvements\n      .replace(/\\bich\\s+sind\\b/gi, 'ich bin')\n      .replace(/\\bdu\\s+sind\\b/gi, 'du bist')\n      .replace(/\\ber\\s+sind\\b/gi, 'er ist')\n      // French basic improvements\n      .replace(/\\bje\\s+suis\\s+aller\\b/gi, 'je suis allé')\n      .replace(/\\btu\\s+es\\s+aller\\b/gi, 'tu es allé')"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759692265168,
+      "end": 1759692265169
+    }
+  }
+}

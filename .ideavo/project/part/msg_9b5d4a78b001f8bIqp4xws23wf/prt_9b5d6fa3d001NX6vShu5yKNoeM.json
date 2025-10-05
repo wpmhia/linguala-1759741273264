@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b5d6fa3d001NX6vShu5yKNoeM",
+  "messageID": "msg_9b5d4a78b001f8bIqp4xws23wf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01WBLjbmrXY6JcorGPPSb5De",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"fantastic\",\"context\":\"That was a fantastic movie\"}'",
+      "description": "Test alternatives for word not in fallback list"
+    },
+    "output": "{\"word\":\"fantastic\",\"alternatives\":[\"excellent\",\"outstanding\",\"remarkable\",\"impressive\",\"superb\"],\"operation\":\"alternatives\"}",
+    "metadata": {
+      "output": "{\"word\":\"fantastic\",\"alternatives\":[\"excellent\",\"outstanding\",\"remarkable\",\"impressive\",\"superb\"],\"operation\":\"alternatives\"}",
+      "exit": 0,
+      "description": "Test alternatives for word not in fallback list"
+    },
+    "title": "curl -s -X POST http://localhost:3000/api/write -H \"Content-Type: application/json\" -d '{\"operation\":\"alternatives\",\"word\":\"fantastic\",\"context\":\"That was a fantastic movie\"}'",
+    "time": {
+      "start": 1759692389874,
+      "end": 1759692391026
+    }
+  }
+}

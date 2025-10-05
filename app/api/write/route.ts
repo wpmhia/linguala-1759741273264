@@ -7,6 +7,7 @@
  * - Sentence rephrasing
  */
 import { NextRequest, NextResponse } from 'next/server'
+import { improveText, getWordAlternatives, rephraseText } from '@/lib/writing-service'
 
 export async function POST(request: NextRequest) {
   try {
@@ -35,34 +36,15 @@ export async function POST(request: NextRequest) {
 
     switch (operation) {
       case 'improve':
-        // Temporary fallback response for testing
-        result = {
-          originalText: text,
-          improvedText: text + " (improved)",
-          operation: 'improve',
-          fallback: true
-        }
+        result = await improveText(text, { correctionsOnly, writingStyle, tone })
         break
 
       case 'alternatives':
-        // Temporary fallback response for testing
-        result = {
-          word: word,
-          alternatives: [word + "1", word + "2", word + "3"],
-          operation: 'alternatives',
-          fallback: true
-        }
+        result = await getWordAlternatives(word, context, { mode, sourceLang, targetLang })
         break
 
       case 'rephrase':
-        // Temporary fallback response for testing
-        result = {
-          originalText: text,
-          rephrasedText: "This is a rephrased version: " + text,
-          rephraseOptions: ["Option 1: " + text, "Option 2: " + text],
-          operation: 'rephrase',
-          fallback: true
-        }
+        result = await rephraseText(text)
         break
 
       default:

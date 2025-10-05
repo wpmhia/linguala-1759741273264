@@ -1,0 +1,56 @@
+
+> ideavo-nextjs@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.31
+  - Local:        http://localhost:3000
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 1990ms
+ ✓ Compiled /api/write in 396ms (57 modules)
+Processing writing request: {
+  operation: 'alternatives',
+  word: 'shoes',
+  context: 'I love my new shoes'
+}
+Getting alternatives for word: shoes
+ POST /api/write 200 in 1660ms
+Processing writing request: {
+  operation: 'alternatives',
+  word: 'good',
+  context: 'This is a good book'
+}
+Getting alternatives for word: good
+ POST /api/write 200 in 656ms
+Processing writing request: { operation: 'rephrase', text: 'I love this book' }
+Rephrase text error: TypeError: rephraseOptions.filter is not a function
+    at rephraseText (webpack-internal:///(rsc)/./lib/writing-service.ts:247:46)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async POST (webpack-internal:///(rsc)/./app/api/write/route.ts:54:26)
+    at async /home/user/project/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57228
+    at async eT.execute (/home/user/project/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46851)
+    at async eT.handle (/home/user/project/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:58760)
+    at async doRender (/home/user/project/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/home/user/project/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/home/user/project/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderPageComponent (/home/user/project/node_modules/next/dist/server/base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (/home/user/project/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/home/user/project/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/home/user/project/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/home/user/project/node_modules/next/dist/server/base-server.js:818:17)
+    at async /home/user/project/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/home/user/project/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/home/user/project/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/home/user/project/node_modules/next/dist/server/lib/router-server.js:179:21)
+    at async handleRequest (/home/user/project/node_modules/next/dist/server/lib/router-server.js:359:24)
+    at async requestHandlerImpl (/home/user/project/node_modules/next/dist/server/lib/router-server.js:383:13)
+    at async Server.requestListener (/home/user/project/node_modules/next/dist/server/lib/start-server.js:141:13)
+ POST /api/write 200 in 817ms
+Processing writing request: {
+  operation: 'alternatives',
+  word: 'fantastic',
+  context: 'That was a fantastic movie'
+}
+Getting alternatives for word: fantastic
+ POST /api/write 200 in 1135ms

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5b8777e001g7OQFucxr3OWN8",
+  "messageID": "msg_9b5b82073001jlin2IXq2YJWgf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01G6X19vLzGtRtNyFNbaKJiU",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/translate/route.ts",
+      "offset": 35,
+      "limit": 20
+    },
+    "output": "<file>\n00036|       case 'translate':\n00037|         if (!targetLang) {\n00038|           return NextResponse.json(\n00039|             { error: 'Target language is required for translation' },\n00040|             { status: 400 }\n00041|           )\n00042|         }\n00043|         result = await translateText(text, sourceLang, targetLang, { domain, glossary })\n00044|         break\n00045| \n00046|       case 'improve':\n00047|         const { correctionsOnly, writingStyle, tone } = body\n00048|         result = await improveWritingWithQwen3Max(text, { correctionsOnly, writingStyle, tone })\n00049|         break\n00050| \n00051|       case 'alternatives':\n00052|         result = await getWordAlternativesWithQwen3Max(word, context, { mode, sourceLang, targetLang })\n00053|         break\n00054| \n00055|       case 'rephrase':\n\n(File has more lines. Use 'offset' parameter to read beyond line 55)\n</file>",
+    "metadata": {
+      "preview": "      case 'translate':\n        if (!targetLang) {\n          return NextResponse.json(\n            { error: 'Target language is required for translation' },\n            { status: 400 }\n          )\n        }\n        result = await translateText(text, sourceLang, targetLang, { domain, glossary })\n        break\n\n      case 'improve':\n        const { correctionsOnly, writingStyle, tone } = body\n        result = await improveWritingWithQwen3Max(text, { correctionsOnly, writingStyle, tone })\n        break\n\n      case 'alternatives':\n        result = await getWordAlternativesWithQwen3Max(word, context, { mode, sourceLang, targetLang })\n        break\n\n      case 'rephrase':"
+    },
+    "title": "app/api/translate/route.ts",
+    "time": {
+      "start": 1759690390024,
+      "end": 1759690390026
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "prt_9b5b81b3f001XGvzXDIXrUGl7X",
+  "type": "text",
+  "text": "qwen-mt-turbo is still not working for translate, we had it working before we added Write, there was no reason to change a good working model.",
+  "messageID": "msg_9b5b81b3e001iEFA6Az81roNTp",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm"
+}

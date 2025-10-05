@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5b8ac19001tbeNGTK0pGHNz0",
+  "messageID": "msg_9b5b82073001jlin2IXq2YJWgf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "grep",
+  "callID": "toolu_01Cp17rJPe1nk8HA8eA9M6rm",
+  "state": {
+    "status": "completed",
+    "input": {
+      "pattern": "qwen.*turbo",
+      "include": "*.ts"
+    },
+    "output": "Found 5 matches\n/home/user/project/lib/translation-service.ts:\n  Line 115: // Main Qwen3 translation function using qwen-mt-turbo\n  Line 123:   console.log(`Translating with qwen-mt-turbo: \"${text.substring(0, 50)}\" from ${sourceLang} to ${targetLang}`)\n  Line 133:         model: 'qwen-mt-turbo',\n  Line 145:     console.log('qwen-mt-turbo response status:', response.status)\n  Line 165:     console.error('qwen-mt-turbo translation error:', error)",
+    "metadata": {
+      "matches": 5,
+      "truncated": false
+    },
+    "title": "qwen.*turbo",
+    "time": {
+      "start": 1759690403336,
+      "end": 1759690403346
+    }
+  }
+}

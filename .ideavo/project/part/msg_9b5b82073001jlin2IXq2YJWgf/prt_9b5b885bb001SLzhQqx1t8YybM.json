@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5b885bb001SLzhQqx1t8YybM",
+  "messageID": "msg_9b5b82073001jlin2IXq2YJWgf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01NSWeUyGEWMBFJiuA1w9C6u",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 330,
+      "limit": 30
+    },
+    "output": "<file>\n00331|       currentChunk += (currentChunk ? '\\n\\n' : '') + paragraph\n00332|     }\n00333|   }\n00334|   \n00335|   if (currentChunk.trim()) {\n00336|     chunks.push(currentChunk.trim())\n00337|   }\n00338| \n00339|   // Translate each chunk\n00340|   const translatedChunks: string[] = []\n00341|   for (let i = 0; i < chunks.length; i++) {\n00342|     console.log(`Translating chunk ${i + 1}/${chunks.length}`)\n00343|     try {\n00344|       const result = await translateText(chunks[i], sourceLang, targetLang)\n00345|       translatedChunks.push(result.translatedText)\n00346|       \n00347|       // Add small delay to avoid rate limiting\n00348|       if (i < chunks.length - 1) {\n00349|         await new Promise(resolve => setTimeout(resolve, 500))\n00350|       }\n00351|     } catch (error) {\n00352|       console.error(`Error translating chunk ${i + 1}:`, error)\n00353|       // Use original text as fallback\n00354|       translatedChunks.push(chunks[i])\n00355|     }\n00356|   }\n00357| \n00358|   return translatedChunks.join('\\n\\n')\n00359| }\n</file>",
+    "metadata": {
+      "preview": "      currentChunk += (currentChunk ? '\\n\\n' : '') + paragraph\n    }\n  }\n  \n  if (currentChunk.trim()) {\n    chunks.push(currentChunk.trim())\n  }\n\n  // Translate each chunk\n  const translatedChunks: string[] = []\n  for (let i = 0; i < chunks.length; i++) {\n    console.log(`Translating chunk ${i + 1}/${chunks.length}`)\n    try {\n      const result = await translateText(chunks[i], sourceLang, targetLang)\n      translatedChunks.push(result.translatedText)\n      \n      // Add small delay to avoid rate limiting\n      if (i < chunks.length - 1) {\n        await new Promise(resolve => setTimeout(resolve, 500))\n      }"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759690393786,
+      "end": 1759690393787
+    }
+  }
+}

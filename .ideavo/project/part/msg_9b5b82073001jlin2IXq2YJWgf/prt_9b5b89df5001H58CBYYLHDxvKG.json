@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5b89df5001H58CBYYLHDxvKG",
+  "messageID": "msg_9b5b82073001jlin2IXq2YJWgf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_017bLZtPUwxPwQhmeZMHfWwz",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 232,
+      "limit": 40
+    },
+    "output": "<file>\n00233|   text: string, \n00234|   sourceLang: string, \n00235|   targetLang: string,\n00236|   options?: {\n00237|     domain?: string\n00238|     glossary?: Array<{ source: string; target: string }>\n00239|   }\n00240| ): Promise<TranslationResult> {\n00241|   try {\n00242|     if (!text || !targetLang) {\n00243|       throw new Error('Text and target language are required')\n00244|     }\n00245| \n00246|     // Prepare the translation options\n00247|     const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n00248|     const sourceLanguage = sourceLang && sourceLang !== 'auto' ? LANGUAGE_MAP[sourceLang] || sourceLang : 'auto'\n00249|     \n00250|     // Try Qwen3 translation first\n00251|     try {\n00252|       const result = await translateWithQwen3Max(text, sourceLanguage, targetLanguage)\n00253|       return result\n00254|     } catch (error) {\n00255|       console.error('Qwen3 translation failed, using fallback:', error)\n00256|       \n00257|       // Try fallback translation for common phrases\n00258|       const fallbackTranslation = getFallbackTranslation(text, targetLanguage)\n00259|       if (fallbackTranslation) {\n00260|         return {\n00261|           translatedText: fallbackTranslation,\n00262|           sourceLang,\n00263|           targetLang,\n00264|           fallback: true\n00265|         }\n00266|       }\n00267| \n00268|       // Enhanced pattern-based translation fallback\n00269|       const result = getPatternBasedTranslation(text, targetLanguage)\n00270|       return {\n00271|         translatedText: result,\n00272|         sourceLang,\n\n(File has more lines. Use 'offset' parameter to read beyond line 272)\n</file>",
+    "metadata": {
+      "preview": "  text: string, \n  sourceLang: string, \n  targetLang: string,\n  options?: {\n    domain?: string\n    glossary?: Array<{ source: string; target: string }>\n  }\n): Promise<TranslationResult> {\n  try {\n    if (!text || !targetLang) {\n      throw new Error('Text and target language are required')\n    }\n\n    // Prepare the translation options\n    const targetLanguage = LANGUAGE_MAP[targetLang] || targetLang\n    const sourceLanguage = sourceLang && sourceLang !== 'auto' ? LANGUAGE_MAP[sourceLang] || sourceLang : 'auto'\n    \n    // Try Qwen3 translation first\n    try {\n      const result = await translateWithQwen3Max(text, sourceLanguage, targetLanguage)"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759690399780,
+      "end": 1759690399782
+    }
+  }
+}

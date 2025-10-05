@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b5b867e6001LL1wnXZF6wFDWC",
+  "messageID": "msg_9b5b82073001jlin2IXq2YJWgf",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_0151opgPKQkZc61aTkEfeQPu",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 120,
+      "limit": 50
+    },
+    "output": "<file>\n00121|   }\n00122|   \n00123|   console.log(`Translating with qwen-mt-turbo: \"${text.substring(0, 50)}\" from ${sourceLang} to ${targetLang}`)\n00124|   \n00125|   try {\n00126|     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00127|       method: 'POST',\n00128|       headers: {\n00129|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00130|         'Content-Type': 'application/json',\n00131|       },\n00132|       body: JSON.stringify({\n00133|         model: 'qwen-mt-turbo',\n00134|         messages: [\n00135|           {\n00136|             role: 'user',\n00137|             content: `Translate from ${sourceLang === 'auto' ? 'English' : sourceLang} to ${targetLang}: ${text}`\n00138|           }\n00139|         ],\n00140|         max_tokens: 200,\n00141|         temperature: 0.1\n00142|       })\n00143|     })\n00144|     \n00145|     console.log('qwen-mt-turbo response status:', response.status)\n00146|     \n00147|     if (!response.ok) {\n00148|       throw new Error(`API request failed: ${response.status}`)\n00149|     }\n00150| \n00151|     const data = await response.json()\n00152|     const translatedText = data.choices[0]?.message?.content?.trim()\n00153| \n00154|     if (translatedText && translatedText !== text) {\n00155|       console.log('Translation successful:', translatedText)\n00156|       return {\n00157|         translatedText,\n00158|         sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,\n00159|         targetLang\n00160|       }\n00161|     } else {\n00162|       throw new Error('No translation received or same as input')\n00163|     }\n00164|   } catch (error) {\n00165|     console.error('qwen-mt-turbo translation error:', error)\n00166|     throw error\n00167|   }\n00168| }\n00169| \n00170| // Enhanced pattern-based translation for common text\n\n(File has more lines. Use 'offset' parameter to read beyond line 170)\n</file>",
+    "metadata": {
+      "preview": "  }\n  \n  console.log(`Translating with qwen-mt-turbo: \"${text.substring(0, 50)}\" from ${sourceLang} to ${targetLang}`)\n  \n  try {\n    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: [\n          {\n            role: 'user',\n            content: `Translate from ${sourceLang === 'auto' ? 'English' : sourceLang} to ${targetLang}: ${text}`\n          }\n        ],\n        max_tokens: 200,"
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759690386364,
+      "end": 1759690386370
+    }
+  }
+}

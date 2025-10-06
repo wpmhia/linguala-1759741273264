@@ -73,15 +73,34 @@ export async function improveText(text: string, options: { correctionsOnly?: boo
   
   prompt += cleanedText
   
-  // Add aggressive timeout wrapper
-  const timeoutPromise = new Promise((_, reject) => {
-    setTimeout(() => {
-      console.log('🔥 TIMEOUT: qwen-flash API call timed out after 3 seconds')
-      reject(new Error('API call timeout after 3 seconds'))
-    }, 3000)
-  })
+  const controller = new AbortController()
+  let timeoutId: NodeJS.Timeout | null = null
+  let isComplete = false
+  
+  // Robust cleanup function
+  const cleanup = () => {
+    if (!isComplete) {
+      isComplete = true
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+        timeoutId = null
+      }
+      if (!controller.signal.aborted) {
+        controller.abort()
+      }
+    }
+  }
   
   try {
+    // Create timeout promise
+    const timeoutPromise = new Promise<never>((_, reject) => {
+      timeoutId = setTimeout(() => {
+        console.log('🔥 TIMEOUT: qwen-flash API call timed out after 3 seconds')
+        cleanup()
+        reject(new Error('API call timeout after 3 seconds'))
+      }, 3000)
+    })
+    
     const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -98,10 +117,21 @@ export async function improveText(text: string, options: { correctionsOnly?: boo
         ],
         max_tokens: maxTokens,
         temperature: options.correctionsOnly ? 0.1 : 0.3
-      })
+      }),
+      signal: controller.signal
+    }).catch((error) => {
+      console.log('Fetch error in improveText:', error?.message || error)
+      throw error
     })
     
-    const response = await Promise.race([fetchPromise, timeoutPromise]) as Response
+    let response: Response
+    try {
+      response = await Promise.race([fetchPromise, timeoutPromise])
+      cleanup()
+    } catch (error) {
+      cleanup()
+      throw error
+    }
     
     if (!response.ok) {
       throw new Error(`API request failed: ${response.status}`)
@@ -119,8 +149,14 @@ export async function improveText(text: string, options: { correctionsOnly?: boo
     } else {
       throw new Error('No improvement received')
     }
-  } catch (error) {
+  } catch (error: any) {
+    cleanup()
     console.error('Improve writing error:', error)
+    
+    if (error?.name === 'AbortError' || error?.message?.includes('timeout')) {
+      throw new Error('Text improvement timeout - please try again')
+    }
+    
     throw new Error('Text improvement service unavailable')
   }
 }
@@ -140,9 +176,27 @@ export async function getWordAlternatives(word: string, context: string, options
       ? `5 translations for "${word}" in "${cleanedContext}":\n["` 
       : `5 alternatives for "${word}" in "${cleanedContext}":\n["`
     
-    const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => {
+    const controller = new AbortController()
+    let timeoutId: NodeJS.Timeout | null = null
+    let isComplete = false
+    
+    const cleanup = () => {
+      if (!isComplete) {
+        isComplete = true
+        if (timeoutId) {
+          clearTimeout(timeoutId)
+          timeoutId = null
+        }
+        if (!controller.signal.aborted) {
+          controller.abort()
+        }
+      }
+    }
+    
+    const timeoutPromise = new Promise<never>((_, reject) => {
+      timeoutId = setTimeout(() => {
         console.log('🔥 TIMEOUT: word alternatives API call timed out after 3 seconds')
+        cleanup()
         reject(new Error('API call timeout after 3 seconds'))
       }, 3000)
     })
@@ -163,10 +217,21 @@ export async function getWordAlternatives(word: string, context: string, options
         ],
         max_tokens: maxTokens,
         temperature: 0.7
-      })
+      }),
+      signal: controller.signal
+    }).catch((error) => {
+      console.log('Fetch error in getWordAlternatives:', error?.message || error)
+      throw error
     })
     
-    const response = await Promise.race([fetchPromise, timeoutPromise]) as Response
+    let response: Response
+    try {
+      response = await Promise.race([fetchPromise, timeoutPromise])
+      cleanup()
+    } catch (error) {
+      cleanup()
+      throw error
+    }
     
     if (!response.ok) {
       throw new Error(`API request failed: ${response.status}`)
@@ -190,8 +255,13 @@ export async function getWordAlternatives(word: string, context: string, options
       alternatives: alternatives.filter(alt => alt.toLowerCase() !== word.toLowerCase()).slice(0, 5),
       operation: 'alternatives'
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Get alternatives error:', error)
+    
+    if (error?.name === 'AbortError' || error?.message?.includes('timeout')) {
+      throw new Error('Word alternatives timeout - please try again')
+    }
+    
     throw new Error('Word alternatives service unavailable')
   }
 }
@@ -203,14 +273,33 @@ export async function rephraseText(text: string): Promise<RephraseResult> {
   const cleanedText = cleanText(text)
   const maxTokens = getAdaptiveMaxTokens(cleanedText)
   
+  const controller = new AbortController()
+  let timeoutId: NodeJS.Timeout | null = null
+  let isComplete = false
+  
+  const cleanup = () => {
+    if (!isComplete) {
+      isComplete = true
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+        timeoutId = null
+      }
+      if (!controller.signal.aborted) {
+        controller.abort()
+      }
+    }
+  }
+  
   try {
-    const controller = new AbortController()
-    const timeoutId = setTimeout(() => {
-      console.log('🔥 TIMEOUT: rephrase API call timed out after 3 seconds')
-      controller.abort()
-    }, 3000) // 3 second timeout
+    const timeoutPromise = new Promise<never>((_, reject) => {
+      timeoutId = setTimeout(() => {
+        console.log('🔥 TIMEOUT: rephrase API call timed out after 3 seconds')
+        cleanup()
+        reject(new Error('API call timeout after 3 seconds'))
+      }, 3000)
+    })
     
-    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
@@ -227,9 +316,19 @@ export async function rephraseText(text: string): Promise<RephraseResult> {
         max_tokens: maxTokens
       }),
       signal: controller.signal
+    }).catch((error) => {
+      console.log('Fetch error in rephraseText:', error?.message || error)
+      throw error
     })
 
-    clearTimeout(timeoutId)
+    let response: Response
+    try {
+      response = await Promise.race([fetchPromise, timeoutPromise])
+      cleanup()
+    } catch (error) {
+      cleanup()
+      throw error
+    }
 
     if (!response.ok) {
       throw new Error(`API request failed: ${response.status}`)
@@ -253,8 +352,14 @@ export async function rephraseText(text: string): Promise<RephraseResult> {
       rephraseOptions: rephraseOptions.filter(option => option && option !== text),
       operation: 'rephrase'
     }
-  } catch (error) {
+  } catch (error: any) {
+    cleanup()
     console.error('Rephrase text error:', error)
+    
+    if (error?.name === 'AbortError' || error?.message?.includes('timeout')) {
+      throw new Error('Text rephrasing timeout - please try again')
+    }
+    
     throw new Error('Text rephrasing service unavailable')
   }
 }

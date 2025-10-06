@@ -98,7 +98,7 @@ export interface TranslationResult {
   fallback?: boolean
 }
 
-// Simple translation function using qwen-mt-turbo
+// Simple translation function using qwen-mt-turbo with robust async handling
 async function translateWithQwenMT(text: string, sourceLang: string, targetLang: string): Promise<TranslationResult> {
   const DASHSCOPE_API_KEY = process.env.DASHSCOPE_API_KEY
   
@@ -115,22 +115,36 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
   const requestId = Math.random().toString(36).substring(2, 9)
   console.log(`[${requestId}] Starting translation request`)
   
+  const controller = new AbortController()
+  let timeoutId: NodeJS.Timeout | null = null
+  let isComplete = false
+  
+  // Robust cleanup function that handles all completion paths
+  const cleanup = () => {
+    if (!isComplete) {
+      isComplete = true
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+        timeoutId = null
+      }
+      // Abort any pending request
+      if (!controller.signal.aborted) {
+        controller.abort()
+      }
+    }
+  }
+  
   try {
-    const controller = new AbortController()
-    let timeoutId: NodeJS.Timeout | null = null
-    let isAborted = false
-    
-    // Create timeout promise that rejects
+    // Create timeout promise that rejects and triggers cleanup
     const timeoutPromise = new Promise<never>((_, reject) => {
       timeoutId = setTimeout(() => {
-        isAborted = true
         console.log(`[${requestId}] Request timeout after 8 seconds, aborting...`)
-        controller.abort()
+        cleanup()
         reject(new Error('Translation request timeout after 8 seconds'))
       }, 8000)
     })
     
-    // Create fetch promise
+    // Create fetch promise with comprehensive error handling
     const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -160,18 +174,22 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
       console.log(`[${requestId}] API response parsed successfully`)
       
       return data
+    }).catch((error) => {
+      // Ensure cleanup happens on fetch errors
+      console.log(`[${requestId}] Fetch error occurred: ${error?.message || error}`)
+      throw error
     })
     
-    // Race between fetch and timeout
+    // Race between fetch and timeout with proper cleanup
     let response: any
     try {
       response = await Promise.race([fetchPromise, timeoutPromise])
-    } finally {
-      // Always clear timeout regardless of outcome
-      if (timeoutId) {
-        clearTimeout(timeoutId)
-        timeoutId = null
-      }
+      // Success path - ensure cleanup
+      cleanup()
+    } catch (error) {
+      // Error path - ensure cleanup
+      cleanup()
+      throw error
     }
     
     // Handle successful response
@@ -195,6 +213,9 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
     }
     
   } catch (error: any) {
+    // Ensure cleanup happens on any error
+    cleanup()
+    
     console.error(`[${requestId}] Translation error:`, error?.message || error)
     
     // Handle specific error types

@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b8c638ef001uhHupcfHKZQFiB",
+  "messageID": "msg_9b8c4a1d30014CtvZNoPoK27Zb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01X2fkPZFsYK6CASgmWuvksJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/hooks/use-translation.ts",
+      "offset": 30,
+      "limit": 30
+    },
+    "output": "<file>\n00031|   let lastError: Error | undefined\n00032| \n00033|   for (let attempt = 0; attempt <= maxRetries; attempt++) {\n00034|     try {\n00035|       return await fn()\n00036|     } catch (error: any) {\n00037|       lastError = error\n00038|       \n00039|       // Don't retry on client errors (400-499) or abort errors\n00040|       if (error.response?.status >= 400 && error.response?.status < 500) {\n00041|         throw error\n00042|       }\n00043|       if (error.name === 'AbortError') {\n00044|         throw error\n00045|       }\n00046|       \n00047|       // Don't retry on last attempt\n00048|       if (attempt === maxRetries) {\n00049|         break\n00050|       }\n00051|       \n00052|       // Only retry on 5xx errors or network failures\n00053|       if (error.response?.status >= 500 || error.code === 'NETWORK_ERROR' || error.code === 'ECONNABORTED') {\n00054|         const delay = baseDelay * Math.pow(2, attempt)\n00055|         await new Promise(resolve => setTimeout(resolve, delay))\n00056|         continue\n00057|       }\n00058|       \n00059|       // Don't retry on other errors\n00060|       throw error\n\n(File has more lines. Use 'offset' parameter to read beyond line 60)\n</file>",
+    "metadata": {
+      "preview": "  let lastError: Error | undefined\n\n  for (let attempt = 0; attempt <= maxRetries; attempt++) {\n    try {\n      return await fn()\n    } catch (error: any) {\n      lastError = error\n      \n      // Don't retry on client errors (400-499) or abort errors\n      if (error.response?.status >= 400 && error.response?.status < 500) {\n        throw error\n      }\n      if (error.name === 'AbortError') {\n        throw error\n      }\n      \n      // Don't retry on last attempt\n      if (attempt === maxRetries) {\n        break\n      }"
+    },
+    "title": "hooks/use-translation.ts",
+    "time": {
+      "start": 1759741622981,
+      "end": 1759741622982
+    }
+  }
+}

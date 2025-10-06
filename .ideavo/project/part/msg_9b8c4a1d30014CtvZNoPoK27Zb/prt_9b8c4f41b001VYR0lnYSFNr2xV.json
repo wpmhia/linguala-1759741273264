@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b8c4f41b001VYR0lnYSFNr2xV",
+  "messageID": "msg_9b8c4a1d30014CtvZNoPoK27Zb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "You're absolutely right! Thank you for the detailed code-level analysis. The issue is indeed in my timeout and abort logic implementation, not the DashScope API itself. Let me fix these specific problems.",
+  "time": {
+    "start": 1759741540799,
+    "end": 1759741540799
+  }
+}

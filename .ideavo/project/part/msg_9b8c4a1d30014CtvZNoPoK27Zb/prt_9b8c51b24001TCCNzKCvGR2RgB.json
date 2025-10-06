@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b8c51b24001TCCNzKCvGR2RgB",
+  "messageID": "msg_9b8c4a1d30014CtvZNoPoK27Zb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01Kn3LbSD89zYRxVb9NNCJr4",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/translation-service.ts",
+      "offset": 110,
+      "limit": 40
+    },
+    "output": "<file>\n00111|   const maxTokens = getAdaptiveMaxTokens(cleanedText)\n00112|   \n00113|   console.log(`Translating: \"${cleanedText.substring(0, 50)}\" ${sourceLang}→${targetLang} (max_tokens: ${maxTokens})`)\n00114|   \n00115|   try {\n00116|     const controller = new AbortController()\n00117|     const timeoutId = setTimeout(() => {\n00118|       console.log('API request timeout, aborting...')\n00119|       controller.abort()\n00120|     }, 8000) // 8 second timeout - faster failure for better UX\n00121|     \n00122|     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n00123|       method: 'POST',\n00124|       headers: {\n00125|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00126|         'Content-Type': 'application/json',\n00127|       },\n00128|       body: JSON.stringify({\n00129|         model: 'qwen-mt-turbo',\n00130|         messages: [\n00131|           {\n00132|             role: 'user',\n00133|             content: `Translate from ${LANGUAGE_NAMES[sourceLang] || sourceLang} to ${LANGUAGE_NAMES[targetLang] || targetLang}:\\n${cleanedText}`\n00134|           }\n00135|         ],\n00136|         max_tokens: maxTokens,\n00137|         temperature: 0.1\n00138|       }),\n00139|       signal: controller.signal\n00140|     })\n00141|     \n00142|     clearTimeout(timeoutId)\n00143|     \n00144|     console.log('qwen-mt-turbo response status:', response.status)\n00145|     \n00146|     if (!response.ok) {\n00147|       throw new Error(`API request failed: ${response.status}`)\n00148|     }\n00149| \n00150|     const data = await response.json()\n\n(File has more lines. Use 'offset' parameter to read beyond line 150)\n</file>",
+    "metadata": {
+      "preview": "  const maxTokens = getAdaptiveMaxTokens(cleanedText)\n  \n  console.log(`Translating: \"${cleanedText.substring(0, 50)}\" ${sourceLang}→${targetLang} (max_tokens: ${maxTokens})`)\n  \n  try {\n    const controller = new AbortController()\n    const timeoutId = setTimeout(() => {\n      console.log('API request timeout, aborting...')\n      controller.abort()\n    }, 8000) // 8 second timeout - faster failure for better UX\n    \n    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {\n      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-mt-turbo',\n        messages: ["
+    },
+    "title": "lib/translation-service.ts",
+    "time": {
+      "start": 1759741550289,
+      "end": 1759741550293
+    }
+  }
+}

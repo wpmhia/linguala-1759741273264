@@ -22,46 +22,66 @@ interface ProcessingResponse {
   fallback?: boolean
 }
 
-// Retry helper with exponential backoff
+// Retry helper with exponential backoff and comprehensive error handling
 async function retryWithBackoff<T>(
   fn: () => Promise<T>,
-  maxRetries: number = 3,
+  maxRetries: number = 2, // Reduced retries for faster failure
   baseDelay: number = 1000
 ): Promise<T> {
   let lastError: Error | undefined
+  const requestId = Math.random().toString(36).substring(2, 9)
+  
+  console.log(`[${requestId}] Starting request with ${maxRetries} max retries`)
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
-      return await fn()
+      console.log(`[${requestId}] Attempt ${attempt + 1}/${maxRetries + 1}`)
+      const result = await fn()
+      console.log(`[${requestId}] Request successful on attempt ${attempt + 1}`)
+      return result
     } catch (error: any) {
       lastError = error
+      console.log(`[${requestId}] Attempt ${attempt + 1} failed:`, error?.message || error)
       
-      // Don't retry on client errors (400-499) or abort errors
+      // Don't retry on client errors (400-499)
       if (error.response?.status >= 400 && error.response?.status < 500) {
+        console.log(`[${requestId}] Client error, not retrying`)
         throw error
       }
-      if (error.name === 'AbortError') {
+      
+      // Don't retry on abort/timeout errors - these indicate user cancellation or timeout
+      if (error.name === 'AbortError' || 
+          error.code === 'ECONNABORTED' || 
+          error.message?.includes('timeout') ||
+          error.message?.includes('cancelled')) {
+        console.log(`[${requestId}] Timeout/abort error, not retrying`)
         throw error
       }
       
       // Don't retry on last attempt
       if (attempt === maxRetries) {
+        console.log(`[${requestId}] Max retries reached`)
         break
       }
       
       // Only retry on 5xx errors or network failures
-      if (error.response?.status >= 500 || error.code === 'NETWORK_ERROR' || error.code === 'ECONNABORTED') {
+      if (error.response?.status >= 500 || 
+          error.code === 'NETWORK_ERROR' || 
+          error.message?.includes('network') ||
+          error.message?.includes('fetch')) {
         const delay = baseDelay * Math.pow(2, attempt)
+        console.log(`[${requestId}] Retrying in ${delay}ms...`)
         await new Promise(resolve => setTimeout(resolve, delay))
         continue
       }
       
       // Don't retry on other errors
+      console.log(`[${requestId}] Error not retryable`)
       throw error
     }
   }
   
-  throw lastError || new Error('Retry attempts exhausted')
+  throw lastError || new Error('All retry attempts failed')
 }
 
 export function useTextProcessing() {

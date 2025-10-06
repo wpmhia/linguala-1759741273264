@@ -112,14 +112,26 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
   
   console.log(`Translating: "${cleanedText.substring(0, 50)}" ${sourceLang}→${targetLang} (max_tokens: ${maxTokens})`)
   
+  const requestId = Math.random().toString(36).substring(2, 9)
+  console.log(`[${requestId}] Starting translation request`)
+  
   try {
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => {
-      console.log('API request timeout, aborting...')
-      controller.abort()
-    }, 8000) // 8 second timeout - faster failure for better UX
+    let timeoutId: NodeJS.Timeout | null = null
+    let isAborted = false
     
-    const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    // Create timeout promise that rejects
+    const timeoutPromise = new Promise<never>((_, reject) => {
+      timeoutId = setTimeout(() => {
+        isAborted = true
+        console.log(`[${requestId}] Request timeout after 8 seconds, aborting...`)
+        controller.abort()
+        reject(new Error('Translation request timeout after 8 seconds'))
+      }, 8000)
+    })
+    
+    // Create fetch promise
+    const fetchPromise = fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,
@@ -137,32 +149,65 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
         temperature: 0.1
       }),
       signal: controller.signal
+    }).then(async (response) => {
+      console.log(`[${requestId}] API response received with status: ${response.status}`)
+      
+      if (!response.ok) {
+        throw new Error(`API request failed with status: ${response.status}`)
+      }
+      
+      const data = await response.json()
+      console.log(`[${requestId}] API response parsed successfully`)
+      
+      return data
     })
     
-    clearTimeout(timeoutId)
-    
-    console.log('qwen-mt-turbo response status:', response.status)
-    
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.status}`)
-    }
-
-    const data = await response.json()
-    const translatedText = data.choices[0]?.message?.content?.trim()
-
-    if (translatedText && translatedText !== cleanedText) {
-      console.log('Translation successful:', translatedText)
-      return {
-        translatedText,
-        sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,
-        targetLang
+    // Race between fetch and timeout
+    let response: any
+    try {
+      response = await Promise.race([fetchPromise, timeoutPromise])
+    } finally {
+      // Always clear timeout regardless of outcome
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+        timeoutId = null
       }
-    } else {
-      throw new Error('No translation received or same as input')
     }
-  } catch (error) {
-    console.error('qwen-mt-turbo translation error:', error)
-    throw error
+    
+    // Handle successful response
+    const translatedText = response.choices?.[0]?.message?.content?.trim()
+    
+    if (!translatedText) {
+      console.log(`[${requestId}] No translation content received`)
+      throw new Error('No translation content received from API')
+    }
+    
+    if (translatedText === cleanedText) {
+      console.log(`[${requestId}] Translation unchanged from input`)
+      throw new Error('Translation unchanged from input text')
+    }
+    
+    console.log(`[${requestId}] Translation successful: "${translatedText.substring(0, 50)}..."`)
+    return {
+      translatedText,
+      sourceLang: sourceLang === 'auto' ? 'auto' : sourceLang,
+      targetLang
+    }
+    
+  } catch (error: any) {
+    console.error(`[${requestId}] Translation error:`, error?.message || error)
+    
+    // Handle specific error types
+    if (error?.name === 'AbortError' || error?.message?.includes('timeout')) {
+      throw new Error(`Translation request timeout - please try again`)
+    }
+    
+    if (error?.message?.includes('Failed to fetch') || error?.message?.includes('network')) {
+      throw new Error(`Network error - please check your connection`)
+    }
+    
+    // Re-throw with context
+    throw new Error(`Translation failed: ${error?.message || 'Unknown error'}`)
   }
 }
 

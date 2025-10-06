@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b8c6a2050013xcdu8Fu8GJIwM",
+  "messageID": "msg_9b8c4a1d30014CtvZNoPoK27Zb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01QjbAbWMwf3URiiYNDQ6paS",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/hooks/use-translation.ts",
+      "offset": 68,
+      "limit": 40
+    },
+    "output": "<file>\n00069| \n00070|   return useMutation<ProcessingResponse, Error, ProcessingRequest>({\n00071|     mutationFn: async (request) => {\n00072|       return retryWithBackoff(async () => {\n00073|         // Route requests to correct API endpoint based on operation\n00074|         const endpoint = request.operation === 'translate' ? '/api/translate' : '/api/write'\n00075|         \n00076|         const response = await axios.post(endpoint, request, {\n00077|           timeout: 10000, // 10 second timeout to match backend timeout\n00078|         })\n00079|         return response.data\n00080|       })\n00081|     },\n00082|     onSuccess: (data, variables) => {\n00083|       // Cache the processing result\n00084|       const cacheKey = `${variables.operation}-${variables.text}-${variables.sourceLang || ''}-${variables.targetLang || ''}`\n00085|       queryClient.setQueryData(['processing', cacheKey], data)\n00086|     },\n00087|     onError: (error) => {\n00088|       console.error('Text processing failed:', error)\n00089|     },\n00090|   })\n00091| }\n00092| \n00093| // Keep the old hook for backward compatibility\n00094| export function useTranslation() {\n00095|   return useTextProcessing()\n00096| }\n</file>",
+    "metadata": {
+      "preview": "\n  return useMutation<ProcessingResponse, Error, ProcessingRequest>({\n    mutationFn: async (request) => {\n      return retryWithBackoff(async () => {\n        // Route requests to correct API endpoint based on operation\n        const endpoint = request.operation === 'translate' ? '/api/translate' : '/api/write'\n        \n        const response = await axios.post(endpoint, request, {\n          timeout: 10000, // 10 second timeout to match backend timeout\n        })\n        return response.data\n      })\n    },\n    onSuccess: (data, variables) => {\n      // Cache the processing result\n      const cacheKey = `${variables.operation}-${variables.text}-${variables.sourceLang || ''}-${variables.targetLang || ''}`\n      queryClient.setQueryData(['processing', cacheKey], data)\n    },\n    onError: (error) => {\n      console.error('Text processing failed:', error)"
+    },
+    "title": "hooks/use-translation.ts",
+    "time": {
+      "start": 1759741650007,
+      "end": 1759741650009
+    }
+  }
+}

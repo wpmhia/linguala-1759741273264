@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b8c71f2c001l3gsjQzAxYwQwd",
+  "messageID": "msg_9b8c4a1d30014CtvZNoPoK27Zb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "feat(translation): improve timeout and abort error handling",
+  "cost": 1.0432986,
+  "tokens": {
+    "input": 1,
+    "output": 26,
+    "reasoning": 0,
+    "cache": {
+      "write": 10064,
+      "read": 0
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "prt_9b61df808001t3ZkoT31oqANzT",
+  "messageID": "msg_9b61db858001YItQ4SGYjwH7Lb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01MYwabL53LJ8Mo3FcfU1uRd",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/hooks/use-translation.ts"
+    },
+    "output": "<file>\n00001| import { useMutation, useQueryClient } from '@tanstack/react-query'\n00002| import axios from 'axios'\n00003| \n00004| interface ProcessingRequest {\n00005|   text: string\n00006|   operation?: 'translate' | 'improve' | 'rephrase' | 'summarize'\n00007|   sourceLang?: string\n00008|   targetLang?: string\n00009|   domain?: string\n00010|   glossary?: Array<{ source: string; target: string }>\n00011| }\n00012| \n00013| interface ProcessingResponse {\n00014|   operation: string\n00015|   translatedText?: string\n00016|   improvedText?: string\n00017|   rephrasedText?: string\n00018|   summaryText?: string\n00019|   originalText?: string\n00020|   sourceLang?: string\n00021|   targetLang?: string\n00022|   fallback?: boolean\n00023| }\n00024| \n00025| // Retry helper with exponential backoff\n00026| async function retryWithBackoff<T>(\n00027|   fn: () => Promise<T>,\n00028|   maxRetries: number = 3,\n00029|   baseDelay: number = 1000\n00030| ): Promise<T> {\n00031|   let lastError: Error | undefined\n00032| \n00033|   for (let attempt = 0; attempt <= maxRetries; attempt++) {\n00034|     try {\n00035|       return await fn()\n00036|     } catch (error: any) {\n00037|       lastError = error\n00038|       \n00039|       // Don't retry on client errors (400-499) or abort errors\n00040|       if (error.response?.status >= 400 && error.response?.status < 500) {\n00041|         throw error\n00042|       }\n00043|       if (error.name === 'AbortError') {\n00044|         throw error\n00045|       }\n00046|       \n00047|       // Don't retry on last attempt\n00048|       if (attempt === maxRetries) {\n00049|         break\n00050|       }\n00051|       \n00052|       // Only retry on 5xx errors or network failures\n00053|       if (error.response?.status >= 500 || error.code === 'NETWORK_ERROR' || error.code === 'ECONNABORTED') {\n00054|         const delay = baseDelay * Math.pow(2, attempt)\n00055|         await new Promise(resolve => setTimeout(resolve, delay))\n00056|         continue\n00057|       }\n00058|       \n00059|       // Don't retry on other errors\n00060|       throw error\n00061|     }\n00062|   }\n00063|   \n00064|   throw lastError || new Error('Retry attempts exhausted')\n00065| }\n00066| \n00067| export function useTextProcessing() {\n00068|   const queryClient = useQueryClient()\n00069| \n00070|   return useMutation<ProcessingResponse, Error, ProcessingRequest>({\n00071|     mutationFn: async (request) => {\n00072|       return retryWithBackoff(async () => {\n00073|         // Route requests to correct API endpoint based on operation\n00074|         const endpoint = request.operation === 'translate' ? '/api/translate' : '/api/write'\n00075|         \n00076|         const response = await axios.post(endpoint, request, {\n00077|           timeout: 30000, // 30 second timeout for processing\n00078|         })\n00079|         return response.data\n00080|       })\n00081|     },\n00082|     onSuccess: (data, variables) => {\n00083|       // Cache the processing result\n00084|       const cacheKey = `${variables.operation}-${variables.text}-${variables.sourceLang || ''}-${variables.targetLang || ''}`\n00085|       queryClient.setQueryData(['processing', cacheKey], data)\n00086|     },\n00087|     onError: (error) => {\n00088|       console.error('Text processing failed:', error)\n00089|     },\n00090|   })\n00091| }\n00092| \n00093| // Keep the old hook for backward compatibility\n00094| export function useTranslation() {\n00095|   return useTextProcessing()\n00096| }\n</file>",
+    "metadata": {
+      "preview": "import { useMutation, useQueryClient } from '@tanstack/react-query'\nimport axios from 'axios'\n\ninterface ProcessingRequest {\n  text: string\n  operation?: 'translate' | 'improve' | 'rephrase' | 'summarize'\n  sourceLang?: string\n  targetLang?: string\n  domain?: string\n  glossary?: Array<{ source: string; target: string }>\n}\n\ninterface ProcessingResponse {\n  operation: string\n  translatedText?: string\n  improvedText?: string\n  rephrasedText?: string\n  summaryText?: string\n  originalText?: string\n  sourceLang?: string"
+    },
+    "title": "hooks/use-translation.ts",
+    "time": {
+      "start": 1759697042136,
+      "end": 1759697042140
+    }
+  }
+}

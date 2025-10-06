@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b8bfcca3001sbF7v81kVUibWC",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "model": "Claude Sonnet 4",
+  "type": "finish",
+  "commitMessage": "fix(translation): improve timeout handling for unstable language pairs",
+  "cost": 1.033815,
+  "tokens": {
+    "input": 4,
+    "output": 369,
+    "reasoning": 0,
+    "cache": {
+      "write": 454,
+      "read": 100048
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b8be3930001P9xQg0WwY42kMk",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01163ikc6BJCcRbp6zi2uL9p",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "npm run build",
+      "description": "Build with improved timeout handling"
+    },
+    "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/7) ...\n   Generating static pages (1/7) \r\n🧪 Testing DashScope API connectivity...\n✅ DashScope API responded with status: 200\n📦 API Response: {\n  choices: [\n    {\n      message: [Object],\n      finish_reason: 'stop',\n      index: 0,\n      logprobs: null\n    }\n  ],\n  object: 'chat.completion',\n  usage: { prompt_tokens: 27, completion_tokens: 1, total_tokens: 28 },\n  created: 1759693337,\n  system_fingerprint: null,\n  model: 'qwen-flash',\n  id: 'chatcmpl-d6b9578f-72eb-9f56-b763-0671e556256b'\n}\n   Generating static pages (3/7) \r\n   Generating static pages (5/7) \r\n ✓ Generating static pages (7/7)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    86.1 kB         185 kB\n├ ○ /_not-found                          873 B          88.1 kB\n├ ○ /api/test-ai                         0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n└ ƒ /api/write                           0 B                0 B\n+ First Load JS shared by all            87.3 kB\n  ├ chunks/117-b894abcc825e7c2e.js       31.6 kB\n  ├ chunks/fd9d1056-d05011851600784e.js  53.6 kB\n  └ other shared chunks (total)          2.02 kB\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+    "metadata": {
+      "output": "\n> ideavo-nextjs@0.1.0 build\n> next build\n\n  ▲ Next.js 14.2.31\n  - Environments: .env\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/7) ...\n   Generating static pages (1/7) \r\n🧪 Testing DashScope API connectivity...\n✅ DashScope API responded with status: 200\n📦 API Response: {\n  choices: [\n    {\n      message: [Object],\n      finish_reason: 'stop',\n      index: 0,\n      logprobs: null\n    }\n  ],\n  object: 'chat.completion',\n  usage: { prompt_tokens: 27, completion_tokens: 1, total_tokens: 28 },\n  created: 1759693337,\n  system_fingerprint: null,\n  model: 'qwen-flash',\n  id: 'chatcmpl-d6b9578f-72eb-9f56-b763-0671e556256b'\n}\n   Generating static pages (3/7) \r\n   Generating static pages (5/7) \r\n ✓ Generating static pages (7/7)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    86.1 kB         185 kB\n├ ○ /_not-found                          873 B          88.1 kB\n├ ○ /api/test-ai                         0 B                0 B\n├ ƒ /api/translate                       0 B                0 B\n└ ƒ /api/write                           0 B                0 B\n+ First Load JS shared by all            87.3 kB\n  ├ chunks/117-b894abcc825e7c2e.js       31.6 kB\n  ├ chunks/fd9d1056-d05011851600784e.js  53.6 kB\n  └ other shared chunks (total)          2.02 kB\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+      "exit": 0,
+      "description": "Build with improved timeout handling"
+    },
+    "title": "npm run build",
+    "time": {
+      "start": 1759741098854,
+      "end": 1759741139537
+    }
+  }
+}

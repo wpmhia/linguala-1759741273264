@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b61e4e62001YYWCeAUF0PD2T6",
+  "messageID": "msg_9b61db858001YItQ4SGYjwH7Lb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_014dBrtj3Raj3H9muD4seSrh",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 94,
+      "limit": 20
+    },
+    "output": "<file>\n00095|             role: 'user',\n00096|             content: prompt\n00097|           }\n00098|         ],\n00099|         max_tokens: maxTokens,\n00100|         temperature: options.correctionsOnly ? 0.1 : 0.3\n00101|       })\n00102|     })\n00103|     \n00104|     const response = await Promise.race([fetchPromise, timeoutPromise]) as Response\n00105|     \n00106|     if (!response.ok) {\n00107|       throw new Error(`API request failed: ${response.status}`)\n00108|     }\n00109| \n00110|     const data = await response.json()\n00111|     const improvedText = data.choices[0]?.message?.content?.trim()\n00112| \n00113|     if (improvedText && improvedText !== text) {\n00114|       return {\n\n(File has more lines. Use 'offset' parameter to read beyond line 114)\n</file>",
+    "metadata": {
+      "preview": "            role: 'user',\n            content: prompt\n          }\n        ],\n        max_tokens: maxTokens,\n        temperature: options.correctionsOnly ? 0.1 : 0.3\n      })\n    })\n    \n    const response = await Promise.race([fetchPromise, timeoutPromise]) as Response\n    \n    if (!response.ok) {\n      throw new Error(`API request failed: ${response.status}`)\n    }\n\n    const data = await response.json()\n    const improvedText = data.choices[0]?.message?.content?.trim()\n\n    if (improvedText && improvedText !== text) {\n      return {"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759697064168,
+      "end": 1759697064169
+    }
+  }
+}

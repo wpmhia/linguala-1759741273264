@@ -1,0 +1,24 @@
+{
+  "id": "prt_9b8be1b40001Xw5sSkE2JBOKne",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01KaDr7fBJruuQEW17vn8zUR",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/hooks/use-translation.ts",
+      "limit": 10
+    },
+    "output": "<file>\n00001| import { useMutation, useQueryClient } from '@tanstack/react-query'\n00002| import axios from 'axios'\n00003| \n00004| interface ProcessingRequest {\n00005|   text: string\n00006|   operation?: 'translate' | 'improve' | 'rephrase' | 'summarize'\n00007|   sourceLang?: string\n00008|   targetLang?: string\n00009|   domain?: string\n00010|   glossary?: Array<{ source: string; target: string }>\n\n(File has more lines. Use 'offset' parameter to read beyond line 10)\n</file>",
+    "metadata": {
+      "preview": "import { useMutation, useQueryClient } from '@tanstack/react-query'\nimport axios from 'axios'\n\ninterface ProcessingRequest {\n  text: string\n  operation?: 'translate' | 'improve' | 'rephrase' | 'summarize'\n  sourceLang?: string\n  targetLang?: string\n  domain?: string\n  glossary?: Array<{ source: string; target: string }>"
+    },
+    "title": "hooks/use-translation.ts",
+    "time": {
+      "start": 1759741091092,
+      "end": 1759741091103
+    }
+  }
+}

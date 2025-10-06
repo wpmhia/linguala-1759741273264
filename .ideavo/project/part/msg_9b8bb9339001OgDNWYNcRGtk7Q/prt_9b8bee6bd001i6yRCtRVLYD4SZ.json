@@ -1,0 +1,27 @@
+{
+  "id": "prt_9b8bee6bd001i6yRCtRVLYD4SZ",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01Nvb7uUsa9djeS3eqYxvPag",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "pkill -f \"next start\" && sleep 2 && npm start &",
+      "timeout": 5000,
+      "description": "Restart server with new timeout settings"
+    },
+    "output": "",
+    "metadata": {
+      "output": "",
+      "exit": 0,
+      "description": "Restart server with new timeout settings"
+    },
+    "title": "pkill -f \"next start\" && sleep 2 && npm start &",
+    "time": {
+      "start": 1759741143974,
+      "end": 1759741144002
+    }
+  }
+}

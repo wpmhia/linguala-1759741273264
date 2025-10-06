@@ -1,0 +1,25 @@
+{
+  "id": "prt_9b61e5c77001L3MmPt4DHU0rlK",
+  "messageID": "msg_9b61db858001YItQ4SGYjwH7Lb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01MeagjxtLSumuRndcfh69ha",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/lib/writing-service.ts",
+      "offset": 85,
+      "limit": 15
+    },
+    "output": "<file>\n00086|       method: 'POST',\n00087|       headers: {\n00088|         'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n00089|         'Content-Type': 'application/json',\n00090|       },\n00091|       body: JSON.stringify({\n00092|         model: 'qwen-flash',\n00093|         messages: [\n00094|           {\n00095|             role: 'user',\n00096|             content: prompt\n00097|           }\n00098|         ],\n00099|         max_tokens: maxTokens,\n00100|         temperature: options.correctionsOnly ? 0.1 : 0.3\n\n(File has more lines. Use 'offset' parameter to read beyond line 100)\n</file>",
+    "metadata": {
+      "preview": "      method: 'POST',\n      headers: {\n        'Authorization': `Bearer ${DASHSCOPE_API_KEY}`,\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({\n        model: 'qwen-flash',\n        messages: [\n          {\n            role: 'user',\n            content: prompt\n          }\n        ],\n        max_tokens: maxTokens,\n        temperature: options.correctionsOnly ? 0.1 : 0.3"
+    },
+    "title": "lib/writing-service.ts",
+    "time": {
+      "start": 1759697067765,
+      "end": 1759697067766
+    }
+  }
+}

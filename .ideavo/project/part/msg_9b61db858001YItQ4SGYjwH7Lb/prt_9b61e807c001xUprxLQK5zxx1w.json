@@ -1,0 +1,18 @@
+{
+  "id": "prt_9b61e807c001xUprxLQK5zxx1w",
+  "messageID": "msg_9b61db858001YItQ4SGYjwH7Lb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01TuPYTFyfCJy8WWDykdmkEJ",
+  "state": {
+    "status": "running",
+    "input": {
+      "command": "curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"Hello\",\"sourceLang\":\"en\",\"targetLang\":\"es\"}' --connect-timeout 5 --max-time 10",
+      "description": "Test translate endpoint with timeout"
+    },
+    "time": {
+      "start": 1759697077760
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "prt_9b61dfd040018pu2E1CIvFmG4f",
+  "messageID": "msg_9b61db858001YItQ4SGYjwH7Lb",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "read",
+  "callID": "toolu_01FefgMKG2Xy8bPrio9DtACo",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/app/api/write/route.ts"
+    },
+    "output": "<file>\n00001| /**\n00002|  * Writing API Route\n00003|  * \n00004|  * Handles writing assistance using qwen-flash model:\n00005|  * - Text improvement\n00006|  * - Word alternatives \n00007|  * - Sentence rephrasing\n00008|  */\n00009| import { NextRequest, NextResponse } from 'next/server'\n00010| import { improveText, getWordAlternatives, rephraseText } from '@/lib/writing-service'\n00011| \n00012| export async function POST(request: NextRequest) {\n00013|   try {\n00014|     const body = await request.json()\n00015|     console.log('Processing writing request:', body)\n00016|     \n00017|     const { text, word, context, operation, correctionsOnly, writingStyle, tone, mode, sourceLang, targetLang } = body\n00018| \n00019|     // Validate required fields based on operation\n00020|     if (operation === 'alternatives' && !word) {\n00021|       return NextResponse.json(\n00022|         { error: 'Word is required for alternatives operation' },\n00023|         { status: 400 }\n00024|       )\n00025|     }\n00026| \n00027|     if ((operation === 'improve' || operation === 'rephrase') && !text) {\n00028|       console.log('Missing required field: text')\n00029|       return NextResponse.json(\n00030|         { error: 'Text is required' },\n00031|         { status: 400 }\n00032|       )\n00033|     }\n00034| \n00035|     let result\n00036| \n00037|     switch (operation) {\n00038|       case 'improve':\n00039|         try {\n00040|           result = await improveText(text, { correctionsOnly, writingStyle, tone })\n00041|         } catch (error) {\n00042|           console.error('AI improve service failed:', error)\n00043|           return NextResponse.json(\n00044|             { error: 'Text improvement service temporarily unavailable' },\n00045|             { status: 503 }\n00046|           )\n00047|         }\n00048|         break\n00049| \n00050|       case 'alternatives':\n00051|         try {\n00052|           result = await getWordAlternatives(word, context, { mode, sourceLang, targetLang })\n00053|         } catch (error) {\n00054|           console.error('AI alternatives service failed:', error)\n00055|           return NextResponse.json(\n00056|             { error: 'Word alternatives service temporarily unavailable' },\n00057|             { status: 503 }\n00058|           )\n00059|         }\n00060|         break\n00061| \n00062|       case 'rephrase':\n00063|         try {\n00064|           result = await rephraseText(text)\n00065|         } catch (error) {\n00066|           console.error('AI rephrase service failed:', error)\n00067|           return NextResponse.json(\n00068|             { error: 'Text rephrasing service temporarily unavailable' },\n00069|             { status: 503 }\n00070|           )\n00071|         }\n00072|         break\n00073| \n00074|       default:\n00075|         return NextResponse.json(\n00076|           { error: 'Invalid operation. Supported: improve, alternatives, rephrase' },\n00077|           { status: 400 }\n00078|         )\n00079|     }\n00080| \n00081|     return NextResponse.json(result)\n00082| \n00083|   } catch (error) {\n00084|     console.error('Writing processing error:', error)\n00085|     return NextResponse.json(\n00086|       { error: 'Internal server error' },\n00087|       { status: 500 }\n00088|     )\n00089|   }\n00090| }\n</file>",
+    "metadata": {
+      "preview": "/**\n * Writing API Route\n * \n * Handles writing assistance using qwen-flash model:\n * - Text improvement\n * - Word alternatives \n * - Sentence rephrasing\n */\nimport { NextRequest, NextResponse } from 'next/server'\nimport { improveText, getWordAlternatives, rephraseText } from '@/lib/writing-service'\n\nexport async function POST(request: NextRequest) {\n  try {\n    const body = await request.json()\n    console.log('Processing writing request:', body)\n    \n    const { text, word, context, operation, correctionsOnly, writingStyle, tone, mode, sourceLang, targetLang } = body\n\n    // Validate required fields based on operation\n    if (operation === 'alternatives' && !word) {"
+    },
+    "title": "app/api/write/route.ts",
+    "time": {
+      "start": 1759697043394,
+      "end": 1759697043395
+    }
+  }
+}

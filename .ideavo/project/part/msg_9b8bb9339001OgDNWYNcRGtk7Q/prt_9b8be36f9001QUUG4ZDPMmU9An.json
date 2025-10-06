@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b8be36f9001QUUG4ZDPMmU9An",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Now let me test the improved timeout handling:",
+  "time": {
+    "start": 1759741098286,
+    "end": 1759741098286
+  }
+}

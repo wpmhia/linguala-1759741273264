@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b8bd91d20012Zo14l0Bdqfewb",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "This is hanging, which confirms there's an intermittent issue with certain language pairs. Let me stop this request and focus on the issue.",
+  "time": {
+    "start": 1759741056345,
+    "end": 1759741056345
+  }
+}

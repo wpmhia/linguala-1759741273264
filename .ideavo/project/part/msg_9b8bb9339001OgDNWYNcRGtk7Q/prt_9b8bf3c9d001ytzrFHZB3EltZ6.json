@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b8bf3c9d001ytzrFHZB3EltZ6",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "Excellent! Now let me test a potentially problematic language pair to see if the timeout properly handles it:",
+  "time": {
+    "start": 1759741165398,
+    "end": 1759741165398
+  }
+}

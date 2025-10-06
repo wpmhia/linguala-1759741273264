@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b8bdb6ca001C0evCHej30YMEg",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "## **Translation Pipeline Troubleshooting Results**\n\n### **✅ What's Working:**\n1. **Model separation is correct** - No mixing of AI models:\n   - **Translation**: `/api/translate` → `qwen-mt-turbo` model \n   - **Writing**: `/api/write` → `qwen-flash` model\n2. **API routing is correct** - Frontend properly routes by operation type\n3. **English→Spanish works perfectly** (1.26 seconds response time)\n4. **Server builds and starts successfully**\n\n### **⚠️ Issue Identified:**\n**Intermittent API timeouts** for certain language pairs:\n- ✅ **English → Spanish**: Works (fast response)\n- ❌ **French → English**: Hangs/times out (>60 seconds)\n\n### **Root Cause:**\nThe issue is **not in your code** but appears to be **DashScope API service instability** for certain language combinations. The timeout happens at the API level, causing the frontend loading wheel to spin indefinitely.\n\n### **Solutions:**\n\n#### **Option 1: Reduce Timeout for Better UX**",
+  "time": {
+    "start": 1759741071648,
+    "end": 1759741071648
+  }
+}

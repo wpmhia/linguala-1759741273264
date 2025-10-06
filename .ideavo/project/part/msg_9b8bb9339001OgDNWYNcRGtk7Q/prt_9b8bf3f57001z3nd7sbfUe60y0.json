@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b8bf3f57001z3nd7sbfUe60y0",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "bash",
+  "callID": "toolu_01W7VzkJfGcvJYXHw3PhBAoN",
+  "state": {
+    "status": "completed",
+    "input": {
+      "command": "timeout 15s curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"Guten Tag\",\"sourceLang\":\"de\",\"targetLang\":\"fr\"}' -w \"\\nHTTP_CODE: %{http_code}\\nTOTAL_TIME: %{time_total}s\\n\" && echo \"=== TIMEOUT TEST COMPLETE ===\" || echo \"=== REQUEST PROPERLY TIMED OUT ===\"",
+      "description": "Test timeout handling with potentially slow language pair"
+    },
+    "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    56    0     0  100    56      0     46  0:00:01  0:00:01 --:--:--    46\r100    56    0     0  100    56      0     25  0:00:02  0:00:02 --:--:--    25\r100    56    0     0  100    56      0     17  0:00:03  0:00:03 --:--:--    17\r100    56    0     0  100    56      0     13  0:00:04  0:00:04 --:--:--    13\r100    56    0     0  100    56      0     10  0:00:05  0:00:05 --:--:--    10\r100    56    0     0  100    56      0      9  0:00:06  0:00:06 --:--:--     0\r100    56    0     0  100    56      0      7  0:00:08  0:00:07  0:00:01     0\r100    56    0     0  100    56      0      6  0:00:09  0:00:08  0:00:01     0\r100    56    0     0  100    56      0      6  0:00:09  0:00:09 --:--:--     0\r100    56    0     0  100    56      0      5  0:00:11  0:00:10  0:00:01     0\r100    56    0     0  100    56      0      4  0:00:14  0:00:11  0:00:03     0\r100    56    0     0  100    56      0      4  0:00:14  0:00:12  0:00:02     0\r100    56    0     0  100    56      0      4  0:00:14  0:00:13  0:00:01     0\r100    56    0     0  100    56      0      3  0:00:18  0:00:14  0:00:04     0=== REQUEST PROPERLY TIMED OUT ===\n",
+    "metadata": {
+      "output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100    56    0     0  100    56      0     46  0:00:01  0:00:01 --:--:--    46\r100    56    0     0  100    56      0     25  0:00:02  0:00:02 --:--:--    25\r100    56    0     0  100    56      0     17  0:00:03  0:00:03 --:--:--    17\r100    56    0     0  100    56      0     13  0:00:04  0:00:04 --:--:--    13\r100    56    0     0  100    56      0     10  0:00:05  0:00:05 --:--:--    10\r100    56    0     0  100    56      0      9  0:00:06  0:00:06 --:--:--     0\r100    56    0     0  100    56      0      7  0:00:08  0:00:07  0:00:01     0\r100    56    0     0  100    56      0      6  0:00:09  0:00:08  0:00:01     0\r100    56    0     0  100    56      0      6  0:00:09  0:00:09 --:--:--     0\r100    56    0     0  100    56      0      5  0:00:11  0:00:10  0:00:01     0\r100    56    0     0  100    56      0      4  0:00:14  0:00:11  0:00:03     0\r100    56    0     0  100    56      0      4  0:00:14  0:00:12  0:00:02     0\r100    56    0     0  100    56      0      4  0:00:14  0:00:13  0:00:01     0\r100    56    0     0  100    56      0      3  0:00:18  0:00:14  0:00:04     0=== REQUEST PROPERLY TIMED OUT ===\n",
+      "exit": 0,
+      "description": "Test timeout handling with potentially slow language pair"
+    },
+    "title": "timeout 15s curl -X POST http://localhost:3000/api/translate -H \"Content-Type: application/json\" -d '{\"text\":\"Guten Tag\",\"sourceLang\":\"de\",\"targetLang\":\"fr\"}' -w \"\\nHTTP_CODE: %{http_code}\\nTOTAL_TIME: %{time_total}s\\n\" && echo \"=== TIMEOUT TEST COMPLETE ===\" || echo \"=== REQUEST PROPERLY TIMED OUT ===\"",
+    "time": {
+      "start": 1759741167196,
+      "end": 1759741182207
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "prt_9b8be2975001DuIQ73n1uV7OLV",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "edit",
+  "callID": "toolu_01StAJQaJK78K2WuDkc3Kkgb",
+  "state": {
+    "status": "completed",
+    "input": {
+      "filePath": "/home/user/project/hooks/use-translation.ts",
+      "oldString": "          timeout: 30000, // 30 second timeout for processing",
+      "newString": "          timeout: 10000, // 10 second timeout to match backend timeout"
+    },
+    "output": "",
+    "metadata": {
+      "diagnostics": {},
+      "diff": "Index: /home/user/project/hooks/use-translation.ts\n===================================================================\n--- /home/user/project/hooks/use-translation.ts\n+++ /home/user/project/hooks/use-translation.ts\n@@ -73,9 +73,9 @@\n     // Route requests to correct API endpoint based on operation\n     const endpoint = request.operation === 'translate' ? '/api/translate' : '/api/write'\n     \n     const response = await axios.post(endpoint, request, {\n-      timeout: 30000, // 30 second timeout for processing\n+      timeout: 10000, // 10 second timeout to match backend timeout\n     })\n     return response.data\n   })\n },\n"
+    },
+    "title": "hooks/use-translation.ts",
+    "time": {
+      "start": 1759741095073,
+      "end": 1759741095076
+    }
+  }
+}

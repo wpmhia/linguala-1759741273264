@@ -74,7 +74,7 @@ export function useTextProcessing() {
         const endpoint = request.operation === 'translate' ? '/api/translate' : '/api/write'
         
         const response = await axios.post(endpoint, request, {
-          timeout: 30000, // 30 second timeout for processing
+          timeout: 10000, // 10 second timeout to match backend timeout
         })
         return response.data
       })

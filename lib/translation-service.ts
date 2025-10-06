@@ -117,7 +117,7 @@ async function translateWithQwenMT(text: string, sourceLang: string, targetLang:
     const timeoutId = setTimeout(() => {
       console.log('API request timeout, aborting...')
       controller.abort()
-    }, 15000) // 15 second timeout - balance between speed and reliability
+    }, 8000) // 8 second timeout - faster failure for better UX
     
     const response = await fetch('https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions', {
       method: 'POST',

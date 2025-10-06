@@ -1,0 +1,85 @@
+{
+  "id": "prt_9b8bda25b001L6klQtnzIqL0bO",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_01HpM27uNGmg34ksrjcGk4hJ",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Test translation API directly",
+          "status": "completed",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Check server status and restart if needed",
+          "status": "completed",
+          "priority": "high",
+          "id": "6"
+        },
+        {
+          "content": "Verify API response format",
+          "status": "completed",
+          "priority": "high",
+          "id": "7"
+        },
+        {
+          "content": "Test different language pairs",
+          "status": "completed",
+          "priority": "high",
+          "id": "8"
+        },
+        {
+          "content": "Identify timeout issue with specific language pairs",
+          "status": "pending",
+          "priority": "high",
+          "id": "9"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Test translation API directly\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"4\"\n  },\n  {\n    \"content\": \"Check server status and restart if needed\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"6\"\n  },\n  {\n    \"content\": \"Verify API response format\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"7\"\n  },\n  {\n    \"content\": \"Test different language pairs\",\n    \"status\": \"completed\",\n    \"priority\": \"high\",\n    \"id\": \"8\"\n  },\n  {\n    \"content\": \"Identify timeout issue with specific language pairs\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"9\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Test translation API directly",
+          "status": "completed",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Check server status and restart if needed",
+          "status": "completed",
+          "priority": "high",
+          "id": "6"
+        },
+        {
+          "content": "Verify API response format",
+          "status": "completed",
+          "priority": "high",
+          "id": "7"
+        },
+        {
+          "content": "Test different language pairs",
+          "status": "completed",
+          "priority": "high",
+          "id": "8"
+        },
+        {
+          "content": "Identify timeout issue with specific language pairs",
+          "status": "pending",
+          "priority": "high",
+          "id": "9"
+        }
+      ]
+    },
+    "title": "1 todos",
+    "time": {
+      "start": 1759741062467,
+      "end": 1759741062468
+    }
+  }
+}

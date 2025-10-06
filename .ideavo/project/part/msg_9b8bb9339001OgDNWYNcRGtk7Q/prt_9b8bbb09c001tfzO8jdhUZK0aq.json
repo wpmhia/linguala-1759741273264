@@ -1,0 +1,73 @@
+{
+  "id": "prt_9b8bbb09c001tfzO8jdhUZK0aq",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "tool",
+  "tool": "todowrite",
+  "callID": "toolu_015yrprJCtUyMMoTjF8ecbUr",
+  "state": {
+    "status": "completed",
+    "input": {
+      "todos": [
+        {
+          "content": "Test translation API directly",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Check server status and restart if needed",
+          "status": "pending",
+          "priority": "high",
+          "id": "6"
+        },
+        {
+          "content": "Verify API response format",
+          "status": "pending",
+          "priority": "high",
+          "id": "7"
+        },
+        {
+          "content": "Test different language pairs",
+          "status": "pending",
+          "priority": "high",
+          "id": "8"
+        }
+      ]
+    },
+    "output": "[\n  {\n    \"content\": \"Test translation API directly\",\n    \"status\": \"in_progress\",\n    \"priority\": \"high\",\n    \"id\": \"4\"\n  },\n  {\n    \"content\": \"Check server status and restart if needed\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"6\"\n  },\n  {\n    \"content\": \"Verify API response format\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"7\"\n  },\n  {\n    \"content\": \"Test different language pairs\",\n    \"status\": \"pending\",\n    \"priority\": \"high\",\n    \"id\": \"8\"\n  }\n]",
+    "metadata": {
+      "todos": [
+        {
+          "content": "Test translation API directly",
+          "status": "in_progress",
+          "priority": "high",
+          "id": "4"
+        },
+        {
+          "content": "Check server status and restart if needed",
+          "status": "pending",
+          "priority": "high",
+          "id": "6"
+        },
+        {
+          "content": "Verify API response format",
+          "status": "pending",
+          "priority": "high",
+          "id": "7"
+        },
+        {
+          "content": "Test different language pairs",
+          "status": "pending",
+          "priority": "high",
+          "id": "8"
+        }
+      ]
+    },
+    "title": "4 todos",
+    "time": {
+      "start": 1759740933668,
+      "end": 1759740933668
+    }
+  }
+}

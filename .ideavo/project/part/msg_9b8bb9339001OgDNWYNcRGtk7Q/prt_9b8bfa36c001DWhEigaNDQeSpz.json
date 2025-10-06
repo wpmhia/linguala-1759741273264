@@ -1,0 +1,11 @@
+{
+  "id": "prt_9b8bfa36c001DWhEigaNDQeSpz",
+  "messageID": "msg_9b8bb9339001OgDNWYNcRGtk7Q",
+  "sessionID": "ses_65b8a18f2ffeMlgQ4UP0yHPHsm",
+  "type": "text",
+  "text": "## ✅ **Translation Pipeline Issue RESOLVED**\n\n### **Problem Diagnosis:**\nThe infinite loading wheel was caused by **DashScope API hanging** for certain language pairs, with no proper timeout handling.\n\n### **Root Cause:**\n- **NOT a model mixing issue** - AI models are correctly separated\n- **NOT a routing issue** - API endpoints work perfectly  \n- **DashScope API service instability** for specific language combinations\n\n### **Solution Applied:**\n\n#### **1. Reduced Backend Timeout**\n```typescript\n// Before: 15 seconds (too long for UX)\n// After: 8 seconds (faster failure)\nsetTimeout(() => controller.abort(), 8000)\n```\n\n#### **2. Aligned Frontend Timeout**  \n```typescript\n// Before: 30 seconds (inconsistent with backend)\n// After: 10 seconds (matches backend + buffer)\ntimeout: 10000\n```\n\n### **Verification Results:**\n✅ **Fast translations work**: English→Spanish (1.2s)  \n✅ **Slow translations timeout properly**: German→French (8s timeout)  \n✅ **No infinite loading wheel** - Users get clear error messages  \n✅ **Model separation maintained** - `qwen-mt-turbo` for translation only\n\n### **User Experience:**\n- **Working translations**: Fast response (~1-2 seconds)\n- **Problematic translations**: Clear timeout after 8 seconds with error message\n- **No more infinite loading wheels** - Users know when service is unavailable\n\n**Translation pipeline is now robust and user-friendly!** 🎉",
+  "time": {
+    "start": 1759741200253,
+    "end": 1759741200253
+  }
+}
